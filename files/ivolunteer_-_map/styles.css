@@ -1092,7 +1092,7 @@
   text-transform:none;
   visibility:hidden;
 }
-#u319 {
+#geomap_ivol {
   border-width:0px;
   position:absolute;
   left:102px;
@@ -1100,7 +1100,7 @@
   width:500px;
   height:274px;
 }
-#u319_input {
+#geomap_ivol_input {
   border-width:2px;
   position:absolute;
   left:0px;
@@ -1501,7 +1501,7 @@
   text-transform:none;
   visibility:hidden;
 }
-#u336_div {
+#map_urgency_div {
   border-width:0px;
   position:absolute;
   left:0px;
@@ -1524,7 +1524,7 @@
   box-shadow:none;
   color:#000000;
 }
-#u336 {
+#map_urgency {
   border-width:0px;
   position:absolute;
   left:100px;
@@ -1534,14 +1534,14 @@
   display:flex;
   color:#000000;
 }
-#u336 .text {
+#map_urgency .text {
   position:absolute;
   align-self:center;
   padding:2px 2px 2px 2px;
   box-sizing:border-box;
   width:100%;
 }
-#u336_div.selected {
+#map_urgency_div.selected {
   border-width:0px;
   position:absolute;
   left:0px;
@@ -1564,14 +1564,14 @@
   box-shadow:none;
   color:#000000;
 }
-#u336.selected {
+#map_urgency.selected {
 }
-#u336_text {
+#map_urgency_text {
   border-width:0px;
   word-wrap:break-word;
   text-transform:none;
 }
-#u337_div {
+#map_duration_div {
   border-width:0px;
   position:absolute;
   left:0px;
@@ -1594,7 +1594,7 @@
   box-shadow:none;
   color:#000000;
 }
-#u337 {
+#map_duration {
   border-width:0px;
   position:absolute;
   left:437px;
@@ -1604,14 +1604,14 @@
   display:flex;
   color:#000000;
 }
-#u337 .text {
+#map_duration .text {
   position:absolute;
   align-self:center;
   padding:2px 2px 2px 2px;
   box-sizing:border-box;
   width:100%;
 }
-#u337_div.selected {
+#map_duration_div.selected {
   border-width:0px;
   position:absolute;
   left:0px;
@@ -1634,14 +1634,14 @@
   box-shadow:none;
   color:#000000;
 }
-#u337.selected {
+#map_duration.selected {
 }
-#u337_text {
+#map_duration_text {
   border-width:0px;
   word-wrap:break-word;
   text-transform:none;
 }
-#u338_div {
+#map_importance_div {
   border-width:0px;
   position:absolute;
   left:0px;
@@ -1664,7 +1664,7 @@
   box-shadow:none;
   color:#000000;
 }
-#u338 {
+#map_importance {
   border-width:0px;
   position:absolute;
   left:269px;
@@ -1674,14 +1674,14 @@
   display:flex;
   color:#000000;
 }
-#u338 .text {
+#map_importance .text {
   position:absolute;
   align-self:center;
   padding:2px 2px 2px 2px;
   box-sizing:border-box;
   width:100%;
 }
-#u338_div.selected {
+#map_importance_div.selected {
   border-width:0px;
   position:absolute;
   left:0px;
@@ -1704,9 +1704,9 @@
   box-shadow:none;
   color:#000000;
 }
-#u338.selected {
+#map_importance.selected {
 }
-#u338_text {
+#map_importance_text {
   border-width:0px;
   word-wrap:break-word;
   text-transform:none;

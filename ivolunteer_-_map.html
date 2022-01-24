@@ -44,6 +44,14 @@
       $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
       $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
     </script>
+
+    <!-- custom script & CSS code (contd. at the bottom of the document)-->
+    <link   type="text/css" rel="stylesheet" href="./customScripts/ol/ol.css">
+    <script type="text/javascript" src="./customScripts/ol/ol.js" ></script>
+
+    <link   type="text/css" href="./customStyles/ivolunteerStyle.css" rel="stylesheet">
+    <script type="text/javascript" src="./customScripts/common.js"></script>
+
   </head>
   <body>
     <div id="base" class="">
@@ -320,142 +328,37 @@
         </div>
 
         <!-- map (Inline Frame) -->
-        <div id="u319" class="ax_default" data-label="map">
-          <iframe id="u319_input" data-label="map" scrolling="auto" frameborder="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <div id="geomap_ivol" class="ax_default" data-label="map"></div>
+         
+        <!-- TODO add markers & overlays here -->
+        <div style="display: none;">
+          <div id="map_overlay_ivol" title="overlay"></div>
         </div>
       </div>
 
       <!-- metricbar-panel (Group) -->
       <div id="u320" class="ax_default" data-label="metricbar-panel" data-left="100" data-top="189" data-width="507" data-height="247">
-
-        <!-- UrgencyMarkers (Group) -->
-        <div id="u321" class="ax_default" data-label="UrgencyMarkers" data-left="178" data-top="295" data-width="346" data-height="141">
-
-          <!-- Marker4 (Drop) -->
-          <div id="u322" class="ax_default marker" data-label="Marker4">
-            <img id="u322_img" class="img " src="images/ivolunteer_-_map/marker4_u322.svg"/>
-            <div id="u322_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-
-          <!-- Marker3 (Drop) -->
-          <div id="u323" class="ax_default marker" data-label="Marker3">
-            <img id="u323_img" class="img " src="images/ivolunteer_-_map/marker3_u323.svg"/>
-            <div id="u323_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-
-          <!-- Marker2 (Drop) -->
-          <div id="u324" class="ax_default marker" data-label="Marker2">
-            <img id="u324_img" class="img " src="images/ivolunteer_-_map/marker2_u324.svg"/>
-            <div id="u324_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-
-          <!-- Marker1 (Drop) -->
-          <div id="u325" class="ax_default marker" data-label="Marker1">
-            <img id="u325_img" class="img " src="images/ivolunteer_-_map/marker3_u323.svg"/>
-            <div id="u325_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- DurationMarkers (Group) -->
-        <div id="u326" class="ax_default ax_default_hidden" data-label="DurationMarkers" style="display:none; visibility: hidden" data-left="178" data-top="295" data-width="346" data-height="141">
-
-          <!-- Marker4 (Drop) -->
-          <div id="u327" class="ax_default marker" data-label="Marker4">
-            <img id="u327_img" class="img " src="images/ivolunteer_-_map/marker4_u327.svg"/>
-            <div id="u327_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-
-          <!-- Marker3 (Drop) -->
-          <div id="u328" class="ax_default marker" data-label="Marker3">
-            <img id="u328_img" class="img " src="images/ivolunteer_-_map/marker3_u328.svg"/>
-            <div id="u328_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-
-          <!-- Marker2 (Drop) -->
-          <div id="u329" class="ax_default marker" data-label="Marker2">
-            <img id="u329_img" class="img " src="images/ivolunteer_-_map/marker2_u329.svg"/>
-            <div id="u329_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-
-          <!-- Marker1 (Drop) -->
-          <div id="u330" class="ax_default marker" data-label="Marker1">
-            <img id="u330_img" class="img " src="images/ivolunteer_-_map/marker2_u329.svg"/>
-            <div id="u330_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- ImportanceMarkers (Group) -->
-        <div id="u331" class="ax_default ax_default_hidden" data-label="ImportanceMarkers" style="display:none; visibility: hidden" data-left="178" data-top="295" data-width="346" data-height="141">
-
-          <!-- Marker4 (Drop) -->
-          <div id="u332" class="ax_default marker" data-label="Marker4">
-            <img id="u332_img" class="img " src="images/ivolunteer_-_map/marker4_u332.svg"/>
-            <div id="u332_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-
-          <!-- Marker3 (Drop) -->
-          <div id="u333" class="ax_default marker" data-label="Marker3">
-            <img id="u333_img" class="img " src="images/ivolunteer_-_map/marker3_u333.svg"/>
-            <div id="u333_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-
-          <!-- Marker2 (Drop) -->
-          <div id="u334" class="ax_default marker" data-label="Marker2">
-            <img id="u334_img" class="img " src="images/ivolunteer_-_map/marker2_u334.svg"/>
-            <div id="u334_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-
-          <!-- Marker1 (Drop) -->
-          <div id="u335" class="ax_default marker" data-label="Marker1">
-            <img id="u335_img" class="img " src="images/ivolunteer_-_map/marker2_u334.svg"/>
-            <div id="u335_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-        </div>
-
+   
         <!-- metric-urgency (Rectangle) -->
-        <div id="u336" class="ax_default primary_button selected" data-label="metric-urgency" selectiongroup="OverlayMenu">
-          <div id="u336_div" class="selected"></div>
-          <div id="u336_text" class="text ">
+        <div id="map_urgency" class="ax_default primary_button selected" data-label="metric-urgency" selectiongroup="OverlayMenu" onclick="switchIVolunteerMetric(this)">
+          <div id="map_urgency_div" class="selected"></div>
+          <div id="map_urgency_text" class="text ">
             <p><span>Dringlichkeit</span></p>
           </div>
         </div>
 
         <!-- metric-duration (Rectangle) -->
-        <div id="u337" class="ax_default primary_button" data-label="metric-duration" selectiongroup="OverlayMenu">
-          <div id="u337_div" class=""></div>
-          <div id="u337_text" class="text ">
+        <div id="map_duration" class="ax_default primary_button" data-label="metric-duration" selectiongroup="OverlayMenu" onclick="switchIVolunteerMetric(this)">
+          <div id="map_duration_div" class=""></div>
+          <div id="map_duration_text" class="text ">
             <p><span>Dauer</span></p>
           </div>
         </div>
 
         <!-- metric-importance (Rectangle) -->
-        <div id="u338" class="ax_default primary_button" data-label="metric-importance" selectiongroup="OverlayMenu">
-          <div id="u338_div" class=""></div>
-          <div id="u338_text" class="text ">
+        <div id="map_importance" class="ax_default primary_button" data-label="metric-importance" selectiongroup="OverlayMenu" onclick="switchIVolunteerMetric(this)">
+          <div id="map_importance_div" class=""></div>
+          <div id="map_importance_text" class="text ">
             <p><span>Priorität</span></p>
           </div>
         </div>
@@ -861,5 +764,6 @@
       </div>
     </div>
     <script src="resources/scripts/axure/ios.js"></script>
+    <script type="text/javascript" src="./customScripts/ivolunteerScript.js" ></script>
   </body>
 </html>

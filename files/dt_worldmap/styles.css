@@ -571,7 +571,6 @@
   text-transform:none;
 }
 #u18 {
-  border-width:0px;
   position:absolute;
   left:77px;
   top:263px;
@@ -579,7 +578,6 @@
   height:30px;
 }
 #u18_menu {
-  border-width:0px;
   position:absolute;
   left:0px;
   top:0px;
@@ -590,7 +588,7 @@
   -ms-transform:rotate(NaNdeg);
   transform:rotate(NaNdeg);
 }
-#u19 {
+#metricswitcher-panel {
   border-width:0px;
   position:absolute;
   left:0px;
@@ -598,185 +596,130 @@
   width:600px;
   height:30px;
 }
-#u20_img {
-  border-width:0px;
+#metricswitcher-apdex {
   position:absolute;
   left:0px;
   top:0px;
-  width:100px;
-  height:30px;
-}
-#u20 {
-  border-width:0px;
-  position:absolute;
-  left:0px;
-  top:0px;
-  width:100px;
+  width:110px;
   height:30px;
   display:flex;
   font-family:'Arial Fett', 'Arial Standard', 'Arial', sans-serif;
-  font-weight:700;
   font-style:normal;
   color:rgba(98, 36, 128, 0.9921568627450981);
 }
-#u20 .text {
+#metricswitcher-apdex .text {
   position:absolute;
   align-self:center;
   padding:2px 2px 2px 2px;
   box-sizing:border-box;
   width:100%;
 }
-#u20_text {
+#metricswitcher-apdex_text {
   border-width:0px;
   word-wrap:break-word;
   text-transform:none;
 }
-#u21_img {
-  border-width:0px;
+#metricswitcher-ua {
   position:absolute;
-  left:0px;
+  left:110px;
   top:0px;
-  width:100px;
-  height:30px;
-}
-#u21 {
-  border-width:0px;
-  position:absolute;
-  left:100px;
-  top:0px;
-  width:100px;
+  width:110px;
   height:30px;
   display:flex;
   color:rgba(98, 36, 128, 0.9921568627450981);
 }
-#u21 .text {
+#metricswitcher-ua .text {
   position:absolute;
   align-self:center;
   padding:2px 2px 2px 2px;
   box-sizing:border-box;
   width:100%;
 }
-#u21_text {
+#metricswitcher-ua_text {
   border-width:0px;
   word-wrap:break-word;
   text-transform:none;
 }
-#u22_img {
-  border-width:0px;
+#metricswitcher-load {
   position:absolute;
-  left:0px;
+  left:220px;
   top:0px;
-  width:100px;
-  height:30px;
-}
-#u22 {
-  border-width:0px;
-  position:absolute;
-  left:200px;
-  top:0px;
-  width:100px;
+  width:110px;
   height:30px;
   display:flex;
   color:rgba(98, 36, 128, 0.9921568627450981);
 }
-#u22 .text {
+#metricswitcher-load .text {
   position:absolute;
   align-self:center;
   padding:2px 2px 2px 2px;
   box-sizing:border-box;
   width:100%;
 }
-#u22_text {
+#metricswitcher-load_text {
   border-width:0px;
   word-wrap:break-word;
   text-transform:none;
 }
-#u23_img {
-  border-width:0px;
+#metricswitcher-xhr {
   position:absolute;
-  left:0px;
+  left:330px;
   top:0px;
-  width:100px;
-  height:30px;
-}
-#u23 {
-  border-width:0px;
-  position:absolute;
-  left:300px;
-  top:0px;
-  width:100px;
+  width:110px;
   height:30px;
   display:flex;
   color:rgba(98, 36, 128, 0.9921568627450981);
 }
-#u23 .text {
+#metricswitcher-xhr .text {
   position:absolute;
   align-self:center;
   padding:2px 2px 2px 2px;
   box-sizing:border-box;
   width:100%;
 }
-#u23_text {
+#metricswitcher-xhr_text {
   border-width:0px;
   word-wrap:break-word;
   text-transform:none;
 }
-#u24_img {
-  border-width:0px;
+#metricswitcher-custom {
   position:absolute;
-  left:0px;
+  left:440px;
   top:0px;
-  width:100px;
-  height:30px;
-}
-#u24 {
-  border-width:0px;
-  position:absolute;
-  left:400px;
-  top:0px;
-  width:100px;
+  width:110px;
   height:30px;
   display:flex;
   color:rgba(98, 36, 128, 0.9921568627450981);
 }
-#u24 .text {
+#metricswitcher-custom .text {
   position:absolute;
   align-self:center;
   padding:2px 2px 2px 2px;
   box-sizing:border-box;
   width:100%;
 }
-#u24_text {
+#metricswitcher-custom_text {
   border-width:0px;
   word-wrap:break-word;
   text-transform:none;
 }
-#u25_img {
-  border-width:0px;
+#metricswitcher-errors {
   position:absolute;
-  left:0px;
+  left:550px;
   top:0px;
-  width:100px;
-  height:30px;
-}
-#u25 {
-  border-width:0px;
-  position:absolute;
-  left:500px;
-  top:0px;
-  width:100px;
+  width:110px;
   height:30px;
   display:flex;
   color:rgba(98, 36, 128, 0.9921568627450981);
 }
-#u25 .text {
+#metricswitcher-errors .text {
   position:absolute;
   align-self:center;
   padding:2px 2px 2px 2px;
   box-sizing:border-box;
   width:100%;
 }
-#u25_text {
+#metricswitcher-errors_text {
   border-width:0px;
   word-wrap:break-word;
   text-transform:none;
@@ -819,7 +762,7 @@
   text-transform:none;
   visibility:hidden;
 }
-#u28 {
+#geomap_dt {
   border-width:0px;
   position:absolute;
   left:79px;
@@ -827,7 +770,7 @@
   width:1102px;
   height:535px;
 }
-#u28_input {
+#geomap_dt_input {
   border-width:2px;
   position:absolute;
   left:0px;
