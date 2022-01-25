@@ -18,22 +18,43 @@
      * @param {initial zoom level of the map} zoom 
      * @param {longitude} lon 
      * @param {latitude} lat 
+     * @param {show minimap in corner or not} hasMinimap 
      * @returns map object
      */
-    function createMap(target, zoom, lon, lat) {
+    function createMap(target, zoom, lon, lat, hasMinimap) {
         let mapLayer = new ol.layer.Tile({
             source: new ol.source.OSM(),
             });
         let view = new ol.View({
             center: ol.proj.fromLonLat([lon, lat]),
             zoom: zoom
-        });  
+        });
 
-        return new ol.Map({
-            target: target,
-            layers: [ mapLayer ],
-            view: view
-        });  
+        if (hasMinimap) {
+            const minimapControl = new ol.control.OverviewMap({
+                className: 'ol-overviewmap ol-custom-overviewmap',
+                layers: [ new ol.layer.Tile({
+                    source: new ol.source.OSM(),
+                    }) ],
+                collapseLabel: '\u00BB',
+                label: '\u00AB',
+                collapsed: false,
+              });
+
+            return new ol.Map({
+                controls: ol.interaction.defaults().extend([minimapControl]),
+                interactions: ol.interaction.defaults().extend([new ol.interaction.DragRotateAndZoom()]),
+                target: target,
+                layers: [ mapLayer ],
+                view: view
+            });
+        } else {
+            return new ol.Map({
+                target: target,
+                layers: [ mapLayer ],
+                view: view
+            });     
+        }
     }
 
     /**

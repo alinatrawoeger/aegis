@@ -8,7 +8,7 @@ const metricMap = new Map();
 metricMap.set('metricswitcher-apdex', '#3dc71a'); // urgency (rgb(217, 0, 27))
 metricMap.set('other', '#61247f'); // duration (rgb(99, 161, 3))
 
-let map = createMap('geomap_dt', ZoomLevel.WORLD.level, longitude, latitude);
+let map = createMap('geomap_dt', ZoomLevel.WORLD.level, longitude, latitude, true);
 
 let overlay = createOverlay('map_overlay_dt', longitude, latitude);
 map.addOverlay(overlay);

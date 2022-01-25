@@ -1,3 +1,4 @@
+/* ------------- overlay ------------- */
 .map_overlay_dt {
     width: 60px;
     height: 60px;
@@ -8,6 +9,7 @@
     opacity: 0.5;
   }
 
+/* -------------- metric switcher related styles ----------------- */
 #metricswitcher-panel > * {
   border: 1px solid rgb(27, 27, 27);
 }  
@@ -16,7 +18,42 @@
   background-color: #61247f;
   color: rgb(255, 255, 255);
 }
-
 .metricSwitcherBtn {
   cursor: pointer;
+}
+
+/* --------------- minimap -------------------*/
+#geomap_dt .ol-custom-overviewmap,
+#geomap_dt .ol-custom-overviewmap.ol-uncollapsible {
+  margin: 0 4px 4px 0;
+  bottom: 0;
+  left: auto;
+  right: 0;
+  top: auto;
+}
+
+#geomap_dt .ol-custom-overviewmap:not(.ol-collapsed)  {
+  border: 2px solid #61247f;
+}
+
+#geomap_dt .ol-custom-overviewmap .ol-overviewmap-map {
+  border: none;
+  width: 250px;
+  height: 150px;
+}
+
+#geomap_dt .ol-custom-overviewmap .ol-overviewmap-box {
+  border: 2px solid rgb(1, 196, 196);
+}
+
+#geomap_dt .ol-custom-overviewmap:not(.ol-collapsed) button{
+  bottom: auto;
+  left: auto;
+  right: 1px;
+  top: 1px;
+}
+
+#geomap_dt .ol-rotate {
+  top: 170px;
+  right: 0;
 }
