@@ -57,6 +57,60 @@
         }
     }
 
+    function createCountryOverlay(map) {
+        let overlayLayer = new ol.layer.Vector({
+            source: new ol.source.Vector({
+              url: 'https://openlayers.org/en/v4.6.5/examples/data/geojson/countries.geojson',
+              format: new ol.format.GeoJSON()
+            })
+        });
+
+        map.addLayer(overlayLayer);
+
+        var featureOverlay = new ol.layer.Vector({
+            source: new ol.source.Vector(),
+            map: map,
+        });
+
+        const selectStyle = new ol.style.Style({
+            fill: new ol.style.Fill({
+              color: 'rgba(61, 199, 29, 0)',
+            }),
+            stroke: new ol.style.Stroke({
+              color: 'rgba(61, 199, 29, 0.9)',
+              width: 2,
+            }),
+          });
+       
+        let selected = null;
+        map.on('pointermove', function (e) {
+            var fillColour = 'rgba(61, 199, 29, 0.5)';
+
+            if (selected !== null) {
+              selected.setStyle(undefined);
+              selected = null;
+            }
+          
+            map.forEachFeatureAtPixel(e.pixel, function (f) {
+              selected = f;
+              selectStyle.getFill().setColor(fillColour);
+              f.setStyle(selectStyle);
+              return true;
+            });
+          
+            // TODO add tooltip handler --> status = name of hovered country
+            // if (selected) {
+            //   status.innerHTML = selected.get('ECO_NAME');
+            // } else {
+            //   status.innerHTML = '&nbsp;';
+            // }
+
+            // TODO add regions per country when zoom level is high enough
+          });
+
+        return map;
+    }
+
     /**
      * Adds markers on the map, e.g. for POIs like cities
      */
