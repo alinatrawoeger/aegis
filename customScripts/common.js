@@ -23,7 +23,7 @@
      */
     function createMap(target, zoom, lon, lat, hasMinimap) {
         let mapLayer = new ol.layer.Tile({
-            source: new ol.source.OSM(),
+                source: new ol.source.OSM(),
             });
         let view = new ol.View({
             center: ol.proj.fromLonLat([lon, lat]),
@@ -57,56 +57,81 @@
         }
     }
 
-    function createCountryOverlay(map) {
+    function createCountryOverlay(map, selectedColor, hoverColor) {
         let overlayLayer = new ol.layer.Vector({
             source: new ol.source.Vector({
               url: 'https://openlayers.org/en/v4.6.5/examples/data/geojson/countries.geojson',
               format: new ol.format.GeoJSON()
             })
         });
-
         map.addLayer(overlayLayer);
-
-        var featureOverlay = new ol.layer.Vector({
-            source: new ol.source.Vector(),
-            map: map,
-        });
 
         const selectStyle = new ol.style.Style({
             fill: new ol.style.Fill({
-              color: 'rgba(61, 199, 29, 0)',
+                color: 'rgba(0, 0, 0, 0)',
             }),
             stroke: new ol.style.Stroke({
-              color: 'rgba(61, 199, 29, 0.9)',
+              color: selectedColor,
               width: 2,
             }),
           });
+
+        const hoverStyle = new ol.style.Style({
+            fill: new ol.style.Fill({
+                color: 'rgba(0, 0, 0, 0)',
+            }),
+            stroke: new ol.style.Stroke({
+                color: selectedColor,
+                width: 2,
+            }),
+        });  
        
+        let hovered = null;
         let selected = null;
         map.on('pointermove', function (e) {
-            var fillColour = 'rgba(61, 199, 29, 0.5)';
-
-            if (selected !== null) {
-              selected.setStyle(undefined);
-              selected = null;
+            if (hovered !== null) {
+                hovered.setStyle(undefined);
+                hovered = null;
             }
           
             map.forEachFeatureAtPixel(e.pixel, function (f) {
-              selected = f;
-              selectStyle.getFill().setColor(fillColour);
-              f.setStyle(selectStyle);
-              return true;
+                if (selected !== f) {
+                    hovered = f;
+                    hoverStyle.getFill().setColor(hoverColor);
+                    hovered.setStyle(hoverStyle);
+                    
+                    if (selected != null) {
+                        selectStyle.getFill().setColor(selectedColor);
+                        selected.setStyle(selectStyle);
+                    }
+                }
+                return true;
             });
-          
-            // TODO add tooltip handler --> status = name of hovered country
-            // if (selected) {
-            //   status.innerHTML = selected.get('ECO_NAME');
-            // } else {
-            //   status.innerHTML = '&nbsp;';
-            // }
 
             // TODO add regions per country when zoom level is high enough
-          });
+        });
+
+        map.on('pointerdown', function (e) {       
+            if (selected !== null) {
+                selected.setStyle(undefined);
+                selected = null;
+            }
+
+            map.forEachFeatureAtPixel(e.pixel, function (f) {            
+                selected = f;
+                selectStyle.getFill().setColor(selectedColor);
+                f.setStyle(selectStyle);
+                hovered = null;
+                return true;
+            });
+
+            const tooltipTitle = document.getElementById('tooltipTitle');
+            if (selected) {
+                tooltipTitle.innerHTML = selected.A.name;
+            } else {
+                tooltipTitle.innerHTML = '&nbsp;';
+            }
+        });
 
         return map;
     }

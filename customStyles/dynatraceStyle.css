@@ -43,7 +43,7 @@
 }
 
 #geomap_dt .ol-custom-overviewmap .ol-overviewmap-box {
-  border: 2px solid rgb(1, 196, 196);
+  border: 2px solid #01c4c4;
 }
 
 #geomap_dt .ol-custom-overviewmap:not(.ol-collapsed) button{

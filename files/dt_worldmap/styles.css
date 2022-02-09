@@ -817,12 +817,12 @@
   text-transform:none;
   visibility:hidden;
 }
-#u31_div {
+#tooltipTitle_div {
   border-width:0px;
   position:absolute;
   left:0px;
-  top:0px;
-  width:48px;
+  top:8px;
+  width:300px;
   height:28px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
@@ -835,26 +835,26 @@
   font-weight:700;
   font-style:normal;
 }
-#u31 {
+#tooltipTitle {
   border-width:0px;
   position:absolute;
   left:104px;
   top:565px;
-  width:48px;
+  width:300px;
   height:28px;
   display:flex;
   font-family:'Arial Fett', 'Arial Standard', 'Arial', sans-serif;
   font-weight:700;
   font-style:normal;
 }
-#u31 .text {
+#tooltipTitle .text {
   position:absolute;
   align-self:flex-start;
   padding:0px 0px 0px 0px;
   box-sizing:border-box;
   width:100%;
 }
-#u31_text {
+#tooltipTitle_text {
   border-width:0px;
   white-space:nowrap;
   text-transform:none;
