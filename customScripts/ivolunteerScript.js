@@ -1,3 +1,5 @@
+import {ZoomLevel, createMap, createOverlay, switchMetric} from './utils';
+
 // test data (coordinates of Linz)
 let longitude = 14.2858;
 let latitude = 48.3069;
@@ -15,6 +17,8 @@ let map = createMap('geomap_ivol', ZoomLevel.CITY.level, longitude, latitude, fa
 let overlay = createOverlay('map_overlay_ivol', longitude, latitude);
 map.addOverlay(overlay);
 
-function switchIVolunteerMetric(element) {
+let test = "sdlfs";
+
+window.switchIVolunteerMetric = function(element) {
   switchMetric(metricMap.get(element.id), 'map_overlay_ivol');
 }

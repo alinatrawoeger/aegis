@@ -1,3 +1,5 @@
+import {ZoomLevel, createMap, createCountryOverlay, switchMetric} from './utils';
+
 // test data (coordinates of Linz)
 let longitude = 14.2858;
 let latitude = 48.3069;
@@ -18,12 +20,13 @@ let initialHoverColor = metricColorMapHover.get('metricswitcher-apdex');
 let map = createMap('geomap_dt', ZoomLevel.WORLD.level, longitude, latitude, true);
 createCountryOverlay(map, initialSelectedColor, initialHoverColor);
 
+// TODO next: add typedefs
 // TODO next1: fix markiertes country overlay soll auf metric switcher reagieren
 // TODO next2: Tooltip daten anlegen
 // TODO next3: Filterbar soll Daten beeinflussen
 // TODO next4: Beispieldaten erstellen und reinfeeden
 
-function switchDynatraceMetric(element) {
+window.switchDynatraceMetric= function(element) {
     var colorSelected = metricColorMapSelected.has(element.id) ? metricColorMapSelected.get(element.id) : metricColorMapSelected.get('other');
     var colorHover = metricColorMapHover.has(element.id) ? metricColorMapHover.get(element.id) : metricColorMapHover.get('other');
     $('[selectiongroup=MetricSwitcherDt]').removeClass('selected');
