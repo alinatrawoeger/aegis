@@ -1,10 +1,12 @@
-import 'ol/ol.css';
-import { Map, Overlay, View } from 'ol';
+import { Feature, Map, Map as OLMap, Overlay, View } from 'ol';
+import { defaults as defaultControls } from 'ol/control';
 import OverviewMap from 'ol/control/OverviewMap';
 import GeoJSON from 'ol/format/GeoJSON';
+import Geometry from 'ol/geom/Geometry';
 import { defaults, DragRotateAndZoom } from 'ol/interaction';
 import TileLayer from 'ol/layer/Tile';
 import VectorLayer from 'ol/layer/Vector';
+import 'ol/ol.css';
 import { fromLonLat } from 'ol/proj';
 import OSM from 'ol/source/OSM';
 import VectorSrc from 'ol/source/Vector';
@@ -18,8 +20,10 @@ export class ZoomLevel {
     static COUNTRY = new ZoomLevel(6);
     static REGION = new ZoomLevel(8);
     static CITY = new ZoomLevel(10);
+    
+    level: number;
 
-    constructor(level) {
+    constructor(level: number) {
         this.level = level;
     }
 }
@@ -35,13 +39,13 @@ export class ZoomLevel {
  * @param {show minimap in corner or not} hasMinimap 
  * @returns map object
  */
-export function createMap(target, zoom, lon, lat, hasMinimap) {
+export function createMap(target: string, zoom: ZoomLevel, lon: number, lat: number, hasMinimap: boolean) {
     var mapLayer = new TileLayer({
         source: new OSM()
     });
     var view = new View({
         center: fromLonLat([lon, lat]),
-        zoom: zoom
+        zoom: zoom.level
     });
 
     if (hasMinimap) {
@@ -53,10 +57,10 @@ export function createMap(target, zoom, lon, lat, hasMinimap) {
             collapseLabel: '\u00BB',
             label: '\u00AB',
             collapsed: false,
-            });
+        });
 
         return new Map({
-            controls: defaults().extend([minimapControl]),
+            controls: defaultControls().extend([minimapControl]),
             interactions: defaults().extend([new DragRotateAndZoom()]),
             target: target,
             layers: [ mapLayer ],
@@ -71,7 +75,7 @@ export function createMap(target, zoom, lon, lat, hasMinimap) {
     }
 }
 
-export function createCountryOverlay(map, selectedColor, hoverColor) {
+export function createCountryOverlay(map: OLMap, selectedColor: string, hoverColor: string) {
     let overlayLayer = new VectorLayer({
         source: new VectorSrc({
             url: 'https://openlayers.org/en/v4.6.5/examples/data/geojson/countries.geojson',
@@ -99,22 +103,22 @@ export function createCountryOverlay(map, selectedColor, hoverColor) {
             width: 2,
         }),
     });  
-    
-    let hovered = null;
-    let selected = null;
-    map.on('pointermove', function (e) {
-        if (hovered !== null) {
+
+    let hovered: Feature<Geometry> | undefined;
+    let selected: Feature<Geometry> | undefined;
+    map.on('pointermove', function (event) {
+        if (hovered !== undefined) {
             hovered.setStyle(undefined);
-            hovered = null;
+            hovered = undefined;
         }
         
-        map.forEachFeatureAtPixel(e.pixel, function (f) {
-            if (selected !== f) {
-                hovered = f;
-                hoverStyle.getFill().setColor(hoverColor);
+        map.forEachFeatureAtPixel(event.pixel, function (feature) {
+            if (selected !== feature) {
+                hovered = feature as Feature<Geometry>;
+                hoverStyle.getFill().setColor(hoverColor)
                 hovered.setStyle(hoverStyle);
                 
-                if (selected != null) {
+                if (selected !== undefined) {
                     selectStyle.getFill().setColor(selectedColor);
                     selected.setStyle(selectStyle);
                 }
@@ -125,29 +129,34 @@ export function createCountryOverlay(map, selectedColor, hoverColor) {
         // TODO add regions per country when zoom level is high enough
     });
 
-    map.on('pointerdown', function (e) {       
-        if (selected !== null) {
+    map.on('click', function (e) {       
+        
+        if (selected !== undefined) {
             selected.setStyle(undefined);
-            selected = null;
+            selected = undefined;
         }
-
-        map.forEachFeatureAtPixel(e.pixel, function (f) {            
-            selected = f;
+        
+        map.forEachFeatureAtPixel(e.pixel, function (feature) {            
+            selected = feature as Feature<Geometry>;
             selectStyle.getFill().setColor(selectedColor);
-            f.setStyle(selectStyle);
-            hovered = null;
+            selected.setStyle(selectStyle);
+            hovered = undefined;
+            
+            const tooltipTitle = document.getElementById('tooltipTitle');
+            if (tooltipTitle) {
+                if (selected) {
+                    tooltipTitle.innerHTML = selected.get('name');
+                } else {
+                    tooltipTitle.innerHTML = '&nbsp;';
+                }
+            }
+            
             return true;
         });
 
-        const tooltipTitle = document.getElementById('tooltipTitle');
-        if (selected) {
-            tooltipTitle.innerHTML = selected.A.name;
-        } else {
-            tooltipTitle.innerHTML = '&nbsp;';
-        }
     });
 
-    return map;
+    return map; 
 }
 
 /**
@@ -164,13 +173,14 @@ function createMarkers() {
  * @param {latitude} lat 
  * @returns overlay object for further customization
  */
-export function createOverlay(target, lon, lat) {
+export function createOverlay(target: string, lon: number, lat: number) {
     const pos = fromLonLat([14.2858, 48.3069]);
+    let elem = document.getElementById(target);
 
     return new Overlay({
         position: pos,
         positioning: 'center-center',
-        element: document.getElementById(target),
+        element: elem ? elem : undefined,
         stopEvent: false,
     });
 }
@@ -179,7 +189,9 @@ export function createOverlay(target, lon, lat) {
  * Switches metric and adapts shape and colour of the overlay accordingly
  * @param {background colour of overlay} colour
  */
-export function switchMetric(colour, element) {
+export function switchMetric(colour: string, element: string) {
     let overlay = document.getElementById(element);
-    overlay.style.backgroundColor = colour;
+    if (overlay) {
+        overlay.style.backgroundColor = colour;
+    }
 }

@@ -5,7 +5,7 @@ module.exports = [
     {
         mode: 'development',
         devtool: 'source-map',
-        entry: './customScripts/dtApp.js',
+        entry: './customScripts/dtApp.ts',
         output: {
             path: path.resolve(__dirname, './dist'),
             filename: 'dtBundle.js',
@@ -21,20 +21,18 @@ module.exports = [
         ],
         module: {
             rules: [
-                {
-                    test: /\.css$/,
-                    use: [
-                        'style-loader',
-                        'css-loader',
-                    ],
-                },
+                { test: /.css$/, use: ['style-loader', 'css-loader'] },
+                { test: /.ts$/, use: 'ts-loader' },
             ]
+        },
+        resolve: {
+            extensions: ['.ts', '.js', '.json']
         }
     },
     {
         mode: 'development',
         devtool: 'source-map',
-        entry: './customScripts/iVolApp.js',
+        entry: './customScripts/iVolApp.ts',
         output: {
             path: path.resolve(__dirname, './dist'),
             filename: 'iVolBundle.js',
@@ -50,14 +48,12 @@ module.exports = [
         ],
         module: {
             rules: [
-                {
-                    test: /\.css$/,
-                    use: [
-                        'style-loader',
-                        'css-loader',
-                    ],
-                },
-            ],
+                { test: /.css$/, use: ['style-loader', 'css-loader'] },
+                { test: /.ts$/, use: 'ts-loader' },
+            ]
+        },
+        resolve: {
+            extensions: ['.ts', '.js', '.json']
         }
     },  
 ];
