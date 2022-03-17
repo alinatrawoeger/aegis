@@ -1,0 +1,41 @@
+{
+    "edition": "dynatrace",
+    "elements": [
+        {
+            "continent": "EU",
+            "country": "AT",
+            "region": "AT-4",
+            "city": "Linz",
+            "apdex": 1.00,
+            "useractions": 0.45,
+            "errors": 0.06,
+            "loadactions": 0.68,
+            "totaluseractions": 17,
+            "affecteduseractions": 29.41
+        },
+        {
+            "continent": "NA",
+            "country": "US",
+            "region": "US-NY",
+            "city": "New York City",
+            "apdex": 0.91,
+            "useractions": 0.66,
+            "errors": 0.09,
+            "loadactions": 0.98,
+            "totaluseractions": 55,
+            "affecteduseractions": 35.07
+        },
+        {
+            "continent": "EU",
+            "country": "DE",
+            "region": "AT-BE",
+            "city": "Berlin",
+            "apdex": 0.81,
+            "useractions": 0.81,
+            "errors": 0.08,
+            "loadactions": 0.77,
+            "totaluseractions": 11,
+            "affecteduseractions": 55.6
+        }
+    ]
+}

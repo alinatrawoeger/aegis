@@ -1,0 +1,12 @@
+AT-Regions: 
+    https://github.com/ginseng666/GeoJSON-TopoJSON-Austria
+    All files CC BY 4.0, Flooh Perlot (https://creativecommons.org/licenses/by/4.0/)
+    Changelog:
+        - ISO-Code in JSON changed from e.g. "4" to "AT-4"
+
+DE-Regions:
+    https://github.com/isellsoap/deutschlandGeoJSON 
+    
+
+US-States:
+    https://gist.github.com/mapsam/d066b572e8a8ad2b6d16    

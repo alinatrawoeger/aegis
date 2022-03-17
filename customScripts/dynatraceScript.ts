@@ -1,13 +1,13 @@
 import {ZoomLevel, createMap, createCountryOverlay, switchMetric} from './utils';
-import {Map as OLMap} from 'ol';
+import {Feature, Map as OLMap} from 'ol';
 
-        // TODO next: adjust to TypeScript
-        // TODO next1: fix markiertes country overlay soll auf metric switcher reagieren
-        // TODO next2: Tooltip daten anlegen
-        // TODO next3: Filterbar soll Daten beeinflussen
-        // TODO next4: Beispieldaten erstellen und reinfeeden
+// TODO next: GeoJSON auf Shapefile umbauen
+// TODO next1: fix markiertes country overlay soll auf metric switcher reagieren
+// TODO next2: Tooltip daten anlegen
+// TODO next3: Filterbar soll Daten beeinflussen
+// TODO next4: Beispieldaten erstellen und reinfeeden
 
-class DynatraceWorldmappApp {
+class DynatraceWorldmapApp {
     // test data (coordinates of Linz)
     longitude = 14.2858;
     latitude = 48.3069;
@@ -31,9 +31,9 @@ class DynatraceWorldmappApp {
 
         let metricSwitcherButtons = $(".metricSwitcherBtn");
         for (const btn of metricSwitcherButtons) {
-            btn.addEventListener("click", (e: Event) => this.switchDynatraceMetric(btn.id));
+            btn.addEventListener('click', (e: Event) => this.switchDynatraceMetric(btn.id));
         }
-    
+        
         this.geomap = createMap('geomap_dt', ZoomLevel.WORLD, this.longitude, this.latitude, true);
         createCountryOverlay(this.geomap, initialSelectedColor, initialHoverColor);
     }
@@ -48,4 +48,4 @@ class DynatraceWorldmappApp {
 }
 
 // start app
-new DynatraceWorldmappApp();
+new DynatraceWorldmapApp();
