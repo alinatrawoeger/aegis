@@ -14,6 +14,30 @@
             "affecteduseractions": 29.41
         },
         {
+            "continent": "EU",
+            "country": "AT",
+            "region": "AT-5",
+            "city": "Salzburg",
+            "apdex": 0.89,
+            "useractions": 0.75,
+            "errors": 0.03,
+            "loadactions": 0.78,
+            "totaluseractions": 28,
+            "affecteduseractions": 1.02
+        },
+        {
+            "continent": "EU",
+            "country": "DE",
+            "region": "DE-BY",
+            "city": "Berlin",
+            "apdex": 0.46,
+            "useractions": 0.20,
+            "errors": 0.08,
+            "loadactions": 0.90,
+            "totaluseractions": 66,
+            "affecteduseractions": 36.45
+        },
+        {
             "continent": "NA",
             "country": "US",
             "region": "US-NY",
@@ -28,7 +52,7 @@
         {
             "continent": "EU",
             "country": "DE",
-            "region": "AT-BE",
+            "region": "DE-BE",
             "city": "Berlin",
             "apdex": 0.81,
             "useractions": 0.81,
