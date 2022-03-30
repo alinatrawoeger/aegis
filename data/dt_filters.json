@@ -349,6 +349,12 @@
             "DE-ST": "Sachsen-Anhalt",
             "DE-SH": "Schleswig-Holstein",
             "DE-TH": "Thüringen"
+        },
+        "UK": {
+            "GB-ENG": "England",
+            "GB-NIR": "Northern Ireland",
+            "GB-SCT": "Scotland",
+            "GB-WLS": "Wales"
         }
     },
     "cities": {

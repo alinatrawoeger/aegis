@@ -1,13 +1,12 @@
 import { Map as OLMap } from 'ol';
-import { Zoom } from 'ol/control';
 import jsondata from '../data/dt_database.json';
 import geodata from '../data/dt_filters.json';
 import { createCountryOverlay, createMap, ZoomLevel } from './utils';
 
 // TODO table:
-// - Auf fehlendes property (e.g. keine Region, keine City, ...) reagieren
-// - Sachen nach geolocation zusammengruppieren
 // - Actions Symbol in letzte Spalte der Table adden
+// - Spalten sortieren
+// - Spalten auf Metric reagieren lassen
 // - ZoomLevel setzen beim zoomen damit table drauf reagiert
 
 // TODO others:
@@ -15,6 +14,7 @@ import { createCountryOverlay, createMap, ZoomLevel } from './utils';
 // - Beispieldaten reinfeeden in Tooltip
 // - Filterbar soll Daten beeinflussen
 // - fix markiertes country overlay soll auf metric switcher reagieren
+// - erneuter klick auf markiertes country soll die markierung aufheben
 
 class DynatraceWorldmapApp {
     // test data (coordinates of Linz)
@@ -105,28 +105,36 @@ class DynatraceWorldmapApp {
     }
 
     fillTable(zoomLevel: number) {
-        this.fillTableContents(this.getColumnHeaders(this.primaryTableSelector, zoomLevel, true), this.primaryTableSelector, zoomLevel);
-        this.fillTableContents(this.getColumnHeaders(this.secondaryTableSelector, zoomLevel, false), this.secondaryTableSelector, zoomLevel);
+        let tabTitles = this.getGeographicTableColumnHeaders(zoomLevel);
+        let datasetPrimary = this.groupValuesPerLocation(tabTitles[0]);
+        let datasetSecondary = this.groupValuesPerLocation(tabTitles[1]);
+
+        this.fillTableContents(this.getColumnHeaders(this.primaryTableSelector, zoomLevel, true), this.primaryTableSelector, zoomLevel, datasetPrimary);
+        this.fillTableContents(this.getColumnHeaders(this.secondaryTableSelector, zoomLevel, false), this.secondaryTableSelector, zoomLevel, datasetSecondary);
     }
 
-    fillTableContents(columnHeaders: string[], tableContainer: string, zoomLevel: number) {
+    fillTableContents(columnHeaders: string[], tableContainer: string, zoomLevel: number, dataset: Map<string, any>) {
         $(tableContainer + "_title").html(this.dataLabels.get(columnHeaders[0]));
-        for (var i = 0; i < this.data.length; i++) {
-            var row$ = $('<tr/>');
-            for (var colIndex = 0; colIndex < columnHeaders.length; colIndex++) {
+
+        for (let key of dataset.keys()) {
+            let row$ = $('<tr/>');
+            let curElement = dataset.get(key);
+            let geolocationKey: string = columnHeaders[0].toString();
+            let geolocation = this.getLocationName(curElement[geolocationKey as keyof typeof curElement]);
+           
+            if (geolocation == undefined) continue;
+            row$.append($('<td/>').html(geolocation));
+            
+            for (var colIndex = 1; colIndex < columnHeaders.length; colIndex++) {
                 let key = columnHeaders[colIndex];
-                var curElement = this.data[i];
                 let cellValue = curElement[key as keyof typeof curElement];
                 if (cellValue == null) cellValue = "";
                 
                 cellValue = cellValue.toString(); // ensure that value is a string
-                
-                if (colIndex == 0) { // only for the geocolumn
-                    cellValue = this.getLocationName(cellValue, zoomLevel);
-                }
 
                 row$.append($('<td/>').html(cellValue));
             }
+
             $(tableContainer).append(row$);
         }
     }
@@ -153,7 +161,7 @@ class DynatraceWorldmapApp {
         // TODO add handling for Region/City when data has been expanded
     }
 
-    getLocationName(key: string, zoomLevel: number): string {
+    getLocationName(key: string | number | undefined): string {
         let geoValue: string;
         geoValue = this.geoLabels.continents[key as keyof typeof this.geoLabels.continents];
         if (geoValue === undefined) { // check if geoValue is a country
@@ -173,6 +181,46 @@ class DynatraceWorldmapApp {
         // TODO add check for city when data has been expanded accordingly
 
         return geoValue;
+    }
+
+    groupValuesPerLocation(locationKey: string) {
+        
+        // group values together
+        let groupedValuesMap = new Map();
+        for (let i = 0; i < this.data.length; i++) {
+            let curElement = this.data[i];
+            let location = curElement[locationKey as keyof typeof curElement];
+            
+            if (groupedValuesMap.get(location) == undefined) { // add new element
+                groupedValuesMap.set(location, [curElement]);
+            } else { // add new value to existing one
+                let value: any[] = groupedValuesMap.get(location);
+                value.push(curElement);
+                groupedValuesMap.set(location, value);
+            }
+        }
+
+        // calculate new values per grouping
+        let newValuesMap = new Map();
+        groupedValuesMap.forEach(function(value, location){
+            let newValuesPerLocation: { [key: string]: any } = {};
+            newValuesPerLocation[locationKey] = location;
+            for (let key in value[0]) {
+                if (typeof value[0][key] === 'number') {
+                    let sum = 0;
+                    for (let i = 0; i < value.length; i++) {
+                        sum += value[i][key];
+                    }
+                    let avg = sum / value.length;
+
+                    newValuesPerLocation[key] = avg.toFixed(2);;
+                }
+            }
+            
+            newValuesMap.set(location, newValuesPerLocation);
+        });
+
+        return newValuesMap;
     }
 }
 

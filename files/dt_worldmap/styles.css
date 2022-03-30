@@ -2346,7 +2346,7 @@
 #table_tab1 > tr, #table_tab2 > tr {
   display: flex;
   text-align: left;
-  padding: 4px 0 4px 0;
+  padding: 8px 0 4px 0;
 }
 #table_tab1 th, #table_tab2 th {
   border-bottom: 2px solid #797979;

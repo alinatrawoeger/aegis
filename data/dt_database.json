@@ -16,8 +16,18 @@
         {
             "continent": "EU",
             "country": "AT",
-            "region": "AT-5",
-            "city": "Salzburg",
+            "region": "AT-4",
+            "city": "Wels",
+            "apdex": 0.60,
+            "useractions": 0.30,
+            "errors": 0.06,
+            "loadactions": 0.68,
+            "totaluseractions": 17,
+            "affecteduseractions": 29.41
+        },
+        {
+            "continent": "EU",
+            "country": "AT",
             "apdex": 0.89,
             "useractions": 0.75,
             "errors": 0.03,
@@ -28,8 +38,6 @@
         {
             "continent": "EU",
             "country": "DE",
-            "region": "DE-BY",
-            "city": "Berlin",
             "apdex": 0.46,
             "useractions": 0.20,
             "errors": 0.08,
@@ -60,6 +68,27 @@
             "loadactions": 0.77,
             "totaluseractions": 11,
             "affecteduseractions": 55.6
+        },
+        {
+            "continent": "EU",
+            "country": "GB",
+            "region": "GB-SCT",
+            "apdex": 0.68,
+            "useractions": 0.66,
+            "errors": 0.08,
+            "loadactions": 0.98,
+            "totaluseractions": 25,
+            "affecteduseractions": 13.41
+        },
+        {
+            "continent": "EU",
+            "country": "ES",
+            "apdex": 0.23,
+            "useractions": 0.23,
+            "errors": 0.18,
+            "loadactions": 0.60,
+            "totaluseractions": 11,
+            "affecteduseractions": 36.66
         }
     ]
 }
