@@ -2,6 +2,7 @@ import { Map as OLMap } from 'ol';
 import jsondata from '../data/dt_database.json';
 import geodata from '../data/dt_filters.json';
 import { createCountryOverlay, createMap, ZoomLevel } from './utils';
+import Table from './components/dt_table';
 
 // TODO table:
 // - Actions Symbol in letzte Spalte der Table adden
@@ -23,9 +24,6 @@ class DynatraceWorldmapApp {
 
     metricColorMapSelected = new Map();
     metricColorMapHover = new Map();
-
-    dataLabels = new Map();
-    tableHeadersPerMetric = new Map();
 
     selectedMetric = 'metricswitcher-apdex';
     primaryTableSelector = '#table_tab1';
@@ -63,7 +61,7 @@ class DynatraceWorldmapApp {
 
         createCountryOverlay(geomap, initialSelectedColor, initialHoverColor);
 
-        this.fillTable(currZoom ?? 1);
+        Table(this.data, currZoom ?? 1, this.primaryTableSelector, this.secondaryTableSelector);
     }
 
     initVariables() {
@@ -72,25 +70,6 @@ class DynatraceWorldmapApp {
 
         this.metricColorMapHover.set('metricswitcher-apdex', 'rgba(61, 199, 29, 0.5)');
         this.metricColorMapHover.set('other', 'rgba(97, 36, 127, 0.5)');
-
-        this.dataLabels.set('continent', 'Continent');
-        this.dataLabels.set('country', 'Country');
-        this.dataLabels.set('region', 'Region');
-        this.dataLabels.set('city', 'City');
-        this.dataLabels.set('apdex', 'Apdex');
-        this.dataLabels.set('useractions', 'User actions');
-        this.dataLabels.set('errors', 'Errors');
-        this.dataLabels.set('loadactions', 'Load actions');
-        this.dataLabels.set('totaluseractions', 'Total user actions');
-        this.dataLabels.set('affecteduseractions', 'Affected user actions');
-        this.dataLabels.set('Actions', 'Actions');
-
-        this.tableHeadersPerMetric.set('metricswitcher-apdex', ['apdex', 'useractions']);
-        this.tableHeadersPerMetric.set('metricswitcher-ua', ['useractions', 'totaluseractions']);
-        this.tableHeadersPerMetric.set('metricswitcher-load', ['loadactions', 'totaluseractions']);
-        this.tableHeadersPerMetric.set('metricswitcher-xhr', ['loadactions', 'totaluseractions']);
-        this.tableHeadersPerMetric.set('metricswitcher-custom', ['loadactions', 'totaluseractions']);
-        this.tableHeadersPerMetric.set('metricswitcher-errors', ['errors', 'totaluseractions']);
     }
 
     switchDynatraceMetric(element: string, geomap: OLMap) {
@@ -102,125 +81,6 @@ class DynatraceWorldmapApp {
         createCountryOverlay(geomap, colorSelected, colorHover);
 
         return $('#' + element).text;
-    }
-
-    fillTable(zoomLevel: number) {
-        let tabTitles = this.getGeographicTableColumnHeaders(zoomLevel);
-        let datasetPrimary = this.groupValuesPerLocation(tabTitles[0]);
-        let datasetSecondary = this.groupValuesPerLocation(tabTitles[1]);
-
-        this.fillTableContents(this.getColumnHeaders(this.primaryTableSelector, zoomLevel, true), this.primaryTableSelector, zoomLevel, datasetPrimary);
-        this.fillTableContents(this.getColumnHeaders(this.secondaryTableSelector, zoomLevel, false), this.secondaryTableSelector, zoomLevel, datasetSecondary);
-    }
-
-    fillTableContents(columnHeaders: string[], tableContainer: string, zoomLevel: number, dataset: Map<string, any>) {
-        $(tableContainer + "_title").html(this.dataLabels.get(columnHeaders[0]));
-
-        for (let key of dataset.keys()) {
-            let row$ = $('<tr/>');
-            let curElement = dataset.get(key);
-            let geolocationKey: string = columnHeaders[0].toString();
-            let geolocation = this.getLocationName(curElement[geolocationKey as keyof typeof curElement]);
-           
-            if (geolocation == undefined) continue;
-            row$.append($('<td/>').html(geolocation));
-            
-            for (var colIndex = 1; colIndex < columnHeaders.length; colIndex++) {
-                let key = columnHeaders[colIndex];
-                let cellValue = curElement[key as keyof typeof curElement];
-                if (cellValue == null) cellValue = "";
-                
-                cellValue = cellValue.toString(); // ensure that value is a string
-
-                row$.append($('<td/>').html(cellValue));
-            }
-
-            $(tableContainer).append(row$);
-        }
-    }
-
-    getColumnHeaders(selector: string, zoomLevel: number, primary: boolean) {
-        let columnSet: string[] = [];
-        let headerTr$ = $('<tr/>');
-
-        columnSet = columnSet.concat(this.getGeographicTableColumnHeaders(zoomLevel)[primary ? 0 : 1], this.tableHeadersPerMetric.get(this.selectedMetric), 'Actions');
-        for (var i = 0; i < columnSet.length; i++) {
-            headerTr$.append($('<th/>').html(this.dataLabels.get(columnSet[i])));
-        }
-        $(selector).append(headerTr$);
-
-        return columnSet;
-    }
-
-    getGeographicTableColumnHeaders(zoomLevel: number): string[] {
-        if (zoomLevel <= ZoomLevel.CONTINENT.level) {
-            return ['continent', 'country'];
-        } else {
-            return ['country', 'region'];
-        }
-        // TODO add handling for Region/City when data has been expanded
-    }
-
-    getLocationName(key: string | number | undefined): string {
-        let geoValue: string;
-        geoValue = this.geoLabels.continents[key as keyof typeof this.geoLabels.continents];
-        if (geoValue === undefined) { // check if geoValue is a country
-            geoValue = this.geoLabels.countries[key as keyof typeof this.geoLabels.countries];
-        }
-
-        if (geoValue === undefined) { // check if geoValue is a region
-            for (var i in this.geoLabels.regions) {
-                let temp = this.geoLabels.regions[i as keyof typeof this.geoLabels.regions];
-                geoValue = temp[key as keyof typeof temp];
-                if (geoValue != undefined) {
-                    break;
-                }
-            }
-        }
-
-        // TODO add check for city when data has been expanded accordingly
-
-        return geoValue;
-    }
-
-    groupValuesPerLocation(locationKey: string) {
-        
-        // group values together
-        let groupedValuesMap = new Map();
-        for (let i = 0; i < this.data.length; i++) {
-            let curElement = this.data[i];
-            let location = curElement[locationKey as keyof typeof curElement];
-            
-            if (groupedValuesMap.get(location) == undefined) { // add new element
-                groupedValuesMap.set(location, [curElement]);
-            } else { // add new value to existing one
-                let value: any[] = groupedValuesMap.get(location);
-                value.push(curElement);
-                groupedValuesMap.set(location, value);
-            }
-        }
-
-        // calculate new values per grouping
-        let newValuesMap = new Map();
-        groupedValuesMap.forEach(function(value, location){
-            let newValuesPerLocation: { [key: string]: any } = {};
-            newValuesPerLocation[locationKey] = location;
-            for (let key in value[0]) {
-                if (typeof value[0][key] === 'number') {
-                    let sum = 0;
-                    for (let i = 0; i < value.length; i++) {
-                        sum += value[i][key];
-                    }
-                    let avg = sum / value.length;
-
-                    newValuesPerLocation[key] = avg.toFixed(2);;
-                }
-            }
-            
-            newValuesMap.set(location, newValuesPerLocation);
-        });
-
-        return newValuesMap;
     }
 }
 
