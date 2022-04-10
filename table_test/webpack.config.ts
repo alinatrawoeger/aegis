@@ -1,8 +1,8 @@
-import { Configuration } from "webpack";
 import path from 'path';
 
 const config = {
   entry: "./src/index.tsx",
+  mode: "development",
   module: {
     rules: [
       {

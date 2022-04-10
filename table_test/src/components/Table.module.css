@@ -2,6 +2,7 @@
     display: block;
     border-collapse: collapse;
     width: 526px;
+    height: 220px;
     font-family: 'Arial Standard', 'Arial', sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -33,6 +34,10 @@
   padding: 8px 0 4px 0;
 }
 
+.tableLastCol {
+  text-align: center;
+}
+
 .table th:first-child, .table td:first-child {
   flex: 0 0 50%;
 }
@@ -46,30 +51,49 @@
 }
 
 .tableFooter {
-    padding: 8px 0px;
-    width: 526px;
-    text-align: left;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  padding: 8px 0px;
+  width: 526px;
+  text-align: left;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
   
-  .button {
-    border: none;
-    padding: 7px 14px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-right: 4px;
-    margin-left: 4px;
-  }
-  
-  .activeButton {
-    color: white;
-    background: #797979;
-  }
-  
-  .inactiveButton {
-    color: black;
-    background: white;
-  }
+.button {
+  border: none;
+  padding: 7px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+.arrowBtn {
+  color: #87ceeb;
+  font-weight: 700;
+  background: white;
+}
+
+.activeButton {
+  font-weight: 700;
+  background: lightgrey;
+}
+
+.inactiveButton {
+  background: white;
+}
+
+.disabledButton {
+  color: #a9a9a9;
+}
+
+.arrowPrevBtn {
+  position: absolute;
+  left: 100px;
+}
+
+.arrowNextBtn {
+  position: absolute;
+  left: 380px;
+}

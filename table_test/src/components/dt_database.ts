@@ -1,6 +1,5 @@
 export default [
     {
-        "id": 1,
         "continent": "Europe",
         "continent-iso": "EU",
         "country": "Austria",
@@ -16,7 +15,6 @@ export default [
         "affecteduseractions": 29.41
     },
     {
-        "id": 2,
         "continent": "Europe",
         "continent-iso": "EU",
         "country": "Austria",
@@ -32,7 +30,6 @@ export default [
         "affecteduseractions": 29.41
     },
     {
-        "id": 3,
         "continent": "Europe",
         "continent-iso": "EU",
         "country": "Austria",
@@ -45,7 +42,6 @@ export default [
         "affecteduseractions": 1.02
     },
     {
-        "id": 4,
         "continent": "Europe",
         "continent-iso": "EU",
         "country": "Germany",
@@ -58,7 +54,6 @@ export default [
         "affecteduseractions": 36.45
     },
     {
-        "id": 5,
         "continent": "North America",
         "continent-iso": "NA",
         "country": "United States",
@@ -74,7 +69,6 @@ export default [
         "affecteduseractions": 35.07
     },
     {
-        "id": 6,
         "continent": "Europe",
         "continent-iso": "EU",
         "country": "Germany",
@@ -90,7 +84,6 @@ export default [
         "affecteduseractions": 55.6
     },
     {
-        "id": 7,
         "continent": "Europe",
         "continent-iso": "EU",
         "country": "Great Britain",
@@ -105,7 +98,6 @@ export default [
         "affecteduseractions": 13.41
     },
     {
-        "id": 8,
         "continent": "Europe",
         "continent-iso": "EU",
         "country": "Spain",
@@ -113,6 +105,18 @@ export default [
         "apdex": 0.23,
         "useractions": 0.23,
         "errors": 0.18,
+        "loadactions": 0.60,
+        "totaluseractions": 11,
+        "affecteduseractions": 36.66
+    },
+    {
+        "continent": "Europe",
+        "continent-iso": "EU",
+        "country": "Norway",
+        "country-iso": "NO",
+        "apdex": 0.21,
+        "useractions": 0.18,
+        "errors": 0.17,
         "loadactions": 0.60,
         "totaluseractions": 11,
         "affecteduseractions": 36.66
