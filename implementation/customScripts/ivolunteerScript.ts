@@ -17,7 +17,7 @@ class IVolunteerWorldmapApp {
     this.metricMap.set('map_duration', '#63A109'); // duration (rgb(99, 161, 3))
     this.metricMap.set('map_importance', '#FFC800'); // priority (rgb(255, 200, 0))
   
-    let btns = $('[selectiongroup=OverlayMenu]');
+    let btns: any = $('[selectiongroup=OverlayMenu]');
     for (const btn of btns) {
         btn.addEventListener('click', (e: Event) => this.switchIVolunteerMetric(btn.id));
     }

@@ -5,7 +5,7 @@ module.exports = [
     {
         mode: 'development',
         devtool: 'source-map',
-        entry: './customScripts/dtApp.ts',
+        entry: './customScripts/dtApp',
         output: {
             path: path.resolve(__dirname, './dist'),
             filename: 'dtBundle.js',
@@ -22,38 +22,39 @@ module.exports = [
         module: {
             rules: [
                 { test: /.css$/, use: ['style-loader', 'css-loader'] },
-                { test: /.ts$/, use: 'ts-loader' },
+                { test: /\.tsx?$/, use: 'ts-loader', exclude: /node_modules/ },
+                { test: /.ts$/, use: 'ts-loader' }
             ]
         },
         resolve: {
-            extensions: ['.ts', '.js', '.json']
+            extensions: ['.tsx', '.ts', '.js', '.json']
         }
     },
-    {
-        mode: 'development',
-        devtool: 'source-map',
-        entry: './customScripts/iVolApp.ts',
-        output: {
-            path: path.resolve(__dirname, './dist'),
-            filename: 'iVolBundle.js',
-            library: 'IVolLib',
-            libraryTarget: 'umd'
-        },
-        plugins: [
-            new HtmlWebpackPlugin({
-                template: './ivolunteer_-_map.html',
-                inject: 'body',
-                scriptLoading: 'module'
-            })
-        ],
-        module: {
-            rules: [
-                { test: /.css$/, use: ['style-loader', 'css-loader'] },
-                { test: /.ts$/, use: 'ts-loader' },
-            ]
-        },
-        resolve: {
-            extensions: ['.ts', '.js', '.json']
-        }
-    },  
+    // {
+    //     mode: 'development',
+    //     devtool: 'source-map',
+    //     entry: './customScripts/iVolApp.ts',
+    //     output: {
+    //         path: path.resolve(__dirname, './dist'),
+    //         filename: 'iVolBundle.js',
+    //         library: 'IVolLib',
+    //         libraryTarget: 'umd'
+    //     },
+    //     plugins: [
+    //         new HtmlWebpackPlugin({
+    //             template: './ivolunteer_-_map.html',
+    //             inject: 'body',
+    //             scriptLoading: 'module'
+    //         })
+    //     ],
+    //     module: {
+    //         rules: [
+    //             { test: /.css$/, use: ['style-loader', 'css-loader'] },
+    //             { test: /.ts$/, use: 'ts-loader' },
+    //         ]
+    //     },
+    //     resolve: {
+    //         extensions: ['.ts', '.js', '.json']
+    //     }
+    // },  
 ];
