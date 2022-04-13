@@ -1,10 +1,10 @@
 import { Map as OLMap } from 'ol';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import geodata from '../data/dt_filters.json';
-import TableComponent from './components/table/TableComponent';
-import { createCountryOverlay, createMap, ZoomLevel } from './utils';
 import data from '../data/dt_database';
+import geodata from '../data/dt_filters.json';
+import Table from './components/table/Table';
+import { createCountryOverlay, createMap, ZoomLevel } from './utils';
 
 // TODO table:
 // - Actions Symbol in letzte Spalte der Table adden
@@ -67,9 +67,9 @@ class DynatraceWorldmapApp {
         // create table and contents
         let { datasetPrimary, datasetSecondary } = this.prepareData(data, currZoom);
         const primaryTable = ReactDOM.createRoot(document.getElementById(this.primaryTableSelector)!);
-        primaryTable.render(React.createElement(TableComponent, datasetPrimary));
+        primaryTable.render(React.createElement(Table, {data: datasetPrimary}));
         const secondaryTable = ReactDOM.createRoot(document.getElementById(this.secondaryTableSelector)!);
-        secondaryTable.render(React.createElement(TableComponent, datasetSecondary));
+        secondaryTable.render(React.createElement(Table, {data: datasetSecondary}));
     }
 
     initVariables() {

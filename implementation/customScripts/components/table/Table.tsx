@@ -6,15 +6,28 @@ import arrowLeftInactive from "./img/arrow_left_disabled.png";
 import arrowRight from "./img/arrow_right.png";
 import arrowRightInactive from "./img/arrow_right_disabled.png";
 
+const rowsPerPage: number = 5;
 
 type TableProps = {
-  data: any;
-  rowsPerPage: number;
+  data: any[];
 }
 
-const Table: React.FC<TableProps> = ({ data, rowsPerPage }) => {
+const Table: React.FC<TableProps> = ( { data } ) => {
+  const [locations] = useState([...data]);
+
   const [page, setPage] = useState(1);
-  const { dataOnPage, tableRange } = useTable(data, page, rowsPerPage);
+  const { dataOnPage, tableRange } = useTable(locations, page);
+  return (
+    <>
+    <div>
+      <TableContent dataOnPage={dataOnPage} />
+      <TablePagination pageRange={tableRange} dataOnPage={dataOnPage} setPage={setPage} page={page} />
+    </div>
+    </>
+  );
+}
+
+const TableContent = ({ dataOnPage }) => {
   return (
     <>
       <table className={styles.table}>
@@ -29,25 +42,63 @@ const Table: React.FC<TableProps> = ({ data, rowsPerPage }) => {
         <tbody>
           {dataOnPage.map((location) => (
             <tr className={styles.tableRowItems} key={location.location}>
-              <td className={styles.tableCell}>{location.location}</td>
+              <td className={`${styles.tableCell} ${styles.tableLink}`}>{location.location}</td>
               <td className={styles.tableCell}>{location.apdex}</td>
               <td className={styles.tableCell}>{location.useractions}</td>
               <td className={`${styles.tableCell} ${styles.tableLastCol}`}><a href="#">
-                {/* <img src={analyzeIcon} height="20" width="20" /> */}
-                link
+                <img src={analyzeIcon} className={styles.analyzeBtn} />
                 </a></td>
             </tr>
           ))}
         </tbody>
       </table>
-      <TablePagination pageRange={tableRange} dataOnPage={dataOnPage} setPage={setPage} page={page} />
     </>
   );
 };
 
+type TablePaginationProps = {
+  pageRange: number[];
+  setPage: any;
+  page: number;
+  dataOnPage: any;
+}
+
+const TablePagination: React.FC<TablePaginationProps> = ({ pageRange, setPage, page, dataOnPage }) => {
+  useEffect(() => {
+    if (dataOnPage.length < 1 && page !== 1) {
+      setPage(page - 1);
+    }
+  }, [dataOnPage, page, setPage]);
+  return (
+    <div className={styles.tableFooter}>
+      <button 
+        key='prev' 
+        className={`${styles.button} ${styles.arrowBtn} ${styles.arrowPrevBtn} ${ page === 1 ? styles.disabledButton : ''}`} 
+        onClick={() => page > 1 ? setPage(page-1) : setPage(page)}>
+        <img src={`${ page === 1 ? arrowLeftInactive : arrowLeft}`} height="16px" />
+      </button>
+      {pageRange.map((el: any, index: number) => (
+        <button 
+          key={index} 
+          className={`${styles.button} ${ page === el ? styles.activeButton : styles.inactiveButton }`} 
+          onClick={() => setPage(el)}> 
+          {el}
+        </button>
+      ))}
+      <button 
+        key='next' 
+        className={`${styles.button} ${styles.arrowBtn} ${styles.arrowNextBtn} ${ page === pageRange[pageRange.length-1] ? styles.disabledButton : ''}`} 
+        onClick={() => page < pageRange[pageRange.length-1] ? setPage(page+1) : setPage(page)}>
+        <img src={`${ page === pageRange[pageRange.length-1] ? arrowRightInactive : arrowRight}`} height="16px" />
+      </button>
+    </div>
+  );
+};
+
+
 // -- calculations & functions
 
-const calculatePageRange = (data: any, page: number, rowsPerPage: number): number[] => {
+const calculatePageRange = (data: any, page: number): number[] => {
   const pageRange: any[] = [];
   const num = Math.ceil(data.length / rowsPerPage);
   let i = 1;
@@ -73,63 +124,23 @@ const calculatePageRange = (data: any, page: number, rowsPerPage: number): numbe
   return pageRange;
 }
 
-const getDataOnPage = (data: any, page: number, rowsPerPage: number): number[] => {
+const getDataOnPage = (data: any, page: number): number[] => {
   return data.slice((page - 1) * rowsPerPage, page * rowsPerPage);
 }
 
-const useTable = (data: any, page: number, rowsPerPage: number) => {
+const useTable = (data: any, page: number) => {
   const [tableRange, setTableRange] = useState<Array<number>>([]);
   const [dataOnPage, setSlice] = useState<Array<any>>([]);
 
   useEffect(() => {
-    const range  = calculatePageRange(data, page, rowsPerPage);
+    const range  = calculatePageRange(data, page);
     setTableRange([...range]);
 
-    const dataOnPage = getDataOnPage(data, page, rowsPerPage);
+    const dataOnPage = getDataOnPage(data, page);
     setSlice([...dataOnPage]);
   }, [data, setTableRange, page, setSlice]);
 
   return { dataOnPage, tableRange };
 }
-
-type TablePaginationProps = {
-  pageRange: number[];
-  setPage: any;
-  page: number;
-  dataOnPage: any;
-}
-
-const TablePagination: React.FC<TablePaginationProps> = ({ pageRange, setPage, page, dataOnPage }) => {
-  useEffect(() => {
-    if (dataOnPage.length < 1 && page !== 1) {
-      setPage(page - 1);
-    }
-  }, [dataOnPage, page, setPage]);
-  return (
-    <div className={styles.tableFooter}>
-      <button 
-        key='prev' 
-        className={`${styles.button} ${styles.arrowBtn} ${styles.arrowPrevBtn} ${ page === 1 ? styles.disabledButton : ''}`} 
-        onClick={() => page > 1 ? setPage(page-1) : setPage(page)}>
-        {/* <img src={`${ page === 1 ? arrowLeftInactive : arrowLeft}`} height="16px" /> */}
-        prev
-      </button>
-      {pageRange.map((el: any, index: number) => (
-        <button 
-          key={index} 
-          className={`${styles.button} ${ page === el ? styles.activeButton : styles.inactiveButton }`} 
-          onClick={() => setPage(el)}> 
-          {el}
-        </button>
-      ))}
-      <button 
-        key='next' 
-        className={`${styles.button} ${styles.arrowBtn} ${styles.arrowNextBtn} ${ page === pageRange[pageRange.length-1] ? styles.disabledButton : ''}`} 
-        onClick={() => page < pageRange[pageRange.length-1] ? setPage(page+1) : setPage(page)}>
-        {/* <img src={`${ page === pageRange[pageRange.length-1] ? arrowRightInactive : arrowRight}`} height="16px" /> */} next
-      </button>
-    </div>
-  );
-};
 
 export default Table;

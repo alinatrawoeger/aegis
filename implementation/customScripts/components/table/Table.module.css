@@ -31,7 +31,7 @@
 .tableRowItems, .tableRowHeader {
   display: flex;
   text-align: left;
-  padding: 8px 0 4px 0;
+  padding: 4px 0 4px 0;
 }
 
 .tableLastCol {
@@ -50,8 +50,23 @@
     width: 189px;
 }
 
+.analyzeBtn {
+  height: 20px;
+  width: 20px;
+}
+
+.tableLink {
+  color: rgba(30, 152, 215, 1);
+  text-decoration: none;
+}
+
+.tableLink:hover {
+  text-decoration: underline;
+  cursor:pointer;
+}
+
 .tableFooter {
-  padding: 8px 0px;
+  padding: 12px 0px;
   width: 526px;
   text-align: left;
   font-size: 16px;

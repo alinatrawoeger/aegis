@@ -23,7 +23,14 @@ module.exports = [
             rules: [
                 { test: /.css$/, use: ['style-loader', 'css-loader'] },
                 { test: /\.tsx?$/, use: 'ts-loader', exclude: /node_modules/ },
-                { test: /.ts$/, use: 'ts-loader' }
+                { test: /.ts$/, use: 'ts-loader' },
+                {
+                    test: /\.(png|jpe?g|svg)$/,
+                    loader: 'file-loader',
+                    options: {
+                      name: '[name].[ext]',
+                    },
+                  },
             ]
         },
         resolve: {
