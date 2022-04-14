@@ -1,8 +1,8 @@
 import { Map as OLMap } from 'ol';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import data from '../data/dt_database';
-import geodata from '../data/dt_filters.json';
+import data from './data/dt_database';
+import geodata from './data/dt_filters.json';
 import Table from './components/table/Table';
 import { createCountryOverlay, createMap, ZoomLevel } from './utils';
 

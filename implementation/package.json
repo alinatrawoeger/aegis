@@ -5,11 +5,8 @@
   "main": "customScripts/dtApp.ts",
   "scripts": {
     "build": "webpack",
-    "tsc:w": "tsc -w",
-    "start": "react-scripts start",
-    "buildReact": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "serve": "webpack serve --mode development",
+    "tsc:w": "tsc -w"
   },
   "repository": {
     "type": "git",
@@ -25,7 +22,9 @@
     "@types/jquery": "^3.5.14",
     "@types/react": "^18.0.2",
     "@types/react-dom": "^18.0.0",
+    "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.6.0",
+    "fast-glob": "^3.2.11",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "react": "^18.0.0",

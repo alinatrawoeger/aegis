@@ -45,8 +45,11 @@
       $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
     </script>
 
+    <!-- workaround for missing favicon.ico --> 
+    <link rel="shortcut icon" href="#">
+
     <!-- custom script & CSS code (contd. at the bottom of the document)-->
-    <link   type="text/css" href="./customStyles/dynatraceStyle.css" rel="stylesheet">
+    <link   type="text/css" href="../styles/dynatraceStyle.css" rel="stylesheet">
   </head>
   <body>
     <div id="base" class="">
@@ -628,6 +631,6 @@
       </div>
     </div>
     <script src="resources/scripts/axure/ios.js"></script>
-    <script type="module" src="dist/dtBundle.js"></script>
+    <script type="module" src="../dtBundle.js"></script>
   </body>
 </html>

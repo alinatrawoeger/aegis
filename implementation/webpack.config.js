@@ -1,22 +1,35 @@
 const path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = [
     {
         mode: 'development',
         devtool: 'source-map',
-        entry: './customScripts/dtApp',
+        entry: './src/customCode/dtApp',
         output: {
             path: path.resolve(__dirname, './dist'),
             filename: 'dtBundle.js',
             library: 'DynatraceLib',
             libraryTarget: 'umd'
         },
+        devServer: {
+            static: './dist',
+            port: 21191,
+            hot: true,
+        },
         plugins: [
             new HtmlWebpackPlugin({
-                template: './dt_worldmap.html',
+                template: './src/index.html',
                 inject: 'body',
                 scriptLoading: 'module'
+            }),
+            new CopyPlugin({
+                patterns: [
+                  { from: "./src/axure", to: "axure" },
+                  { from: "./src/customCode/data/geodata", to: "data/geodata" },
+                  { from: "./src/customCode/styles", to: "styles" },
+                ]
             })
         ],
         module: {
@@ -28,9 +41,9 @@ module.exports = [
                     test: /\.(png|jpe?g|svg)$/,
                     loader: 'file-loader',
                     options: {
-                      name: '[name].[ext]',
+                      name: 'img/[name].[ext]',
                     },
-                  },
+                }
             ]
         },
         resolve: {

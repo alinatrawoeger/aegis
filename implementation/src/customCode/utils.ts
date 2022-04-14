@@ -78,7 +78,7 @@ export function createMap(target: string, zoom: ZoomLevel, lon: number, lat: num
 export function createCountryOverlay(map: OLMap, selectedColor: string, hoverColor: string) {
     let overlayLayer = new VectorLayer({
         source: new VectorSrc({
-            url: '../data/geodata/geolocations.geojson',
+            url: '../data/geodata/countries.geojson',
             format: new GeoJSON()
         })
     });
