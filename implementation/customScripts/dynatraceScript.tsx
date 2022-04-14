@@ -7,12 +7,11 @@ import Table from './components/table/Table';
 import { createCountryOverlay, createMap, ZoomLevel } from './utils';
 
 // TODO table:
-// - Actions Symbol in letzte Spalte der Table adden
-// - Spalten sortieren
 // - Spalten auf Metric reagieren lassen
 // - ZoomLevel setzen beim zoomen damit table drauf reagiert
 
 // TODO others:
+// - Metric switch soll opacity vom Overlay nicht beeinflussen
 // - Beispieldaten reinfeeden in Filterbar
 // - Beispieldaten reinfeeden in Tooltip
 // - Filterbar soll Daten beeinflussen
@@ -96,6 +95,7 @@ class DynatraceWorldmapApp {
         return $('#' + element).text;
     }
 
+    // table methods
     prepareData = (data: any, zoomLevel: number) => {
         let tabTitles = this.getTableTabHeaders(zoomLevel);
         let datasetPrimary = this.groupValuesPerLocation(data, tabTitles[0]);
@@ -105,62 +105,62 @@ class DynatraceWorldmapApp {
         $('#table_tab2_title').html(this.dataLabels.get(tabTitles[1]));
       
         return {datasetPrimary, datasetSecondary};
-      }
+    }
       
-      getTableTabHeaders = (zoomLevel: number): string[] => {
+    getTableTabHeaders = (zoomLevel: number): string[] => {
         if (zoomLevel <= ZoomLevel.CONTINENT.level) {
             return ['continent', 'country'];
         } else {
             return ['country', 'region'];
         }
         // TODO add handling for Region/City when data has been expanded
-      }
-      
-      groupValuesPerLocation = (data: any, locationKey: string) => {
+    }
+    
+    groupValuesPerLocation = (data: any, locationKey: string) => {
         let groupedValuesMap: any[] = [];
         for (let i = 0; i < data.length; i++) {
             let curElement = data[i];
             let location = curElement[locationKey as keyof typeof curElement];
             
             if (location != undefined) {
-              if (groupedValuesMap[location] === undefined) { // add new element
-                  groupedValuesMap[location] = [curElement];
-              } else { // add new value to existing one
-                  let value: any[] = groupedValuesMap[location];
-                  value.push(curElement);
-                  groupedValuesMap[location] = value;
-              }
+                if (groupedValuesMap[location] === undefined) { // add new element
+                    groupedValuesMap[location] = [curElement];
+                } else { // add new value to existing one
+                    let value: any[] = groupedValuesMap[location];
+                    value.push(curElement);
+                    groupedValuesMap[location] = value;
+                }
             }
         }
-      
+        
         // calculate new values per grouping
         let newValues: any[] = [];
         for (let location in groupedValuesMap) {
-          let value = groupedValuesMap[location];
-      
-          let newValuesPerLocation: { [key: string]: any } = {};
-          newValuesPerLocation['location'] = location;
-          for (let key in value[0]) {
-              if (typeof value[0][key] === 'number') {
-                  let sum = 0;
-                  for (let i = 0; i < value.length; i++) {
-                      sum += value[i][key];
-                  }
-                  let avg = sum / value.length;
-      
-                  newValuesPerLocation[key] = avg.toFixed(2);;
-              }
-          }
-          
-          newValues.push(newValuesPerLocation);
+            let value = groupedValuesMap[location];
+        
+            let newValuesPerLocation: { [key: string]: any } = {};
+            newValuesPerLocation['location'] = location;
+            for (let key in value[0]) {
+                if (typeof value[0][key] === 'number') {
+                    let sum = 0;
+                    for (let i = 0; i < value.length; i++) {
+                        sum += value[i][key];
+                    }
+                    let avg = sum / value.length;
+        
+                    newValuesPerLocation[key] = avg.toFixed(2);;
+                }
+            }
+            
+            newValues.push(newValuesPerLocation);
         }
-      
+        
         newValues.sort(function(a, b){
-          return b.apdex - a.apdex;
+            return b.apdex - a.apdex;
         });
-      
+        
         return newValues;
-      }
+    }
 }
 
 // start app

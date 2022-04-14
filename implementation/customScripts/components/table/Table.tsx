@@ -19,10 +19,8 @@ const Table: React.FC<TableProps> = ( { data } ) => {
   const { dataOnPage, tableRange } = useTable(locations, page);
   return (
     <>
-    <div>
       <TableContent dataOnPage={dataOnPage} />
       <TablePagination pageRange={tableRange} dataOnPage={dataOnPage} setPage={setPage} page={page} />
-    </div>
     </>
   );
 }
