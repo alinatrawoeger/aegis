@@ -1,0 +1,26 @@
+.metricSwitcherPanel {
+    display: flex;
+    border: 2px solid black;
+}
+
+.metricSwitcherPanel > *:not(:last-child) {
+    border-right: 1px solid black;
+}
+
+.elementPanel {
+    width:110px;
+    height:30px;
+    display:flex;
+    font-family:'Arial Fett', 'Arial Standard', 'Arial', sans-serif;
+    font-style:normal;
+    color:rgba(98, 36, 128, 1);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+}
+
+.selectedElement {
+    background-color: rgba(98, 36, 128, 1);
+    color: white;
+}

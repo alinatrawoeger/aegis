@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 import data from './data/dt_database';
 import geodata from './data/dt_filters.json';
 import Table from './components/table/Table';
+import MetricSwitcher from './components/metricswitcher/MetricSwitcher';
 import { createCountryOverlay, createMap, ZoomLevel } from './utils';
 
 // TODO table:
@@ -28,7 +29,9 @@ class DynatraceWorldmapApp {
     metricColorMapSelected = new Map();
     metricColorMapHover = new Map();
 
-    selectedMetric = 'metricswitcher-apdex';
+    metricswitcherPanel = 'metricswitcher-panel';
+    selectedMetricId = 'metricswitcher-apdex';
+    selectedMetric = 'apdex';
     primaryTableSelector = 'table_tab1';
     secondaryTableSelector = 'table_tab2';
 
@@ -44,7 +47,10 @@ class DynatraceWorldmapApp {
 
         let metricSwitcherButtons: any = $(".metricSwitcherBtn");
         for (const btn of metricSwitcherButtons) {
-            btn.addEventListener('click', (e: Event) => this.switchDynatraceMetric(btn.id, geomap));
+            btn.addEventListener('click', (e: Event) => {
+                this.switchDynatraceMetric(btn.id, geomap);
+                this.selectedMetric = btn.id;
+            });
         }
         
         let geomap: OLMap = createMap('geomap_dt', ZoomLevel.COUNTRY, this.longitude, this.latitude, true);
@@ -69,6 +75,9 @@ class DynatraceWorldmapApp {
         primaryTable.render(React.createElement(Table, {data: datasetPrimary}));
         const secondaryTable = ReactDOM.createRoot(document.getElementById(this.secondaryTableSelector)!);
         secondaryTable.render(React.createElement(Table, {data: datasetSecondary}));
+
+        const test = ReactDOM.createRoot(document.getElementById(this.metricswitcherPanel)!);
+        test.render(React.createElement(MetricSwitcher));
     }
 
     initVariables() {
@@ -85,7 +94,7 @@ class DynatraceWorldmapApp {
     }
 
     switchDynatraceMetric(element: string, geomap: OLMap) {
-        this.selectedMetric = element;
+        this.selectedMetricId = element;
         var colorSelected = this.metricColorMapSelected.has(element) ? this.metricColorMapSelected.get(element) : this.metricColorMapSelected.get('other');
         var colorHover = this.metricColorMapHover.has(element) ? this.metricColorMapHover.get(element) : this.metricColorMapHover.get('other');
         $('[selectiongroup=MetricSwitcherDt]').removeClass('selected');
