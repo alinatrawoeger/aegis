@@ -6,43 +6,46 @@ import arrowLeftInactive from "./img/arrow_left_disabled.png";
 import arrowRight from "./img/arrow_right.png";
 import arrowRightInactive from "./img/arrow_right_disabled.png";
 
-const rowsPerPage: number = 5;
+let rowsPerPage: number;
 
 type TableProps = {
   data: any[];
+  columnHeaders: string[];
+  isIVolunteer: boolean; // distinguishes between DT and iVol table
 }
 
-const Table: React.FC<TableProps> = ( { data } ) => {
-  const [locations] = useState([...data]);
+const Table: React.FC<TableProps> = ( { data, columnHeaders, isIVolunteer } ) => {
+  rowsPerPage = isIVolunteer ? 4 : 5;
 
+  const [locations] = useState([...data]);
   const [page, setPage] = useState(1);
   const { dataOnPage, tableRange } = useTable(locations, page);
   return (
     <>
-      <TableContent dataOnPage={dataOnPage} />
+      <TableContent dataOnPage={dataOnPage} columnHeaders={columnHeaders} isIVolunteer={isIVolunteer} />
       <TablePagination pageRange={tableRange} dataOnPage={dataOnPage} setPage={setPage} page={page} />
     </>
   );
 }
 
-const TableContent = ({ dataOnPage }) => {
+const TableContent = ({ dataOnPage, columnHeaders, isIVolunteer }) => {
   return (
     <>
-      <table className={styles.table}>
+      <table className={`${styles.table} ${isIVolunteer ? styles.tableIvol : styles.tableDt}`}>
         <thead>
           <tr className={styles.tableRowHeader}>
-            <th className={styles.tableHeader}>Location</th>
-            <th className={styles.tableHeader}>Apdex</th>
-            <th className={styles.tableHeader}>User actions</th>
-            <th className={styles.tableHeader}>Actions</th>
+            {columnHeaders.map((header) => (
+              <th key={header} className={styles.tableHeader}>{header}</th>
+            ))}
+            <th className={styles.tableHeader}>Details</th>
           </tr>
         </thead>
         <tbody>
-          {dataOnPage.map((location) => (
-            <tr className={styles.tableRowItems} key={location.location}>
-              <td className={`${styles.tableCell} ${styles.tableLink}`}>{location.location}</td>
-              <td className={styles.tableCell}>{location.apdex}</td>
-              <td className={styles.tableCell}>{location.useractions}</td>
+          {dataOnPage.map((dataRow) => (
+            <tr className={styles.tableRowItems} key={isIVolunteer ? dataRow.taskid : dataRow.location}>
+              <td className={`${styles.tableCell} ${styles.tableLink}`}>{isIVolunteer ? dataRow.taskname : dataRow.location}</td>
+              <td className={styles.tableCell}>{isIVolunteer ? dataRow.taskid : dataRow.apdex}</td>
+              {!isIVolunteer ?? <td className={styles.tableCell}>{dataRow.useractions}</td>}
               <td className={`${styles.tableCell} ${styles.tableLastCol}`}><a href="#">
                 <img src={analyzeIcon} className={styles.analyzeBtn} />
                 </a></td>

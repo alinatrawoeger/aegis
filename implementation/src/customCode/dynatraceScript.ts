@@ -71,13 +71,15 @@ class DynatraceWorldmapApp {
 
         // create table and contents
         let { datasetPrimary, datasetSecondary } = this.prepareData(data, currZoom);
+        let headers = ['Location', 'Apdex', 'User actions'];
+
         const primaryTable = ReactDOM.createRoot(document.getElementById(this.primaryTableSelector)!);
-        primaryTable.render(React.createElement(Table, {data: datasetPrimary}));
+        primaryTable.render(React.createElement(Table, {data: datasetPrimary, columnHeaders: headers, isIVolunteer: false }));
         const secondaryTable = ReactDOM.createRoot(document.getElementById(this.secondaryTableSelector)!);
-        secondaryTable.render(React.createElement(Table, {data: datasetSecondary}));
+        secondaryTable.render(React.createElement(Table, {data: datasetSecondary, columnHeaders: headers, isIVolunteer: false}));
 
         const test = ReactDOM.createRoot(document.getElementById(this.metricswitcherPanel)!);
-        test.render(React.createElement(MetricSwitcher));
+        test.render(React.createElement(MetricSwitcher, {isIVolunteer: false }));
     }
 
     initVariables() {

@@ -1,7 +1,6 @@
 .table {
     display: block;
     border-collapse: collapse;
-    width: 526px;
     height: 180px;
     font-family: 'Arial Standard', 'Arial', sans-serif;
     font-weight: 400;
@@ -12,6 +11,15 @@
     text-align: center;
     line-height: normal;
     text-transform: none;
+}
+
+.tableDt {
+  width: 526px;
+  height: 180px;
+}
+
+.tableIvol {
+  height: 150px;
 }
 
 .table > thead, .table > tbody {

@@ -1,26 +1,62 @@
 .metricSwitcherPanel {
     display: flex;
+}
+
+.metricSwitcherPanelDt {
     border: 2px solid black;
 }
 
-.metricSwitcherPanel > *:not(:last-child) {
+.metricSwitcherPanelIVol {
+    border: 2px solid rgba(2, 167, 240, 1);
+}
+
+.metricSwitcherPanelDt > *:not(:last-child) {
     border-right: 1px solid black;
 }
 
+.metricSwitcherPanelIVol > *:not(:last-child) {
+    border-right: 2px solid rgba(2, 167, 240, 1);
+}
+
 .elementPanel {
-    width:110px;
     height:30px;
     display:flex;
     font-family:'Arial Fett', 'Arial Standard', 'Arial', sans-serif;
     font-style:normal;
-    color:rgba(98, 36, 128, 1);
     text-align: center;
     align-items: center;
     justify-content: center;
     cursor: default;
 }
 
-.selectedElement {
+.elementPanelDt {
+    color:rgba(98, 36, 128, 1);
+    width:110px;
+}
+
+.elementPanelIVol {
+    flex-grow: 1;
+}
+
+.selectedElementDt {
     background-color: rgba(98, 36, 128, 1);
     color: white;
+}
+
+.selectedElementIVolUrgency {
+    background-color: rgb(174, 37, 12);
+    color: white;
+    font-weight: 700;
+}
+
+.selectedElementIVolPriority {
+    background-color: rgb(255, 179, 0);
+    color: white;
+    font-weight: 700;
+}
+
+.selectedElementIVolDuration {
+    background-color: rgb(3, 102, 7);
+    color: white;
+    font-weight: 700;
 }
