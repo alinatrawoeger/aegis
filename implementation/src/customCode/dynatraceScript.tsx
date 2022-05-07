@@ -1,11 +1,13 @@
 import { Map as OLMap } from 'ol';
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom/client';
+import CustomMap from './components/map/Map';
+import GeoJSON from 'ol/format/GeoJSON';
+import MetricSwitcher from './components/metricswitcher/MetricSwitcher';
+import Table from './components/table/Table';
 import data from './data/dt_database';
 import geodata from './data/dt_filters.json';
-import Table from './components/table/Table';
-import MetricSwitcher from './components/metricswitcher/MetricSwitcher';
-import { createCountryOverlay, createMap, ZoomLevel } from './utils';
+import { createCountryOverlay, ZoomLevel } from './utils';
 
 // TODO table:
 // - Spalten auf Metric reagieren lassen
@@ -19,7 +21,7 @@ import { createCountryOverlay, createMap, ZoomLevel } from './utils';
 // - fix markiertes country overlay soll auf metric switcher reagieren
 // - erneuter klick auf markiertes country soll die markierung aufheben
 
-class DynatraceWorldmapApp {
+class DynatraceWorldmapApp extends Component {
     // test data (coordinates of Linz)
     longitude = 14.2858;
     latitude = 48.3069;
@@ -35,54 +37,15 @@ class DynatraceWorldmapApp {
     primaryTableSelector = 'table_tab1';
     secondaryTableSelector = 'table_tab2';
 
+    initialSelectedColor = this.metricColorMapSelected.get('metricswitcher-apdex');
+    initialHoverColor = this.metricColorMapHover.get('metricswitcher-apdex');
+
     geoLabels = geodata;
 
-    constructor() {
+    constructor(props) {
+        super(props);
+
         // initialize variables
-        this.initVariables();
-        let initialSelectedColor = this.metricColorMapSelected.get('metricswitcher-apdex');
-        let initialHoverColor = this.metricColorMapHover.get('metricswitcher-apdex');
-
-        // -----------------------
-
-        let metricSwitcherButtons: any = $(".metricSwitcherBtn");
-        for (const btn of metricSwitcherButtons) {
-            btn.addEventListener('click', (e: Event) => {
-                this.switchDynatraceMetric(btn.id, geomap);
-                this.selectedMetric = btn.id;
-            });
-        }
-        
-        let geomap: OLMap = createMap('geomap_dt', ZoomLevel.COUNTRY, this.longitude, this.latitude, true);
-        let currZoom = geomap.getView().getZoom();
-        geomap.on('moveend', function(e) {
-            var newZoom = geomap.getView().getZoom();
-            if (currZoom != newZoom) {
-                if (newZoom != undefined && newZoom > ZoomLevel.CONTINENT.level) {
-                    // update table accordingly
-                } else if (newZoom != undefined && newZoom < ZoomLevel.COUNTRY.level) {
-                    // update table accordingly
-                }
-                currZoom = newZoom;
-            } 
-        });
-
-        createCountryOverlay(geomap, initialSelectedColor, initialHoverColor);
-
-        // create table and contents
-        let { datasetPrimary, datasetSecondary } = this.prepareData(data, currZoom);
-        let headers = ['Location', 'Apdex', 'User actions'];
-
-        const primaryTable = ReactDOM.createRoot(document.getElementById(this.primaryTableSelector)!);
-        primaryTable.render(React.createElement(Table, {data: datasetPrimary, columnHeaders: headers, isIVolunteer: false }));
-        const secondaryTable = ReactDOM.createRoot(document.getElementById(this.secondaryTableSelector)!);
-        secondaryTable.render(React.createElement(Table, {data: datasetSecondary, columnHeaders: headers, isIVolunteer: false}));
-
-        const test = ReactDOM.createRoot(document.getElementById(this.metricswitcherPanel)!);
-        test.render(React.createElement(MetricSwitcher, {isIVolunteer: false }));
-    }
-
-    initVariables() {
         this.dataLabels.set('continent', 'Continent');
         this.dataLabels.set('country', 'Country');
         this.dataLabels.set('region', 'Region');
@@ -93,17 +56,29 @@ class DynatraceWorldmapApp {
 
         this.metricColorMapHover.set('metricswitcher-apdex', 'rgba(61, 199, 29, 0.5)');
         this.metricColorMapHover.set('other', 'rgba(97, 36, 127, 0.5)');
+
+        // initialize table & metric switcher stuff
+        let { datasetPrimary, datasetSecondary } = this.prepareData(data, ZoomLevel.COUNTRY);
+        let headers = ['Location', 'Apdex', 'User actions'];
+
+        const primaryTable = ReactDOM.createRoot(document.getElementById(this.primaryTableSelector)!);
+        primaryTable.render(React.createElement(Table, {data: datasetPrimary, columnHeaders: headers, isIVolunteer: false }));
+        const secondaryTable = ReactDOM.createRoot(document.getElementById(this.secondaryTableSelector)!);
+        secondaryTable.render(React.createElement(Table, {data: datasetSecondary, columnHeaders: headers, isIVolunteer: false}));
+
+        const metricSwitcher = ReactDOM.createRoot(document.getElementById(this.metricswitcherPanel)!);
+        metricSwitcher.render(React.createElement(MetricSwitcher, { isIVolunteer: false }));
+
+        // initialize map component
+        const map = ReactDOM.createRoot(document.getElementById('geomap_dt')!);
+        map.render(React.createElement(CustomMap, {selectedMetric: 'apdex', hasMinimap: true }));
     }
 
-    switchDynatraceMetric(element: string, geomap: OLMap) {
-        this.selectedMetricId = element;
-        var colorSelected = this.metricColorMapSelected.has(element) ? this.metricColorMapSelected.get(element) : this.metricColorMapSelected.get('other');
-        var colorHover = this.metricColorMapHover.has(element) ? this.metricColorMapHover.get(element) : this.metricColorMapHover.get('other');
-        $('[selectiongroup=MetricSwitcherDt]').removeClass('selected');
-        $('#' + element).addClass('selected');
-        createCountryOverlay(geomap, colorSelected, colorHover);
-
-        return $('#' + element).text;
+    render() {
+        return (
+            <>
+            </>
+        )
     }
 
     // table methods
@@ -119,7 +94,7 @@ class DynatraceWorldmapApp {
     }
       
     getTableTabHeaders = (zoomLevel: number): string[] => {
-        if (zoomLevel <= ZoomLevel.CONTINENT.level) {
+        if (zoomLevel <= ZoomLevel.CONTINENT) {
             return ['continent', 'country'];
         } else {
             return ['country', 'region'];
@@ -174,5 +149,4 @@ class DynatraceWorldmapApp {
     }
 }
 
-// start app
-new DynatraceWorldmapApp();
+export default DynatraceWorldmapApp;

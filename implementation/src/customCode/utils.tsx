@@ -14,18 +14,12 @@ import { Fill, Stroke, Style } from 'ol/style';
 
 // ---------------------------------------------------------------------
 
-export class ZoomLevel {
-    static WORLD = new ZoomLevel(1);
-    static CONTINENT = new ZoomLevel(3);
-    static COUNTRY = new ZoomLevel(6);
-    static REGION = new ZoomLevel(8);
-    static CITY = new ZoomLevel(10);
-    
-    level: number;
-
-    constructor(level: number) {
-        this.level = level;
-    }
+export enum ZoomLevel {
+    WORLD = 1,
+    CONTINENT = 3,
+    COUNTRY = 6,
+    REGION = 8,
+    CITY = 10
 }
 
 // ---------------------------------------------------------------------
@@ -45,7 +39,7 @@ export function createMap(target: string, zoom: ZoomLevel, lon: number, lat: num
     });
     var view = new View({
         center: fromLonLat([lon, lat]),
-        zoom: zoom.level
+        zoom: zoom
     });
 
     if (hasMinimap) {

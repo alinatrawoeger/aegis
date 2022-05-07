@@ -1,3 +1,4 @@
+Geo stuff:
 AT-Regions: 
     https://github.com/ginseng666/GeoJSON-TopoJSON-Austria
     All files CC BY 4.0, Flooh Perlot (https://creativecommons.org/licenses/by/4.0/)
@@ -10,3 +11,12 @@ DE-Regions:
 
 US-States:
     https://gist.github.com/mapsam/d066b572e8a8ad2b6d16    
+
+
+
+React stuff:
+Table with pagination in React:
+    https://github.com/FranciscoMendes10866/table_pagination
+
+OL with React:
+    https://taylor.callsen.me/using-openlayers-with-react-functional-components/
