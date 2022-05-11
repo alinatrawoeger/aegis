@@ -13,20 +13,27 @@ import { Fill, Stroke, Style } from "ol/style";
 import React, { useEffect, useRef, useState } from "react";
 import { ZoomLevel } from "../../utils";
 import styles from "./Map.module.css";
+import dataDt from "../../data/dt_database";
+import dataIVol from "../../data/ivol_database";
+import DynatraceWorldmapApp from '../../dynatraceScript';
 
 // test data (coordinates of Linz)
 const longitude = 14.2858;
 const latitude = 48.3069;
+
 
 const apdexSelectedColor = 'rgba(61, 199, 29, 0.9)';
 const apdexHoverColor = 'rgba(61, 199, 29, 0.5)';
 const otherSelectedColor = '';
 const otherHoverColor = ''
 
+let data;
+
 let previouslySelectedLocation;
 let previouslyHoveredLocation;
 
 function CustomMap ({ selectedMetric, hasMinimap }) {
+    data = hasMinimap ? dataDt : dataIVol;
     
     // initialization 
     const [ map, setMap ] = useState<OLMap>()
@@ -127,10 +134,29 @@ function CustomMap ({ selectedMetric, hasMinimap }) {
             selectedLocation.setStyle(selectStyle);
             previouslySelectedLocation = selectedLocation;
             
+            // add tooltip information
             const tooltipTitle = document.getElementById('tooltipTitle');
             if (tooltipTitle) {
                 if (selectedLocation) {
                     tooltipTitle.innerHTML = selectedLocation.get('name');
+
+                    // Show Dynatrace-related information
+                    if (hasMinimap) {
+                        let values = groupValuesPerLocation(data, 'country-iso');
+                        for (var i = 0; i < values.length; i++) {
+                            let curElement = values[i];
+                            if (curElement['location'] == selectedLocation.getId()) {
+                                // TODO insert all data into tooltip
+                                document.getElementById('tooltip_apdex').innerHTML = curElement['apdex'];
+                                document.getElementById('tooltip_useractions').innerHTML = curElement['useractions'] + '/min';
+                                document.getElementById('tooltip_errors').innerHTML = curElement['errors'] + '/min';
+                                document.getElementById('tooltip_loadactions').innerHTML = curElement['loadactions'];
+                                document.getElementById('tooltip_totaluseractions').innerHTML = curElement['totaluseractions'];
+                                document.getElementById('tooltip_affecteduseractions').innerHTML = curElement['affecteduseractions'] + ' %';
+                                break;
+                            }
+                        }
+                    }
                 } else {
                     tooltipTitle.innerHTML = '&nbsp;';
                 }
@@ -188,6 +214,52 @@ const createMap = (target: string, zoom: ZoomLevel, lon: number, lat: number, ha
             view: view
         });     
     }
+}
+
+const groupValuesPerLocation = (data: any, locationKey: string) => {
+    let groupedValuesMap: any[] = [];
+    for (let i = 0; i < data.length; i++) {
+        let curElement = data[i];
+        let location = curElement[locationKey as keyof typeof curElement];
+        
+        if (location != undefined) {
+            if (groupedValuesMap[location] === undefined) { // add new element
+                groupedValuesMap[location] = [curElement];
+            } else { // add new value to existing one
+                let value: any[] = groupedValuesMap[location];
+                value.push(curElement);
+                groupedValuesMap[location] = value;
+            }
+        }
+    }
+    
+    // calculate new values per grouping
+    let newValues: any[] = [];
+    for (let location in groupedValuesMap) {
+        let value = groupedValuesMap[location];
+    
+        let newValuesPerLocation: { [key: string]: any } = {};
+        newValuesPerLocation['location'] = location;
+        for (let key in value[0]) {
+            if (typeof value[0][key] === 'number') {
+                let sum = 0;
+                for (let i = 0; i < value.length; i++) {
+                    sum += value[i][key];
+                }
+                let avg = sum / value.length;
+    
+                newValuesPerLocation[key] = avg.toFixed(2);;
+            }
+        }
+        
+        newValues.push(newValuesPerLocation);
+    }
+    
+    newValues.sort(function(a, b){
+        return b.apdex - a.apdex;
+    });
+    
+    return newValues;
 }
 
 export default CustomMap;

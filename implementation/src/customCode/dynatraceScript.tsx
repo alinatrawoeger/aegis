@@ -74,13 +74,6 @@ class DynatraceWorldmapApp extends Component {
         map.render(React.createElement(CustomMap, {selectedMetric: 'apdex', hasMinimap: true }));
     }
 
-    render() {
-        return (
-            <>
-            </>
-        )
-    }
-
     // table methods
     prepareData = (data: any, zoomLevel: number) => {
         let tabTitles = this.getTableTabHeaders(zoomLevel);
@@ -146,6 +139,13 @@ class DynatraceWorldmapApp extends Component {
         });
         
         return newValues;
+    }
+
+    render() {
+        return (
+            <>
+            </>
+        )
     }
 }
 
