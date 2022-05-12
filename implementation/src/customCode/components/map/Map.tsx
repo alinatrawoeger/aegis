@@ -25,22 +25,70 @@ const latitude = 48.3069;
 const apdexSelectedColor = 'rgba(61, 199, 29, 0.9)';
 const apdexHoverColor = 'rgba(61, 199, 29, 0.5)';
 const otherSelectedColor = '';
-const otherHoverColor = ''
+const otherHoverColor = '';
+
+let overlayColorMap = {
+    'apdex': {
+        1.0: {
+            selectedColor: 'rgba(61, 199, 29, 0.9)',
+            hoverColor: 'rgba(61, 199, 29, 0.5)',
+            name: 'Excellent'
+        },
+        0.85: {
+            selectedColor: 'rgba(61, 199, 29, 0.9)',
+            hoverColor: 'rgba(61, 199, 29, 0.5)',
+            name: 'Good'
+        },
+        0.70: {
+            selectedColor: 'rgba(61, 199, 29, 0.9)',
+            hoverColor: 'rgba(61, 199, 29, 0.5)',
+            name: 'Average'
+        },
+        0.60: {
+            selectedColor: 'rgba(61, 199, 29, 0.9)',
+            hoverColor: 'rgba(61, 199, 29, 0.5)',
+            name: 'Poor'
+        },
+        0.50: {
+            selectedColor: 'rgba(61, 199, 29, 0.9)',
+            hoverColor: 'rgba(61, 199, 29, 0.5)',
+            name: 'Unacceptable'
+        }
+    },
+    'other': {
+        selectedColor: 'rgba(98, 36, 128, 0.9)',
+        hoverColor: 'rgba(98, 36, 128, 0.5)',
+    }
+};
+
 
 let data;
+
+let selectedColor;
+let hoverColor;
 
 let previouslySelectedLocation;
 let previouslyHoveredLocation;
 
 function CustomMap ({ selectedMetric, hasMinimap }) {
     data = hasMinimap ? dataDt : dataIVol;
+
+    if (hasMinimap) {
+        if (selectedMetric === 'apdex') {
+            selectedColor = overlayColorMap.apdex[1].selectedColor;
+            hoverColor = overlayColorMap.apdex[1].hoverColor;
+        } else {
+            selectedColor = overlayColorMap.other.selectedColor;
+            hoverColor = overlayColorMap.other.hoverColor;
+        }
+    } else {
+        // TODO add ivolunteer handling
+    }
     
     // initialization 
     const [ map, setMap ] = useState<OLMap>()
     let [ selectedLocation, setSelectedLocation ] = useState<Feature<Geometry> | undefined>();
     let [ hoveredLocation, setHoveredLocation ] = useState<Feature<Geometry> | undefined>();
-    let [ selectedColor, setSelectedColor ] = useState(apdexSelectedColor);
-    let [ hoverColor, setHoverColor ] = useState(apdexHoverColor);
     const [ zoom, setZoom ] = useState<ZoomLevel>();
     const [ selectedCoordinates , setSelectedCoordinates ] = useState()
 
@@ -103,7 +151,8 @@ function CustomMap ({ selectedMetric, hasMinimap }) {
         }),
     });  
 
-    // hover functions on overlay
+
+    // click & hover functions on overlay
     const handleHover = (event) => {        
         mapRef.current.forEachFeatureAtPixel(event.pixel, function (feature) {
             if (selectedLocation !== feature) {
@@ -115,7 +164,6 @@ function CustomMap ({ selectedMetric, hasMinimap }) {
         });
     }
 
-    // Click functions on overlay
     const handleMapClick = (event) => {
         // higlight newly selected location
         mapRef.current.forEachFeatureAtPixel(event.pixel, function (feature) {
@@ -146,16 +194,17 @@ function CustomMap ({ selectedMetric, hasMinimap }) {
                         for (var i = 0; i < values.length; i++) {
                             let curElement = values[i];
                             if (curElement['location'] == selectedLocation.getId()) {
-                                // TODO insert all data into tooltip
-                                document.getElementById('tooltip_apdex').innerHTML = curElement['apdex'];
-                                document.getElementById('tooltip_useractions').innerHTML = curElement['useractions'] + '/min';
-                                document.getElementById('tooltip_errors').innerHTML = curElement['errors'] + '/min';
-                                document.getElementById('tooltip_loadactions').innerHTML = curElement['loadactions'];
-                                document.getElementById('tooltip_totaluseractions').innerHTML = curElement['totaluseractions'];
-                                document.getElementById('tooltip_affecteduseractions').innerHTML = curElement['affecteduseractions'] + ' %';
+                                $('#tooltip_apdex').text(curElement['apdex']);
+                                $('#tooltip_useractions').text(curElement['useractions'] + '/min');
+                                $('#tooltip_errors').text(curElement['errors'] + '/min');
+                                $('#tooltip_loadactions').text(curElement['loadactions']);
+                                $('#tooltip_totaluseractions').text(curElement['totaluseractions']);
+                                $('#tooltip_affecteduseractions').text(curElement['affecteduseractions'] + ' %');
                                 break;
                             }
                         }
+                    } else {
+                        // TODO add iVolunteer Tooltip info
                     }
                 } else {
                     tooltipTitle.innerHTML = '&nbsp;';
@@ -176,7 +225,9 @@ function CustomMap ({ selectedMetric, hasMinimap }) {
     }, [selectedLocation, hoveredLocation]);
     
     return (
-        <div ref={mapElement} className={hasMinimap ? styles.container_dt : styles.container_ivol}></div>
+        <>
+            <div ref={mapElement} className={hasMinimap ? styles.container_dt : styles.container_ivol}></div>
+        </>
       )
 }
 

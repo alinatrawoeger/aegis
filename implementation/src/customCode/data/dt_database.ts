@@ -11,6 +11,8 @@ export default [
         "useractions": 0.45,
         "errors": 0.06,
         "loadactions": 0.68,
+        "xhractions": 0.36,
+        "customactions": 0.38,
         "totaluseractions": 17,
         "affecteduseractions": 29.41
     },
@@ -26,6 +28,8 @@ export default [
         "useractions": 0.30,
         "errors": 0.06,
         "loadactions": 0.68,
+        "xhractions": 0.15,
+        "customactions": 0.25,
         "totaluseractions": 17,
         "affecteduseractions": 29.41
     },
@@ -38,6 +42,8 @@ export default [
         "useractions": 0.75,
         "errors": 0.03,
         "loadactions": 0.78,
+        "xhractions": 0.96,
+        "customactions": 0.07,
         "totaluseractions": 28,
         "affecteduseractions": 1.02
     },
@@ -50,6 +56,8 @@ export default [
         "useractions": 0.20,
         "errors": 0.08,
         "loadactions": 0.90,
+        "xhractions": 0.87,
+        "customactions": 0.23,
         "totaluseractions": 66,
         "affecteduseractions": 36.45
     },
@@ -65,6 +73,8 @@ export default [
         "useractions": 0.66,
         "errors": 0.09,
         "loadactions": 0.98,
+        "xhractions": 0.45,
+        "customactions": 0.33,
         "totaluseractions": 55,
         "affecteduseractions": 35.07
     },
@@ -80,6 +90,8 @@ export default [
         "useractions": 0.81,
         "errors": 0.08,
         "loadactions": 0.77,
+        "xhractions": 0.71,
+        "customactions": 0.06,
         "totaluseractions": 11,
         "affecteduseractions": 55.6
     },
@@ -94,6 +106,8 @@ export default [
         "useractions": 0.66,
         "errors": 0.08,
         "loadactions": 0.98,
+        "xhractions": 0.23,
+        "customactions": 0.56,
         "totaluseractions": 25,
         "affecteduseractions": 13.41
     },
@@ -106,6 +120,8 @@ export default [
         "useractions": 0.23,
         "errors": 0.18,
         "loadactions": 0.60,
+        "xhractions": 0.92,
+        "customactions": 0.22,
         "totaluseractions": 11,
         "affecteduseractions": 36.66
     },
@@ -118,6 +134,8 @@ export default [
         "useractions": 0.18,
         "errors": 0.17,
         "loadactions": 0.60,
+        "xhractions": 0.66,
+        "customactions": 0.18,
         "totaluseractions": 11,
         "affecteduseractions": 36.66
     }

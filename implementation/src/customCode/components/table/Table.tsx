@@ -8,13 +8,23 @@ import arrowRightInactive from "./img/arrow_right_disabled.png";
 
 let rowsPerPage: number;
 
+const columnHeaderNamesMap: Map<string, string> = new Map([
+  ['apdex', 'Apdex'],
+  ['useractions', 'User Actions'],
+  ['loadactions', 'Load Actions'],
+  ['xhractions', 'XHR Actions'],
+  ['customactions', 'Custom Actions'],
+  ['errors', 'Errors'],
+]);
+
+
 type TableProps = {
   data: any[];
-  columnHeaders: string[];
+  selectedMetric: string;
   isIVolunteer: boolean; // distinguishes between DT and iVol table
 }
 
-const Table: React.FC<TableProps> = ( { data, columnHeaders, isIVolunteer } ) => {
+const Table: React.FC<TableProps> = ( { data, selectedMetric, isIVolunteer } ) => {
   rowsPerPage = isIVolunteer ? 4 : 5;
 
   const [locations] = useState([...data]);
@@ -22,13 +32,26 @@ const Table: React.FC<TableProps> = ( { data, columnHeaders, isIVolunteer } ) =>
   const { dataOnPage, tableRange } = useTable(locations, page);
   return (
     <>
-      <TableContent dataOnPage={dataOnPage} columnHeaders={columnHeaders} isIVolunteer={isIVolunteer} />
+      <TableContent dataOnPage={dataOnPage} selectedMetric={selectedMetric} isIVolunteer={isIVolunteer} />
       <TablePagination pageRange={tableRange} dataOnPage={dataOnPage} setPage={setPage} page={page} />
     </>
   );
 }
 
-const TableContent = ({ dataOnPage, columnHeaders, isIVolunteer }) => {
+const TableContent = ({ dataOnPage, selectedMetric, isIVolunteer }) => {
+  let columnHeaders: string[];
+  if (isIVolunteer) {
+    columnHeaders = ['Task Name', 'Task ID'];
+  } else {
+    if (selectedMetric === 'apdex') {
+      columnHeaders = ['Location', columnHeaderNamesMap.get(selectedMetric), 'User actions'];
+    } else if (selectedMetric === 'errors') {
+      columnHeaders = ['Location', columnHeaderNamesMap.get(selectedMetric), 'Affected actions'];
+    } else {
+      columnHeaders = ['Location', columnHeaderNamesMap.get(selectedMetric), 'Total user actions'];
+    }
+  } 
+
   return (
     <>
       <table className={`${styles.table} ${isIVolunteer ? styles.tableIvol : styles.tableDt}`}>
@@ -44,8 +67,24 @@ const TableContent = ({ dataOnPage, columnHeaders, isIVolunteer }) => {
           {dataOnPage.map((dataRow) => (
             <tr className={styles.tableRowItems} key={isIVolunteer ? dataRow.taskid : dataRow.location}>
               <td className={`${styles.tableCell} ${styles.tableLink}`}>{isIVolunteer ? dataRow.taskname : dataRow.location}</td>
-              <td className={styles.tableCell}>{isIVolunteer ? dataRow.taskid : dataRow.apdex}</td>
-              {!isIVolunteer ?? <td className={styles.tableCell}>{dataRow.useractions}</td>}
+              
+              {!isIVolunteer 
+                ? selectedMetric === 'useractions'
+                  ? <td className={styles.tableCell}>{dataRow[selectedMetric]} / min</td> 
+                  : selectedMetric === 'errors' 
+                    ? <td className={styles.tableCell}>{dataRow[selectedMetric]} / min</td>
+                    : <td className={styles.tableCell}>{dataRow[selectedMetric]}</td>
+                : <td className={styles.tableCell}>{dataRow.taskid}</td>
+              }
+             
+              {!isIVolunteer 
+                ? selectedMetric === 'apdex' 
+                  ? <td className={styles.tableCell}>{dataRow['useractions']} / min</td> 
+                  : selectedMetric === 'errors' 
+                    ? <td className={styles.tableCell}>{dataRow['affecteduseractions']} %</td>
+                    : <td className={styles.tableCell}>{dataRow['totaluseractions']}</td>
+                : ''}
+              
               <td className={`${styles.tableCell} ${styles.tableLastCol}`}><a href="#">
                 <img src={analyzeIcon} className={styles.analyzeBtn} />
                 </a></td>

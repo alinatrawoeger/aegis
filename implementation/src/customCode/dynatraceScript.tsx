@@ -1,24 +1,20 @@
-import { Map as OLMap } from 'ol';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import CustomMap from './components/map/Map';
-import GeoJSON from 'ol/format/GeoJSON';
 import MetricSwitcher from './components/metricswitcher/MetricSwitcher';
 import Table from './components/table/Table';
 import data from './data/dt_database';
 import geodata from './data/dt_filters.json';
-import { createCountryOverlay, ZoomLevel } from './utils';
+import { ZoomLevel } from './utils';
 
 // TODO table:
-// - Spalten auf Metric reagieren lassen
+// - Grouping der Daten auslagern und darauf zugreifen anstatt mehrfach implementieren
+// - Apdex-Overlay Farbe auf Apdex-Wert reagieren lassen
 // - ZoomLevel setzen beim zoomen damit table drauf reagiert
 
 // TODO others:
-// - Metric switch soll opacity vom Overlay nicht beeinflussen
 // - Beispieldaten reinfeeden in Filterbar
-// - Beispieldaten reinfeeden in Tooltip
 // - Filterbar soll Daten beeinflussen
-// - fix markiertes country overlay soll auf metric switcher reagieren
 // - erneuter klick auf markiertes country soll die markierung aufheben
 
 class DynatraceWorldmapApp extends Component {
@@ -59,19 +55,23 @@ class DynatraceWorldmapApp extends Component {
 
         // initialize table & metric switcher stuff
         let { datasetPrimary, datasetSecondary } = this.prepareData(data, ZoomLevel.COUNTRY);
-        let headers = ['Location', 'Apdex', 'User actions'];
-
-        const primaryTable = ReactDOM.createRoot(document.getElementById(this.primaryTableSelector)!);
-        primaryTable.render(React.createElement(Table, {data: datasetPrimary, columnHeaders: headers, isIVolunteer: false }));
-        const secondaryTable = ReactDOM.createRoot(document.getElementById(this.secondaryTableSelector)!);
-        secondaryTable.render(React.createElement(Table, {data: datasetSecondary, columnHeaders: headers, isIVolunteer: false}));
-
+        
         const metricSwitcher = ReactDOM.createRoot(document.getElementById(this.metricswitcherPanel)!);
-        metricSwitcher.render(React.createElement(MetricSwitcher, { isIVolunteer: false }));
-
-        // initialize map component
         const map = ReactDOM.createRoot(document.getElementById('geomap_dt')!);
-        map.render(React.createElement(CustomMap, {selectedMetric: 'apdex', hasMinimap: true }));
+        const primaryTable = ReactDOM.createRoot(document.getElementById(this.primaryTableSelector)!);
+        const secondaryTable = ReactDOM.createRoot(document.getElementById(this.secondaryTableSelector)!);
+        
+        const selectedMetricCallback = (value) => {
+            this.selectedMetric = value;
+            primaryTable.render(React.createElement(Table, {data: datasetPrimary, selectedMetric: this.selectedMetric, isIVolunteer: false }));
+            secondaryTable.render(React.createElement(Table, {data: datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
+            map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, hasMinimap: true }));
+        };
+
+        metricSwitcher.render(React.createElement(MetricSwitcher, { isIVolunteer: false, onSetMetric: selectedMetricCallback }));
+        primaryTable.render(React.createElement(Table, {data: datasetPrimary, selectedMetric: this.selectedMetric, isIVolunteer: false }));
+        secondaryTable.render(React.createElement(Table, {data: datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
+        map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, hasMinimap: true }));
     }
 
     // table methods

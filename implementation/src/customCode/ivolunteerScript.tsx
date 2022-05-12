@@ -1,11 +1,10 @@
-import { Map as OLMap } from 'ol';
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import CustomMap from './components/map/Map';
 import MetricSwitcher from './components/metricswitcher/MetricSwitcher';
 import Table from './components/table/Table';
 import data from './data/ivol_database';
-import { createMap, switchMetric, ZoomLevel } from './utils';
+import { switchMetric } from './utils';
 
 class IVolunteerWorldmapApp extends Component {
   // test data (coordinates of Linz)
@@ -15,6 +14,8 @@ class IVolunteerWorldmapApp extends Component {
   // -----------------------
 
   metricMap = new Map();
+
+  selectedMetric = 'urgency';
 
   tableSelector = 'tasktable';
   metricSwitcherPanel = 'metricswitcher-panel';
@@ -38,12 +39,11 @@ class IVolunteerWorldmapApp extends Component {
     map.render(React.createElement(CustomMap, {selectedMetric: 'urgency', hasMinimap: false }));
 
     // initialize table & metric switcher stuff
-    let headers = ['Task Name', 'Task ID'];
     const table = ReactDOM.createRoot(document.getElementById(this.tableSelector)!);
-    table.render(React.createElement(Table, {data: data, columnHeaders: headers, isIVolunteer: true}));
+    table.render(React.createElement(Table, {data: data, selectedMetric: this.selectedMetric, isIVolunteer: true}));
 
     const metricSwitcher = ReactDOM.createRoot(document.getElementById(this.metricSwitcherPanel)!);
-    metricSwitcher.render(React.createElement(MetricSwitcher, { isIVolunteer: true }));
+    metricSwitcher.render(React.createElement(MetricSwitcher, { isIVolunteer: true, onSetMetric: (value) => console.log(value) }));
 
     // TODO Create overlays and let the metric switcher control the colour of the overlays
     // let btns: any = $('[selectiongroup=OverlayMenu]');
