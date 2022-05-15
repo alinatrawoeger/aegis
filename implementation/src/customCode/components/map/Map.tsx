@@ -11,7 +11,7 @@ import OSM from 'ol/source/OSM';
 import { default as VectorSrc } from 'ol/source/Vector';
 import { Fill, Stroke, Style } from "ol/style";
 import React, { useEffect, useRef, useState } from "react";
-import { ZoomLevel } from "../../utils";
+import { groupValuesPerLocation, ZoomLevel } from "../../utils";
 import styles from "./Map.module.css";
 import dataDt from "../../data/dt_database";
 import dataIVol from "../../data/ivol_database";
@@ -265,52 +265,6 @@ const createMap = (target: string, zoom: ZoomLevel, lon: number, lat: number, ha
             view: view
         });     
     }
-}
-
-const groupValuesPerLocation = (data: any, locationKey: string) => {
-    let groupedValuesMap: any[] = [];
-    for (let i = 0; i < data.length; i++) {
-        let curElement = data[i];
-        let location = curElement[locationKey as keyof typeof curElement];
-        
-        if (location != undefined) {
-            if (groupedValuesMap[location] === undefined) { // add new element
-                groupedValuesMap[location] = [curElement];
-            } else { // add new value to existing one
-                let value: any[] = groupedValuesMap[location];
-                value.push(curElement);
-                groupedValuesMap[location] = value;
-            }
-        }
-    }
-    
-    // calculate new values per grouping
-    let newValues: any[] = [];
-    for (let location in groupedValuesMap) {
-        let value = groupedValuesMap[location];
-    
-        let newValuesPerLocation: { [key: string]: any } = {};
-        newValuesPerLocation['location'] = location;
-        for (let key in value[0]) {
-            if (typeof value[0][key] === 'number') {
-                let sum = 0;
-                for (let i = 0; i < value.length; i++) {
-                    sum += value[i][key];
-                }
-                let avg = sum / value.length;
-    
-                newValuesPerLocation[key] = avg.toFixed(2);;
-            }
-        }
-        
-        newValues.push(newValuesPerLocation);
-    }
-    
-    newValues.sort(function(a, b){
-        return b.apdex - a.apdex;
-    });
-    
-    return newValues;
 }
 
 export default CustomMap;

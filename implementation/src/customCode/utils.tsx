@@ -1,4 +1,4 @@
-import { Feature, Map, Map as OLMap, Overlay, View } from 'ol';
+import { Feature, Map as OLMap, Overlay, View } from 'ol';
 import { defaults as defaultControls } from 'ol/control';
 import OverviewMap from 'ol/control/OverviewMap';
 import GeoJSON from 'ol/format/GeoJSON';
@@ -53,7 +53,7 @@ export function createMap(target: string, zoom: ZoomLevel, lon: number, lat: num
             collapsed: false,
         });
 
-        return new Map({
+        return new OLMap({
             controls: defaultControls().extend([minimapControl]),
             interactions: defaults().extend([new DragRotateAndZoom()]),
             target: target,
@@ -61,7 +61,7 @@ export function createMap(target: string, zoom: ZoomLevel, lon: number, lat: num
             view: view
         });
     } else {
-        return new Map({
+        return new OLMap({
             target: target,
             layers: [ mapLayer ],
             view: view
@@ -69,6 +69,81 @@ export function createMap(target: string, zoom: ZoomLevel, lon: number, lat: num
     }
 }
 
+// table functions
+export function prepareData(data: any, zoomLevel: number) {
+    let dataLabels = new Map<string, any>();
+    dataLabels.set('continent', 'Continent');
+    dataLabels.set('country', 'Country');
+    dataLabels.set('region', 'Region');
+    dataLabels.set('city', 'City');
+    
+    let tabTitles = getTableTabHeaders(zoomLevel);
+    let datasetPrimary = groupValuesPerLocation(data, tabTitles[0]);
+    let datasetSecondary = groupValuesPerLocation(data, tabTitles[1]);
+
+    $('#table_tab1_title').html(dataLabels.get(tabTitles[0]));
+    $('#table_tab2_title').html(dataLabels.get(tabTitles[1]));
+  
+    return {datasetPrimary, datasetSecondary};
+}
+  
+const getTableTabHeaders = (zoomLevel: number): string[] => {
+    if (zoomLevel <= ZoomLevel.CONTINENT) {
+        return ['continent', 'country'];
+    } else {
+        return ['country', 'region'];
+    }
+    // TODO add handling for Region/City when data has been expanded
+}
+
+export function groupValuesPerLocation(data: any, locationKey: string) {
+    let groupedValuesMap: any[] = [];
+    for (let i = 0; i < data.length; i++) {
+        let curElement = data[i];
+        let location = curElement[locationKey as keyof typeof curElement];
+        
+        if (location != undefined) {
+            if (groupedValuesMap[location] === undefined) { // add new element
+                groupedValuesMap[location] = [curElement];
+            } else { // add new value to existing one
+                let value: any[] = groupedValuesMap[location];
+                value.push(curElement);
+                groupedValuesMap[location] = value;
+            }
+        }
+    }
+    
+    // calculate new values per grouping
+    let newValues: any[] = [];
+    for (let location in groupedValuesMap) {
+        let value = groupedValuesMap[location];
+    
+        let newValuesPerLocation: { [key: string]: any } = {};
+        newValuesPerLocation['location'] = location;
+        for (let key in value[0]) {
+            if (typeof value[0][key] === 'number') {
+                let sum = 0;
+                for (let i = 0; i < value.length; i++) {
+                    sum += value[i][key];
+                }
+                let avg = sum / value.length;
+    
+                newValuesPerLocation[key] = avg.toFixed(2);;
+            }
+        }
+        
+        newValues.push(newValuesPerLocation);
+    }
+    
+    newValues.sort(function(a, b){
+        return b.apdex - a.apdex;
+    });
+    
+    return newValues;
+}
+
+
+// older methods
 export function createCountryOverlay(map: OLMap, selectedColor: string, hoverColor: string) {
     let overlayLayer = new VectorLayer({
         source: new VectorSrc({
