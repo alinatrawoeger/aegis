@@ -53,6 +53,13 @@ class DynatraceWorldmapApp extends Component {
         secondaryTable.render(React.createElement(Table, {data: datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
         map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, hasMinimap: true }));
     }
+
+    render() {
+        return (
+            <>
+            </>
+        )
+    }
 }
 
 export default DynatraceWorldmapApp;

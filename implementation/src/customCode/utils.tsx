@@ -120,6 +120,7 @@ export function groupValuesPerLocation(data: any, locationKey: string) {
     
         let newValuesPerLocation: { [key: string]: any } = {};
         newValuesPerLocation['location'] = location;
+        newValuesPerLocation['iso'] = value[0][locationKey + '-iso'];
         for (let key in value[0]) {
             if (typeof value[0][key] === 'number') {
                 let sum = 0;

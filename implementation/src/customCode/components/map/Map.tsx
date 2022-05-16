@@ -11,53 +11,45 @@ import OSM from 'ol/source/OSM';
 import { default as VectorSrc } from 'ol/source/Vector';
 import { Fill, Stroke, Style } from "ol/style";
 import React, { useEffect, useRef, useState } from "react";
-import { groupValuesPerLocation, ZoomLevel } from "../../utils";
-import styles from "./Map.module.css";
 import dataDt from "../../data/dt_database";
 import dataIVol from "../../data/ivol_database";
-import DynatraceWorldmapApp from '../../dynatraceScript';
+import { groupValuesPerLocation, ZoomLevel } from "../../utils";
+import styles from "./Map.module.css";
 
 // test data (coordinates of Linz)
 const longitude = 14.2858;
 const latitude = 48.3069;
 
-
-const apdexSelectedColor = 'rgba(61, 199, 29, 0.9)';
-const apdexHoverColor = 'rgba(61, 199, 29, 0.5)';
-const otherSelectedColor = '';
-const otherHoverColor = '';
-
 let overlayColorMap = {
     'apdex': {
-        1.0: {
+        'Excellent': {
             selectedColor: 'rgba(61, 199, 29, 0.9)',
             hoverColor: 'rgba(61, 199, 29, 0.5)',
-            name: 'Excellent'
         },
-        0.85: {
-            selectedColor: 'rgba(61, 199, 29, 0.9)',
-            hoverColor: 'rgba(61, 199, 29, 0.5)',
-            name: 'Good'
+        'Good': {
+            selectedColor: 'rgba(122, 254, 92, 0.9)',
+            hoverColor: 'rgba(122, 254, 92, 0.5)',
         },
-        0.70: {
-            selectedColor: 'rgba(61, 199, 29, 0.9)',
-            hoverColor: 'rgba(61, 199, 29, 0.5)',
-            name: 'Average'
+        'Fair': {
+            selectedColor: 'rgba(255, 225, 0, 0.9)',
+            hoverColor: 'rgba(255, 225, 0, 0.5)',
         },
-        0.60: {
-            selectedColor: 'rgba(61, 199, 29, 0.9)',
-            hoverColor: 'rgba(61, 199, 29, 0.5)',
-            name: 'Poor'
+        'Poor': {
+            selectedColor: 'rgba(255, 106, 0, 0.9)',
+            hoverColor: 'rgba(255, 106, 0, 0.5)',
         },
-        0.50: {
+        'Unacceptable': {
             selectedColor: 'rgba(61, 199, 29, 0.9)',
             hoverColor: 'rgba(61, 199, 29, 0.5)',
-            name: 'Unacceptable'
         }
     },
     'other': {
         selectedColor: 'rgba(98, 36, 128, 0.9)',
         hoverColor: 'rgba(98, 36, 128, 0.5)',
+    },
+    'empty': {
+        selectedColor: 'rgba(177, 177, 177, 0.5)',
+        hoverColor: 'rgba(177, 177, 177, 0.25)',
     }
 };
 
@@ -71,12 +63,12 @@ let previouslySelectedLocation;
 let previouslyHoveredLocation;
 
 function CustomMap ({ selectedMetric, hasMinimap }) {
-    data = hasMinimap ? dataDt : dataIVol;
+    data = hasMinimap ? groupValuesPerLocation(dataDt, 'country') : dataIVol;
 
     if (hasMinimap) {
         if (selectedMetric === 'apdex') {
-            selectedColor = overlayColorMap.apdex[1].selectedColor;
-            hoverColor = overlayColorMap.apdex[1].hoverColor;
+            selectedColor = overlayColorMap.apdex.Excellent.selectedColor;
+            hoverColor = overlayColorMap.apdex.Excellent.hoverColor;
         } else {
             selectedColor = overlayColorMap.other.selectedColor;
             hoverColor = overlayColorMap.other.hoverColor;
@@ -91,9 +83,6 @@ function CustomMap ({ selectedMetric, hasMinimap }) {
     let [ hoveredLocation, setHoveredLocation ] = useState<Feature<Geometry> | undefined>();
     const [ zoom, setZoom ] = useState<ZoomLevel>();
     const [ selectedCoordinates , setSelectedCoordinates ] = useState()
-
-    // TODO remove, just for testing
-    let [ count, setCount ] = useState (0);
 
     const mapElement = useRef();
 
@@ -136,7 +125,7 @@ function CustomMap ({ selectedMetric, hasMinimap }) {
             color: 'rgba(0, 0, 0, 0)',
         }),
         stroke: new Stroke({
-            color: selectedColor,
+            color: 'rgba(2, 167, 240, 1)',
             width: 2,
         }),
     });
@@ -146,7 +135,7 @@ function CustomMap ({ selectedMetric, hasMinimap }) {
             color: 'rgba(0, 0, 0, 0)',
         }),
         stroke: new Stroke({
-            color: hoverColor,
+            color: 'rgba(2, 167, 240, 1)',
             width: 2,
         }),
     });  
@@ -178,6 +167,17 @@ function CustomMap ({ selectedMetric, hasMinimap }) {
 
     useEffect( () => {
         if (selectedLocation !== undefined) { // at the beginning no location is selected
+            if (selectedMetric === 'apdex') {
+                let value;
+                for (let i = 0; i < data.length; i++) {
+                    if (data[i].iso === selectedLocation.getId()) {
+                        value = data[i].apdex;
+                        break;
+                    }
+                }
+                selectedColor = getOverlayColor(value, true);
+            }
+
             selectStyle.getFill().setColor(selectedColor);
             selectedLocation.setStyle(selectStyle);
             previouslySelectedLocation = selectedLocation;
@@ -213,6 +213,17 @@ function CustomMap ({ selectedMetric, hasMinimap }) {
         }
 
         if (hoveredLocation !== undefined) { // at the beginning no location is hovered over
+            if (selectedMetric === 'apdex') {
+                let value;
+                for (let i = 0; i < data.length; i++) {
+                    if (data[i].iso === hoveredLocation.getId()) {
+                        value = data[i].apdex;
+                        break;
+                    }
+                }
+                hoverColor = getOverlayColor(value, false);
+            }
+
             hoverStyle.getFill().setColor(hoverColor)
             hoveredLocation.setStyle(hoverStyle);
             previouslyHoveredLocation = hoveredLocation;
@@ -265,6 +276,39 @@ const createMap = (target: string, zoom: ZoomLevel, lon: number, lat: number, ha
             view: view
         });     
     }
+}
+
+const getOverlayColor = (value: number, selectMode: boolean) => {
+    if (selectMode) {
+        if (value < 0.5) {
+            return overlayColorMap.apdex.Unacceptable.selectedColor;
+        } else if (value < 0.60) {
+            return overlayColorMap.apdex.Poor.selectedColor;
+        } else if (value < 0.70) {
+            return overlayColorMap.apdex.Fair.selectedColor;
+        } else if (value < 0.85) {
+            return overlayColorMap.apdex.Good.selectedColor;
+        } else if (value < 1) {
+            return overlayColorMap.apdex.Excellent.selectedColor;
+        } else {
+            return overlayColorMap.empty.selectedColor;
+        }
+    } else {
+        if (value < 0.5) {
+            return overlayColorMap.apdex.Unacceptable.hoverColor;
+        } else if (value < 0.60) {
+            return overlayColorMap.apdex.Poor.hoverColor;
+        } else if (value < 0.70) {
+            return overlayColorMap.apdex.Fair.hoverColor;
+        } else if (value < 0.85) {
+            return overlayColorMap.apdex.Good.hoverColor;
+        } else if (value < 1) {
+            return overlayColorMap.apdex.Excellent.hoverColor;
+        } else {
+            return overlayColorMap.empty.hoverColor;
+        }
+    }
+   
 }
 
 export default CustomMap;
