@@ -15,8 +15,8 @@ import { Fill, Stroke, Style } from 'ol/style';
 // ---------------------------------------------------------------------
 
 export enum ZoomLevel {
-    WORLD = 1,
-    CONTINENT = 3,
+    WORLD = 2,
+    CONTINENT = 4,
     COUNTRY = 6,
     REGION = 8,
     CITY = 10
@@ -70,32 +70,6 @@ export function createMap(target: string, zoom: ZoomLevel, lon: number, lat: num
 }
 
 // table functions
-export function prepareData(data: any, zoomLevel: number) {
-    let dataLabels = new Map<string, any>();
-    dataLabels.set('continent', 'Continent');
-    dataLabels.set('country', 'Country');
-    dataLabels.set('region', 'Region');
-    dataLabels.set('city', 'City');
-    
-    let tabTitles = getTableTabHeaders(zoomLevel);
-    let datasetPrimary = groupValuesPerLocation(data, tabTitles[0]);
-    let datasetSecondary = groupValuesPerLocation(data, tabTitles[1]);
-
-    $('#table_tab1_title').html(dataLabels.get(tabTitles[0]));
-    $('#table_tab2_title').html(dataLabels.get(tabTitles[1]));
-  
-    return {datasetPrimary, datasetSecondary};
-}
-  
-const getTableTabHeaders = (zoomLevel: number): string[] => {
-    if (zoomLevel <= ZoomLevel.CONTINENT) {
-        return ['continent', 'country'];
-    } else {
-        return ['country', 'region'];
-    }
-    // TODO add handling for Region/City when data has been expanded
-}
-
 export function groupValuesPerLocation(data: any, locationKey: string) {
     let groupedValuesMap: any[] = [];
     for (let i = 0; i < data.length; i++) {

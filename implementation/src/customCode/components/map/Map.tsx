@@ -10,7 +10,7 @@ import { fromLonLat } from 'ol/proj';
 import OSM from 'ol/source/OSM';
 import { default as VectorSrc } from 'ol/source/Vector';
 import { Fill, Stroke, Style } from "ol/style";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import dataDt from "../../data/dt_database";
 import dataIVol from "../../data/ivol_database";
 import { groupValuesPerLocation, ZoomLevel } from "../../utils";
@@ -62,11 +62,20 @@ let hoverColor;
 let previouslySelectedLocation;
 let previouslyHoveredLocation;
 
-function CustomMap ({ selectedMetric, hasMinimap }) {
+const apdexMetric = 'apdex';
+
+type CustomMapProps = {
+    selectedMetric: string,
+    hasMinimap: boolean,
+    onSetZoom: (value) => void,
+}
+
+
+const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, onSetZoom, hasMinimap }) => {
     data = hasMinimap ? groupValuesPerLocation(dataDt, 'country') : dataIVol;
 
     if (hasMinimap) {
-        if (selectedMetric === 'apdex') {
+        if (selectedMetric === apdexMetric) {
             selectedColor = overlayColorMap.apdex.Excellent.selectedColor;
             hoverColor = overlayColorMap.apdex.Excellent.hoverColor;
         } else {
@@ -89,6 +98,8 @@ function CustomMap ({ selectedMetric, hasMinimap }) {
     const mapRef = useRef<OLMap>(); // map object for later use
     mapRef.current = map;
 
+    let currZoom = undefined;
+
     useEffect( () => {
         // create and add vector source layer
         const overlayLayer = new VectorLayer({
@@ -102,22 +113,12 @@ function CustomMap ({ selectedMetric, hasMinimap }) {
         const initialMap = createMap(mapElement.current, ZoomLevel.COUNTRY, longitude, latitude, hasMinimap, overlayLayer);
 
         initialMap.on('click', handleMapClick);
-        initialMap.on('moveend', handleZoom);
         initialMap.on('pointermove', handleHover);
+        initialMap.on('moveend', handleZoom);
 
         // save map for later use
         setMap(initialMap)
     }, [])
-
-    // Zoom functions
-    const handleZoom = (event) => {
-        if (zoom != undefined && zoom > ZoomLevel.CONTINENT) {
-            // update table accordingly
-        } else if (zoom != undefined && zoom < ZoomLevel.COUNTRY) {
-            // update table accordingly
-        }
-    };
-
 
     // Overlay functions
     const selectStyle = new Style({
@@ -156,18 +157,22 @@ function CustomMap ({ selectedMetric, hasMinimap }) {
     const handleMapClick = (event) => {
         // higlight newly selected location
         mapRef.current.forEachFeatureAtPixel(event.pixel, function (feature) {
-            if (previouslySelectedLocation !== undefined) {
-                previouslySelectedLocation.setStyle(undefined);
+            if (hasMinimap) {
+                if (previouslySelectedLocation !== undefined) {
+                    previouslySelectedLocation.setStyle(undefined);
+                }
+    
+                setSelectedLocation(feature as Feature<Geometry>);
+                setHoveredLocation(undefined);
+            } else {
+                
             }
-
-            setSelectedLocation(feature as Feature<Geometry>);
-            setHoveredLocation(undefined);
         });
     }
 
     useEffect( () => {
         if (selectedLocation !== undefined) { // at the beginning no location is selected
-            if (selectedMetric === 'apdex') {
+            if (selectedMetric === apdexMetric) {
                 let value;
                 for (let i = 0; i < data.length; i++) {
                     if (data[i].iso === selectedLocation.getId()) {
@@ -175,7 +180,7 @@ function CustomMap ({ selectedMetric, hasMinimap }) {
                         break;
                     }
                 }
-                selectedColor = getOverlayColor(value, true);
+                selectedColor = getDtOverlayColor(value, true);
             }
 
             selectStyle.getFill().setColor(selectedColor);
@@ -221,7 +226,7 @@ function CustomMap ({ selectedMetric, hasMinimap }) {
                         break;
                     }
                 }
-                hoverColor = getOverlayColor(value, false);
+                hoverColor = getDtOverlayColor(value, false);
             }
 
             hoverStyle.getFill().setColor(hoverColor)
@@ -234,7 +239,23 @@ function CustomMap ({ selectedMetric, hasMinimap }) {
             }
         }
     }, [selectedLocation, hoveredLocation]);
-    
+
+    // Zoom functions
+    // pass zoom level outside for other components
+    const handleZoom = useCallback(
+        (event) => {
+            if (mapRef.current !== undefined) {
+                var newZoom = mapRef.current.getView().getZoom();
+                if (currZoom != newZoom) {
+                  currZoom = newZoom;
+                  setZoom(currZoom);
+                  onSetZoom(currZoom);
+                }
+            }
+        },
+        [zoom, onSetZoom],
+    );
+
     return (
         <>
             <div ref={mapElement} className={hasMinimap ? styles.container_dt : styles.container_ivol}></div>
@@ -278,7 +299,7 @@ const createMap = (target: string, zoom: ZoomLevel, lon: number, lat: number, ha
     }
 }
 
-const getOverlayColor = (value: number, selectMode: boolean) => {
+const getDtOverlayColor = (value: number, selectMode: boolean) => {
     if (selectMode) {
         if (value < 0.5) {
             return overlayColorMap.apdex.Unacceptable.selectedColor;

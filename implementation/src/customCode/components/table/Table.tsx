@@ -27,9 +27,8 @@ type TableProps = {
 const Table: React.FC<TableProps> = ( { data, selectedMetric, isIVolunteer } ) => {
   rowsPerPage = isIVolunteer ? 4 : 5;
 
-  const [locations] = useState([...data]);
   const [page, setPage] = useState(1);
-  const { dataOnPage, tableRange } = useTable(locations, page);
+  const { dataOnPage, tableRange } = useTable([...data], page);
   return (
     <>
       <TableContent dataOnPage={dataOnPage} selectedMetric={selectedMetric} isIVolunteer={isIVolunteer} />
