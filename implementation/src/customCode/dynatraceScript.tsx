@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom/client';
+import Filterbar from './components/filterbar/Filterbar';
 import CustomMap from './components/map/Map';
 import MetricSwitcher from './components/metricswitcher/MetricSwitcher';
 import Table from './components/table/Table';
 import data from './data/dt_database';
 import geodata from './data/dt_filters.json';
 import { groupValuesPerLocation, ZoomLevel } from './utils';
-
-// TODO table:
-// - Apdex-Overlay Farbe auf Apdex-Wert reagieren lassen
-// - ZoomLevel setzen beim zoomen damit table drauf reagiert
 
 // TODO others:
 // - Beispieldaten reinfeeden in Filterbar
@@ -21,6 +18,7 @@ class DynatraceWorldmapApp extends Component {
     longitude = 14.2858;
     latitude = 48.3069;
 
+    filterbarPanel = 'filter-panel';
     metricswitcherPanel = 'metricswitcher-panel';
     selectedMetricId = 'metricswitcher-apdex';
     primaryTableSelector = 'table_tab1';
@@ -66,6 +64,9 @@ class DynatraceWorldmapApp extends Component {
         primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, isIVolunteer: false }));
         secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
         map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, onSetZoom: zoomLevelCallback, hasMinimap: true }));
+
+        const filterbar = ReactDOM.createRoot(document.getElementById(this.filterbarPanel)!);
+        filterbar.render(React.createElement(Filterbar, {isIVolunteer: true, existingFilters: []}));
     }
 
     render() {

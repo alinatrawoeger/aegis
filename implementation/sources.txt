@@ -20,3 +20,7 @@ Table with pagination in React:
 
 OL with React:
     https://taylor.callsen.me/using-openlayers-with-react-functional-components/
+
+
+X Icon (Filterbar):
+    https://icons-for-free.com/x+icon-1320166903649367557/

@@ -165,7 +165,9 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, onSetZoom, hasMin
                 setSelectedLocation(feature as Feature<Geometry>);
                 setHoveredLocation(undefined);
             } else {
-                
+                // open dialog if user wants to create a new task
+                // if yes, redirect to Add Task page
+                // if no, close dialog and do nothing
             }
         });
     }
