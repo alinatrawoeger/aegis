@@ -22,6 +22,14 @@ export enum ZoomLevel {
     CITY = 10
 }
 
+export enum Apdex {
+    EXCELLENT = 1.00,
+    GOOD = 0.90,
+    FAIR = 0.75,
+    POOR = 0.60,
+    UNACCEPTABLE = 0.50
+}
+
 // ---------------------------------------------------------------------
 
 /**

@@ -5,7 +5,7 @@ import CustomMap from './components/map/Map';
 import MetricSwitcher from './components/metricswitcher/MetricSwitcher';
 import Table from './components/table/Table';
 import data from './data/dt_database';
-import geodata from './data/dt_filters.json';
+import geodata from './data/dt_filters';
 import { groupValuesPerLocation, ZoomLevel } from './utils';
 
 // TODO others:
@@ -65,8 +65,9 @@ class DynatraceWorldmapApp extends Component {
         secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
         map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, onSetZoom: zoomLevelCallback, hasMinimap: true }));
 
+        const filters = this.getFilterSuggestionsData();
         const filterbar = ReactDOM.createRoot(document.getElementById(this.filterbarPanel)!);
-        filterbar.render(React.createElement(Filterbar, {isIVolunteer: true, existingFilters: []}));
+        filterbar.render(React.createElement(Filterbar, {isIVolunteer: true, existingFilters: filters}));
     }
 
     render() {
@@ -100,6 +101,25 @@ class DynatraceWorldmapApp extends Component {
             return ['country', 'region'];
         }
         // TODO add handling for Region/City when data has been expanded
+    }
+
+    getFilterSuggestionsData = () => {
+        let filters = [
+            {
+                "key": "Greeting",
+                "value": "hello"
+            },
+            {
+                "key": "Figure",
+                "value": "Law"
+            },
+            {
+                "key": "Computer",
+                "value": "Mac"
+            }
+        ];
+
+        return filters;
     }
       
 }

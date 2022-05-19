@@ -13,7 +13,7 @@ import { Fill, Stroke, Style } from "ol/style";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import dataDt from "../../data/dt_database";
 import dataIVol from "../../data/ivol_database";
-import { groupValuesPerLocation, ZoomLevel } from "../../utils";
+import { Apdex, groupValuesPerLocation, ZoomLevel } from "../../utils";
 import styles from "./Map.module.css";
 
 // test data (coordinates of Linz)
@@ -303,29 +303,29 @@ const createMap = (target: string, zoom: ZoomLevel, lon: number, lat: number, ha
 
 const getDtOverlayColor = (value: number, selectMode: boolean) => {
     if (selectMode) {
-        if (value < 0.5) {
+        if (value < Apdex.UNACCEPTABLE) {
             return overlayColorMap.apdex.Unacceptable.selectedColor;
-        } else if (value < 0.60) {
+        } else if (value < Apdex.POOR) {
             return overlayColorMap.apdex.Poor.selectedColor;
-        } else if (value < 0.70) {
+        } else if (value < Apdex.FAIR) {
             return overlayColorMap.apdex.Fair.selectedColor;
-        } else if (value < 0.85) {
+        } else if (value < Apdex.GOOD) {
             return overlayColorMap.apdex.Good.selectedColor;
-        } else if (value < 1) {
+        } else if (value < Apdex.EXCELLENT) {
             return overlayColorMap.apdex.Excellent.selectedColor;
         } else {
             return overlayColorMap.empty.selectedColor;
         }
     } else {
-        if (value < 0.5) {
+        if (value < Apdex.UNACCEPTABLE) {
             return overlayColorMap.apdex.Unacceptable.hoverColor;
-        } else if (value < 0.60) {
+        } else if (value < Apdex.POOR) {
             return overlayColorMap.apdex.Poor.hoverColor;
-        } else if (value < 0.70) {
+        } else if (value < Apdex.FAIR) {
             return overlayColorMap.apdex.Fair.hoverColor;
-        } else if (value < 0.85) {
+        } else if (value < Apdex.GOOD) {
             return overlayColorMap.apdex.Good.hoverColor;
-        } else if (value < 1) {
+        } else if (value < Apdex.EXCELLENT) {
             return overlayColorMap.apdex.Excellent.hoverColor;
         } else {
             return overlayColorMap.empty.hoverColor;
