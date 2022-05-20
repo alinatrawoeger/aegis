@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import Filterbar from './components/filterbar/Filterbar';
+import FilterSuggestionPanel from './components/filterbar/FilterSuggestion';
 import CustomMap from './components/map/Map';
 import MetricSwitcher from './components/metricswitcher/MetricSwitcher';
 import Table from './components/table/Table';
@@ -8,10 +9,14 @@ import data from './data/dt_database';
 import geodata from './data/dt_filters';
 import { groupValuesPerLocation, ZoomLevel } from './utils';
 
-// TODO others:
-// - Beispieldaten reinfeeden in Filterbar
-// - Filterbar soll Daten beeinflussen
+// TODO Map:
+// - Farbabstufungen bei violetten Daten
 // - erneuter klick auf markiertes country soll die markierung aufheben
+
+// TODO Filterbar:
+// - Filter Suggestions -> Style suggestions properly
+// - Filter Suggestions -> Handle regions & cities
+// - Filterbar soll Daten beeinflussen
 
 class DynatraceWorldmapApp extends Component {
     // test data (coordinates of Linz)
@@ -25,6 +30,8 @@ class DynatraceWorldmapApp extends Component {
     secondaryTableSelector = 'table_tab2';
     mapSelector = 'geomap_dt';
 
+    selectedFilters = [];
+    filterSuggestions = [];
     selectedMetric = 'apdex';
     currentZoomLevel = ZoomLevel.COUNTRY;
     datasetPrimary = [];
@@ -39,11 +46,23 @@ class DynatraceWorldmapApp extends Component {
         this.datasetPrimary = this.prepareData(data, ZoomLevel.COUNTRY).datasetPrimary;
         this.datasetSecondary = this.prepareData(data, ZoomLevel.COUNTRY).datasetSecondary;
         
+        const filterbar = ReactDOM.createRoot(document.getElementById(this.filterbarPanel)!);
+        const filterSuggestions = ReactDOM.createRoot(document.getElementById('suggestiontest')!);
         const metricSwitcher = ReactDOM.createRoot(document.getElementById(this.metricswitcherPanel)!);
         const map = ReactDOM.createRoot(document.getElementById(this.mapSelector)!);
         const primaryTable = ReactDOM.createRoot(document.getElementById(this.primaryTableSelector)!);
         const secondaryTable = ReactDOM.createRoot(document.getElementById(this.secondaryTableSelector)!);
         
+        const selectedFiltersCallback = (value) => {
+            this.selectedFilters = value;
+            // let table and map react
+        };
+
+        const filterSuggestionsCallback = (value) => {
+            this.filterSuggestions = value;
+            filterSuggestions.render(React.createElement(FilterSuggestionPanel, { suggestions: this.filterSuggestions }));
+        };
+
         const selectedMetricCallback = (value) => {
             this.selectedMetric = value;
             primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, isIVolunteer: false }));
@@ -65,9 +84,8 @@ class DynatraceWorldmapApp extends Component {
         secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
         map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, onSetZoom: zoomLevelCallback, hasMinimap: true }));
 
-        const filters = this.getFilterSuggestionsData();
-        const filterbar = ReactDOM.createRoot(document.getElementById(this.filterbarPanel)!);
-        filterbar.render(React.createElement(Filterbar, {isIVolunteer: true, existingFilters: filters}));
+        filterbar.render(React.createElement(Filterbar, {isIVolunteer: false, onSelectedFilters: selectedFiltersCallback, onFilterSuggestions: filterSuggestionsCallback}));
+        filterSuggestions.render(React.createElement(FilterSuggestionPanel, { suggestions: this.filterSuggestions }));
     }
 
     render() {
@@ -101,25 +119,6 @@ class DynatraceWorldmapApp extends Component {
             return ['country', 'region'];
         }
         // TODO add handling for Region/City when data has been expanded
-    }
-
-    getFilterSuggestionsData = () => {
-        let filters = [
-            {
-                "key": "Greeting",
-                "value": "hello"
-            },
-            {
-                "key": "Figure",
-                "value": "Law"
-            },
-            {
-                "key": "Computer",
-                "value": "Mac"
-            }
-        ];
-
-        return filters;
     }
       
 }

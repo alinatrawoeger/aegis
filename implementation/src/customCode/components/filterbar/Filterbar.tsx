@@ -1,16 +1,18 @@
-import React, { useCallback, useEffect, useState } from "react";
-import dt_filters from "../../data/dt_filters";
+import React, { useEffect, useState } from "react";
+import dtFilters from '../../data/dt_filters';
+import iVolFilters from '../../data/ivol_filters.json';
 import styles from "./Filterbar.module.css";
+import FilterSuggestionPanel from "./FilterSuggestion";
 import removeIcon from "./img/remove-icon.png";
 
 type FilterbarProps = {
     isIVolunteer: boolean;
-    existingFilters: any;
-    //onSetFilters: (value) => void;
+    onSelectedFilters: (value) => void;
+    onFilterSuggestions: (value) => void;
 }
 
-const Filterbar: React.FC<FilterbarProps> = ( { isIVolunteer, existingFilters } ) => {
-    const [filters, setFilterState] = useState(existingFilters);
+const Filterbar: React.FC<FilterbarProps> = ( { isIVolunteer, onSelectedFilters, onFilterSuggestions} ) => {
+    const [selectedFilters, setSelectedFilters] = useState(getTestFilters);
 
     // const memoizedCallback = useCallback(
     //     (value) => {
@@ -20,18 +22,21 @@ const Filterbar: React.FC<FilterbarProps> = ( { isIVolunteer, existingFilters } 
     //     [filters, onSetFilters],
     //   );
 
+    const filterSuggestions = useFilterSuggestions(isIVolunteer, selectedFilters, setSelectedFilters);
+
     return (
       <>
         <div className={styles.filterbar}>
             <div className={styles.filterStaticText}>Filtered by:</div>
-            {filters.map((element: any) => (
-                <FilterElement filterKey={element.key} filterValue={element.value} filters={filters} setFilters={setFilterState}></FilterElement>
+            {selectedFilters.map((element: any) => (
+                <FilterElement filterKey={element.key} filterValue={element.value} filters={selectedFilters} setFilters={setSelectedFilters}></FilterElement>
             ))}
-            {filters.length > 0 
-                ?   <div className={styles.filterElement} onClick={() => clearAllFilterElements(setFilterState)}>
+            {selectedFilters.length > 0 
+                ?   <div className={styles.filterElement} onClick={() => clearAllFilterElements(setSelectedFilters)}>
                         <span>Clear all</span>
                     </div>
                 :   '<Click here to add a filter>'}
+            <FilterSuggestionPanel suggestions={filterSuggestions}></FilterSuggestionPanel>
         </div>
       </>
     );
@@ -60,17 +65,56 @@ const FilterElement: React.FC<FilterElementProps> = ( { filterKey, filterValue, 
     )
 }
 
-const removeFilter = (filterKey: string, filters: any[], setFilterState: any) => {
-    console.log('removed this filter: ' + filterKey);
+const getTestFilters = () => {
+    return [
+        {
+            "key": "Greeting",
+            "value": "hello"
+        },
+        {
+            "key": "Figure",
+            "value": "Law"
+        },
+        {
+            "key": "Computer",
+            "value": "Mac"
+        }
+    ];
+}
 
-    // TODO properly delete one element
+const removeFilter = (filterKey: string, filters: any[], setFilterState: any) => {
     let newFilterList = filters.filter(el => el.key !== filterKey);
     setFilterState(newFilterList);
 }
 
 const clearAllFilterElements = (setFilterState) => {
-    console.log('all cleared!');
     setFilterState([]);
+}
+
+const showFilterSuggestions = (isIVolunteer: boolean) => {
+    if (isIVolunteer) {
+        return iVolFilters[0];
+    } else {
+        return dtFilters[0];
+    }
+}
+
+const useFilterSuggestions = (isIVolunteer: boolean, selectedFilters: any[], setSelectedFilters: any) => {
+    let temp = showFilterSuggestions(isIVolunteer);
+    const [filterSuggestions, setFilterSuggestions] = useState(temp);
+
+    useEffect(() => {
+            // check if selectedFilters contains a filter from filterSuggestions and remove it from filterSuggestions
+            console.log("changed filter");
+
+        }, [selectedFilters, setSelectedFilters]
+    );
+
+    return filterSuggestions;
+}
+
+const addFilter = () => {
+
 }
 
 export default Filterbar;

@@ -21,6 +21,7 @@
     border: 2px solid rgba(2, 167, 240, 1);
     background: rgba(2, 167, 240, 0.2);
     border-radius: 12px;
+    cursor: default;
 }
 
 .filterTextPanel {
@@ -31,17 +32,28 @@
     margin-right: 4px;
 }
 
-.filterValue {
-    
-}
-
 .removeFilterBtn {
     margin-left: 8px;
     height: 16px;
     width: 16px;
     padding-right: 8px;
+    cursor: pointer;
 }
 
 .clearAllBtn {
     margin-left: 8px;
+}
+
+
+/* Filter Suggestions */
+.suggestionsPanel {
+    display: flex;
+}
+
+.suggestionFiltername{
+    margin-right: 4px;
+}
+
+.suggestionValuesPanel{
+    
 }
