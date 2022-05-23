@@ -11,6 +11,7 @@
 
 .filterStaticText {
     margin: 0 12px;
+    min-width: 65px;
 }
 
 .filterElement {
@@ -48,12 +49,29 @@
 /* Filter Suggestions */
 .suggestionsPanel {
     display: flex;
+    position: relative;
+    top: 69px;
 }
 
-.suggestionFiltername{
+.suggestionFiltername {
     margin-right: 4px;
 }
 
-.suggestionValuesPanel{
-    
+.suggestionValuesPanel {
+    width: 120px;
+    height: 150px;
+    overflow-y: scroll;
+    border: 1px solid black;
+    z-index: 5;
+    background-color: white;
+}
+
+.suggestionValueElement {
+    padding: 8px;
+    border-bottom: 1px solid black;
+}
+
+.suggestionValueElement:hover {
+    font-weight: 700px;
+    background-color: rgba(2, 167, 240, 0.5);
 }

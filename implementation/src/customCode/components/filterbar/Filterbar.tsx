@@ -31,12 +31,11 @@ const Filterbar: React.FC<FilterbarProps> = ( { isIVolunteer, onSelectedFilters,
             {selectedFilters.map((element: any) => (
                 <FilterElement filterKey={element.key} filterValue={element.value} filters={selectedFilters} setFilters={setSelectedFilters}></FilterElement>
             ))}
-            {selectedFilters.length > 0 
-                ?   <div className={styles.filterElement} onClick={() => clearAllFilterElements(setSelectedFilters)}>
-                        <span>Clear all</span>
-                    </div>
-                :   '<Click here to add a filter>'}
-            <FilterSuggestionPanel suggestions={filterSuggestions}></FilterSuggestionPanel>
+            {selectedFilters.length === 0 
+                ? '<Click here to add a filter>'
+                : ''
+            }
+            <FilterSuggestionPanel suggestions={filterSuggestions} isIVolunteer={isIVolunteer}></FilterSuggestionPanel>
         </div>
       </>
     );

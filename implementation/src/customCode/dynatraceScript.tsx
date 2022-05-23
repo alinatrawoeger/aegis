@@ -11,12 +11,13 @@ import { groupValuesPerLocation, ZoomLevel } from './utils';
 
 // TODO Map:
 // - Farbabstufungen bei violetten Daten
+// - Klick auf Karte soll Filter setzen
 // - erneuter klick auf markiertes country soll die markierung aufheben
 
 // TODO Filterbar:
 // - Filter Suggestions -> Style suggestions properly
-// - Filter Suggestions -> Handle regions & cities
 // - Filterbar soll Daten beeinflussen
+// - Filter Suggestions -> type in letters to find suggestions
 
 class DynatraceWorldmapApp extends Component {
     // test data (coordinates of Linz)
@@ -60,7 +61,7 @@ class DynatraceWorldmapApp extends Component {
 
         const filterSuggestionsCallback = (value) => {
             this.filterSuggestions = value;
-            filterSuggestions.render(React.createElement(FilterSuggestionPanel, { suggestions: this.filterSuggestions }));
+            filterSuggestions.render(React.createElement(FilterSuggestionPanel, { suggestions: this.filterSuggestions, isIVolunteer: false }));
         };
 
         const selectedMetricCallback = (value) => {
@@ -85,7 +86,7 @@ class DynatraceWorldmapApp extends Component {
         map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, onSetZoom: zoomLevelCallback, hasMinimap: true }));
 
         filterbar.render(React.createElement(Filterbar, {isIVolunteer: false, onSelectedFilters: selectedFiltersCallback, onFilterSuggestions: filterSuggestionsCallback}));
-        filterSuggestions.render(React.createElement(FilterSuggestionPanel, { suggestions: this.filterSuggestions }));
+        filterSuggestions.render(React.createElement(FilterSuggestionPanel, { suggestions: this.filterSuggestions, isIVolunteer: false }));
     }
 
     render() {
