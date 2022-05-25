@@ -41,20 +41,30 @@
     cursor: pointer;
 }
 
-.clearAllBtn {
+.addFilterBtn {
     margin-left: 8px;
+    background-color: white;
+    border: 2px solid rgba(2, 167, 240, 0.5);
+    min-width: 52px;
+    cursor: pointer;
 }
 
 
 /* Filter Suggestions */
-.suggestionsPanel {
-    display: flex;
+.filterListPanel {
     position: relative;
-    top: 69px;
+    top: 60px;
+}
+
+.suggestionsPanel {
+    position: relative;
+    top: 60px;
+    display: flex;
 }
 
 .suggestionFiltername {
-    margin-right: 4px;
+    margin-right: 8px;
+    padding-top: 8px;
 }
 
 .suggestionValuesPanel {
@@ -69,6 +79,7 @@
 .suggestionValueElement {
     padding: 8px;
     border-bottom: 1px solid black;
+    cursor: pointer;
 }
 
 .suggestionValueElement:hover {

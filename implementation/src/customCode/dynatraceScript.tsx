@@ -61,7 +61,7 @@ class DynatraceWorldmapApp extends Component {
 
         const filterSuggestionsCallback = (value) => {
             this.filterSuggestions = value;
-            filterSuggestions.render(React.createElement(FilterSuggestionPanel, { suggestions: this.filterSuggestions, isIVolunteer: false }));
+            // filterSuggestions.render(React.createElement(FilterSuggestionPanel, { suggestions: this.filterSuggestions, isIVolunteer: false }));
         };
 
         const selectedMetricCallback = (value) => {
@@ -86,7 +86,6 @@ class DynatraceWorldmapApp extends Component {
         map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, onSetZoom: zoomLevelCallback, hasMinimap: true }));
 
         filterbar.render(React.createElement(Filterbar, {isIVolunteer: false, onSelectedFilters: selectedFiltersCallback, onFilterSuggestions: filterSuggestionsCallback}));
-        filterSuggestions.render(React.createElement(FilterSuggestionPanel, { suggestions: this.filterSuggestions, isIVolunteer: false }));
     }
 
     render() {

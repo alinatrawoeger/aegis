@@ -9,7 +9,7 @@ type MetricSwitcherProps = {
 const MetricSwitcher: React.FC<MetricSwitcherProps> = ( { isIVolunteer, onSetMetric } ) => {
     const [selectedMetric, setMetric] = isIVolunteer ? useState('urgency') : useState('apdex');
 
-    const memoizedCallback = useCallback(
+    const metricCallback = useCallback(
         (value) => {
           setMetric(value);
           onSetMetric(value);
@@ -22,18 +22,18 @@ const MetricSwitcher: React.FC<MetricSwitcherProps> = ( { isIVolunteer, onSetMet
         <div className={`${styles.metricSwitcherPanel} ${isIVolunteer ? styles.metricSwitcherPanelIVol : styles.metricSwitcherPanelDt}`}>
             {isIVolunteer ? 
                 <>
-                    <MetricElement caption="Dringlichkeit" id="urgency" selected={selectedMetric === 'urgency'} setMetric={memoizedCallback} isIVolunteer={isIVolunteer} />
-                    <MetricElement caption="Priorität" id="priority" selected={selectedMetric === 'priority'} setMetric={memoizedCallback} isIVolunteer={isIVolunteer} />
-                    <MetricElement caption="Dauer" id="duration" selected={selectedMetric === 'duration'} setMetric={memoizedCallback} isIVolunteer={isIVolunteer} />
+                    <MetricElement caption="Dringlichkeit" id="urgency" selected={selectedMetric === 'urgency'} setMetric={metricCallback} isIVolunteer={isIVolunteer} />
+                    <MetricElement caption="Priorität" id="priority" selected={selectedMetric === 'priority'} setMetric={metricCallback} isIVolunteer={isIVolunteer} />
+                    <MetricElement caption="Dauer" id="duration" selected={selectedMetric === 'duration'} setMetric={metricCallback} isIVolunteer={isIVolunteer} />
                 </>
             : 
                 <>
-                    <MetricElement caption="Apdex" id="apdex" selected={selectedMetric === 'apdex'} setMetric={memoizedCallback} isIVolunteer={isIVolunteer} />
-                    <MetricElement caption="User actions" id="useractions" selected={selectedMetric === 'useractions'} setMetric={memoizedCallback} isIVolunteer={isIVolunteer} />
-                    <MetricElement caption="Load actions" id="loadactions" selected={selectedMetric === 'loadactions'} setMetric={memoizedCallback} isIVolunteer={isIVolunteer} />
-                    <MetricElement caption="Xhr actions" id="xhractions" selected={selectedMetric === 'xhractions'} setMetric={memoizedCallback} isIVolunteer={isIVolunteer} />
-                    <MetricElement caption="Custom actions" id="customactions" selected={selectedMetric === 'customactions'} setMetric={memoizedCallback} isIVolunteer={isIVolunteer} />
-                    <MetricElement caption="Errors" id="errors" selected={selectedMetric === 'errors'} setMetric={memoizedCallback} isIVolunteer={isIVolunteer} />
+                    <MetricElement caption="Apdex" id="apdex" selected={selectedMetric === 'apdex'} setMetric={metricCallback} isIVolunteer={isIVolunteer} />
+                    <MetricElement caption="User actions" id="useractions" selected={selectedMetric === 'useractions'} setMetric={metricCallback} isIVolunteer={isIVolunteer} />
+                    <MetricElement caption="Load actions" id="loadactions" selected={selectedMetric === 'loadactions'} setMetric={metricCallback} isIVolunteer={isIVolunteer} />
+                    <MetricElement caption="Xhr actions" id="xhractions" selected={selectedMetric === 'xhractions'} setMetric={metricCallback} isIVolunteer={isIVolunteer} />
+                    <MetricElement caption="Custom actions" id="customactions" selected={selectedMetric === 'customactions'} setMetric={metricCallback} isIVolunteer={isIVolunteer} />
+                    <MetricElement caption="Errors" id="errors" selected={selectedMetric === 'errors'} setMetric={metricCallback} isIVolunteer={isIVolunteer} />
                 </>
             }
         </div>
