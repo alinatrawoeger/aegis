@@ -6,8 +6,7 @@ import CustomMap from './components/map/Map';
 import MetricSwitcher from './components/metricswitcher/MetricSwitcher';
 import Table from './components/table/Table';
 import data from './data/dt_database';
-import geodata from './data/dt_filters';
-import { groupValuesPerLocation, ZoomLevel } from './utils';
+import { getFilterType, groupValuesPerLocation, ZoomLevel } from './utils';
 
 // TODO Map:
 // - Farbabstufungen bei violetten Daten
@@ -38,8 +37,6 @@ class DynatraceWorldmapApp extends Component {
     datasetPrimary = [];
     datasetSecondary = [];
     
-    geoLabels = geodata;
-
     constructor(props) {
         super(props);
 
@@ -48,7 +45,6 @@ class DynatraceWorldmapApp extends Component {
         this.datasetSecondary = this.prepareData(data, ZoomLevel.COUNTRY).datasetSecondary;
         
         const filterbar = ReactDOM.createRoot(document.getElementById(this.filterbarPanel)!);
-        const filterSuggestions = ReactDOM.createRoot(document.getElementById('suggestiontest')!);
         const metricSwitcher = ReactDOM.createRoot(document.getElementById(this.metricswitcherPanel)!);
         const map = ReactDOM.createRoot(document.getElementById(this.mapSelector)!);
         const primaryTable = ReactDOM.createRoot(document.getElementById(this.primaryTableSelector)!);
@@ -56,7 +52,10 @@ class DynatraceWorldmapApp extends Component {
         
         const selectedFiltersCallback = (value) => {
             this.selectedFilters = value;
-            
+            let filteredData = this.filterData();
+            this.datasetPrimary = this.prepareData(filteredData, this.currentZoomLevel).datasetPrimary;
+            this.datasetSecondary = this.prepareData(filteredData, this.currentZoomLevel).datasetSecondary;
+
             primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: false }));
             secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: false}));
             map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, onSetZoom: zoomLevelCallback, filters: this.selectedFilters, hasMinimap: true }));
@@ -87,13 +86,6 @@ class DynatraceWorldmapApp extends Component {
         filterbar.render(React.createElement(Filterbar, {isIVolunteer: false, onSelectedFilters: selectedFiltersCallback}));
     }
 
-    render() {
-        return (
-            <>
-            </>
-        )
-    }
-
     prepareData(data: any, zoomLevel: number) {
         let dataLabels = new Map<string, any>();
         dataLabels.set('continent', 'Continent');
@@ -120,6 +112,35 @@ class DynatraceWorldmapApp extends Component {
         // TODO add handling for Region/City when data has been expanded
     }
       
+    filterData = () => {
+        let filteredData = [];
+        for (let i = 0; i < this.selectedFilters.length; i++) {
+            let curFilterKey = this.selectedFilters[i].key;
+            let curFilterValue = this.selectedFilters[i].value;
+            let curFilterType = getFilterType(curFilterKey);
+
+            if (curFilterType === 'text') {
+                for (let j = 0; j < data.length; j++) {
+                    let dataElement = data[j][curFilterKey];
+                    if (curFilterValue === dataElement) {
+                        filteredData.push(data[j]);
+                    }
+                }
+            } else if (curFilterType === 'range') {
+                // implement range filter
+                // build range suggestion for this first
+            }
+        }
+        
+        return filteredData.length > 0 ? filteredData : data;
+    }
+
+    render() {
+        return (
+            <>
+            </>
+        )
+    }
 }
 
 export default DynatraceWorldmapApp;

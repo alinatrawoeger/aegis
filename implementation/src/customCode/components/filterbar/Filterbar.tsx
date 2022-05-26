@@ -64,8 +64,6 @@ const useFilterSuggestions = (isIVolunteer: boolean, selectedFilters: any[], set
 
     useEffect(() => {
             // check if selectedFilters contains a filter from filterSuggestions and remove it from filterSuggestions
-            let filterKeys = Object.keys(selectedFilters);
-            
             let newFilterList = Object.assign({}, fullList);
             for (let key in fullList) {
                 for (let j = 0; j < selectedFilters.length; j++) {

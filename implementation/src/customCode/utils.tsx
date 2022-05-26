@@ -30,6 +30,19 @@ export enum Apdex {
     UNACCEPTABLE = 0.50
 }
 
+export const getFilterType = (filterName: any) => {
+    switch(filterName) {
+        case 'apdex':
+            return 'range';
+        case 'continents':
+        case 'countries':
+        case 'regions':
+        case 'cities':
+        default:
+            return 'text';
+    }
+}
+
 // ---------------------------------------------------------------------
 
 /**

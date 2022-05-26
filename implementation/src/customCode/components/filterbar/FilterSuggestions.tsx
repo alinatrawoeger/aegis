@@ -140,24 +140,24 @@ const getFilterSuggestions = (isIVolunteer: boolean, suggestions: any, filterKey
     } else {
         if (filterKey === 'regions') {
             let tempValues = {};
-            for (let countryKey in suggestions[filterKey]) {
-                for (let regionKey in suggestions[filterKey][countryKey]) {
-                    tempValues[regionKey] = suggestions[filterKey][countryKey][regionKey]; 
+            for (let countryKey in suggestions[filterKey].properties) {
+                for (let regionKey in suggestions[filterKey].properties[countryKey]) {
+                    tempValues[regionKey] = suggestions[filterKey].properties[countryKey][regionKey]; 
                 }
             }
             values = tempValues;
         } else if (filterKey === 'cities') {
             let tempValues = {};
-            for (let countryKey in suggestions[filterKey]) {
-                for (let regionKey in suggestions[filterKey][countryKey]) {
-                    for (let cityIndex = 0; cityIndex < suggestions[filterKey][countryKey][regionKey].length; cityIndex++) {
-                        tempValues[regionKey + "/" + cityIndex] = suggestions[filterKey][countryKey][regionKey][cityIndex].name; 
+            for (let countryKey in suggestions[filterKey].properties) {
+                for (let regionKey in suggestions[filterKey].properties[countryKey]) {
+                    for (let cityIndex = 0; cityIndex < suggestions[filterKey].properties[countryKey][regionKey].length; cityIndex++) {
+                        tempValues[regionKey + "/" + cityIndex] = suggestions[filterKey].properties[countryKey][regionKey][cityIndex].name; 
                     }
                 }
             }
             values = tempValues;
         } else {
-            values = suggestions[filterKey];
+            values = suggestions[filterKey].properties;
         }
     }
 

@@ -98,7 +98,7 @@ export default [
     {
         "continent": "Europe",
         "continent-iso": "EU",
-        "country": "Great Britain",
+        "country": "United Kingdom",
         "country-iso": "GBR",
         "region": "Scotland",
         "region-iso": "GB-SCT",
