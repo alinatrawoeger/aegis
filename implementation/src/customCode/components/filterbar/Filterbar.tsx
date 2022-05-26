@@ -1,39 +1,38 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import dtFilters from '../../data/dt_filters';
 import iVolFilters from '../../data/ivol_filters.json';
 import styles from "./Filterbar.module.css";
-import FilterSuggestionPanel from "./FilterSuggestion";
 import FilterElement from "./FilterElement";
-import { render } from "react-dom";
+import FilterSuggestionPanel from "./FilterSuggestions";
 
 type FilterbarProps = {
     isIVolunteer: boolean;
     onSelectedFilters: (value) => void;
-    onFilterSuggestions: (value) => void;
 }
 
-const Filterbar: React.FC<FilterbarProps> = ( { isIVolunteer, onSelectedFilters, onFilterSuggestions} ) => {
+const Filterbar: React.FC<FilterbarProps> = ( { isIVolunteer, onSelectedFilters} ) => {
     const [selectedFilters, setSelectedFilters] = useState([]);
     const filterSuggestions = useFilterSuggestions(isIVolunteer, selectedFilters, setSelectedFilters);
 
-    const addSelectedFilter = (value) => {
-        setSelectedFilters(selectedFilters => [...selectedFilters, value]) 
-    };
-
-    const removeSelectedFilter = (value) => {
-        // remove filter from filterbar
-        let newFilterList = selectedFilters.filter(el => el.key !== value);
-        setSelectedFilters(newFilterList);
-
-        // // add filter back into suggestionlist
-        // setFilterSuggestions(useState(useFil))
-    };
+    const updateSelectedFilters = useCallback(
+        (value) => {
+            if (value[1]) { // add filter
+                onSelectedFilters([...selectedFilters, value[0]]);
+                setSelectedFilters(selectedFilters => [...selectedFilters, value[0]])
+            } else { // remove filter
+                let newFilterList = selectedFilters.filter(el => el.key !== value[0]);
+                onSelectedFilters(newFilterList);
+                setSelectedFilters(newFilterList);
+            }
+        },
+        [selectedFilters, setSelectedFilters],
+      );
 
     let filterList = (
         <>
             {
                 selectedFilters.map((element: any) => (
-                    <FilterElement filterKey={element.key} filterValue={element.value} removeFilter={removeSelectedFilter}></FilterElement>
+                    <FilterElement key={element.key} filterKey={element.key} filterValue={element.value} removeFilter={updateSelectedFilters}></FilterElement>
                 ))
             }
         </>
@@ -45,15 +44,11 @@ const Filterbar: React.FC<FilterbarProps> = ( { isIVolunteer, onSelectedFilters,
         <div className={styles.filterbar}>
             <div className={styles.filterStaticText}>Filtered by:</div>
                 {filterList}
-                <FilterSuggestionPanel suggestions={filterSuggestions} isIVolunteer={isIVolunteer} onSetNewFilterValue={addSelectedFilter}></FilterSuggestionPanel>
+                <FilterSuggestionPanel suggestions={filterSuggestions} isIVolunteer={isIVolunteer} onSetNewFilterValue={updateSelectedFilters}></FilterSuggestionPanel>
             </div>
         </>
     );
 };
-
-const clearAllFilterElements = (setFilterState) => {
-    setFilterState([]);
-}
 
 const getFilterSuggestions = (isIVolunteer: boolean) => {
     if (isIVolunteer) {

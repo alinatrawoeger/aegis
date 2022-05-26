@@ -10,7 +10,7 @@ const FilterElement = ( { filterKey, filterValue, removeFilter } ) => {
                     <span className={styles.filterKey}>{filterKey}: </span>
                     <span className={styles.filterValue}>{filterValue}</span>
                 </div>
-                <div className={styles.removeFilterBtn} onClick={() => removeFilter(filterKey)}>
+                <div className={styles.removeFilterBtn} onClick={() => removeFilter([filterKey, false])}>
                     <img src={removeIcon} className={styles.removeFilterBtn} alt='remove-filter'></img>
                 </div>
             </div>

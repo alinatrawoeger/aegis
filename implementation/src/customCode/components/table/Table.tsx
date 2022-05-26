@@ -21,10 +21,11 @@ const columnHeaderNamesMap: Map<string, string> = new Map([
 type TableProps = {
   data: any[];
   selectedMetric: string;
+  filters: any;
   isIVolunteer: boolean; // distinguishes between DT and iVol table
 }
 
-const Table: React.FC<TableProps> = ( { data, selectedMetric, isIVolunteer } ) => {
+const Table: React.FC<TableProps> = ( { data, selectedMetric, filters, isIVolunteer } ) => {
   rowsPerPage = isIVolunteer ? 4 : 5;
 
   const [page, setPage] = useState(1);

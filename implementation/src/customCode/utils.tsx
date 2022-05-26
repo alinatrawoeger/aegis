@@ -80,6 +80,9 @@ export function createMap(target: string, zoom: ZoomLevel, lon: number, lat: num
 // table functions
 export function groupValuesPerLocation(data: any, locationKey: string) {
     let groupedValuesMap: any[] = [];
+    if (locationKey === 'iso') {
+        console.log("click");
+    }
     for (let i = 0; i < data.length; i++) {
         let curElement = data[i];
         let location = curElement[locationKey as keyof typeof curElement];
@@ -102,7 +105,7 @@ export function groupValuesPerLocation(data: any, locationKey: string) {
     
         let newValuesPerLocation: { [key: string]: any } = {};
         newValuesPerLocation['location'] = location;
-        newValuesPerLocation['iso'] = value[0][locationKey + '-iso'];
+        newValuesPerLocation['iso'] = locationKey === 'iso'? value[0][locationKey] : value[0][locationKey + '-iso'];
         for (let key in value[0]) {
             if (typeof value[0][key] === 'number') {
                 let sum = 0;
@@ -111,7 +114,7 @@ export function groupValuesPerLocation(data: any, locationKey: string) {
                 }
                 let avg = sum / value.length;
     
-                newValuesPerLocation[key] = avg.toFixed(2);;
+                newValuesPerLocation[key] = +avg.toFixed(2);;
             }
         }
         

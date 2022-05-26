@@ -66,12 +66,13 @@ const apdexMetric = 'apdex';
 
 type CustomMapProps = {
     selectedMetric: string,
+    filters: any,
     hasMinimap: boolean,
     onSetZoom: (value) => void,
 }
 
 
-const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, onSetZoom, hasMinimap }) => {
+const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoom, hasMinimap }) => {
     data = hasMinimap ? groupValuesPerLocation(dataDt, 'country') : dataIVol;
 
     if (hasMinimap) {
@@ -197,10 +198,10 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, onSetZoom, hasMin
 
                     // Show Dynatrace-related information
                     if (hasMinimap) {
-                        let values = groupValuesPerLocation(data, 'country-iso');
+                        let values = groupValuesPerLocation(data, 'iso');
                         for (var i = 0; i < values.length; i++) {
                             let curElement = values[i];
-                            if (curElement['location'] == selectedLocation.getId()) {
+                            if (curElement['iso'] == selectedLocation.getId()) {
                                 $('#tooltip_apdex').text(curElement['apdex']);
                                 $('#tooltip_useractions').text(curElement['useractions'] + '/min');
                                 $('#tooltip_errors').text(curElement['errors'] + '/min');

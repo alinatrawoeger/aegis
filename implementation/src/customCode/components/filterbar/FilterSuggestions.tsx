@@ -17,7 +17,7 @@ const FilterSuggestionPanel = ( { suggestions, isIVolunteer, onSetNewFilterValue
     const newFilterCallback = useCallback(
         (value) => {
           setNewFilterValue(value);
-          onSetNewFilterValue(value);
+          onSetNewFilterValue([value, true]);
         }, [newFilterValue, onSetNewFilterValue],
     );
     
@@ -27,7 +27,7 @@ const FilterSuggestionPanel = ( { suggestions, isIVolunteer, onSetNewFilterValue
         renderedFilterlist = (
             <div className={`${styles.suggestionValuesPanel} ${styles.filterListPanel}`}>
                  { filterList.map((filter, index) => {
-                      return <FilterListElement index={index} filterName={filter} 
+                      return <FilterListElement key={index} filterName={filter} 
                                 setShowFilters={setShowFilters} 
                                 filterList={filterList} setFilterList={setFilterList}
                                 setSelectedFilter={setSelectedFilter}
@@ -42,7 +42,7 @@ const FilterSuggestionPanel = ( { suggestions, isIVolunteer, onSetNewFilterValue
     if (showSuggestions) {
         let filterSuggestions = getFilterSuggestions(isIVolunteer, suggestions, selectedFilter);
         renderedSuggestionList = (
-            <FilterSuggestion filterKey={selectedFilter} filterValues={filterSuggestions} setNewFilterValue={newFilterCallback} setShowSuggestions={setShowSuggestions}></FilterSuggestion>
+            <FilterSuggestions filterKey={selectedFilter} filterValues={filterSuggestions} setNewFilterValue={newFilterCallback} setShowSuggestions={setShowSuggestions}></FilterSuggestions>
         )
     }
 
@@ -65,17 +65,17 @@ const FilterSuggestionPanel = ( { suggestions, isIVolunteer, onSetNewFilterValue
     );
 }
 
-const FilterListElement = ( { filterName, index, setShowFilters, filterList, setFilterList, setSelectedFilter, setShowSuggestions } ) => {
+const FilterListElement = ( { filterName, setShowFilters, filterList, setFilterList, setSelectedFilter, setShowSuggestions } ) => {
     return (
         <>
-            <div key={index} className={styles.suggestionValueElement} onClick={() => selectFilterName(filterName, setShowFilters, filterList, setFilterList, setSelectedFilter, setShowSuggestions)}>
+            <div className={styles.suggestionValueElement} onClick={() => selectFilterName(filterName, setShowFilters, filterList, setFilterList, setSelectedFilter, setShowSuggestions)}>
                 {filterName}
             </div>
         </>
     );
 } 
 
-const FilterSuggestion = ( { filterKey, filterValues, setNewFilterValue, setShowSuggestions } ) => {
+const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setShowSuggestions } ) => {
     const keys = Object.keys(filterValues);
     return (
         <>
@@ -84,7 +84,7 @@ const FilterSuggestion = ( { filterKey, filterValues, setNewFilterValue, setShow
                 <div className={styles.suggestionValuesPanel}>
                     {
                         keys.map((valueKey: string) => (
-                            <div className={styles.suggestionValueElement} onClick={() => selectFilterValue(setNewFilterValue, filterKey, filterValues[valueKey], setShowSuggestions)}>{filterValues[valueKey]}</div>
+                            <div key={valueKey} className={styles.suggestionValueElement} onClick={() => selectFilterValue(setNewFilterValue, filterKey, filterValues[valueKey], setShowSuggestions)}>{filterValues[valueKey]}</div>
                         ))
                     }
                 </div>
@@ -162,12 +162,6 @@ const getFilterSuggestions = (isIVolunteer: boolean, suggestions: any, filterKey
     }
 
     return values;
-}
-
-const addFilter = (filterKey, filterValue, filterElements, setFilterElements) => {
-    // https://upmostly.com/tutorials/calling-a-react-component-on-button-click
-    console.log("add")
-    setFilterElements([...filterElements, {filterKey, filterValue}]);
 }
 
 export default FilterSuggestionPanel;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import Filterbar from './components/filterbar/Filterbar';
-import FilterSuggestionPanel from './components/filterbar/FilterSuggestion';
+import FilterSuggestionPanel from './components/filterbar/FilterSuggestions';
 import CustomMap from './components/map/Map';
 import MetricSwitcher from './components/metricswitcher/MetricSwitcher';
 import Table from './components/table/Table';
@@ -56,19 +56,18 @@ class DynatraceWorldmapApp extends Component {
         
         const selectedFiltersCallback = (value) => {
             this.selectedFilters = value;
-            // let table and map react
-        };
-
-        const filterSuggestionsCallback = (value) => {
-            this.filterSuggestions = value;
-            // filterSuggestions.render(React.createElement(FilterSuggestionPanel, { suggestions: this.filterSuggestions, isIVolunteer: false }));
+            
+            primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: false }));
+            secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: false}));
+            map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, onSetZoom: zoomLevelCallback, filters: this.selectedFilters, hasMinimap: true }));
         };
 
         const selectedMetricCallback = (value) => {
             this.selectedMetric = value;
-            primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, isIVolunteer: false }));
-            secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
-            map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, onSetZoom: zoomLevelCallback, hasMinimap: true }));
+            
+            primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: false }));
+            secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: false}));
+            map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, onSetZoom: zoomLevelCallback, filters: this.selectedFilters, hasMinimap: true }));
         };
 
         const zoomLevelCallback = (value) => {
@@ -76,16 +75,16 @@ class DynatraceWorldmapApp extends Component {
             this.datasetPrimary = this.prepareData(data, this.currentZoomLevel).datasetPrimary;
             this.datasetSecondary = this.prepareData(data, this.currentZoomLevel).datasetSecondary;
 
-            primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, isIVolunteer: false }));
-            secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
+            primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: false }));
+            secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: false}));
         };
 
         metricSwitcher.render(React.createElement(MetricSwitcher, { isIVolunteer: false, onSetMetric: selectedMetricCallback }));
-        primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, isIVolunteer: false }));
-        secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
-        map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, onSetZoom: zoomLevelCallback, hasMinimap: true }));
+        primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: false }));
+        secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: false}));
+        map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, onSetZoom: zoomLevelCallback, filters: this.selectedFilters, hasMinimap: true }));
 
-        filterbar.render(React.createElement(Filterbar, {isIVolunteer: false, onSelectedFilters: selectedFiltersCallback, onFilterSuggestions: filterSuggestionsCallback}));
+        filterbar.render(React.createElement(Filterbar, {isIVolunteer: false, onSelectedFilters: selectedFiltersCallback}));
     }
 
     render() {
