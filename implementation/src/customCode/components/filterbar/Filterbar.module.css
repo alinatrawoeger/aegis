@@ -56,9 +56,9 @@
     top: 60px;
 }
 
-.suggestionsPanel {
+.suggestionsTextPanel {
     position: relative;
-    top: 60px;
+    top: 61px;
     display: flex;
 }
 
@@ -67,7 +67,7 @@
     padding-top: 8px;
 }
 
-.suggestionValuesPanel {
+.suggestionTextValuesPanel {
     width: 120px;
     height: 150px;
     overflow-y: scroll;
@@ -85,4 +85,40 @@
 .suggestionValueElement:hover {
     font-weight: 700px;
     background-color: rgba(2, 167, 240, 0.5);
+}
+
+.suggestionsRangePanel {
+    position: relative;
+    top: 45px;
+    display: flex;
+}
+
+.suggestionRangeValuesPanel {
+    width: 160px;
+    height: 94px;
+    padding: 12px;
+    text-align: right;
+    overflow-y: scroll;
+    border: 1px solid black;
+    z-index: 5;
+    background-color: white;
+}
+
+.suggestionRangeFilterLine {
+    display: flex;
+    text-align: left;
+    padding-top: 8px;
+}
+
+.suggestionRangeValueLabel {
+    margin-right: 8px;
+    width: 60px;
+}
+
+.suggestionRangeValueInput {
+    width: 100px;
+}
+
+.suggestionRangeBtn {
+    margin-top: 12px;
 }

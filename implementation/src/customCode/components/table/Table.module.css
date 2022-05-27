@@ -121,3 +121,8 @@
   position: absolute;
   left: 380px;
 }
+
+.noData {
+  height: 200px;
+  padding-top: 20px;
+}

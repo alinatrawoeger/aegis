@@ -40,19 +40,19 @@ class IVolunteerWorldmapApp extends Component {
       this.selectedMetric = value;
       
       map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, hasMinimap: false }));
-      table.render(React.createElement(Table, {data: data, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: true }));
+      table.render(React.createElement(Table, {data: data, selectedMetric: this.selectedMetric, isIVolunteer: true }));
     };
 
     const zoomLevelCallback = (value) => {
       this.currentZoomLevel = value;
 
       map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, onSetZoom: zoomLevelCallback, filters: this.selectedFilters, hasMinimap: false }));
-      table.render(React.createElement(Table, {data: data, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: true }));
+      table.render(React.createElement(Table, {data: data, selectedMetric: this.selectedMetric, isIVolunteer: true }));
     }
 
     metricSwitcher.render(React.createElement(MetricSwitcher, { isIVolunteer: true, onSetMetric: selectedMetricCallback }));
     map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, onSetZoom: zoomLevelCallback, filters: this.selectedFilters, hasMinimap: false }));
-    table.render(React.createElement(Table, {data: data, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: true}));
+    table.render(React.createElement(Table, {data: data, selectedMetric: this.selectedMetric, isIVolunteer: true}));
 
   }
 

@@ -21,19 +21,27 @@ const columnHeaderNamesMap: Map<string, string> = new Map([
 type TableProps = {
   data: any[];
   selectedMetric: string;
-  filters: any;
   isIVolunteer: boolean; // distinguishes between DT and iVol table
 }
 
-const Table: React.FC<TableProps> = ( { data, selectedMetric, filters, isIVolunteer } ) => {
+const Table: React.FC<TableProps> = ( { data, selectedMetric, isIVolunteer } ) => {
   rowsPerPage = isIVolunteer ? 4 : 5;
 
   const [page, setPage] = useState(1);
   const { dataOnPage, tableRange } = useTable([...data], page);
+  
   return (
     <>
-      <TableContent dataOnPage={dataOnPage} selectedMetric={selectedMetric} isIVolunteer={isIVolunteer} />
-      <TablePagination pageRange={tableRange} dataOnPage={dataOnPage} setPage={setPage} page={page} />
+      {
+        data.length > 0 
+        ? <div>
+            <TableContent dataOnPage={dataOnPage} selectedMetric={selectedMetric} isIVolunteer={isIVolunteer} />
+            <TablePagination pageRange={tableRange} dataOnPage={dataOnPage} setPage={setPage} page={page} /> 
+        </div> 
+        : <div className={styles.noData}>
+            <span>No data available for this filter</span>
+          </div>
+      }
     </>
   );
 }
@@ -85,8 +93,9 @@ const TableContent = ({ dataOnPage, selectedMetric, isIVolunteer }) => {
                     : <td className={styles.tableCell}>{dataRow['totaluseractions']}</td>
                 : ''}
               
-              <td className={`${styles.tableCell} ${styles.tableLastCol}`}><a href="#">
-                <img src={analyzeIcon} className={styles.analyzeBtn} />
+              <td className={`${styles.tableCell} ${styles.tableLastCol}`}>
+                <a href="#">
+                  <img src={analyzeIcon} className={styles.analyzeBtn} />
                 </a></td>
             </tr>
           ))}
@@ -109,6 +118,7 @@ const TablePagination: React.FC<TablePaginationProps> = ({ pageRange, setPage, p
       setPage(page - 1);
     }
   }, [dataOnPage, page, setPage]);
+
   return (
     <div className={styles.tableFooter}>
       <button 
@@ -137,6 +147,20 @@ const TablePagination: React.FC<TablePaginationProps> = ({ pageRange, setPage, p
 
 
 // -- calculations & functions
+const useTable = (data: any, page: number) => {
+  const [tableRange, setTableRange] = useState<Array<number>>([]);
+  const [dataOnPage, setDataOnPage] = useState<Array<any>>([]);
+
+  useEffect(() => {
+    const range  = calculatePageRange(data, page);
+    setTableRange([...range]);
+
+    const dataOnPage = data.slice((page - 1) * rowsPerPage, page * rowsPerPage);
+    setDataOnPage([...dataOnPage]);
+  }, [data, setTableRange, page, setDataOnPage]);
+
+  return { dataOnPage, tableRange };
+}
 
 const calculatePageRange = (data: any, page: number): number[] => {
   const pageRange: any[] = [];
@@ -162,25 +186,6 @@ const calculatePageRange = (data: any, page: number): number[] => {
       }
   }
   return pageRange;
-}
-
-const getDataOnPage = (data: any, page: number): number[] => {
-  return data.slice((page - 1) * rowsPerPage, page * rowsPerPage);
-}
-
-const useTable = (data: any, page: number) => {
-  const [tableRange, setTableRange] = useState<Array<number>>([]);
-  const [dataOnPage, setSlice] = useState<Array<any>>([]);
-
-  useEffect(() => {
-    const range  = calculatePageRange(data, page);
-    setTableRange([...range]);
-
-    const dataOnPage = getDataOnPage(data, page);
-    setSlice([...dataOnPage]);
-  }, [data, setTableRange, page, setSlice]);
-
-  return { dataOnPage, tableRange };
 }
 
 export default Table;

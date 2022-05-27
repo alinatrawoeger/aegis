@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { FilterType, getFilterType } from '../../utils';
 import styles from "./Filterbar.module.css";
 
 const FilterSuggestionPanel = ( { suggestions, isIVolunteer, onSetNewFilterValue } ) => {  
@@ -25,7 +26,7 @@ const FilterSuggestionPanel = ( { suggestions, isIVolunteer, onSetNewFilterValue
     let renderedFilterlist = null;
     if (showFilters) {
         renderedFilterlist = (
-            <div className={`${styles.suggestionValuesPanel} ${styles.filterListPanel}`}>
+            <div className={`${styles.suggestionTextValuesPanel} ${styles.filterListPanel}`}>
                  { filterList.map((filter, index) => {
                       return <FilterListElement key={index} filterName={filter} 
                                 setShowFilters={setShowFilters} 
@@ -77,18 +78,36 @@ const FilterListElement = ( { filterName, setShowFilters, filterList, setFilterL
 
 const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setShowSuggestions } ) => {
     const keys = Object.keys(filterValues);
+    const filterType = getFilterType(filterKey);
     return (
         <>
-            <div className={styles.suggestionsPanel}>
-                <div className={styles.suggestionFiltername}>{filterKey}:</div>
-                <div className={styles.suggestionValuesPanel}>
-                    {
-                        keys.map((valueKey: string) => (
-                            <div key={valueKey} className={styles.suggestionValueElement} onClick={() => selectFilterValue(setNewFilterValue, filterKey, filterValues[valueKey], setShowSuggestions)}>{filterValues[valueKey]}</div>
-                        ))
-                    }
-                </div>
-            </div>
+                {
+                    filterType === FilterType.TEXT
+                    ?   <div className={styles.suggestionsTextPanel}>
+                            <div className={styles.suggestionFiltername}>{filterKey}:</div>  
+                            <div className={styles.suggestionTextValuesPanel}>
+                                {
+                                    keys.map((valueKey: string) => (
+                                        <div key={valueKey} className={styles.suggestionValueElement} onClick={() => selectFilterValue(setNewFilterValue, filterKey, filterValues[valueKey], setShowSuggestions)}>{filterValues[valueKey]}</div>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    :   <div className={styles.suggestionsRangePanel}>
+                            <div className={styles.suggestionFiltername}>{filterKey}:</div> 
+                            <div className={styles.suggestionRangeValuesPanel}>
+                                <div className={styles.suggestionRangeFilterLine}>
+                                    <div className={styles.suggestionRangeValueLabel}>From:</div>
+                                    <input className={styles.suggestionRangeValueInput} type='number' id='rangeFrom' min='0.05' max='1' step='0.05' onChange={() => onChangeRange()} defaultValue='0.50'></input>
+                                </div>
+                                <div className={styles.suggestionRangeFilterLine}>
+                                    <div className={styles.suggestionRangeValueLabel}>To:</div>
+                                    <input className={styles.suggestionRangeValueInput} type='number' id='rangeTo' min='0.05' max='1' step='0.05' onChange={() => onChangeRange()} defaultValue='1.0'></input>
+                                </div>
+                                <button className={styles.suggestionRangeBtn} id='rangeFilterConfirm' onClick={() => confirmRangeFilter(setNewFilterValue, filterKey, setShowSuggestions)}>Confirm</button>
+                            </div>
+                        </div>
+                }
         </>
     );  
 }
@@ -133,35 +152,68 @@ const getFilters = (suggestions) => {
  * @param isIVolunteer 
  */
 const getFilterSuggestions = (isIVolunteer: boolean, suggestions: any, filterKey) => {
-    const keys = getFilters(suggestions);
+    const filterType = getFilterType(filterKey);
+    
     let values = {};
     if (isIVolunteer) {
         values = suggestions;
     } else {
-        if (filterKey === 'regions') {
-            let tempValues = {};
-            for (let countryKey in suggestions[filterKey].properties) {
-                for (let regionKey in suggestions[filterKey].properties[countryKey]) {
-                    tempValues[regionKey] = suggestions[filterKey].properties[countryKey][regionKey]; 
-                }
-            }
-            values = tempValues;
-        } else if (filterKey === 'cities') {
-            let tempValues = {};
-            for (let countryKey in suggestions[filterKey].properties) {
-                for (let regionKey in suggestions[filterKey].properties[countryKey]) {
-                    for (let cityIndex = 0; cityIndex < suggestions[filterKey].properties[countryKey][regionKey].length; cityIndex++) {
-                        tempValues[regionKey + "/" + cityIndex] = suggestions[filterKey].properties[countryKey][regionKey][cityIndex].name; 
+        if (filterType === FilterType.TEXT) {
+            if (filterKey === 'region') {
+                let tempValues = {};
+                for (let countryKey in suggestions[filterKey].properties) {
+                    for (let regionKey in suggestions[filterKey].properties[countryKey]) {
+                        tempValues[regionKey] = suggestions[filterKey].properties[countryKey][regionKey]; 
                     }
                 }
+                values = tempValues;
+            } else if (filterKey === 'city') {
+                let tempValues = {};
+                for (let countryKey in suggestions[filterKey].properties) {
+                    for (let regionKey in suggestions[filterKey].properties[countryKey]) {
+                        for (let cityIndex = 0; cityIndex < suggestions[filterKey].properties[countryKey][regionKey].length; cityIndex++) {
+                            tempValues[regionKey + "/" + cityIndex] = suggestions[filterKey].properties[countryKey][regionKey][cityIndex].name; 
+                        }
+                    }
+                }
+                values = tempValues;
+            } else {
+                values = suggestions[filterKey].properties;
             }
-            values = tempValues;
-        } else {
-            values = suggestions[filterKey].properties;
         }
     }
 
     return values;
+}
+
+const onChangeRange = () => {
+    $('#rangeFilterConfirm').prop('disabled', true);
+
+    let from = $('#rangeFrom').val();
+    let to = $('#rangeTo').val();
+
+    // enable button when both fields are filled and from < to
+    if (from !== '' && to !== '') {
+        if (from < to || from === to) {
+            $('#rangeFilterConfirm').prop('disabled', false);
+        }
+    }
+}
+
+const confirmRangeFilter = (setNewFilterValue, filterKey, setShowSuggestions) => {
+    let from = $('#rangeFrom').val();
+    let to = $('#rangeTo').val();
+
+    // confirm only works when both fields are filled and from < to
+    if (from !== '' && to !== '') {
+        if (from < to || from === to) {
+            setNewFilterValue({
+                "key": filterKey,
+                "value": [from, to]
+            });
+            setShowSuggestions(false);
+        }
+    }
 }
 
 export default FilterSuggestionPanel;

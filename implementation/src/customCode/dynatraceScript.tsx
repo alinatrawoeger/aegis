@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import Filterbar from './components/filterbar/Filterbar';
-import FilterSuggestionPanel from './components/filterbar/FilterSuggestions';
 import CustomMap from './components/map/Map';
 import MetricSwitcher from './components/metricswitcher/MetricSwitcher';
 import Table from './components/table/Table';
 import data from './data/dt_database';
-import { getFilterType, groupValuesPerLocation, ZoomLevel } from './utils';
+import { FilterType, getFilterType, groupValuesPerLocation, ZoomLevel } from './utils';
 
 // TODO Map:
 // - Farbabstufungen bei violetten Daten
@@ -14,9 +13,13 @@ import { getFilterType, groupValuesPerLocation, ZoomLevel } from './utils';
 // - erneuter klick auf markiertes country soll die markierung aufheben
 
 // TODO Filterbar:
-// - Filter Suggestions -> Style suggestions properly
-// - Filterbar soll Daten beeinflussen
+// - Bug bei Range suggestion, manchmal reagieren die Felder/Button nicht
+// - Nur "mögliche" Filtersuggestions anzeigen (e.g. Country: Germany, City: Berlin etc.)
+// - NO DATA state in table
 // - Filter Suggestions -> type in letters to find suggestions
+
+// TODO Table:
+// - find out why there is an endless render loop
 
 class DynatraceWorldmapApp extends Component {
     // test data (coordinates of Linz)
@@ -56,16 +59,16 @@ class DynatraceWorldmapApp extends Component {
             this.datasetPrimary = this.prepareData(filteredData, this.currentZoomLevel).datasetPrimary;
             this.datasetSecondary = this.prepareData(filteredData, this.currentZoomLevel).datasetSecondary;
 
-            primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: false }));
-            secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: false}));
+            primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, isIVolunteer: false }));
+            secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
             map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, onSetZoom: zoomLevelCallback, filters: this.selectedFilters, hasMinimap: true }));
         };
 
         const selectedMetricCallback = (value) => {
             this.selectedMetric = value;
             
-            primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: false }));
-            secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: false}));
+            primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, isIVolunteer: false }));
+            secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
             map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, onSetZoom: zoomLevelCallback, filters: this.selectedFilters, hasMinimap: true }));
         };
 
@@ -74,13 +77,13 @@ class DynatraceWorldmapApp extends Component {
             this.datasetPrimary = this.prepareData(data, this.currentZoomLevel).datasetPrimary;
             this.datasetSecondary = this.prepareData(data, this.currentZoomLevel).datasetSecondary;
 
-            primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: false }));
-            secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: false}));
+            primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, isIVolunteer: false }));
+            secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
         };
 
         metricSwitcher.render(React.createElement(MetricSwitcher, { isIVolunteer: false, onSetMetric: selectedMetricCallback }));
-        primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: false }));
-        secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, filters: this.selectedFilters, isIVolunteer: false}));
+        primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, isIVolunteer: false }));
+        secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
         map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, onSetZoom: zoomLevelCallback, filters: this.selectedFilters, hasMinimap: true }));
 
         filterbar.render(React.createElement(Filterbar, {isIVolunteer: false, onSelectedFilters: selectedFiltersCallback}));
@@ -119,20 +122,32 @@ class DynatraceWorldmapApp extends Component {
             let curFilterValue = this.selectedFilters[i].value;
             let curFilterType = getFilterType(curFilterKey);
 
-            if (curFilterType === 'text') {
-                for (let j = 0; j < data.length; j++) {
-                    let dataElement = data[j][curFilterKey];
+            // first filter: use full dataset; afterwards use already-filtered data
+            let dataSet = i === 0 ? data : filteredData;
+
+            let filteredDataPerCycle = [];
+            if (curFilterType === FilterType.TEXT) {
+                for (let j = 0; j < dataSet.length; j++) {
+                    let dataElement = dataSet[j][curFilterKey];
                     if (curFilterValue === dataElement) {
-                        filteredData.push(data[j]);
+                        filteredDataPerCycle.push(dataSet[j]);
                     }
                 }
-            } else if (curFilterType === 'range') {
-                // implement range filter
-                // build range suggestion for this first
+            } else if (curFilterType === FilterType.RANGE) {
+                for (let j = 0; j < dataSet.length; j++) {
+                    let dataElement = dataSet[j][curFilterKey];
+
+                    let filterFrom = curFilterValue[0];
+                    let filterTo = curFilterValue[1];
+                    if (filterFrom <= dataElement && dataElement <= filterTo) {
+                        filteredDataPerCycle.push(dataSet[j]);
+                    }
+                }
             }
+            filteredData = filteredDataPerCycle;
         }
         
-        return filteredData.length > 0 ? filteredData : data;
+        return this.selectedFilters.length > 0 ? filteredData : data;
     }
 
     render() {
