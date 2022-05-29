@@ -7,18 +7,23 @@ import FilterSuggestionPanel from "./FilterSuggestions";
 
 type FilterbarProps = {
     isIVolunteer: boolean;
+    filters: any[];
     onSelectedFilters: (value) => void;
 }
 
-const Filterbar: React.FC<FilterbarProps> = ( { isIVolunteer, onSelectedFilters} ) => {
-    const [selectedFilters, setSelectedFilters] = useState([]);
+const Filterbar: React.FC<FilterbarProps> = ( { isIVolunteer, filters, onSelectedFilters} ) => {
+    const [selectedFilters, setSelectedFilters] = useState(filters);
     const filterSuggestions = useFilterSuggestions(isIVolunteer, selectedFilters, setSelectedFilters);
+
+    if (selectedFilters !== undefined && filters !== selectedFilters) {
+        setSelectedFilters(filters);
+    }
 
     const updateSelectedFilters = useCallback(
         (value) => {
             if (value[1]) { // add filter
                 onSelectedFilters([...selectedFilters, value[0]]);
-                setSelectedFilters(selectedFilters => [...selectedFilters, value[0]])
+                setSelectedFilters([...selectedFilters, value[0]])
             } else { // remove filter
                 let newFilterList = selectedFilters.filter(el => el.key !== value[0]);
                 onSelectedFilters(newFilterList);
@@ -26,7 +31,7 @@ const Filterbar: React.FC<FilterbarProps> = ( { isIVolunteer, onSelectedFilters}
             }
         },
         [selectedFilters, setSelectedFilters],
-      );
+    );
 
     let filterList = (
         <>

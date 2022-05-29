@@ -98,9 +98,6 @@ export function createMap(target: string, zoom: ZoomLevel, lon: number, lat: num
 // table functions
 export function groupValuesPerLocation(data: any, locationKey: string) {
     let groupedValuesMap: any[] = [];
-    if (locationKey === 'iso') {
-        console.log("click");
-    }
     for (let i = 0; i < data.length; i++) {
         let curElement = data[i];
         let location = curElement[locationKey as keyof typeof curElement];

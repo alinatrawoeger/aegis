@@ -8,14 +8,13 @@ import data from './data/dt_database';
 import { FilterType, getFilterType, groupValuesPerLocation, ZoomLevel } from './utils';
 
 // TODO Map:
+// - Map überschreibt Filter in Filterbar -> filters ist immer empty wenn breakpoint in Map.tsx reinläuft??
 // - Farbabstufungen bei violetten Daten
 // - Klick auf Karte soll Filter setzen
-// - erneuter klick auf markiertes country soll die markierung aufheben
 
 // TODO Filterbar:
 // - Bug bei Range suggestion, manchmal reagieren die Felder/Button nicht
 // - Nur "mögliche" Filtersuggestions anzeigen (e.g. Country: Germany, City: Berlin etc.)
-// - NO DATA state in table
 // - Filter Suggestions -> type in letters to find suggestions
 
 // TODO Table:
@@ -44,8 +43,8 @@ class DynatraceWorldmapApp extends Component {
         super(props);
 
         // initialize table & metric switcher stuff
-        this.datasetPrimary = this.prepareData(data, ZoomLevel.COUNTRY).datasetPrimary;
-        this.datasetSecondary = this.prepareData(data, ZoomLevel.COUNTRY).datasetSecondary;
+        this.datasetPrimary = this.prepareTableData(data, ZoomLevel.COUNTRY).datasetPrimary;
+        this.datasetSecondary = this.prepareTableData(data, ZoomLevel.COUNTRY).datasetSecondary;
         
         const filterbar = ReactDOM.createRoot(document.getElementById(this.filterbarPanel)!);
         const metricSwitcher = ReactDOM.createRoot(document.getElementById(this.metricswitcherPanel)!);
@@ -56,12 +55,13 @@ class DynatraceWorldmapApp extends Component {
         const selectedFiltersCallback = (value) => {
             this.selectedFilters = value;
             let filteredData = this.filterData();
-            this.datasetPrimary = this.prepareData(filteredData, this.currentZoomLevel).datasetPrimary;
-            this.datasetSecondary = this.prepareData(filteredData, this.currentZoomLevel).datasetSecondary;
+            this.datasetPrimary = this.prepareTableData(filteredData, this.currentZoomLevel).datasetPrimary;
+            this.datasetSecondary = this.prepareTableData(filteredData, this.currentZoomLevel).datasetSecondary;
 
             primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, isIVolunteer: false }));
             secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
-            map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, onSetZoom: zoomLevelCallback, filters: this.selectedFilters, hasMinimap: true }));
+            map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, hasMinimap: true }));
+            filterbar.render(React.createElement(Filterbar, {isIVolunteer: false, filters: this.selectedFilters, onSelectedFilters: selectedFiltersCallback}));
         };
 
         const selectedMetricCallback = (value) => {
@@ -69,27 +69,26 @@ class DynatraceWorldmapApp extends Component {
             
             primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, isIVolunteer: false }));
             secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
-            map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, onSetZoom: zoomLevelCallback, filters: this.selectedFilters, hasMinimap: true }));
+            map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, hasMinimap: true }));
         };
 
         const zoomLevelCallback = (value) => {
             this.currentZoomLevel = value;
-            this.datasetPrimary = this.prepareData(data, this.currentZoomLevel).datasetPrimary;
-            this.datasetSecondary = this.prepareData(data, this.currentZoomLevel).datasetSecondary;
+            this.datasetPrimary = this.prepareTableData(data, this.currentZoomLevel).datasetPrimary;
+            this.datasetSecondary = this.prepareTableData(data, this.currentZoomLevel).datasetSecondary;
 
             primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, isIVolunteer: false }));
             secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
         };
 
+        filterbar.render(React.createElement(Filterbar, {isIVolunteer: false, filters: this.selectedFilters, onSelectedFilters: selectedFiltersCallback}));
         metricSwitcher.render(React.createElement(MetricSwitcher, { isIVolunteer: false, onSetMetric: selectedMetricCallback }));
         primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, isIVolunteer: false }));
         secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
-        map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, onSetZoom: zoomLevelCallback, filters: this.selectedFilters, hasMinimap: true }));
-
-        filterbar.render(React.createElement(Filterbar, {isIVolunteer: false, onSelectedFilters: selectedFiltersCallback}));
+        map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback,  hasMinimap: true }));
     }
 
-    prepareData(data: any, zoomLevel: number) {
+    prepareTableData(data: any, zoomLevel: number) {
         let dataLabels = new Map<string, any>();
         dataLabels.set('continent', 'Continent');
         dataLabels.set('country', 'Country');
@@ -122,7 +121,7 @@ class DynatraceWorldmapApp extends Component {
             let curFilterValue = this.selectedFilters[i].value;
             let curFilterType = getFilterType(curFilterKey);
 
-            // first filter: use full dataset; afterwards use already-filtered data
+            // first use full dataset; afterwards use already-filtered data
             let dataSet = i === 0 ? data : filteredData;
 
             let filteredDataPerCycle = [];

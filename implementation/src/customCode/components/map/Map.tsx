@@ -69,10 +69,10 @@ type CustomMapProps = {
     filters: any,
     hasMinimap: boolean,
     onSetZoom: (value) => void,
+    onChangeFilters: (value) => void
 }
 
-
-const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoom, hasMinimap }) => {
+const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoom, onChangeFilters, hasMinimap }) => {
     data = hasMinimap ? groupValuesPerLocation(dataDt, 'country') : dataIVol;
 
     if (hasMinimap) {
@@ -87,10 +87,11 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
         // TODO add ivolunteer handling
     }
     
-    // initialization 
+// ------------ initialization 
     const [ map, setMap ] = useState<OLMap>()
     let [ selectedLocation, setSelectedLocation ] = useState<Feature<Geometry> | undefined>();
     let [ hoveredLocation, setHoveredLocation ] = useState<Feature<Geometry> | undefined>();
+    let [ selectedFilters, setSelectedFilters ] = useState(filters);
     const [ zoom, setZoom ] = useState<ZoomLevel>();
     const [ selectedCoordinates , setSelectedCoordinates ] = useState()
 
@@ -101,6 +102,7 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
 
     let currZoom = undefined;
 
+    // initialize map and overlays (only called once)
     useEffect( () => {
         // create and add vector source layer
         const overlayLayer = new VectorLayer({
@@ -113,15 +115,42 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
         // create map
         const initialMap = createMap(mapElement.current, ZoomLevel.COUNTRY, longitude, latitude, hasMinimap, overlayLayer);
 
-        initialMap.on('click', handleMapClick);
+        // set event handlers except click handler (will be set later)
         initialMap.on('pointermove', handleHover);
-        initialMap.on('moveend', handleZoom);
+        initialMap.on('moveend', handleZoom);    
 
         // save map for later use
         setMap(initialMap)
     }, [])
 
-    // Overlay functions
+// ---------------- handle filters
+    const updateFilterCallback = useCallback(
+        (value) => {
+            if (!checkForExistingCountryFilter(value)) {
+                selectedLocation = undefined;
+            }
+        
+            setSelectedFilters(value);
+            onChangeFilters(value);
+        },
+        [selectedFilters, onChangeFilters]
+    );
+        
+    if (selectedFilters !== undefined && filters !== selectedFilters) {
+        setSelectedFilters(filters);
+    }
+
+    if (filters.length > 0) {
+        for (let i = 0; i < filters.length; i++) {
+            if (filters[i].key === 'country') {
+                // select/deselect location based on filter
+                console.log("selected country: " + filters[i].value);
+            }
+        }
+    }
+        
+// -------------- Overlay functions
+    // click & hover functions on overlay
     const selectStyle = new Style({
         fill: new Fill({
             color: 'rgba(0, 0, 0, 0)',
@@ -142,8 +171,6 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
         }),
     });  
 
-
-    // click & hover functions on overlay
     const handleHover = (event) => {        
         mapRef.current.forEachFeatureAtPixel(event.pixel, function (feature) {
             if (selectedLocation !== feature) {
@@ -165,6 +192,21 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
     
                 setSelectedLocation(feature as Feature<Geometry>);
                 setHoveredLocation(undefined);
+
+                // add selected country to filter list
+                let currentFilters = [];
+                for (let i = 0; i < selectedFilters.length; i++) {
+                    if (selectedFilters[i].key !== 'country') {
+                        currentFilters.push(selectedFilters[i]);
+                    }
+                }
+
+                currentFilters.push({
+                    "key": 'country',
+                    "value": feature.get('name')
+                });
+            
+                updateFilterCallback(currentFilters);
             } else {
                 // open dialog if user wants to create a new task
                 // if yes, redirect to Add Task page
@@ -241,12 +283,12 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
                 selectedLocation.setStyle(selectStyle);
             }
         }
-    }, [selectedLocation, hoveredLocation]);
+    }, [hoveredLocation, selectedLocation, selectedFilters, onChangeFilters]);
 
-    // Zoom functions
+// ---------------  Zoom functions
     // pass zoom level outside for other components
     const handleZoom = useCallback(
-        (event) => {
+        () => {
             if (mapRef.current !== undefined) {
                 var newZoom = mapRef.current.getView().getZoom();
                 if (currZoom != newZoom) {
@@ -258,6 +300,15 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
         },
         [zoom, onSetZoom],
     );
+
+// ---------- set click handler
+// if click handler is set during initialization, the filters aren't updated properly 
+// because it thinks the filter array is still empty (as it was during initialization)
+    useEffect( () => {
+        if (mapRef.current !== undefined) {
+            mapRef.current.on('click', handleMapClick);
+        }
+    }, [selectedFilters]); 
 
     return (
         <>
@@ -333,6 +384,17 @@ const getDtOverlayColor = (value: number, selectMode: boolean) => {
         }
     }
    
+}
+
+const checkForExistingCountryFilter = (filters) => {
+    let filterExists = false;
+    for (let i = 0; i < filters.length; i++) {
+        if (filters[i].key === 'country') {
+            filterExists = true;
+            break;
+        }
+    }
+    return filterExists;
 }
 
 export default CustomMap;

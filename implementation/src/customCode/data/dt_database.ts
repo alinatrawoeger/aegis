@@ -114,8 +114,8 @@ export default [
     {
         "continent": "Europe",
         "continent-iso": "EU",
-        "country": "Spain",
-        "country-iso": "ESP",
+        "country": "Belgium",
+        "country-iso": "BEL",
         "apdex": 0.23,
         "useractions": 0.23,
         "errors": 0.18,
