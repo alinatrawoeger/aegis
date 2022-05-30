@@ -8,7 +8,7 @@ import TileLayer from 'ol/layer/Tile';
 import VectorLayer from "ol/layer/Vector";
 import { fromLonLat } from 'ol/proj';
 import OSM from 'ol/source/OSM';
-import { default as VectorSrc } from 'ol/source/Vector';
+import VectorSrc from 'ol/source/Vector';
 import { Fill, Stroke, Style } from "ol/style";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import dataDt from "../../data/dt_database";
@@ -96,22 +96,25 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
     const [ selectedCoordinates , setSelectedCoordinates ] = useState()
 
     const mapElement = useRef();
-
     const mapRef = useRef<OLMap>(); // map object for later use
     mapRef.current = map;
 
+    const filterRef = useRef();
+    filterRef.current = selectedFilters;
+
     let currZoom = undefined;
+
+    const overlaySource = new VectorSrc({
+        url: '../../../data/geodata/countries.geojson',
+        format: new GeoJSON(),
+    });
 
     // initialize map and overlays (only called once)
     useEffect( () => {
         // create and add vector source layer
         const overlayLayer = new VectorLayer({
-            source: new VectorSrc({
-                url: '../../../data/geodata/countries.geojson',
-                format: new GeoJSON()
-            })
+            source: overlaySource
         });
-
         // create map
         const initialMap = createMap(mapElement.current, ZoomLevel.COUNTRY, longitude, latitude, hasMinimap, overlayLayer);
 
@@ -138,15 +141,6 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
         
     if (selectedFilters !== undefined && filters !== selectedFilters) {
         setSelectedFilters(filters);
-    }
-
-    if (filters.length > 0) {
-        for (let i = 0; i < filters.length; i++) {
-            if (filters[i].key === 'country') {
-                // select/deselect location based on filter
-                console.log("selected country: " + filters[i].value);
-            }
-        }
     }
         
 // -------------- Overlay functions
@@ -304,11 +298,44 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
 // ---------- set click handler
 // if click handler is set during initialization, the filters aren't updated properly 
 // because it thinks the filter array is still empty (as it was during initialization)
+    if (mapRef.current !== undefined) {
+        mapRef.current.on('click', handleMapClick);
+    }    
+
     useEffect( () => {
-        if (mapRef.current !== undefined) {
-            mapRef.current.on('click', handleMapClick);
+        // potentially deselect country if filter has been removed
+        let containsCountryFilter = false;
+        for (let i = 0; i < selectedFilters.length; i++) {
+            if (selectedFilters[i].key === 'country') {
+                containsCountryFilter = true;
+                break;
+            }
         }
-    }, [selectedFilters]); 
+        if (!containsCountryFilter) {
+            if (previouslySelectedLocation !== undefined) {
+                previouslySelectedLocation.setStyle(undefined);
+                previouslySelectedLocation = undefined;
+            }
+            setSelectedLocation(undefined);
+        }
+        
+        overlaySource.on('change', function(event){
+            var source: any = event.target;
+            let currentFilterList = filterRef.current as any;
+            if (source.getState() === 'ready' && currentFilterList?.length > 0){
+                for (let i = 0; i < currentFilterList.length; i++) {
+                    if (currentFilterList[i].key === 'country') {                              
+                        let filterValue = currentFilterList[i].value;
+                        overlaySource.forEachFeature((feature) => {
+                            if (feature.get('name') === filterValue) {
+                                setSelectedLocation(feature);
+                            }
+                        });
+                    }
+                }
+            }   
+        });     
+    }, [selectedFilters, onChangeFilters]);
 
     return (
         <>

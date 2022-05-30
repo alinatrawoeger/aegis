@@ -8,7 +8,7 @@ import data from './data/dt_database';
 import { FilterType, getFilterType, groupValuesPerLocation, ZoomLevel } from './utils';
 
 // TODO Map:
-// - Map überschreibt Filter in Filterbar -> filters ist immer empty wenn breakpoint in Map.tsx reinläuft??
+// - SelectedLocation select/deselect bug
 // - Farbabstufungen bei violetten Daten
 // - Klick auf Karte soll Filter setzen
 
