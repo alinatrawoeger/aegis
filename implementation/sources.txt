@@ -24,3 +24,7 @@ OL with React:
 
 X Icon (Filterbar):
     https://icons-for-free.com/x+icon-1320166903649367557/
+
+
+Ideas for name:
+- GIDDY -> Geographic information data display y...?    

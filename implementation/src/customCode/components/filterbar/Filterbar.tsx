@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import dtFilters from '../../data/dt_filters';
 import iVolFilters from '../../data/ivol_filters.json';
+import dataDt from '../../data/dt_database';
 import styles from "./Filterbar.module.css";
 import FilterElement from "./FilterElement";
 import FilterSuggestionPanel from "./FilterSuggestions";
@@ -69,20 +70,27 @@ const useFilterSuggestions = (isIVolunteer: boolean, selectedFilters: any[], set
 
     useEffect(() => {
             // check if selectedFilters contains a filter from filterSuggestions and remove it from filterSuggestions
-            let newFilterList = Object.assign({}, fullList);
-            for (let key in fullList) {
-                for (let j = 0; j < selectedFilters.length; j++) {
-                    if (key === selectedFilters[j].key) {
-                        delete newFilterList[key];
-                    }
-                }
-            }
+            let newFilterList = adjustAvailableFilters(selectedFilters, fullList);
 
             setFilterSuggestions(newFilterList);
         }, [selectedFilters, setSelectedFilters]
     );
 
     return filterSuggestions;
+}
+
+const adjustAvailableFilters = (selectedFilters: any[], fullList: any[]) => {
+    let filterList = Object.assign({}, fullList);
+    for (let i = 0; i < selectedFilters.length; i++) {
+        for (let key in fullList) {
+            // remove filterkey if this filter has already been set
+            if (key === selectedFilters[i].key) {
+                delete filterList[key];
+            }
+        }
+    }
+
+    return filterList;
 }
 
 export default Filterbar;

@@ -39,8 +39,8 @@ let overlayColorMap = {
             hoverColor: 'rgba(255, 106, 0, 0.5)',
         },
         'Unacceptable': {
-            selectedColor: 'rgba(61, 199, 29, 0.9)',
-            hoverColor: 'rgba(61, 199, 29, 0.5)',
+            selectedColor: 'rgba(238, 16, 12, 0.9)',
+            hoverColor: 'rgba(238, 16, 12, 0.5)',
         }
     },
     'other': {
