@@ -159,7 +159,15 @@ const getFilterSuggestions = (isIVolunteer: boolean, suggestions: any, filterKey
         values = suggestions;
     } else {
         if (filterType === FilterType.TEXT) {
-            if (filterKey === 'region') {
+            if (filterKey === 'country') {
+                let tempValues = {};
+                for (let continentKey in suggestions[filterKey].properties) {
+                    for (let countryKey in suggestions[filterKey].properties[continentKey]) {
+                        tempValues[countryKey] = suggestions[filterKey].properties[continentKey][countryKey]; 
+                    }
+                }
+                values = tempValues;
+            } else if (filterKey === 'region') {
                 let tempValues = {};
                 for (let countryKey in suggestions[filterKey].properties) {
                     for (let regionKey in suggestions[filterKey].properties[countryKey]) {

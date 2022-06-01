@@ -7,17 +7,12 @@ import Table from './components/table/Table';
 import data from './data/dt_database';
 import { FilterType, getFilterType, groupValuesPerLocation, ZoomLevel } from './utils';
 
-// TODO general:
-// - add some more data to JSON
-
 // TODO Map:
 // - Farbabstufungen bei violetten Daten
 
 // TODO Filterbar:
-// - Bug bei Range suggestion, manchmal reagieren die Felder/Button nicht
-// - Nur "mögliche" Filtersuggestions anzeigen (e.g. Country: Germany, City: Berlin etc.)
-//      - dazu womöglich filter database umschreiben
 // - Country ohne Daten soll das im Tooltip auch so anzeigen
+// - Suggestion soll bei Klick daneben verschwinden
 // - Filter Suggestions -> type in letters to find suggestions
 
 // TODO Table:
