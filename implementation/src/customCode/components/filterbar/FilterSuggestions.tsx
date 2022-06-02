@@ -30,7 +30,6 @@ const FilterSuggestionPanel = ( { suggestions, isIVolunteer, onSetNewFilterValue
                  { filterList.map((filter, index) => {
                       return <FilterListElement key={index} filterName={filter} 
                                 setShowFilters={setShowFilters} 
-                                filterList={filterList} setFilterList={setFilterList}
                                 setSelectedFilter={setSelectedFilter}
                                 setShowSuggestions={setShowSuggestions} />
                  })}
@@ -43,7 +42,12 @@ const FilterSuggestionPanel = ( { suggestions, isIVolunteer, onSetNewFilterValue
     if (showSuggestions) {
         let filterSuggestions = getFilterSuggestions(isIVolunteer, suggestions, selectedFilter);
         renderedSuggestionList = (
-            <FilterSuggestions filterKey={selectedFilter} filterValues={filterSuggestions} setNewFilterValue={newFilterCallback} setShowSuggestions={setShowSuggestions}></FilterSuggestions>
+            <FilterSuggestions  filterKey={selectedFilter} 
+                                filterValues={filterSuggestions} 
+                                setNewFilterValue={newFilterCallback} 
+                                setShowSuggestions={setShowSuggestions}
+                                filterList={filterList}
+                                setFilterList={setFilterList}></FilterSuggestions>
         )
     }
 
@@ -66,29 +70,29 @@ const FilterSuggestionPanel = ( { suggestions, isIVolunteer, onSetNewFilterValue
     );
 }
 
-const FilterListElement = ( { filterName, setShowFilters, filterList, setFilterList, setSelectedFilter, setShowSuggestions } ) => {
+const FilterListElement = ( { filterName, setShowFilters, setSelectedFilter, setShowSuggestions } ) => {
     return (
         <>
-            <div className={styles.suggestionValueElement} onClick={() => selectFilterName(filterName, setShowFilters, filterList, setFilterList, setSelectedFilter, setShowSuggestions)}>
+            <div className={styles.suggestionValueElement} onClick={() => selectFilterName(filterName, setShowFilters, setSelectedFilter, setShowSuggestions)}>
                 {filterName}
             </div>
         </>
     );
 } 
 
-const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setShowSuggestions } ) => {
+const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setShowSuggestions, filterList, setFilterList } ) => {
     const keys = Object.keys(filterValues);
     const filterType = getFilterType(filterKey);
     return (
         <>
                 {
                     filterType === FilterType.TEXT
-                    ?   <div className={styles.suggestionsTextPanel}>
+                    ?   <div className={styles.suggestionsTextPanel} onClick={() => hideSuggestionPanel(setShowSuggestions)}>
                             <div className={styles.suggestionFiltername}>{filterKey}:</div>  
                             <div className={styles.suggestionTextValuesPanel}>
                                 {
                                     keys.map((valueKey: string) => (
-                                        <div key={valueKey} className={styles.suggestionValueElement} onClick={() => selectFilterValue(setNewFilterValue, filterKey, filterValues[valueKey], setShowSuggestions)}>{filterValues[valueKey]}</div>
+                                        <div key={valueKey} className={styles.suggestionValueElement} onClick={() => selectFilterValue(setNewFilterValue, filterKey, filterValues[valueKey], setShowSuggestions, filterList, setFilterList)}>{filterValues[valueKey]}</div>
                                     ))
                                 }
                             </div>
@@ -116,33 +120,28 @@ const displayFilters = (showFilters, setShowFilters: any) => {
     setShowFilters(showFilters);
 }
 
-const selectFilterName = (filterName, setShowFilters, filterList, setFilterList, setSelectedFilter, setShowFilterSuggestions) => {
+const selectFilterName = (filterName, setShowFilters, setSelectedFilter, setShowFilterSuggestions) => {
     setShowFilters(false);
     setSelectedFilter(filterName);
     setShowFilterSuggestions(true);
-
-    // remove filter from filterlist so it cannot be selected twice
-    let elementIndex = filterList.indexOf(filterName);
-    filterList.splice(elementIndex, 1);
-    setFilterList(filterList);
 }
 
-const selectFilterValue = (setNewFilterValue, filterKey, filterValue, setShowSuggestions) => {
+const selectFilterValue = (setNewFilterValue, filterKey, filterValue, setShowSuggestions, filterList, setFilterList) => {
     setNewFilterValue({
         "key": filterKey,
         "value": filterValue
     });
+
+    // remove filter from filterlist so it cannot be selected twice
+    let elementIndex = filterList.indexOf(filterKey);
+    filterList.splice(elementIndex, 1);
+    setFilterList(filterList);
+
     setShowSuggestions(false);
 }
 
-/**
- * get FilterKeys as a first step
- * 
- * @param suggestions
- * @returns 
- */
-const getFilters = (suggestions) => {
-    return Object.keys(suggestions);
+const hideSuggestionPanel = (setShowFilterSuggestions) => {
+    setShowFilterSuggestions(false);
 }
 
 /**
@@ -169,18 +168,22 @@ const getFilterSuggestions = (isIVolunteer: boolean, suggestions: any, filterKey
                 values = tempValues;
             } else if (filterKey === 'region') {
                 let tempValues = {};
-                for (let countryKey in suggestions[filterKey].properties) {
-                    for (let regionKey in suggestions[filterKey].properties[countryKey]) {
-                        tempValues[regionKey] = suggestions[filterKey].properties[countryKey][regionKey]; 
+                for (let continentKey in suggestions[filterKey].properties) {
+                    for (let countryKey in suggestions[filterKey].properties[continentKey]) {
+                        for (let regionKey in suggestions[filterKey].properties[continentKey][countryKey]) {
+                            tempValues[regionKey] = suggestions[filterKey].properties[continentKey][countryKey][regionKey]; 
+                        }
                     }
                 }
                 values = tempValues;
             } else if (filterKey === 'city') {
                 let tempValues = {};
-                for (let countryKey in suggestions[filterKey].properties) {
-                    for (let regionKey in suggestions[filterKey].properties[countryKey]) {
-                        for (let cityIndex = 0; cityIndex < suggestions[filterKey].properties[countryKey][regionKey].length; cityIndex++) {
-                            tempValues[regionKey + "/" + cityIndex] = suggestions[filterKey].properties[countryKey][regionKey][cityIndex].name; 
+                for (let continentKey in suggestions[filterKey].properties) {
+                    for (let countryKey in suggestions[filterKey].properties[continentKey]) {
+                        for (let regionKey in suggestions[filterKey].properties[continentKey][countryKey]) {
+                            for (let cityIndex = 0; cityIndex < suggestions[filterKey].properties[continentKey][countryKey][regionKey].length; cityIndex++) {
+                                tempValues[regionKey + "/" + cityIndex] = suggestions[filterKey].properties[continentKey][countryKey][regionKey][cityIndex].name; 
+                            }
                         }
                     }
                 }

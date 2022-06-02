@@ -22,6 +22,7 @@ export enum ZoomLevel {
     CITY = 10
 }
 
+// scale for Apdex and also other DT metrics
 export enum Apdex {
     EXCELLENT = 1.00,
     GOOD = 0.90,

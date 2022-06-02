@@ -15,7 +15,14 @@ export default [
             "filterType": "text",
             "properties": {
                 "Europe": {
+                    "AT": "Austria",
                     "BE": "Belgium",
+                    "FR": "France",
+                    "DE": "Germany",
+                    "IT": "Italy",
+                    "NO": "Norway",
+                    "ES": "Spain",
+                    "GB": "United Kingdom",
                     "BG": "Bulgaria",
                     "BA": "Bosnia and Herzegovina",
                     "BY": "Belarus",
@@ -23,23 +30,17 @@ export default [
                     "RS": "Serbia",
                     "RO": "Romania",
                     "GR": "Greece",
-                    "GB": "United Kingdom",
                     "HR": "Croatia",
                     "HU": "Hungary",
                     "PT": "Portugal",
                     "MT": "Malta",
-                    "FR": "France",
                     "FI": "Finland",
                     "NL": "Netherlands",
-                    "NO": "Norway",
-                    "IT": "Italy",
-                    "ES": "Spain",
                     "MD": "Moldova",
                     "CH": "Switzerland",
                     "CZ": "Czech Republic",
                     "CY": "Cyprus",
                     "DK": "Denmark",
-                    "DE": "Germany",
                     "TR": "Turkey",
                     "LI": "Liechtenstein",
                     "LV": "Latvia",
@@ -49,7 +50,6 @@ export default [
                     "SI": "Slovenia",
                     "IS": "Iceland",
                     "AL": "Albania",
-                    "AT": "Austria",
                     "IE": "Ireland",
                     "UA": "Ukraine",
                     "SE": "Sweden",
@@ -284,145 +284,153 @@ export default [
         "region": {
             "filterType": "text",
             "properties": {
-                "Austria": {
-                    "AT-1": "Burgenland",
-                    "AT-2": "Carinthia",
-                    "AT-3": "Lower Austria",
-                    "AT-4": "Upper Austria",
-                    "AT-5": "Salzburg",
-                    "AT-6": "Styria",
-                    "AT-7": "Tyrol",
-                    "AT-8": "Vorarlberg",
-                    "AT-9": "Vienna"
+                "Europe": {
+                    "Austria": {
+                        "AT-1": "Burgenland",
+                        "AT-2": "Carinthia",
+                        "AT-3": "Lower Austria",
+                        "AT-4": "Upper Austria",
+                        "AT-5": "Salzburg",
+                        "AT-6": "Styria",
+                        "AT-7": "Tyrol",
+                        "AT-8": "Vorarlberg",
+                        "AT-9": "Vienna"
+                    },
+                    "Germany": {
+                        "DE-BW": "Baden-Württemberg",
+                        "DE-BY": "Bayern",
+                        "DE-BE": "Berlin",
+                        "DE-BB": "Brandenburg",
+                        "DE-HB": "Bremen",
+                        "DE-HH": "Hamburg",
+                        "DE-HE": "Hessen",
+                        "DE-MV": "Mecklenburg-Vorpommern",
+                        "DE-NI": "Niedersachsen",
+                        "DE-NW": "Nordrhein-Westfalen",
+                        "DE-RP": "Rheinland-Pfalz",
+                        "DE-SL": "Saarland",
+                        "DE-SN": "Sachsen",
+                        "DE-ST": "Sachsen-Anhalt",
+                        "DE-SH": "Schleswig-Holstein",
+                        "DE-TH": "Thüringen"
+                    },
+                    "United Kingdom": {
+                        "GB-ENG": "England",
+                        "GB-NIR": "Northern Ireland",
+                        "GB-SCT": "Scotland",
+                        "GB-WLS": "Wales"
+                    }
                 },
-                "United States": {
-                    "US-AL": "Alabama",
-                    "US-AK": "Alaska",
-                    "US-AS": "American Samoa",
-                    "US-AZ": "Arizona",
-                    "US-AR": "Arkansas",
-                    "US-CA": "California",
-                    "US-CO": "Colorado",
-                    "US-CT": "Connecticut",
-                    "US-DE": "Delaware",
-                    "US-DC": "District Of Columbia",
-                    "US-FM": "Federated States Of Micronesia",
-                    "US-FL": "Florida",
-                    "US-GA": "Georgia",
-                    "US-GU": "Guam",
-                    "US-HI": "Hawaii",
-                    "US-ID": "Idaho",
-                    "US-IL": "Illinois",
-                    "US-IN": "Indiana",
-                    "US-IA": "Iowa",
-                    "US-KS": "Kansas",
-                    "US-KY": "Kentucky",
-                    "US-LA": "Louisiana",
-                    "US-ME": "Maine",
-                    "US-MH": "Marshall Islands",
-                    "US-MD": "Maryland",
-                    "US-MA": "Massachusetts",
-                    "US-MI": "Michigan",
-                    "US-MN": "Minnesota",
-                    "US-MS": "Mississippi",
-                    "US-MO": "Missouri",
-                    "US-MT": "Montana",
-                    "US-NE": "Nebraska",
-                    "US-NV": "Nevada",
-                    "US-NH": "New Hampshire",
-                    "US-NJ": "New Jersey",
-                    "US-NM": "New Mexico",
-                    "US-NY": "New York",
-                    "US-NC": "North Carolina",
-                    "US-ND": "North Dakota",
-                    "US-MP": "Northern Mariana Islands",
-                    "US-OH": "Ohio",
-                    "US-OK": "Oklahoma",
-                    "US-OR": "Oregon",
-                    "US-PW": "Palau",
-                    "US-PA": "Pennsylvania",
-                    "US-PR": "Puerto Rico",
-                    "US-RI": "Rhode Island",
-                    "US-SC": "South Carolina",
-                    "US-SD": "South Dakota",
-                    "US-TN": "Tennessee",
-                    "US-TX": "Texas",
-                    "US-UT": "Utah",
-                    "US-VT": "Vermont",
-                    "US-VI": "Virgin Islands",
-                    "US-VA": "Virginia",
-                    "US-WA": "Washington",
-                    "US-WV": "West Virginia",
-                    "US-WI": "Wisconsin",
-                    "US-WY": "Wyoming"
-                },
-                "Germany": {
-                    "DE-BW": "Baden-Württemberg",
-                    "DE-BY": "Bayern",
-                    "DE-BE": "Berlin",
-                    "DE-BB": "Brandenburg",
-                    "DE-HB": "Bremen",
-                    "DE-HH": "Hamburg",
-                    "DE-HE": "Hessen",
-                    "DE-MV": "Mecklenburg-Vorpommern",
-                    "DE-NI": "Niedersachsen",
-                    "DE-NW": "Nordrhein-Westfalen",
-                    "DE-RP": "Rheinland-Pfalz",
-                    "DE-SL": "Saarland",
-                    "DE-SN": "Sachsen",
-                    "DE-ST": "Sachsen-Anhalt",
-                    "DE-SH": "Schleswig-Holstein",
-                    "DE-TH": "Thüringen"
-                },
-                "United Kingdom": {
-                    "GB-ENG": "England",
-                    "GB-NIR": "Northern Ireland",
-                    "GB-SCT": "Scotland",
-                    "GB-WLS": "Wales"
+                "North America": {
+                    "United States": {
+                        "US-AL": "Alabama",
+                        "US-AK": "Alaska",
+                        "US-AS": "American Samoa",
+                        "US-AZ": "Arizona",
+                        "US-AR": "Arkansas",
+                        "US-CA": "California",
+                        "US-CO": "Colorado",
+                        "US-CT": "Connecticut",
+                        "US-DE": "Delaware",
+                        "US-DC": "District Of Columbia",
+                        "US-FM": "Federated States Of Micronesia",
+                        "US-FL": "Florida",
+                        "US-GA": "Georgia",
+                        "US-GU": "Guam",
+                        "US-HI": "Hawaii",
+                        "US-ID": "Idaho",
+                        "US-IL": "Illinois",
+                        "US-IN": "Indiana",
+                        "US-IA": "Iowa",
+                        "US-KS": "Kansas",
+                        "US-KY": "Kentucky",
+                        "US-LA": "Louisiana",
+                        "US-ME": "Maine",
+                        "US-MH": "Marshall Islands",
+                        "US-MD": "Maryland",
+                        "US-MA": "Massachusetts",
+                        "US-MI": "Michigan",
+                        "US-MN": "Minnesota",
+                        "US-MS": "Mississippi",
+                        "US-MO": "Missouri",
+                        "US-MT": "Montana",
+                        "US-NE": "Nebraska",
+                        "US-NV": "Nevada",
+                        "US-NH": "New Hampshire",
+                        "US-NJ": "New Jersey",
+                        "US-NM": "New Mexico",
+                        "US-NY": "New York",
+                        "US-NC": "North Carolina",
+                        "US-ND": "North Dakota",
+                        "US-MP": "Northern Mariana Islands",
+                        "US-OH": "Ohio",
+                        "US-OK": "Oklahoma",
+                        "US-OR": "Oregon",
+                        "US-PW": "Palau",
+                        "US-PA": "Pennsylvania",
+                        "US-PR": "Puerto Rico",
+                        "US-RI": "Rhode Island",
+                        "US-SC": "South Carolina",
+                        "US-SD": "South Dakota",
+                        "US-TN": "Tennessee",
+                        "US-TX": "Texas",
+                        "US-UT": "Utah",
+                        "US-VT": "Vermont",
+                        "US-VI": "Virgin Islands",
+                        "US-VA": "Virginia",
+                        "US-WA": "Washington",
+                        "US-WV": "West Virginia",
+                        "US-WI": "Wisconsin",
+                        "US-WY": "Wyoming"
+                    },
                 }
             }
         },
         "city": {
             "filterType": "text",
             "properties": {
-                "Austria": {
-                    "Upper Austria": [
-                        {
-                            "name": "Linz",
-                            "latitude": 48.3069,
-                            "longitude": 14.2858
-                        },
-                        {
-                            "name": "Gmunden",
-                            "latitude": 47.9184,
-                            "longitude": 13.7993
-                        }
-                    ],
-                    "Vienna": [
-                        {
-                            "name": "Wien",
-                            "latitude": 48.2082,
-                            "longitude": 16.3738
-                        }
-                    ]
+                "Europe": {
+                    "Austria": {
+                        "Upper Austria": [
+                            {
+                                "name": "Linz",
+                                "latitude": 48.3069,
+                                "longitude": 14.2858
+                            },
+                            {
+                                "name": "Gmunden",
+                                "latitude": 47.9184,
+                                "longitude": 13.7993
+                            }
+                        ],
+                        "Vienna": [
+                            {
+                                "name": "Wien",
+                                "latitude": 48.2082,
+                                "longitude": 16.3738
+                            }
+                        ]
+                    },
+                    "Germany": {
+                        "Berlin": [
+                            {
+                                "name": "Berlin",
+                                "latitude": 52.5200,
+                                "longitude": 13.4050
+                            }
+                        ]
+                    },
                 },
-                "Germany": {
-                    "Berlin": [
-                        {
-                            "name": "Berlin",
-                            "latitude": 52.5200,
-                            "longitude": 13.4050
-                        }
-                    ]
-                },
-                "United States": {
-                    "New York": [
-                        {
-                            "name": "New York City",
-                            "latitude": 40.7128,
-                            "longitude": 74.0060
-                        }
-                    ]
+                "North America": {
+                    "United States": {
+                        "New York": [
+                            {
+                                "name": "New York City",
+                                "latitude": 40.7128,
+                                "longitude": 74.0060
+                            }
+                        ]
+                    }
                 }
             }
         },

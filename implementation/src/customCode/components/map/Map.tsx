@@ -44,8 +44,26 @@ let overlayColorMap = {
         }
     },
     'other': {
-        selectedColor: 'rgba(98, 36, 128, 0.9)',
-        hoverColor: 'rgba(98, 36, 128, 0.5)',
+        'Excellent': {
+            selectedColor: 'rgba(98, 36, 128, 0.9)',
+            hoverColor: 'rgba(98, 36, 128, 0.5)',
+        },
+        'Good': {
+            selectedColor: 'rgba(135, 56, 175, 0.9)',
+            hoverColor: 'rgba(135, 56, 175, 0.5)',
+        },
+        'Fair': {
+            selectedColor: 'rgba(170, 86, 212, 0.9)',
+            hoverColor: 'rgba(170, 86, 212, 0.5)',
+        },
+        'Poor': {
+            selectedColor: 'rgba(188, 111, 227, 0.9)',
+            hoverColor: 'rgba(188, 111, 227, 0.5)',
+        },
+        'Unacceptable': {
+            selectedColor: 'rgba(210, 150, 239, 0.9)',
+            hoverColor: 'rgba(210, 150, 239, 0.5)',
+        }
     },
     'empty': {
         selectedColor: 'rgba(177, 177, 177, 0.5)',
@@ -80,8 +98,8 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
             selectedColor = overlayColorMap.apdex.Excellent.selectedColor;
             hoverColor = overlayColorMap.apdex.Excellent.hoverColor;
         } else {
-            selectedColor = overlayColorMap.other.selectedColor;
-            hoverColor = overlayColorMap.other.hoverColor;
+            selectedColor = overlayColorMap.other.Excellent.selectedColor;
+            hoverColor = overlayColorMap.other.Excellent.hoverColor;
         }
     } else {
         // TODO add ivolunteer handling
@@ -211,16 +229,14 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
 
     useEffect( () => {
         if (selectedLocation !== undefined) { // at the beginning no location is selected
-            if (selectedMetric === apdexMetric) {
-                let value;
-                for (let i = 0; i < data.length; i++) {
-                    if (data[i].iso === selectedLocation.getId()) {
-                        value = data[i].apdex;
-                        break;
-                    }
+            let value;
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].iso === selectedLocation.getId()) {
+                    value = data[i].apdex;
+                    break;
                 }
-                selectedColor = getDtOverlayColor(value, true);
             }
+            selectedColor = getDtOverlayColor(selectedMetric, value, true);
 
             selectStyle.getFill().setColor(selectedColor);
             selectedLocation.setStyle(selectStyle);
@@ -235,6 +251,7 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
                     // Show Dynatrace-related information
                     if (hasMinimap) {
                         let values = groupValuesPerLocation(data, 'iso');
+                        let valueFound = false;
                         for (var i = 0; i < values.length; i++) {
                             let curElement = values[i];
                             if (curElement['iso'] == selectedLocation.getId()) {
@@ -244,8 +261,17 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
                                 $('#tooltip_loadactions').text(curElement['loadactions']);
                                 $('#tooltip_totaluseractions').text(curElement['totaluseractions']);
                                 $('#tooltip_affecteduseractions').text(curElement['affecteduseractions'] + ' %');
+                                valueFound = true;
                                 break;
                             }
+                        }
+                        if (!valueFound) {
+                            $('#tooltip_apdex').text('?');
+                            $('#tooltip_useractions').text('?');
+                            $('#tooltip_errors').text('?');
+                            $('#tooltip_loadactions').text('?');
+                            $('#tooltip_totaluseractions').text('?');
+                            $('#tooltip_affecteduseractions').text('?');
                         }
                     } else {
                         // TODO add iVolunteer Tooltip info
@@ -257,16 +283,14 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
         }
 
         if (hoveredLocation !== undefined) { // at the beginning no location is hovered over
-            if (selectedMetric === 'apdex') {
-                let value;
-                for (let i = 0; i < data.length; i++) {
-                    if (data[i].iso === hoveredLocation.getId()) {
-                        value = data[i].apdex;
-                        break;
-                    }
+            let value;
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].iso === hoveredLocation.getId()) {
+                    value = data[i][selectedMetric];
+                    break;
                 }
-                hoverColor = getDtOverlayColor(value, false);
             }
+            hoverColor = getDtOverlayColor(selectedMetric, value, false);
 
             hoverStyle.getFill().setColor(hoverColor)
             hoveredLocation.setStyle(hoverStyle);
@@ -380,37 +404,38 @@ const createMap = (target: string, zoom: ZoomLevel, lon: number, lat: number, ha
     }
 }
 
-const getDtOverlayColor = (value: number, selectMode: boolean) => {
+const getDtOverlayColor = (selectedMetric: string, value: number, selectMode: boolean) => {
+    let metricMapping = selectedMetric === 'apdex' ? selectedMetric : 'other';
+    
     if (selectMode) {
         if (value < Apdex.UNACCEPTABLE) {
-            return overlayColorMap.apdex.Unacceptable.selectedColor;
+            return overlayColorMap[metricMapping].Unacceptable.selectedColor;
         } else if (value < Apdex.POOR) {
-            return overlayColorMap.apdex.Poor.selectedColor;
+            return overlayColorMap[metricMapping].Poor.selectedColor;
         } else if (value < Apdex.FAIR) {
-            return overlayColorMap.apdex.Fair.selectedColor;
+            return overlayColorMap[metricMapping].Fair.selectedColor;
         } else if (value < Apdex.GOOD) {
-            return overlayColorMap.apdex.Good.selectedColor;
+            return overlayColorMap[metricMapping].Good.selectedColor;
         } else if (value < Apdex.EXCELLENT) {
-            return overlayColorMap.apdex.Excellent.selectedColor;
+            return overlayColorMap[metricMapping].Excellent.selectedColor;
         } else {
             return overlayColorMap.empty.selectedColor;
         }
     } else {
         if (value < Apdex.UNACCEPTABLE) {
-            return overlayColorMap.apdex.Unacceptable.hoverColor;
+            return overlayColorMap[metricMapping].Unacceptable.hoverColor;
         } else if (value < Apdex.POOR) {
-            return overlayColorMap.apdex.Poor.hoverColor;
+            return overlayColorMap[metricMapping].Poor.hoverColor;
         } else if (value < Apdex.FAIR) {
-            return overlayColorMap.apdex.Fair.hoverColor;
+            return overlayColorMap[metricMapping].Fair.hoverColor;
         } else if (value < Apdex.GOOD) {
-            return overlayColorMap.apdex.Good.hoverColor;
+            return overlayColorMap[metricMapping].Good.hoverColor;
         } else if (value < Apdex.EXCELLENT) {
-            return overlayColorMap.apdex.Excellent.hoverColor;
+            return overlayColorMap[metricMapping].Excellent.hoverColor;
         } else {
             return overlayColorMap.empty.hoverColor;
         }
-    }
-   
+    }    
 }
 
 const checkForExistingCountryFilter = (filters) => {

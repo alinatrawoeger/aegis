@@ -8,11 +8,11 @@ import data from './data/dt_database';
 import { FilterType, getFilterType, groupValuesPerLocation, ZoomLevel } from './utils';
 
 // TODO Map:
-// - Farbabstufungen bei violetten Daten
+// - wenn Region/city gesetzt sind, soll country eingefärbt werden
+// - Draw cities onto map
 
 // TODO Filterbar:
-// - Country ohne Daten soll das im Tooltip auch so anzeigen
-// - Suggestion soll bei Klick daneben verschwinden
+// - Country/Region/City suggestions sind leer beim 2. Mal Continent auswählen (Datenbank kommt schon leer rein wtf)
 // - Filter Suggestions -> type in letters to find suggestions
 
 // TODO Table:

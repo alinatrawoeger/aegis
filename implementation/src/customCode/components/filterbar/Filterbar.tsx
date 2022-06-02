@@ -59,7 +59,8 @@ const getFilterSuggestions = (isIVolunteer: boolean) => {
     if (isIVolunteer) {
         return iVolFilters[0];
     } else {
-        return dtFilters[0];
+        console.log(dtFilters);
+        return Object.assign({}, dtFilters[0]);
     }
 }
 
@@ -128,7 +129,7 @@ const adjustSuggestionsDt = (selectedFilters, filterList) => {
         let selectedFilterValue = selectedFilters[i].value;
         for (let filterListKey in filterList) {
             if (selectedFilterKey === 'continent') {
-                if (filterListKey === 'country') {
+                if (filterListKey === 'country' || filterListKey === 'region' || filterListKey === 'city') {
                     for (let continentKey in filterList[filterListKey].properties) {
                         if (continentKey !== selectedFilterValue) {
                             delete filterList[filterListKey].properties[continentKey];
