@@ -59,7 +59,6 @@ const getFilterSuggestions = (isIVolunteer: boolean) => {
     if (isIVolunteer) {
         return iVolFilters[0];
     } else {
-        console.log(dtFilters);
         return Object.assign({}, dtFilters[0]);
     }
 }
@@ -123,37 +122,47 @@ const adjustAvailableFiltersDt = (selectedFilters: any[], fullList: any[]) => {
     return filterList;
 }
 
+
+// TODO something doesn't work in here. Scenario:
+// When choosing Continent = EU, Region = Upper Austria --> city loads suggestions correctly
+// when then deleting all filters and choosing Continent = NA, Region = any --> city is empty (probably right, NA doesn't have cities except New York)
+// when then choosing the first scenario again, city is also empty.
+// Loading data directly from the file dt_filters.ts comes in wrongly already wth
 const adjustSuggestionsDt = (selectedFilters, filterList) => {
     for (let i = 0; i < selectedFilters.length; i++) {
         let selectedFilterKey = selectedFilters[i].key;
         let selectedFilterValue = selectedFilters[i].value;
         for (let filterListKey in filterList) {
             if (selectedFilterKey === 'continent') {
-                if (filterListKey === 'country' || filterListKey === 'region' || filterListKey === 'city') {
-                    for (let continentKey in filterList[filterListKey].properties) {
-                        if (continentKey !== selectedFilterValue) {
-                            delete filterList[filterListKey].properties[continentKey];
-                        }
-                    }
-                }
+                // if (filterListKey === 'country' || filterListKey === 'region' || filterListKey === 'city') {
+                //     for (let continentKey in newFilterList[filterListKey].properties) {
+                //         if (continentKey !== selectedFilterValue) {
+                //             delete newFilterList[filterListKey].properties[continentKey];
+                //         }
+                //     }
+                // }
             } else if (selectedFilterKey === 'country') {
-                if (filterListKey === 'region' || filterListKey === 'city') {
-                    for (let countryKey in filterList[filterListKey].properties) {
-                        if (countryKey !== selectedFilterValue) {
-                            delete filterList[filterListKey].properties[countryKey];
-                        }
-                    }
-                }
+                // if (filterListKey === 'region' || filterListKey === 'city') {
+                //     for (let continentKey in newFilterList[filterListKey].properties) {
+                //         for (let countryKey in newFilterList[filterListKey].properties[continentKey]) {
+                //             if (countryKey !== selectedFilterValue) {
+                //                 delete newFilterList[filterListKey].properties[continentKey][countryKey];
+                //             }
+                //         }
+                //     }
+                // }
             } else if (selectedFilterKey === 'region') {
-                if (filterListKey === 'city') {
-                    for (let countryKey in filterList[filterListKey].properties) {
-                        for (let regionKey in filterList[filterListKey].properties[countryKey]) {
-                            if (regionKey !== selectedFilterValue) {
-                                delete filterList[filterListKey].properties[countryKey][regionKey];
-                            }
-                        }
-                    }
-                }
+                // if (filterListKey === 'city') {
+                //     for (let continentKey in filterList[filterListKey].properties) {
+                //         for (let countryKey in filterList[filterListKey].properties[continentKey]) {
+                //             for (let regionKey in filterList[filterListKey].properties[continentKey][countryKey]) {
+                //                 if (regionKey !== selectedFilterValue) {
+                //                     delete filterList[filterListKey].properties[continentKey][countryKey][regionKey];
+                //                 }
+                //             }
+                //         }
+                //     }
+                // }
             }
 
         }

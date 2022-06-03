@@ -45,9 +45,7 @@ const FilterSuggestionPanel = ( { suggestions, isIVolunteer, onSetNewFilterValue
             <FilterSuggestions  filterKey={selectedFilter} 
                                 filterValues={filterSuggestions} 
                                 setNewFilterValue={newFilterCallback} 
-                                setShowSuggestions={setShowSuggestions}
-                                filterList={filterList}
-                                setFilterList={setFilterList}></FilterSuggestions>
+                                setShowSuggestions={setShowSuggestions}></FilterSuggestions>
         )
     }
 
@@ -80,7 +78,7 @@ const FilterListElement = ( { filterName, setShowFilters, setSelectedFilter, set
     );
 } 
 
-const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setShowSuggestions, filterList, setFilterList } ) => {
+const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setShowSuggestions } ) => {
     const keys = Object.keys(filterValues);
     const filterType = getFilterType(filterKey);
     return (
@@ -92,7 +90,7 @@ const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setSho
                             <div className={styles.suggestionTextValuesPanel}>
                                 {
                                     keys.map((valueKey: string) => (
-                                        <div key={valueKey} className={styles.suggestionValueElement} onClick={() => selectFilterValue(setNewFilterValue, filterKey, filterValues[valueKey], setShowSuggestions, filterList, setFilterList)}>{filterValues[valueKey]}</div>
+                                        <div key={valueKey} className={styles.suggestionValueElement} onClick={() => selectFilterValue(setNewFilterValue, filterKey, filterValues[valueKey], setShowSuggestions)}>{filterValues[valueKey]}</div>
                                     ))
                                 }
                             </div>
@@ -126,16 +124,11 @@ const selectFilterName = (filterName, setShowFilters, setSelectedFilter, setShow
     setShowFilterSuggestions(true);
 }
 
-const selectFilterValue = (setNewFilterValue, filterKey, filterValue, setShowSuggestions, filterList, setFilterList) => {
+const selectFilterValue = (setNewFilterValue, filterKey, filterValue, setShowSuggestions) => {
     setNewFilterValue({
         "key": filterKey,
         "value": filterValue
     });
-
-    // remove filter from filterlist so it cannot be selected twice
-    let elementIndex = filterList.indexOf(filterKey);
-    filterList.splice(elementIndex, 1);
-    setFilterList(filterList);
 
     setShowSuggestions(false);
 }
@@ -150,7 +143,7 @@ const hideSuggestionPanel = (setShowFilterSuggestions) => {
  * 
  * @param isIVolunteer 
  */
-const getFilterSuggestions = (isIVolunteer: boolean, suggestions: any, filterKey) => {
+const getFilterSuggestions = (isIVolunteer: boolean, suggestions: any, filterKey: string) => {
     const filterType = getFilterType(filterKey);
     
     let values = {};
@@ -211,7 +204,7 @@ const onChangeRange = () => {
     }
 }
 
-const confirmRangeFilter = (setNewFilterValue, filterKey, setShowSuggestions) => {
+const confirmRangeFilter = (setNewFilterValue: any, filterKey: string, setShowSuggestions: any) => {
     let from = $('#rangeFrom').val();
     let to = $('#rangeTo').val();
 

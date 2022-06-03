@@ -12,7 +12,8 @@ import { FilterType, getFilterType, groupValuesPerLocation, ZoomLevel } from './
 // - Draw cities onto map
 
 // TODO Filterbar:
-// - Country/Region/City suggestions sind leer beim 2. Mal Continent auswählen (Datenbank kommt schon leer rein wtf)
+// - Country/Region/City suggestions sind leer beim 2. Mal auswählen (Datenbank kommt schon leer rein wtf)
+//      - Fehler in FilterBar.adjustSuggestionsDt() beim suggestions reduzieren, not sure what's the problem tho
 // - Filter Suggestions -> type in letters to find suggestions
 
 // TODO Table:
