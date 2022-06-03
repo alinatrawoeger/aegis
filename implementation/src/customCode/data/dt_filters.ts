@@ -427,7 +427,7 @@ export default [
                             {
                                 "name": "New York City",
                                 "latitude": 40.7128,
-                                "longitude": 74.0060
+                                "longitude": -74.0060
                             }
                         ]
                     }

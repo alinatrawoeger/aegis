@@ -8,8 +8,7 @@ import data from './data/dt_database';
 import { FilterType, getFilterType, groupValuesPerLocation, ZoomLevel } from './utils';
 
 // TODO Map:
-// - wenn Region/city gesetzt sind, soll country eingefärbt werden
-// - Draw cities onto map
+// - wenn Region/City gesetzt sind, soll country eingefärbt werden (bzw filter gesetzt, vl färbt sich das country dann von selber ein)
 
 // TODO Filterbar:
 // - Country/Region/City suggestions sind leer beim 2. Mal auswählen (Datenbank kommt schon leer rein wtf)
@@ -59,7 +58,7 @@ class DynatraceWorldmapApp extends Component {
 
             primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, isIVolunteer: false }));
             secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
-            map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, hasMinimap: true }));
+            map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, isIVolunteer: false }));
             filterbar.render(React.createElement(Filterbar, {isIVolunteer: false, filters: this.selectedFilters, onSelectedFilters: selectedFiltersCallback}));
         };
 
@@ -68,7 +67,7 @@ class DynatraceWorldmapApp extends Component {
             
             primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, isIVolunteer: false }));
             secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
-            map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, hasMinimap: true }));
+            map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, isIVolunteer: false }));
         };
 
         const zoomLevelCallback = (value) => {
@@ -84,7 +83,7 @@ class DynatraceWorldmapApp extends Component {
         metricSwitcher.render(React.createElement(MetricSwitcher, { isIVolunteer: false, onSetMetric: selectedMetricCallback }));
         primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, isIVolunteer: false }));
         secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));
-        map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback,  hasMinimap: true }));
+        map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback,  isIVolunteer: false }));
     }
 
     prepareTableData(data: any, zoomLevel: number) {

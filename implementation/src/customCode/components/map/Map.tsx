@@ -3,18 +3,24 @@ import { defaults as defaultControls } from 'ol/control';
 import OverviewMap from 'ol/control/OverviewMap';
 import GeoJSON from 'ol/format/GeoJSON';
 import Geometry from "ol/geom/Geometry";
+import Point from 'ol/geom/Point';
 import { defaults, DragRotateAndZoom } from 'ol/interaction';
 import TileLayer from 'ol/layer/Tile';
 import VectorLayer from "ol/layer/Vector";
-import { fromLonLat } from 'ol/proj';
+import { fromLonLat, transform } from 'ol/proj';
 import OSM from 'ol/source/OSM';
+import VectorSource from 'ol/source/Vector';
 import VectorSrc from 'ol/source/Vector';
-import { Fill, Stroke, Style } from "ol/style";
+import { Fill, Icon, Stroke, Style } from "ol/style";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import dataDt from "../../data/dt_database";
 import dataIVol from "../../data/ivol_database";
+import dtFilters from "../../data/dt_filters";
 import { Apdex, groupValuesPerLocation, ZoomLevel } from "../../utils";
 import styles from "./Map.module.css";
+import markerRed from "./img/marker-red.png";
+import markerYellow from "./img/marker-yellow.png";
+import markerGreen from "./img/marker-green.png";
 
 // test data (coordinates of Linz)
 const longitude = 14.2858;
@@ -85,15 +91,15 @@ const apdexMetric = 'apdex';
 type CustomMapProps = {
     selectedMetric: string,
     filters: any,
-    hasMinimap: boolean,
+    isIVolunteer: boolean,
     onSetZoom: (value) => void,
     onChangeFilters: (value) => void
 }
 
-const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoom, onChangeFilters, hasMinimap }) => {
-    data = hasMinimap ? groupValuesPerLocation(dataDt, 'country') : dataIVol;
+const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoom, onChangeFilters, isIVolunteer }) => {
+    data = !isIVolunteer ? groupValuesPerLocation(dataDt, 'country') : dataIVol;
 
-    if (hasMinimap) {
+    if (!isIVolunteer) {
         if (selectedMetric === apdexMetric) {
             selectedColor = overlayColorMap.apdex.Excellent.selectedColor;
             hoverColor = overlayColorMap.apdex.Excellent.hoverColor;
@@ -134,7 +140,7 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
             source: overlaySource
         });
         // create map
-        const initialMap = createMap(mapElement.current, ZoomLevel.COUNTRY, longitude, latitude, hasMinimap, overlayLayer);
+        const initialMap = createMap(mapElement.current, ZoomLevel.COUNTRY, longitude, latitude, isIVolunteer, overlayLayer);
 
         // set event handlers except click handler (will be set later)
         initialMap.on('pointermove', handleHover);
@@ -197,7 +203,7 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
     const handleMapClick = (event) => {
         // higlight newly selected location
         mapRef.current.forEachFeatureAtPixel(event.pixel, function (feature) {
-            if (hasMinimap) {
+            if (!isIVolunteer) {
                 if (previouslySelectedLocation !== undefined) {
                     previouslySelectedLocation.setStyle(undefined);
                 }
@@ -249,7 +255,7 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
                     tooltipTitle.innerHTML = selectedLocation.get('name');
 
                     // Show Dynatrace-related information
-                    if (hasMinimap) {
+                    if (!isIVolunteer) {
                         let values = groupValuesPerLocation(data, 'iso');
                         let valueFound = false;
                         for (var i = 0; i < values.length; i++) {
@@ -314,6 +320,22 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
                   setZoom(currZoom);
                   onSetZoom(currZoom);
                 }
+                
+                let markerDataset = [];
+                if (isIVolunteer) {
+                
+                } else {
+                    mapRef.current.getLayers().getArray()
+                            .filter(layer => layer.get('name') === 'LocationMarker')
+                            .forEach(layer => mapRef.current.removeLayer(layer));
+
+                    if (newZoom >= ZoomLevel.COUNTRY) {
+                        markerDataset = getDataSetForMarkers(isIVolunteer);
+                        for (let i = 0; i < markerDataset.length; i++) {
+                            addIconOverlay(isIVolunteer, markerDataset[i], mapRef.current, selectedMetric);
+                        }
+                    }
+                }
             }
         },
         [zoom, onSetZoom],
@@ -363,12 +385,12 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
 
     return (
         <>
-            <div ref={mapElement} className={hasMinimap ? styles.container_dt : styles.container_ivol}></div>
+            <div ref={mapElement} className={!isIVolunteer ? styles.container_dt : styles.container_ivol}></div>
         </>
       )
 }
 
-const createMap = (target: string, zoom: ZoomLevel, lon: number, lat: number, hasMinimap: boolean, overlayLayer: any) => {
+const createMap = (target: string, zoom: ZoomLevel, lon: number, lat: number, isIVolunteer: boolean, overlayLayer: any) => {
     var mapLayer = new TileLayer({
         source: new OSM()
     });
@@ -377,7 +399,7 @@ const createMap = (target: string, zoom: ZoomLevel, lon: number, lat: number, ha
         zoom: zoom
     });
 
-    if (hasMinimap) {
+    if (!isIVolunteer) {
         const minimapControl = new OverviewMap({
             className: 'ol-overviewmap ol-custom-overviewmap',
             layers: [ new TileLayer({
@@ -447,6 +469,89 @@ const checkForExistingCountryFilter = (filters) => {
         }
     }
     return filterExists;
+}
+
+const getDataSetForMarkers = (isIVolunteer: boolean) => {
+    if (isIVolunteer) {
+        return [];
+    } else {
+        let citiesDataset = [];
+        for (let i = 0; i < dataDt.length; i++) {
+            if (dataDt[i].city != undefined) {
+                citiesDataset.push(dataDt[i]);
+            }
+        }
+        return citiesDataset;
+    }
+}
+
+const addIconOverlay = (isIVolunteer: boolean, markerData: any, map: Map, selectedMetric: string) => {
+    let { longitude, latitude } = getCoordinatesForCity(markerData.city);
+    
+    let iconSource = '';
+    if (isIVolunteer) {
+        if (selectedMetric === 'urgency') {
+            iconSource = markerRed;
+        } else if (selectedMetric === 'priority') {
+            iconSource = markerYellow;
+        } else if (selectedMetric === 'duration') {
+            iconSource = markerGreen;
+        }
+    } else {
+        iconSource = markerRed;
+    }
+
+    if (iconSource != '') {
+        const iconFeature = new Feature({
+            geometry: new Point(transform([longitude, latitude], 'EPSG:4326', 'EPSG:3857')),
+            name: 'LocationMarker',
+            population: 4000,
+            rainfall: 500,
+          });
+          
+          const iconStyle = new Style({
+            image: new Icon({
+              anchor: [0.5, 20],
+              anchorXUnits: 'fraction',
+              anchorYUnits: 'pixels',
+              src: iconSource
+            }),
+          });
+          iconFeature.setStyle(iconStyle);
+          
+          const vectorSource = new VectorSource({
+            features: [iconFeature],
+          });
+          
+          const iconVectorLayer = new VectorLayer({
+            source: vectorSource,
+            properties: {
+                name: 'LocationMarker'
+            }
+          });    
+    
+          map.addLayer(iconVectorLayer);       
+    }
+}
+
+const getCoordinatesForCity = (cityName: string) => {
+    const fullCityList = dtFilters[0].city.properties;
+    let longitude: number;
+    let latitude: number;
+    for (let continentKey in fullCityList) {
+        for (let countryKey in fullCityList[continentKey]) {
+            for (let regionKey in fullCityList[continentKey][countryKey]) {
+                for (let i = 0; i < fullCityList[continentKey][countryKey][regionKey].length; i++) {
+                    let databaseCity = fullCityList[continentKey][countryKey][regionKey][i];
+                    if (cityName === databaseCity.name) {
+                        longitude = databaseCity.longitude;
+                        latitude = databaseCity.latitude;
+                    }
+                }
+            }
+        }
+    }
+    return { longitude, latitude };
 }
 
 export default CustomMap;
