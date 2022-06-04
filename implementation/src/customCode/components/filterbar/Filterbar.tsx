@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import dtFilters from '../../data/dt_filters';
-import iVolFilters from '../../data/ivol_filters.json';
+import iVolFilters from '../../data/ivol_filters';
 import styles from "./Filterbar.module.css";
 import FilterElement from "./FilterElement";
 import FilterSuggestionPanel from "./FilterSuggestions";
@@ -37,7 +37,7 @@ const Filterbar: React.FC<FilterbarProps> = ( { isIVolunteer, filters, onSelecte
         <>
             {
                 selectedFilters.map((element: any) => (
-                    <FilterElement key={element.key} filterKey={element.key} filterValue={element.value} removeFilter={updateSelectedFilters}></FilterElement>
+                    <FilterElement key={element.key} filterKey={element.key} filterValue={element.value} removeFilter={updateSelectedFilters} isIVolunteer={isIVolunteer}></FilterElement>
                 ))
             }
         </>
@@ -46,8 +46,8 @@ const Filterbar: React.FC<FilterbarProps> = ( { isIVolunteer, filters, onSelecte
     
     return (
       <>
-        <div className={styles.filterbar}>
-            <div className={styles.filterStaticText}>Filtered by:</div>
+        <div className={`${styles.filterbar} ${isIVolunteer? styles.filterbarIVol : styles.filterbarDt}`}>
+            <div className={styles.filterStaticText}>Filters:</div>
                 {filterList}
                 <FilterSuggestionPanel suggestions={filterSuggestions} isIVolunteer={isIVolunteer} onSetNewFilterValue={updateSelectedFilters}></FilterSuggestionPanel>
             </div>
@@ -57,7 +57,7 @@ const Filterbar: React.FC<FilterbarProps> = ( { isIVolunteer, filters, onSelecte
 
 const getFilterSuggestions = (isIVolunteer: boolean) => {
     if (isIVolunteer) {
-        return iVolFilters[0];
+        return Object.assign({}, iVolFilters[0]);
     } else {
         return Object.assign({}, dtFilters[0]);
     }
@@ -69,9 +69,9 @@ const useFilterSuggestions = (isIVolunteer: boolean, selectedFilters: any[], set
 
     useEffect(() => {
             // check if selectedFilters contains a filter from filterSuggestions and remove it from filterSuggestions
-            let newFilterList = [];
+            let newFilterList;
             if (isIVolunteer) {
-
+                newFilterList = adjustAvailableFiltersIVol(selectedFilters, fullList);
             } else {
                 newFilterList = adjustAvailableFiltersDt(selectedFilters, fullList);
             }
@@ -83,7 +83,22 @@ const useFilterSuggestions = (isIVolunteer: boolean, selectedFilters: any[], set
     return filterSuggestions;
 }
 
-const adjustAvailableFiltersDt = (selectedFilters: any[], fullList: any[]) => {
+const adjustAvailableFiltersIVol = (selectedFilters: any[], fullList) => {
+    let filterList = Object.assign({}, fullList);
+
+    for (let i = 0; i < selectedFilters.length; i++) {
+        let selectedFilterKey = selectedFilters[i].key;
+        for (let fullListKey in fullList) {
+            if (fullListKey === selectedFilterKey) {
+                delete filterList[fullListKey];
+            }
+        }
+    }
+
+    return filterList;
+}
+
+const adjustAvailableFiltersDt = (selectedFilters: any[], fullList) => {
     let filterList = Object.assign({}, fullList);
     
     // remove filterKey if this filter has been set already

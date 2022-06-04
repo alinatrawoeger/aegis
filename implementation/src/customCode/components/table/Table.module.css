@@ -43,16 +43,17 @@
 }
 
 .tableLastCol {
-  text-align: center;
+  text-align: center !important;
 }
 
 .table th:first-child, .table td:first-child {
-  flex: 0 0 45% !important;
+  flex: 0 0 50% !important;
 }
 
 
 .table th:last-child, .table td:last-child {
     flex: 0 0 10%;
+    text-align: right;
 }
 
 .tableCell {

@@ -39,11 +39,13 @@ export enum FilterType {
 export const getFilterType = (filterName: any) => {
     switch(filterName) {
         case 'apdex':
+        case 'taskid':
             return FilterType.RANGE;
         case 'continents':
         case 'countries':
         case 'regions':
         case 'cities':
+        case 'friend':
         default:
             return FilterType.TEXT;
     }

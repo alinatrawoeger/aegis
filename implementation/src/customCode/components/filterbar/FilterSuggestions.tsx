@@ -45,7 +45,8 @@ const FilterSuggestionPanel = ( { suggestions, isIVolunteer, onSetNewFilterValue
             <FilterSuggestions  filterKey={selectedFilter} 
                                 filterValues={filterSuggestions} 
                                 setNewFilterValue={newFilterCallback} 
-                                setShowSuggestions={setShowSuggestions}></FilterSuggestions>
+                                setShowSuggestions={setShowSuggestions}
+                                isIVolunteer={isIVolunteer}></FilterSuggestions>
         )
     }
 
@@ -53,7 +54,8 @@ const FilterSuggestionPanel = ( { suggestions, isIVolunteer, onSetNewFilterValue
         <>
             {
                 !showFilters && !showSuggestions && filterList.length > 0
-                ?   <div className={`${styles.filterElement} ${styles.addFilterBtn}`} onClick={() => displayFilters(true, setShowFilters)}>
+                ?   <div className={`${styles.filterElement} ${styles.addFilterBtn} ${isIVolunteer ? styles.filterElementIVol : styles.filterElementDt}`} 
+                            onClick={() => displayFilters(true, setShowFilters)}>
                         <span>Add filter</span>
                     </div>
                 :   ''
@@ -78,9 +80,20 @@ const FilterListElement = ( { filterName, setShowFilters, setSelectedFilter, set
     );
 } 
 
-const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setShowSuggestions } ) => {
+const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setShowSuggestions, isIVolunteer} ) => {
     const keys = Object.keys(filterValues);
     const filterType = getFilterType(filterKey);
+
+    const dtDefaultFrom = 0.5;
+    const dtDefaultTo = 1.0;
+    const dtMin = 0.05;
+    const dtMax = 1;
+    const dtStep = 0.05;
+
+    const iVolDefaultFrom = 10000; // also used as min value
+    const iVolDefaultTo = 99999; // also used as max value
+    const iVolStep = 1;
+
     return (
         <>
                 {
@@ -100,11 +113,25 @@ const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setSho
                             <div className={styles.suggestionRangeValuesPanel}>
                                 <div className={styles.suggestionRangeFilterLine}>
                                     <div className={styles.suggestionRangeValueLabel}>From:</div>
-                                    <input className={styles.suggestionRangeValueInput} type='number' id='rangeFrom' min='0.05' max='1' step='0.05' onChange={() => onChangeRange()} defaultValue='0.50'></input>
+                                    <input className={styles.suggestionRangeValueInput} 
+                                            type='number' id='rangeFrom' 
+                                            min={isIVolunteer ? iVolDefaultFrom : dtMin} 
+                                            max={isIVolunteer ? iVolDefaultTo : dtMax} 
+                                            step={isIVolunteer ? iVolStep : dtStep} 
+                                            defaultValue={isIVolunteer ? iVolDefaultFrom : dtDefaultFrom}
+                                            onChange={() => onChangeRange()}>
+                                    </input>
                                 </div>
                                 <div className={styles.suggestionRangeFilterLine}>
                                     <div className={styles.suggestionRangeValueLabel}>To:</div>
-                                    <input className={styles.suggestionRangeValueInput} type='number' id='rangeTo' min='0.05' max='1' step='0.05' onChange={() => onChangeRange()} defaultValue='1.0'></input>
+                                    <input className={styles.suggestionRangeValueInput} 
+                                            type='number' id='rangeTo' 
+                                            min={isIVolunteer ? iVolDefaultFrom : dtMin} 
+                                            max={isIVolunteer ? iVolDefaultTo : dtMax} 
+                                            step={isIVolunteer ? iVolStep : dtStep} 
+                                            defaultValue={isIVolunteer ? iVolDefaultTo : dtDefaultTo}
+                                            onChange={() => onChangeRange()}>
+                                    </input>
                                 </div>
                                 <button className={styles.suggestionRangeBtn} id='rangeFilterConfirm' onClick={() => confirmRangeFilter(setNewFilterValue, filterKey, setShowSuggestions)}>Confirm</button>
                             </div>
@@ -148,7 +175,9 @@ const getFilterSuggestions = (isIVolunteer: boolean, suggestions: any, filterKey
     
     let values = {};
     if (isIVolunteer) {
-        values = suggestions;
+        if (filterType === FilterType.TEXT) {
+            values = suggestions[filterKey].properties;
+        }
     } else {
         if (filterType === FilterType.TEXT) {
             if (filterKey === 'country') {
