@@ -129,7 +129,7 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
     let currZoom = undefined;
 
     const overlaySource = new VectorSrc({
-        url: '../../../data/geodata/countries.geojson',
+        url: "../data/geodata/countries.geojson",
         format: new GeoJSON(),
     });
 
