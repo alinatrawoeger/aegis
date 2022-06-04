@@ -35609,7 +35609,7 @@ var CustomMap = function (_a) {
     filterRef.current = selectedFilters;
     var currZoom = undefined;
     var overlaySource = new ol_source_Vector__WEBPACK_IMPORTED_MODULE_10__["default"]({
-        url: '../../../data/geodata/countries.geojson',
+        url: "../data/geodata/countries.geojson",
         format: new ol_format_GeoJSON__WEBPACK_IMPORTED_MODULE_11__["default"](),
     });
     // initialize map and overlays (only called once)
