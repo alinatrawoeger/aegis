@@ -46,6 +46,8 @@
     </script>
   </head>
   <body>
+    <div id="taskdetails"></div>
+
     <div id="base" class="">
 
       <!-- menubar-panel (Group) -->
@@ -183,7 +185,7 @@
           <div id="u270" class="ax_default label" data-label="values">
             <div id="u270_div" class=""></div>
             <div id="u270_text" class="text ">
-              <p><span>24. Juli 2021</span></p><p><span>4020 Linz, Hauptplatz 14</span></p>
+              <p><span id="taskdetails-date">24. Juli 2021</span></p><p><span id="taskdetails-address">4020 Linz, Hauptplatz 14</span></p>
             </div>
           </div>
         </div>
@@ -212,7 +214,8 @@
         <div id="u274" class="ax_default paragraph" data-label="description">
           <div id="u274_div" class=""></div>
           <div id="u274_text" class="text ">
-            <p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</span></p><p><span><br></span></p><p><span>To Do Liste:</span></p><ul><li style=""><span>lorem ipsum dolor sit amet</span></li><li style=""><span>consectetur adipiscing elit</span></li><li style=""><span>aenean euismod bibendum laoreet</span></li></ul>
+            <p><span id="taskdetails-description"></span></p>
+            <p><span id="taskdetails-description"></span></p>
           </div>
         </div>
 
@@ -220,7 +223,7 @@
         <div id="u275" class="ax_default heading_1" data-label="tasktitle">
           <div id="u275_div" class=""></div>
           <div id="u275_text" class="text ">
-            <p><span>Adventbazar</span></p>
+            <p><span id="taskdetails-title">Adventbazar</span></p>
           </div>
         </div>
       </div>
@@ -262,5 +265,6 @@
       </div>
     </div>
     <script src="resources/scripts/axure/ios.js"></script>
+    <script type="module" src="../iVolApp.bundle.js"></script>
   </body>
 </html>

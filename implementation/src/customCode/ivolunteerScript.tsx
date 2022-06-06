@@ -117,7 +117,7 @@ class IVolunteerWorldmapApp extends Component {
     }
     
     return this.selectedFilters.length > 0 ? filteredData : data;
-}
+  }
 
   render() {
     return (

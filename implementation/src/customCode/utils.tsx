@@ -6,6 +6,7 @@ import TileLayer from 'ol/layer/Tile';
 import 'ol/ol.css';
 import { fromLonLat } from 'ol/proj';
 import OSM from 'ol/source/OSM';
+import dataIVol from './data/ivol_database';
 
 // ---------------------------------------------------------------------
 
@@ -47,51 +48,6 @@ export const getFilterType = (filterName: any) => {
 }
 
 // ---------------------------------------------------------------------
-
-/**
- * Creates geographic map and puts it into the specified div-element
- * @param {id of div where map should be put into} target 
- * @param {initial zoom level of the map} zoom 
- * @param {longitude} lon 
- * @param {latitude} lat 
- * @param {show minimap in corner or not} hasMinimap 
- * @returns map object
- */
-export function createMap(target: string, zoom: ZoomLevel, lon: number, lat: number, hasMinimap: boolean) {
-    var mapLayer = new TileLayer({
-        source: new OSM()
-    });
-    var view = new View({
-        center: fromLonLat([lon, lat]),
-        zoom: zoom
-    });
-
-    if (hasMinimap) {
-        const minimapControl = new OverviewMap({
-            className: 'ol-overviewmap ol-custom-overviewmap',
-            layers: [ new TileLayer({
-                source: new OSM(),
-                }) ],
-            collapseLabel: '\u00BB',
-            label: '\u00AB',
-            collapsed: false,
-        });
-
-        return new OLMap({
-            controls: defaultControls().extend([minimapControl]),
-            interactions: defaults().extend([new DragRotateAndZoom()]),
-            target: target,
-            layers: [ mapLayer ],
-            view: view
-        });
-    } else {
-        return new OLMap({
-            target: target,
-            layers: [ mapLayer ],
-            view: view
-        });     
-    }
-}
 
 // table functions
 export function groupValuesPerLocation(data: any, locationKey: string) {
@@ -140,3 +96,28 @@ export function groupValuesPerLocation(data: any, locationKey: string) {
     
     return newValues;
 }
+
+export function getDataFromTaskId(taskId: any) {
+    let taskIdNumber = Number(taskId);
+    for (let i = 0; i < dataIVol.length; i++) {
+        if (dataIVol[i].taskid === taskIdNumber) {
+            return dataIVol[i];
+        }
+    }
+    return;
+}
+
+export function getUrlParameter(parameter: string) {
+    let url = window.location.search.substring(1);
+    let parameters = url.split('&');
+
+    for (let i = 0; i < parameters.length; i++) {
+        let parameterName = parameters[i].split('=');
+
+        if (parameterName[0] === parameter) {
+            return parameterName[1] === undefined ? true : decodeURIComponent(parameterName[1]);
+        }
+    }
+    return;
+};
+

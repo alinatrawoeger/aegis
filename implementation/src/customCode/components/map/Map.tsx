@@ -16,7 +16,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import dataDt from "../../data/dt_database";
 import dataIVol from "../../data/ivol_database";
 import dtFilters from "../../data/dt_filters";
-import { Apdex, groupValuesPerLocation, ZoomLevel } from "../../utils";
+import { Apdex, getDataFromTaskId, groupValuesPerLocation, ZoomLevel } from "../../utils";
 import styles from "./Map.module.css";
 import markerRed from "./img/marker-red.png";
 import markerYellow from "./img/marker-yellow.png";
@@ -232,13 +232,7 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
                     let markerTaskId = marker.get('source').getFeatures()[0].get('taskid');
                     if (markerTaskId = feature.get('taskid')) {
                         // get data for taskid
-                        let data;
-                        for (let i = 0; i < dataIVol.length; i++) {
-                            if (dataIVol[i].taskid === markerTaskId) {
-                                data = dataIVol[i];
-                                break;
-                            }
-                        }
+                        let data = getDataFromTaskId(markerTaskId);                        
 
                         if (data !== undefined) {
                             // show tooltip panel
@@ -255,7 +249,6 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
                             $('#close-tooltip').on('click', function() {
                                 tooltipPanel.classList.remove(styles.iVolTooltipPanel);
                             })
-
                             $('#tooltip-details-link').attr('href', 'ivolunteer_-_taskdetails.html?taskid=' + markerTaskId);
                         }
                     }
