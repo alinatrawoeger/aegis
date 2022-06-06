@@ -7,3 +7,7 @@
     height: 275px;
     width: 502px;
 }
+
+.iVolTooltipPanel {
+    display: block !important;
+}

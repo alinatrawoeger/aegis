@@ -5,7 +5,7 @@ import CustomMap from './components/map/Map';
 import MetricSwitcher from './components/metricswitcher/MetricSwitcher';
 import Table from './components/table/Table';
 import data from './data/ivol_database';
-import { FilterType, getFilterType, switchMetric } from './utils';
+import { FilterType, getFilterType } from './utils';
 
 
 // TODO

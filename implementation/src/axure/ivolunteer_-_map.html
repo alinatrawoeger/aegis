@@ -178,11 +178,6 @@
 
         <!-- map (Inline Frame) -->
         <div id="geomap_ivol" class="ax_default" data-label="map"></div>
-         
-        <!-- TODO add markers & overlays here -->
-        <div style="display: none;">
-          <div id="map_overlay_ivol" title="overlay"></div>
-        </div>
       </div>
 
       <!-- metricbar-panel (Group) -->
@@ -191,7 +186,7 @@
         <div id="metricswitcher-panel"></div>
         
       <!-- tooltip (Group) -->
-      <div id="u339" class="ax_default ax_default_hidden" data-label="tooltip" style="display:none; visibility: hidden" data-left="102" data-top="226" data-width="504" data-height="278">
+      <div id="tooltip-panel" class="ax_default" data-label="tooltip" data-left="102" data-top="226" data-width="504" data-height="278">
 
         <!-- tooltip-panel (Rectangle) -->
         <div id="u340" class="ax_default box_1" data-label="tooltip-panel">
@@ -205,7 +200,7 @@
         <div id="u341" class="ax_default heading_2" data-label="tooltip-title">
           <div id="u341_div" class=""></div>
           <div id="u341_text" class="text ">
-            <p><span>Adventbazar</span></p>
+            <p><span id="tooltip-title">Adventbazar</span></p>
           </div>
         </div>
 
@@ -213,7 +208,12 @@
         <div id="u342" class="ax_default label" data-label="data-key">
           <div id="u342_div" class=""></div>
           <div id="u342_text" class="text ">
-            <p><span>Task ID</span></p><p><span>Verantwortlicher</span></p><p><span>Ort</span></p><p><span>Datum</span></p><p><span>Importance</span></p><p><span><br></span></p>
+            <p><span>Task ID</span></p>
+            <p><span>Verantwortlicher</span></p>
+            <p><span>Ort</span></p>
+            <p><span>Datum</span></p>
+            <p><span>Wichtigkeit</span></p>
+            <p><span><br></span></p>
           </div>
         </div>
 
@@ -221,22 +221,28 @@
         <div id="u343" class="ax_default label" data-label="data-value">
           <div id="u343_div" class=""></div>
           <div id="u343_text" class="text ">
-            <p><span>012345</span></p><p><span>Rotes Kreuz</span></p><p><span>4020 Linz</span></p><p><span>04 Aug 21 - 08 Aug 21</span></p><p><span>medium</span></p>
+            <p><span id="tooltip-taskid">012345</span></p>
+            <p><span id="tooltip-responsible">Rotes Kreuz</span></p>
+            <p><span id="tooltip-city">4020 Linz</span></p>
+            <p><span id="tooltip-date">22. September 2022</span></p>
+            <p><span id="tooltip-priority">medium</span></p>
           </div>
         </div>
 
         <!-- fulldetails-btn (Rectangle) -->
-        <div id="u344" class="ax_default primary_button" data-label="fulldetails-btn">
-          <div id="u344_div" class=""></div>
-          <div id="u344_text" class="text ">
-            <p><span>Full details</span></p>
+        <a id="tooltip-details-link">
+          <div id="u344" class="ax_default primary_button" data-label="fulldetails-btn">
+            <div id="u344_div" class=""></div>
+            <div id="u344_text" class="text ">
+              <p><span>Full details</span></p>
+            </div>
           </div>
-        </div>
+        </a>
 
         <!-- close (Rectangle) -->
-        <div id="u345" class="ax_default heading_1" data-label="close">
-          <div id="u345_div" class=""></div>
-          <div id="u345_text" class="text ">
+        <div id="close-tooltip" class="ax_default heading_1" data-label="close">
+          <div id="close-tooltip_div" class=""></div>
+          <div id="close-tooltip_text" class="text ">
             <p><span>x</span></p>
           </div>
         </div>

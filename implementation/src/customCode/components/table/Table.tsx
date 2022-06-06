@@ -94,7 +94,7 @@ const TableContent = ({ dataOnPage, selectedMetric, isIVolunteer }) => {
                 : ''}
               
               <td className={`${styles.tableCell} ${styles.tableLastCol}`}>
-                <a href="#">
+                <a href={isIVolunteer ? 'ivolunteer_-_taskdetails.html?taskId=' + dataRow.taskid : '#'}>
                   <img src={analyzeIcon} className={styles.analyzeBtn} />
                 </a></td>
             </tr>

@@ -226,6 +226,42 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
             
                 updateFilterCallback(currentFilters);
             } else {
+                let markerLayers = map.getLayers().getArray().filter(layer => layer.get('name') === 'LocationMarker');
+                for (let i = 0; i < markerLayers.length; i++) {
+                    let marker = markerLayers[i];
+                    let markerTaskId = marker.get('source').getFeatures()[0].get('taskid');
+                    if (markerTaskId = feature.get('taskid')) {
+                        // get data for taskid
+                        let data;
+                        for (let i = 0; i < dataIVol.length; i++) {
+                            if (dataIVol[i].taskid === markerTaskId) {
+                                data = dataIVol[i];
+                                break;
+                            }
+                        }
+
+                        if (data !== undefined) {
+                            // show tooltip panel
+                            let tooltipPanel = document.getElementById('tooltip-panel');
+                            tooltipPanel.classList.add(styles.iVolTooltipPanel);
+    
+                            // add data to tooltip
+                            $('#tooltip-title').text(data.taskname);
+                            $('#tooltip-taskid').text(data.taskid);
+                            $('#tooltip-responsible').text(data.responsible);
+                            $('#tooltip-city').text(data.address.zip + ' ' + data.address.city);
+                            
+                            // add clickhandlers
+                            $('#close-tooltip').on('click', function() {
+                                tooltipPanel.classList.remove(styles.iVolTooltipPanel);
+                            })
+
+                            $('#tooltip-details-link').attr('href', 'ivolunteer_-_taskdetails.html?taskid=' + markerTaskId);
+                        }
+                    }
+                }
+
+                // TODO
                 // open dialog if user wants to create a new task
                 // if yes, redirect to Add Task page
                 // if no, close dialog and do nothing
@@ -520,10 +556,13 @@ const addIconOverlay = (isIVolunteer: boolean, markerData: any, map: Map, select
     if (iconSource != '') {
         const iconFeature = new Feature({
             geometry: new Point(transform([longitude, latitude], 'EPSG:4326', 'EPSG:3857')),
-            name: 'LocationMarker',
+            name: 'LocationMarkerFeature',
             population: 4000,
             rainfall: 500,
           });
+          if (isIVolunteer) {
+            iconFeature.set('taskid', markerData.taskid);
+        }
           
           const iconStyle = new Style({
             image: new Icon({
@@ -539,12 +578,13 @@ const addIconOverlay = (isIVolunteer: boolean, markerData: any, map: Map, select
             features: [iconFeature],
           });
           
+          
           const iconVectorLayer = new VectorLayer({
             source: vectorSource,
             properties: {
                 name: 'LocationMarker'
             }
-          });    
+          });
     
           map.addLayer(iconVectorLayer);       
     }
