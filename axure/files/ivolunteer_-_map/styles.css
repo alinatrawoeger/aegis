@@ -1719,13 +1719,14 @@
   word-wrap:break-word;
   text-transform:none;
 }
-#u339 {
+#tooltip-panel {
   border-width:0px;
   position:absolute;
   left:0px;
   top:0px;
   width:0px;
   height:0px;
+  display: none;
 }
 #u340_div {
   border-width:0px;
@@ -1790,7 +1791,7 @@
   position:absolute;
   left:127px;
   top:250px;
-  width:202px;
+  width:400px;
   height:38px;
   display:flex;
   font-family:'Arial Fett', 'Arial Standard', 'Arial', sans-serif;
@@ -1867,9 +1868,9 @@
 #u343 {
   border-width:0px;
   position:absolute;
-  left:428px;
+  left:274px;
   top:295px;
-  width:146px;
+  width:300px;
   height:182px;
   display:flex;
   text-align:right;
@@ -1910,6 +1911,7 @@
   width:116px;
   height:28px;
   display:flex;
+  cursor: pointer;
 }
 #u344 .text {
   position:absolute;
@@ -1923,7 +1925,7 @@
   word-wrap:break-word;
   text-transform:none;
 }
-#u345_div {
+#close-tooltip_div {
   border-width:0px;
   position:absolute;
   left:0px;
@@ -1944,7 +1946,7 @@
   color:#7F7F7F;
   text-align:right;
 }
-#u345 {
+#close-tooltip {
   border-width:0px;
   position:absolute;
   left:570px;
@@ -1958,15 +1960,16 @@
   font-size:20px;
   color:#7F7F7F;
   text-align:right;
+  cursor: pointer;
 }
-#u345 .text {
+#close-tooltip .text {
   position:absolute;
   align-self:flex-start;
   padding:0px 0px 0px 0px;
   box-sizing:border-box;
   width:100%;
 }
-#u345_text {
+#close-tooltip_text {
   border-width:0px;
   white-space:nowrap;
   text-transform:none;

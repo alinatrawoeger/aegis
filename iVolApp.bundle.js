@@ -99,11 +99,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".JJyNdgBbzIdK1BI0SCXH {\n    height: 535px;\n    width: 1102px;\n}\n\n.uIUzAGrW9cVKHTGZ4jwx {\n    height: 275px;\n    width: 502px;\n}", "",{"version":3,"sources":["webpack://./src/customCode/components/map/Map.module.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,YAAY;AAChB","sourcesContent":[".container_dt {\n    height: 535px;\n    width: 1102px;\n}\n\n.container_ivol {\n    height: 275px;\n    width: 502px;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".JJyNdgBbzIdK1BI0SCXH {\n    height: 535px;\n    width: 1102px;\n}\n\n.uIUzAGrW9cVKHTGZ4jwx {\n    height: 275px;\n    width: 502px;\n}\n\n.WhCsOyPWNMyrk8AJCO2i {\n    display: block !important;\n}", "",{"version":3,"sources":["webpack://./src/customCode/components/map/Map.module.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,YAAY;AAChB;;AAEA;IACI,yBAAyB;AAC7B","sourcesContent":[".container_dt {\n    height: 535px;\n    width: 1102px;\n}\n\n.container_ivol {\n    height: 275px;\n    width: 502px;\n}\n\n.iVolTooltipPanel {\n    display: block !important;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container_dt": "JJyNdgBbzIdK1BI0SCXH",
-	"container_ivol": "uIUzAGrW9cVKHTGZ4jwx"
+	"container_ivol": "uIUzAGrW9cVKHTGZ4jwx",
+	"iVolTooltipPanel": "WhCsOyPWNMyrk8AJCO2i"
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34904,13 +34905,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([
     {
-        "street": "Hauptstraße 34",
-        "zip": "4020",
-        "city": "Linz",
-        "country": "Austria",
-        "country-iso": "AT",
+        "address": {
+            "street": "Mönchsberg 34",
+            "zip": "5020",
+            "city": "Salzburg",
+            "country": "Austria",
+            "country-iso": "AT",
+            "coordinates": [47.79517891806973, 13.047540281203213]
+        },
         "taskname": "Adventbazar",
         "taskid": 12345,
+        "responsible": "Rotes Kreuz",
         "date": "25. September 2022",
         "friend": [
             "Tony Stark", "Bruce Banner", "Steve Rogers"
@@ -34918,13 +34923,17 @@ __webpack_require__.r(__webpack_exports__);
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget./n/nProin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
     },
     {
-        "street": "Holzweg 67",
-        "zip": "4020",
-        "city": "Linz",
-        "country": "Austria",
-        "country-iso": "AT",
+        "address": {
+            "street": "Altenbergerstraße 69",
+            "zip": "4040",
+            "city": "Linz",
+            "country": "Austria",
+            "country-iso": "AT",
+            "coordinates": [48.337677902412565, 14.32281236957337]
+        },
         "taskname": "Pfadfinder Meetup",
         "taskid": 12346,
+        "responsible": "Pfadfinderclub Linz",
         "date": "29. August 2022",
         "friend": [
             "Natasha Romanov", "James Bucky Barnes"
@@ -34932,13 +34941,17 @@ __webpack_require__.r(__webpack_exports__);
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget./n/nProin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
     },
     {
-        "street": "Gänseblümchenstraße 55",
-        "zip": "4600",
-        "city": "Wels",
-        "country": "Austria",
-        "country-iso": "AT",
+        "address": {
+            "street": "Maxingstraße 13b",
+            "zip": "1130",
+            "city": "Wien",
+            "country": "Austria",
+            "country-iso": "AT",
+            "coordinates": [48.18224988326545, 16.299806284912314]
+        },
         "taskname": "Zoo Tierhelfer",
         "taskid": 12347,
+        "responsible": "Tiergarten-Verein Österreich",
         "date": "13. September 2022",
         "friend": [
             "Peter Parker"
@@ -34946,13 +34959,17 @@ __webpack_require__.r(__webpack_exports__);
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget./n/nProin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
     },
     {
-        "street": "Tulpenweg 3",
-        "zip": "4600",
-        "city": "Wels",
-        "country": "Austria",
-        "country-iso": "AT",
+        "address": {
+            "street": "Pembaurstraße 20",
+            "zip": "6020",
+            "city": "Innsbruck",
+            "country": "Austria",
+            "country-iso": "AT",
+            "coordinates": [47.26886080215773, 11.411443471397346]
+        },
         "taskname": "Kindergarten Helfer",
         "taskid": 12348,
+        "responsible": "Rotes Kreuz",
         "date": "10. September 2022",
         "friend": [
             "Tony Stark", "Peter Parker", "Steve Rogers"
@@ -34960,13 +34977,17 @@ __webpack_require__.r(__webpack_exports__);
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget./n/nProin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
     },
     {
-        "street": "Rosengasse 20",
-        "zip": "4020",
-        "city": "Linz",
-        "country": "Austria",
-        "country-iso": "AT",
+        "address": {
+            "street": "B11, Lakeside",
+            "zip": "9020",
+            "city": "Klagenfurt am Wörthersee",
+            "country": "Austria",
+            "country-iso": "AT",
+            "coordinates": [46.6145822029484, 14.266635873231703]
+        },
         "taskname": "Altenpflege Volunteering",
         "taskid": 12349,
+        "responsible": "Altenpflegeverein Kärnten",
         "date": "25. September 2022",
         "friend": [
             "Steve Rogers", "James Bucky Barnes"
@@ -34974,13 +34995,17 @@ __webpack_require__.r(__webpack_exports__);
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget./n/nProin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
     },
     {
-        "street": "Pflanzenpfad 63",
-        "zip": "4221",
-        "city": "Steyregg",
-        "country": "Austria",
-        "country-iso": "AT",
+        "address": {
+            "street": "Puchstraße 164",
+            "zip": "8055",
+            "city": "Graz",
+            "country": "Austria",
+            "country-iso": "AT",
+            "coordinates": [47.03810761369751, 15.439317416354617]
+        },
         "taskname": "Mülleinsammeln",
         "taskid": 12350,
+        "responsible": "Samariterbund",
         "date": "22. September 2022",
         "friend": [
             "James Bucky Barnes", "Natasha Romanov", "Peter Parker"
@@ -35520,9 +35545,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// test data (coordinates of Linz)
-var longitude = 14.2858;
-var latitude = 48.3069;
+// test data (coordinates of the center of Austria)
+var longitude = 14.12456;
+var latitude = 47.59397;
 var overlayColorMap = {
     'apdex': {
         'Excellent': {
@@ -35619,7 +35644,7 @@ var CustomMap = function (_a) {
             source: overlaySource
         });
         // create map
-        var initialMap = createMap(mapElement.current, _utils__WEBPACK_IMPORTED_MODULE_5__.ZoomLevel.COUNTRY, longitude, latitude, isIVolunteer, overlayLayer);
+        var initialMap = createMap(mapElement.current, 6, longitude, latitude, isIVolunteer, overlayLayer);
         // set event handlers except click handler (will be set later)
         initialMap.on('pointermove', handleHover);
         initialMap.on('moveend', handleZoom);
@@ -35690,6 +35715,40 @@ var CustomMap = function (_a) {
                 updateFilterCallback(currentFilters);
             }
             else {
+                var markerLayers = map.getLayers().getArray().filter(function (layer) { return layer.get('name') === 'LocationMarker'; });
+                var _loop_1 = function (i) {
+                    var marker = markerLayers[i];
+                    var markerTaskId = marker.get('source').getFeatures()[0].get('taskid');
+                    if (markerTaskId = feature.get('taskid')) {
+                        // get data for taskid
+                        var data_1 = void 0;
+                        for (var i_1 = 0; i_1 < _data_ivol_database__WEBPACK_IMPORTED_MODULE_3__["default"].length; i_1++) {
+                            if (_data_ivol_database__WEBPACK_IMPORTED_MODULE_3__["default"][i_1].taskid === markerTaskId) {
+                                data_1 = _data_ivol_database__WEBPACK_IMPORTED_MODULE_3__["default"][i_1];
+                                break;
+                            }
+                        }
+                        if (data_1 !== undefined) {
+                            // show tooltip panel
+                            var tooltipPanel_1 = document.getElementById('tooltip-panel');
+                            tooltipPanel_1.classList.add(_Map_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].iVolTooltipPanel);
+                            // add data to tooltip
+                            $('#tooltip-title').text(data_1.taskname);
+                            $('#tooltip-taskid').text(data_1.taskid);
+                            $('#tooltip-responsible').text(data_1.responsible);
+                            $('#tooltip-city').text(data_1.address.zip + ' ' + data_1.address.city);
+                            // add clickhandlers
+                            $('#close-tooltip').on('click', function () {
+                                tooltipPanel_1.classList.remove(_Map_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].iVolTooltipPanel);
+                            });
+                            $('#tooltip-details-link').attr('href', 'ivolunteer_-_taskdetails.html?taskid=' + markerTaskId);
+                        }
+                    }
+                };
+                for (var i = 0; i < markerLayers.length; i++) {
+                    _loop_1(i);
+                }
+                // TODO
                 // open dialog if user wants to create a new task
                 // if yes, redirect to Add Task page
                 // if no, close dialog and do nothing
@@ -35699,9 +35758,9 @@ var CustomMap = function (_a) {
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
         if (selectedLocation !== undefined) { // at the beginning no location is selected
             var value = void 0;
-            for (var i_1 = 0; i_1 < data.length; i_1++) {
-                if (data[i_1].iso === selectedLocation.getId()) {
-                    value = data[i_1].apdex;
+            for (var i_2 = 0; i_2 < data.length; i_2++) {
+                if (data[i_2].iso === selectedLocation.getId()) {
+                    value = data[i_2].apdex;
                     break;
                 }
             }
@@ -35751,9 +35810,9 @@ var CustomMap = function (_a) {
         }
         if (hoveredLocation !== undefined) { // at the beginning no location is hovered over
             var value = void 0;
-            for (var i_2 = 0; i_2 < data.length; i_2++) {
-                if (data[i_2].iso === hoveredLocation.getId()) {
-                    value = data[i_2][selectedMetric];
+            for (var i_3 = 0; i_3 < data.length; i_3++) {
+                if (data[i_3].iso === hoveredLocation.getId()) {
+                    value = data[i_3][selectedMetric];
                     break;
                 }
             }
@@ -35777,20 +35836,6 @@ var CustomMap = function (_a) {
                 setZoom(currZoom);
                 onSetZoom(currZoom);
             }
-            var markerDataset = [];
-            if (isIVolunteer) {
-            }
-            else {
-                mapRef.current.getLayers().getArray()
-                    .filter(function (layer) { return layer.get('name') === 'LocationMarker'; })
-                    .forEach(function (layer) { return mapRef.current.removeLayer(layer); });
-                if (newZoom >= _utils__WEBPACK_IMPORTED_MODULE_5__.ZoomLevel.COUNTRY) {
-                    markerDataset = getDataSetForMarkers(isIVolunteer);
-                    for (var i = 0; i < markerDataset.length; i++) {
-                        addIconOverlay(isIVolunteer, markerDataset[i], mapRef.current, selectedMetric);
-                    }
-                }
-            }
         }
     }, [zoom, onSetZoom]);
     // ---------- set click handler
@@ -35798,6 +35843,7 @@ var CustomMap = function (_a) {
     // because it thinks the filter array is still empty (as it was during initialization)
     if (mapRef.current !== undefined) {
         mapRef.current.on('click', handleMapClick);
+        setIconMarkers(isIVolunteer, mapRef.current, zoom, selectedMetric);
     }
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
         // potentially deselect country if filter has been removed
@@ -35819,7 +35865,7 @@ var CustomMap = function (_a) {
             var source = event.target;
             var currentFilterList = filterRef.current;
             if (source.getState() === 'ready' && (currentFilterList === null || currentFilterList === void 0 ? void 0 : currentFilterList.length) > 0) {
-                var _loop_1 = function (i) {
+                var _loop_2 = function (i) {
                     if (currentFilterList[i].key === 'country') {
                         var filterValue_1 = currentFilterList[i].value;
                         overlaySource.forEachFeature(function (feature) {
@@ -35830,7 +35876,7 @@ var CustomMap = function (_a) {
                     }
                 };
                 for (var i = 0; i < currentFilterList.length; i++) {
-                    _loop_1(i);
+                    _loop_2(i);
                 }
             }
         });
@@ -35856,6 +35902,7 @@ var createMap = function (target, zoom, lon, lat, isIVolunteer, overlayLayer) {
             label: '\u00AB',
             collapsed: false,
         });
+        view.setMaxZoom(_utils__WEBPACK_IMPORTED_MODULE_5__.ZoomLevel.REGION);
         return new ol__WEBPACK_IMPORTED_MODULE_20__["default"]({
             controls: (0,ol_control__WEBPACK_IMPORTED_MODULE_21__.defaults)().extend([minimapControl]),
             interactions: (0,ol_interaction__WEBPACK_IMPORTED_MODULE_22__.defaults)().extend([new ol_interaction__WEBPACK_IMPORTED_MODULE_23__["default"]()]),
@@ -35866,6 +35913,7 @@ var createMap = function (target, zoom, lon, lat, isIVolunteer, overlayLayer) {
         ;
     }
     else {
+        view.setMinZoom(_utils__WEBPACK_IMPORTED_MODULE_5__.ZoomLevel.COUNTRY);
         return new ol__WEBPACK_IMPORTED_MODULE_20__["default"]({
             target: target,
             layers: [mapLayer],
@@ -35926,9 +35974,33 @@ var checkForExistingCountryFilter = function (filters) {
     }
     return filterExists;
 };
-var getDataSetForMarkers = function (isIVolunteer) {
+var setIconMarkers = function (isIVolunteer, map, zoom, selectedMetric) {
+    var markerDataset = [];
     if (isIVolunteer) {
-        return [];
+        map.getLayers().getArray()
+            .filter(function (layer) { return layer.get('name') === 'LocationMarker'; })
+            .forEach(function (layer) { return map.removeLayer(layer); });
+        markerDataset = getDataSetForMarkers(isIVolunteer);
+        for (var i = 0; i < markerDataset.length; i++) {
+            addIconOverlay(isIVolunteer, markerDataset[i], map, selectedMetric);
+        }
+    }
+    else {
+        map.getLayers().getArray()
+            .filter(function (layer) { return layer.get('name') === 'LocationMarker'; })
+            .forEach(function (layer) { return map.removeLayer(layer); });
+        if (zoom >= _utils__WEBPACK_IMPORTED_MODULE_5__.ZoomLevel.COUNTRY) {
+            markerDataset = getDataSetForMarkers(isIVolunteer);
+            for (var i = 0; i < markerDataset.length; i++) {
+                addIconOverlay(isIVolunteer, markerDataset[i], map, selectedMetric);
+            }
+        }
+    }
+};
+var getDataSetForMarkers = function (isIVolunteer) {
+    // TODO add filter to restrict the shown icons on map
+    if (isIVolunteer) {
+        return _data_ivol_database__WEBPACK_IMPORTED_MODULE_3__["default"];
     }
     else {
         var citiesDataset = [];
@@ -35941,7 +36013,7 @@ var getDataSetForMarkers = function (isIVolunteer) {
     }
 };
 var addIconOverlay = function (isIVolunteer, markerData, map, selectedMetric) {
-    var _a = getCoordinatesForCity(markerData.city), longitude = _a.longitude, latitude = _a.latitude;
+    var _a = isIVolunteer ? getCoordinatesForCityIVol(markerData) : getCoordinatesForCityDt(markerData.city), longitude = _a.longitude, latitude = _a.latitude;
     var iconSource = '';
     if (isIVolunteer) {
         if (selectedMetric === 'urgency') {
@@ -35960,10 +36032,13 @@ var addIconOverlay = function (isIVolunteer, markerData, map, selectedMetric) {
     if (iconSource != '') {
         var iconFeature = new ol__WEBPACK_IMPORTED_MODULE_24__["default"]({
             geometry: new ol_geom_Point__WEBPACK_IMPORTED_MODULE_25__["default"]((0,ol_proj__WEBPACK_IMPORTED_MODULE_0__.transform)([longitude, latitude], 'EPSG:4326', 'EPSG:3857')),
-            name: 'LocationMarker',
+            name: 'LocationMarkerFeature',
             population: 4000,
             rainfall: 500,
         });
+        if (isIVolunteer) {
+            iconFeature.set('taskid', markerData.taskid);
+        }
         var iconStyle = new ol_style__WEBPACK_IMPORTED_MODULE_13__["default"]({
             image: new ol_style__WEBPACK_IMPORTED_MODULE_26__["default"]({
                 anchor: [0.5, 20],
@@ -35985,7 +36060,12 @@ var addIconOverlay = function (isIVolunteer, markerData, map, selectedMetric) {
         map.addLayer(iconVectorLayer);
     }
 };
-var getCoordinatesForCity = function (cityName) {
+var getCoordinatesForCityIVol = function (markerData) {
+    var latitude = markerData.address.coordinates[0];
+    var longitude = markerData.address.coordinates[1];
+    return { longitude: longitude, latitude: latitude };
+};
+var getCoordinatesForCityDt = function (cityName) {
     var fullCityList = _data_dt_filters__WEBPACK_IMPORTED_MODULE_4__["default"][0].city.properties;
     var longitude;
     var latitude;
@@ -36167,7 +36247,7 @@ var TableContent = function (_a) {
                             : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableCell }, dataRow['totaluseractions'])
                     : '',
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: "".concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableCell, " ").concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableLastCol) },
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", { href: "#" },
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", { href: isIVolunteer ? 'ivolunteer_-_taskdetails.html?taskId=' + dataRow.taskid : '#' },
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: _img_analyze_svg__WEBPACK_IMPORTED_MODULE_2__["default"], className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].analyzeBtn }))))); })))));
 };
 var TablePagination = function (_a) {
@@ -36388,32 +36468,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "FilterType": () => (/* binding */ FilterType),
 /* harmony export */   "getFilterType": () => (/* binding */ getFilterType),
 /* harmony export */   "createMap": () => (/* binding */ createMap),
-/* harmony export */   "groupValuesPerLocation": () => (/* binding */ groupValuesPerLocation),
-/* harmony export */   "createCountryOverlay": () => (/* binding */ createCountryOverlay),
-/* harmony export */   "createOverlay": () => (/* binding */ createOverlay),
-/* harmony export */   "switchMetric": () => (/* binding */ switchMetric)
+/* harmony export */   "groupValuesPerLocation": () => (/* binding */ groupValuesPerLocation)
 /* harmony export */ });
 /* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ol */ "./node_modules/ol/View.js");
 /* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ol */ "./node_modules/ol/Map.js");
-/* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ol */ "./node_modules/ol/Overlay.js");
 /* harmony import */ var ol_control__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ol/control */ "./node_modules/ol/control.js");
 /* harmony import */ var ol_control_OverviewMap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ol/control/OverviewMap */ "./node_modules/ol/control/OverviewMap.js");
-/* harmony import */ var ol_format_GeoJSON__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ol/format/GeoJSON */ "./node_modules/ol/format/GeoJSON.js");
 /* harmony import */ var ol_interaction__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ol/interaction */ "./node_modules/ol/interaction.js");
 /* harmony import */ var ol_interaction__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ol/interaction */ "./node_modules/ol/interaction/DragRotateAndZoom.js");
 /* harmony import */ var ol_layer_Tile__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ol/layer/Tile */ "./node_modules/ol/layer/Tile.js");
-/* harmony import */ var ol_layer_Vector__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ol/layer/Vector */ "./node_modules/ol/layer/Vector.js");
 /* harmony import */ var ol_ol_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/ol.css */ "./node_modules/ol/ol.css");
 /* harmony import */ var ol_proj__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/proj */ "./node_modules/ol/proj.js");
 /* harmony import */ var ol_source_OSM__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ol/source/OSM */ "./node_modules/ol/source/OSM.js");
-/* harmony import */ var ol_source_Vector__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ol/source/Vector */ "./node_modules/ol/source/Vector.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Style.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Fill.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Stroke.js");
-
-
-
-
 
 
 
@@ -36544,110 +36610,6 @@ function groupValuesPerLocation(data, locationKey) {
         return b.apdex - a.apdex;
     });
     return newValues;
-}
-// older methods
-function createCountryOverlay(map, selectedColor, hoverColor) {
-    var overlayLayer = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_10__["default"]({
-        source: new ol_source_Vector__WEBPACK_IMPORTED_MODULE_11__["default"]({
-            url: '../data/geodata/countries.geojson',
-            format: new ol_format_GeoJSON__WEBPACK_IMPORTED_MODULE_12__["default"]()
-        })
-    });
-    map.addLayer(overlayLayer);
-    var selectStyle = new ol_style__WEBPACK_IMPORTED_MODULE_13__["default"]({
-        fill: new ol_style__WEBPACK_IMPORTED_MODULE_14__["default"]({
-            color: 'rgba(0, 0, 0, 0)',
-        }),
-        stroke: new ol_style__WEBPACK_IMPORTED_MODULE_15__["default"]({
-            color: selectedColor,
-            width: 2,
-        }),
-    });
-    var hoverStyle = new ol_style__WEBPACK_IMPORTED_MODULE_13__["default"]({
-        fill: new ol_style__WEBPACK_IMPORTED_MODULE_14__["default"]({
-            color: 'rgba(0, 0, 0, 0)',
-        }),
-        stroke: new ol_style__WEBPACK_IMPORTED_MODULE_15__["default"]({
-            color: selectedColor,
-            width: 2,
-        }),
-    });
-    var hovered;
-    var selected;
-    map.on('pointermove', function (event) {
-        if (hovered !== undefined) {
-            hovered.setStyle(undefined);
-            hovered = undefined;
-        }
-        map.forEachFeatureAtPixel(event.pixel, function (feature) {
-            if (selected !== feature) {
-                hovered = feature;
-                hoverStyle.getFill().setColor(hoverColor);
-                hovered.setStyle(hoverStyle);
-                if (selected !== undefined) {
-                    selectStyle.getFill().setColor(selectedColor);
-                    selected.setStyle(selectStyle);
-                }
-            }
-            return true;
-        });
-        // TODO add regions per country when zoom level is high enough
-    });
-    map.on('click', function (e) {
-        if (selected !== undefined) {
-            selected.setStyle(undefined);
-            selected = undefined;
-        }
-        map.forEachFeatureAtPixel(e.pixel, function (feature) {
-            selected = feature;
-            selectStyle.getFill().setColor(selectedColor);
-            selected.setStyle(selectStyle);
-            hovered = undefined;
-            var tooltipTitle = document.getElementById('tooltipTitle');
-            if (tooltipTitle) {
-                if (selected) {
-                    tooltipTitle.innerHTML = selected.get('name');
-                }
-                else {
-                    tooltipTitle.innerHTML = '&nbsp;';
-                }
-            }
-            return true;
-        });
-    });
-    return map;
-}
-/**
- * Adds markers on the map, e.g. for POIs like cities
- */
-function createMarkers() {
-}
-/**
- * Creates overlay that can be put on top of a map
- * @param {id of the element that serves as overlay} target
- * @param {longitude} lon
- * @param {latitude} lat
- * @returns overlay object for further customization
- */
-function createOverlay(target, lon, lat) {
-    var pos = (0,ol_proj__WEBPACK_IMPORTED_MODULE_1__.fromLonLat)([14.2858, 48.3069]);
-    var elem = document.getElementById(target);
-    return new ol__WEBPACK_IMPORTED_MODULE_16__["default"]({
-        position: pos,
-        positioning: 'center-center',
-        element: elem ? elem : undefined,
-        stopEvent: false,
-    });
-}
-/**
- * Switches metric and adapts shape and colour of the overlay accordingly
- * @param {background colour of overlay} colour
- */
-function switchMetric(colour, element) {
-    var overlay = document.getElementById(element);
-    if (overlay) {
-        overlay.style.backgroundColor = colour;
-    }
 }
 
 
