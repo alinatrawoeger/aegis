@@ -22,9 +22,9 @@ import markerRed from "./img/marker-red.png";
 import markerYellow from "./img/marker-yellow.png";
 import markerGreen from "./img/marker-green.png";
 
-// test data (coordinates of Linz)
-const longitude = 14.2858;
-const latitude = 48.3069;
+// test data (coordinates of the center of Austria)
+const longitude = 14.12456;
+const latitude = 47.59397;
 
 let overlayColorMap = {
     'apdex': {
@@ -140,7 +140,7 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
             source: overlaySource
         });
         // create map
-        const initialMap = createMap(mapElement.current, ZoomLevel.COUNTRY, longitude, latitude, isIVolunteer, overlayLayer);
+        const initialMap = createMap(mapElement.current, 6, longitude, latitude, isIVolunteer, overlayLayer);
 
         // set event handlers except click handler (will be set later)
         initialMap.on('pointermove', handleHover);
@@ -320,22 +320,6 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
                   setZoom(currZoom);
                   onSetZoom(currZoom);
                 }
-                
-                let markerDataset = [];
-                if (isIVolunteer) {
-                
-                } else {
-                    mapRef.current.getLayers().getArray()
-                            .filter(layer => layer.get('name') === 'LocationMarker')
-                            .forEach(layer => mapRef.current.removeLayer(layer));
-
-                    if (newZoom >= ZoomLevel.COUNTRY) {
-                        markerDataset = getDataSetForMarkers(isIVolunteer);
-                        for (let i = 0; i < markerDataset.length; i++) {
-                            addIconOverlay(isIVolunteer, markerDataset[i], mapRef.current, selectedMetric);
-                        }
-                    }
-                }
             }
         },
         [zoom, onSetZoom],
@@ -346,6 +330,7 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
 // because it thinks the filter array is still empty (as it was during initialization)
     if (mapRef.current !== undefined) {
         mapRef.current.on('click', handleMapClick);
+        setIconMarkers(isIVolunteer, mapRef.current, zoom, selectedMetric); 
     }    
 
     useEffect( () => {
@@ -410,6 +395,8 @@ const createMap = (target: string, zoom: ZoomLevel, lon: number, lat: number, is
             collapsed: false,
         });
 
+        view.setMaxZoom(ZoomLevel.REGION);
+
         return new Map({
             controls: defaultControls().extend([minimapControl]),
             interactions: defaults().extend([new DragRotateAndZoom()]),
@@ -418,6 +405,8 @@ const createMap = (target: string, zoom: ZoomLevel, lon: number, lat: number, is
             view: view
         });;
     } else {
+        view.setMinZoom(ZoomLevel.COUNTRY);
+
         return new Map({
             target: target,
             layers: [ mapLayer ],
@@ -471,9 +460,36 @@ const checkForExistingCountryFilter = (filters) => {
     return filterExists;
 }
 
-const getDataSetForMarkers = (isIVolunteer: boolean) => {
+const setIconMarkers = (isIVolunteer: boolean, map: Map, zoom: number, selectedMetric: string) => {
+    let markerDataset = [];
     if (isIVolunteer) {
-        return [];
+        map.getLayers().getArray()
+                .filter(layer => layer.get('name') === 'LocationMarker')
+                .forEach(layer => map.removeLayer(layer));
+
+        markerDataset = getDataSetForMarkers(isIVolunteer);
+        for (let i = 0; i < markerDataset.length; i++) {
+            addIconOverlay(isIVolunteer, markerDataset[i], map, selectedMetric);
+        }
+    } else {
+        map.getLayers().getArray()
+                .filter(layer => layer.get('name') === 'LocationMarker')
+                .forEach(layer => map.removeLayer(layer));
+
+
+        if (zoom >= ZoomLevel.COUNTRY) {
+            markerDataset = getDataSetForMarkers(isIVolunteer);
+            for (let i = 0; i < markerDataset.length; i++) {
+                addIconOverlay(isIVolunteer, markerDataset[i], map, selectedMetric);
+            }
+        }
+    }
+}
+
+const getDataSetForMarkers = (isIVolunteer: boolean) => {
+    // TODO add filter to restrict the shown icons on map
+    if (isIVolunteer) {
+        return dataIVol;
     } else {
         let citiesDataset = [];
         for (let i = 0; i < dataDt.length; i++) {
@@ -486,7 +502,7 @@ const getDataSetForMarkers = (isIVolunteer: boolean) => {
 }
 
 const addIconOverlay = (isIVolunteer: boolean, markerData: any, map: Map, selectedMetric: string) => {
-    let { longitude, latitude } = getCoordinatesForCity(markerData.city);
+    let { longitude, latitude } = isIVolunteer ?  getCoordinatesForCityIVol(markerData) : getCoordinatesForCityDt(markerData.city);
     
     let iconSource = '';
     if (isIVolunteer) {
@@ -534,7 +550,13 @@ const addIconOverlay = (isIVolunteer: boolean, markerData: any, map: Map, select
     }
 }
 
-const getCoordinatesForCity = (cityName: string) => {
+const getCoordinatesForCityIVol = (markerData: any) => {
+    let latitude = markerData.address.coordinates[0]
+    let longitude = markerData.address.coordinates[1];
+    return { longitude, latitude };
+}
+
+const getCoordinatesForCityDt = (cityName: string) => {
     const fullCityList = dtFilters[0].city.properties;
     let longitude: number;
     let latitude: number;
