@@ -99,12 +99,15 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".JJyNdgBbzIdK1BI0SCXH {\n    height: 535px;\n    width: 1102px;\n}\n\n.uIUzAGrW9cVKHTGZ4jwx {\n    height: 275px;\n    width: 502px;\n}\n\n.WhCsOyPWNMyrk8AJCO2i {\n    display: block !important;\n}", "",{"version":3,"sources":["webpack://./src/customCode/components/map/Map.module.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,YAAY;AAChB;;AAEA;IACI,yBAAyB;AAC7B","sourcesContent":[".container_dt {\n    height: 535px;\n    width: 1102px;\n}\n\n.container_ivol {\n    height: 275px;\n    width: 502px;\n}\n\n.iVolTooltipPanel {\n    display: block !important;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".JJyNdgBbzIdK1BI0SCXH {\n    height: 535px;\n    width: 1102px;\n}\n\n.uIUzAGrW9cVKHTGZ4jwx {\n    height: 275px;\n    width: 502px;\n}\n\n.WhCsOyPWNMyrk8AJCO2i {\n    display: block !important;\n}\n\n.ymKatAZKiL5x64X3Z_Yg {\n    width: 475px;\n    height: 275px;\n}\n\n.BcGMWewQ1PdCkubwEJTv {\n    transform: rotate(180deg)\n}\n\n.HxTJjmO8WElTpTlmTJAM {\n    display: none;\n}", "",{"version":3,"sources":["webpack://./src/customCode/components/map/Map.module.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,YAAY;AAChB;;AAEA;IACI,yBAAyB;AAC7B;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI;AACJ;;AAEA;IACI,aAAa;AACjB","sourcesContent":[".container_dt {\n    height: 535px;\n    width: 1102px;\n}\n\n.container_ivol {\n    height: 275px;\n    width: 502px;\n}\n\n.iVolTooltipPanel {\n    display: block !important;\n}\n\n.container_staticmap {\n    width: 475px;\n    height: 275px;\n}\n\n.collapsedMapBtn {\n    transform: rotate(180deg)\n}\n\n.hideMap {\n    display: none;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container_dt": "JJyNdgBbzIdK1BI0SCXH",
 	"container_ivol": "uIUzAGrW9cVKHTGZ4jwx",
-	"iVolTooltipPanel": "WhCsOyPWNMyrk8AJCO2i"
+	"iVolTooltipPanel": "WhCsOyPWNMyrk8AJCO2i",
+	"container_staticmap": "ymKatAZKiL5x64X3Z_Yg",
+	"collapsedMapBtn": "BcGMWewQ1PdCkubwEJTv",
+	"hideMap": "HxTJjmO8WElTpTlmTJAM"
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -170,7 +173,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".eqDrgOsX8CiWh17DPz7V {\n    display: block;\n    border-collapse: collapse;\n    height: 180px;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-style: normal;\n    font-size: 13px;\n    letter-spacing: normal;\n    color: #333333;\n    text-align: center;\n    line-height: normal;\n    text-transform: none;\n}\n\n.CQ2iRGOdjtn64gc5qasQ {\n  width: 526px;\n  height: 180px;\n}\n\n.ASJmUS7DR70JsJ0pHRmN {\n  height: 150px;\n}\n\n.eqDrgOsX8CiWh17DPz7V > thead, .eqDrgOsX8CiWh17DPz7V > tbody {\n    display: block;\n}\n\n.Yvf7yIWRrSN0SSAlGcGA {\n  border-bottom: 2px solid #797979;\n  width: 189px;\n  height: 20px;\n  font-family: 'Arial Fett', 'Arial Standard', 'Arial', sans-serif;\n  font-weight: 700;\n  font-style: normal;\n  color: #797979;\n}\n\n.yudAicknLf5fAgHXerVk, .yOZKEbvKtCJKTJPbzVG8 {\n  display: flex;\n  text-align: left;\n  padding: 4px 0 4px 0;\n}\n\n.EUz9KDNDDNHjecYM1D34 {\n  text-align: center !important;\n}\n\n.eqDrgOsX8CiWh17DPz7V th:first-child, .eqDrgOsX8CiWh17DPz7V td:first-child {\n  flex: 0 0 50% !important;\n}\n\n\n.eqDrgOsX8CiWh17DPz7V th:last-child, .eqDrgOsX8CiWh17DPz7V td:last-child {\n    flex: 0 0 10%;\n    text-align: right;\n}\n\n.oPHTifdWj92FsPXUKekW {\n    width: 189px;\n}\n\n.aKlGgi6tJCR3j62mrdSD {\n  height: 20px;\n  width: 20px;\n}\n\n.RGnZsLjoQw7Om2iHLrm8 {\n  color: rgba(30, 152, 215, 1);\n  text-decoration: none;\n}\n\n.RGnZsLjoQw7Om2iHLrm8:hover {\n  text-decoration: underline;\n  cursor:pointer;\n}\n\n.q01bbda0OHzvPhVTO5Kv {\n  padding: 12px 0px;\n  width: 526px;\n  text-align: left;\n  font-size: 16px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n  \n.vxa5AFyvUVzT45r36ewr {\n  border: none;\n  padding: 7px 14px;\n  border-radius: 10px;\n  cursor: pointer;\n  margin-right: 4px;\n  margin-left: 4px;\n}\n\n.y5iG4UVzNHOlsM_qSjCR {\n  color: #87ceeb;\n  font-weight: 700;\n  background: white;\n}\n\n.K3ERTZAFlVbhTtYfCIcZ {\n  font-weight: 700;\n  background: lightgrey;\n}\n\n.tN1ezGocG5N9LYTb0tTY {\n  background: white;\n}\n\n.gU1ZE45DiotwBDGyVywQ {\n  color: #a9a9a9;\n}\n\n.raVNPqVV_8awftlmSuJt {\n  position: absolute;\n  left: 100px;\n}\n\n.cwD_pw01fDsT5XSDyB5T {\n  position: absolute;\n  left: 380px;\n}\n\n.hmsP5zIQp_COvBrM5Hh1 {\n  height: 200px;\n  padding-top: 20px;\n}", "",{"version":3,"sources":["webpack://./src/customCode/components/table/Table.module.css"],"names":[],"mappings":"AAAA;IACI,cAAc;IACd,yBAAyB;IACzB,aAAa;IACb,kDAAkD;IAClD,gBAAgB;IAChB,kBAAkB;IAClB,eAAe;IACf,sBAAsB;IACtB,cAAc;IACd,kBAAkB;IAClB,mBAAmB;IACnB,oBAAoB;AACxB;;AAEA;EACE,YAAY;EACZ,aAAa;AACf;;AAEA;EACE,aAAa;AACf;;AAEA;IACI,cAAc;AAClB;;AAEA;EACE,gCAAgC;EAChC,YAAY;EACZ,YAAY;EACZ,gEAAgE;EAChE,gBAAgB;EAChB,kBAAkB;EAClB,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,gBAAgB;EAChB,oBAAoB;AACtB;;AAEA;EACE,6BAA6B;AAC/B;;AAEA;EACE,wBAAwB;AAC1B;;;AAGA;IACI,aAAa;IACb,iBAAiB;AACrB;;AAEA;IACI,YAAY;AAChB;;AAEA;EACE,YAAY;EACZ,WAAW;AACb;;AAEA;EACE,4BAA4B;EAC5B,qBAAqB;AACvB;;AAEA;EACE,0BAA0B;EAC1B,cAAc;AAChB;;AAEA;EACE,iBAAiB;EACjB,YAAY;EACZ,gBAAgB;EAChB,eAAe;EACf,aAAa;EACb,mBAAmB;EACnB,uBAAuB;AACzB;;AAEA;EACE,YAAY;EACZ,iBAAiB;EACjB,mBAAmB;EACnB,eAAe;EACf,iBAAiB;EACjB,gBAAgB;AAClB;;AAEA;EACE,cAAc;EACd,gBAAgB;EAChB,iBAAiB;AACnB;;AAEA;EACE,gBAAgB;EAChB,qBAAqB;AACvB;;AAEA;EACE,iBAAiB;AACnB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,kBAAkB;EAClB,WAAW;AACb;;AAEA;EACE,kBAAkB;EAClB,WAAW;AACb;;AAEA;EACE,aAAa;EACb,iBAAiB;AACnB","sourcesContent":[".table {\n    display: block;\n    border-collapse: collapse;\n    height: 180px;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-style: normal;\n    font-size: 13px;\n    letter-spacing: normal;\n    color: #333333;\n    text-align: center;\n    line-height: normal;\n    text-transform: none;\n}\n\n.tableDt {\n  width: 526px;\n  height: 180px;\n}\n\n.tableIvol {\n  height: 150px;\n}\n\n.table > thead, .table > tbody {\n    display: block;\n}\n\n.tableHeader {\n  border-bottom: 2px solid #797979;\n  width: 189px;\n  height: 20px;\n  font-family: 'Arial Fett', 'Arial Standard', 'Arial', sans-serif;\n  font-weight: 700;\n  font-style: normal;\n  color: #797979;\n}\n\n.tableRowItems, .tableRowHeader {\n  display: flex;\n  text-align: left;\n  padding: 4px 0 4px 0;\n}\n\n.tableLastCol {\n  text-align: center !important;\n}\n\n.table th:first-child, .table td:first-child {\n  flex: 0 0 50% !important;\n}\n\n\n.table th:last-child, .table td:last-child {\n    flex: 0 0 10%;\n    text-align: right;\n}\n\n.tableCell {\n    width: 189px;\n}\n\n.analyzeBtn {\n  height: 20px;\n  width: 20px;\n}\n\n.tableLink {\n  color: rgba(30, 152, 215, 1);\n  text-decoration: none;\n}\n\n.tableLink:hover {\n  text-decoration: underline;\n  cursor:pointer;\n}\n\n.tableFooter {\n  padding: 12px 0px;\n  width: 526px;\n  text-align: left;\n  font-size: 16px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n  \n.button {\n  border: none;\n  padding: 7px 14px;\n  border-radius: 10px;\n  cursor: pointer;\n  margin-right: 4px;\n  margin-left: 4px;\n}\n\n.arrowBtn {\n  color: #87ceeb;\n  font-weight: 700;\n  background: white;\n}\n\n.activeButton {\n  font-weight: 700;\n  background: lightgrey;\n}\n\n.inactiveButton {\n  background: white;\n}\n\n.disabledButton {\n  color: #a9a9a9;\n}\n\n.arrowPrevBtn {\n  position: absolute;\n  left: 100px;\n}\n\n.arrowNextBtn {\n  position: absolute;\n  left: 380px;\n}\n\n.noData {\n  height: 200px;\n  padding-top: 20px;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".eqDrgOsX8CiWh17DPz7V {\n    display: block;\n    border-collapse: collapse;\n    height: 180px;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-style: normal;\n    font-size: 13px;\n    letter-spacing: normal;\n    color: #333333;\n    text-align: center;\n    line-height: normal;\n    text-transform: none;\n}\n\n.CQ2iRGOdjtn64gc5qasQ {\n  width: 526px;\n  height: 180px;\n}\n\n.ASJmUS7DR70JsJ0pHRmN {\n  height: 150px;\n}\n\n.eqDrgOsX8CiWh17DPz7V > thead, .eqDrgOsX8CiWh17DPz7V > tbody {\n    display: block;\n}\n\n.Yvf7yIWRrSN0SSAlGcGA {\n  border-bottom: 2px solid #797979;\n  width: 189px;\n  height: 20px;\n  font-family: 'Arial Fett', 'Arial Standard', 'Arial', sans-serif;\n  font-weight: 700;\n  font-style: normal;\n  color: #797979;\n}\n\n.yudAicknLf5fAgHXerVk, .yOZKEbvKtCJKTJPbzVG8 {\n  display: flex;\n  text-align: left;\n  padding: 4px 0 4px 0;\n}\n\n.EUz9KDNDDNHjecYM1D34 {\n  text-align: center !important;\n}\n\n.eqDrgOsX8CiWh17DPz7V th:first-child, .eqDrgOsX8CiWh17DPz7V td:first-child {\n  flex: 0 0 50% !important;\n}\n\n\n.eqDrgOsX8CiWh17DPz7V th:last-child, .eqDrgOsX8CiWh17DPz7V td:last-child {\n    flex: 0 0 10%;\n    text-align: right;\n}\n\n.oPHTifdWj92FsPXUKekW {\n    width: 189px;\n}\n\n.aKlGgi6tJCR3j62mrdSD {\n  height: 20px;\n  width: 20px;\n}\n\n.RGnZsLjoQw7Om2iHLrm8 {\n  color: rgba(30, 152, 215, 1);\n  text-decoration: none;\n}\n\n.RGnZsLjoQw7Om2iHLrm8 > a {\n  text-decoration: none;\n}\n\n.RGnZsLjoQw7Om2iHLrm8:hover {\n  text-decoration: underline;\n  cursor:pointer;\n}\n\n.q01bbda0OHzvPhVTO5Kv {\n  padding: 12px 0px;\n  width: 526px;\n  text-align: left;\n  font-size: 16px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n  \n.vxa5AFyvUVzT45r36ewr {\n  border: none;\n  padding: 7px 14px;\n  border-radius: 10px;\n  cursor: pointer;\n  margin-right: 4px;\n  margin-left: 4px;\n}\n\n.y5iG4UVzNHOlsM_qSjCR {\n  color: #87ceeb;\n  font-weight: 700;\n  background: white;\n}\n\n.K3ERTZAFlVbhTtYfCIcZ {\n  font-weight: 700;\n  background: lightgrey;\n}\n\n.tN1ezGocG5N9LYTb0tTY {\n  background: white;\n}\n\n.gU1ZE45DiotwBDGyVywQ {\n  color: #a9a9a9;\n}\n\n.raVNPqVV_8awftlmSuJt {\n  position: absolute;\n  left: 100px;\n}\n\n.cwD_pw01fDsT5XSDyB5T {\n  position: absolute;\n  left: 380px;\n}\n\n.hmsP5zIQp_COvBrM5Hh1 {\n  height: 200px;\n  padding-top: 20px;\n}", "",{"version":3,"sources":["webpack://./src/customCode/components/table/Table.module.css"],"names":[],"mappings":"AAAA;IACI,cAAc;IACd,yBAAyB;IACzB,aAAa;IACb,kDAAkD;IAClD,gBAAgB;IAChB,kBAAkB;IAClB,eAAe;IACf,sBAAsB;IACtB,cAAc;IACd,kBAAkB;IAClB,mBAAmB;IACnB,oBAAoB;AACxB;;AAEA;EACE,YAAY;EACZ,aAAa;AACf;;AAEA;EACE,aAAa;AACf;;AAEA;IACI,cAAc;AAClB;;AAEA;EACE,gCAAgC;EAChC,YAAY;EACZ,YAAY;EACZ,gEAAgE;EAChE,gBAAgB;EAChB,kBAAkB;EAClB,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,gBAAgB;EAChB,oBAAoB;AACtB;;AAEA;EACE,6BAA6B;AAC/B;;AAEA;EACE,wBAAwB;AAC1B;;;AAGA;IACI,aAAa;IACb,iBAAiB;AACrB;;AAEA;IACI,YAAY;AAChB;;AAEA;EACE,YAAY;EACZ,WAAW;AACb;;AAEA;EACE,4BAA4B;EAC5B,qBAAqB;AACvB;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,0BAA0B;EAC1B,cAAc;AAChB;;AAEA;EACE,iBAAiB;EACjB,YAAY;EACZ,gBAAgB;EAChB,eAAe;EACf,aAAa;EACb,mBAAmB;EACnB,uBAAuB;AACzB;;AAEA;EACE,YAAY;EACZ,iBAAiB;EACjB,mBAAmB;EACnB,eAAe;EACf,iBAAiB;EACjB,gBAAgB;AAClB;;AAEA;EACE,cAAc;EACd,gBAAgB;EAChB,iBAAiB;AACnB;;AAEA;EACE,gBAAgB;EAChB,qBAAqB;AACvB;;AAEA;EACE,iBAAiB;AACnB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,kBAAkB;EAClB,WAAW;AACb;;AAEA;EACE,kBAAkB;EAClB,WAAW;AACb;;AAEA;EACE,aAAa;EACb,iBAAiB;AACnB","sourcesContent":[".table {\n    display: block;\n    border-collapse: collapse;\n    height: 180px;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-style: normal;\n    font-size: 13px;\n    letter-spacing: normal;\n    color: #333333;\n    text-align: center;\n    line-height: normal;\n    text-transform: none;\n}\n\n.tableDt {\n  width: 526px;\n  height: 180px;\n}\n\n.tableIvol {\n  height: 150px;\n}\n\n.table > thead, .table > tbody {\n    display: block;\n}\n\n.tableHeader {\n  border-bottom: 2px solid #797979;\n  width: 189px;\n  height: 20px;\n  font-family: 'Arial Fett', 'Arial Standard', 'Arial', sans-serif;\n  font-weight: 700;\n  font-style: normal;\n  color: #797979;\n}\n\n.tableRowItems, .tableRowHeader {\n  display: flex;\n  text-align: left;\n  padding: 4px 0 4px 0;\n}\n\n.tableLastCol {\n  text-align: center !important;\n}\n\n.table th:first-child, .table td:first-child {\n  flex: 0 0 50% !important;\n}\n\n\n.table th:last-child, .table td:last-child {\n    flex: 0 0 10%;\n    text-align: right;\n}\n\n.tableCell {\n    width: 189px;\n}\n\n.analyzeBtn {\n  height: 20px;\n  width: 20px;\n}\n\n.tableLink {\n  color: rgba(30, 152, 215, 1);\n  text-decoration: none;\n}\n\n.tableLink > a {\n  text-decoration: none;\n}\n\n.tableLink:hover {\n  text-decoration: underline;\n  cursor:pointer;\n}\n\n.tableFooter {\n  padding: 12px 0px;\n  width: 526px;\n  text-align: left;\n  font-size: 16px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n  \n.button {\n  border: none;\n  padding: 7px 14px;\n  border-radius: 10px;\n  cursor: pointer;\n  margin-right: 4px;\n  margin-left: 4px;\n}\n\n.arrowBtn {\n  color: #87ceeb;\n  font-weight: 700;\n  background: white;\n}\n\n.activeButton {\n  font-weight: 700;\n  background: lightgrey;\n}\n\n.inactiveButton {\n  background: white;\n}\n\n.disabledButton {\n  color: #a9a9a9;\n}\n\n.arrowPrevBtn {\n  position: absolute;\n  left: 100px;\n}\n\n.arrowNextBtn {\n  position: absolute;\n  left: 380px;\n}\n\n.noData {\n  height: 200px;\n  padding-top: 20px;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"table": "eqDrgOsX8CiWh17DPz7V",
@@ -34183,6 +34186,167 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/customCode/components/map/MapUtils.ts":
+/*!***************************************************!*\
+  !*** ./src/customCode/components/map/MapUtils.ts ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "createMap": () => (/* binding */ createMap),
+/* harmony export */   "addIconOverlay": () => (/* binding */ addIconOverlay)
+/* harmony export */ });
+/* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ol */ "./node_modules/ol/View.js");
+/* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ol */ "./node_modules/ol/Map.js");
+/* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ol */ "./node_modules/ol/Feature.js");
+/* harmony import */ var ol_control__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ol/control */ "./node_modules/ol/control.js");
+/* harmony import */ var ol_control_OverviewMap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ol/control/OverviewMap */ "./node_modules/ol/control/OverviewMap.js");
+/* harmony import */ var ol_geom_Point__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ol/geom/Point */ "./node_modules/ol/geom/Point.js");
+/* harmony import */ var ol_interaction__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ol/interaction */ "./node_modules/ol/interaction.js");
+/* harmony import */ var ol_interaction__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ol/interaction */ "./node_modules/ol/interaction/DragRotateAndZoom.js");
+/* harmony import */ var ol_layer_Tile__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ol/layer/Tile */ "./node_modules/ol/layer/Tile.js");
+/* harmony import */ var ol_layer_Vector__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ol/layer/Vector */ "./node_modules/ol/layer/Vector.js");
+/* harmony import */ var ol_proj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/proj */ "./node_modules/ol/proj.js");
+/* harmony import */ var ol_source_OSM__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ol/source/OSM */ "./node_modules/ol/source/OSM.js");
+/* harmony import */ var ol_source_Vector__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ol/source/Vector */ "./node_modules/ol/source/Vector.js");
+/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Style.js");
+/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Icon.js");
+/* harmony import */ var _data_dt_filters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../data/dt_filters */ "./src/customCode/data/dt_filters.ts");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils */ "./src/customCode/utils.tsx");
+/* harmony import */ var _img_marker_green_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./img/marker-green.png */ "./src/customCode/components/map/img/marker-green.png");
+/* harmony import */ var _img_marker_red_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./img/marker-red.png */ "./src/customCode/components/map/img/marker-red.png");
+/* harmony import */ var _img_marker_yellow_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./img/marker-yellow.png */ "./src/customCode/components/map/img/marker-yellow.png");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var createMap = function (target, zoom, lon, lat, isIVolunteer, overlayLayer) {
+    var mapLayer = new ol_layer_Tile__WEBPACK_IMPORTED_MODULE_6__["default"]({
+        source: new ol_source_OSM__WEBPACK_IMPORTED_MODULE_7__["default"]()
+    });
+    var view = new ol__WEBPACK_IMPORTED_MODULE_8__["default"]({
+        center: (0,ol_proj__WEBPACK_IMPORTED_MODULE_0__.fromLonLat)([lon, lat]),
+        zoom: zoom
+    });
+    if (!isIVolunteer) {
+        var minimapControl = new ol_control_OverviewMap__WEBPACK_IMPORTED_MODULE_9__["default"]({
+            className: 'ol-overviewmap ol-custom-overviewmap',
+            layers: [new ol_layer_Tile__WEBPACK_IMPORTED_MODULE_6__["default"]({
+                    source: new ol_source_OSM__WEBPACK_IMPORTED_MODULE_7__["default"](),
+                })],
+            collapseLabel: '\u00BB',
+            label: '\u00AB',
+            collapsed: false,
+        });
+        view.setMaxZoom(_utils__WEBPACK_IMPORTED_MODULE_2__.ZoomLevel.REGION);
+        return new ol__WEBPACK_IMPORTED_MODULE_10__["default"]({
+            controls: (0,ol_control__WEBPACK_IMPORTED_MODULE_11__.defaults)().extend([minimapControl]),
+            interactions: (0,ol_interaction__WEBPACK_IMPORTED_MODULE_12__.defaults)().extend([new ol_interaction__WEBPACK_IMPORTED_MODULE_13__["default"]()]),
+            target: target,
+            layers: [mapLayer, overlayLayer],
+            view: view
+        });
+        ;
+    }
+    else {
+        view.setMinZoom(_utils__WEBPACK_IMPORTED_MODULE_2__.ZoomLevel.COUNTRY);
+        return new ol__WEBPACK_IMPORTED_MODULE_10__["default"]({
+            target: target,
+            layers: [mapLayer],
+            view: view
+        });
+    }
+};
+var addIconOverlay = function (isIVolunteer, markerData, map, selectedMetric) {
+    var _a = isIVolunteer ? getCoordinatesForCityIVol(markerData) : getCoordinatesForCityDt(markerData.city), longitude = _a.longitude, latitude = _a.latitude;
+    var iconSource = '';
+    if (isIVolunteer) {
+        if (selectedMetric === 'urgency') {
+            iconSource = _img_marker_red_png__WEBPACK_IMPORTED_MODULE_4__["default"];
+        }
+        else if (selectedMetric === 'priority') {
+            iconSource = _img_marker_yellow_png__WEBPACK_IMPORTED_MODULE_5__["default"];
+        }
+        else if (selectedMetric === 'duration') {
+            iconSource = _img_marker_green_png__WEBPACK_IMPORTED_MODULE_3__["default"];
+        }
+    }
+    else {
+        iconSource = _img_marker_red_png__WEBPACK_IMPORTED_MODULE_4__["default"];
+    }
+    if (iconSource != '') {
+        var iconFeature = new ol__WEBPACK_IMPORTED_MODULE_14__["default"]({
+            geometry: new ol_geom_Point__WEBPACK_IMPORTED_MODULE_15__["default"]((0,ol_proj__WEBPACK_IMPORTED_MODULE_0__.transform)([longitude, latitude], 'EPSG:4326', 'EPSG:3857')),
+            name: 'LocationMarkerFeature',
+            population: 4000,
+            rainfall: 500,
+        });
+        if (isIVolunteer) {
+            iconFeature.set('taskid', markerData.taskid);
+        }
+        var iconStyle = new ol_style__WEBPACK_IMPORTED_MODULE_16__["default"]({
+            image: new ol_style__WEBPACK_IMPORTED_MODULE_17__["default"]({
+                anchor: [0.5, 20],
+                anchorXUnits: 'fraction',
+                anchorYUnits: 'pixels',
+                src: iconSource
+            }),
+        });
+        iconFeature.setStyle(iconStyle);
+        var vectorSource = new ol_source_Vector__WEBPACK_IMPORTED_MODULE_18__["default"]({
+            features: [iconFeature],
+        });
+        var iconVectorLayer = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_19__["default"]({
+            source: vectorSource,
+            properties: {
+                name: 'LocationMarker'
+            }
+        });
+        map.addLayer(iconVectorLayer);
+    }
+};
+var getCoordinatesForCityIVol = function (markerData) {
+    var latitude = markerData.address.coordinates[0];
+    var longitude = markerData.address.coordinates[1];
+    return { longitude: longitude, latitude: latitude };
+};
+var getCoordinatesForCityDt = function (cityName) {
+    var fullCityList = _data_dt_filters__WEBPACK_IMPORTED_MODULE_1__["default"][0].city.properties;
+    var longitude;
+    var latitude;
+    for (var continentKey in fullCityList) {
+        for (var countryKey in fullCityList[continentKey]) {
+            for (var regionKey in fullCityList[continentKey][countryKey]) {
+                for (var i = 0; i < fullCityList[continentKey][countryKey][regionKey].length; i++) {
+                    var databaseCity = fullCityList[continentKey][countryKey][regionKey][i];
+                    if (cityName === databaseCity.name) {
+                        longitude = databaseCity.longitude;
+                        latitude = databaseCity.latitude;
+                    }
+                }
+            }
+        }
+    }
+    return { longitude: longitude, latitude: latitude };
+};
+
+
+/***/ }),
+
 /***/ "./src/customCode/data/dt_database.ts":
 /*!********************************************!*\
   !*** ./src/customCode/data/dt_database.ts ***!
@@ -34916,7 +35080,7 @@ __webpack_require__.r(__webpack_exports__);
         "taskname": "Adventbazar",
         "taskid": 12345,
         "responsible": "Rotes Kreuz",
-        "date": "25. September 2022",
+        "date": "2022-09-25T15:00:00Z",
         "friend": [
             "Tony Stark", "Bruce Banner", "Steve Rogers"
         ],
@@ -34934,7 +35098,7 @@ __webpack_require__.r(__webpack_exports__);
         "taskname": "Pfadfinder Meetup",
         "taskid": 12346,
         "responsible": "Pfadfinderclub Linz",
-        "date": "29. August 2022",
+        "date": "2022-08-29T07:30:00Z",
         "friend": [
             "Natasha Romanov", "James Bucky Barnes"
         ],
@@ -34952,7 +35116,7 @@ __webpack_require__.r(__webpack_exports__);
         "taskname": "Zoo Tierhelfer",
         "taskid": 12347,
         "responsible": "Tiergarten-Verein Österreich",
-        "date": "13. September 2022",
+        "date": "2022-09-13T13:15:00Z",
         "friend": [
             "Peter Parker"
         ],
@@ -34970,7 +35134,7 @@ __webpack_require__.r(__webpack_exports__);
         "taskname": "Kindergarten Helfer",
         "taskid": 12348,
         "responsible": "Rotes Kreuz",
-        "date": "10. September 2022",
+        "date": "2022-09-10T14:30:00Z",
         "friend": [
             "Tony Stark", "Peter Parker", "Steve Rogers"
         ],
@@ -34988,7 +35152,7 @@ __webpack_require__.r(__webpack_exports__);
         "taskname": "Altenpflege Volunteering",
         "taskid": 12349,
         "responsible": "Altenpflegeverein Kärnten",
-        "date": "25. September 2022",
+        "date": "2022-09-25T08:00:00Z",
         "friend": [
             "Steve Rogers", "James Bucky Barnes"
         ],
@@ -35006,7 +35170,7 @@ __webpack_require__.r(__webpack_exports__);
         "taskname": "Mülleinsammeln",
         "taskid": 12350,
         "responsible": "Samariterbund",
-        "date": "22. September 2022",
+        "date": "2022-09-23T07:00:00Z",
         "friend": [
             "James Bucky Barnes", "Natasha Romanov", "Peter Parker"
         ],
@@ -35044,6 +35208,16 @@ __webpack_require__.r(__webpack_exports__);
                 "JB": "James Bucky Barnes"
             }
         },
+        "responsible": {
+            "filterType": "text",
+            "properties": {
+                "RK": "Rotes Kreuz",
+                "SB": "Samariterbund",
+                "TI": "Tiergarten-Verein Österreich",
+                "PF": "Pfadfinderclub Linz",
+                "AP": "Altenpflegeverein Kärnten"
+            }
+        }
         // "location": {
         //     "Wien": {
         //     },
@@ -35495,46 +35669,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ol */ "./node_modules/ol/View.js");
-/* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ol */ "./node_modules/ol/Map.js");
-/* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ol */ "./node_modules/ol/Feature.js");
-/* harmony import */ var ol_control__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ol/control */ "./node_modules/ol/control.js");
-/* harmony import */ var ol_control_OverviewMap__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ol/control/OverviewMap */ "./node_modules/ol/control/OverviewMap.js");
-/* harmony import */ var ol_format_GeoJSON__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ol/format/GeoJSON */ "./node_modules/ol/format/GeoJSON.js");
-/* harmony import */ var ol_geom_Point__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ol/geom/Point */ "./node_modules/ol/geom/Point.js");
-/* harmony import */ var ol_interaction__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ol/interaction */ "./node_modules/ol/interaction.js");
-/* harmony import */ var ol_interaction__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ol/interaction */ "./node_modules/ol/interaction/DragRotateAndZoom.js");
-/* harmony import */ var ol_layer_Tile__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ol/layer/Tile */ "./node_modules/ol/layer/Tile.js");
-/* harmony import */ var ol_layer_Vector__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ol/layer/Vector */ "./node_modules/ol/layer/Vector.js");
-/* harmony import */ var ol_proj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/proj */ "./node_modules/ol/proj.js");
-/* harmony import */ var ol_source_OSM__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ol/source/OSM */ "./node_modules/ol/source/OSM.js");
-/* harmony import */ var ol_source_Vector__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ol/source/Vector */ "./node_modules/ol/source/Vector.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Style.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Fill.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Stroke.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Icon.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _data_dt_database__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data/dt_database */ "./src/customCode/data/dt_database.ts");
-/* harmony import */ var _data_ivol_database__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../data/ivol_database */ "./src/customCode/data/ivol_database.ts");
-/* harmony import */ var _data_dt_filters__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../data/dt_filters */ "./src/customCode/data/dt_filters.ts");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils */ "./src/customCode/utils.tsx");
-/* harmony import */ var _Map_module_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Map.module.css */ "./src/customCode/components/map/Map.module.css");
-/* harmony import */ var _img_marker_red_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./img/marker-red.png */ "./src/customCode/components/map/img/marker-red.png");
-/* harmony import */ var _img_marker_yellow_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./img/marker-yellow.png */ "./src/customCode/components/map/img/marker-yellow.png");
-/* harmony import */ var _img_marker_green_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./img/marker-green.png */ "./src/customCode/components/map/img/marker-green.png");
-
-
-
-
-
-
-
-
-
-
-
-
+/* harmony import */ var ol_format_GeoJSON__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ol/format/GeoJSON */ "./node_modules/ol/format/GeoJSON.js");
+/* harmony import */ var ol_layer_Vector__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ol/layer/Vector */ "./node_modules/ol/layer/Vector.js");
+/* harmony import */ var ol_source_Vector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ol/source/Vector */ "./node_modules/ol/source/Vector.js");
+/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Style.js");
+/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Fill.js");
+/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Stroke.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _data_dt_database__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../data/dt_database */ "./src/customCode/data/dt_database.ts");
+/* harmony import */ var _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data/ivol_database */ "./src/customCode/data/ivol_database.ts");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils */ "./src/customCode/utils.tsx");
+/* harmony import */ var _Map_module_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Map.module.css */ "./src/customCode/components/map/Map.module.css");
+/* harmony import */ var _MapUtils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./MapUtils */ "./src/customCode/components/map/MapUtils.ts");
 
 
 
@@ -35604,9 +35751,9 @@ var hoverColor;
 var previouslySelectedLocation;
 var previouslyHoveredLocation;
 var apdexMetric = 'apdex';
-var CustomMap = function (_a) {
+var InteractiveMap = function (_a) {
     var selectedMetric = _a.selectedMetric, filters = _a.filters, onSetZoom = _a.onSetZoom, onChangeFilters = _a.onChangeFilters, isIVolunteer = _a.isIVolunteer;
-    data = !isIVolunteer ? (0,_utils__WEBPACK_IMPORTED_MODULE_5__.groupValuesPerLocation)(_data_dt_database__WEBPACK_IMPORTED_MODULE_2__["default"], 'country') : _data_ivol_database__WEBPACK_IMPORTED_MODULE_3__["default"];
+    data = !isIVolunteer ? (0,_utils__WEBPACK_IMPORTED_MODULE_3__.groupValuesPerLocation)(_data_dt_database__WEBPACK_IMPORTED_MODULE_1__["default"], 'country') : _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"];
     if (!isIVolunteer) {
         if (selectedMetric === apdexMetric) {
             selectedColor = overlayColorMap.apdex.Excellent.selectedColor;
@@ -35621,30 +35768,30 @@ var CustomMap = function (_a) {
         // TODO add ivolunteer handling
     }
     // ------------ initialization 
-    var _b = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(), map = _b[0], setMap = _b[1];
-    var _c = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(), selectedLocation = _c[0], setSelectedLocation = _c[1];
-    var _d = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(), hoveredLocation = _d[0], setHoveredLocation = _d[1];
-    var _e = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(filters), selectedFilters = _e[0], setSelectedFilters = _e[1];
-    var _f = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(), zoom = _f[0], setZoom = _f[1];
-    var _g = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(), selectedCoordinates = _g[0], setSelectedCoordinates = _g[1];
-    var mapElement = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)();
-    var mapRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(); // map object for later use
+    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), map = _b[0], setMap = _b[1];
+    var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), selectedLocation = _c[0], setSelectedLocation = _c[1];
+    var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), hoveredLocation = _d[0], setHoveredLocation = _d[1];
+    var _e = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(filters), selectedFilters = _e[0], setSelectedFilters = _e[1];
+    var _f = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), zoom = _f[0], setZoom = _f[1];
+    var _g = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), selectedCoordinates = _g[0], setSelectedCoordinates = _g[1];
+    var mapElement = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+    var mapRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(); // map object for later use
     mapRef.current = map;
-    var filterRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)();
+    var filterRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
     filterRef.current = selectedFilters;
     var currZoom = undefined;
-    var overlaySource = new ol_source_Vector__WEBPACK_IMPORTED_MODULE_10__["default"]({
+    var overlaySource = new ol_source_Vector__WEBPACK_IMPORTED_MODULE_6__["default"]({
         url: "../data/geodata/countries.geojson",
-        format: new ol_format_GeoJSON__WEBPACK_IMPORTED_MODULE_11__["default"](),
+        format: new ol_format_GeoJSON__WEBPACK_IMPORTED_MODULE_7__["default"](),
     });
     // initialize map and overlays (only called once)
-    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         // create and add vector source layer
-        var overlayLayer = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_12__["default"]({
+        var overlayLayer = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_8__["default"]({
             source: overlaySource
         });
         // create map
-        var initialMap = createMap(mapElement.current, 6, longitude, latitude, isIVolunteer, overlayLayer);
+        var initialMap = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.createMap)(mapElement.current, 6, longitude, latitude, isIVolunteer, overlayLayer);
         // set event handlers except click handler (will be set later)
         initialMap.on('pointermove', handleHover);
         initialMap.on('moveend', handleZoom);
@@ -35652,7 +35799,7 @@ var CustomMap = function (_a) {
         setMap(initialMap);
     }, []);
     // ---------------- handle filters
-    var updateFilterCallback = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (value) {
+    var updateFilterCallback = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
         if (!checkForExistingCountryFilter(value)) {
             selectedLocation = undefined;
         }
@@ -35664,20 +35811,20 @@ var CustomMap = function (_a) {
     }
     // -------------- Overlay functions
     // click & hover functions on overlay
-    var selectStyle = new ol_style__WEBPACK_IMPORTED_MODULE_13__["default"]({
-        fill: new ol_style__WEBPACK_IMPORTED_MODULE_14__["default"]({
+    var selectStyle = new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
+        fill: new ol_style__WEBPACK_IMPORTED_MODULE_10__["default"]({
             color: 'rgba(0, 0, 0, 0)',
         }),
-        stroke: new ol_style__WEBPACK_IMPORTED_MODULE_15__["default"]({
+        stroke: new ol_style__WEBPACK_IMPORTED_MODULE_11__["default"]({
             color: 'rgba(2, 167, 240, 1)',
             width: 2,
         }),
     });
-    var hoverStyle = new ol_style__WEBPACK_IMPORTED_MODULE_13__["default"]({
-        fill: new ol_style__WEBPACK_IMPORTED_MODULE_14__["default"]({
+    var hoverStyle = new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
+        fill: new ol_style__WEBPACK_IMPORTED_MODULE_10__["default"]({
             color: 'rgba(0, 0, 0, 0)',
         }),
-        stroke: new ol_style__WEBPACK_IMPORTED_MODULE_15__["default"]({
+        stroke: new ol_style__WEBPACK_IMPORTED_MODULE_11__["default"]({
             color: 'rgba(2, 167, 240, 1)',
             width: 2,
         }),
@@ -35715,39 +35862,7 @@ var CustomMap = function (_a) {
                 updateFilterCallback(currentFilters);
             }
             else {
-                var markerLayers = map.getLayers().getArray().filter(function (layer) { return layer.get('name') === 'LocationMarker'; });
-                var _loop_1 = function (i) {
-                    var marker = markerLayers[i];
-                    var markerTaskId = marker.get('source').getFeatures()[0].get('taskid');
-                    if (markerTaskId = feature.get('taskid')) {
-                        // get data for taskid
-                        var data_1 = void 0;
-                        for (var i_1 = 0; i_1 < _data_ivol_database__WEBPACK_IMPORTED_MODULE_3__["default"].length; i_1++) {
-                            if (_data_ivol_database__WEBPACK_IMPORTED_MODULE_3__["default"][i_1].taskid === markerTaskId) {
-                                data_1 = _data_ivol_database__WEBPACK_IMPORTED_MODULE_3__["default"][i_1];
-                                break;
-                            }
-                        }
-                        if (data_1 !== undefined) {
-                            // show tooltip panel
-                            var tooltipPanel_1 = document.getElementById('tooltip-panel');
-                            tooltipPanel_1.classList.add(_Map_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].iVolTooltipPanel);
-                            // add data to tooltip
-                            $('#tooltip-title').text(data_1.taskname);
-                            $('#tooltip-taskid').text(data_1.taskid);
-                            $('#tooltip-responsible').text(data_1.responsible);
-                            $('#tooltip-city').text(data_1.address.zip + ' ' + data_1.address.city);
-                            // add clickhandlers
-                            $('#close-tooltip').on('click', function () {
-                                tooltipPanel_1.classList.remove(_Map_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].iVolTooltipPanel);
-                            });
-                            $('#tooltip-details-link').attr('href', 'ivolunteer_-_taskdetails.html?taskid=' + markerTaskId);
-                        }
-                    }
-                };
-                for (var i = 0; i < markerLayers.length; i++) {
-                    _loop_1(i);
-                }
+                clickOnMapMarkerIVol(feature, mapRef.current);
                 // TODO
                 // open dialog if user wants to create a new task
                 // if yes, redirect to Add Task page
@@ -35755,12 +35870,12 @@ var CustomMap = function (_a) {
             }
         });
     };
-    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         if (selectedLocation !== undefined) { // at the beginning no location is selected
             var value = void 0;
-            for (var i_2 = 0; i_2 < data.length; i_2++) {
-                if (data[i_2].iso === selectedLocation.getId()) {
-                    value = data[i_2].apdex;
+            for (var i_1 = 0; i_1 < data.length; i_1++) {
+                if (data[i_1].iso === selectedLocation.getId()) {
+                    value = data[i_1].apdex;
                     break;
                 }
             }
@@ -35775,7 +35890,7 @@ var CustomMap = function (_a) {
                     tooltipTitle.innerHTML = selectedLocation.get('name');
                     // Show Dynatrace-related information
                     if (!isIVolunteer) {
-                        var values = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.groupValuesPerLocation)(data, 'iso');
+                        var values = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.groupValuesPerLocation)(data, 'iso');
                         var valueFound = false;
                         for (var i = 0; i < values.length; i++) {
                             var curElement = values[i];
@@ -35799,9 +35914,6 @@ var CustomMap = function (_a) {
                             $('#tooltip_affecteduseractions').text('?');
                         }
                     }
-                    else {
-                        // TODO add iVolunteer Tooltip info
-                    }
                 }
                 else {
                     tooltipTitle.innerHTML = '&nbsp;';
@@ -35810,9 +35922,9 @@ var CustomMap = function (_a) {
         }
         if (hoveredLocation !== undefined) { // at the beginning no location is hovered over
             var value = void 0;
-            for (var i_3 = 0; i_3 < data.length; i_3++) {
-                if (data[i_3].iso === hoveredLocation.getId()) {
-                    value = data[i_3][selectedMetric];
+            for (var i_2 = 0; i_2 < data.length; i_2++) {
+                if (data[i_2].iso === hoveredLocation.getId()) {
+                    value = data[i_2][selectedMetric];
                     break;
                 }
             }
@@ -35828,7 +35940,7 @@ var CustomMap = function (_a) {
     }, [hoveredLocation, selectedLocation, selectedFilters, onChangeFilters]);
     // ---------------  Zoom functions
     // pass zoom level outside for other components
-    var handleZoom = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function () {
+    var handleZoom = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
         if (mapRef.current !== undefined) {
             var newZoom = mapRef.current.getView().getZoom();
             if (currZoom != newZoom) {
@@ -35845,7 +35957,7 @@ var CustomMap = function (_a) {
         mapRef.current.on('click', handleMapClick);
         setIconMarkers(isIVolunteer, mapRef.current, zoom, selectedMetric);
     }
-    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         // potentially deselect country if filter has been removed
         var containsCountryFilter = false;
         for (var i = 0; i < selectedFilters.length; i++) {
@@ -35865,7 +35977,7 @@ var CustomMap = function (_a) {
             var source = event.target;
             var currentFilterList = filterRef.current;
             if (source.getState() === 'ready' && (currentFilterList === null || currentFilterList === void 0 ? void 0 : currentFilterList.length) > 0) {
-                var _loop_2 = function (i) {
+                var _loop_1 = function (i) {
                     if (currentFilterList[i].key === 'country') {
                         var filterValue_1 = currentFilterList[i].value;
                         overlaySource.forEachFeature(function (feature) {
@@ -35876,67 +35988,30 @@ var CustomMap = function (_a) {
                     }
                 };
                 for (var i = 0; i < currentFilterList.length; i++) {
-                    _loop_2(i);
+                    _loop_1(i);
                 }
             }
         });
     }, [selectedFilters, onChangeFilters]);
-    return (react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react__WEBPACK_IMPORTED_MODULE_1___default().Fragment), null,
-        react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", { ref: mapElement, className: !isIVolunteer ? _Map_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].container_dt : _Map_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].container_ivol })));
-};
-var createMap = function (target, zoom, lon, lat, isIVolunteer, overlayLayer) {
-    var mapLayer = new ol_layer_Tile__WEBPACK_IMPORTED_MODULE_16__["default"]({
-        source: new ol_source_OSM__WEBPACK_IMPORTED_MODULE_17__["default"]()
-    });
-    var view = new ol__WEBPACK_IMPORTED_MODULE_18__["default"]({
-        center: (0,ol_proj__WEBPACK_IMPORTED_MODULE_0__.fromLonLat)([lon, lat]),
-        zoom: zoom
-    });
-    if (!isIVolunteer) {
-        var minimapControl = new ol_control_OverviewMap__WEBPACK_IMPORTED_MODULE_19__["default"]({
-            className: 'ol-overviewmap ol-custom-overviewmap',
-            layers: [new ol_layer_Tile__WEBPACK_IMPORTED_MODULE_16__["default"]({
-                    source: new ol_source_OSM__WEBPACK_IMPORTED_MODULE_17__["default"](),
-                })],
-            collapseLabel: '\u00BB',
-            label: '\u00AB',
-            collapsed: false,
-        });
-        view.setMaxZoom(_utils__WEBPACK_IMPORTED_MODULE_5__.ZoomLevel.REGION);
-        return new ol__WEBPACK_IMPORTED_MODULE_20__["default"]({
-            controls: (0,ol_control__WEBPACK_IMPORTED_MODULE_21__.defaults)().extend([minimapControl]),
-            interactions: (0,ol_interaction__WEBPACK_IMPORTED_MODULE_22__.defaults)().extend([new ol_interaction__WEBPACK_IMPORTED_MODULE_23__["default"]()]),
-            target: target,
-            layers: [mapLayer, overlayLayer],
-            view: view
-        });
-        ;
-    }
-    else {
-        view.setMinZoom(_utils__WEBPACK_IMPORTED_MODULE_5__.ZoomLevel.COUNTRY);
-        return new ol__WEBPACK_IMPORTED_MODULE_20__["default"]({
-            target: target,
-            layers: [mapLayer],
-            view: view
-        });
-    }
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { ref: mapElement, className: !isIVolunteer ? _Map_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].container_dt : _Map_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].container_ivol })));
 };
 var getDtOverlayColor = function (selectedMetric, value, selectMode) {
     var metricMapping = selectedMetric === 'apdex' ? selectedMetric : 'other';
     if (selectMode) {
-        if (value < _utils__WEBPACK_IMPORTED_MODULE_5__.Apdex.UNACCEPTABLE) {
+        if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.UNACCEPTABLE) {
             return overlayColorMap[metricMapping].Unacceptable.selectedColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_5__.Apdex.POOR) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.POOR) {
             return overlayColorMap[metricMapping].Poor.selectedColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_5__.Apdex.FAIR) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.FAIR) {
             return overlayColorMap[metricMapping].Fair.selectedColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_5__.Apdex.GOOD) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.GOOD) {
             return overlayColorMap[metricMapping].Good.selectedColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_5__.Apdex.EXCELLENT) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.EXCELLENT) {
             return overlayColorMap[metricMapping].Excellent.selectedColor;
         }
         else {
@@ -35944,19 +36019,19 @@ var getDtOverlayColor = function (selectedMetric, value, selectMode) {
         }
     }
     else {
-        if (value < _utils__WEBPACK_IMPORTED_MODULE_5__.Apdex.UNACCEPTABLE) {
+        if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.UNACCEPTABLE) {
             return overlayColorMap[metricMapping].Unacceptable.hoverColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_5__.Apdex.POOR) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.POOR) {
             return overlayColorMap[metricMapping].Poor.hoverColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_5__.Apdex.FAIR) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.FAIR) {
             return overlayColorMap[metricMapping].Fair.hoverColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_5__.Apdex.GOOD) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.GOOD) {
             return overlayColorMap[metricMapping].Good.hoverColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_5__.Apdex.EXCELLENT) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.EXCELLENT) {
             return overlayColorMap[metricMapping].Excellent.hoverColor;
         }
         else {
@@ -35982,17 +36057,17 @@ var setIconMarkers = function (isIVolunteer, map, zoom, selectedMetric) {
             .forEach(function (layer) { return map.removeLayer(layer); });
         markerDataset = getDataSetForMarkers(isIVolunteer);
         for (var i = 0; i < markerDataset.length; i++) {
-            addIconOverlay(isIVolunteer, markerDataset[i], map, selectedMetric);
+            (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.addIconOverlay)(isIVolunteer, markerDataset[i], map, selectedMetric);
         }
     }
     else {
         map.getLayers().getArray()
             .filter(function (layer) { return layer.get('name') === 'LocationMarker'; })
             .forEach(function (layer) { return map.removeLayer(layer); });
-        if (zoom >= _utils__WEBPACK_IMPORTED_MODULE_5__.ZoomLevel.COUNTRY) {
+        if (zoom >= _utils__WEBPACK_IMPORTED_MODULE_3__.ZoomLevel.COUNTRY) {
             markerDataset = getDataSetForMarkers(isIVolunteer);
             for (var i = 0; i < markerDataset.length; i++) {
-                addIconOverlay(isIVolunteer, markerDataset[i], map, selectedMetric);
+                (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.addIconOverlay)(isIVolunteer, markerDataset[i], map, selectedMetric);
             }
         }
     }
@@ -36000,91 +36075,125 @@ var setIconMarkers = function (isIVolunteer, map, zoom, selectedMetric) {
 var getDataSetForMarkers = function (isIVolunteer) {
     // TODO add filter to restrict the shown icons on map
     if (isIVolunteer) {
-        return _data_ivol_database__WEBPACK_IMPORTED_MODULE_3__["default"];
+        return _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"];
     }
     else {
         var citiesDataset = [];
-        for (var i = 0; i < _data_dt_database__WEBPACK_IMPORTED_MODULE_2__["default"].length; i++) {
-            if (_data_dt_database__WEBPACK_IMPORTED_MODULE_2__["default"][i].city != undefined) {
-                citiesDataset.push(_data_dt_database__WEBPACK_IMPORTED_MODULE_2__["default"][i]);
+        for (var i = 0; i < _data_dt_database__WEBPACK_IMPORTED_MODULE_1__["default"].length; i++) {
+            if (_data_dt_database__WEBPACK_IMPORTED_MODULE_1__["default"][i].city != undefined) {
+                citiesDataset.push(_data_dt_database__WEBPACK_IMPORTED_MODULE_1__["default"][i]);
             }
         }
         return citiesDataset;
     }
 };
-var addIconOverlay = function (isIVolunteer, markerData, map, selectedMetric) {
-    var _a = isIVolunteer ? getCoordinatesForCityIVol(markerData) : getCoordinatesForCityDt(markerData.city), longitude = _a.longitude, latitude = _a.latitude;
-    var iconSource = '';
-    if (isIVolunteer) {
-        if (selectedMetric === 'urgency') {
-            iconSource = _img_marker_red_png__WEBPACK_IMPORTED_MODULE_7__["default"];
-        }
-        else if (selectedMetric === 'priority') {
-            iconSource = _img_marker_yellow_png__WEBPACK_IMPORTED_MODULE_8__["default"];
-        }
-        else if (selectedMetric === 'duration') {
-            iconSource = _img_marker_green_png__WEBPACK_IMPORTED_MODULE_9__["default"];
-        }
-    }
-    else {
-        iconSource = _img_marker_red_png__WEBPACK_IMPORTED_MODULE_7__["default"];
-    }
-    if (iconSource != '') {
-        var iconFeature = new ol__WEBPACK_IMPORTED_MODULE_24__["default"]({
-            geometry: new ol_geom_Point__WEBPACK_IMPORTED_MODULE_25__["default"]((0,ol_proj__WEBPACK_IMPORTED_MODULE_0__.transform)([longitude, latitude], 'EPSG:4326', 'EPSG:3857')),
-            name: 'LocationMarkerFeature',
-            population: 4000,
-            rainfall: 500,
-        });
-        if (isIVolunteer) {
-            iconFeature.set('taskid', markerData.taskid);
-        }
-        var iconStyle = new ol_style__WEBPACK_IMPORTED_MODULE_13__["default"]({
-            image: new ol_style__WEBPACK_IMPORTED_MODULE_26__["default"]({
-                anchor: [0.5, 20],
-                anchorXUnits: 'fraction',
-                anchorYUnits: 'pixels',
-                src: iconSource
-            }),
-        });
-        iconFeature.setStyle(iconStyle);
-        var vectorSource = new ol_source_Vector__WEBPACK_IMPORTED_MODULE_10__["default"]({
-            features: [iconFeature],
-        });
-        var iconVectorLayer = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_12__["default"]({
-            source: vectorSource,
-            properties: {
-                name: 'LocationMarker'
-            }
-        });
-        map.addLayer(iconVectorLayer);
-    }
-};
-var getCoordinatesForCityIVol = function (markerData) {
-    var latitude = markerData.address.coordinates[0];
-    var longitude = markerData.address.coordinates[1];
-    return { longitude: longitude, latitude: latitude };
-};
-var getCoordinatesForCityDt = function (cityName) {
-    var fullCityList = _data_dt_filters__WEBPACK_IMPORTED_MODULE_4__["default"][0].city.properties;
-    var longitude;
-    var latitude;
-    for (var continentKey in fullCityList) {
-        for (var countryKey in fullCityList[continentKey]) {
-            for (var regionKey in fullCityList[continentKey][countryKey]) {
-                for (var i = 0; i < fullCityList[continentKey][countryKey][regionKey].length; i++) {
-                    var databaseCity = fullCityList[continentKey][countryKey][regionKey][i];
-                    if (cityName === databaseCity.name) {
-                        longitude = databaseCity.longitude;
-                        latitude = databaseCity.latitude;
-                    }
+var clickOnMapMarkerIVol = function (feature, map) {
+    var markerLayers = map.getLayers().getArray().filter(function (layer) { return layer.get('name') === 'LocationMarker'; });
+    var _loop_2 = function (i) {
+        var marker = markerLayers[i];
+        var markerTaskId = marker.get('source').getFeatures()[0].get('taskid');
+        if (markerTaskId = feature.get('taskid')) {
+            // get data for taskid
+            var data_1 = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.getDataFromTaskId)(markerTaskId);
+            if (data_1 !== undefined) {
+                // show tooltip panel
+                var tooltipPanel_1 = document.getElementById('tooltip-panel');
+                tooltipPanel_1.classList.add(_Map_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].iVolTooltipPanel);
+                // add data to tooltip
+                $('#tooltip-title').text(data_1.taskname);
+                $('#tooltip-taskid').text(data_1.taskid);
+                $('#tooltip-responsible').text(data_1.responsible);
+                $('#tooltip-city').text(data_1.address.zip + ' ' + data_1.address.city);
+                // calculate priority based on date
+                var date = new Date(data_1.date);
+                $('#tooltip-date').text(date.toLocaleDateString());
+                var currentDate = new Date().getTime();
+                var diffTime = Math.abs(currentDate - date.getTime());
+                var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                var priority = void 0;
+                if (diffDays <= _utils__WEBPACK_IMPORTED_MODULE_3__.UrgencyDays.SEVERE) {
+                    priority = 'very high';
                 }
+                else if (diffDays <= _utils__WEBPACK_IMPORTED_MODULE_3__.UrgencyDays.HIGH) {
+                    priority = 'high';
+                }
+                else if (diffDays <= _utils__WEBPACK_IMPORTED_MODULE_3__.UrgencyDays.MEDIUM) {
+                    priority = 'medium;';
+                }
+                else {
+                    priority = 'low';
+                }
+                $('#tooltip-priority').text(priority);
+                // add clickhandlers
+                $('#close-tooltip').on('click', function () {
+                    tooltipPanel_1.classList.remove(_Map_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].iVolTooltipPanel);
+                });
+                $('#tooltip-details-link').attr('href', 'ivolunteer_-_taskdetails.html?taskid=' + markerTaskId);
             }
         }
+    };
+    for (var i = 0; i < markerLayers.length; i++) {
+        _loop_2(i);
     }
-    return { longitude: longitude, latitude: latitude };
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CustomMap);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InteractiveMap);
+
+
+/***/ }),
+
+/***/ "./src/customCode/components/map/StaticMap.tsx":
+/*!*****************************************************!*\
+  !*** ./src/customCode/components/map/StaticMap.tsx ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils */ "./src/customCode/utils.tsx");
+/* harmony import */ var _Map_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Map.module.css */ "./src/customCode/components/map/Map.module.css");
+/* harmony import */ var _MapUtils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MapUtils */ "./src/customCode/components/map/MapUtils.ts");
+
+
+
+
+var StaticMap = function (_a) {
+    var dataRow = _a.dataRow;
+    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), map = _b[0], setMap = _b[1];
+    var mapElement = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+    var mapRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(); // map object for later use
+    mapRef.current = map;
+    // initialize map and markers
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+        // create map
+        var initialMap = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_3__.createMap)(mapElement.current, _utils__WEBPACK_IMPORTED_MODULE_1__.ZoomLevel.DETAIL, dataRow.address.coordinates[1], dataRow.address.coordinates[0], true, undefined);
+        (0,_MapUtils__WEBPACK_IMPORTED_MODULE_3__.addIconOverlay)(true, dataRow, initialMap, 'urgency');
+        // save map for later use
+        setMap(initialMap);
+    }, []);
+    if (mapRef.current !== undefined) {
+        $('#collapseMap').on('click', function () {
+            var element = document.getElementById('map_taskdetails');
+            var collapseBtn = document.getElementById('collapseMap');
+            if (element.classList.contains(_Map_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].hideMap)) {
+                element.classList.remove(_Map_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].hideMap);
+                collapseBtn.classList.remove(_Map_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].collapsedMapBtn);
+            }
+            else {
+                element.classList.add(_Map_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].hideMap);
+                collapseBtn.classList.add(_Map_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].collapsedMapBtn);
+            }
+            console.log(element.classList);
+        });
+    }
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { ref: mapElement, className: _Map_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].container_staticmap })));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StaticMap);
 
 
 /***/ }),
@@ -36223,7 +36332,9 @@ var TableContent = function (_a) {
                     columnHeaders.map(function (header) { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", { key: header, className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableHeader }, header)); }),
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableHeader }, "Details"))),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tbody", null, dataOnPage.map(function (dataRow) { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableRowItems, key: isIVolunteer ? dataRow.taskid : dataRow.location },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: "".concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableCell, " ").concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableLink) }, isIVolunteer ? dataRow.taskname : dataRow.location),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: "".concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableCell, " ").concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableLink) }, isIVolunteer
+                    ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", { href: "ivolunteer_-_taskdetails.html?taskId=".concat(dataRow.taskid) }, dataRow.taskname)
+                    : dataRow.location),
                 !isIVolunteer
                     ? selectedMetric === 'useractions'
                         ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableCell },
@@ -36307,6 +36418,73 @@ var calculatePageRange = function (data, page) {
 
 /***/ }),
 
+/***/ "./src/customCode/iVolTaskDetails.tsx":
+/*!********************************************!*\
+  !*** ./src/customCode/iVolTaskDetails.tsx ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _components_map_StaticMap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/map/StaticMap */ "./src/customCode/components/map/StaticMap.tsx");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils */ "./src/customCode/utils.tsx");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+
+
+
+var TaskDetailsApp = /** @class */ (function (_super) {
+    __extends(TaskDetailsApp, _super);
+    function TaskDetailsApp(props) {
+        var _this = _super.call(this, props) || this;
+        _this.mapSelector = 'map_taskdetails';
+        var taskId = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.getUrlParameter)('taskId');
+        if (taskId !== undefined) {
+            var data = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.getDataFromTaskId)(taskId);
+            if (data !== undefined) {
+                // set data into fields
+                var date = new Date(data.date);
+                $('#taskdetails-title').text(data.taskname);
+                $('#taskdetails-description').text(data.description);
+                $('#taskdetails-date').text(date.toLocaleDateString() + ', ' + date.toLocaleTimeString());
+                $('#taskdetails-address').text(data.address.zip + ' ' + data.address.city + ', ' + data.address.street);
+            }
+            var map = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById('map_taskdetails'));
+            map.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_map_StaticMap__WEBPACK_IMPORTED_MODULE_2__["default"], { dataRow: data }));
+        }
+        return _this;
+    }
+    TaskDetailsApp.prototype.render = function () {
+        return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null));
+    };
+    return TaskDetailsApp;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TaskDetailsApp);
+
+
+/***/ }),
+
 /***/ "./src/customCode/ivolunteerScript.tsx":
 /*!*********************************************!*\
   !*** ./src/customCode/ivolunteerScript.tsx ***!
@@ -36371,6 +36549,7 @@ var IVolunteerWorldmapApp = /** @class */ (function (_super) {
         _this.filterSuggestions = [];
         _this.currentZoomLevel = 10;
         _this.tableData = [];
+        _this.mapSelector = 'geomap_ivol';
         _this.tableSelector = 'tasktable';
         _this.metricSwitcherPanel = 'metricswitcher-panel';
         _this.filterbarPanel = 'filter-panel';
@@ -36420,7 +36599,7 @@ var IVolunteerWorldmapApp = /** @class */ (function (_super) {
         _this.tableData = _data_ivol_database__WEBPACK_IMPORTED_MODULE_6__["default"];
         var filterbar = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById(_this.filterbarPanel));
         var metricSwitcher = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById(_this.metricSwitcherPanel));
-        var map = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById('geomap_ivol'));
+        var map = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById(_this.mapSelector));
         var table = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById(_this.tableSelector));
         var selectedFiltersCallback = function (value) {
             _this.selectedFilters = value;
@@ -36464,28 +36643,16 @@ var IVolunteerWorldmapApp = /** @class */ (function (_super) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ZoomLevel": () => (/* binding */ ZoomLevel),
+/* harmony export */   "UrgencyDays": () => (/* binding */ UrgencyDays),
 /* harmony export */   "Apdex": () => (/* binding */ Apdex),
 /* harmony export */   "FilterType": () => (/* binding */ FilterType),
 /* harmony export */   "getFilterType": () => (/* binding */ getFilterType),
-/* harmony export */   "createMap": () => (/* binding */ createMap),
-/* harmony export */   "groupValuesPerLocation": () => (/* binding */ groupValuesPerLocation)
+/* harmony export */   "groupValuesPerLocation": () => (/* binding */ groupValuesPerLocation),
+/* harmony export */   "getDataFromTaskId": () => (/* binding */ getDataFromTaskId),
+/* harmony export */   "getUrlParameter": () => (/* binding */ getUrlParameter)
 /* harmony export */ });
-/* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ol */ "./node_modules/ol/View.js");
-/* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ol */ "./node_modules/ol/Map.js");
-/* harmony import */ var ol_control__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ol/control */ "./node_modules/ol/control.js");
-/* harmony import */ var ol_control_OverviewMap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ol/control/OverviewMap */ "./node_modules/ol/control/OverviewMap.js");
-/* harmony import */ var ol_interaction__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ol/interaction */ "./node_modules/ol/interaction.js");
-/* harmony import */ var ol_interaction__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ol/interaction */ "./node_modules/ol/interaction/DragRotateAndZoom.js");
-/* harmony import */ var ol_layer_Tile__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ol/layer/Tile */ "./node_modules/ol/layer/Tile.js");
 /* harmony import */ var ol_ol_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/ol.css */ "./node_modules/ol/ol.css");
-/* harmony import */ var ol_proj__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/proj */ "./node_modules/ol/proj.js");
-/* harmony import */ var ol_source_OSM__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ol/source/OSM */ "./node_modules/ol/source/OSM.js");
-
-
-
-
-
-
+/* harmony import */ var _data_ivol_database__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data/ivol_database */ "./src/customCode/data/ivol_database.ts");
 
 
 // ---------------------------------------------------------------------
@@ -36496,7 +36663,15 @@ var ZoomLevel;
     ZoomLevel[ZoomLevel["COUNTRY"] = 6] = "COUNTRY";
     ZoomLevel[ZoomLevel["REGION"] = 8] = "REGION";
     ZoomLevel[ZoomLevel["CITY"] = 10] = "CITY";
+    ZoomLevel[ZoomLevel["DETAIL"] = 15] = "DETAIL";
 })(ZoomLevel || (ZoomLevel = {}));
+var UrgencyDays;
+(function (UrgencyDays) {
+    UrgencyDays[UrgencyDays["SEVERE"] = 5] = "SEVERE";
+    UrgencyDays[UrgencyDays["HIGH"] = 15] = "HIGH";
+    UrgencyDays[UrgencyDays["MEDIUM"] = 50] = "MEDIUM";
+    UrgencyDays[UrgencyDays["LOW"] = 100] = "LOW";
+})(UrgencyDays || (UrgencyDays = {}));
 // scale for Apdex and also other DT metrics
 var Apdex;
 (function (Apdex) {
@@ -36521,54 +36696,12 @@ var getFilterType = function (filterName) {
         case 'regions':
         case 'cities':
         case 'friend':
+        case 'responsible':
         default:
             return FilterType.TEXT;
     }
 };
 // ---------------------------------------------------------------------
-/**
- * Creates geographic map and puts it into the specified div-element
- * @param {id of div where map should be put into} target
- * @param {initial zoom level of the map} zoom
- * @param {longitude} lon
- * @param {latitude} lat
- * @param {show minimap in corner or not} hasMinimap
- * @returns map object
- */
-function createMap(target, zoom, lon, lat, hasMinimap) {
-    var mapLayer = new ol_layer_Tile__WEBPACK_IMPORTED_MODULE_2__["default"]({
-        source: new ol_source_OSM__WEBPACK_IMPORTED_MODULE_3__["default"]()
-    });
-    var view = new ol__WEBPACK_IMPORTED_MODULE_4__["default"]({
-        center: (0,ol_proj__WEBPACK_IMPORTED_MODULE_1__.fromLonLat)([lon, lat]),
-        zoom: zoom
-    });
-    if (hasMinimap) {
-        var minimapControl = new ol_control_OverviewMap__WEBPACK_IMPORTED_MODULE_5__["default"]({
-            className: 'ol-overviewmap ol-custom-overviewmap',
-            layers: [new ol_layer_Tile__WEBPACK_IMPORTED_MODULE_2__["default"]({
-                    source: new ol_source_OSM__WEBPACK_IMPORTED_MODULE_3__["default"](),
-                })],
-            collapseLabel: '\u00BB',
-            label: '\u00AB',
-            collapsed: false,
-        });
-        return new ol__WEBPACK_IMPORTED_MODULE_6__["default"]({
-            controls: (0,ol_control__WEBPACK_IMPORTED_MODULE_7__.defaults)().extend([minimapControl]),
-            interactions: (0,ol_interaction__WEBPACK_IMPORTED_MODULE_8__.defaults)().extend([new ol_interaction__WEBPACK_IMPORTED_MODULE_9__["default"]()]),
-            target: target,
-            layers: [mapLayer],
-            view: view
-        });
-    }
-    else {
-        return new ol__WEBPACK_IMPORTED_MODULE_6__["default"]({
-            target: target,
-            layers: [mapLayer],
-            view: view
-        });
-    }
-}
 // table functions
 function groupValuesPerLocation(data, locationKey) {
     var groupedValuesMap = [];
@@ -36611,6 +36744,28 @@ function groupValuesPerLocation(data, locationKey) {
     });
     return newValues;
 }
+function getDataFromTaskId(taskId) {
+    var taskIdNumber = Number(taskId);
+    for (var i = 0; i < _data_ivol_database__WEBPACK_IMPORTED_MODULE_1__["default"].length; i++) {
+        if (_data_ivol_database__WEBPACK_IMPORTED_MODULE_1__["default"][i].taskid === taskIdNumber) {
+            return _data_ivol_database__WEBPACK_IMPORTED_MODULE_1__["default"][i];
+        }
+    }
+    return;
+}
+function getUrlParameter(input) {
+    input = input.toLowerCase();
+    var url = window.location.search.substring(1);
+    var parameters = url.split('&');
+    for (var i = 0; i < parameters.length; i++) {
+        var urlParam = parameters[i].split('=');
+        if (input === urlParam[0].toLowerCase()) {
+            return urlParam[1] === undefined ? true : decodeURIComponent(urlParam[1]);
+        }
+    }
+    return;
+}
+;
 
 
 /***/ }),
@@ -86074,14 +86229,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _ivolunteerScript__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ivolunteerScript */ "./src/customCode/ivolunteerScript.tsx");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils */ "./src/customCode/utils.tsx");
+/* harmony import */ var _iVolTaskDetails__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./iVolTaskDetails */ "./src/customCode/iVolTaskDetails.tsx");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils */ "./src/customCode/utils.tsx");
 
 
 
 
 
-var app = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById('app'));
-app.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ivolunteerScript__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+// Map page
+var appElement = document.getElementById('app');
+if (appElement !== null) {
+    var app = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(appElement);
+    app.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ivolunteerScript__WEBPACK_IMPORTED_MODULE_2__["default"]));
+}
+// Task details page
+appElement = document.getElementById('taskdetails');
+if (appElement !== null) {
+    var app = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(appElement);
+    app.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_iVolTaskDetails__WEBPACK_IMPORTED_MODULE_3__["default"]));
+}
 
 })();
 

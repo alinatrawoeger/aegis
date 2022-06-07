@@ -390,7 +390,7 @@
   width:0px;
   height:0px;
 }
-#u265 {
+#map_taskdetails {
   border-width:0px;
   position:absolute;
   left:116px;
@@ -398,7 +398,7 @@
   width:472px;
   height:266px;
 }
-#u265_input {
+#map_taskdetails_input {
   border-width:2px;
   position:absolute;
   left:0px;
@@ -457,7 +457,7 @@
   font-size:18px;
   color:#02A7F0;
 }
-#u267 {
+#collapseMap {
   border-width:0px;
   position:absolute;
   left:581px;
@@ -470,8 +470,9 @@
   font-style:normal;
   font-size:18px;
   color:#02A7F0;
+  cursor: pointer;
 }
-#u267 .text {
+#collapseMap .text {
   position:absolute;
   align-self:flex-start;
   padding:0px 0px 0px 0px;
@@ -558,9 +559,9 @@
 #u270 {
   border-width:0px;
   position:absolute;
-  left:448px;
+  left:292px;
   top:515px;
-  width:144px;
+  width:300px;
   height:50px;
   display:flex;
   color:#000000;
