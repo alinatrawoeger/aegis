@@ -14,6 +14,16 @@ export default [
                 "JB": "James Bucky Barnes"
             }
         },
+        "responsible": {
+            "filterType": "text",
+            "properties": {
+                "RK": "Rotes Kreuz",
+                "SB": "Samariterbund",
+                "TI": "Tiergarten-Verein Österreich",
+                "PF": "Pfadfinderclub Linz",
+                "AP": "Altenpflegeverein Kärnten"
+            }
+        }
         // "location": {
         //     "Wien": {
 

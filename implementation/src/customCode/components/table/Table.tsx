@@ -74,7 +74,12 @@ const TableContent = ({ dataOnPage, selectedMetric, isIVolunteer }) => {
         <tbody>
           {dataOnPage.map((dataRow) => (
             <tr className={styles.tableRowItems} key={isIVolunteer ? dataRow.taskid : dataRow.location}>
-              <td className={`${styles.tableCell} ${styles.tableLink}`}>{isIVolunteer ? dataRow.taskname : dataRow.location}</td>
+              <td className={`${styles.tableCell} ${styles.tableLink}`}>
+                {isIVolunteer 
+                  ? <a href={`ivolunteer_-_taskdetails.html?taskId=${dataRow.taskid}`}>{dataRow.taskname}</a>
+                  : dataRow.location
+                }
+              </td>
               
               {!isIVolunteer 
                 ? selectedMetric === 'useractions'

@@ -15,12 +15,12 @@ import { Fill, Icon, Stroke, Style } from "ol/style";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import dataDt from "../../data/dt_database";
 import dataIVol from "../../data/ivol_database";
-import dtFilters from "../../data/dt_filters";
-import { Apdex, getDataFromTaskId, groupValuesPerLocation, ZoomLevel } from "../../utils";
+import { Apdex, getDataFromTaskId, groupValuesPerLocation, UrgencyDays, ZoomLevel } from "../../utils";
 import styles from "./Map.module.css";
 import markerRed from "./img/marker-red.png";
 import markerYellow from "./img/marker-yellow.png";
 import markerGreen from "./img/marker-green.png";
+import { addIconOverlay, createMap } from './MapUtils';
 
 // test data (coordinates of the center of Austria)
 const longitude = 14.12456;
@@ -90,13 +90,13 @@ const apdexMetric = 'apdex';
 
 type CustomMapProps = {
     selectedMetric: string,
-    filters: any,
+    filters?: any,
     isIVolunteer: boolean,
-    onSetZoom: (value) => void,
-    onChangeFilters: (value) => void
+    onSetZoom?: (value) => void,
+    onChangeFilters?: (value) => void
 }
 
-const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoom, onChangeFilters, isIVolunteer }) => {
+const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoom, onChangeFilters, isIVolunteer }) => {
     data = !isIVolunteer ? groupValuesPerLocation(dataDt, 'country') : dataIVol;
 
     if (!isIVolunteer) {
@@ -140,7 +140,7 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
             source: overlaySource
         });
         // create map
-        const initialMap = createMap(mapElement.current, 6, longitude, latitude, isIVolunteer, overlayLayer);
+        const initialMap: OLMap = createMap(mapElement.current, 6, longitude, latitude, isIVolunteer, overlayLayer);
 
         // set event handlers except click handler (will be set later)
         initialMap.on('pointermove', handleHover);
@@ -226,33 +226,7 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
             
                 updateFilterCallback(currentFilters);
             } else {
-                let markerLayers = map.getLayers().getArray().filter(layer => layer.get('name') === 'LocationMarker');
-                for (let i = 0; i < markerLayers.length; i++) {
-                    let marker = markerLayers[i];
-                    let markerTaskId = marker.get('source').getFeatures()[0].get('taskid');
-                    if (markerTaskId = feature.get('taskid')) {
-                        // get data for taskid
-                        let data = getDataFromTaskId(markerTaskId);                        
-
-                        if (data !== undefined) {
-                            // show tooltip panel
-                            let tooltipPanel = document.getElementById('tooltip-panel');
-                            tooltipPanel.classList.add(styles.iVolTooltipPanel);
-    
-                            // add data to tooltip
-                            $('#tooltip-title').text(data.taskname);
-                            $('#tooltip-taskid').text(data.taskid);
-                            $('#tooltip-responsible').text(data.responsible);
-                            $('#tooltip-city').text(data.address.zip + ' ' + data.address.city);
-                            
-                            // add clickhandlers
-                            $('#close-tooltip').on('click', function() {
-                                tooltipPanel.classList.remove(styles.iVolTooltipPanel);
-                            })
-                            $('#tooltip-details-link').attr('href', 'ivolunteer_-_taskdetails.html?taskid=' + markerTaskId);
-                        }
-                    }
-                }
+                clickOnMapMarkerIVol(feature, mapRef.current);
 
                 // TODO
                 // open dialog if user wants to create a new task
@@ -308,8 +282,6 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
                             $('#tooltip_totaluseractions').text('?');
                             $('#tooltip_affecteduseractions').text('?');
                         }
-                    } else {
-                        // TODO add iVolunteer Tooltip info
                     }
                 } else {
                     tooltipTitle.innerHTML = '&nbsp;';
@@ -404,46 +376,6 @@ const CustomMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoo
       )
 }
 
-const createMap = (target: string, zoom: ZoomLevel, lon: number, lat: number, isIVolunteer: boolean, overlayLayer: any) => {
-    var mapLayer = new TileLayer({
-        source: new OSM()
-    });
-    var view = new View({
-        center: fromLonLat([lon, lat]),
-        zoom: zoom
-    });
-
-    if (!isIVolunteer) {
-        const minimapControl = new OverviewMap({
-            className: 'ol-overviewmap ol-custom-overviewmap',
-            layers: [ new TileLayer({
-                source: new OSM(),
-                }) ],
-            collapseLabel: '\u00BB',
-            label: '\u00AB',
-            collapsed: false,
-        });
-
-        view.setMaxZoom(ZoomLevel.REGION);
-
-        return new Map({
-            controls: defaultControls().extend([minimapControl]),
-            interactions: defaults().extend([new DragRotateAndZoom()]),
-            target: target,
-            layers: [ mapLayer, overlayLayer ],
-            view: view
-        });;
-    } else {
-        view.setMinZoom(ZoomLevel.COUNTRY);
-
-        return new Map({
-            target: target,
-            layers: [ mapLayer ],
-            view: view
-        });     
-    }
-}
-
 const getDtOverlayColor = (selectedMetric: string, value: number, selectMode: boolean) => {
     let metricMapping = selectedMetric === 'apdex' ? selectedMetric : 'other';
     
@@ -530,83 +462,53 @@ const getDataSetForMarkers = (isIVolunteer: boolean) => {
     }
 }
 
-const addIconOverlay = (isIVolunteer: boolean, markerData: any, map: Map, selectedMetric: string) => {
-    let { longitude, latitude } = isIVolunteer ?  getCoordinatesForCityIVol(markerData) : getCoordinatesForCityDt(markerData.city);
-    
-    let iconSource = '';
-    if (isIVolunteer) {
-        if (selectedMetric === 'urgency') {
-            iconSource = markerRed;
-        } else if (selectedMetric === 'priority') {
-            iconSource = markerYellow;
-        } else if (selectedMetric === 'duration') {
-            iconSource = markerGreen;
-        }
-    } else {
-        iconSource = markerRed;
-    }
+const clickOnMapMarkerIVol = (feature: any, map: Map) => {
+    let markerLayers = map.getLayers().getArray().filter(layer => layer.get('name') === 'LocationMarker');
+    for (let i = 0; i < markerLayers.length; i++) {
+        let marker = markerLayers[i];
+        let markerTaskId = marker.get('source').getFeatures()[0].get('taskid');
+        if (markerTaskId = feature.get('taskid')) {
+            // get data for taskid
+            let data = getDataFromTaskId(markerTaskId);                        
 
-    if (iconSource != '') {
-        const iconFeature = new Feature({
-            geometry: new Point(transform([longitude, latitude], 'EPSG:4326', 'EPSG:3857')),
-            name: 'LocationMarkerFeature',
-            population: 4000,
-            rainfall: 500,
-          });
-          if (isIVolunteer) {
-            iconFeature.set('taskid', markerData.taskid);
-        }
-          
-          const iconStyle = new Style({
-            image: new Icon({
-              anchor: [0.5, 20],
-              anchorXUnits: 'fraction',
-              anchorYUnits: 'pixels',
-              src: iconSource
-            }),
-          });
-          iconFeature.setStyle(iconStyle);
-          
-          const vectorSource = new VectorSource({
-            features: [iconFeature],
-          });
-          
-          
-          const iconVectorLayer = new VectorLayer({
-            source: vectorSource,
-            properties: {
-                name: 'LocationMarker'
-            }
-          });
-    
-          map.addLayer(iconVectorLayer);       
-    }
-}
+            if (data !== undefined) {
+                // show tooltip panel
+                let tooltipPanel = document.getElementById('tooltip-panel');
+                tooltipPanel.classList.add(styles.iVolTooltipPanel);
 
-const getCoordinatesForCityIVol = (markerData: any) => {
-    let latitude = markerData.address.coordinates[0]
-    let longitude = markerData.address.coordinates[1];
-    return { longitude, latitude };
-}
-
-const getCoordinatesForCityDt = (cityName: string) => {
-    const fullCityList = dtFilters[0].city.properties;
-    let longitude: number;
-    let latitude: number;
-    for (let continentKey in fullCityList) {
-        for (let countryKey in fullCityList[continentKey]) {
-            for (let regionKey in fullCityList[continentKey][countryKey]) {
-                for (let i = 0; i < fullCityList[continentKey][countryKey][regionKey].length; i++) {
-                    let databaseCity = fullCityList[continentKey][countryKey][regionKey][i];
-                    if (cityName === databaseCity.name) {
-                        longitude = databaseCity.longitude;
-                        latitude = databaseCity.latitude;
-                    }
+                // add data to tooltip
+                $('#tooltip-title').text(data.taskname);
+                $('#tooltip-taskid').text(data.taskid);
+                $('#tooltip-responsible').text(data.responsible);
+                $('#tooltip-city').text(data.address.zip + ' ' + data.address.city);
+                
+                // calculate priority based on date
+                const date = new Date(data.date);
+                $('#tooltip-date').text(date.toLocaleDateString());
+                
+                let currentDate = new Date().getTime();
+                const diffTime = Math.abs(currentDate - date.getTime());
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                let priority;
+                if (diffDays <= UrgencyDays.SEVERE) {
+                    priority = 'very high';
+                } else if (diffDays <= UrgencyDays.HIGH) {
+                    priority = 'high';
+                } else if (diffDays <= UrgencyDays.MEDIUM) {
+                    priority = 'medium;'
+                } else {
+                    priority = 'low';
                 }
+                $('#tooltip-priority').text(priority);
+                
+                // add clickhandlers
+                $('#close-tooltip').on('click', function() {
+                    tooltipPanel.classList.remove(styles.iVolTooltipPanel);
+                })
+                $('#tooltip-details-link').attr('href', 'ivolunteer_-_taskdetails.html?taskid=' + markerTaskId);
             }
         }
     }
-    return { longitude, latitude };
 }
 
-export default CustomMap;
+export default InteractiveMap;

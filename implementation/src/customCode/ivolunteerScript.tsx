@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import Filterbar from './components/filterbar/Filterbar';
-import CustomMap from './components/map/Map';
+import InteractiveMap from './components/map/Map';
 import MetricSwitcher from './components/metricswitcher/MetricSwitcher';
 import Table from './components/table/Table';
 import data from './data/ivol_database';
@@ -30,6 +30,7 @@ class IVolunteerWorldmapApp extends Component {
   currentZoomLevel = 10;
   tableData = [];
 
+  mapSelector = 'geomap_ivol';
   tableSelector = 'tasktable';
   metricSwitcherPanel = 'metricswitcher-panel';
   filterbarPanel = 'filter-panel';
@@ -41,7 +42,7 @@ class IVolunteerWorldmapApp extends Component {
 
     const filterbar = ReactDOM.createRoot(document.getElementById(this.filterbarPanel)!);
     const metricSwitcher = ReactDOM.createRoot(document.getElementById(this.metricSwitcherPanel)!);
-    const map = ReactDOM.createRoot(document.getElementById('geomap_ivol')!);
+    const map = ReactDOM.createRoot(document.getElementById(this.mapSelector)!);
     const table = ReactDOM.createRoot(document.getElementById(this.tableSelector)!);
     
     const selectedFiltersCallback = (value) => {
@@ -49,14 +50,14 @@ class IVolunteerWorldmapApp extends Component {
       this.tableData = this.filterData();
 
       table.render(React.createElement(Table, {data: this.tableData, selectedMetric: this.selectedMetric, isIVolunteer: true }));
-      map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, isIVolunteer: true }));
+      map.render(React.createElement(InteractiveMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, isIVolunteer: true }));
       filterbar.render(React.createElement(Filterbar, {isIVolunteer: true, filters: this.selectedFilters, onSelectedFilters: selectedFiltersCallback}));
     };
 
     const selectedMetricCallback = (value) => {
       this.selectedMetric = value;
       
-      map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, isIVolunteer: true }));
+      map.render(React.createElement(InteractiveMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, isIVolunteer: true }));
       table.render(React.createElement(Table, {data: data, selectedMetric: this.selectedMetric, isIVolunteer: true }));
     };
 
@@ -68,7 +69,7 @@ class IVolunteerWorldmapApp extends Component {
 
     filterbar.render(React.createElement(Filterbar, {isIVolunteer: true, filters: this.selectedFilters, onSelectedFilters: selectedFiltersCallback}));
     metricSwitcher.render(React.createElement(MetricSwitcher, { isIVolunteer: true, onSetMetric: selectedMetricCallback }));
-    map.render(React.createElement(CustomMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, isIVolunteer: true }));
+    map.render(React.createElement(InteractiveMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, isIVolunteer: true }));
     table.render(React.createElement(Table, {data: this.tableData, selectedMetric: this.selectedMetric, isIVolunteer: true}));
 
   }

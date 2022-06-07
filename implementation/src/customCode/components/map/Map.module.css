@@ -11,3 +11,16 @@
 .iVolTooltipPanel {
     display: block !important;
 }
+
+.container_staticmap {
+    width: 475px;
+    height: 275px;
+}
+
+.collapsedMapBtn {
+    transform: rotate(180deg)
+}
+
+.hideMap {
+    display: none;
+}

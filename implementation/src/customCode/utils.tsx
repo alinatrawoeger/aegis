@@ -15,7 +15,15 @@ export enum ZoomLevel {
     CONTINENT = 4,
     COUNTRY = 6,
     REGION = 8,
-    CITY = 10
+    CITY = 10,
+    DETAIL = 15
+}
+
+export enum UrgencyDays {
+    SEVERE = 5,
+    HIGH = 15,
+    MEDIUM = 50,
+    LOW = 100
 }
 
 // scale for Apdex and also other DT metrics
@@ -42,6 +50,7 @@ export const getFilterType = (filterName: any) => {
         case 'regions':
         case 'cities':
         case 'friend':
+        case 'responsible':
         default:
             return FilterType.TEXT;
     }
@@ -107,15 +116,17 @@ export function getDataFromTaskId(taskId: any) {
     return;
 }
 
-export function getUrlParameter(parameter: string) {
+export function getUrlParameter(input: string) {
+    input = input.toLowerCase();
+
     let url = window.location.search.substring(1);
     let parameters = url.split('&');
 
     for (let i = 0; i < parameters.length; i++) {
-        let parameterName = parameters[i].split('=');
+        let urlParam = parameters[i].split('=');
 
-        if (parameterName[0] === parameter) {
-            return parameterName[1] === undefined ? true : decodeURIComponent(parameterName[1]);
+        if (input === urlParam[0].toLowerCase()) {
+            return urlParam[1] === undefined ? true : decodeURIComponent(urlParam[1]);
         }
     }
     return;

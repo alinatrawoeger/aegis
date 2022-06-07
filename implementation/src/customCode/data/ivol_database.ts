@@ -11,7 +11,7 @@ export default [
         "taskname": "Adventbazar",
         "taskid": 12345,
         "responsible": "Rotes Kreuz",
-        "date": "25. September 2022",
+        "date": "2022-09-25T15:00:00Z",
         "friend": [
             "Tony Stark", "Bruce Banner", "Steve Rogers"
         ],
@@ -29,7 +29,7 @@ export default [
         "taskname": "Pfadfinder Meetup",
         "taskid": 12346,
         "responsible": "Pfadfinderclub Linz",
-        "date": "29. August 2022",
+        "date": "2022-08-29T07:30:00Z",
         "friend": [
             "Natasha Romanov", "James Bucky Barnes"
         ],
@@ -47,7 +47,7 @@ export default [
         "taskname": "Zoo Tierhelfer",
         "taskid": 12347,
         "responsible": "Tiergarten-Verein Österreich",
-        "date": "13. September 2022",
+        "date": "2022-09-13T13:15:00Z",
         "friend": [
             "Peter Parker"
         ],
@@ -65,7 +65,7 @@ export default [
         "taskname": "Kindergarten Helfer",
         "taskid": 12348,
         "responsible": "Rotes Kreuz",
-        "date": "10. September 2022",
+        "date": "2022-09-10T14:30:00Z",
         "friend": [
             "Tony Stark", "Peter Parker", "Steve Rogers"
         ],
@@ -83,7 +83,7 @@ export default [
         "taskname": "Altenpflege Volunteering",
         "taskid": 12349,
         "responsible": "Altenpflegeverein Kärnten",
-        "date": "25. September 2022",
+        "date": "2022-09-25T08:00:00Z",
         "friend": [
             "Steve Rogers", "James Bucky Barnes"
         ],
@@ -101,7 +101,7 @@ export default [
         "taskname": "Mülleinsammeln",
         "taskid": 12350,
         "responsible": "Samariterbund",
-        "date": "22. September 2022",
+        "date": "2022-09-23T07:00:00Z",
         "friend": [
             "James Bucky Barnes", "Natasha Romanov", "Peter Parker"
         ],
