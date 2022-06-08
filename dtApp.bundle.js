@@ -48,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".visevQBcXLRkGHgMmI6M {\n    display: flex;\n    align-items: center;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-size: 13px;\n}\n\n.J0HEVJIfbGnFUPEZ4sY9 {\n    height: 52px;\n    width: 1110px;\n    border: 2px solid rgba(98, 36, 128, 1);\n}\n\n.Z39wuvqAOiDL2qmEEtLg {\n    height: 44px;\n    width: 504px;\n    border: 2px solid rgba(2, 167, 240, 1);\n}\n\n.GPG0_6ulmPyX4P93Ximl {\n    margin: 0 12px;\n    min-width: 65px;\n}\n\n.hfPNZw73Cf9kMz2wiINg {\n    margin: 0 8px;\n    display: flex;\n    align-items: center;\n    border: 2px solid rgba(2, 167, 240, 1);\n    background: rgba(2, 167, 240, 0.2);\n    border-radius: 12px;\n    cursor: default;\n}\n\n.yYDjOyIh9MbdmMmIZawJ {\n    padding: 12px;\n}\n\n.d69p7vznosejmibriwTB {\n    padding: 10px;\n}\n\n.woAYoOs2KlfXQxcP2Y6v {\n    display: flex;\n}\n\n.P_fuyJFQ792sRIlNZnKo {\n    margin-right: 4px;\n}\n\n.cIyIQ3xAzZli4bSqa01A {\n    margin-left: 8px;\n    height: 16px;\n    width: 16px;\n    padding-right: 8px;\n    cursor: pointer;\n}\n\n.KneDLkDOPsiSv91jb0NA {\n    margin-left: 8px;\n    background-color: white;\n    border: 2px solid rgba(2, 167, 240, 0.5);\n    min-width: 52px;\n    cursor: pointer;\n}\n\n\n/* Filter Suggestions */\n.ykYCMASJ8Vra_8mQnKmM {\n    position: relative;\n    top: 60px;\n}\n\n.Fx0HhLBP0yOrmfRCiyY5 {\n    position: relative;\n    top: 61px;\n    display: flex;\n}\n\n.utiE1oReCoXSJduH4Syo {\n    margin-right: 8px;\n    padding-top: 8px;\n}\n\n.CfZZS1Llr6Cl2HMip0jn {\n    width: 120px;\n    height: 150px;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.v5CFVQ38Y78EAd_z_WxB {\n    padding: 8px;\n    border-bottom: 1px solid black;\n    cursor: pointer;\n}\n\n.v5CFVQ38Y78EAd_z_WxB:hover {\n    font-weight: 700px;\n    background-color: rgba(2, 167, 240, 0.5);\n}\n\n.IkF9cndZPFyri5gJRnn_ {\n    position: relative;\n    top: 45px;\n    display: flex;\n}\n\n.nP1bKdt6RzQq1ZmbhZlr {\n    width: 160px;\n    height: 94px;\n    padding: 12px;\n    text-align: right;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.LJvURyShD66q9zRcBSQI {\n    display: flex;\n    text-align: left;\n    padding-top: 8px;\n}\n\n.gotdjmwwI9aTPEhFLTww {\n    margin-right: 8px;\n    width: 60px;\n}\n\n.tWxeHm9eTK0upd09rlmm {\n    width: 100px;\n}\n\n.Bm_FFKRuket0l7tXuW6j {\n    margin-top: 12px;\n}", "",{"version":3,"sources":["webpack://./src/customCode/components/filterbar/Filterbar.module.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,mBAAmB;IACnB,kDAAkD;IAClD,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,sCAAsC;AAC1C;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,sCAAsC;AAC1C;;AAEA;IACI,cAAc;IACd,eAAe;AACnB;;AAEA;IACI,aAAa;IACb,aAAa;IACb,mBAAmB;IACnB,sCAAsC;IACtC,kCAAkC;IAClC,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,gBAAgB;IAChB,YAAY;IACZ,WAAW;IACX,kBAAkB;IAClB,eAAe;AACnB;;AAEA;IACI,gBAAgB;IAChB,uBAAuB;IACvB,wCAAwC;IACxC,eAAe;IACf,eAAe;AACnB;;;AAGA,uBAAuB;AACvB;IACI,kBAAkB;IAClB,SAAS;AACb;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,aAAa;AACjB;;AAEA;IACI,iBAAiB;IACjB,gBAAgB;AACpB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,kBAAkB;IAClB,uBAAuB;IACvB,UAAU;IACV,uBAAuB;AAC3B;;AAEA;IACI,YAAY;IACZ,8BAA8B;IAC9B,eAAe;AACnB;;AAEA;IACI,kBAAkB;IAClB,wCAAwC;AAC5C;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,aAAa;IACb,iBAAiB;IACjB,kBAAkB;IAClB,uBAAuB;IACvB,UAAU;IACV,uBAAuB;AAC3B;;AAEA;IACI,aAAa;IACb,gBAAgB;IAChB,gBAAgB;AACpB;;AAEA;IACI,iBAAiB;IACjB,WAAW;AACf;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,gBAAgB;AACpB","sourcesContent":[".filterbar {\n    display: flex;\n    align-items: center;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-size: 13px;\n}\n\n.filterbarDt {\n    height: 52px;\n    width: 1110px;\n    border: 2px solid rgba(98, 36, 128, 1);\n}\n\n.filterbarIVol {\n    height: 44px;\n    width: 504px;\n    border: 2px solid rgba(2, 167, 240, 1);\n}\n\n.filterStaticText {\n    margin: 0 12px;\n    min-width: 65px;\n}\n\n.filterElement {\n    margin: 0 8px;\n    display: flex;\n    align-items: center;\n    border: 2px solid rgba(2, 167, 240, 1);\n    background: rgba(2, 167, 240, 0.2);\n    border-radius: 12px;\n    cursor: default;\n}\n\n.filterElementDt {\n    padding: 12px;\n}\n\n.filterElementIVol {\n    padding: 10px;\n}\n\n.filterTextPanel {\n    display: flex;\n}\n\n.filterKey {\n    margin-right: 4px;\n}\n\n.removeFilterBtn {\n    margin-left: 8px;\n    height: 16px;\n    width: 16px;\n    padding-right: 8px;\n    cursor: pointer;\n}\n\n.addFilterBtn {\n    margin-left: 8px;\n    background-color: white;\n    border: 2px solid rgba(2, 167, 240, 0.5);\n    min-width: 52px;\n    cursor: pointer;\n}\n\n\n/* Filter Suggestions */\n.filterListPanel {\n    position: relative;\n    top: 60px;\n}\n\n.suggestionsTextPanel {\n    position: relative;\n    top: 61px;\n    display: flex;\n}\n\n.suggestionFiltername {\n    margin-right: 8px;\n    padding-top: 8px;\n}\n\n.suggestionTextValuesPanel {\n    width: 120px;\n    height: 150px;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.suggestionValueElement {\n    padding: 8px;\n    border-bottom: 1px solid black;\n    cursor: pointer;\n}\n\n.suggestionValueElement:hover {\n    font-weight: 700px;\n    background-color: rgba(2, 167, 240, 0.5);\n}\n\n.suggestionsRangePanel {\n    position: relative;\n    top: 45px;\n    display: flex;\n}\n\n.suggestionRangeValuesPanel {\n    width: 160px;\n    height: 94px;\n    padding: 12px;\n    text-align: right;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.suggestionRangeFilterLine {\n    display: flex;\n    text-align: left;\n    padding-top: 8px;\n}\n\n.suggestionRangeValueLabel {\n    margin-right: 8px;\n    width: 60px;\n}\n\n.suggestionRangeValueInput {\n    width: 100px;\n}\n\n.suggestionRangeBtn {\n    margin-top: 12px;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".visevQBcXLRkGHgMmI6M {\n    display: flex;\n    align-items: center;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-size: 13px;\n}\n\n.J0HEVJIfbGnFUPEZ4sY9 {\n    height: 52px;\n    width: 1110px;\n    border: 2px solid rgba(98, 36, 128, 1);\n}\n\n.Z39wuvqAOiDL2qmEEtLg {\n    height: 44px;\n    width: 504px;\n    border: 2px solid rgba(2, 167, 240, 1);\n}\n\n.GPG0_6ulmPyX4P93Ximl {\n    margin: 0 12px;\n    min-width: 65px;\n}\n\n.hfPNZw73Cf9kMz2wiINg {\n    margin: 0 8px;\n    display: flex;\n    align-items: center;\n    border: 2px solid rgba(2, 167, 240, 1);\n    background: rgba(2, 167, 240, 0.2);\n    border-radius: 12px;\n    cursor: default;\n}\n\n.yYDjOyIh9MbdmMmIZawJ {\n    padding: 12px;\n}\n\n.d69p7vznosejmibriwTB {\n    padding: 10px;\n}\n\n.woAYoOs2KlfXQxcP2Y6v {\n    display: flex;\n}\n\n.P_fuyJFQ792sRIlNZnKo {\n    margin-right: 4px;\n}\n\n.cIyIQ3xAzZli4bSqa01A {\n    margin-left: 8px;\n    height: 16px;\n    width: 16px;\n    padding-right: 8px;\n    cursor: pointer;\n}\n\n.KneDLkDOPsiSv91jb0NA {\n    margin-left: 8px;\n    background-color: white;\n    border: 2px solid rgba(2, 167, 240, 0.5);\n    min-width: 52px;\n    cursor: pointer;\n}\n\n\n/* Filter Suggestions */\n.ykYCMASJ8Vra_8mQnKmM {\n    position: relative;\n    top: 60px;\n}\n\n.Fx0HhLBP0yOrmfRCiyY5 {\n    position: relative;\n    top: 61px;\n    display: flex;\n}\n\n.utiE1oReCoXSJduH4Syo {\n    margin-right: 8px;\n    padding-top: 8px;\n}\n\n.CfZZS1Llr6Cl2HMip0jn {\n    width: 120px;\n    height: 150px;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.v5CFVQ38Y78EAd_z_WxB {\n    padding: 8px;\n    border-bottom: 1px solid black;\n    cursor: pointer;\n}\n\n.v5CFVQ38Y78EAd_z_WxB:hover {\n    font-weight: 700px;\n    background-color: rgba(2, 167, 240, 0.5);\n}\n\n.IkF9cndZPFyri5gJRnn_ {\n    position: relative;\n    top: 45px;\n    display: flex;\n}\n\n.nP1bKdt6RzQq1ZmbhZlr {\n    padding: 12px;\n    text-align: right;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.kSrFiHnSaeho9TATvlGN {\n    width: 172px;\n    height: 96px;\n}\n\n.BFLSxOnhtitiKf_RLxaZ {\n    width: 138px;\n    height: 94px;\n}\n\n.LJvURyShD66q9zRcBSQI {\n    display: flex;\n    text-align: left;\n    padding-top: 8px;\n}\n\n.LJvURyShD66q9zRcBSQI :nth-child(2) {\n    align-items:flex-end;\n}\n\n.gotdjmwwI9aTPEhFLTww {\n    margin-right: 8px;\n    width: 60px;\n}\n\n.C6JZpuFoESwOcC651ltr {\n    width: 70px;\n}\n\n.q882sDkqfw6vf_F4pJH7 {\n    width: 140px;\n}\n\n.Bm_FFKRuket0l7tXuW6j {\n    margin-top: 12px;\n}", "",{"version":3,"sources":["webpack://./src/customCode/components/filterbar/Filterbar.module.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,mBAAmB;IACnB,kDAAkD;IAClD,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,sCAAsC;AAC1C;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,sCAAsC;AAC1C;;AAEA;IACI,cAAc;IACd,eAAe;AACnB;;AAEA;IACI,aAAa;IACb,aAAa;IACb,mBAAmB;IACnB,sCAAsC;IACtC,kCAAkC;IAClC,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,gBAAgB;IAChB,YAAY;IACZ,WAAW;IACX,kBAAkB;IAClB,eAAe;AACnB;;AAEA;IACI,gBAAgB;IAChB,uBAAuB;IACvB,wCAAwC;IACxC,eAAe;IACf,eAAe;AACnB;;;AAGA,uBAAuB;AACvB;IACI,kBAAkB;IAClB,SAAS;AACb;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,aAAa;AACjB;;AAEA;IACI,iBAAiB;IACjB,gBAAgB;AACpB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,kBAAkB;IAClB,uBAAuB;IACvB,UAAU;IACV,uBAAuB;AAC3B;;AAEA;IACI,YAAY;IACZ,8BAA8B;IAC9B,eAAe;AACnB;;AAEA;IACI,kBAAkB;IAClB,wCAAwC;AAC5C;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,iBAAiB;IACjB,kBAAkB;IAClB,uBAAuB;IACvB,UAAU;IACV,uBAAuB;AAC3B;;AAEA;IACI,YAAY;IACZ,YAAY;AAChB;;AAEA;IACI,YAAY;IACZ,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,gBAAgB;IAChB,gBAAgB;AACpB;;AAEA;IACI,oBAAoB;AACxB;;AAEA;IACI,iBAAiB;IACjB,WAAW;AACf;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,gBAAgB;AACpB","sourcesContent":[".filterbar {\n    display: flex;\n    align-items: center;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-size: 13px;\n}\n\n.filterbarDt {\n    height: 52px;\n    width: 1110px;\n    border: 2px solid rgba(98, 36, 128, 1);\n}\n\n.filterbarIVol {\n    height: 44px;\n    width: 504px;\n    border: 2px solid rgba(2, 167, 240, 1);\n}\n\n.filterStaticText {\n    margin: 0 12px;\n    min-width: 65px;\n}\n\n.filterElement {\n    margin: 0 8px;\n    display: flex;\n    align-items: center;\n    border: 2px solid rgba(2, 167, 240, 1);\n    background: rgba(2, 167, 240, 0.2);\n    border-radius: 12px;\n    cursor: default;\n}\n\n.filterElementDt {\n    padding: 12px;\n}\n\n.filterElementIVol {\n    padding: 10px;\n}\n\n.filterTextPanel {\n    display: flex;\n}\n\n.filterKey {\n    margin-right: 4px;\n}\n\n.removeFilterBtn {\n    margin-left: 8px;\n    height: 16px;\n    width: 16px;\n    padding-right: 8px;\n    cursor: pointer;\n}\n\n.addFilterBtn {\n    margin-left: 8px;\n    background-color: white;\n    border: 2px solid rgba(2, 167, 240, 0.5);\n    min-width: 52px;\n    cursor: pointer;\n}\n\n\n/* Filter Suggestions */\n.filterListPanel {\n    position: relative;\n    top: 60px;\n}\n\n.suggestionsTextPanel {\n    position: relative;\n    top: 61px;\n    display: flex;\n}\n\n.suggestionFiltername {\n    margin-right: 8px;\n    padding-top: 8px;\n}\n\n.suggestionTextValuesPanel {\n    width: 120px;\n    height: 150px;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.suggestionValueElement {\n    padding: 8px;\n    border-bottom: 1px solid black;\n    cursor: pointer;\n}\n\n.suggestionValueElement:hover {\n    font-weight: 700px;\n    background-color: rgba(2, 167, 240, 0.5);\n}\n\n.suggestionsRangePanel {\n    position: relative;\n    top: 45px;\n    display: flex;\n}\n\n.suggestionRangeValuesPanel {\n    padding: 12px;\n    text-align: right;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.suggestionRangeValuesPanelIVol {\n    width: 172px;\n    height: 96px;\n}\n\n.suggestionRangeValuesPanelDt {\n    width: 138px;\n    height: 94px;\n}\n\n.suggestionRangeFilterLine {\n    display: flex;\n    text-align: left;\n    padding-top: 8px;\n}\n\n.suggestionRangeFilterLine :nth-child(2) {\n    align-items:flex-end;\n}\n\n.suggestionRangeValueLabel {\n    margin-right: 8px;\n    width: 60px;\n}\n\n.suggestionRangeValueInputDt {\n    width: 70px;\n}\n\n.suggestionRangeValueInputIVol {\n    width: 140px;\n}\n\n.suggestionRangeBtn {\n    margin-top: 12px;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"filterbar": "visevQBcXLRkGHgMmI6M",
@@ -69,9 +69,12 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"suggestionValueElement": "v5CFVQ38Y78EAd_z_WxB",
 	"suggestionsRangePanel": "IkF9cndZPFyri5gJRnn_",
 	"suggestionRangeValuesPanel": "nP1bKdt6RzQq1ZmbhZlr",
+	"suggestionRangeValuesPanelIVol": "kSrFiHnSaeho9TATvlGN",
+	"suggestionRangeValuesPanelDt": "BFLSxOnhtitiKf_RLxaZ",
 	"suggestionRangeFilterLine": "LJvURyShD66q9zRcBSQI",
 	"suggestionRangeValueLabel": "gotdjmwwI9aTPEhFLTww",
-	"suggestionRangeValueInput": "tWxeHm9eTK0upd09rlmm",
+	"suggestionRangeValueInputDt": "C6JZpuFoESwOcC651ltr",
+	"suggestionRangeValueInputIVol": "q882sDkqfw6vf_F4pJH7",
 	"suggestionRangeBtn": "Bm_FFKRuket0l7tXuW6j"
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
@@ -173,7 +176,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".eqDrgOsX8CiWh17DPz7V {\n    display: block;\n    border-collapse: collapse;\n    height: 180px;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-style: normal;\n    font-size: 13px;\n    letter-spacing: normal;\n    color: #333333;\n    text-align: center;\n    line-height: normal;\n    text-transform: none;\n}\n\n.CQ2iRGOdjtn64gc5qasQ {\n  width: 526px;\n  height: 180px;\n}\n\n.ASJmUS7DR70JsJ0pHRmN {\n  height: 150px;\n}\n\n.eqDrgOsX8CiWh17DPz7V > thead, .eqDrgOsX8CiWh17DPz7V > tbody {\n    display: block;\n}\n\n.Yvf7yIWRrSN0SSAlGcGA {\n  border-bottom: 2px solid #797979;\n  width: 189px;\n  height: 20px;\n  font-family: 'Arial Fett', 'Arial Standard', 'Arial', sans-serif;\n  font-weight: 700;\n  font-style: normal;\n  color: #797979;\n}\n\n.yudAicknLf5fAgHXerVk, .yOZKEbvKtCJKTJPbzVG8 {\n  display: flex;\n  text-align: left;\n  padding: 4px 0 4px 0;\n}\n\n.EUz9KDNDDNHjecYM1D34 {\n  text-align: center !important;\n}\n\n.eqDrgOsX8CiWh17DPz7V th:first-child, .eqDrgOsX8CiWh17DPz7V td:first-child {\n  flex: 0 0 50% !important;\n}\n\n\n.eqDrgOsX8CiWh17DPz7V th:last-child, .eqDrgOsX8CiWh17DPz7V td:last-child {\n    flex: 0 0 10%;\n    text-align: right;\n}\n\n.oPHTifdWj92FsPXUKekW {\n    width: 189px;\n}\n\n.aKlGgi6tJCR3j62mrdSD {\n  height: 20px;\n  width: 20px;\n}\n\n.RGnZsLjoQw7Om2iHLrm8 {\n  color: rgba(30, 152, 215, 1);\n  text-decoration: none;\n}\n\n.RGnZsLjoQw7Om2iHLrm8 > a {\n  text-decoration: none;\n}\n\n.RGnZsLjoQw7Om2iHLrm8:hover {\n  text-decoration: underline;\n  cursor:pointer;\n}\n\n.q01bbda0OHzvPhVTO5Kv {\n  padding: 12px 0px;\n  width: 526px;\n  text-align: left;\n  font-size: 16px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n  \n.vxa5AFyvUVzT45r36ewr {\n  border: none;\n  padding: 7px 14px;\n  border-radius: 10px;\n  cursor: pointer;\n  margin-right: 4px;\n  margin-left: 4px;\n}\n\n.y5iG4UVzNHOlsM_qSjCR {\n  color: #87ceeb;\n  font-weight: 700;\n  background: white;\n}\n\n.K3ERTZAFlVbhTtYfCIcZ {\n  font-weight: 700;\n  background: lightgrey;\n}\n\n.tN1ezGocG5N9LYTb0tTY {\n  background: white;\n}\n\n.gU1ZE45DiotwBDGyVywQ {\n  color: #a9a9a9;\n}\n\n.raVNPqVV_8awftlmSuJt {\n  position: absolute;\n  left: 100px;\n}\n\n.cwD_pw01fDsT5XSDyB5T {\n  position: absolute;\n  left: 380px;\n}\n\n.hmsP5zIQp_COvBrM5Hh1 {\n  height: 200px;\n  padding-top: 20px;\n}", "",{"version":3,"sources":["webpack://./src/customCode/components/table/Table.module.css"],"names":[],"mappings":"AAAA;IACI,cAAc;IACd,yBAAyB;IACzB,aAAa;IACb,kDAAkD;IAClD,gBAAgB;IAChB,kBAAkB;IAClB,eAAe;IACf,sBAAsB;IACtB,cAAc;IACd,kBAAkB;IAClB,mBAAmB;IACnB,oBAAoB;AACxB;;AAEA;EACE,YAAY;EACZ,aAAa;AACf;;AAEA;EACE,aAAa;AACf;;AAEA;IACI,cAAc;AAClB;;AAEA;EACE,gCAAgC;EAChC,YAAY;EACZ,YAAY;EACZ,gEAAgE;EAChE,gBAAgB;EAChB,kBAAkB;EAClB,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,gBAAgB;EAChB,oBAAoB;AACtB;;AAEA;EACE,6BAA6B;AAC/B;;AAEA;EACE,wBAAwB;AAC1B;;;AAGA;IACI,aAAa;IACb,iBAAiB;AACrB;;AAEA;IACI,YAAY;AAChB;;AAEA;EACE,YAAY;EACZ,WAAW;AACb;;AAEA;EACE,4BAA4B;EAC5B,qBAAqB;AACvB;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,0BAA0B;EAC1B,cAAc;AAChB;;AAEA;EACE,iBAAiB;EACjB,YAAY;EACZ,gBAAgB;EAChB,eAAe;EACf,aAAa;EACb,mBAAmB;EACnB,uBAAuB;AACzB;;AAEA;EACE,YAAY;EACZ,iBAAiB;EACjB,mBAAmB;EACnB,eAAe;EACf,iBAAiB;EACjB,gBAAgB;AAClB;;AAEA;EACE,cAAc;EACd,gBAAgB;EAChB,iBAAiB;AACnB;;AAEA;EACE,gBAAgB;EAChB,qBAAqB;AACvB;;AAEA;EACE,iBAAiB;AACnB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,kBAAkB;EAClB,WAAW;AACb;;AAEA;EACE,kBAAkB;EAClB,WAAW;AACb;;AAEA;EACE,aAAa;EACb,iBAAiB;AACnB","sourcesContent":[".table {\n    display: block;\n    border-collapse: collapse;\n    height: 180px;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-style: normal;\n    font-size: 13px;\n    letter-spacing: normal;\n    color: #333333;\n    text-align: center;\n    line-height: normal;\n    text-transform: none;\n}\n\n.tableDt {\n  width: 526px;\n  height: 180px;\n}\n\n.tableIvol {\n  height: 150px;\n}\n\n.table > thead, .table > tbody {\n    display: block;\n}\n\n.tableHeader {\n  border-bottom: 2px solid #797979;\n  width: 189px;\n  height: 20px;\n  font-family: 'Arial Fett', 'Arial Standard', 'Arial', sans-serif;\n  font-weight: 700;\n  font-style: normal;\n  color: #797979;\n}\n\n.tableRowItems, .tableRowHeader {\n  display: flex;\n  text-align: left;\n  padding: 4px 0 4px 0;\n}\n\n.tableLastCol {\n  text-align: center !important;\n}\n\n.table th:first-child, .table td:first-child {\n  flex: 0 0 50% !important;\n}\n\n\n.table th:last-child, .table td:last-child {\n    flex: 0 0 10%;\n    text-align: right;\n}\n\n.tableCell {\n    width: 189px;\n}\n\n.analyzeBtn {\n  height: 20px;\n  width: 20px;\n}\n\n.tableLink {\n  color: rgba(30, 152, 215, 1);\n  text-decoration: none;\n}\n\n.tableLink > a {\n  text-decoration: none;\n}\n\n.tableLink:hover {\n  text-decoration: underline;\n  cursor:pointer;\n}\n\n.tableFooter {\n  padding: 12px 0px;\n  width: 526px;\n  text-align: left;\n  font-size: 16px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n  \n.button {\n  border: none;\n  padding: 7px 14px;\n  border-radius: 10px;\n  cursor: pointer;\n  margin-right: 4px;\n  margin-left: 4px;\n}\n\n.arrowBtn {\n  color: #87ceeb;\n  font-weight: 700;\n  background: white;\n}\n\n.activeButton {\n  font-weight: 700;\n  background: lightgrey;\n}\n\n.inactiveButton {\n  background: white;\n}\n\n.disabledButton {\n  color: #a9a9a9;\n}\n\n.arrowPrevBtn {\n  position: absolute;\n  left: 100px;\n}\n\n.arrowNextBtn {\n  position: absolute;\n  left: 380px;\n}\n\n.noData {\n  height: 200px;\n  padding-top: 20px;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".eqDrgOsX8CiWh17DPz7V {\n    display: block;\n    border-collapse: collapse;\n    height: 180px;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-style: normal;\n    font-size: 13px;\n    letter-spacing: normal;\n    color: #333333;\n    text-align: center;\n    line-height: normal;\n    text-transform: none;\n}\n\n.CQ2iRGOdjtn64gc5qasQ {\n  width: 526px;\n  height: 180px;\n}\n\n.ASJmUS7DR70JsJ0pHRmN {\n  height: 150px;\n}\n\n.CQ2iRGOdjtn64gc5qasQ th:first-child, .eqDrgOsX8CiWh17DPz7V td:first-child {\n  flex: 0 0 45% !important;\n}\n\n.ASJmUS7DR70JsJ0pHRmN th:first-child, .eqDrgOsX8CiWh17DPz7V td:first-child {\n  flex: 0 0 50% !important;\n}\n\n.eqDrgOsX8CiWh17DPz7V th:last-child, .eqDrgOsX8CiWh17DPz7V td:last-child {\n  flex: 0 0 10%;\n  text-align: right;\n}\n\n.eqDrgOsX8CiWh17DPz7V > thead, .eqDrgOsX8CiWh17DPz7V > tbody {\n    display: block;\n}\n\n.Yvf7yIWRrSN0SSAlGcGA {\n  border-bottom: 2px solid #797979;\n  width: 189px;\n  height: 20px;\n  font-family: 'Arial Fett', 'Arial Standard', 'Arial', sans-serif;\n  font-weight: 700;\n  font-style: normal;\n  color: #797979;\n}\n\n.yudAicknLf5fAgHXerVk, .yOZKEbvKtCJKTJPbzVG8 {\n  display: flex;\n  text-align: left;\n  padding: 4px 0 4px 0;\n}\n\n.EUz9KDNDDNHjecYM1D34 {\n  text-align: center !important;\n}\n\n.oPHTifdWj92FsPXUKekW {\n    width: 189px;\n}\n\n.aKlGgi6tJCR3j62mrdSD {\n  height: 20px;\n  width: 20px;\n}\n\n.RGnZsLjoQw7Om2iHLrm8 {\n  color: rgba(30, 152, 215, 1);\n  text-decoration: none;\n}\n\n.RGnZsLjoQw7Om2iHLrm8 > a {\n  text-decoration: none;\n}\n\n.RGnZsLjoQw7Om2iHLrm8:hover {\n  text-decoration: underline;\n  cursor:pointer;\n}\n\n.q01bbda0OHzvPhVTO5Kv {\n  padding: 12px 0px;\n  width: 526px;\n  text-align: left;\n  font-size: 16px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n  \n.vxa5AFyvUVzT45r36ewr {\n  border: none;\n  padding: 7px 14px;\n  border-radius: 10px;\n  cursor: pointer;\n  margin-right: 4px;\n  margin-left: 4px;\n}\n\n.y5iG4UVzNHOlsM_qSjCR {\n  color: #87ceeb;\n  font-weight: 700;\n  background: white;\n}\n\n.K3ERTZAFlVbhTtYfCIcZ {\n  font-weight: 700;\n  background: lightgrey;\n}\n\n.tN1ezGocG5N9LYTb0tTY {\n  background: white;\n}\n\n.gU1ZE45DiotwBDGyVywQ {\n  color: #a9a9a9;\n}\n\n.raVNPqVV_8awftlmSuJt {\n  position: absolute;\n  left: 100px;\n}\n\n.cwD_pw01fDsT5XSDyB5T {\n  position: absolute;\n  left: 380px;\n}\n\n.hmsP5zIQp_COvBrM5Hh1 {\n  height: 200px;\n  padding-top: 20px;\n}", "",{"version":3,"sources":["webpack://./src/customCode/components/table/Table.module.css"],"names":[],"mappings":"AAAA;IACI,cAAc;IACd,yBAAyB;IACzB,aAAa;IACb,kDAAkD;IAClD,gBAAgB;IAChB,kBAAkB;IAClB,eAAe;IACf,sBAAsB;IACtB,cAAc;IACd,kBAAkB;IAClB,mBAAmB;IACnB,oBAAoB;AACxB;;AAEA;EACE,YAAY;EACZ,aAAa;AACf;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,wBAAwB;AAC1B;;AAEA;EACE,wBAAwB;AAC1B;;AAEA;EACE,aAAa;EACb,iBAAiB;AACnB;;AAEA;IACI,cAAc;AAClB;;AAEA;EACE,gCAAgC;EAChC,YAAY;EACZ,YAAY;EACZ,gEAAgE;EAChE,gBAAgB;EAChB,kBAAkB;EAClB,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,gBAAgB;EAChB,oBAAoB;AACtB;;AAEA;EACE,6BAA6B;AAC/B;;AAEA;IACI,YAAY;AAChB;;AAEA;EACE,YAAY;EACZ,WAAW;AACb;;AAEA;EACE,4BAA4B;EAC5B,qBAAqB;AACvB;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,0BAA0B;EAC1B,cAAc;AAChB;;AAEA;EACE,iBAAiB;EACjB,YAAY;EACZ,gBAAgB;EAChB,eAAe;EACf,aAAa;EACb,mBAAmB;EACnB,uBAAuB;AACzB;;AAEA;EACE,YAAY;EACZ,iBAAiB;EACjB,mBAAmB;EACnB,eAAe;EACf,iBAAiB;EACjB,gBAAgB;AAClB;;AAEA;EACE,cAAc;EACd,gBAAgB;EAChB,iBAAiB;AACnB;;AAEA;EACE,gBAAgB;EAChB,qBAAqB;AACvB;;AAEA;EACE,iBAAiB;AACnB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,kBAAkB;EAClB,WAAW;AACb;;AAEA;EACE,kBAAkB;EAClB,WAAW;AACb;;AAEA;EACE,aAAa;EACb,iBAAiB;AACnB","sourcesContent":[".table {\n    display: block;\n    border-collapse: collapse;\n    height: 180px;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-style: normal;\n    font-size: 13px;\n    letter-spacing: normal;\n    color: #333333;\n    text-align: center;\n    line-height: normal;\n    text-transform: none;\n}\n\n.tableDt {\n  width: 526px;\n  height: 180px;\n}\n\n.tableIvol {\n  height: 150px;\n}\n\n.tableDt th:first-child, .table td:first-child {\n  flex: 0 0 45% !important;\n}\n\n.tableIvol th:first-child, .table td:first-child {\n  flex: 0 0 50% !important;\n}\n\n.table th:last-child, .table td:last-child {\n  flex: 0 0 10%;\n  text-align: right;\n}\n\n.table > thead, .table > tbody {\n    display: block;\n}\n\n.tableHeader {\n  border-bottom: 2px solid #797979;\n  width: 189px;\n  height: 20px;\n  font-family: 'Arial Fett', 'Arial Standard', 'Arial', sans-serif;\n  font-weight: 700;\n  font-style: normal;\n  color: #797979;\n}\n\n.tableRowItems, .tableRowHeader {\n  display: flex;\n  text-align: left;\n  padding: 4px 0 4px 0;\n}\n\n.tableLastCol {\n  text-align: center !important;\n}\n\n.tableCell {\n    width: 189px;\n}\n\n.analyzeBtn {\n  height: 20px;\n  width: 20px;\n}\n\n.tableLink {\n  color: rgba(30, 152, 215, 1);\n  text-decoration: none;\n}\n\n.tableLink > a {\n  text-decoration: none;\n}\n\n.tableLink:hover {\n  text-decoration: underline;\n  cursor:pointer;\n}\n\n.tableFooter {\n  padding: 12px 0px;\n  width: 526px;\n  text-align: left;\n  font-size: 16px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n  \n.button {\n  border: none;\n  padding: 7px 14px;\n  border-radius: 10px;\n  cursor: pointer;\n  margin-right: 4px;\n  margin-left: 4px;\n}\n\n.arrowBtn {\n  color: #87ceeb;\n  font-weight: 700;\n  background: white;\n}\n\n.activeButton {\n  font-weight: 700;\n  background: lightgrey;\n}\n\n.inactiveButton {\n  background: white;\n}\n\n.disabledButton {\n  color: #a9a9a9;\n}\n\n.arrowPrevBtn {\n  position: absolute;\n  left: 100px;\n}\n\n.arrowNextBtn {\n  position: absolute;\n  left: 380px;\n}\n\n.noData {\n  height: 200px;\n  padding-top: 20px;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"table": "eqDrgOsX8CiWh17DPz7V",
@@ -35194,9 +35197,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([
     {
-        "taskid": {
-            "filterType": "range"
-        },
         "friend": {
             "filterType": "text",
             "properties": {
@@ -35217,6 +35217,9 @@ __webpack_require__.r(__webpack_exports__);
                 "PF": "Pfadfinderclub Linz",
                 "AP": "Altenpflegeverein Kärnten"
             }
+        },
+        "date": {
+            "filterType": "date"
         }
         // "location": {
         //     "Wien": {
@@ -35353,8 +35356,8 @@ var FilterSuggestions = function (_a) {
     var dtMin = 0.05;
     var dtMax = 1;
     var dtStep = 0.05;
-    var iVolDefaultFrom = 10000; // also used as min value
-    var iVolDefaultTo = 99999; // also used as max value
+    var iVolDefaultFrom = '2022-07-01';
+    var iVolDefaultTo = '2022-08-31';
     var iVolStep = 1;
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, filterType === _utils__WEBPACK_IMPORTED_MODULE_1__.FilterType.TEXT
         ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionsTextPanel, onClick: function () { return hideSuggestionPanel(setShowSuggestions); } },
@@ -35366,13 +35369,13 @@ var FilterSuggestions = function (_a) {
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionFiltername },
                 filterKey,
                 ":"),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValuesPanel },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "".concat(_Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValuesPanel, " ").concat(isIVolunteer ? _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValuesPanelIVol : _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValuesPanelDt) },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeFilterLine },
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueLabel }, "From:"),
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInput, type: 'number', id: 'rangeFrom', min: isIVolunteer ? iVolDefaultFrom : dtMin, max: isIVolunteer ? iVolDefaultTo : dtMax, step: isIVolunteer ? iVolStep : dtStep, defaultValue: isIVolunteer ? iVolDefaultFrom : dtDefaultFrom, onChange: function () { return onChangeRange(); } })),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { className: isIVolunteer ? _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputIVol : _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputDt, type: isIVolunteer ? 'date' : 'number', id: 'rangeFrom', min: isIVolunteer ? iVolDefaultFrom : dtMin, max: isIVolunteer ? iVolDefaultTo : dtMax, step: isIVolunteer ? iVolStep : dtStep, defaultValue: isIVolunteer ? iVolDefaultFrom : dtDefaultFrom, onChange: function () { return onChangeRange(); } })),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeFilterLine },
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueLabel }, "To:"),
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInput, type: 'number', id: 'rangeTo', min: isIVolunteer ? iVolDefaultFrom : dtMin, max: isIVolunteer ? iVolDefaultTo : dtMax, step: isIVolunteer ? iVolStep : dtStep, defaultValue: isIVolunteer ? iVolDefaultTo : dtDefaultTo, onChange: function () { return onChangeRange(); } })),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { className: isIVolunteer ? _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputIVol : _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputDt, type: isIVolunteer ? 'date' : 'number', id: 'rangeTo', min: isIVolunteer ? iVolDefaultFrom : dtMin, max: isIVolunteer ? iVolDefaultTo : dtMax, step: isIVolunteer ? iVolStep : dtStep, defaultValue: isIVolunteer ? iVolDefaultTo : dtDefaultTo, onChange: function () { return onChangeRange(); } })),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeBtn, id: 'rangeFilterConfirm', onClick: function () { return confirmRangeFilter(setNewFilterValue, filterKey, setShowSuggestions); } }, "Confirm")))));
 };
 var displayFilters = function (showFilters, setShowFilters) {
@@ -35805,6 +35808,7 @@ var InteractiveMap = function (_a) {
         }
         setSelectedFilters(value);
         onChangeFilters(value);
+        setIconMarkers(isIVolunteer, mapRef.current, zoom, selectedMetric, value);
     }, [selectedFilters, onChangeFilters]);
     if (selectedFilters !== undefined && filters !== selectedFilters) {
         setSelectedFilters(filters);
@@ -35863,10 +35867,6 @@ var InteractiveMap = function (_a) {
             }
             else {
                 clickOnMapMarkerIVol(feature, mapRef.current);
-                // TODO
-                // open dialog if user wants to create a new task
-                // if yes, redirect to Add Task page
-                // if no, close dialog and do nothing
             }
         });
     };
@@ -35875,7 +35875,7 @@ var InteractiveMap = function (_a) {
             var value = void 0;
             for (var i_1 = 0; i_1 < data.length; i_1++) {
                 if (data[i_1].iso === selectedLocation.getId()) {
-                    value = data[i_1].apdex;
+                    value = data[i_1][selectedMetric];
                     break;
                 }
             }
@@ -35955,7 +35955,7 @@ var InteractiveMap = function (_a) {
     // because it thinks the filter array is still empty (as it was during initialization)
     if (mapRef.current !== undefined) {
         mapRef.current.on('click', handleMapClick);
-        setIconMarkers(isIVolunteer, mapRef.current, zoom, selectedMetric);
+        setIconMarkers(isIVolunteer, mapRef.current, zoom, selectedMetric, selectedFilters);
     }
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         // potentially deselect country if filter has been removed
@@ -36049,13 +36049,13 @@ var checkForExistingCountryFilter = function (filters) {
     }
     return filterExists;
 };
-var setIconMarkers = function (isIVolunteer, map, zoom, selectedMetric) {
+var setIconMarkers = function (isIVolunteer, map, zoom, selectedMetric, selectedFilters) {
     var markerDataset = [];
     if (isIVolunteer) {
         map.getLayers().getArray()
             .filter(function (layer) { return layer.get('name') === 'LocationMarker'; })
             .forEach(function (layer) { return map.removeLayer(layer); });
-        markerDataset = getDataSetForMarkers(isIVolunteer);
+        markerDataset = getDataSetForMarkers(isIVolunteer, selectedFilters);
         for (var i = 0; i < markerDataset.length; i++) {
             (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.addIconOverlay)(isIVolunteer, markerDataset[i], map, selectedMetric);
         }
@@ -36065,17 +36065,41 @@ var setIconMarkers = function (isIVolunteer, map, zoom, selectedMetric) {
             .filter(function (layer) { return layer.get('name') === 'LocationMarker'; })
             .forEach(function (layer) { return map.removeLayer(layer); });
         if (zoom >= _utils__WEBPACK_IMPORTED_MODULE_3__.ZoomLevel.COUNTRY) {
-            markerDataset = getDataSetForMarkers(isIVolunteer);
+            markerDataset = getDataSetForMarkers(isIVolunteer, selectedFilters);
             for (var i = 0; i < markerDataset.length; i++) {
                 (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.addIconOverlay)(isIVolunteer, markerDataset[i], map, selectedMetric);
             }
         }
     }
 };
-var getDataSetForMarkers = function (isIVolunteer) {
-    // TODO add filter to restrict the shown icons on map
+var getDataSetForMarkers = function (isIVolunteer, selectedFilters) {
     if (isIVolunteer) {
-        return _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"];
+        var filteredDataset = [];
+        for (var i = 0; i < selectedFilters.length; i++) {
+            var filter = selectedFilters[i];
+            for (var j = 0; j < _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"].length; j++) {
+                var curElement = _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"][j];
+                var filterType = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.getFilterType)(filter.key);
+                switch (filterType) {
+                    case _utils__WEBPACK_IMPORTED_MODULE_3__.FilterType.TEXT: {
+                        if (curElement[filter.key].includes(filter.value)) {
+                            filteredDataset.push(curElement);
+                        }
+                        continue;
+                    }
+                    case _utils__WEBPACK_IMPORTED_MODULE_3__.FilterType.DATE: {
+                        var filterFrom = new Date(filter.value[0]);
+                        var filterTo = new Date(filter.value[1]);
+                        var curElementDate = new Date(curElement[filter.key]);
+                        if (filterFrom <= curElementDate && curElementDate <= filterTo) {
+                            filteredDataset.push(curElement);
+                        }
+                        continue;
+                    }
+                }
+            }
+        }
+        return selectedFilters.length > 0 ? filteredDataset : _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"];
     }
     else {
         var citiesDataset = [];
@@ -36243,7 +36267,7 @@ var Table = function (_a) {
     var data = _a.data, selectedMetric = _a.selectedMetric, isIVolunteer = _a.isIVolunteer;
     rowsPerPage = isIVolunteer ? 4 : 5;
     var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1), page = _b[0], setPage = _b[1];
-    var _c = useTable(__spreadArray([], data, true), page), dataOnPage = _c.dataOnPage, tableRange = _c.tableRange;
+    var _c = useTable(data, page), dataOnPage = _c.dataOnPage, tableRange = _c.tableRange;
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, data.length > 0
         ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(TableContent, { dataOnPage: dataOnPage, selectedMetric: selectedMetric, isIVolunteer: isIVolunteer }),
@@ -36404,14 +36428,9 @@ var __extends = (undefined && undefined.__extends) || (function () {
 
 
 
-// TODO Map:
-// - wenn Region/City gesetzt sind, soll country eingefärbt werden (bzw filter gesetzt, vl färbt sich das country dann von selber ein)
 // TODO Filterbar:
 // - Country/Region/City suggestions sind leer beim 2. Mal auswählen (Datenbank kommt schon leer rein wtf)
 //      - Fehler in FilterBar.adjustSuggestionsDt() beim suggestions reduzieren, not sure what's the problem tho
-// - Filter Suggestions -> type in letters to find suggestions
-// TODO Table:
-// - find out why there is an endless render loop
 var DynatraceWorldmapApp = /** @class */ (function (_super) {
     __extends(DynatraceWorldmapApp, _super);
     function DynatraceWorldmapApp(props) {
@@ -36497,8 +36516,9 @@ var DynatraceWorldmapApp = /** @class */ (function (_super) {
         };
         var zoomLevelCallback = function (value) {
             _this.currentZoomLevel = value;
-            _this.datasetPrimary = _this.prepareTableData(_data_dt_database__WEBPACK_IMPORTED_MODULE_6__["default"], _this.currentZoomLevel).datasetPrimary;
-            _this.datasetSecondary = _this.prepareTableData(_data_dt_database__WEBPACK_IMPORTED_MODULE_6__["default"], _this.currentZoomLevel).datasetSecondary;
+            var filteredData = _this.filterData();
+            _this.datasetPrimary = _this.prepareTableData(filteredData, _this.currentZoomLevel).datasetPrimary;
+            _this.datasetSecondary = _this.prepareTableData(filteredData, _this.currentZoomLevel).datasetSecondary;
             primaryTable.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_table_Table__WEBPACK_IMPORTED_MODULE_5__["default"], { data: _this.datasetPrimary, selectedMetric: _this.selectedMetric, isIVolunteer: false }));
             secondaryTable.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_table_Table__WEBPACK_IMPORTED_MODULE_5__["default"], { data: _this.datasetSecondary, selectedMetric: _this.selectedMetric, isIVolunteer: false }));
         };
@@ -36551,7 +36571,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "getUrlParameter": () => (/* binding */ getUrlParameter)
 /* harmony export */ });
 /* harmony import */ var ol_ol_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/ol.css */ "./node_modules/ol/ol.css");
-/* harmony import */ var _data_ivol_database__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data/ivol_database */ "./src/customCode/data/ivol_database.ts");
+/* harmony import */ var _data_dt_filters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data/dt_filters */ "./src/customCode/data/dt_filters.ts");
+/* harmony import */ var _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data/ivol_database */ "./src/customCode/data/ivol_database.ts");
+/* harmony import */ var _data_ivol_filters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./data/ivol_filters */ "./src/customCode/data/ivol_filters.ts");
+
+
 
 
 // ---------------------------------------------------------------------
@@ -36584,20 +36608,20 @@ var FilterType;
 (function (FilterType) {
     FilterType["TEXT"] = "text";
     FilterType["RANGE"] = "range";
+    FilterType["DATE"] = "date";
 })(FilterType || (FilterType = {}));
 var getFilterType = function (filterName) {
-    switch (filterName) {
-        case 'apdex':
-        case 'taskid':
-            return FilterType.RANGE;
-        case 'continents':
-        case 'countries':
-        case 'regions':
-        case 'cities':
-        case 'friend':
-        case 'responsible':
-        default:
-            return FilterType.TEXT;
+    // check iVolunteer filter database
+    for (var filter in _data_ivol_filters__WEBPACK_IMPORTED_MODULE_3__["default"][0]) {
+        if (filter === filterName) {
+            return _data_ivol_filters__WEBPACK_IMPORTED_MODULE_3__["default"][0][filter].filterType;
+        }
+    }
+    // check Dynatrace filter database
+    for (var filter in _data_dt_filters__WEBPACK_IMPORTED_MODULE_1__["default"][0]) {
+        if (filter === filterName) {
+            return _data_dt_filters__WEBPACK_IMPORTED_MODULE_1__["default"][0][filter].filterType;
+        }
     }
 };
 // ---------------------------------------------------------------------
@@ -36645,9 +36669,9 @@ function groupValuesPerLocation(data, locationKey) {
 }
 function getDataFromTaskId(taskId) {
     var taskIdNumber = Number(taskId);
-    for (var i = 0; i < _data_ivol_database__WEBPACK_IMPORTED_MODULE_1__["default"].length; i++) {
-        if (_data_ivol_database__WEBPACK_IMPORTED_MODULE_1__["default"][i].taskid === taskIdNumber) {
-            return _data_ivol_database__WEBPACK_IMPORTED_MODULE_1__["default"][i];
+    for (var i = 0; i < _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"].length; i++) {
+        if (_data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"][i].taskid === taskIdNumber) {
+            return _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"][i];
         }
     }
     return;
