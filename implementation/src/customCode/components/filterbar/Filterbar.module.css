@@ -110,8 +110,6 @@
 }
 
 .suggestionRangeValuesPanel {
-    width: 160px;
-    height: 94px;
     padding: 12px;
     text-align: right;
     overflow-y: scroll;
@@ -120,10 +118,24 @@
     background-color: white;
 }
 
+.suggestionRangeValuesPanelIVol {
+    width: 172px;
+    height: 96px;
+}
+
+.suggestionRangeValuesPanelDt {
+    width: 138px;
+    height: 94px;
+}
+
 .suggestionRangeFilterLine {
     display: flex;
     text-align: left;
     padding-top: 8px;
+}
+
+.suggestionRangeFilterLine :nth-child(2) {
+    align-items:flex-end;
 }
 
 .suggestionRangeValueLabel {
@@ -131,8 +143,12 @@
     width: 60px;
 }
 
-.suggestionRangeValueInput {
-    width: 100px;
+.suggestionRangeValueInputDt {
+    width: 70px;
+}
+
+.suggestionRangeValueInputIVol {
+    width: 140px;
 }
 
 .suggestionRangeBtn {

@@ -1,8 +1,5 @@
 export default [ 
     {
-        "taskid": {
-            "filterType": "range"
-        },
         "friend": {
             "filterType": "text",
             "properties": {
@@ -23,6 +20,9 @@ export default [
                 "PF": "Pfadfinderclub Linz",
                 "AP": "Altenpflegeverein Kärnten"
             }
+        },
+        "date": {
+            "filterType": "date"
         }
         // "location": {
         //     "Wien": {

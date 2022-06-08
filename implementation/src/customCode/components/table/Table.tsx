@@ -28,7 +28,7 @@ const Table: React.FC<TableProps> = ( { data, selectedMetric, isIVolunteer } ) =
   rowsPerPage = isIVolunteer ? 4 : 5;
 
   const [page, setPage] = useState(1);
-  const { dataOnPage, tableRange } = useTable([...data], page);
+  const { dataOnPage, tableRange } = useTable(data, page);
   
   return (
     <>

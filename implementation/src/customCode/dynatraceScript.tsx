@@ -7,16 +7,9 @@ import Table from './components/table/Table';
 import data from './data/dt_database';
 import { FilterType, getFilterType, groupValuesPerLocation, ZoomLevel } from './utils';
 
-// TODO Map:
-// - wenn Region/City gesetzt sind, soll country eingefärbt werden (bzw filter gesetzt, vl färbt sich das country dann von selber ein)
-
 // TODO Filterbar:
 // - Country/Region/City suggestions sind leer beim 2. Mal auswählen (Datenbank kommt schon leer rein wtf)
 //      - Fehler in FilterBar.adjustSuggestionsDt() beim suggestions reduzieren, not sure what's the problem tho
-// - Filter Suggestions -> type in letters to find suggestions
-
-// TODO Table:
-// - find out why there is an endless render loop
 
 class DynatraceWorldmapApp extends Component {
     // test data (coordinates of Linz)
@@ -72,8 +65,9 @@ class DynatraceWorldmapApp extends Component {
 
         const zoomLevelCallback = (value) => {
             this.currentZoomLevel = value;
-            this.datasetPrimary = this.prepareTableData(data, this.currentZoomLevel).datasetPrimary;
-            this.datasetSecondary = this.prepareTableData(data, this.currentZoomLevel).datasetSecondary;
+            let filteredData = this.filterData();
+            this.datasetPrimary = this.prepareTableData(filteredData, this.currentZoomLevel).datasetPrimary;
+            this.datasetSecondary = this.prepareTableData(filteredData, this.currentZoomLevel).datasetSecondary;
 
             primaryTable.render(React.createElement(Table, {data: this.datasetPrimary, selectedMetric: this.selectedMetric, isIVolunteer: false }));
             secondaryTable.render(React.createElement(Table, {data: this.datasetSecondary, selectedMetric: this.selectedMetric, isIVolunteer: false}));

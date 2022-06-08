@@ -90,8 +90,8 @@ const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setSho
     const dtMax = 1;
     const dtStep = 0.05;
 
-    const iVolDefaultFrom = 10000; // also used as min value
-    const iVolDefaultTo = 99999; // also used as max value
+    const iVolDefaultFrom = '2022-07-01';
+    const iVolDefaultTo = '2022-08-31';
     const iVolStep = 1;
 
     return (
@@ -110,11 +110,11 @@ const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setSho
                         </div>
                     :   <div className={styles.suggestionsRangePanel}>
                             <div className={styles.suggestionFiltername}>{filterKey}:</div> 
-                            <div className={styles.suggestionRangeValuesPanel}>
+                            <div className={`${styles.suggestionRangeValuesPanel} ${isIVolunteer ? styles.suggestionRangeValuesPanelIVol : styles.suggestionRangeValuesPanelDt}`}>
                                 <div className={styles.suggestionRangeFilterLine}>
                                     <div className={styles.suggestionRangeValueLabel}>From:</div>
-                                    <input className={styles.suggestionRangeValueInput} 
-                                            type='number' id='rangeFrom' 
+                                    <input className={isIVolunteer ? styles.suggestionRangeValueInputIVol : styles.suggestionRangeValueInputDt} 
+                                            type={isIVolunteer ? 'date' : 'number'} id='rangeFrom' 
                                             min={isIVolunteer ? iVolDefaultFrom : dtMin} 
                                             max={isIVolunteer ? iVolDefaultTo : dtMax} 
                                             step={isIVolunteer ? iVolStep : dtStep} 
@@ -124,8 +124,8 @@ const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setSho
                                 </div>
                                 <div className={styles.suggestionRangeFilterLine}>
                                     <div className={styles.suggestionRangeValueLabel}>To:</div>
-                                    <input className={styles.suggestionRangeValueInput} 
-                                            type='number' id='rangeTo' 
+                                    <input className={isIVolunteer ? styles.suggestionRangeValueInputIVol : styles.suggestionRangeValueInputDt} 
+                                            type={isIVolunteer ? 'date' : 'number'} id='rangeTo' 
                                             min={isIVolunteer ? iVolDefaultFrom : dtMin} 
                                             max={isIVolunteer ? iVolDefaultTo : dtMax} 
                                             step={isIVolunteer ? iVolStep : dtStep} 

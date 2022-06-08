@@ -10,12 +10,7 @@ import { FilterType, getFilterType } from './utils';
 
 // TODO
 // Map:
-// - Overlay / Pins for Locations
-// - click on Map lets you create new task -> link to "add task"-page with prefilled location
-// - max/min Zoom, mehr als Ö ist für iVol nicht relevant, drum brauchma a ned viel weiter rauszoomen können
-//
-// Table:
-// - link to task-details page
+// - click on "Add Task"-Btn lets you create new task -> link to "add task"-page with prefilled location
 
 class IVolunteerWorldmapApp extends Component {
   // test data (coordinates of Linz)
@@ -113,7 +108,18 @@ class IVolunteerWorldmapApp extends Component {
                     filteredDataPerCycle.push(dataSet[j]);
                 }
             }
+        } else if (curFilterType === FilterType.DATE) {
+          for (let j = 0; j < dataSet.length; j++) {
+            let dataElement = new Date(dataSet[j][curFilterKey]);
+
+            let filterFrom = new Date(curFilterValue[0]);
+            let filterTo = new Date(curFilterValue[1]);
+            if (filterFrom <= dataElement && dataElement <= filterTo) {
+                filteredDataPerCycle.push(dataSet[j]);
+            }
         }
+        }
+
         filteredData = filteredDataPerCycle;
     }
     

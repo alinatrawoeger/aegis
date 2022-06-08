@@ -15,7 +15,7 @@ import { Fill, Icon, Stroke, Style } from "ol/style";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import dataDt from "../../data/dt_database";
 import dataIVol from "../../data/ivol_database";
-import { Apdex, getDataFromTaskId, groupValuesPerLocation, UrgencyDays, ZoomLevel } from "../../utils";
+import { Apdex, FilterType, getDataFromTaskId, getFilterType, groupValuesPerLocation, UrgencyDays, ZoomLevel } from "../../utils";
 import styles from "./Map.module.css";
 import markerRed from "./img/marker-red.png";
 import markerYellow from "./img/marker-yellow.png";
@@ -159,6 +159,8 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
         
             setSelectedFilters(value);
             onChangeFilters(value);
+
+            setIconMarkers(isIVolunteer, mapRef.current, zoom, selectedMetric, value);
         },
         [selectedFilters, onChangeFilters]
     );
@@ -227,11 +229,6 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
                 updateFilterCallback(currentFilters);
             } else {
                 clickOnMapMarkerIVol(feature, mapRef.current);
-
-                // TODO
-                // open dialog if user wants to create a new task
-                // if yes, redirect to Add Task page
-                // if no, close dialog and do nothing
             }
         });
     }
@@ -241,7 +238,7 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
             let value;
             for (let i = 0; i < data.length; i++) {
                 if (data[i].iso === selectedLocation.getId()) {
-                    value = data[i].apdex;
+                    value = data[i][selectedMetric];
                     break;
                 }
             }
@@ -331,7 +328,7 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
 // because it thinks the filter array is still empty (as it was during initialization)
     if (mapRef.current !== undefined) {
         mapRef.current.on('click', handleMapClick);
-        setIconMarkers(isIVolunteer, mapRef.current, zoom, selectedMetric); 
+        setIconMarkers(isIVolunteer, mapRef.current, zoom, selectedMetric, selectedFilters); 
     }    
 
     useEffect( () => {
@@ -421,14 +418,14 @@ const checkForExistingCountryFilter = (filters) => {
     return filterExists;
 }
 
-const setIconMarkers = (isIVolunteer: boolean, map: Map, zoom: number, selectedMetric: string) => {
+const setIconMarkers = (isIVolunteer: boolean, map: Map, zoom: number, selectedMetric: string, selectedFilters: any[]) => {
     let markerDataset = [];
     if (isIVolunteer) {
         map.getLayers().getArray()
                 .filter(layer => layer.get('name') === 'LocationMarker')
                 .forEach(layer => map.removeLayer(layer));
 
-        markerDataset = getDataSetForMarkers(isIVolunteer);
+        markerDataset = getDataSetForMarkers(isIVolunteer, selectedFilters);
         for (let i = 0; i < markerDataset.length; i++) {
             addIconOverlay(isIVolunteer, markerDataset[i], map, selectedMetric);
         }
@@ -439,7 +436,7 @@ const setIconMarkers = (isIVolunteer: boolean, map: Map, zoom: number, selectedM
 
 
         if (zoom >= ZoomLevel.COUNTRY) {
-            markerDataset = getDataSetForMarkers(isIVolunteer);
+            markerDataset = getDataSetForMarkers(isIVolunteer, selectedFilters);
             for (let i = 0; i < markerDataset.length; i++) {
                 addIconOverlay(isIVolunteer, markerDataset[i], map, selectedMetric);
             }
@@ -447,10 +444,37 @@ const setIconMarkers = (isIVolunteer: boolean, map: Map, zoom: number, selectedM
     }
 }
 
-const getDataSetForMarkers = (isIVolunteer: boolean) => {
-    // TODO add filter to restrict the shown icons on map
+const getDataSetForMarkers = (isIVolunteer: boolean, selectedFilters?: any[]) => {
     if (isIVolunteer) {
-        return dataIVol;
+        let filteredDataset = [];
+        for (let i = 0; i < selectedFilters.length; i++) {
+            let filter = selectedFilters[i];
+            for (let j = 0; j < dataIVol.length; j++) {
+                let curElement = dataIVol[j];
+
+                let filterType = getFilterType(filter.key);
+                switch(filterType) {
+                    case FilterType.TEXT: {
+                        if (curElement[filter.key].includes(filter.value)) {
+                            filteredDataset.push(curElement);
+                        }
+                        continue;
+                    }
+                    case FilterType.DATE: {
+                        let filterFrom = new Date(filter.value[0]);
+                        let filterTo = new Date(filter.value[1]);
+
+                        let curElementDate = new Date(curElement[filter.key]);
+                        if (filterFrom <= curElementDate && curElementDate <= filterTo) {
+                            filteredDataset.push(curElement);
+                        }
+                        continue;
+                    } 
+                }
+                
+            }
+        }
+        return selectedFilters.length > 0 ? filteredDataset : dataIVol;
     } else {
         let citiesDataset = [];
         for (let i = 0; i < dataDt.length; i++) {

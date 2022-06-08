@@ -22,6 +22,19 @@
   height: 150px;
 }
 
+.tableDt th:first-child, .table td:first-child {
+  flex: 0 0 45% !important;
+}
+
+.tableIvol th:first-child, .table td:first-child {
+  flex: 0 0 50% !important;
+}
+
+.table th:last-child, .table td:last-child {
+  flex: 0 0 10%;
+  text-align: right;
+}
+
 .table > thead, .table > tbody {
     display: block;
 }
@@ -44,16 +57,6 @@
 
 .tableLastCol {
   text-align: center !important;
-}
-
-.table th:first-child, .table td:first-child {
-  flex: 0 0 50% !important;
-}
-
-
-.table th:last-child, .table td:last-child {
-    flex: 0 0 10%;
-    text-align: right;
 }
 
 .tableCell {

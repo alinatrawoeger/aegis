@@ -1,12 +1,7 @@
-import { Map as OLMap, View } from 'ol';
-import { defaults as defaultControls } from 'ol/control';
-import OverviewMap from 'ol/control/OverviewMap';
-import { defaults, DragRotateAndZoom } from 'ol/interaction';
-import TileLayer from 'ol/layer/Tile';
 import 'ol/ol.css';
-import { fromLonLat } from 'ol/proj';
-import OSM from 'ol/source/OSM';
+import dtFilters from './data/dt_filters';
 import dataIVol from './data/ivol_database';
+import iVolFilters from './data/ivol_filters';
 
 // ---------------------------------------------------------------------
 
@@ -37,22 +32,23 @@ export enum Apdex {
 
 export enum FilterType {
     TEXT = 'text',
-    RANGE = 'range'
+    RANGE = 'range',
+    DATE = 'date'
 }
 
 export const getFilterType = (filterName: any) => {
-    switch(filterName) {
-        case 'apdex':
-        case 'taskid':
-            return FilterType.RANGE;
-        case 'continents':
-        case 'countries':
-        case 'regions':
-        case 'cities':
-        case 'friend':
-        case 'responsible':
-        default:
-            return FilterType.TEXT;
+    // check iVolunteer filter database
+    for (let filter in iVolFilters[0]) {
+        if (filter === filterName) {
+            return iVolFilters[0][filter].filterType;
+        }
+    }
+
+    // check Dynatrace filter database
+    for (let filter in dtFilters[0]) {
+        if (filter === filterName) {
+            return dtFilters[0][filter].filterType;
+        }
     }
 }
 
