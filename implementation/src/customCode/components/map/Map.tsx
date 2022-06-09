@@ -1,25 +1,14 @@
-import { Feature, Map, Map as OLMap, View } from 'ol';
-import { defaults as defaultControls } from 'ol/control';
-import OverviewMap from 'ol/control/OverviewMap';
+import { Feature, Map, Map as OLMap } from 'ol';
 import GeoJSON from 'ol/format/GeoJSON';
 import Geometry from "ol/geom/Geometry";
-import Point from 'ol/geom/Point';
-import { defaults, DragRotateAndZoom } from 'ol/interaction';
-import TileLayer from 'ol/layer/Tile';
 import VectorLayer from "ol/layer/Vector";
-import { fromLonLat, transform } from 'ol/proj';
-import OSM from 'ol/source/OSM';
-import VectorSource from 'ol/source/Vector';
 import VectorSrc from 'ol/source/Vector';
-import { Fill, Icon, Stroke, Style } from "ol/style";
+import { Fill, Stroke, Style } from "ol/style";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import dataDt from "../../data/dt_database";
 import dataIVol from "../../data/ivol_database";
 import { Apdex, FilterType, getDataFromTaskId, getFilterType, groupValuesPerLocation, UrgencyDays, ZoomLevel } from "../../utils";
 import styles from "./Map.module.css";
-import markerRed from "./img/marker-red.png";
-import markerYellow from "./img/marker-yellow.png";
-import markerGreen from "./img/marker-green.png";
 import { addIconOverlay, createMap } from './MapUtils';
 
 // test data (coordinates of the center of Austria)
@@ -117,7 +106,6 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
     let [ hoveredLocation, setHoveredLocation ] = useState<Feature<Geometry> | undefined>();
     let [ selectedFilters, setSelectedFilters ] = useState(filters);
     const [ zoom, setZoom ] = useState<ZoomLevel>();
-    const [ selectedCoordinates , setSelectedCoordinates ] = useState()
 
     const mapElement = useRef();
     const mapRef = useRef<OLMap>(); // map object for later use
@@ -160,7 +148,7 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
             setSelectedFilters(value);
             onChangeFilters(value);
 
-            setIconMarkers(isIVolunteer, mapRef.current, zoom, selectedMetric, value);
+            setIconMarkers(isIVolunteer, mapRef.current, zoom, selectedMetric, value);                
         },
         [selectedFilters, onChangeFilters]
     );
@@ -251,35 +239,35 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
             // add tooltip information
             const tooltipTitle = document.getElementById('tooltipTitle');
             if (tooltipTitle) {
-                if (selectedLocation) {
+                if (selectedLocation && !isIVolunteer) {
                     tooltipTitle.innerHTML = selectedLocation.get('name');
 
                     // Show Dynatrace-related information
-                    if (!isIVolunteer) {
-                        let values = groupValuesPerLocation(data, 'iso');
-                        let valueFound = false;
-                        for (var i = 0; i < values.length; i++) {
-                            let curElement = values[i];
-                            if (curElement['iso'] == selectedLocation.getId()) {
-                                $('#tooltip_apdex').text(curElement['apdex']);
-                                $('#tooltip_useractions').text(curElement['useractions'] + '/min');
-                                $('#tooltip_errors').text(curElement['errors'] + '/min');
-                                $('#tooltip_loadactions').text(curElement['loadactions']);
-                                $('#tooltip_totaluseractions').text(curElement['totaluseractions']);
-                                $('#tooltip_affecteduseractions').text(curElement['affecteduseractions'] + ' %');
-                                valueFound = true;
-                                break;
-                            }
-                        }
-                        if (!valueFound) {
-                            $('#tooltip_apdex').text('?');
-                            $('#tooltip_useractions').text('?');
-                            $('#tooltip_errors').text('?');
-                            $('#tooltip_loadactions').text('?');
-                            $('#tooltip_totaluseractions').text('?');
-                            $('#tooltip_affecteduseractions').text('?');
+                    let values = groupValuesPerLocation(data, 'iso');
+                    let valueFound = false;
+                    for (var i = 0; i < values.length; i++) {
+                        let curElement = values[i];
+                        if (curElement['iso'] == selectedLocation.getId()) {
+                            $('#tooltip_apdex').text(curElement['apdex']);
+                            $('#tooltip_useractions').text(curElement['useractions'] + '/min');
+                            $('#tooltip_errors').text(curElement['errors'] + '/min');
+                            $('#tooltip_loadactions').text(curElement['loadactions']);
+                            $('#tooltip_totaluseractions').text(curElement['totaluseractions']);
+                            $('#tooltip_affecteduseractions').text(curElement['affecteduseractions'] + ' %');
+                            valueFound = true;
+                            break;
                         }
                     }
+                    if (!valueFound) {
+                        $('#tooltip_apdex').text('?');
+                        $('#tooltip_useractions').text('?');
+                        $('#tooltip_errors').text('?');
+                        $('#tooltip_loadactions').text('?');
+                        $('#tooltip_totaluseractions').text('?');
+                        $('#tooltip_affecteduseractions').text('?');
+                    }
+
+                    showTooltip(selectedFilters);
                 } else {
                     tooltipTitle.innerHTML = '&nbsp;';
                 }
@@ -533,6 +521,16 @@ const clickOnMapMarkerIVol = (feature: any, map: Map) => {
             }
         }
     }
+}
+
+const showTooltip = (selectedFilters: any) => {
+    for (let i = 0; i < selectedFilters.length; i++) {
+        if (selectedFilters[i].key === 'country') {
+            $('#tooltip-panel').show();
+            return;
+        }
+    }
+    $('#tooltip-panel').hide();
 }
 
 export default InteractiveMap;

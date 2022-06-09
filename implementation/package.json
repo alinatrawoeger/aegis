@@ -10,14 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/alina_trawoeger/worldmap.git"
+    "url": "https://github.com/alinatrawoeger/worldmap.git"
   },
   "author": "atra",
   "license": "ISC",
-  "bugs": {
-    "url": "https://bitbucket.org/alina_trawoeger/worldmap/issues"
-  },
-  "homepage": "https://bitbucket.org/alina_trawoeger/worldmap#readme",
+  "homepage": "https://github.com/alinatrawoeger/worldmap",
   "devDependencies": {
     "@types/jquery": "^3.5.14",
     "@types/react": "^18.0.2",
