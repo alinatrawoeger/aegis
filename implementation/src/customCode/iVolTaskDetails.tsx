@@ -1,7 +1,6 @@
-import React from "react";
-import { Component } from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom/client";
-import InteractiveMap from "./components/map/Map";
+import { getDateString } from "./components/map/MapUtils";
 import StaticMap from "./components/map/StaticMap";
 import { getDataFromTaskId, getUrlParameter } from './utils';
 
@@ -17,11 +16,11 @@ class TaskDetailsApp extends Component {
 
             if (data !== undefined) {
                 // set data into fields
-                let date = new Date(data.date);
+                let { dateString } = getDateString(data.date);
 
                 $('#taskdetails-title').text(data.taskname);
                 $('#taskdetails-description').text(data.description);
-                $('#taskdetails-date').text(date.toLocaleDateString() + ', ' + date.toLocaleTimeString());
+                $('#taskdetails-date').text(dateString);
                 $('#taskdetails-address').text(data.address.zip + ' ' + data.address.city + ', ' + data.address.street);
             }
 

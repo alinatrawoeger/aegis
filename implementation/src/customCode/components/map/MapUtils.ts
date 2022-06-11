@@ -16,6 +16,10 @@ import markerGreen from "./img/marker-green.png";
 import markerRed from "./img/marker-red.png";
 import markerYellow from "./img/marker-yellow.png";
 
+// test data (coordinates of the center of Austria)
+export const defaultLongitude = 14.12456;
+export const defaultLatitude = 47.59397;
+
 export const createMap = (target: string, zoom: ZoomLevel, lon: number, lat: number, isIVolunteer: boolean, overlayLayer?: VectorLayer<VectorSource<Geometry>>) => {
     var mapLayer = new TileLayer({
         source: new OSM()
@@ -55,6 +59,7 @@ export const createMap = (target: string, zoom: ZoomLevel, lon: number, lat: num
         });     
     }
 }
+
 export const addIconOverlay = (isIVolunteer: boolean, markerData: any, map: Map, selectedMetric: string) => {
     let { longitude, latitude } = isIVolunteer ?  getCoordinatesForCityIVol(markerData) : getCoordinatesForCityDt(markerData.city);
     
@@ -72,40 +77,49 @@ export const addIconOverlay = (isIVolunteer: boolean, markerData: any, map: Map,
     }
 
     if (iconSource != '') {
-        const iconFeature = new Feature({
-            geometry: new Point(transform([longitude, latitude], 'EPSG:4326', 'EPSG:3857')),
-            name: 'LocationMarkerFeature',
-            population: 4000,
-            rainfall: 500,
-          });
-          if (isIVolunteer) {
-            iconFeature.set('taskid', markerData.taskid);
-        }
-          
-          const iconStyle = new Style({
-            image: new Icon({
-              anchor: [0.5, 20],
-              anchorXUnits: 'fraction',
-              anchorYUnits: 'pixels',
-              src: iconSource
-            }),
-          });
-          iconFeature.setStyle(iconStyle);
-          
-          const vectorSource = new VectorSource({
-            features: [iconFeature],
-          });
-          
-          
-          const iconVectorLayer = new VectorLayer({
-            source: vectorSource,
-            properties: {
-                name: 'LocationMarker'
-            }
-          });
-    
-          map.addLayer(iconVectorLayer);       
+        let markerId = isIVolunteer ? markerData.taskid : undefined;
+        setIconMarker(longitude, latitude, map, markerId, iconSource);
     }
+}
+
+export const setIconMarker = (lon: number, lat: number, map: Map, markerId?: string, iconSource?: any) => {
+    const iconFeature = new Feature({
+        geometry: new Point(transform([lon, lat], 'EPSG:4326', 'EPSG:3857')),
+        name: 'LocationMarkerFeature',
+        population: 4000,
+        rainfall: 500,
+      });
+      if (markerId !== undefined) {
+        iconFeature.set('taskid', markerId);
+      }
+      
+
+      if (iconSource === undefined) {
+          iconSource = markerRed;
+      }
+      const iconStyle = new Style({
+        image: new Icon({
+          anchor: [0.5, 20],
+          anchorXUnits: 'fraction',
+          anchorYUnits: 'pixels',
+          src: iconSource
+        }),
+      });
+      iconFeature.setStyle(iconStyle);
+      
+      const vectorSource = new VectorSource({
+        features: [iconFeature],
+      });
+      
+      
+      const iconVectorLayer = new VectorLayer({
+        source: vectorSource,
+        properties: {
+            name: 'LocationMarker'
+        }
+      });
+
+      map.addLayer(iconVectorLayer);
 }
 
 const getCoordinatesForCityIVol = (markerData: any) => {
@@ -132,4 +146,17 @@ const getCoordinatesForCityDt = (cityName: string) => {
         }
     }
     return { longitude, latitude };
+}
+
+export const getDateString = (date) => {
+    let dateFrom = new Date(date.from);
+    let dateTo;
+    if (date.to !== '') {
+        dateTo = new Date(date.to);
+    }
+
+    let dateString = dateFrom.toLocaleDateString() + ', ' + dateFrom.toLocaleTimeString();
+    dateString += dateTo !== undefined ? ' bis ' + dateTo.toLocaleDateString() + ', ' + dateTo.toLocaleTimeString() : "";
+
+    return { dateFrom, dateTo, dateString };
 }

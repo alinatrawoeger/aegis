@@ -9,11 +9,7 @@ import dataDt from "../../data/dt_database";
 import dataIVol from "../../data/ivol_database";
 import { Apdex, FilterType, getDataFromTaskId, getFilterType, groupValuesPerLocation, UrgencyDays, ZoomLevel } from "../../utils";
 import styles from "./Map.module.css";
-import { addIconOverlay, createMap } from './MapUtils';
-
-// test data (coordinates of the center of Austria)
-const longitude = 14.12456;
-const latitude = 47.59397;
+import { addIconOverlay, createMap, defaultLatitude, defaultLongitude, getDateString } from './MapUtils';
 
 let overlayColorMap = {
     'apdex': {
@@ -128,7 +124,7 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
             source: overlaySource
         });
         // create map
-        const initialMap: OLMap = createMap(mapElement.current, 6, longitude, latitude, isIVolunteer, overlayLayer);
+        const initialMap: OLMap = createMap(mapElement.current, 6, defaultLongitude, defaultLatitude, isIVolunteer, overlayLayer);
 
         // set event handlers except click handler (will be set later)
         initialMap.on('pointermove', handleHover);
@@ -495,11 +491,11 @@ const clickOnMapMarkerIVol = (feature: any, map: Map) => {
                 $('#tooltip-city').text(data.address.zip + ' ' + data.address.city);
                 
                 // calculate priority based on date
-                const date = new Date(data.date);
-                $('#tooltip-date').text(date.toLocaleDateString());
+                let { dateFrom } = getDateString(data.date);
+                $('#tooltip-date').text(dateFrom.toLocaleString());
                 
                 let currentDate = new Date().getTime();
-                const diffTime = Math.abs(currentDate - date.getTime());
+                const diffTime = Math.abs(currentDate - dateFrom.getTime());
                 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
                 let priority;
                 if (diffDays <= UrgencyDays.SEVERE) {
@@ -507,7 +503,7 @@ const clickOnMapMarkerIVol = (feature: any, map: Map) => {
                 } else if (diffDays <= UrgencyDays.HIGH) {
                     priority = 'high';
                 } else if (diffDays <= UrgencyDays.MEDIUM) {
-                    priority = 'medium;'
+                    priority = 'medium'
                 } else {
                     priority = 'low';
                 }

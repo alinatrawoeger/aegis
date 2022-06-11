@@ -44,8 +44,12 @@
       $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
       $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
     </script>
+
+    <link   type="text/css"  href="../styles/ivolunteerStyle.css" rel="stylesheet">
   </head>
   <body>
+    <div id="addtask"></div>
+
     <div id="base" class="">
 
       <!-- menubar-panel (Group) -->
@@ -60,7 +64,6 @@
         </div>
 
         <!-- home-btn (Group) -->
-        <a href="#">
           <div id="u392" class="ax_default" data-label="home-btn" data-left="160" data-top="787" data-width="53" data-height="65">
 
             <!-- Home (SVG) -->
@@ -79,10 +82,8 @@
               </div>
             </div>
           </div>
-        </a>
 
         <!-- task-btn (Group) -->
-        <a href="#">
           <div id="u395" class="ax_default" data-label="task-btn" data-left="278" data-top="787" data-width="60" data-height="65">
 
             <!-- Aufgaben (SVG) -->
@@ -101,10 +102,8 @@
               </div>
             </div>
           </div>
-        </a>
 
         <!-- goals-btn (Group) -->
-        <a href="#">
           <div id="u398" class="ax_default" data-label="goals-btn" data-left="400" data-top="787" data-width="53" data-height="65">
 
             <!-- Ziele (SVG) -->
@@ -123,10 +122,8 @@
               </div>
             </div>
           </div>
-        </a>
 
         <!-- network-btn (Group) -->
-        <a href="#">
           <div id="u401" class="ax_default" data-label="network-btn" data-left="523" data-top="787" data-width="58" data-height="65">
   
             <!-- Netzwerk (SVG) -->
@@ -145,7 +142,6 @@
               </div>
             </div>
           </div>
-        </a>
       </div>
 
       <!-- localization-panel (Group) -->
@@ -168,23 +164,28 @@
                 </div>
 
                 <!-- street-txt (Text Field) -->
-                <div id="u408" class="ax_default text_field" data-label="street-txt">
-                  <div id="u408_div" class=""></div>
-                  <input id="u408_input" type="text" value="" class="u408_input"/>
+                <div id="street" class="ax_default text_field" data-label="street-txt">
+                  <div id="street_div" class=""></div>
+                  <input id="street_input" type="text" value="" class="street_input"/>
                 </div>
 
                 <!-- zip-txt (Text Field) -->
-                <div id="u409" class="ax_default text_field" data-label="zip-txt">
-                  <div id="u409_div" class=""></div>
-                  <input id="u409_input" type="text" value="(erforderlich)" class="u409_input"/>
+                <div id="zipcode" class="ax_default text_field" data-label="zip-txt">
+                  <div id="zipcode_div" class=""></div>
+                  <input id="zipcode_input" type="text" class="zipcode_input"/>
                 </div>
 
                 <!-- city-txt (Text Field) -->
-                <div id="u410" class="ax_default text_field" data-label="city-txt">
-                  <div id="u410_div" class=""></div>
-                  <input id="u410_input" type="text" value="" class="u410_input"/>
+                <div id="city" class="ax_default text_field" data-label="city-txt">
+                  <div id="city_div" class=""></div>
+                  <input id="city_input" type="text" value="" class="city_input"/>
                 </div>
               </div>
+              
+          <div id="requiredInfo">
+            <span class="requiredStar">*</span>
+            <span>Erforderlich</span>
+          </div>
             </div>
           </div>
           <div id="u405_state1" class="panel_state" data-label="map-choice-panel" style="visibility: hidden;">
@@ -194,8 +195,7 @@
               <div id="u411" class="ax_default" data-label="map-data-panel" data-left="1" data-top="20" data-width="477" data-height="278">
 
                 <!-- map (Inline Frame) -->
-                <div id="u412" class="ax_default" data-label="map">
-                  <iframe id="u412_input" data-label="map" scrolling="auto" frameborder="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                <div id="map_addtask">
                 </div>
               </div>
             </div>
@@ -265,19 +265,28 @@
         <!-- taskname-txt (Text Field) -->
         <div id="u422" class="ax_default text_field" data-label="taskname-txt">
           <div id="u422_div" class=""></div>
-          <input id="u422_input" type="text" value="(erforderlich)" class="u422_input"/>
+          <input id="u422_input" type="text" class="u422_input"/>
         </div>
 
         <!-- date-txt (Text Field) -->
         <div id="u423" class="ax_default text_field" data-label="date-txt">
           <div id="u423_div" class=""></div>
-          <input id="u423_input" type="date" value="(erforderlich)" class="u423_input"/>
+          <input id="u423_input" type="date" class="u423_input"/>
+        </div>
+
+        <div id="endDateLabel">
+          <span>Enddatum:
+        </div>
+        <!-- date-txt (Text Field) -->
+        <div id="dateEnd" class="ax_default text_field" data-label="date-txt">
+          <div id="endDateDiv"></div>
+          <input id="endDateInput" type="date" />
         </div>
 
         <!-- time-txt (Text Field) -->
         <div id="u424" class="ax_default text_field" data-label="time-txt">
           <div id="u424_div" class=""></div>
-          <input id="u424_input" type="time" value="(erforderlich)" class="u424_input"/>
+          <input id="u424_input" type="time" class="u424_input"/>
         </div>
 
         <!-- description-txt (Text Area) -->
@@ -330,7 +339,9 @@
           </div>
         </div>
       </div>
+      
     </div>
     <script src="resources/scripts/axure/ios.js"></script>
+    <script type="module" src="../iVolApp.bundle.js"></script>
   </body>
 </html>
