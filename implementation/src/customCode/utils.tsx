@@ -21,6 +21,18 @@ export enum UrgencyDays {
     LOW = 100
 }
 
+export enum PriorityLevels {
+    HIGH = 1,
+    MEDIUM = 2,
+    LOW = 3
+}
+
+export enum DurationLength {
+    SHORT = 1,
+    MEDIUM = 3,
+    LONG = 5
+}
+
 // scale for Apdex and also other DT metrics
 export enum Apdex {
     EXCELLENT = 1.00,
@@ -128,3 +140,79 @@ export function getUrlParameter(input: string) {
     return;
 };
 
+export function getFilteredIVolData(dataset, selectedFilters) {
+    let filteredData = [];
+    for (let i = 0; i < selectedFilters.length; i++) {
+        let curFilterKey = selectedFilters[i].key;
+        let curFilterValue = selectedFilters[i].value;
+        let curFilterType = getFilterType(curFilterKey);
+
+        // first use full dataset; afterwards use already-filtered data
+        let dataSet = i === 0 ? dataset : filteredData;
+
+        let filteredDataPerCycle = [];
+        if (curFilterType === FilterType.TEXT) {
+            if (curFilterKey === 'friend') {
+              for (let j = 0; j < dataSet.length; j++) {
+                  let friendsList = dataSet[j][curFilterKey];
+                  for (let k = 0; k < friendsList.length; k++) {
+                    if (curFilterValue === friendsList[k]) {
+                        filteredDataPerCycle.push(dataSet[j]);
+                    }
+                  }
+              }
+            } else if (curFilterKey === 'location') {
+              for (let j = 0; j < dataSet.length; j++) {
+                let dataElement = dataSet[j]['address']['region'];
+                if (curFilterValue === dataElement) {
+                    filteredDataPerCycle.push(dataSet[j]);
+                }
+              }
+            } else {
+              for (let j = 0; j < dataSet.length; j++) {
+                let dataElement = dataSet[j][curFilterKey];
+                if (curFilterValue === dataElement) {
+                    filteredDataPerCycle.push(dataSet[j]);
+                }
+            }
+            }
+        } else if (curFilterType === FilterType.RANGE) {
+            for (let j = 0; j < dataSet.length; j++) {
+                let dataElement = dataSet[j][curFilterKey];
+
+                let filterFrom = curFilterValue[0];
+                let filterTo = curFilterValue[1];
+                if (filterFrom <= dataElement && dataElement <= filterTo) {
+                    filteredDataPerCycle.push(dataSet[j]);
+                }
+            }
+        } else if (curFilterType === FilterType.DATE) {
+          for (let j = 0; j < dataSet.length; j++) {
+            let dataElement = dataSet[j][curFilterKey];
+            let dataFrom = new Date(dataElement.from);
+            let dataTo;
+            if (dataElement.to !== '') {
+              dataTo = new Date(dataElement.to);
+            } else {
+              dataTo = new Date (dataElement.from);
+            }
+
+            let filterFrom = new Date(curFilterValue[0]);
+            let filterTo = new Date(curFilterValue[1]);
+            if (filterFrom <= dataFrom) {
+                if (dataTo !== undefined) {
+                  if (dataTo <= filterTo) {
+                    filteredDataPerCycle.push(dataSet[j]);
+                  }
+                } else {
+                  filteredDataPerCycle.push(dataSet[j]);
+                }
+            }
+          }
+        }
+
+        filteredData = filteredDataPerCycle;
+    }
+    
+    return selectedFilters.length > 0 ? filteredData : dataset;
+  }

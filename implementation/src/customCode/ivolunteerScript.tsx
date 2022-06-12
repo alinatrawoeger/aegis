@@ -5,7 +5,7 @@ import InteractiveMap from './components/map/Map';
 import MetricSwitcher from './components/metricswitcher/MetricSwitcher';
 import Table from './components/table/Table';
 import data from './data/ivol_database';
-import { FilterType, getFilterType } from './utils';
+import { FilterType, getFilteredIVolData, getFilterType } from './utils';
 
 
 // TODO
@@ -42,7 +42,7 @@ class IVolunteerWorldmapApp extends Component {
     
     const selectedFiltersCallback = (value) => {
       this.selectedFilters = value;
-      this.tableData = this.filterData();
+      this.tableData = getFilteredIVolData(data, this.selectedFilters);
 
       table.render(React.createElement(Table, {data: this.tableData, selectedMetric: this.selectedMetric, isIVolunteer: true }));
       map.render(React.createElement(InteractiveMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, isIVolunteer: true }));
@@ -53,7 +53,7 @@ class IVolunteerWorldmapApp extends Component {
       this.selectedMetric = value;
       
       map.render(React.createElement(InteractiveMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, isIVolunteer: true }));
-      table.render(React.createElement(Table, {data: data, selectedMetric: this.selectedMetric, isIVolunteer: true }));
+      table.render(React.createElement(Table, {data: this.tableData, selectedMetric: this.selectedMetric, isIVolunteer: true }));
     };
 
     const zoomLevelCallback = (value) => {
@@ -67,63 +67,6 @@ class IVolunteerWorldmapApp extends Component {
     map.render(React.createElement(InteractiveMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, isIVolunteer: true }));
     table.render(React.createElement(Table, {data: this.tableData, selectedMetric: this.selectedMetric, isIVolunteer: true}));
 
-  }
-
-  filterData = () => {
-    let filteredData = [];
-    for (let i = 0; i < this.selectedFilters.length; i++) {
-        let curFilterKey = this.selectedFilters[i].key;
-        let curFilterValue = this.selectedFilters[i].value;
-        let curFilterType = getFilterType(curFilterKey);
-
-        // first use full dataset; afterwards use already-filtered data
-        let dataSet = i === 0 ? data : filteredData;
-
-        let filteredDataPerCycle = [];
-        if (curFilterType === FilterType.TEXT) {
-            if (curFilterKey === 'friend') {
-              for (let j = 0; j < dataSet.length; j++) {
-                  let friendsList = dataSet[j][curFilterKey];
-                  for (let k = 0; k < friendsList.length; k++) {
-                    if (curFilterValue === friendsList[k]) {
-                        filteredDataPerCycle.push(dataSet[j]);
-                    }
-                  }
-              }
-            } else {
-              for (let j = 0; j < dataSet.length; j++) {
-                let dataElement = dataSet[j][curFilterKey];
-                if (curFilterValue === dataElement) {
-                    filteredDataPerCycle.push(dataSet[j]);
-                }
-            }
-            }
-        } else if (curFilterType === FilterType.RANGE) {
-            for (let j = 0; j < dataSet.length; j++) {
-                let dataElement = dataSet[j][curFilterKey];
-
-                let filterFrom = curFilterValue[0];
-                let filterTo = curFilterValue[1];
-                if (filterFrom <= dataElement && dataElement <= filterTo) {
-                    filteredDataPerCycle.push(dataSet[j]);
-                }
-            }
-        } else if (curFilterType === FilterType.DATE) {
-          for (let j = 0; j < dataSet.length; j++) {
-            let dataElement = new Date(dataSet[j][curFilterKey]);
-
-            let filterFrom = new Date(curFilterValue[0]);
-            let filterTo = new Date(curFilterValue[1]);
-            if (filterFrom <= dataElement && dataElement <= filterTo) {
-                filteredDataPerCycle.push(dataSet[j]);
-            }
-        }
-        }
-
-        filteredData = filteredDataPerCycle;
-    }
-    
-    return this.selectedFilters.length > 0 ? filteredData : data;
   }
 
   render() {

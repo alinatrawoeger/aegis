@@ -23,35 +23,20 @@ export default [
         },
         "date": {
             "filterType": "date"
+        },
+        "location": {
+            "filterType": "text",
+            "properties": {
+                "AT-1": "Burgenland",
+                "AT-2": "Kärnten",
+                "AT-3": "Niederösterreich",
+                "AT-4": "Oberösterreich",
+                "AT-5": "Salzburg",
+                "AT-6": "Steiermark",
+                "AT-7": "Tirol",
+                "AT-8": "Vorarlberg",
+                "AT-9": "Wien"
+            }
         }
-        // "location": {
-        //     "Wien": {
-
-        //     },
-        //     "Oberösterreich": {
-
-        //     },
-        //     "Niederösterreich": {
-                
-        //     },
-        //     "Salzburg": {
-                
-        //     },
-        //     "Kärnten": {
-                
-        //     },
-        //     "Steiermark": {
-                
-        //     },
-        //     "Tirol": {
-                
-        //     },
-        //     "Vorarlberg": {
-                
-        //     },
-        //     "Burgenland": {
-                
-        //     }
-        // }
     }
 ]

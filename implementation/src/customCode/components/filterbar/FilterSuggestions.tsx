@@ -115,8 +115,8 @@ const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setSho
                                     <div className={styles.suggestionRangeValueLabel}>From:</div>
                                     <input className={isIVolunteer ? styles.suggestionRangeValueInputIVol : styles.suggestionRangeValueInputDt} 
                                             type={isIVolunteer ? 'date' : 'number'} id='rangeFrom' 
-                                            min={isIVolunteer ? iVolDefaultFrom : dtMin} 
-                                            max={isIVolunteer ? iVolDefaultTo : dtMax} 
+                                            min={isIVolunteer ? '1970-01-01' : dtMin} 
+                                            max={isIVolunteer ? '2099-12-31' : dtMax} 
                                             step={isIVolunteer ? iVolStep : dtStep} 
                                             defaultValue={isIVolunteer ? iVolDefaultFrom : dtDefaultFrom}
                                             onChange={() => onChangeRange()}>
@@ -126,8 +126,8 @@ const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setSho
                                     <div className={styles.suggestionRangeValueLabel}>To:</div>
                                     <input className={isIVolunteer ? styles.suggestionRangeValueInputIVol : styles.suggestionRangeValueInputDt} 
                                             type={isIVolunteer ? 'date' : 'number'} id='rangeTo' 
-                                            min={isIVolunteer ? iVolDefaultFrom : dtMin} 
-                                            max={isIVolunteer ? iVolDefaultTo : dtMax} 
+                                            min={isIVolunteer ? '1970-01-01' : dtMin} 
+                                            max={isIVolunteer ? '2099-12-31' : dtMax}  
                                             step={isIVolunteer ? iVolStep : dtStep} 
                                             defaultValue={isIVolunteer ? iVolDefaultTo : dtDefaultTo}
                                             onChange={() => onChangeRange()}>

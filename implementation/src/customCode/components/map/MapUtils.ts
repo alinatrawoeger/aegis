@@ -11,10 +11,17 @@ import OSM from 'ol/source/OSM';
 import VectorSource from 'ol/source/Vector';
 import { Icon, Style } from 'ol/style';
 import dtFilters from "../../data/dt_filters";
-import { ZoomLevel } from "../../utils";
-import markerGreen from "./img/marker-green.png";
-import markerRed from "./img/marker-red.png";
-import markerYellow from "./img/marker-yellow.png";
+import { DurationLength, PriorityLevels, UrgencyDays, ZoomLevel } from "../../utils";
+import markerGreen_high from "./img/pinpoint-location-green_900.svg";
+import markerGreen_medium from "./img/pinpoint-location-green_600.svg";
+import markerGreen_low from "./img/pinpoint-location-green_400.svg";
+import markerRed_severe from "./img/criticalevent-red_800.svg";
+import markerRed_high from "./img/pinpoint-location-red_800.svg";
+import markerRed_medium from "./img/pinpoint-location-red_500.svg";
+import markerRed_low from "./img/pinpoint-location-red_300.svg";
+import markerYellow_high from "./img/pinpoint-location-yellow_700.svg";
+import markerYellow_medium from "./img/pinpoint-location-yellow_500.svg";
+import markerYellow_low from "./img/pinpoint-location-yellow_300.svg";
 
 // test data (coordinates of the center of Austria)
 export const defaultLongitude = 14.12456;
@@ -66,14 +73,37 @@ export const addIconOverlay = (isIVolunteer: boolean, markerData: any, map: Map,
     let iconSource = '';
     if (isIVolunteer) {
         if (selectedMetric === 'urgency') {
-            iconSource = markerRed;
+            let diffDays = getTaskUrgencyDays(new Date(markerData.date.from));
+            if (diffDays <= UrgencyDays.SEVERE) {
+                iconSource = markerRed_severe;
+            } else if (diffDays <= UrgencyDays.HIGH) {
+                iconSource = markerRed_high;
+            } else if (diffDays <= UrgencyDays.MEDIUM) {
+                iconSource = markerRed_medium;
+            } else {
+                iconSource = markerRed_low;
+            }
         } else if (selectedMetric === 'priority') {
-            iconSource = markerYellow;
+            let priority = markerData.priority;
+            if (priority === PriorityLevels.HIGH) {
+                iconSource = markerYellow_high;
+            } else if (priority === PriorityLevels.MEDIUM) {
+                iconSource = markerYellow_medium;
+            } else {
+                iconSource = markerYellow_low;
+            }
         } else if (selectedMetric === 'duration') {
-            iconSource = markerGreen;
+            let duration = getTaskDurationLength(markerData.date.from, markerData.date.to);
+            if (duration <= DurationLength.SHORT) {
+                iconSource = markerGreen_high;
+            } else if (duration <= DurationLength.MEDIUM) {
+                iconSource = markerGreen_medium;
+            } else {
+                iconSource = markerGreen_low;
+            }
         }
     } else {
-        iconSource = markerRed;
+        iconSource = markerRed_high;
     }
 
     if (iconSource != '') {
@@ -91,17 +121,17 @@ export const setIconMarker = (lon: number, lat: number, map: Map, markerId?: str
       });
       if (markerId !== undefined) {
         iconFeature.set('taskid', markerId);
-      }
-      
+      }     
 
       if (iconSource === undefined) {
-          iconSource = markerRed;
+          iconSource = markerRed_high;
       }
       const iconStyle = new Style({
         image: new Icon({
-          anchor: [0.5, 20],
+          anchor: [0.5, 1],
           anchorXUnits: 'fraction',
-          anchorYUnits: 'pixels',
+          anchorYUnits: 'fraction',
+          scale: [0.1, 0.1],
           src: iconSource
         }),
       });
@@ -122,7 +152,7 @@ export const setIconMarker = (lon: number, lat: number, map: Map, markerId?: str
       map.addLayer(iconVectorLayer);
 }
 
-const getCoordinatesForCityIVol = (markerData: any) => {
+export const getCoordinatesForCityIVol = (markerData: any) => {
     let latitude = markerData.address.coordinates[0]
     let longitude = markerData.address.coordinates[1];
     return { longitude, latitude };
@@ -159,4 +189,27 @@ export const getDateString = (date) => {
     dateString += dateTo !== undefined ? ' bis ' + dateTo.toLocaleDateString() + ', ' + dateTo.toLocaleTimeString() : "";
 
     return { dateFrom, dateTo, dateString };
+}
+
+export const getTaskUrgencyDays = (date) => {
+    let currentDate = new Date().getTime();
+    const diffTime = Math.abs(currentDate - date.getTime());
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    return diffDays;
+}
+
+const getTaskDurationLength = (dateFrom, dateTo) => {
+    let dateFromTime = new Date(dateFrom).getTime();
+    let dateToTime;
+    if (dateTo !== '') {
+        dateToTime = new Date(dateTo).getTime();
+    } else {
+        dateToTime = dateFromTime;
+    }
+
+    const diffTime = Math.abs(dateFromTime - dateToTime);
+    const durationLength = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    return durationLength;
 }

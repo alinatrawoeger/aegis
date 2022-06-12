@@ -4,6 +4,7 @@ export default [
             "street": "Mönchsberg 34",
             "zip": "5020",
             "city": "Salzburg",
+            "region": "Salzburg",
             "country": "Austria",
             "country-iso": "AT",
             "coordinates": [47.79517891806973, 13.047540281203213]
@@ -11,9 +12,10 @@ export default [
         "taskname": "Adventbazar",
         "taskid": 12345,
         "responsible": "Rotes Kreuz",
+        "priority": 2,
         "date": {
             "from": "2022-12-10T15:00:00Z",
-            "to": ""
+            "to": "2022-12-12T20:00:00Z"
         },
         "friend": [
             "Tony Stark", "Bruce Banner", "Steve Rogers"
@@ -25,6 +27,7 @@ export default [
             "street": "Altenbergerstraße 69",
             "zip": "4040",
             "city": "Linz",
+            "region": "Oberösterreich",
             "country": "Austria",
             "country-iso": "AT",
             "coordinates": [48.337677902412565, 14.32281236957337]
@@ -32,6 +35,7 @@ export default [
         "taskname": "Pfadfinder Meetup",
         "taskid": 12346,
         "responsible": "Pfadfinderclub Linz",
+        "priority": 1,
         "date": {
             "from": "2022-08-29T07:30:00Z",
             "to": ""
@@ -46,6 +50,7 @@ export default [
             "street": "Maxingstraße 13b",
             "zip": "1130",
             "city": "Wien",
+            "region": "Wien",
             "country": "Austria",
             "country-iso": "AT",
             "coordinates": [48.18224988326545, 16.299806284912314]
@@ -53,6 +58,7 @@ export default [
         "taskname": "Zoo Tierhelfer",
         "taskid": 12347,
         "responsible": "Tiergarten-Verein Österreich",
+        "priority": 3,
         "date": {
             "from": "2022-07-27T13:15:00Z",
             "to": ""
@@ -67,6 +73,7 @@ export default [
             "street": "Pembaurstraße 20",
             "zip": "6020",
             "city": "Innsbruck",
+            "region": "Tirol",
             "country": "Austria",
             "country-iso": "AT",
             "coordinates": [47.26886080215773, 11.411443471397346]
@@ -78,6 +85,7 @@ export default [
             "from": "2022-08-10T14:30:00Z",
             "to": ""
         },
+        "priority": 2,
         "friend": [
             "Tony Stark", "Peter Parker", "Steve Rogers"
         ],
@@ -88,6 +96,7 @@ export default [
             "street": "B11, Lakeside",
             "zip": "9020",
             "city": "Klagenfurt am Wörthersee",
+            "region": "Kärnten",
             "country": "Austria",
             "country-iso": "AT",
             "coordinates": [46.6145822029484, 14.266635873231703]
@@ -95,9 +104,10 @@ export default [
         "taskname": "Altenpflege Volunteering",
         "taskid": 12349,
         "responsible": "Altenpflegeverein Kärnten",
+        "priority": 2,
         "date": {
-            "from": "2022-09-25T08:00:00Z",
-            "to": "2022-09-28T15:00:00"
+            "from": "2022-09-21T08:00:00Z",
+            "to": "2022-09-30T15:00:00"
         },
         "friend": [
             "Steve Rogers", "James Bucky Barnes"
@@ -109,6 +119,7 @@ export default [
             "street": "Puchstraße 164",
             "zip": "8055",
             "city": "Graz",
+            "region": "Steiermark",
             "country": "Austria",
             "country-iso": "AT",
             "coordinates": [47.03810761369751, 15.439317416354617]
@@ -116,6 +127,7 @@ export default [
         "taskname": "Mülleinsammeln",
         "taskid": 12350,
         "responsible": "Samariterbund",
+        "priority": 1,
         "date": {
             "from": "2022-07-01T07:00:00Z",
             "to": ""

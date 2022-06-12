@@ -7,9 +7,9 @@ import { Fill, Stroke, Style } from "ol/style";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import dataDt from "../../data/dt_database";
 import dataIVol from "../../data/ivol_database";
-import { Apdex, FilterType, getDataFromTaskId, getFilterType, groupValuesPerLocation, UrgencyDays, ZoomLevel } from "../../utils";
+import { Apdex, FilterType, getDataFromTaskId, getFilteredIVolData, getFilterType, groupValuesPerLocation, UrgencyDays, ZoomLevel } from "../../utils";
 import styles from "./Map.module.css";
-import { addIconOverlay, createMap, defaultLatitude, defaultLongitude, getDateString } from './MapUtils';
+import { addIconOverlay, createMap, defaultLatitude, defaultLongitude, getCoordinatesForCityIVol, getDateString, getTaskUrgencyDays } from './MapUtils';
 
 let overlayColorMap = {
     'apdex': {
@@ -430,35 +430,7 @@ const setIconMarkers = (isIVolunteer: boolean, map: Map, zoom: number, selectedM
 
 const getDataSetForMarkers = (isIVolunteer: boolean, selectedFilters?: any[]) => {
     if (isIVolunteer) {
-        let filteredDataset = [];
-        for (let i = 0; i < selectedFilters.length; i++) {
-            let filter = selectedFilters[i];
-            for (let j = 0; j < dataIVol.length; j++) {
-                let curElement = dataIVol[j];
-
-                let filterType = getFilterType(filter.key);
-                switch(filterType) {
-                    case FilterType.TEXT: {
-                        if (curElement[filter.key].includes(filter.value)) {
-                            filteredDataset.push(curElement);
-                        }
-                        continue;
-                    }
-                    case FilterType.DATE: {
-                        let filterFrom = new Date(filter.value[0]);
-                        let filterTo = new Date(filter.value[1]);
-
-                        let curElementDate = new Date(curElement[filter.key]);
-                        if (filterFrom <= curElementDate && curElementDate <= filterTo) {
-                            filteredDataset.push(curElement);
-                        }
-                        continue;
-                    } 
-                }
-                
-            }
-        }
-        return selectedFilters.length > 0 ? filteredDataset : dataIVol;
+       return getFilteredIVolData(dataIVol, selectedFilters);
     } else {
         let citiesDataset = [];
         for (let i = 0; i < dataDt.length; i++) {
@@ -494,9 +466,7 @@ const clickOnMapMarkerIVol = (feature: any, map: Map) => {
                 let { dateFrom } = getDateString(data.date);
                 $('#tooltip-date').text(dateFrom.toLocaleString());
                 
-                let currentDate = new Date().getTime();
-                const diffTime = Math.abs(currentDate - dateFrom.getTime());
-                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                let diffDays = getTaskUrgencyDays(dateFrom);
                 let priority;
                 if (diffDays <= UrgencyDays.SEVERE) {
                     priority = 'very high';
@@ -507,7 +477,7 @@ const clickOnMapMarkerIVol = (feature: any, map: Map) => {
                 } else {
                     priority = 'low';
                 }
-                $('#tooltip-priority').text(priority);
+                $('#tooltip-urgency').text(priority);
                 
                 // add clickhandlers
                 $('#close-tooltip').on('click', function() {

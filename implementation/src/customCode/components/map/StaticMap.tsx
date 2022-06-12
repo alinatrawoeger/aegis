@@ -59,11 +59,10 @@ const StaticMap: React.FC<StaticMapProps> = ({ dataRow, addTask }) => {
         var coordinate = toLonLat(event.coordinate).map(function(val) {
             return val.toFixed(6);
         });
-        // var lon = $('#u408').text(coordinate[0] + ' / ' + coordinate[1]);
-        findAddressByCoordinates(coordinate[0], coordinate[1]);
+        findAddressByCoordinates(coordinate[0], coordinate[1], mapRef.current);
     }
     
-    const findAddressByCoordinates = (lon, lat) => {
+    const findAddressByCoordinates = (lon, lat, map) => {
         fetch('http://nominatim.openstreetmap.org/reverse?format=json&lon=' + lon + '&lat=' + lat).then(function(response) {
             return response.json();
         }).then(function(json) {
@@ -80,10 +79,10 @@ const StaticMap: React.FC<StaticMapProps> = ({ dataRow, addTask }) => {
             $('#zipcode_input').val(addressData.postcode);
             $('#city_input').val(addressData.city);
     
-            mapRef.current.getLayers().getArray()
+            map.getLayers().getArray()
                 .filter(layer => layer.get('name') === 'LocationMarker')
-                .forEach(layer => mapRef.current.removeLayer(layer));
-            setIconMarker(lon, lat, mapRef.current, undefined, undefined);
+                .forEach(layer => map.removeLayer(layer));
+            setIconMarker(lon, lat, map, undefined, undefined);
         });
     }
 
