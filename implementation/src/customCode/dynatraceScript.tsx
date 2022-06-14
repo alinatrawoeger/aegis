@@ -5,11 +5,7 @@ import InteractiveMap from './components/map/Map';
 import MetricSwitcher from './components/metricswitcher/MetricSwitcher';
 import Table from './components/table/Table';
 import data from './data/dt_database';
-import { FilterType, getFilterType, groupValuesPerLocation, ZoomLevel } from './utils';
-
-// TODO Filterbar:
-// - Country/Region/City suggestions sind leer beim 2. Mal auswählen (Datenbank kommt schon leer rein wtf)
-//      - Fehler in FilterBar.adjustSuggestionsDt() beim suggestions reduzieren, not sure what's the problem tho
+import { filterDtData, groupValuesPerLocation, ZoomLevel } from './utils';
 
 class DynatraceWorldmapApp extends Component {
     // test data (coordinates of Linz)
@@ -45,7 +41,7 @@ class DynatraceWorldmapApp extends Component {
         
         const selectedFiltersCallback = (value) => {
             this.selectedFilters = value;
-            let filteredData = this.filterData();
+            let filteredData = filterDtData(this.selectedFilters);
             this.datasetPrimary = this.prepareTableData(filteredData, this.currentZoomLevel).datasetPrimary;
             this.datasetSecondary = this.prepareTableData(filteredData, this.currentZoomLevel).datasetSecondary;
 
@@ -65,7 +61,7 @@ class DynatraceWorldmapApp extends Component {
 
         const zoomLevelCallback = (value) => {
             this.currentZoomLevel = value;
-            let filteredData = this.filterData();
+            let filteredData = filterDtData(this.selectedFilters);
             this.datasetPrimary = this.prepareTableData(filteredData, this.currentZoomLevel).datasetPrimary;
             this.datasetSecondary = this.prepareTableData(filteredData, this.currentZoomLevel).datasetSecondary;
 
@@ -103,42 +99,6 @@ class DynatraceWorldmapApp extends Component {
         } else {
             return ['country', 'region'];
         }
-        // TODO add handling for Region/City when data has been expanded
-    }
-      
-    filterData = () => {
-        let filteredData = [];
-        for (let i = 0; i < this.selectedFilters.length; i++) {
-            let curFilterKey = this.selectedFilters[i].key;
-            let curFilterValue = this.selectedFilters[i].value;
-            let curFilterType = getFilterType(curFilterKey);
-
-            // first use full dataset; afterwards use already-filtered data
-            let dataSet = i === 0 ? data : filteredData;
-
-            let filteredDataPerCycle = [];
-            if (curFilterType === FilterType.TEXT) {
-                for (let j = 0; j < dataSet.length; j++) {
-                    let dataElement = dataSet[j][curFilterKey];
-                    if (curFilterValue === dataElement) {
-                        filteredDataPerCycle.push(dataSet[j]);
-                    }
-                }
-            } else if (curFilterType === FilterType.RANGE) {
-                for (let j = 0; j < dataSet.length; j++) {
-                    let dataElement = dataSet[j][curFilterKey];
-
-                    let filterFrom = curFilterValue[0];
-                    let filterTo = curFilterValue[1];
-                    if (filterFrom <= dataElement && dataElement <= filterTo) {
-                        filteredDataPerCycle.push(dataSet[j]);
-                    }
-                }
-            }
-            filteredData = filteredDataPerCycle;
-        }
-        
-        return this.selectedFilters.length > 0 ? filteredData : data;
     }
 
     render() {

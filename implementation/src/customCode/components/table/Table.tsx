@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import styles from "./Table.module.css";
 import analyzeIcon from "./img/analyze.svg";
 import arrowLeft from "./img/arrow_left.png";
 import arrowLeftInactive from "./img/arrow_left_disabled.png";
 import arrowRight from "./img/arrow_right.png";
 import arrowRightInactive from "./img/arrow_right_disabled.png";
+import styles from "./Table.module.css";
 
 let rowsPerPage: number;
 

@@ -7,9 +7,9 @@ import { Fill, Stroke, Style } from "ol/style";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import dataDt from "../../data/dt_database";
 import dataIVol from "../../data/ivol_database";
-import { Apdex, FilterType, getDataFromTaskId, getFilteredIVolData, getFilterType, groupValuesPerLocation, UrgencyDays, ZoomLevel } from "../../utils";
+import { Apdex, filterDtData, getDataFromTaskId, getFilteredIVolData, groupValuesPerLocation, UrgencyDays, ZoomLevel } from "../../utils";
 import styles from "./Map.module.css";
-import { addIconOverlay, createMap, defaultLatitude, defaultLongitude, getCoordinatesForCityIVol, getDateString, getTaskUrgencyDays } from './MapUtils';
+import { addIconOverlay, createMap, defaultLatitude, defaultLongitude, getDateString, getTaskUrgencyDays } from './MapUtils';
 
 let overlayColorMap = {
     'apdex': {
@@ -81,9 +81,20 @@ type CustomMapProps = {
     onChangeFilters?: (value) => void
 }
 
-const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoom, onChangeFilters, isIVolunteer }) => {
-    data = !isIVolunteer ? groupValuesPerLocation(dataDt, 'country') : dataIVol;
-
+const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoom, onChangeFilters, isIVolunteer }) => {    
+    // ------------ initialization 
+    const [ map, setMap ] = useState<OLMap>()
+    let [ selectedLocation, setSelectedLocation ] = useState<Feature<Geometry> | undefined>();
+    let [ hoveredLocation, setHoveredLocation ] = useState<Feature<Geometry> | undefined>();
+    let [ selectedFilters, setSelectedFilters ] = useState(filters);
+    const [ zoom, setZoom ] = useState<ZoomLevel>();
+    
+    if (isIVolunteer) {
+        data = dataIVol;
+    } else {
+        let filteredData = filterDtData(selectedFilters);
+        data = groupValuesPerLocation(filteredData, 'country');
+    }
     if (!isIVolunteer) {
         if (selectedMetric === apdexMetric) {
             selectedColor = overlayColorMap.apdex.Excellent.selectedColor;
@@ -92,16 +103,7 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
             selectedColor = overlayColorMap.other.Excellent.selectedColor;
             hoverColor = overlayColorMap.other.Excellent.hoverColor;
         }
-    } else {
-        // TODO add ivolunteer handling
     }
-    
-// ------------ initialization 
-    const [ map, setMap ] = useState<OLMap>()
-    let [ selectedLocation, setSelectedLocation ] = useState<Feature<Geometry> | undefined>();
-    let [ hoveredLocation, setHoveredLocation ] = useState<Feature<Geometry> | undefined>();
-    let [ selectedFilters, setSelectedFilters ] = useState(filters);
-    const [ zoom, setZoom ] = useState<ZoomLevel>();
 
     const mapElement = useRef();
     const mapRef = useRef<OLMap>(); // map object for later use

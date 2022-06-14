@@ -37,6 +37,14 @@ export default [
                 "AT-8": "Vorarlberg",
                 "AT-9": "Wien"
             }
+        },
+        "priority": {
+            "filterType": "text",
+            "properties": {
+                "1": "1 - High",
+                "2": "2 - Medium",
+                "3": "3 - Low"
+            }
         }
     }
 ]

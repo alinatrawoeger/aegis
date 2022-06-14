@@ -1,7 +1,7 @@
-import removeIcon from "./img/remove-icon.png";
-import styles from "./Filterbar.module.css";
 import React from "react";
 import { FilterType, getFilterType } from "../../utils";
+import styles from "./Filterbar.module.css";
+import removeIcon from "./img/remove-icon.png";
 
 const FilterElement = ( { filterKey, filterValue, removeFilter, isIVolunteer } ) => {
     const filterType = getFilterType(filterKey);

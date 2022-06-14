@@ -12,16 +12,17 @@ import VectorSource from 'ol/source/Vector';
 import { Icon, Style } from 'ol/style';
 import dtFilters from "../../data/dt_filters";
 import { DurationLength, PriorityLevels, UrgencyDays, ZoomLevel } from "../../utils";
-import markerGreen_high from "./img/pinpoint-location-green_900.svg";
-import markerGreen_medium from "./img/pinpoint-location-green_600.svg";
-import markerGreen_low from "./img/pinpoint-location-green_400.svg";
 import markerRed_severe from "./img/criticalevent-red_800.svg";
-import markerRed_high from "./img/pinpoint-location-red_800.svg";
-import markerRed_medium from "./img/pinpoint-location-red_500.svg";
+import markerBlue from "./img/pinpoint-location-blue_600.svg";
+import markerGreen_low from "./img/pinpoint-location-green_400.svg";
+import markerGreen_medium from "./img/pinpoint-location-green_600.svg";
+import markerGreen_high from "./img/pinpoint-location-green_900.svg";
 import markerRed_low from "./img/pinpoint-location-red_300.svg";
-import markerYellow_high from "./img/pinpoint-location-yellow_700.svg";
-import markerYellow_medium from "./img/pinpoint-location-yellow_500.svg";
+import markerRed_medium from "./img/pinpoint-location-red_500.svg";
+import markerRed_high from "./img/pinpoint-location-red_800.svg";
 import markerYellow_low from "./img/pinpoint-location-yellow_300.svg";
+import markerYellow_medium from "./img/pinpoint-location-yellow_500.svg";
+import markerYellow_high from "./img/pinpoint-location-yellow_700.svg";
 
 // test data (coordinates of the center of Austria)
 export const defaultLongitude = 14.12456;
@@ -101,6 +102,8 @@ export const addIconOverlay = (isIVolunteer: boolean, markerData: any, map: Map,
             } else {
                 iconSource = markerGreen_low;
             }
+        } else {
+            iconSource = markerBlue;
         }
     } else {
         iconSource = markerRed_high;

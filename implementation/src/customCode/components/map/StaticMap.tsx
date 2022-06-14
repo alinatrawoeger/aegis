@@ -2,6 +2,7 @@ import { Map as OLMap } from 'ol';
 import { toLonLat } from 'ol/proj';
 import React, { useEffect, useRef, useState } from 'react';
 import { ZoomLevel } from '../../utils';
+import markerBlue from "./img/pinpoint-location-blue_600.svg";
 import styles from "./Map.module.css";
 import { addIconOverlay, createMap, defaultLatitude, defaultLongitude, setIconMarker } from './MapUtils';
 
@@ -31,7 +32,7 @@ const StaticMap: React.FC<StaticMapProps> = ({ dataRow, addTask }) => {
         if (addTask) {
             initialMap.on('click', selectLocation);
         } else {
-            addIconOverlay(true, dataRow, initialMap, 'urgency');
+            addIconOverlay(true, dataRow, initialMap, 'detail');
         }
 
         // save map for later use
@@ -77,12 +78,27 @@ const StaticMap: React.FC<StaticMapProps> = ({ dataRow, addTask }) => {
             }
     
             $('#zipcode_input').val(addressData.postcode);
-            $('#city_input').val(addressData.city);
+
+            // city can be saved either under city, county or state
+            let city = addressData.city;
+            if (city === undefined) {
+                city = addressData.village;
+            }
+            if (city === undefined) {
+                city = addressData.town;
+            }
+            if (city === undefined) {
+                city = addressData.county;
+            }
+            if (city === undefined) {
+                city = addressData.state;
+            }
+            $('#city_input').val(city);
     
             map.getLayers().getArray()
                 .filter(layer => layer.get('name') === 'LocationMarker')
                 .forEach(layer => map.removeLayer(layer));
-            setIconMarker(lon, lat, map, undefined, undefined);
+            setIconMarker(lon, lat, map, undefined, markerBlue);
         });
     }
 

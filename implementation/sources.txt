@@ -29,6 +29,7 @@ X Icon (Filterbar):
 Icons:
     - https://barista.dynatrace.com/resources/icons/criticalevent
     - https://barista.dynatrace.com/resources/icons/pinpoint-location 
+    - https://barista.dynatrace.com/resources/icons/analyze
 
 Fetch address from coordinates:
     https://gist.github.com/ThomasG77/26e61508217ba86a04c19a67cbda0e99 

@@ -1,4 +1,5 @@
 import 'ol/ol.css';
+import dataDt from './data/dt_database';
 import dtFilters from './data/dt_filters';
 import dataIVol from './data/ivol_database';
 import iVolFilters from './data/ivol_filters';
@@ -36,9 +37,9 @@ export enum DurationLength {
 // scale for Apdex and also other DT metrics
 export enum Apdex {
     EXCELLENT = 1.00,
-    GOOD = 0.90,
-    FAIR = 0.75,
-    POOR = 0.60,
+    GOOD = 0.94,
+    FAIR = 0.85,
+    POOR = 0.7,
     UNACCEPTABLE = 0.50
 }
 
@@ -168,13 +169,21 @@ export function getFilteredIVolData(dataset, selectedFilters) {
                     filteredDataPerCycle.push(dataSet[j]);
                 }
               }
-            } else {
-              for (let j = 0; j < dataSet.length; j++) {
-                let dataElement = dataSet[j][curFilterKey];
-                if (curFilterValue === dataElement) {
-                    filteredDataPerCycle.push(dataSet[j]);
+            } else if (curFilterKey === 'priority') {
+                for (let j = 0; j < dataSet.length; j++) {
+                    let dataElement = dataSet[j][curFilterKey].toString();
+                    let sanitizedFilterValue = curFilterValue.split(' - ')[0];
+                    if (sanitizedFilterValue === dataElement) {
+                        filteredDataPerCycle.push(dataSet[j]);
+                    }
                 }
-            }
+            } else {    
+                for (let j = 0; j < dataSet.length; j++) {
+                    let dataElement = dataSet[j][curFilterKey];
+                    if (curFilterValue === dataElement) {
+                        filteredDataPerCycle.push(dataSet[j]);
+                    }
+                }
             }
         } else if (curFilterType === FilterType.RANGE) {
             for (let j = 0; j < dataSet.length; j++) {
@@ -199,13 +208,10 @@ export function getFilteredIVolData(dataset, selectedFilters) {
 
             let filterFrom = new Date(curFilterValue[0]);
             let filterTo = new Date(curFilterValue[1]);
+            filterTo.setUTCHours(23,59,59,999); // set filter to 23:59:59
             if (filterFrom <= dataFrom) {
-                if (dataTo !== undefined) {
-                  if (dataTo <= filterTo) {
-                    filteredDataPerCycle.push(dataSet[j]);
-                  }
-                } else {
-                  filteredDataPerCycle.push(dataSet[j]);
+                if (dataTo <= filterTo) {
+                filteredDataPerCycle.push(dataSet[j]);
                 }
             }
           }
@@ -216,3 +222,38 @@ export function getFilteredIVolData(dataset, selectedFilters) {
     
     return selectedFilters.length > 0 ? filteredData : dataset;
   }
+
+export function filterDtData(selectedFilters ) {
+    let filteredData = [];
+    for (let i = 0; i < selectedFilters.length; i++) {
+        let curFilterKey = selectedFilters[i].key;
+        let curFilterValue = selectedFilters[i].value;
+        let curFilterType = getFilterType(curFilterKey);
+
+        // first use full dataset; afterwards use already-filtered data
+        let dataSet = i === 0 ? dataDt : filteredData;
+
+        let filteredDataPerCycle = [];
+        if (curFilterType === FilterType.TEXT) {
+            for (let j = 0; j < dataSet.length; j++) {
+                let dataElement = dataSet[j][curFilterKey];
+                if (curFilterValue === dataElement) {
+                    filteredDataPerCycle.push(dataSet[j]);
+                }
+            }
+        } else if (curFilterType === FilterType.RANGE) {
+            for (let j = 0; j < dataSet.length; j++) {
+                let dataElement = dataSet[j][curFilterKey];
+
+                let filterFrom = curFilterValue[0];
+                let filterTo = curFilterValue[1];
+                if (filterFrom <= dataElement && dataElement <= filterTo) {
+                    filteredDataPerCycle.push(dataSet[j]);
+                }
+            }
+        }
+        filteredData = filteredDataPerCycle;
+    }
+    
+    return selectedFilters.length > 0 ? filteredData : dataDt;
+} 

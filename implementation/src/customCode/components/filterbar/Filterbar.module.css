@@ -74,7 +74,7 @@
 
 .suggestionsTextPanel {
     position: relative;
-    top: 61px;
+    top: 67px;
     display: flex;
 }
 
@@ -85,7 +85,7 @@
 
 .suggestionTextValuesPanel {
     width: 120px;
-    height: 150px;
+    height: 162px;
     overflow-y: scroll;
     border: 1px solid black;
     z-index: 5;

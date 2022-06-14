@@ -66,7 +66,7 @@ export default [
         "friend": [
             "Peter Parker"
         ],
-        "description": "Im Zoo Schönbrunn haben wir viele Tiere, die viel Aufmerksamkeit benötigen. Durch die Urlaubszeit sind uns leider viele Tierpfleger ausgefallen und wir könnten Unterstützung gebrauchen. Zu deinen Aufgaben zählt das Ausmisten der Käfige von Kleinnagern, im Affenhaus das Futter austeilen und die Pflanzen im Tropenhaus auf Ungeziefer zu untersuchen. Je nach eigenem Wohlbefinden suchen wir auch jemanden, der sich mit Spinnen wohlfühlt und in ihren Terrarien die Dekorationen umgestalten kann.",
+        "description": "Im Zoo Schönbrunn haben wir viele Tiere, die viel Aufmerksamkeit benötigen. Durch die Urlaubszeit sind uns leider viele Tierpfleger ausgefallen und wir könnten Unterstützung gebrauchen. Zu deinen Aufgaben zählt das Ausmisten der Käfige von Kleinnagern, im Affenhaus das Futter auszuteilen und die Pflanzen im Tropenhaus auf Ungeziefer zu untersuchen. Je nach eigenem Wohlbefinden suchen wir auch jemanden, der sich mit Spinnen wohlfühlt und in ihren Terrarien die Dekorationen umgestalten kann.",
     },
     {
         "address": {
@@ -82,7 +82,7 @@ export default [
         "taskid": 12348,
         "responsible": "Rotes Kreuz",
         "date": {
-            "from": "2022-08-10T14:30:00Z",
+            "from": "2022-06-20T14:30:00Z",
             "to": ""
         },
         "priority": 2,
@@ -129,7 +129,7 @@ export default [
         "responsible": "Samariterbund",
         "priority": 1,
         "date": {
-            "from": "2022-07-01T07:00:00Z",
+            "from": "2022-06-15T07:00:00Z",
             "to": ""
         },
         "friend": [
