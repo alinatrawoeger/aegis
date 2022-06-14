@@ -16,6 +16,48 @@
   position:absolute;
   z-index:0;
 }
+#breadcrumbs-panel {
+  width: 1110px;
+  position: absolute;
+  left: 77px;
+  top: 16px;
+  font-family:'Arial Fett', 'Arial Standard', 'Arial', sans-serif;
+  font-weight:500;
+  font-style:normal;
+  font-size: 13px;
+  color: white;
+  display: flex;
+  background-color: white;
+  background-color: rgb(152, 77, 190);
+  z-index: 5;
+}
+#breadcrumbs-purple {
+  display: flex;
+  background-color: rgba(98, 36, 128, 1);
+}
+#breadcrumbs-apps, #breadcrumbs-appname {
+  background-color: rgba(98, 36, 128, 1);
+  padding: 4px 12px 4px 8px;
+  z-index: 3;
+  cursor:pointer;
+}
+#breadcrumbs-worldmap {
+  margin-right: 20px;
+  padding: 4px 12px 4px 8px;
+  background-color: rgb(152, 77, 190);
+  cursor:pointer;
+}
+.breadcrumbs-separator {
+  background-color: rgba(98, 36, 128, 1);
+  height: 16px;
+  width: 16px;
+  transform: rotate(45deg);
+  z-index: 2;
+  position: relative;
+  left: -8px;
+  top: 3px;
+  outline-style: solid;
+}
 #u0_div {
   border-width:0px;
   position:absolute;
@@ -771,7 +813,7 @@
   height:535px;
   overflow:auto;
 }
-#u29 {
+#tooltip-panel {
   border-width:0px;
   position:absolute;
   left:0px;
@@ -785,13 +827,13 @@
   left:0px;
   top:0px;
   width:300px;
-  height:283px;
+  height:200px;
 }
 #u30 {
   border-width:0px;
   position:absolute;
   left:92px;
-  top:554px;
+  top:644px;
   width:300px;
   height:283px;
   display:flex;
@@ -831,7 +873,7 @@
   border-width:0px;
   position:absolute;
   left:104px;
-  top:565px;
+  top:655px;
   width:300px;
   height:28px;
   display:flex;
@@ -873,7 +915,7 @@
   border-width:0px;
   position:absolute;
   left:104px;
-  top:617px;
+  top:707px;
   width:36px;
   height:21px;
   display:flex;
@@ -916,7 +958,7 @@
   border-width:0px;
   position:absolute;
   left:207px;
-  top:617px;
+  top:707px;
   width:73px;
   height:21px;
   display:flex;
@@ -958,7 +1000,7 @@
   border-width:0px;
   position:absolute;
   left:306px;
-  top:617px;
+  top:707px;
   width:73px;
   height:21px;
   display:flex;
@@ -1000,7 +1042,7 @@
   border-width:0px;
   position:absolute;
   left:104px;
-  top:678px;
+  top:768px;
   width:36px;
   height:21px;
   display:flex;
@@ -1043,7 +1085,7 @@
   border-width:0px;
   position:absolute;
   left:205px;
-  top:678px;
+  top:768px;
   width:21px;
   height:21px;
   display:flex;
@@ -1086,7 +1128,7 @@
   border-width:0px;
   position:absolute;
   left:306px;
-  top:678px;
+  top:768px;
   width:67px;
   height:21px;
   display:flex;
@@ -1126,7 +1168,7 @@
   border-width:0px;
   position:absolute;
   left:104px;
-  top:642px;
+  top:732px;
   width:32px;
   height:12px;
   display:flex;
@@ -1164,7 +1206,7 @@
   border-width:0px;
   position:absolute;
   left:205px;
-  top:642px;
+  top:732px;
   width:62px;
   height:12px;
   display:flex;
@@ -1202,7 +1244,7 @@
   border-width:0px;
   position:absolute;
   left:306px;
-  top:642px;
+  top:732px;
   width:30px;
   height:12px;
   display:flex;
@@ -1240,7 +1282,7 @@
   border-width:0px;
   position:absolute;
   left:104px;
-  top:703px;
+  top:793px;
   width:63px;
   height:12px;
   display:flex;
@@ -1278,7 +1320,7 @@
   border-width:0px;
   position:absolute;
   left:205px;
-  top:703px;
+  top:793px;
   width:48px;
   height:24px;
   display:flex;
@@ -1316,7 +1358,7 @@
   border-width:0px;
   position:absolute;
   left:306px;
-  top:703px;
+  top:793px;
   width:65px;
   height:24px;
   display:flex;
@@ -2248,6 +2290,7 @@
   top:0px;
   width:549px;
   height:295px;
+  z-index: -1;
 }
 #u73 {
   border-width:0px;
@@ -2270,6 +2313,15 @@
   word-wrap:break-word;
   text-transform:none;
   visibility:hidden;
+}
+#graph-panel-title{
+  padding: 12px 0 12px 8px;
+  background-color: rgba(98, 36, 128, 1);
+  height: fit-content;
+  width: 517px;
+  margin: 12px 0 0 12px;
+  color: white;
+  font-weight: bold
 }
 #u74 {
   border-width:0px;
@@ -3849,14 +3901,14 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:525px;
-  height:273px;
+  width:450px;
+  height:232px;
 }
 #u123 {
   border-width:0px;
   position:absolute;
-  left:650px;
-  top:875px;
+  left:690px;
+  top:922px;
   width:525px;
   height:273px;
   display:flex;

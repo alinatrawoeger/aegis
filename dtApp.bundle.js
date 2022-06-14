@@ -48,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".visevQBcXLRkGHgMmI6M {\n    display: flex;\n    align-items: center;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-size: 13px;\n}\n\n.J0HEVJIfbGnFUPEZ4sY9 {\n    height: 52px;\n    width: 1110px;\n    border: 2px solid rgba(98, 36, 128, 1);\n}\n\n.Z39wuvqAOiDL2qmEEtLg {\n    height: 44px;\n    width: 504px;\n    border: 2px solid rgba(2, 167, 240, 1);\n}\n\n.GPG0_6ulmPyX4P93Ximl {\n    margin: 0 12px;\n    min-width: 65px;\n}\n\n.hfPNZw73Cf9kMz2wiINg {\n    margin: 0 8px;\n    display: flex;\n    align-items: center;\n    border: 2px solid rgba(2, 167, 240, 1);\n    background: rgba(2, 167, 240, 0.2);\n    border-radius: 12px;\n    cursor: default;\n}\n\n.yYDjOyIh9MbdmMmIZawJ {\n    padding: 12px;\n}\n\n.d69p7vznosejmibriwTB {\n    padding: 10px;\n}\n\n.woAYoOs2KlfXQxcP2Y6v {\n    display: flex;\n}\n\n.P_fuyJFQ792sRIlNZnKo {\n    margin-right: 4px;\n}\n\n.cIyIQ3xAzZli4bSqa01A {\n    margin-left: 8px;\n    height: 16px;\n    width: 16px;\n    padding-right: 8px;\n    cursor: pointer;\n}\n\n.KneDLkDOPsiSv91jb0NA {\n    margin-left: 8px;\n    background-color: white;\n    border: 2px solid rgba(2, 167, 240, 0.5);\n    min-width: 52px;\n    cursor: pointer;\n}\n\n\n/* Filter Suggestions */\n.ykYCMASJ8Vra_8mQnKmM {\n    position: relative;\n    top: 60px;\n}\n\n.Fx0HhLBP0yOrmfRCiyY5 {\n    position: relative;\n    top: 61px;\n    display: flex;\n}\n\n.utiE1oReCoXSJduH4Syo {\n    margin-right: 8px;\n    padding-top: 8px;\n}\n\n.CfZZS1Llr6Cl2HMip0jn {\n    width: 120px;\n    height: 150px;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.v5CFVQ38Y78EAd_z_WxB {\n    padding: 8px;\n    border-bottom: 1px solid black;\n    cursor: pointer;\n}\n\n.v5CFVQ38Y78EAd_z_WxB:hover {\n    font-weight: 700px;\n    background-color: rgba(2, 167, 240, 0.5);\n}\n\n.IkF9cndZPFyri5gJRnn_ {\n    position: relative;\n    top: 45px;\n    display: flex;\n}\n\n.nP1bKdt6RzQq1ZmbhZlr {\n    padding: 12px;\n    text-align: right;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.kSrFiHnSaeho9TATvlGN {\n    width: 172px;\n    height: 96px;\n}\n\n.BFLSxOnhtitiKf_RLxaZ {\n    width: 138px;\n    height: 94px;\n}\n\n.LJvURyShD66q9zRcBSQI {\n    display: flex;\n    text-align: left;\n    padding-top: 8px;\n}\n\n.LJvURyShD66q9zRcBSQI :nth-child(2) {\n    align-items:flex-end;\n}\n\n.gotdjmwwI9aTPEhFLTww {\n    margin-right: 8px;\n    width: 60px;\n}\n\n.C6JZpuFoESwOcC651ltr {\n    width: 70px;\n}\n\n.q882sDkqfw6vf_F4pJH7 {\n    width: 140px;\n}\n\n.Bm_FFKRuket0l7tXuW6j {\n    margin-top: 12px;\n}", "",{"version":3,"sources":["webpack://./src/customCode/components/filterbar/Filterbar.module.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,mBAAmB;IACnB,kDAAkD;IAClD,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,sCAAsC;AAC1C;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,sCAAsC;AAC1C;;AAEA;IACI,cAAc;IACd,eAAe;AACnB;;AAEA;IACI,aAAa;IACb,aAAa;IACb,mBAAmB;IACnB,sCAAsC;IACtC,kCAAkC;IAClC,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,gBAAgB;IAChB,YAAY;IACZ,WAAW;IACX,kBAAkB;IAClB,eAAe;AACnB;;AAEA;IACI,gBAAgB;IAChB,uBAAuB;IACvB,wCAAwC;IACxC,eAAe;IACf,eAAe;AACnB;;;AAGA,uBAAuB;AACvB;IACI,kBAAkB;IAClB,SAAS;AACb;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,aAAa;AACjB;;AAEA;IACI,iBAAiB;IACjB,gBAAgB;AACpB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,kBAAkB;IAClB,uBAAuB;IACvB,UAAU;IACV,uBAAuB;AAC3B;;AAEA;IACI,YAAY;IACZ,8BAA8B;IAC9B,eAAe;AACnB;;AAEA;IACI,kBAAkB;IAClB,wCAAwC;AAC5C;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,iBAAiB;IACjB,kBAAkB;IAClB,uBAAuB;IACvB,UAAU;IACV,uBAAuB;AAC3B;;AAEA;IACI,YAAY;IACZ,YAAY;AAChB;;AAEA;IACI,YAAY;IACZ,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,gBAAgB;IAChB,gBAAgB;AACpB;;AAEA;IACI,oBAAoB;AACxB;;AAEA;IACI,iBAAiB;IACjB,WAAW;AACf;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,gBAAgB;AACpB","sourcesContent":[".filterbar {\n    display: flex;\n    align-items: center;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-size: 13px;\n}\n\n.filterbarDt {\n    height: 52px;\n    width: 1110px;\n    border: 2px solid rgba(98, 36, 128, 1);\n}\n\n.filterbarIVol {\n    height: 44px;\n    width: 504px;\n    border: 2px solid rgba(2, 167, 240, 1);\n}\n\n.filterStaticText {\n    margin: 0 12px;\n    min-width: 65px;\n}\n\n.filterElement {\n    margin: 0 8px;\n    display: flex;\n    align-items: center;\n    border: 2px solid rgba(2, 167, 240, 1);\n    background: rgba(2, 167, 240, 0.2);\n    border-radius: 12px;\n    cursor: default;\n}\n\n.filterElementDt {\n    padding: 12px;\n}\n\n.filterElementIVol {\n    padding: 10px;\n}\n\n.filterTextPanel {\n    display: flex;\n}\n\n.filterKey {\n    margin-right: 4px;\n}\n\n.removeFilterBtn {\n    margin-left: 8px;\n    height: 16px;\n    width: 16px;\n    padding-right: 8px;\n    cursor: pointer;\n}\n\n.addFilterBtn {\n    margin-left: 8px;\n    background-color: white;\n    border: 2px solid rgba(2, 167, 240, 0.5);\n    min-width: 52px;\n    cursor: pointer;\n}\n\n\n/* Filter Suggestions */\n.filterListPanel {\n    position: relative;\n    top: 60px;\n}\n\n.suggestionsTextPanel {\n    position: relative;\n    top: 61px;\n    display: flex;\n}\n\n.suggestionFiltername {\n    margin-right: 8px;\n    padding-top: 8px;\n}\n\n.suggestionTextValuesPanel {\n    width: 120px;\n    height: 150px;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.suggestionValueElement {\n    padding: 8px;\n    border-bottom: 1px solid black;\n    cursor: pointer;\n}\n\n.suggestionValueElement:hover {\n    font-weight: 700px;\n    background-color: rgba(2, 167, 240, 0.5);\n}\n\n.suggestionsRangePanel {\n    position: relative;\n    top: 45px;\n    display: flex;\n}\n\n.suggestionRangeValuesPanel {\n    padding: 12px;\n    text-align: right;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.suggestionRangeValuesPanelIVol {\n    width: 172px;\n    height: 96px;\n}\n\n.suggestionRangeValuesPanelDt {\n    width: 138px;\n    height: 94px;\n}\n\n.suggestionRangeFilterLine {\n    display: flex;\n    text-align: left;\n    padding-top: 8px;\n}\n\n.suggestionRangeFilterLine :nth-child(2) {\n    align-items:flex-end;\n}\n\n.suggestionRangeValueLabel {\n    margin-right: 8px;\n    width: 60px;\n}\n\n.suggestionRangeValueInputDt {\n    width: 70px;\n}\n\n.suggestionRangeValueInputIVol {\n    width: 140px;\n}\n\n.suggestionRangeBtn {\n    margin-top: 12px;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".visevQBcXLRkGHgMmI6M {\n    display: flex;\n    align-items: center;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-size: 13px;\n}\n\n.J0HEVJIfbGnFUPEZ4sY9 {\n    height: 52px;\n    width: 1110px;\n    border: 2px solid rgba(98, 36, 128, 1);\n}\n\n.Z39wuvqAOiDL2qmEEtLg {\n    height: 44px;\n    width: 504px;\n    border: 2px solid rgba(2, 167, 240, 1);\n}\n\n.GPG0_6ulmPyX4P93Ximl {\n    margin: 0 12px;\n    min-width: 65px;\n}\n\n.hfPNZw73Cf9kMz2wiINg {\n    margin: 0 8px;\n    display: flex;\n    align-items: center;\n    border: 2px solid rgba(2, 167, 240, 1);\n    background: rgba(2, 167, 240, 0.2);\n    border-radius: 12px;\n    cursor: default;\n}\n\n.yYDjOyIh9MbdmMmIZawJ {\n    padding: 12px;\n}\n\n.d69p7vznosejmibriwTB {\n    padding: 10px;\n}\n\n.woAYoOs2KlfXQxcP2Y6v {\n    display: flex;\n}\n\n.P_fuyJFQ792sRIlNZnKo {\n    margin-right: 4px;\n}\n\n.cIyIQ3xAzZli4bSqa01A {\n    margin-left: 8px;\n    height: 16px;\n    width: 16px;\n    padding-right: 8px;\n    cursor: pointer;\n}\n\n.KneDLkDOPsiSv91jb0NA {\n    margin-left: 8px;\n    background-color: white;\n    border: 2px solid rgba(2, 167, 240, 0.5);\n    min-width: 52px;\n    cursor: pointer;\n}\n\n\n/* Filter Suggestions */\n.ykYCMASJ8Vra_8mQnKmM {\n    position: relative;\n    top: 60px;\n}\n\n.Fx0HhLBP0yOrmfRCiyY5 {\n    position: relative;\n    top: 61px;\n    display: flex;\n}\n\n.utiE1oReCoXSJduH4Syo {\n    margin-right: 8px;\n    padding-top: 8px;\n}\n\n.CfZZS1Llr6Cl2HMip0jn {\n    width: 120px;\n    height: 162px;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.v5CFVQ38Y78EAd_z_WxB {\n    padding: 8px;\n    border-bottom: 1px solid black;\n    cursor: pointer;\n}\n\n.v5CFVQ38Y78EAd_z_WxB:hover {\n    font-weight: 700px;\n    background-color: rgba(2, 167, 240, 0.5);\n}\n\n.IkF9cndZPFyri5gJRnn_ {\n    position: relative;\n    top: 45px;\n    display: flex;\n}\n\n.nP1bKdt6RzQq1ZmbhZlr {\n    padding: 12px;\n    text-align: right;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.kSrFiHnSaeho9TATvlGN {\n    width: 172px;\n    height: 96px;\n}\n\n.BFLSxOnhtitiKf_RLxaZ {\n    width: 138px;\n    height: 94px;\n}\n\n.LJvURyShD66q9zRcBSQI {\n    display: flex;\n    text-align: left;\n    padding-top: 8px;\n}\n\n.LJvURyShD66q9zRcBSQI :nth-child(2) {\n    align-items:flex-end;\n}\n\n.gotdjmwwI9aTPEhFLTww {\n    margin-right: 8px;\n    width: 60px;\n}\n\n.C6JZpuFoESwOcC651ltr {\n    width: 70px;\n}\n\n.q882sDkqfw6vf_F4pJH7 {\n    width: 140px;\n}\n\n.Bm_FFKRuket0l7tXuW6j {\n    margin-top: 12px;\n}", "",{"version":3,"sources":["webpack://./src/customCode/components/filterbar/Filterbar.module.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,mBAAmB;IACnB,kDAAkD;IAClD,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,sCAAsC;AAC1C;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,sCAAsC;AAC1C;;AAEA;IACI,cAAc;IACd,eAAe;AACnB;;AAEA;IACI,aAAa;IACb,aAAa;IACb,mBAAmB;IACnB,sCAAsC;IACtC,kCAAkC;IAClC,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,gBAAgB;IAChB,YAAY;IACZ,WAAW;IACX,kBAAkB;IAClB,eAAe;AACnB;;AAEA;IACI,gBAAgB;IAChB,uBAAuB;IACvB,wCAAwC;IACxC,eAAe;IACf,eAAe;AACnB;;;AAGA,uBAAuB;AACvB;IACI,kBAAkB;IAClB,SAAS;AACb;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,aAAa;AACjB;;AAEA;IACI,iBAAiB;IACjB,gBAAgB;AACpB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,kBAAkB;IAClB,uBAAuB;IACvB,UAAU;IACV,uBAAuB;AAC3B;;AAEA;IACI,YAAY;IACZ,8BAA8B;IAC9B,eAAe;AACnB;;AAEA;IACI,kBAAkB;IAClB,wCAAwC;AAC5C;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,iBAAiB;IACjB,kBAAkB;IAClB,uBAAuB;IACvB,UAAU;IACV,uBAAuB;AAC3B;;AAEA;IACI,YAAY;IACZ,YAAY;AAChB;;AAEA;IACI,YAAY;IACZ,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,gBAAgB;IAChB,gBAAgB;AACpB;;AAEA;IACI,oBAAoB;AACxB;;AAEA;IACI,iBAAiB;IACjB,WAAW;AACf;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,gBAAgB;AACpB","sourcesContent":[".filterbar {\n    display: flex;\n    align-items: center;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-size: 13px;\n}\n\n.filterbarDt {\n    height: 52px;\n    width: 1110px;\n    border: 2px solid rgba(98, 36, 128, 1);\n}\n\n.filterbarIVol {\n    height: 44px;\n    width: 504px;\n    border: 2px solid rgba(2, 167, 240, 1);\n}\n\n.filterStaticText {\n    margin: 0 12px;\n    min-width: 65px;\n}\n\n.filterElement {\n    margin: 0 8px;\n    display: flex;\n    align-items: center;\n    border: 2px solid rgba(2, 167, 240, 1);\n    background: rgba(2, 167, 240, 0.2);\n    border-radius: 12px;\n    cursor: default;\n}\n\n.filterElementDt {\n    padding: 12px;\n}\n\n.filterElementIVol {\n    padding: 10px;\n}\n\n.filterTextPanel {\n    display: flex;\n}\n\n.filterKey {\n    margin-right: 4px;\n}\n\n.removeFilterBtn {\n    margin-left: 8px;\n    height: 16px;\n    width: 16px;\n    padding-right: 8px;\n    cursor: pointer;\n}\n\n.addFilterBtn {\n    margin-left: 8px;\n    background-color: white;\n    border: 2px solid rgba(2, 167, 240, 0.5);\n    min-width: 52px;\n    cursor: pointer;\n}\n\n\n/* Filter Suggestions */\n.filterListPanel {\n    position: relative;\n    top: 60px;\n}\n\n.suggestionsTextPanel {\n    position: relative;\n    top: 61px;\n    display: flex;\n}\n\n.suggestionFiltername {\n    margin-right: 8px;\n    padding-top: 8px;\n}\n\n.suggestionTextValuesPanel {\n    width: 120px;\n    height: 162px;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.suggestionValueElement {\n    padding: 8px;\n    border-bottom: 1px solid black;\n    cursor: pointer;\n}\n\n.suggestionValueElement:hover {\n    font-weight: 700px;\n    background-color: rgba(2, 167, 240, 0.5);\n}\n\n.suggestionsRangePanel {\n    position: relative;\n    top: 45px;\n    display: flex;\n}\n\n.suggestionRangeValuesPanel {\n    padding: 12px;\n    text-align: right;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.suggestionRangeValuesPanelIVol {\n    width: 172px;\n    height: 96px;\n}\n\n.suggestionRangeValuesPanelDt {\n    width: 138px;\n    height: 94px;\n}\n\n.suggestionRangeFilterLine {\n    display: flex;\n    text-align: left;\n    padding-top: 8px;\n}\n\n.suggestionRangeFilterLine :nth-child(2) {\n    align-items:flex-end;\n}\n\n.suggestionRangeValueLabel {\n    margin-right: 8px;\n    width: 60px;\n}\n\n.suggestionRangeValueInputDt {\n    width: 70px;\n}\n\n.suggestionRangeValueInputIVol {\n    width: 140px;\n}\n\n.suggestionRangeBtn {\n    margin-top: 12px;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"filterbar": "visevQBcXLRkGHgMmI6M",
@@ -102,7 +102,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".JJyNdgBbzIdK1BI0SCXH {\n    height: 535px;\n    width: 1102px;\n}\n\n.uIUzAGrW9cVKHTGZ4jwx {\n    height: 275px;\n    width: 502px;\n}\n\n.WhCsOyPWNMyrk8AJCO2i {\n    display: block !important;\n}\n\n.ymKatAZKiL5x64X3Z_Yg {\n    width: 475px;\n    height: 275px;\n}\n\n.BcGMWewQ1PdCkubwEJTv {\n    transform: rotate(180deg)\n}\n\n.HxTJjmO8WElTpTlmTJAM {\n    display: none;\n}", "",{"version":3,"sources":["webpack://./src/customCode/components/map/Map.module.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,YAAY;AAChB;;AAEA;IACI,yBAAyB;AAC7B;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI;AACJ;;AAEA;IACI,aAAa;AACjB","sourcesContent":[".container_dt {\n    height: 535px;\n    width: 1102px;\n}\n\n.container_ivol {\n    height: 275px;\n    width: 502px;\n}\n\n.iVolTooltipPanel {\n    display: block !important;\n}\n\n.container_staticmap {\n    width: 475px;\n    height: 275px;\n}\n\n.collapsedMapBtn {\n    transform: rotate(180deg)\n}\n\n.hideMap {\n    display: none;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".JJyNdgBbzIdK1BI0SCXH {\n    height: 535px;\n    width: 1102px;\n}\n\n.uIUzAGrW9cVKHTGZ4jwx {\n    height: 275px;\n    width: 502px;\n}\n\n.WhCsOyPWNMyrk8AJCO2i {\n    display: block !important;\n}\n\n.ymKatAZKiL5x64X3Z_Yg {\n    width: 475px;\n    height: 275px;\n}\n\n.BcGMWewQ1PdCkubwEJTv {\n    transform: rotate(180deg)\n}\n\n.HxTJjmO8WElTpTlmTJAM {\n    display: none;\n}\n\n.smsDKEZDbkCcHA_Pw7HA {\n    height: 30px;\n    width: 30px;\n}", "",{"version":3,"sources":["webpack://./src/customCode/components/map/Map.module.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,YAAY;AAChB;;AAEA;IACI,yBAAyB;AAC7B;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI;AACJ;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,WAAW;AACf","sourcesContent":[".container_dt {\n    height: 535px;\n    width: 1102px;\n}\n\n.container_ivol {\n    height: 275px;\n    width: 502px;\n}\n\n.iVolTooltipPanel {\n    display: block !important;\n}\n\n.container_staticmap {\n    width: 475px;\n    height: 275px;\n}\n\n.collapsedMapBtn {\n    transform: rotate(180deg)\n}\n\n.hideMap {\n    display: none;\n}\n\n.pinpointMarker {\n    height: 30px;\n    width: 30px;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container_dt": "JJyNdgBbzIdK1BI0SCXH",
@@ -110,7 +110,8 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"iVolTooltipPanel": "WhCsOyPWNMyrk8AJCO2i",
 	"container_staticmap": "ymKatAZKiL5x64X3Z_Yg",
 	"collapsedMapBtn": "BcGMWewQ1PdCkubwEJTv",
-	"hideMap": "HxTJjmO8WElTpTlmTJAM"
+	"hideMap": "HxTJjmO8WElTpTlmTJAM",
+	"pinpointMarker": "smsDKEZDbkCcHA_Pw7HA"
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -363,10 +364,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/customCode/components/map/img/marker-green.png":
-/*!************************************************************!*\
-  !*** ./src/customCode/components/map/img/marker-green.png ***!
-  \************************************************************/
+/***/ "./src/customCode/components/map/img/criticalevent-red_800.svg":
+/*!*********************************************************************!*\
+  !*** ./src/customCode/components/map/img/criticalevent-red_800.svg ***!
+  \*********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -374,14 +375,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/marker-green.png");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/criticalevent-red_800.svg");
 
 /***/ }),
 
-/***/ "./src/customCode/components/map/img/marker-red.png":
-/*!**********************************************************!*\
-  !*** ./src/customCode/components/map/img/marker-red.png ***!
-  \**********************************************************/
+/***/ "./src/customCode/components/map/img/pinpoint-location-blue_600.svg":
+/*!**************************************************************************!*\
+  !*** ./src/customCode/components/map/img/pinpoint-location-blue_600.svg ***!
+  \**************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -389,14 +390,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/marker-red.png");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/pinpoint-location-blue_600.svg");
 
 /***/ }),
 
-/***/ "./src/customCode/components/map/img/marker-yellow.png":
-/*!*************************************************************!*\
-  !*** ./src/customCode/components/map/img/marker-yellow.png ***!
-  \*************************************************************/
+/***/ "./src/customCode/components/map/img/pinpoint-location-green_400.svg":
+/*!***************************************************************************!*\
+  !*** ./src/customCode/components/map/img/pinpoint-location-green_400.svg ***!
+  \***************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -404,7 +405,127 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/marker-yellow.png");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/pinpoint-location-green_400.svg");
+
+/***/ }),
+
+/***/ "./src/customCode/components/map/img/pinpoint-location-green_600.svg":
+/*!***************************************************************************!*\
+  !*** ./src/customCode/components/map/img/pinpoint-location-green_600.svg ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/pinpoint-location-green_600.svg");
+
+/***/ }),
+
+/***/ "./src/customCode/components/map/img/pinpoint-location-green_900.svg":
+/*!***************************************************************************!*\
+  !*** ./src/customCode/components/map/img/pinpoint-location-green_900.svg ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/pinpoint-location-green_900.svg");
+
+/***/ }),
+
+/***/ "./src/customCode/components/map/img/pinpoint-location-red_300.svg":
+/*!*************************************************************************!*\
+  !*** ./src/customCode/components/map/img/pinpoint-location-red_300.svg ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/pinpoint-location-red_300.svg");
+
+/***/ }),
+
+/***/ "./src/customCode/components/map/img/pinpoint-location-red_500.svg":
+/*!*************************************************************************!*\
+  !*** ./src/customCode/components/map/img/pinpoint-location-red_500.svg ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/pinpoint-location-red_500.svg");
+
+/***/ }),
+
+/***/ "./src/customCode/components/map/img/pinpoint-location-red_800.svg":
+/*!*************************************************************************!*\
+  !*** ./src/customCode/components/map/img/pinpoint-location-red_800.svg ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/pinpoint-location-red_800.svg");
+
+/***/ }),
+
+/***/ "./src/customCode/components/map/img/pinpoint-location-yellow_300.svg":
+/*!****************************************************************************!*\
+  !*** ./src/customCode/components/map/img/pinpoint-location-yellow_300.svg ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/pinpoint-location-yellow_300.svg");
+
+/***/ }),
+
+/***/ "./src/customCode/components/map/img/pinpoint-location-yellow_500.svg":
+/*!****************************************************************************!*\
+  !*** ./src/customCode/components/map/img/pinpoint-location-yellow_500.svg ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/pinpoint-location-yellow_500.svg");
+
+/***/ }),
+
+/***/ "./src/customCode/components/map/img/pinpoint-location-yellow_700.svg":
+/*!****************************************************************************!*\
+  !*** ./src/customCode/components/map/img/pinpoint-location-yellow_700.svg ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/pinpoint-location-yellow_700.svg");
 
 /***/ }),
 
@@ -34198,29 +34319,43 @@ module.exports = styleTagTransform;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "defaultLongitude": () => (/* binding */ defaultLongitude),
+/* harmony export */   "defaultLatitude": () => (/* binding */ defaultLatitude),
 /* harmony export */   "createMap": () => (/* binding */ createMap),
-/* harmony export */   "addIconOverlay": () => (/* binding */ addIconOverlay)
+/* harmony export */   "addIconOverlay": () => (/* binding */ addIconOverlay),
+/* harmony export */   "setIconMarker": () => (/* binding */ setIconMarker),
+/* harmony export */   "getCoordinatesForCityIVol": () => (/* binding */ getCoordinatesForCityIVol),
+/* harmony export */   "getDateString": () => (/* binding */ getDateString),
+/* harmony export */   "getTaskUrgencyDays": () => (/* binding */ getTaskUrgencyDays)
 /* harmony export */ });
-/* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ol */ "./node_modules/ol/View.js");
-/* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ol */ "./node_modules/ol/Map.js");
-/* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ol */ "./node_modules/ol/Feature.js");
-/* harmony import */ var ol_control__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ol/control */ "./node_modules/ol/control.js");
-/* harmony import */ var ol_control_OverviewMap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ol/control/OverviewMap */ "./node_modules/ol/control/OverviewMap.js");
-/* harmony import */ var ol_geom_Point__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ol/geom/Point */ "./node_modules/ol/geom/Point.js");
-/* harmony import */ var ol_interaction__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ol/interaction */ "./node_modules/ol/interaction.js");
-/* harmony import */ var ol_interaction__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ol/interaction */ "./node_modules/ol/interaction/DragRotateAndZoom.js");
-/* harmony import */ var ol_layer_Tile__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ol/layer/Tile */ "./node_modules/ol/layer/Tile.js");
-/* harmony import */ var ol_layer_Vector__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ol/layer/Vector */ "./node_modules/ol/layer/Vector.js");
+/* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ol */ "./node_modules/ol/View.js");
+/* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ol */ "./node_modules/ol/Map.js");
+/* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ol */ "./node_modules/ol/Feature.js");
+/* harmony import */ var ol_control__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ol/control */ "./node_modules/ol/control.js");
+/* harmony import */ var ol_control_OverviewMap__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ol/control/OverviewMap */ "./node_modules/ol/control/OverviewMap.js");
+/* harmony import */ var ol_geom_Point__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ol/geom/Point */ "./node_modules/ol/geom/Point.js");
+/* harmony import */ var ol_interaction__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ol/interaction */ "./node_modules/ol/interaction.js");
+/* harmony import */ var ol_interaction__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ol/interaction */ "./node_modules/ol/interaction/DragRotateAndZoom.js");
+/* harmony import */ var ol_layer_Tile__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ol/layer/Tile */ "./node_modules/ol/layer/Tile.js");
+/* harmony import */ var ol_layer_Vector__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ol/layer/Vector */ "./node_modules/ol/layer/Vector.js");
 /* harmony import */ var ol_proj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/proj */ "./node_modules/ol/proj.js");
-/* harmony import */ var ol_source_OSM__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ol/source/OSM */ "./node_modules/ol/source/OSM.js");
-/* harmony import */ var ol_source_Vector__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ol/source/Vector */ "./node_modules/ol/source/Vector.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Style.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Icon.js");
+/* harmony import */ var ol_source_OSM__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ol/source/OSM */ "./node_modules/ol/source/OSM.js");
+/* harmony import */ var ol_source_Vector__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ol/source/Vector */ "./node_modules/ol/source/Vector.js");
+/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Style.js");
+/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Icon.js");
 /* harmony import */ var _data_dt_filters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../data/dt_filters */ "./src/customCode/data/dt_filters.ts");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils */ "./src/customCode/utils.tsx");
-/* harmony import */ var _img_marker_green_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./img/marker-green.png */ "./src/customCode/components/map/img/marker-green.png");
-/* harmony import */ var _img_marker_red_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./img/marker-red.png */ "./src/customCode/components/map/img/marker-red.png");
-/* harmony import */ var _img_marker_yellow_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./img/marker-yellow.png */ "./src/customCode/components/map/img/marker-yellow.png");
+/* harmony import */ var _img_criticalevent_red_800_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./img/criticalevent-red_800.svg */ "./src/customCode/components/map/img/criticalevent-red_800.svg");
+/* harmony import */ var _img_pinpoint_location_blue_600_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./img/pinpoint-location-blue_600.svg */ "./src/customCode/components/map/img/pinpoint-location-blue_600.svg");
+/* harmony import */ var _img_pinpoint_location_green_400_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./img/pinpoint-location-green_400.svg */ "./src/customCode/components/map/img/pinpoint-location-green_400.svg");
+/* harmony import */ var _img_pinpoint_location_green_600_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./img/pinpoint-location-green_600.svg */ "./src/customCode/components/map/img/pinpoint-location-green_600.svg");
+/* harmony import */ var _img_pinpoint_location_green_900_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./img/pinpoint-location-green_900.svg */ "./src/customCode/components/map/img/pinpoint-location-green_900.svg");
+/* harmony import */ var _img_pinpoint_location_red_300_svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./img/pinpoint-location-red_300.svg */ "./src/customCode/components/map/img/pinpoint-location-red_300.svg");
+/* harmony import */ var _img_pinpoint_location_red_500_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./img/pinpoint-location-red_500.svg */ "./src/customCode/components/map/img/pinpoint-location-red_500.svg");
+/* harmony import */ var _img_pinpoint_location_red_800_svg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./img/pinpoint-location-red_800.svg */ "./src/customCode/components/map/img/pinpoint-location-red_800.svg");
+/* harmony import */ var _img_pinpoint_location_yellow_300_svg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./img/pinpoint-location-yellow_300.svg */ "./src/customCode/components/map/img/pinpoint-location-yellow_300.svg");
+/* harmony import */ var _img_pinpoint_location_yellow_500_svg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./img/pinpoint-location-yellow_500.svg */ "./src/customCode/components/map/img/pinpoint-location-yellow_500.svg");
+/* harmony import */ var _img_pinpoint_location_yellow_700_svg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./img/pinpoint-location-yellow_700.svg */ "./src/customCode/components/map/img/pinpoint-location-yellow_700.svg");
 
 
 
@@ -34237,28 +34372,39 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+// test data (coordinates of the center of Austria)
+var defaultLongitude = 14.12456;
+var defaultLatitude = 47.59397;
 var createMap = function (target, zoom, lon, lat, isIVolunteer, overlayLayer) {
-    var mapLayer = new ol_layer_Tile__WEBPACK_IMPORTED_MODULE_6__["default"]({
-        source: new ol_source_OSM__WEBPACK_IMPORTED_MODULE_7__["default"]()
+    var mapLayer = new ol_layer_Tile__WEBPACK_IMPORTED_MODULE_14__["default"]({
+        source: new ol_source_OSM__WEBPACK_IMPORTED_MODULE_15__["default"]()
     });
-    var view = new ol__WEBPACK_IMPORTED_MODULE_8__["default"]({
+    var view = new ol__WEBPACK_IMPORTED_MODULE_16__["default"]({
         center: (0,ol_proj__WEBPACK_IMPORTED_MODULE_0__.fromLonLat)([lon, lat]),
         zoom: zoom
     });
     if (!isIVolunteer) {
-        var minimapControl = new ol_control_OverviewMap__WEBPACK_IMPORTED_MODULE_9__["default"]({
+        var minimapControl = new ol_control_OverviewMap__WEBPACK_IMPORTED_MODULE_17__["default"]({
             className: 'ol-overviewmap ol-custom-overviewmap',
-            layers: [new ol_layer_Tile__WEBPACK_IMPORTED_MODULE_6__["default"]({
-                    source: new ol_source_OSM__WEBPACK_IMPORTED_MODULE_7__["default"](),
+            layers: [new ol_layer_Tile__WEBPACK_IMPORTED_MODULE_14__["default"]({
+                    source: new ol_source_OSM__WEBPACK_IMPORTED_MODULE_15__["default"](),
                 })],
             collapseLabel: '\u00BB',
             label: '\u00AB',
             collapsed: false,
         });
         view.setMaxZoom(_utils__WEBPACK_IMPORTED_MODULE_2__.ZoomLevel.REGION);
-        return new ol__WEBPACK_IMPORTED_MODULE_10__["default"]({
-            controls: (0,ol_control__WEBPACK_IMPORTED_MODULE_11__.defaults)().extend([minimapControl]),
-            interactions: (0,ol_interaction__WEBPACK_IMPORTED_MODULE_12__.defaults)().extend([new ol_interaction__WEBPACK_IMPORTED_MODULE_13__["default"]()]),
+        return new ol__WEBPACK_IMPORTED_MODULE_18__["default"]({
+            controls: (0,ol_control__WEBPACK_IMPORTED_MODULE_19__.defaults)().extend([minimapControl]),
+            interactions: (0,ol_interaction__WEBPACK_IMPORTED_MODULE_20__.defaults)().extend([new ol_interaction__WEBPACK_IMPORTED_MODULE_21__["default"]()]),
             target: target,
             layers: [mapLayer, overlayLayer],
             view: view
@@ -34267,7 +34413,7 @@ var createMap = function (target, zoom, lon, lat, isIVolunteer, overlayLayer) {
     }
     else {
         view.setMinZoom(_utils__WEBPACK_IMPORTED_MODULE_2__.ZoomLevel.COUNTRY);
-        return new ol__WEBPACK_IMPORTED_MODULE_10__["default"]({
+        return new ol__WEBPACK_IMPORTED_MODULE_18__["default"]({
             target: target,
             layers: [mapLayer],
             view: view
@@ -34279,48 +34425,89 @@ var addIconOverlay = function (isIVolunteer, markerData, map, selectedMetric) {
     var iconSource = '';
     if (isIVolunteer) {
         if (selectedMetric === 'urgency') {
-            iconSource = _img_marker_red_png__WEBPACK_IMPORTED_MODULE_4__["default"];
+            var diffDays = getTaskUrgencyDays(new Date(markerData.date.from));
+            if (diffDays <= _utils__WEBPACK_IMPORTED_MODULE_2__.UrgencyDays.SEVERE) {
+                iconSource = _img_criticalevent_red_800_svg__WEBPACK_IMPORTED_MODULE_3__["default"];
+            }
+            else if (diffDays <= _utils__WEBPACK_IMPORTED_MODULE_2__.UrgencyDays.HIGH) {
+                iconSource = _img_pinpoint_location_red_800_svg__WEBPACK_IMPORTED_MODULE_10__["default"];
+            }
+            else if (diffDays <= _utils__WEBPACK_IMPORTED_MODULE_2__.UrgencyDays.MEDIUM) {
+                iconSource = _img_pinpoint_location_red_500_svg__WEBPACK_IMPORTED_MODULE_9__["default"];
+            }
+            else {
+                iconSource = _img_pinpoint_location_red_300_svg__WEBPACK_IMPORTED_MODULE_8__["default"];
+            }
         }
         else if (selectedMetric === 'priority') {
-            iconSource = _img_marker_yellow_png__WEBPACK_IMPORTED_MODULE_5__["default"];
+            var priority = markerData.priority;
+            if (priority === _utils__WEBPACK_IMPORTED_MODULE_2__.PriorityLevels.HIGH) {
+                iconSource = _img_pinpoint_location_yellow_700_svg__WEBPACK_IMPORTED_MODULE_13__["default"];
+            }
+            else if (priority === _utils__WEBPACK_IMPORTED_MODULE_2__.PriorityLevels.MEDIUM) {
+                iconSource = _img_pinpoint_location_yellow_500_svg__WEBPACK_IMPORTED_MODULE_12__["default"];
+            }
+            else {
+                iconSource = _img_pinpoint_location_yellow_300_svg__WEBPACK_IMPORTED_MODULE_11__["default"];
+            }
         }
         else if (selectedMetric === 'duration') {
-            iconSource = _img_marker_green_png__WEBPACK_IMPORTED_MODULE_3__["default"];
+            var duration = getTaskDurationLength(markerData.date.from, markerData.date.to);
+            if (duration <= _utils__WEBPACK_IMPORTED_MODULE_2__.DurationLength.SHORT) {
+                iconSource = _img_pinpoint_location_green_900_svg__WEBPACK_IMPORTED_MODULE_7__["default"];
+            }
+            else if (duration <= _utils__WEBPACK_IMPORTED_MODULE_2__.DurationLength.MEDIUM) {
+                iconSource = _img_pinpoint_location_green_600_svg__WEBPACK_IMPORTED_MODULE_6__["default"];
+            }
+            else {
+                iconSource = _img_pinpoint_location_green_400_svg__WEBPACK_IMPORTED_MODULE_5__["default"];
+            }
+        }
+        else {
+            iconSource = _img_pinpoint_location_blue_600_svg__WEBPACK_IMPORTED_MODULE_4__["default"];
         }
     }
     else {
-        iconSource = _img_marker_red_png__WEBPACK_IMPORTED_MODULE_4__["default"];
+        iconSource = _img_pinpoint_location_red_800_svg__WEBPACK_IMPORTED_MODULE_10__["default"];
     }
     if (iconSource != '') {
-        var iconFeature = new ol__WEBPACK_IMPORTED_MODULE_14__["default"]({
-            geometry: new ol_geom_Point__WEBPACK_IMPORTED_MODULE_15__["default"]((0,ol_proj__WEBPACK_IMPORTED_MODULE_0__.transform)([longitude, latitude], 'EPSG:4326', 'EPSG:3857')),
-            name: 'LocationMarkerFeature',
-            population: 4000,
-            rainfall: 500,
-        });
-        if (isIVolunteer) {
-            iconFeature.set('taskid', markerData.taskid);
-        }
-        var iconStyle = new ol_style__WEBPACK_IMPORTED_MODULE_16__["default"]({
-            image: new ol_style__WEBPACK_IMPORTED_MODULE_17__["default"]({
-                anchor: [0.5, 20],
-                anchorXUnits: 'fraction',
-                anchorYUnits: 'pixels',
-                src: iconSource
-            }),
-        });
-        iconFeature.setStyle(iconStyle);
-        var vectorSource = new ol_source_Vector__WEBPACK_IMPORTED_MODULE_18__["default"]({
-            features: [iconFeature],
-        });
-        var iconVectorLayer = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_19__["default"]({
-            source: vectorSource,
-            properties: {
-                name: 'LocationMarker'
-            }
-        });
-        map.addLayer(iconVectorLayer);
+        var markerId = isIVolunteer ? markerData.taskid : undefined;
+        setIconMarker(longitude, latitude, map, markerId, iconSource);
     }
+};
+var setIconMarker = function (lon, lat, map, markerId, iconSource) {
+    var iconFeature = new ol__WEBPACK_IMPORTED_MODULE_22__["default"]({
+        geometry: new ol_geom_Point__WEBPACK_IMPORTED_MODULE_23__["default"]((0,ol_proj__WEBPACK_IMPORTED_MODULE_0__.transform)([lon, lat], 'EPSG:4326', 'EPSG:3857')),
+        name: 'LocationMarkerFeature',
+        population: 4000,
+        rainfall: 500,
+    });
+    if (markerId !== undefined) {
+        iconFeature.set('taskid', markerId);
+    }
+    if (iconSource === undefined) {
+        iconSource = _img_pinpoint_location_red_800_svg__WEBPACK_IMPORTED_MODULE_10__["default"];
+    }
+    var iconStyle = new ol_style__WEBPACK_IMPORTED_MODULE_24__["default"]({
+        image: new ol_style__WEBPACK_IMPORTED_MODULE_25__["default"]({
+            anchor: [0.5, 1],
+            anchorXUnits: 'fraction',
+            anchorYUnits: 'fraction',
+            scale: [0.1, 0.1],
+            src: iconSource
+        }),
+    });
+    iconFeature.setStyle(iconStyle);
+    var vectorSource = new ol_source_Vector__WEBPACK_IMPORTED_MODULE_26__["default"]({
+        features: [iconFeature],
+    });
+    var iconVectorLayer = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_27__["default"]({
+        source: vectorSource,
+        properties: {
+            name: 'LocationMarker'
+        }
+    });
+    map.addLayer(iconVectorLayer);
 };
 var getCoordinatesForCityIVol = function (markerData) {
     var latitude = markerData.address.coordinates[0];
@@ -34345,6 +34532,35 @@ var getCoordinatesForCityDt = function (cityName) {
         }
     }
     return { longitude: longitude, latitude: latitude };
+};
+var getDateString = function (date) {
+    var dateFrom = new Date(date.from);
+    var dateTo;
+    if (date.to !== '') {
+        dateTo = new Date(date.to);
+    }
+    var dateString = dateFrom.toLocaleDateString() + ', ' + dateFrom.toLocaleTimeString();
+    dateString += dateTo !== undefined ? ' bis ' + dateTo.toLocaleDateString() + ', ' + dateTo.toLocaleTimeString() : "";
+    return { dateFrom: dateFrom, dateTo: dateTo, dateString: dateString };
+};
+var getTaskUrgencyDays = function (date) {
+    var currentDate = new Date().getTime();
+    var diffTime = Math.abs(currentDate - date.getTime());
+    var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays;
+};
+var getTaskDurationLength = function (dateFrom, dateTo) {
+    var dateFromTime = new Date(dateFrom).getTime();
+    var dateToTime;
+    if (dateTo !== '') {
+        dateToTime = new Date(dateTo).getTime();
+    }
+    else {
+        dateToTime = dateFromTime;
+    }
+    var diffTime = Math.abs(dateFromTime - dateToTime);
+    var durationLength = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return durationLength;
 };
 
 
@@ -35076,6 +35292,7 @@ __webpack_require__.r(__webpack_exports__);
             "street": "Mönchsberg 34",
             "zip": "5020",
             "city": "Salzburg",
+            "region": "Salzburg",
             "country": "Austria",
             "country-iso": "AT",
             "coordinates": [47.79517891806973, 13.047540281203213]
@@ -35083,17 +35300,22 @@ __webpack_require__.r(__webpack_exports__);
         "taskname": "Adventbazar",
         "taskid": 12345,
         "responsible": "Rotes Kreuz",
-        "date": "2022-09-25T15:00:00Z",
+        "priority": 2,
+        "date": {
+            "from": "2022-12-10T15:00:00Z",
+            "to": "2022-12-12T20:00:00Z"
+        },
         "friend": [
             "Tony Stark", "Bruce Banner", "Steve Rogers"
         ],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget./n/nProin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+        "description": "Für unseren jährlichen Adventbazar auf der Festung Hohensalzburg suchen wir noch motivierte Leute, die uns einen Nachmittag lang aushelfen können. Wir suchen helfende Hände an allen Ecken, also am Besten du meldest dich einfach bei uns und erzählst uns, was du gerne machen möchtest. Wir finden bestimmt eine tolle Aufgabe für dich! Wir freuen uns auf deine Nachricht. :)",
     },
     {
         "address": {
             "street": "Altenbergerstraße 69",
             "zip": "4040",
             "city": "Linz",
+            "region": "Oberösterreich",
             "country": "Austria",
             "country-iso": "AT",
             "coordinates": [48.337677902412565, 14.32281236957337]
@@ -35101,17 +35323,22 @@ __webpack_require__.r(__webpack_exports__);
         "taskname": "Pfadfinder Meetup",
         "taskid": 12346,
         "responsible": "Pfadfinderclub Linz",
-        "date": "2022-08-29T07:30:00Z",
+        "priority": 1,
+        "date": {
+            "from": "2022-08-29T07:30:00Z",
+            "to": ""
+        },
         "friend": [
             "Natasha Romanov", "James Bucky Barnes"
         ],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget./n/nProin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+        "description": "Auch dieses Monat treffen sich unsere kleinsten Pfadfinder wieder zu ihrem Pfadfinder Meetup. Um dieses Treffen angemessen beaufsichtigen zu können, benötigen wir deine Hilfe. Zu deinen Aufgaben zählen, den Kindern bei ihren Aufgaben (z.B. Tierspuren lesen, Blätter identifizieren) zu unterstützen. Ebenso zählt es zu deinen Aufgaben, die Kinder zu betreuen und zu beaufsichtigen, sollten sie in die Nähe des Straßenverkehrs geraten.",
     },
     {
         "address": {
             "street": "Maxingstraße 13b",
             "zip": "1130",
             "city": "Wien",
+            "region": "Wien",
             "country": "Austria",
             "country-iso": "AT",
             "coordinates": [48.18224988326545, 16.299806284912314]
@@ -35119,17 +35346,22 @@ __webpack_require__.r(__webpack_exports__);
         "taskname": "Zoo Tierhelfer",
         "taskid": 12347,
         "responsible": "Tiergarten-Verein Österreich",
-        "date": "2022-09-13T13:15:00Z",
+        "priority": 3,
+        "date": {
+            "from": "2022-07-27T13:15:00Z",
+            "to": ""
+        },
         "friend": [
             "Peter Parker"
         ],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget./n/nProin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+        "description": "Im Zoo Schönbrunn haben wir viele Tiere, die viel Aufmerksamkeit benötigen. Durch die Urlaubszeit sind uns leider viele Tierpfleger ausgefallen und wir könnten Unterstützung gebrauchen. Zu deinen Aufgaben zählt das Ausmisten der Käfige von Kleinnagern, im Affenhaus das Futter auszuteilen und die Pflanzen im Tropenhaus auf Ungeziefer zu untersuchen. Je nach eigenem Wohlbefinden suchen wir auch jemanden, der sich mit Spinnen wohlfühlt und in ihren Terrarien die Dekorationen umgestalten kann.",
     },
     {
         "address": {
             "street": "Pembaurstraße 20",
             "zip": "6020",
             "city": "Innsbruck",
+            "region": "Tirol",
             "country": "Austria",
             "country-iso": "AT",
             "coordinates": [47.26886080215773, 11.411443471397346]
@@ -35137,17 +35369,22 @@ __webpack_require__.r(__webpack_exports__);
         "taskname": "Kindergarten Helfer",
         "taskid": 12348,
         "responsible": "Rotes Kreuz",
-        "date": "2022-09-10T14:30:00Z",
+        "date": {
+            "from": "2022-06-20T14:30:00Z",
+            "to": ""
+        },
+        "priority": 2,
         "friend": [
             "Tony Stark", "Peter Parker", "Steve Rogers"
         ],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget./n/nProin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+        "description": "Durch die Urlaubszeit sind wir derzeit etwas schwach besetzt in unserem Kindergarten. Aufgrund des benötigten Zertifikats zur Kinderbetreuung, geht es bei diesem Job eher um das Aufräumen und desinfizieren des Spielbereichs in den Pausen, wo die Kinder im Hof draußen spielen. Solltest du vielleicht ein:e Kindergärtner:in in Ausbildung sein, melde dich doch einfach und wir können es bestimmt als Praktikum werten :)",
     },
     {
         "address": {
             "street": "B11, Lakeside",
             "zip": "9020",
             "city": "Klagenfurt am Wörthersee",
+            "region": "Kärnten",
             "country": "Austria",
             "country-iso": "AT",
             "coordinates": [46.6145822029484, 14.266635873231703]
@@ -35155,17 +35392,22 @@ __webpack_require__.r(__webpack_exports__);
         "taskname": "Altenpflege Volunteering",
         "taskid": 12349,
         "responsible": "Altenpflegeverein Kärnten",
-        "date": "2022-09-25T08:00:00Z",
+        "priority": 2,
+        "date": {
+            "from": "2022-09-21T08:00:00Z",
+            "to": "2022-09-30T15:00:00"
+        },
         "friend": [
             "Steve Rogers", "James Bucky Barnes"
         ],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget./n/nProin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+        "description": "Unsere Bewohner des Altenpflegeheims in Klagenfurt freuen sich schon sehr auf ihren Ausflug zum Wörthersee! Wir könnten dafür Unterstützung gebrauchen - wenn du gerne unseren Senioren bei ihrem Ausflug beiwohnen und ihnen beim Herumkommen am Platz helfen möchtest, melde dich doch! Dieser Job beinhaltet ausschließlich überwachende Tätigkeiten, es ist keine Kenntnis von fachspezifischen Knowledge nötig.",
     },
     {
         "address": {
             "street": "Puchstraße 164",
             "zip": "8055",
             "city": "Graz",
+            "region": "Steiermark",
             "country": "Austria",
             "country-iso": "AT",
             "coordinates": [47.03810761369751, 15.439317416354617]
@@ -35173,11 +35415,15 @@ __webpack_require__.r(__webpack_exports__);
         "taskname": "Mülleinsammeln",
         "taskid": 12350,
         "responsible": "Samariterbund",
-        "date": "2022-09-23T07:00:00Z",
+        "priority": 1,
+        "date": {
+            "from": "2022-06-15T07:00:00Z",
+            "to": ""
+        },
         "friend": [
             "James Bucky Barnes", "Natasha Romanov", "Peter Parker"
         ],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget./n/nProin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+        "description": "Leider lässt sich immer wieder eine Menge Müll am Parkplatz vorm Spar finden. Dieser Müll muss entfernt werden bevor der Großteil der Einkäufer kommt, weswegen wir um Unterstützung zur Mülleinsammlung bitten. Es geht dabei um Papiermüll, sowie Plastikverpackungen und potentiell auch zerbrochene Flaschen.",
     }
 ]);
 
@@ -35220,27 +35466,29 @@ __webpack_require__.r(__webpack_exports__);
         },
         "date": {
             "filterType": "date"
+        },
+        "location": {
+            "filterType": "text",
+            "properties": {
+                "AT-1": "Burgenland",
+                "AT-2": "Kärnten",
+                "AT-3": "Niederösterreich",
+                "AT-4": "Oberösterreich",
+                "AT-5": "Salzburg",
+                "AT-6": "Steiermark",
+                "AT-7": "Tirol",
+                "AT-8": "Vorarlberg",
+                "AT-9": "Wien"
+            }
+        },
+        "priority": {
+            "filterType": "text",
+            "properties": {
+                "1": "1 - High",
+                "2": "2 - Medium",
+                "3": "3 - Low"
+            }
         }
-        // "location": {
-        //     "Wien": {
-        //     },
-        //     "Oberösterreich": {
-        //     },
-        //     "Niederösterreich": {
-        //     },
-        //     "Salzburg": {
-        //     },
-        //     "Kärnten": {
-        //     },
-        //     "Steiermark": {
-        //     },
-        //     "Tirol": {
-        //     },
-        //     "Vorarlberg": {
-        //     },
-        //     "Burgenland": {
-        //     }
-        // }
     }
 ]);
 
@@ -35258,29 +35506,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _img_remove_icon_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./img/remove-icon.png */ "./src/customCode/components/filterbar/img/remove-icon.png");
-/* harmony import */ var _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Filterbar.module.css */ "./src/customCode/components/filterbar/Filterbar.module.css");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils */ "./src/customCode/utils.tsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils */ "./src/customCode/utils.tsx");
+/* harmony import */ var _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Filterbar.module.css */ "./src/customCode/components/filterbar/Filterbar.module.css");
+/* harmony import */ var _img_remove_icon_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./img/remove-icon.png */ "./src/customCode/components/filterbar/img/remove-icon.png");
 
 
 
 
 var FilterElement = function (_a) {
     var filterKey = _a.filterKey, filterValue = _a.filterValue, removeFilter = _a.removeFilter, isIVolunteer = _a.isIVolunteer;
-    var filterType = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.getFilterType)(filterKey);
-    return (react__WEBPACK_IMPORTED_MODULE_2___default().createElement((react__WEBPACK_IMPORTED_MODULE_2___default().Fragment), null,
-        react__WEBPACK_IMPORTED_MODULE_2___default().createElement("div", { className: "".concat(_Filterbar_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].filterElement, " ").concat(isIVolunteer ? _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].filterElementIVol : _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].filterElementDt), key: filterKey, id: filterKey },
-            react__WEBPACK_IMPORTED_MODULE_2___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].filterTextPanel },
-                react__WEBPACK_IMPORTED_MODULE_2___default().createElement("span", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].filterKey },
+    var filterType = (0,_utils__WEBPACK_IMPORTED_MODULE_1__.getFilterType)(filterKey);
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "".concat(_Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].filterElement, " ").concat(isIVolunteer ? _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].filterElementIVol : _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].filterElementDt), key: filterKey, id: filterKey },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].filterTextPanel },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].filterKey },
                     filterKey,
                     ": "),
-                filterType === _utils__WEBPACK_IMPORTED_MODULE_3__.FilterType.TEXT
-                    ? react__WEBPACK_IMPORTED_MODULE_2___default().createElement("span", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].filterValue }, filterValue)
-                    : react__WEBPACK_IMPORTED_MODULE_2___default().createElement("span", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].filterValue }, "".concat(filterValue[0], " - ").concat(filterValue[1]))),
-            react__WEBPACK_IMPORTED_MODULE_2___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].removeFilterBtn, onClick: function () { return removeFilter([filterKey, false]); } },
-                react__WEBPACK_IMPORTED_MODULE_2___default().createElement("img", { src: _img_remove_icon_png__WEBPACK_IMPORTED_MODULE_0__["default"], className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].removeFilterBtn, alt: 'remove-filter' })))));
+                filterType === _utils__WEBPACK_IMPORTED_MODULE_1__.FilterType.TEXT
+                    ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].filterValue }, filterValue)
+                    : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].filterValue }, "".concat(filterValue[0], " - ").concat(filterValue[1]))),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].removeFilterBtn, onClick: function () { return removeFilter([filterKey, false]); } },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: _img_remove_icon_png__WEBPACK_IMPORTED_MODULE_3__["default"], className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].removeFilterBtn, alt: 'remove-filter' })))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FilterElement);
 
@@ -35372,10 +35620,10 @@ var FilterSuggestions = function (_a) {
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "".concat(_Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValuesPanel, " ").concat(isIVolunteer ? _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValuesPanelIVol : _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValuesPanelDt) },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeFilterLine },
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueLabel }, "From:"),
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { className: isIVolunteer ? _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputIVol : _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputDt, type: isIVolunteer ? 'date' : 'number', id: 'rangeFrom', min: isIVolunteer ? iVolDefaultFrom : dtMin, max: isIVolunteer ? iVolDefaultTo : dtMax, step: isIVolunteer ? iVolStep : dtStep, defaultValue: isIVolunteer ? iVolDefaultFrom : dtDefaultFrom, onChange: function () { return onChangeRange(); } })),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { className: isIVolunteer ? _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputIVol : _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputDt, type: isIVolunteer ? 'date' : 'number', id: 'rangeFrom', min: isIVolunteer ? '1970-01-01' : dtMin, max: isIVolunteer ? '2099-12-31' : dtMax, step: isIVolunteer ? iVolStep : dtStep, defaultValue: isIVolunteer ? iVolDefaultFrom : dtDefaultFrom, onChange: function () { return onChangeRange(); } })),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeFilterLine },
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueLabel }, "To:"),
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { className: isIVolunteer ? _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputIVol : _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputDt, type: isIVolunteer ? 'date' : 'number', id: 'rangeTo', min: isIVolunteer ? iVolDefaultFrom : dtMin, max: isIVolunteer ? iVolDefaultTo : dtMax, step: isIVolunteer ? iVolStep : dtStep, defaultValue: isIVolunteer ? iVolDefaultTo : dtDefaultTo, onChange: function () { return onChangeRange(); } })),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { className: isIVolunteer ? _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputIVol : _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputDt, type: isIVolunteer ? 'date' : 'number', id: 'rangeTo', min: isIVolunteer ? '1970-01-01' : dtMin, max: isIVolunteer ? '2099-12-31' : dtMax, step: isIVolunteer ? iVolStep : dtStep, defaultValue: isIVolunteer ? iVolDefaultTo : dtDefaultTo, onChange: function () { return onChangeRange(); } })),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeBtn, id: 'rangeFilterConfirm', onClick: function () { return confirmRangeFilter(setNewFilterValue, filterKey, setShowSuggestions); } }, "Confirm")))));
 };
 var displayFilters = function (showFilters, setShowFilters) {
@@ -35695,9 +35943,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// test data (coordinates of the center of Austria)
-var longitude = 14.12456;
-var latitude = 47.59397;
 var overlayColorMap = {
     'apdex': {
         'Excellent': {
@@ -35756,7 +36001,19 @@ var previouslyHoveredLocation;
 var apdexMetric = 'apdex';
 var InteractiveMap = function (_a) {
     var selectedMetric = _a.selectedMetric, filters = _a.filters, onSetZoom = _a.onSetZoom, onChangeFilters = _a.onChangeFilters, isIVolunteer = _a.isIVolunteer;
-    data = !isIVolunteer ? (0,_utils__WEBPACK_IMPORTED_MODULE_3__.groupValuesPerLocation)(_data_dt_database__WEBPACK_IMPORTED_MODULE_1__["default"], 'country') : _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"];
+    // ------------ initialization 
+    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), map = _b[0], setMap = _b[1];
+    var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), selectedLocation = _c[0], setSelectedLocation = _c[1];
+    var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), hoveredLocation = _d[0], setHoveredLocation = _d[1];
+    var _e = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(filters), selectedFilters = _e[0], setSelectedFilters = _e[1];
+    var _f = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), zoom = _f[0], setZoom = _f[1];
+    if (isIVolunteer) {
+        data = _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"];
+    }
+    else {
+        var filteredData = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.filterDtData)(selectedFilters);
+        data = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.groupValuesPerLocation)(filteredData, 'country');
+    }
     if (!isIVolunteer) {
         if (selectedMetric === apdexMetric) {
             selectedColor = overlayColorMap.apdex.Excellent.selectedColor;
@@ -35767,16 +36024,6 @@ var InteractiveMap = function (_a) {
             hoverColor = overlayColorMap.other.Excellent.hoverColor;
         }
     }
-    else {
-        // TODO add ivolunteer handling
-    }
-    // ------------ initialization 
-    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), map = _b[0], setMap = _b[1];
-    var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), selectedLocation = _c[0], setSelectedLocation = _c[1];
-    var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), hoveredLocation = _d[0], setHoveredLocation = _d[1];
-    var _e = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(filters), selectedFilters = _e[0], setSelectedFilters = _e[1];
-    var _f = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), zoom = _f[0], setZoom = _f[1];
-    var _g = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), selectedCoordinates = _g[0], setSelectedCoordinates = _g[1];
     var mapElement = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
     var mapRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(); // map object for later use
     mapRef.current = map;
@@ -35794,7 +36041,7 @@ var InteractiveMap = function (_a) {
             source: overlaySource
         });
         // create map
-        var initialMap = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.createMap)(mapElement.current, 6, longitude, latitude, isIVolunteer, overlayLayer);
+        var initialMap = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.createMap)(mapElement.current, 6, _MapUtils__WEBPACK_IMPORTED_MODULE_5__.defaultLongitude, _MapUtils__WEBPACK_IMPORTED_MODULE_5__.defaultLatitude, isIVolunteer, overlayLayer);
         // set event handlers except click handler (will be set later)
         initialMap.on('pointermove', handleHover);
         initialMap.on('moveend', handleZoom);
@@ -35886,34 +36133,33 @@ var InteractiveMap = function (_a) {
             // add tooltip information
             var tooltipTitle = document.getElementById('tooltipTitle');
             if (tooltipTitle) {
-                if (selectedLocation) {
+                if (selectedLocation && !isIVolunteer) {
                     tooltipTitle.innerHTML = selectedLocation.get('name');
                     // Show Dynatrace-related information
-                    if (!isIVolunteer) {
-                        var values = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.groupValuesPerLocation)(data, 'iso');
-                        var valueFound = false;
-                        for (var i = 0; i < values.length; i++) {
-                            var curElement = values[i];
-                            if (curElement['iso'] == selectedLocation.getId()) {
-                                $('#tooltip_apdex').text(curElement['apdex']);
-                                $('#tooltip_useractions').text(curElement['useractions'] + '/min');
-                                $('#tooltip_errors').text(curElement['errors'] + '/min');
-                                $('#tooltip_loadactions').text(curElement['loadactions']);
-                                $('#tooltip_totaluseractions').text(curElement['totaluseractions']);
-                                $('#tooltip_affecteduseractions').text(curElement['affecteduseractions'] + ' %');
-                                valueFound = true;
-                                break;
-                            }
-                        }
-                        if (!valueFound) {
-                            $('#tooltip_apdex').text('?');
-                            $('#tooltip_useractions').text('?');
-                            $('#tooltip_errors').text('?');
-                            $('#tooltip_loadactions').text('?');
-                            $('#tooltip_totaluseractions').text('?');
-                            $('#tooltip_affecteduseractions').text('?');
+                    var values = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.groupValuesPerLocation)(data, 'iso');
+                    var valueFound = false;
+                    for (var i = 0; i < values.length; i++) {
+                        var curElement = values[i];
+                        if (curElement['iso'] == selectedLocation.getId()) {
+                            $('#tooltip_apdex').text(curElement['apdex']);
+                            $('#tooltip_useractions').text(curElement['useractions'] + '/min');
+                            $('#tooltip_errors').text(curElement['errors'] + '/min');
+                            $('#tooltip_loadactions').text(curElement['loadactions']);
+                            $('#tooltip_totaluseractions').text(curElement['totaluseractions']);
+                            $('#tooltip_affecteduseractions').text(curElement['affecteduseractions'] + ' %');
+                            valueFound = true;
+                            break;
                         }
                     }
+                    if (!valueFound) {
+                        $('#tooltip_apdex').text('?');
+                        $('#tooltip_useractions').text('?');
+                        $('#tooltip_errors').text('?');
+                        $('#tooltip_loadactions').text('?');
+                        $('#tooltip_totaluseractions').text('?');
+                        $('#tooltip_affecteduseractions').text('?');
+                    }
+                    showTooltip(selectedFilters);
                 }
                 else {
                     tooltipTitle.innerHTML = '&nbsp;';
@@ -36074,32 +36320,7 @@ var setIconMarkers = function (isIVolunteer, map, zoom, selectedMetric, selected
 };
 var getDataSetForMarkers = function (isIVolunteer, selectedFilters) {
     if (isIVolunteer) {
-        var filteredDataset = [];
-        for (var i = 0; i < selectedFilters.length; i++) {
-            var filter = selectedFilters[i];
-            for (var j = 0; j < _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"].length; j++) {
-                var curElement = _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"][j];
-                var filterType = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.getFilterType)(filter.key);
-                switch (filterType) {
-                    case _utils__WEBPACK_IMPORTED_MODULE_3__.FilterType.TEXT: {
-                        if (curElement[filter.key].includes(filter.value)) {
-                            filteredDataset.push(curElement);
-                        }
-                        continue;
-                    }
-                    case _utils__WEBPACK_IMPORTED_MODULE_3__.FilterType.DATE: {
-                        var filterFrom = new Date(filter.value[0]);
-                        var filterTo = new Date(filter.value[1]);
-                        var curElementDate = new Date(curElement[filter.key]);
-                        if (filterFrom <= curElementDate && curElementDate <= filterTo) {
-                            filteredDataset.push(curElement);
-                        }
-                        continue;
-                    }
-                }
-            }
-        }
-        return selectedFilters.length > 0 ? filteredDataset : _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"];
+        return (0,_utils__WEBPACK_IMPORTED_MODULE_3__.getFilteredIVolData)(_data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"], selectedFilters);
     }
     else {
         var citiesDataset = [];
@@ -36129,11 +36350,9 @@ var clickOnMapMarkerIVol = function (feature, map) {
                 $('#tooltip-responsible').text(data_1.responsible);
                 $('#tooltip-city').text(data_1.address.zip + ' ' + data_1.address.city);
                 // calculate priority based on date
-                var date = new Date(data_1.date);
-                $('#tooltip-date').text(date.toLocaleDateString());
-                var currentDate = new Date().getTime();
-                var diffTime = Math.abs(currentDate - date.getTime());
-                var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                var dateFrom = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.getDateString)(data_1.date).dateFrom;
+                $('#tooltip-date').text(dateFrom.toLocaleString());
+                var diffDays = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.getTaskUrgencyDays)(dateFrom);
                 var priority = void 0;
                 if (diffDays <= _utils__WEBPACK_IMPORTED_MODULE_3__.UrgencyDays.SEVERE) {
                     priority = 'very high';
@@ -36142,12 +36361,12 @@ var clickOnMapMarkerIVol = function (feature, map) {
                     priority = 'high';
                 }
                 else if (diffDays <= _utils__WEBPACK_IMPORTED_MODULE_3__.UrgencyDays.MEDIUM) {
-                    priority = 'medium;';
+                    priority = 'medium';
                 }
                 else {
                     priority = 'low';
                 }
-                $('#tooltip-priority').text(priority);
+                $('#tooltip-urgency').text(priority);
                 // add clickhandlers
                 $('#close-tooltip').on('click', function () {
                     tooltipPanel_1.classList.remove(_Map_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].iVolTooltipPanel);
@@ -36159,6 +36378,15 @@ var clickOnMapMarkerIVol = function (feature, map) {
     for (var i = 0; i < markerLayers.length; i++) {
         _loop_2(i);
     }
+};
+var showTooltip = function (selectedFilters) {
+    for (var i = 0; i < selectedFilters.length; i++) {
+        if (selectedFilters[i].key === 'country') {
+            $('#tooltip-panel').show();
+            return;
+        }
+    }
+    $('#tooltip-panel').hide();
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InteractiveMap);
 
@@ -36232,12 +36460,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Table_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Table.module.css */ "./src/customCode/components/table/Table.module.css");
-/* harmony import */ var _img_analyze_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/analyze.svg */ "./src/customCode/components/table/img/analyze.svg");
-/* harmony import */ var _img_arrow_left_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./img/arrow_left.png */ "./src/customCode/components/table/img/arrow_left.png");
-/* harmony import */ var _img_arrow_left_disabled_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./img/arrow_left_disabled.png */ "./src/customCode/components/table/img/arrow_left_disabled.png");
-/* harmony import */ var _img_arrow_right_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./img/arrow_right.png */ "./src/customCode/components/table/img/arrow_right.png");
-/* harmony import */ var _img_arrow_right_disabled_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./img/arrow_right_disabled.png */ "./src/customCode/components/table/img/arrow_right_disabled.png");
+/* harmony import */ var _img_analyze_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./img/analyze.svg */ "./src/customCode/components/table/img/analyze.svg");
+/* harmony import */ var _img_arrow_left_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/arrow_left.png */ "./src/customCode/components/table/img/arrow_left.png");
+/* harmony import */ var _img_arrow_left_disabled_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./img/arrow_left_disabled.png */ "./src/customCode/components/table/img/arrow_left_disabled.png");
+/* harmony import */ var _img_arrow_right_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./img/arrow_right.png */ "./src/customCode/components/table/img/arrow_right.png");
+/* harmony import */ var _img_arrow_right_disabled_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./img/arrow_right_disabled.png */ "./src/customCode/components/table/img/arrow_right_disabled.png");
+/* harmony import */ var _Table_module_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Table.module.css */ "./src/customCode/components/table/Table.module.css");
 var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from, pack) {
     if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
         if (ar || !(i in from)) {
@@ -36272,7 +36500,7 @@ var Table = function (_a) {
         ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(TableContent, { dataOnPage: dataOnPage, selectedMetric: selectedMetric, isIVolunteer: isIVolunteer }),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(TablePagination, { pageRange: tableRange, dataOnPage: dataOnPage, setPage: setPage, page: page }))
-        : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].noData },
+        : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].noData },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "No data available for this filter"))));
 };
 var TableContent = function (_a) {
@@ -36293,40 +36521,40 @@ var TableContent = function (_a) {
         }
     }
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("table", { className: "".concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].table, " ").concat(isIVolunteer ? _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableIvol : _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableDt) },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("table", { className: "".concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].table, " ").concat(isIVolunteer ? _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableIvol : _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableDt) },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("thead", null,
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableRowHeader },
-                    columnHeaders.map(function (header) { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", { key: header, className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableHeader }, header)); }),
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableHeader }, "Details"))),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tbody", null, dataOnPage.map(function (dataRow) { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableRowItems, key: isIVolunteer ? dataRow.taskid : dataRow.location },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: "".concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableCell, " ").concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableLink) }, isIVolunteer
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableRowHeader },
+                    columnHeaders.map(function (header) { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", { key: header, className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableHeader }, header)); }),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableHeader }, "Details"))),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tbody", null, dataOnPage.map(function (dataRow) { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableRowItems, key: isIVolunteer ? dataRow.taskid : dataRow.location },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: "".concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell, " ").concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableLink) }, isIVolunteer
                     ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", { href: "ivolunteer_-_taskdetails.html?taskId=".concat(dataRow.taskid) }, dataRow.taskname)
                     : dataRow.location),
                 !isIVolunteer
                     ? selectedMetric === 'useractions'
-                        ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableCell },
+                        ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell },
                             dataRow[selectedMetric],
                             " / min")
                         : selectedMetric === 'errors'
-                            ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableCell },
+                            ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell },
                                 dataRow[selectedMetric],
                                 " / min")
-                            : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableCell }, dataRow[selectedMetric])
-                    : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableCell }, dataRow.taskid),
+                            : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell }, dataRow[selectedMetric])
+                    : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell }, dataRow.taskid),
                 !isIVolunteer
                     ? selectedMetric === 'apdex'
-                        ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableCell },
+                        ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell },
                             dataRow['useractions'],
                             " / min")
                         : selectedMetric === 'errors'
-                            ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableCell },
+                            ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell },
                                 dataRow['affecteduseractions'],
                                 " %")
-                            : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableCell }, dataRow['totaluseractions'])
+                            : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell }, dataRow['totaluseractions'])
                     : '',
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: "".concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableCell, " ").concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableLastCol) },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: "".concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell, " ").concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableLastCol) },
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", { href: isIVolunteer ? 'ivolunteer_-_taskdetails.html?taskId=' + dataRow.taskid : '#' },
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: _img_analyze_svg__WEBPACK_IMPORTED_MODULE_2__["default"], className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].analyzeBtn }))))); })))));
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: _img_analyze_svg__WEBPACK_IMPORTED_MODULE_1__["default"], className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].analyzeBtn }))))); })))));
 };
 var TablePagination = function (_a) {
     var pageRange = _a.pageRange, setPage = _a.setPage, page = _a.page, dataOnPage = _a.dataOnPage;
@@ -36335,12 +36563,12 @@ var TablePagination = function (_a) {
             setPage(page - 1);
         }
     }, [dataOnPage, page, setPage]);
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].tableFooter },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { key: 'prev', className: "".concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].button, " ").concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].arrowBtn, " ").concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].arrowPrevBtn, " ").concat(page === 1 ? _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].disabledButton : ''), onClick: function () { return page > 1 ? setPage(page - 1) : setPage(page); } },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "".concat(page === 1 ? _img_arrow_left_disabled_png__WEBPACK_IMPORTED_MODULE_4__["default"] : _img_arrow_left_png__WEBPACK_IMPORTED_MODULE_3__["default"]), height: "16px" })),
-        pageRange.map(function (el, index) { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { key: index, className: "".concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].button, " ").concat(page === el ? _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].activeButton : _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].inactiveButton), onClick: function () { return setPage(el); } }, el)); }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { key: 'next', className: "".concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].button, " ").concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].arrowBtn, " ").concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].arrowNextBtn, " ").concat(page === pageRange[pageRange.length - 1] ? _Table_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].disabledButton : ''), onClick: function () { return page < pageRange[pageRange.length - 1] ? setPage(page + 1) : setPage(page); } },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "".concat(page === pageRange[pageRange.length - 1] ? _img_arrow_right_disabled_png__WEBPACK_IMPORTED_MODULE_6__["default"] : _img_arrow_right_png__WEBPACK_IMPORTED_MODULE_5__["default"]), height: "16px" }))));
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableFooter },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { key: 'prev', className: "".concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].button, " ").concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].arrowBtn, " ").concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].arrowPrevBtn, " ").concat(page === 1 ? _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].disabledButton : ''), onClick: function () { return page > 1 ? setPage(page - 1) : setPage(page); } },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "".concat(page === 1 ? _img_arrow_left_disabled_png__WEBPACK_IMPORTED_MODULE_3__["default"] : _img_arrow_left_png__WEBPACK_IMPORTED_MODULE_2__["default"]), height: "16px" })),
+        pageRange.map(function (el, index) { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { key: index, className: "".concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].button, " ").concat(page === el ? _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].activeButton : _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].inactiveButton), onClick: function () { return setPage(el); } }, el)); }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { key: 'next', className: "".concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].button, " ").concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].arrowBtn, " ").concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].arrowNextBtn, " ").concat(page === pageRange[pageRange.length - 1] ? _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].disabledButton : ''), onClick: function () { return page < pageRange[pageRange.length - 1] ? setPage(page + 1) : setPage(page); } },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "".concat(page === pageRange[pageRange.length - 1] ? _img_arrow_right_disabled_png__WEBPACK_IMPORTED_MODULE_5__["default"] : _img_arrow_right_png__WEBPACK_IMPORTED_MODULE_4__["default"]), height: "16px" }))));
 };
 // -- calculations & functions
 var useTable = function (data, page) {
@@ -36428,9 +36656,6 @@ var __extends = (undefined && undefined.__extends) || (function () {
 
 
 
-// TODO Filterbar:
-// - Country/Region/City suggestions sind leer beim 2. Mal auswählen (Datenbank kommt schon leer rein wtf)
-//      - Fehler in FilterBar.adjustSuggestionsDt() beim suggestions reduzieren, not sure what's the problem tho
 var DynatraceWorldmapApp = /** @class */ (function (_super) {
     __extends(DynatraceWorldmapApp, _super);
     function DynatraceWorldmapApp(props) {
@@ -36457,38 +36682,6 @@ var DynatraceWorldmapApp = /** @class */ (function (_super) {
             else {
                 return ['country', 'region'];
             }
-            // TODO add handling for Region/City when data has been expanded
-        };
-        _this.filterData = function () {
-            var filteredData = [];
-            for (var i = 0; i < _this.selectedFilters.length; i++) {
-                var curFilterKey = _this.selectedFilters[i].key;
-                var curFilterValue = _this.selectedFilters[i].value;
-                var curFilterType = (0,_utils__WEBPACK_IMPORTED_MODULE_7__.getFilterType)(curFilterKey);
-                // first use full dataset; afterwards use already-filtered data
-                var dataSet = i === 0 ? _data_dt_database__WEBPACK_IMPORTED_MODULE_6__["default"] : filteredData;
-                var filteredDataPerCycle = [];
-                if (curFilterType === _utils__WEBPACK_IMPORTED_MODULE_7__.FilterType.TEXT) {
-                    for (var j = 0; j < dataSet.length; j++) {
-                        var dataElement = dataSet[j][curFilterKey];
-                        if (curFilterValue === dataElement) {
-                            filteredDataPerCycle.push(dataSet[j]);
-                        }
-                    }
-                }
-                else if (curFilterType === _utils__WEBPACK_IMPORTED_MODULE_7__.FilterType.RANGE) {
-                    for (var j = 0; j < dataSet.length; j++) {
-                        var dataElement = dataSet[j][curFilterKey];
-                        var filterFrom = curFilterValue[0];
-                        var filterTo = curFilterValue[1];
-                        if (filterFrom <= dataElement && dataElement <= filterTo) {
-                            filteredDataPerCycle.push(dataSet[j]);
-                        }
-                    }
-                }
-                filteredData = filteredDataPerCycle;
-            }
-            return _this.selectedFilters.length > 0 ? filteredData : _data_dt_database__WEBPACK_IMPORTED_MODULE_6__["default"];
         };
         // initialize table & metric switcher stuff
         _this.datasetPrimary = _this.prepareTableData(_data_dt_database__WEBPACK_IMPORTED_MODULE_6__["default"], _utils__WEBPACK_IMPORTED_MODULE_7__.ZoomLevel.COUNTRY).datasetPrimary;
@@ -36500,7 +36693,7 @@ var DynatraceWorldmapApp = /** @class */ (function (_super) {
         var secondaryTable = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById(_this.secondaryTableSelector));
         var selectedFiltersCallback = function (value) {
             _this.selectedFilters = value;
-            var filteredData = _this.filterData();
+            var filteredData = (0,_utils__WEBPACK_IMPORTED_MODULE_7__.filterDtData)(_this.selectedFilters);
             _this.datasetPrimary = _this.prepareTableData(filteredData, _this.currentZoomLevel).datasetPrimary;
             _this.datasetSecondary = _this.prepareTableData(filteredData, _this.currentZoomLevel).datasetSecondary;
             primaryTable.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_table_Table__WEBPACK_IMPORTED_MODULE_5__["default"], { data: _this.datasetPrimary, selectedMetric: _this.selectedMetric, isIVolunteer: false }));
@@ -36516,7 +36709,7 @@ var DynatraceWorldmapApp = /** @class */ (function (_super) {
         };
         var zoomLevelCallback = function (value) {
             _this.currentZoomLevel = value;
-            var filteredData = _this.filterData();
+            var filteredData = (0,_utils__WEBPACK_IMPORTED_MODULE_7__.filterDtData)(_this.selectedFilters);
             _this.datasetPrimary = _this.prepareTableData(filteredData, _this.currentZoomLevel).datasetPrimary;
             _this.datasetSecondary = _this.prepareTableData(filteredData, _this.currentZoomLevel).datasetSecondary;
             primaryTable.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_table_Table__WEBPACK_IMPORTED_MODULE_5__["default"], { data: _this.datasetPrimary, selectedMetric: _this.selectedMetric, isIVolunteer: false }));
@@ -36563,17 +36756,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ZoomLevel": () => (/* binding */ ZoomLevel),
 /* harmony export */   "UrgencyDays": () => (/* binding */ UrgencyDays),
+/* harmony export */   "PriorityLevels": () => (/* binding */ PriorityLevels),
+/* harmony export */   "DurationLength": () => (/* binding */ DurationLength),
 /* harmony export */   "Apdex": () => (/* binding */ Apdex),
 /* harmony export */   "FilterType": () => (/* binding */ FilterType),
 /* harmony export */   "getFilterType": () => (/* binding */ getFilterType),
 /* harmony export */   "groupValuesPerLocation": () => (/* binding */ groupValuesPerLocation),
 /* harmony export */   "getDataFromTaskId": () => (/* binding */ getDataFromTaskId),
-/* harmony export */   "getUrlParameter": () => (/* binding */ getUrlParameter)
+/* harmony export */   "getUrlParameter": () => (/* binding */ getUrlParameter),
+/* harmony export */   "getFilteredIVolData": () => (/* binding */ getFilteredIVolData),
+/* harmony export */   "filterDtData": () => (/* binding */ filterDtData)
 /* harmony export */ });
 /* harmony import */ var ol_ol_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/ol.css */ "./node_modules/ol/ol.css");
-/* harmony import */ var _data_dt_filters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data/dt_filters */ "./src/customCode/data/dt_filters.ts");
-/* harmony import */ var _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data/ivol_database */ "./src/customCode/data/ivol_database.ts");
-/* harmony import */ var _data_ivol_filters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./data/ivol_filters */ "./src/customCode/data/ivol_filters.ts");
+/* harmony import */ var _data_dt_database__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data/dt_database */ "./src/customCode/data/dt_database.ts");
+/* harmony import */ var _data_dt_filters__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data/dt_filters */ "./src/customCode/data/dt_filters.ts");
+/* harmony import */ var _data_ivol_database__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./data/ivol_database */ "./src/customCode/data/ivol_database.ts");
+/* harmony import */ var _data_ivol_filters__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./data/ivol_filters */ "./src/customCode/data/ivol_filters.ts");
+
 
 
 
@@ -36595,13 +36794,25 @@ var UrgencyDays;
     UrgencyDays[UrgencyDays["MEDIUM"] = 50] = "MEDIUM";
     UrgencyDays[UrgencyDays["LOW"] = 100] = "LOW";
 })(UrgencyDays || (UrgencyDays = {}));
+var PriorityLevels;
+(function (PriorityLevels) {
+    PriorityLevels[PriorityLevels["HIGH"] = 1] = "HIGH";
+    PriorityLevels[PriorityLevels["MEDIUM"] = 2] = "MEDIUM";
+    PriorityLevels[PriorityLevels["LOW"] = 3] = "LOW";
+})(PriorityLevels || (PriorityLevels = {}));
+var DurationLength;
+(function (DurationLength) {
+    DurationLength[DurationLength["SHORT"] = 1] = "SHORT";
+    DurationLength[DurationLength["MEDIUM"] = 3] = "MEDIUM";
+    DurationLength[DurationLength["LONG"] = 5] = "LONG";
+})(DurationLength || (DurationLength = {}));
 // scale for Apdex and also other DT metrics
 var Apdex;
 (function (Apdex) {
     Apdex[Apdex["EXCELLENT"] = 1] = "EXCELLENT";
-    Apdex[Apdex["GOOD"] = 0.9] = "GOOD";
-    Apdex[Apdex["FAIR"] = 0.75] = "FAIR";
-    Apdex[Apdex["POOR"] = 0.6] = "POOR";
+    Apdex[Apdex["GOOD"] = 0.94] = "GOOD";
+    Apdex[Apdex["FAIR"] = 0.85] = "FAIR";
+    Apdex[Apdex["POOR"] = 0.7] = "POOR";
     Apdex[Apdex["UNACCEPTABLE"] = 0.5] = "UNACCEPTABLE";
 })(Apdex || (Apdex = {}));
 var FilterType;
@@ -36612,15 +36823,15 @@ var FilterType;
 })(FilterType || (FilterType = {}));
 var getFilterType = function (filterName) {
     // check iVolunteer filter database
-    for (var filter in _data_ivol_filters__WEBPACK_IMPORTED_MODULE_3__["default"][0]) {
+    for (var filter in _data_ivol_filters__WEBPACK_IMPORTED_MODULE_4__["default"][0]) {
         if (filter === filterName) {
-            return _data_ivol_filters__WEBPACK_IMPORTED_MODULE_3__["default"][0][filter].filterType;
+            return _data_ivol_filters__WEBPACK_IMPORTED_MODULE_4__["default"][0][filter].filterType;
         }
     }
     // check Dynatrace filter database
-    for (var filter in _data_dt_filters__WEBPACK_IMPORTED_MODULE_1__["default"][0]) {
+    for (var filter in _data_dt_filters__WEBPACK_IMPORTED_MODULE_2__["default"][0]) {
         if (filter === filterName) {
-            return _data_dt_filters__WEBPACK_IMPORTED_MODULE_1__["default"][0][filter].filterType;
+            return _data_dt_filters__WEBPACK_IMPORTED_MODULE_2__["default"][0][filter].filterType;
         }
     }
 };
@@ -36669,9 +36880,9 @@ function groupValuesPerLocation(data, locationKey) {
 }
 function getDataFromTaskId(taskId) {
     var taskIdNumber = Number(taskId);
-    for (var i = 0; i < _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"].length; i++) {
-        if (_data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"][i].taskid === taskIdNumber) {
-            return _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"][i];
+    for (var i = 0; i < _data_ivol_database__WEBPACK_IMPORTED_MODULE_3__["default"].length; i++) {
+        if (_data_ivol_database__WEBPACK_IMPORTED_MODULE_3__["default"][i].taskid === taskIdNumber) {
+            return _data_ivol_database__WEBPACK_IMPORTED_MODULE_3__["default"][i];
         }
     }
     return;
@@ -36689,6 +36900,118 @@ function getUrlParameter(input) {
     return;
 }
 ;
+function getFilteredIVolData(dataset, selectedFilters) {
+    var filteredData = [];
+    for (var i = 0; i < selectedFilters.length; i++) {
+        var curFilterKey = selectedFilters[i].key;
+        var curFilterValue = selectedFilters[i].value;
+        var curFilterType = getFilterType(curFilterKey);
+        // first use full dataset; afterwards use already-filtered data
+        var dataSet = i === 0 ? dataset : filteredData;
+        var filteredDataPerCycle = [];
+        if (curFilterType === FilterType.TEXT) {
+            if (curFilterKey === 'friend') {
+                for (var j = 0; j < dataSet.length; j++) {
+                    var friendsList = dataSet[j][curFilterKey];
+                    for (var k = 0; k < friendsList.length; k++) {
+                        if (curFilterValue === friendsList[k]) {
+                            filteredDataPerCycle.push(dataSet[j]);
+                        }
+                    }
+                }
+            }
+            else if (curFilterKey === 'location') {
+                for (var j = 0; j < dataSet.length; j++) {
+                    var dataElement = dataSet[j]['address']['region'];
+                    if (curFilterValue === dataElement) {
+                        filteredDataPerCycle.push(dataSet[j]);
+                    }
+                }
+            }
+            else if (curFilterKey === 'priority') {
+                for (var j = 0; j < dataSet.length; j++) {
+                    var dataElement = dataSet[j][curFilterKey].toString();
+                    var sanitizedFilterValue = curFilterValue.split(' - ')[0];
+                    if (sanitizedFilterValue === dataElement) {
+                        filteredDataPerCycle.push(dataSet[j]);
+                    }
+                }
+            }
+            else {
+                for (var j = 0; j < dataSet.length; j++) {
+                    var dataElement = dataSet[j][curFilterKey];
+                    if (curFilterValue === dataElement) {
+                        filteredDataPerCycle.push(dataSet[j]);
+                    }
+                }
+            }
+        }
+        else if (curFilterType === FilterType.RANGE) {
+            for (var j = 0; j < dataSet.length; j++) {
+                var dataElement = dataSet[j][curFilterKey];
+                var filterFrom = curFilterValue[0];
+                var filterTo = curFilterValue[1];
+                if (filterFrom <= dataElement && dataElement <= filterTo) {
+                    filteredDataPerCycle.push(dataSet[j]);
+                }
+            }
+        }
+        else if (curFilterType === FilterType.DATE) {
+            for (var j = 0; j < dataSet.length; j++) {
+                var dataElement = dataSet[j][curFilterKey];
+                var dataFrom = new Date(dataElement.from);
+                var dataTo = void 0;
+                if (dataElement.to !== '') {
+                    dataTo = new Date(dataElement.to);
+                }
+                else {
+                    dataTo = new Date(dataElement.from);
+                }
+                var filterFrom = new Date(curFilterValue[0]);
+                var filterTo = new Date(curFilterValue[1]);
+                filterTo.setUTCHours(23, 59, 59, 999); // set filter to 23:59:59
+                if (filterFrom <= dataFrom) {
+                    if (dataTo <= filterTo) {
+                        filteredDataPerCycle.push(dataSet[j]);
+                    }
+                }
+            }
+        }
+        filteredData = filteredDataPerCycle;
+    }
+    return selectedFilters.length > 0 ? filteredData : dataset;
+}
+function filterDtData(selectedFilters) {
+    var filteredData = [];
+    for (var i = 0; i < selectedFilters.length; i++) {
+        var curFilterKey = selectedFilters[i].key;
+        var curFilterValue = selectedFilters[i].value;
+        var curFilterType = getFilterType(curFilterKey);
+        // first use full dataset; afterwards use already-filtered data
+        var dataSet = i === 0 ? _data_dt_database__WEBPACK_IMPORTED_MODULE_1__["default"] : filteredData;
+        var filteredDataPerCycle = [];
+        if (curFilterType === FilterType.TEXT) {
+            for (var j = 0; j < dataSet.length; j++) {
+                var dataElement = dataSet[j][curFilterKey];
+                if (curFilterValue === dataElement) {
+                    filteredDataPerCycle.push(dataSet[j]);
+                }
+            }
+        }
+        else if (curFilterType === FilterType.RANGE) {
+            for (var j = 0; j < dataSet.length; j++) {
+                var dataElement = dataSet[j][curFilterKey];
+                var filterFrom = curFilterValue[0];
+                var filterTo = curFilterValue[1];
+                if (filterFrom <= dataElement && dataElement <= filterTo) {
+                    filteredDataPerCycle.push(dataSet[j]);
+                }
+            }
+        }
+        filteredData = filteredDataPerCycle;
+    }
+    return selectedFilters.length > 0 ? filteredData : _data_dt_database__WEBPACK_IMPORTED_MODULE_1__["default"];
+}
 
 
 /***/ }),
