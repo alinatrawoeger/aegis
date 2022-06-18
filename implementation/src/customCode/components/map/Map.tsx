@@ -81,7 +81,9 @@ type CustomMapProps = {
     onChangeFilters?: (value) => void
 }
 
-const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoom, onChangeFilters, isIVolunteer }) => {    
+const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoom, onChangeFilters, isIVolunteer }) => {
+    const defaultZoom = isIVolunteer ? ZoomLevel.COUNTRY : ZoomLevel.WORLD;
+
     // ------------ initialization 
     const [ map, setMap ] = useState<OLMap>()
     let [ selectedLocation, setSelectedLocation ] = useState<Feature<Geometry> | undefined>();
@@ -126,7 +128,7 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
             source: overlaySource
         });
         // create map
-        const initialMap: OLMap = createMap(mapElement.current, 6, defaultLongitude, defaultLatitude, isIVolunteer, overlayLayer);
+        const initialMap: OLMap = createMap(mapElement.current, defaultZoom, defaultLongitude, defaultLatitude, isIVolunteer, overlayLayer);
 
         // set event handlers except click handler (will be set later)
         initialMap.on('pointermove', handleHover);
@@ -461,7 +463,7 @@ const clickOnMapMarkerIVol = (feature: any, map: Map) => {
                 // add data to tooltip
                 $('#tooltip-title').text(data.taskname);
                 $('#tooltip-taskid').text(data.taskid);
-                $('#tooltip-responsible').text(data.responsible);
+                $('#tooltip-responsible').text(data.coordinator);
                 $('#tooltip-city').text(data.address.zip + ' ' + data.address.city);
                 
                 // calculate priority based on date

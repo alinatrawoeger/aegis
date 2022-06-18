@@ -11,7 +11,7 @@ export default [
         },
         "taskname": "Adventbazar",
         "taskid": 12345,
-        "responsible": "Rotes Kreuz",
+        "coordinator": "Rotes Kreuz",
         "priority": 2,
         "date": {
             "from": "2022-12-10T15:00:00Z",
@@ -34,7 +34,7 @@ export default [
         },
         "taskname": "Pfadfinder Meetup",
         "taskid": 12346,
-        "responsible": "Pfadfinderclub Linz",
+        "coordinator": "Pfadfinderclub Linz",
         "priority": 1,
         "date": {
             "from": "2022-08-29T07:30:00Z",
@@ -57,7 +57,7 @@ export default [
         },
         "taskname": "Zoo Tierhelfer",
         "taskid": 12347,
-        "responsible": "Tiergarten-Verein Österreich",
+        "coordinator": "Tiergarten-Verein Österreich",
         "priority": 3,
         "date": {
             "from": "2022-07-27T13:15:00Z",
@@ -80,9 +80,9 @@ export default [
         },
         "taskname": "Kindergarten Helfer",
         "taskid": 12348,
-        "responsible": "Rotes Kreuz",
+        "coordinator": "Rotes Kreuz",
         "date": {
-            "from": "2022-06-20T14:30:00Z",
+            "from": "2022-06-29T14:30:00Z",
             "to": ""
         },
         "priority": 2,
@@ -103,7 +103,7 @@ export default [
         },
         "taskname": "Altenpflege Volunteering",
         "taskid": 12349,
-        "responsible": "Altenpflegeverein Kärnten",
+        "coordinator": "Altenpflegeverein Kärnten",
         "priority": 2,
         "date": {
             "from": "2022-09-21T08:00:00Z",
@@ -126,10 +126,10 @@ export default [
         },
         "taskname": "Mülleinsammeln",
         "taskid": 12350,
-        "responsible": "Samariterbund",
+        "coordinator": "Samariterbund",
         "priority": 1,
         "date": {
-            "from": "2022-06-15T07:00:00Z",
+            "from": "2022-07-01T07:00:00Z",
             "to": ""
         },
         "friend": [

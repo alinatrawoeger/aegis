@@ -11,7 +11,7 @@ export default [
                 "JB": "James Bucky Barnes"
             }
         },
-        "responsible": {
+        "coordinator": {
             "filterType": "text",
             "properties": {
                 "RK": "Rotes Kreuz",
