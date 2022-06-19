@@ -48,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".visevQBcXLRkGHgMmI6M {\n    display: flex;\n    align-items: center;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-size: 13px;\n}\n\n.J0HEVJIfbGnFUPEZ4sY9 {\n    height: 52px;\n    width: 1110px;\n    border: 2px solid rgba(98, 36, 128, 1);\n}\n\n.Z39wuvqAOiDL2qmEEtLg {\n    height: 44px;\n    width: 504px;\n    border: 2px solid rgba(2, 167, 240, 1);\n}\n\n.GPG0_6ulmPyX4P93Ximl {\n    margin: 0 12px;\n    min-width: 65px;\n}\n\n.hfPNZw73Cf9kMz2wiINg {\n    margin: 0 8px;\n    display: flex;\n    align-items: center;\n    border: 2px solid rgba(2, 167, 240, 1);\n    background: rgba(2, 167, 240, 0.2);\n    border-radius: 12px;\n    cursor: default;\n}\n\n.yYDjOyIh9MbdmMmIZawJ {\n    padding: 12px;\n}\n\n.d69p7vznosejmibriwTB {\n    padding: 10px;\n}\n\n.woAYoOs2KlfXQxcP2Y6v {\n    display: flex;\n}\n\n.P_fuyJFQ792sRIlNZnKo {\n    margin-right: 4px;\n}\n\n.cIyIQ3xAzZli4bSqa01A {\n    margin-left: 8px;\n    height: 16px;\n    width: 16px;\n    padding-right: 8px;\n    cursor: pointer;\n}\n\n.KneDLkDOPsiSv91jb0NA {\n    margin-left: 8px;\n    background-color: white;\n    border: 2px solid rgba(2, 167, 240, 0.5);\n    min-width: 52px;\n    cursor: pointer;\n}\n\n\n/* Filter Suggestions */\n.ykYCMASJ8Vra_8mQnKmM {\n    position: relative;\n    top: 60px;\n}\n\n.Fx0HhLBP0yOrmfRCiyY5 {\n    position: relative;\n    top: 61px;\n    display: flex;\n}\n\n.utiE1oReCoXSJduH4Syo {\n    margin-right: 8px;\n    padding-top: 8px;\n}\n\n.CfZZS1Llr6Cl2HMip0jn {\n    width: 120px;\n    height: 162px;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.v5CFVQ38Y78EAd_z_WxB {\n    padding: 8px;\n    border-bottom: 1px solid black;\n    cursor: pointer;\n}\n\n.v5CFVQ38Y78EAd_z_WxB:hover {\n    font-weight: 700px;\n    background-color: rgba(2, 167, 240, 0.5);\n}\n\n.IkF9cndZPFyri5gJRnn_ {\n    position: relative;\n    top: 45px;\n    display: flex;\n}\n\n.nP1bKdt6RzQq1ZmbhZlr {\n    padding: 12px;\n    text-align: right;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.kSrFiHnSaeho9TATvlGN {\n    width: 172px;\n    height: 96px;\n}\n\n.BFLSxOnhtitiKf_RLxaZ {\n    width: 138px;\n    height: 94px;\n}\n\n.LJvURyShD66q9zRcBSQI {\n    display: flex;\n    text-align: left;\n    padding-top: 8px;\n}\n\n.LJvURyShD66q9zRcBSQI :nth-child(2) {\n    align-items:flex-end;\n}\n\n.gotdjmwwI9aTPEhFLTww {\n    margin-right: 8px;\n    width: 60px;\n}\n\n.C6JZpuFoESwOcC651ltr {\n    width: 70px;\n}\n\n.q882sDkqfw6vf_F4pJH7 {\n    width: 140px;\n}\n\n.Bm_FFKRuket0l7tXuW6j {\n    margin-top: 12px;\n}", "",{"version":3,"sources":["webpack://./src/customCode/components/filterbar/Filterbar.module.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,mBAAmB;IACnB,kDAAkD;IAClD,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,sCAAsC;AAC1C;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,sCAAsC;AAC1C;;AAEA;IACI,cAAc;IACd,eAAe;AACnB;;AAEA;IACI,aAAa;IACb,aAAa;IACb,mBAAmB;IACnB,sCAAsC;IACtC,kCAAkC;IAClC,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,gBAAgB;IAChB,YAAY;IACZ,WAAW;IACX,kBAAkB;IAClB,eAAe;AACnB;;AAEA;IACI,gBAAgB;IAChB,uBAAuB;IACvB,wCAAwC;IACxC,eAAe;IACf,eAAe;AACnB;;;AAGA,uBAAuB;AACvB;IACI,kBAAkB;IAClB,SAAS;AACb;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,aAAa;AACjB;;AAEA;IACI,iBAAiB;IACjB,gBAAgB;AACpB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,kBAAkB;IAClB,uBAAuB;IACvB,UAAU;IACV,uBAAuB;AAC3B;;AAEA;IACI,YAAY;IACZ,8BAA8B;IAC9B,eAAe;AACnB;;AAEA;IACI,kBAAkB;IAClB,wCAAwC;AAC5C;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,iBAAiB;IACjB,kBAAkB;IAClB,uBAAuB;IACvB,UAAU;IACV,uBAAuB;AAC3B;;AAEA;IACI,YAAY;IACZ,YAAY;AAChB;;AAEA;IACI,YAAY;IACZ,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,gBAAgB;IAChB,gBAAgB;AACpB;;AAEA;IACI,oBAAoB;AACxB;;AAEA;IACI,iBAAiB;IACjB,WAAW;AACf;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,gBAAgB;AACpB","sourcesContent":[".filterbar {\n    display: flex;\n    align-items: center;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-size: 13px;\n}\n\n.filterbarDt {\n    height: 52px;\n    width: 1110px;\n    border: 2px solid rgba(98, 36, 128, 1);\n}\n\n.filterbarIVol {\n    height: 44px;\n    width: 504px;\n    border: 2px solid rgba(2, 167, 240, 1);\n}\n\n.filterStaticText {\n    margin: 0 12px;\n    min-width: 65px;\n}\n\n.filterElement {\n    margin: 0 8px;\n    display: flex;\n    align-items: center;\n    border: 2px solid rgba(2, 167, 240, 1);\n    background: rgba(2, 167, 240, 0.2);\n    border-radius: 12px;\n    cursor: default;\n}\n\n.filterElementDt {\n    padding: 12px;\n}\n\n.filterElementIVol {\n    padding: 10px;\n}\n\n.filterTextPanel {\n    display: flex;\n}\n\n.filterKey {\n    margin-right: 4px;\n}\n\n.removeFilterBtn {\n    margin-left: 8px;\n    height: 16px;\n    width: 16px;\n    padding-right: 8px;\n    cursor: pointer;\n}\n\n.addFilterBtn {\n    margin-left: 8px;\n    background-color: white;\n    border: 2px solid rgba(2, 167, 240, 0.5);\n    min-width: 52px;\n    cursor: pointer;\n}\n\n\n/* Filter Suggestions */\n.filterListPanel {\n    position: relative;\n    top: 60px;\n}\n\n.suggestionsTextPanel {\n    position: relative;\n    top: 61px;\n    display: flex;\n}\n\n.suggestionFiltername {\n    margin-right: 8px;\n    padding-top: 8px;\n}\n\n.suggestionTextValuesPanel {\n    width: 120px;\n    height: 162px;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.suggestionValueElement {\n    padding: 8px;\n    border-bottom: 1px solid black;\n    cursor: pointer;\n}\n\n.suggestionValueElement:hover {\n    font-weight: 700px;\n    background-color: rgba(2, 167, 240, 0.5);\n}\n\n.suggestionsRangePanel {\n    position: relative;\n    top: 45px;\n    display: flex;\n}\n\n.suggestionRangeValuesPanel {\n    padding: 12px;\n    text-align: right;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.suggestionRangeValuesPanelIVol {\n    width: 172px;\n    height: 96px;\n}\n\n.suggestionRangeValuesPanelDt {\n    width: 138px;\n    height: 94px;\n}\n\n.suggestionRangeFilterLine {\n    display: flex;\n    text-align: left;\n    padding-top: 8px;\n}\n\n.suggestionRangeFilterLine :nth-child(2) {\n    align-items:flex-end;\n}\n\n.suggestionRangeValueLabel {\n    margin-right: 8px;\n    width: 60px;\n}\n\n.suggestionRangeValueInputDt {\n    width: 70px;\n}\n\n.suggestionRangeValueInputIVol {\n    width: 140px;\n}\n\n.suggestionRangeBtn {\n    margin-top: 12px;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".visevQBcXLRkGHgMmI6M {\n    display: flex;\n    align-items: center;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-size: 13px;\n}\n\n.J0HEVJIfbGnFUPEZ4sY9 {\n    height: 52px;\n    width: 1110px;\n    border: 2px solid rgba(98, 36, 128, 1);\n}\n\n.Z39wuvqAOiDL2qmEEtLg {\n    height: 44px;\n    width: 504px;\n    border: 2px solid rgba(2, 167, 240, 1);\n}\n\n.GPG0_6ulmPyX4P93Ximl {\n    margin: 0 12px;\n    min-width: 65px;\n}\n\n.hfPNZw73Cf9kMz2wiINg {\n    margin: 0 8px;\n    display: flex;\n    align-items: center;\n    border: 2px solid rgba(2, 167, 240, 1);\n    background: rgba(2, 167, 240, 0.2);\n    border-radius: 12px;\n    cursor: default;\n}\n\n.yYDjOyIh9MbdmMmIZawJ {\n    padding: 12px;\n}\n\n.d69p7vznosejmibriwTB {\n    padding: 10px;\n}\n\n.woAYoOs2KlfXQxcP2Y6v {\n    display: flex;\n}\n\n.P_fuyJFQ792sRIlNZnKo {\n    margin-right: 4px;\n}\n\n.cIyIQ3xAzZli4bSqa01A {\n    margin-left: 8px;\n    height: 16px;\n    width: 16px;\n    padding-right: 8px;\n    cursor: pointer;\n}\n\n.KneDLkDOPsiSv91jb0NA {\n    margin-left: 8px;\n    background-color: white;\n    border: 2px solid rgba(2, 167, 240, 0.5);\n    min-width: 52px;\n    cursor: pointer;\n}\n\n\n/* Filter Suggestions */\n.ykYCMASJ8Vra_8mQnKmM {\n    position: relative;\n    top: 60px;\n}\n\n.Fx0HhLBP0yOrmfRCiyY5 {\n    position: relative;\n    top: 67px;\n    display: flex;\n}\n\n.utiE1oReCoXSJduH4Syo {\n    margin-right: 8px;\n    padding-top: 8px;\n}\n\n.CfZZS1Llr6Cl2HMip0jn {\n    width: 120px;\n    height: 162px;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.v5CFVQ38Y78EAd_z_WxB {\n    padding: 8px;\n    border-bottom: 1px solid black;\n    cursor: pointer;\n}\n\n.v5CFVQ38Y78EAd_z_WxB:hover {\n    font-weight: 700px;\n    background-color: rgba(2, 167, 240, 0.5);\n}\n\n.IkF9cndZPFyri5gJRnn_ {\n    position: relative;\n    top: 45px;\n    display: flex;\n}\n\n.nP1bKdt6RzQq1ZmbhZlr {\n    padding: 12px;\n    text-align: right;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.kSrFiHnSaeho9TATvlGN {\n    width: 172px;\n    height: 96px;\n}\n\n.BFLSxOnhtitiKf_RLxaZ {\n    width: 138px;\n    height: 94px;\n}\n\n.LJvURyShD66q9zRcBSQI {\n    display: flex;\n    text-align: left;\n    padding-top: 8px;\n}\n\n.LJvURyShD66q9zRcBSQI :nth-child(2) {\n    align-items:flex-end;\n}\n\n.gotdjmwwI9aTPEhFLTww {\n    margin-right: 8px;\n    width: 60px;\n}\n\n.C6JZpuFoESwOcC651ltr {\n    width: 70px;\n}\n\n.q882sDkqfw6vf_F4pJH7 {\n    width: 140px;\n}\n\n.Bm_FFKRuket0l7tXuW6j {\n    margin-top: 12px;\n}", "",{"version":3,"sources":["webpack://./src/customCode/components/filterbar/Filterbar.module.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,mBAAmB;IACnB,kDAAkD;IAClD,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,sCAAsC;AAC1C;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,sCAAsC;AAC1C;;AAEA;IACI,cAAc;IACd,eAAe;AACnB;;AAEA;IACI,aAAa;IACb,aAAa;IACb,mBAAmB;IACnB,sCAAsC;IACtC,kCAAkC;IAClC,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,gBAAgB;IAChB,YAAY;IACZ,WAAW;IACX,kBAAkB;IAClB,eAAe;AACnB;;AAEA;IACI,gBAAgB;IAChB,uBAAuB;IACvB,wCAAwC;IACxC,eAAe;IACf,eAAe;AACnB;;;AAGA,uBAAuB;AACvB;IACI,kBAAkB;IAClB,SAAS;AACb;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,aAAa;AACjB;;AAEA;IACI,iBAAiB;IACjB,gBAAgB;AACpB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,kBAAkB;IAClB,uBAAuB;IACvB,UAAU;IACV,uBAAuB;AAC3B;;AAEA;IACI,YAAY;IACZ,8BAA8B;IAC9B,eAAe;AACnB;;AAEA;IACI,kBAAkB;IAClB,wCAAwC;AAC5C;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,iBAAiB;IACjB,kBAAkB;IAClB,uBAAuB;IACvB,UAAU;IACV,uBAAuB;AAC3B;;AAEA;IACI,YAAY;IACZ,YAAY;AAChB;;AAEA;IACI,YAAY;IACZ,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,gBAAgB;IAChB,gBAAgB;AACpB;;AAEA;IACI,oBAAoB;AACxB;;AAEA;IACI,iBAAiB;IACjB,WAAW;AACf;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,gBAAgB;AACpB","sourcesContent":[".filterbar {\n    display: flex;\n    align-items: center;\n    font-family: 'Arial Standard', 'Arial', sans-serif;\n    font-weight: 400;\n    font-size: 13px;\n}\n\n.filterbarDt {\n    height: 52px;\n    width: 1110px;\n    border: 2px solid rgba(98, 36, 128, 1);\n}\n\n.filterbarIVol {\n    height: 44px;\n    width: 504px;\n    border: 2px solid rgba(2, 167, 240, 1);\n}\n\n.filterStaticText {\n    margin: 0 12px;\n    min-width: 65px;\n}\n\n.filterElement {\n    margin: 0 8px;\n    display: flex;\n    align-items: center;\n    border: 2px solid rgba(2, 167, 240, 1);\n    background: rgba(2, 167, 240, 0.2);\n    border-radius: 12px;\n    cursor: default;\n}\n\n.filterElementDt {\n    padding: 12px;\n}\n\n.filterElementIVol {\n    padding: 10px;\n}\n\n.filterTextPanel {\n    display: flex;\n}\n\n.filterKey {\n    margin-right: 4px;\n}\n\n.removeFilterBtn {\n    margin-left: 8px;\n    height: 16px;\n    width: 16px;\n    padding-right: 8px;\n    cursor: pointer;\n}\n\n.addFilterBtn {\n    margin-left: 8px;\n    background-color: white;\n    border: 2px solid rgba(2, 167, 240, 0.5);\n    min-width: 52px;\n    cursor: pointer;\n}\n\n\n/* Filter Suggestions */\n.filterListPanel {\n    position: relative;\n    top: 60px;\n}\n\n.suggestionsTextPanel {\n    position: relative;\n    top: 67px;\n    display: flex;\n}\n\n.suggestionFiltername {\n    margin-right: 8px;\n    padding-top: 8px;\n}\n\n.suggestionTextValuesPanel {\n    width: 120px;\n    height: 162px;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.suggestionValueElement {\n    padding: 8px;\n    border-bottom: 1px solid black;\n    cursor: pointer;\n}\n\n.suggestionValueElement:hover {\n    font-weight: 700px;\n    background-color: rgba(2, 167, 240, 0.5);\n}\n\n.suggestionsRangePanel {\n    position: relative;\n    top: 45px;\n    display: flex;\n}\n\n.suggestionRangeValuesPanel {\n    padding: 12px;\n    text-align: right;\n    overflow-y: scroll;\n    border: 1px solid black;\n    z-index: 5;\n    background-color: white;\n}\n\n.suggestionRangeValuesPanelIVol {\n    width: 172px;\n    height: 96px;\n}\n\n.suggestionRangeValuesPanelDt {\n    width: 138px;\n    height: 94px;\n}\n\n.suggestionRangeFilterLine {\n    display: flex;\n    text-align: left;\n    padding-top: 8px;\n}\n\n.suggestionRangeFilterLine :nth-child(2) {\n    align-items:flex-end;\n}\n\n.suggestionRangeValueLabel {\n    margin-right: 8px;\n    width: 60px;\n}\n\n.suggestionRangeValueInputDt {\n    width: 70px;\n}\n\n.suggestionRangeValueInputIVol {\n    width: 140px;\n}\n\n.suggestionRangeBtn {\n    margin-top: 12px;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"filterbar": "visevQBcXLRkGHgMmI6M",
@@ -34829,58 +34829,58 @@ __webpack_require__.r(__webpack_exports__);
         "continent": {
             "filterType": "text",
             "properties": {
-                "NA": "North America",
-                "SA": "South America",
-                "EU": "Europe",
+                "AF": "Africa",
                 "AS": "Asia",
+                "EU": "Europe",
+                "NA": "North America",
                 "OS": "Oceania",
-                "AF": "Africa"
+                "SA": "South America",
             }
         },
         "country": {
             "filterType": "text",
             "properties": {
                 "Europe": {
+                    "AL": "Albania",
                     "AT": "Austria",
+                    "BY": "Belarus",
                     "BE": "Belgium",
+                    "BA": "Bosnia and Herzegovina",
+                    "BG": "Bulgaria",
+                    "HR": "Croatia",
+                    "CY": "Cyprus",
+                    "CZ": "Czech Republic",
+                    "DK": "Denmark",
+                    "EE": "Estonia",
+                    "FI": "Finland",
                     "FR": "France",
                     "DE": "Germany",
-                    "IT": "Italy",
-                    "NO": "Norway",
-                    "ES": "Spain",
-                    "GB": "United Kingdom",
-                    "BG": "Bulgaria",
-                    "BA": "Bosnia and Herzegovina",
-                    "BY": "Belarus",
-                    "RU": "Russia",
-                    "RS": "Serbia",
-                    "RO": "Romania",
                     "GR": "Greece",
-                    "HR": "Croatia",
                     "HU": "Hungary",
-                    "PT": "Portugal",
-                    "MT": "Malta",
-                    "FI": "Finland",
-                    "NL": "Netherlands",
-                    "MD": "Moldova",
-                    "CH": "Switzerland",
-                    "CZ": "Czech Republic",
-                    "CY": "Cyprus",
-                    "DK": "Denmark",
-                    "TR": "Turkey",
-                    "LI": "Liechtenstein",
+                    "IS": "Iceland",
+                    "IE": "Ireland",
+                    "IT": "Italy",
                     "LV": "Latvia",
+                    "LI": "Liechtenstein",
                     "LT": "Lithuania",
                     "LU": "Luxembourg",
+                    "MT": "Malta",
+                    "MD": "Moldova",
+                    "NL": "Netherlands",
+                    "NO": "Norway",
+                    "PL": "Poland",
+                    "PT": "Portugal",
+                    "RO": "Romania",
+                    "RU": "Russia",
                     "SK": "Slovakia",
                     "SI": "Slovenia",
-                    "IS": "Iceland",
-                    "AL": "Albania",
-                    "IE": "Ireland",
-                    "UA": "Ukraine",
+                    "ES": "Spain",
+                    "RS": "Serbia",
                     "SE": "Sweden",
-                    "PL": "Poland",
-                    "EE": "Estonia",
+                    "CH": "Switzerland",
+                    "TR": "Turkey",
+                    "UA": "Ukraine",
+                    "GB": "United Kingdom",
                 },
                 "North America": {
                     "US": "United States",
@@ -35218,15 +35218,15 @@ __webpack_require__.r(__webpack_exports__);
                     "Austria": {
                         "Upper Austria": [
                             {
+                                "name": "Gmunden",
+                                "latitude": 47.9184,
+                                "longitude": 13.7993
+                            },
+                            {
                                 "name": "Linz",
                                 "latitude": 48.3069,
                                 "longitude": 14.2858
                             },
-                            {
-                                "name": "Gmunden",
-                                "latitude": 47.9184,
-                                "longitude": 13.7993
-                            }
                         ],
                         "Vienna": [
                             {
@@ -35299,7 +35299,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         "taskname": "Adventbazar",
         "taskid": 12345,
-        "responsible": "Rotes Kreuz",
+        "coordinator": "Rotes Kreuz",
         "priority": 2,
         "date": {
             "from": "2022-12-10T15:00:00Z",
@@ -35322,7 +35322,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         "taskname": "Pfadfinder Meetup",
         "taskid": 12346,
-        "responsible": "Pfadfinderclub Linz",
+        "coordinator": "Pfadfinderclub Linz",
         "priority": 1,
         "date": {
             "from": "2022-08-29T07:30:00Z",
@@ -35345,7 +35345,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         "taskname": "Zoo Tierhelfer",
         "taskid": 12347,
-        "responsible": "Tiergarten-Verein Österreich",
+        "coordinator": "Tiergarten-Verein Österreich",
         "priority": 3,
         "date": {
             "from": "2022-07-27T13:15:00Z",
@@ -35368,9 +35368,9 @@ __webpack_require__.r(__webpack_exports__);
         },
         "taskname": "Kindergarten Helfer",
         "taskid": 12348,
-        "responsible": "Rotes Kreuz",
+        "coordinator": "Rotes Kreuz",
         "date": {
-            "from": "2022-06-20T14:30:00Z",
+            "from": "2022-06-29T14:30:00Z",
             "to": ""
         },
         "priority": 2,
@@ -35391,7 +35391,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         "taskname": "Altenpflege Volunteering",
         "taskid": 12349,
-        "responsible": "Altenpflegeverein Kärnten",
+        "coordinator": "Altenpflegeverein Kärnten",
         "priority": 2,
         "date": {
             "from": "2022-09-21T08:00:00Z",
@@ -35414,10 +35414,10 @@ __webpack_require__.r(__webpack_exports__);
         },
         "taskname": "Mülleinsammeln",
         "taskid": 12350,
-        "responsible": "Samariterbund",
+        "coordinator": "Samariterbund",
         "priority": 1,
         "date": {
-            "from": "2022-06-15T07:00:00Z",
+            "from": "2022-07-01T07:00:00Z",
             "to": ""
         },
         "friend": [
@@ -35443,29 +35443,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([
     {
-        "friend": {
+        "coordinator": {
             "filterType": "text",
             "properties": {
-                "SR": "Steve Rogers",
-                "TS": "Tony Stark",
-                "PP": "Peter Parker",
-                "NR": "Natasha Romanov",
-                "BB": "Bruce Banner",
-                "JB": "James Bucky Barnes"
-            }
-        },
-        "responsible": {
-            "filterType": "text",
-            "properties": {
+                "AP": "Altenpflegeverein Kärnten",
+                "PF": "Pfadfinderclub Linz",
                 "RK": "Rotes Kreuz",
                 "SB": "Samariterbund",
                 "TI": "Tiergarten-Verein Österreich",
-                "PF": "Pfadfinderclub Linz",
-                "AP": "Altenpflegeverein Kärnten"
             }
         },
         "date": {
             "filterType": "date"
+        },
+        "friend": {
+            "filterType": "text",
+            "properties": {
+                "BB": "Bruce Banner",
+                "JB": "James Bucky Barnes",
+                "NR": "Natasha Romanov",
+                "PP": "Peter Parker",
+                "SR": "Steve Rogers",
+                "TS": "Tony Stark",
+            }
         },
         "location": {
             "filterType": "text",
@@ -35488,6 +35488,9 @@ __webpack_require__.r(__webpack_exports__);
                 "2": "2 - Medium",
                 "3": "3 - Low"
             }
+        },
+        "taskid": {
+            "filterType": "range"
         }
     }
 ]);
@@ -35517,7 +35520,14 @@ __webpack_require__.r(__webpack_exports__);
 
 var FilterElement = function (_a) {
     var filterKey = _a.filterKey, filterValue = _a.filterValue, removeFilter = _a.removeFilter, isIVolunteer = _a.isIVolunteer;
-    var filterType = (0,_utils__WEBPACK_IMPORTED_MODULE_1__.getFilterType)(filterKey);
+    var filterType;
+    if (filterKey === 'taskid' && filterValue.to === '') {
+        filterType = _utils__WEBPACK_IMPORTED_MODULE_1__.FilterType.TEXT;
+        filterValue = filterValue.from;
+    }
+    else {
+        filterType = (0,_utils__WEBPACK_IMPORTED_MODULE_1__.getFilterType)(filterKey);
+    }
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "".concat(_Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].filterElement, " ").concat(isIVolunteer ? _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].filterElementIVol : _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].filterElementDt), key: filterKey, id: filterKey },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].filterTextPanel },
@@ -35604,27 +35614,48 @@ var FilterSuggestions = function (_a) {
     var dtMin = 0.05;
     var dtMax = 1;
     var dtStep = 0.05;
-    var iVolDefaultFrom = '2022-07-01';
-    var iVolDefaultTo = '2022-08-31';
-    var iVolStep = 1;
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, filterType === _utils__WEBPACK_IMPORTED_MODULE_1__.FilterType.TEXT
+    var iVolDefaultRangeFrom = 1; // also min value
+    var iVolDefaultRangeTo = 99999; // also max value
+    var currentDate = new Date();
+    var dateInTwoMonths = new Date(new Date().setMonth(currentDate.getMonth() + 2));
+    var iVolDefaultDateFrom = currentDate.toISOString().split('T')[0];
+    var iVolDefaultDateTo = dateInTwoMonths.toISOString().split('T')[0];
+    var iVolDateStep = 1;
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, 
+    // text filter
+    filterType === _utils__WEBPACK_IMPORTED_MODULE_1__.FilterType.TEXT
         ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionsTextPanel, onClick: function () { return hideSuggestionPanel(setShowSuggestions); } },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionFiltername },
                 filterKey,
                 ":"),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionTextValuesPanel }, keys.map(function (valueKey) { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { key: valueKey, className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionValueElement, onClick: function () { return selectFilterValue(setNewFilterValue, filterKey, filterValues[valueKey], setShowSuggestions); } }, filterValues[valueKey])); })))
-        : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionsRangePanel },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionFiltername },
-                filterKey,
-                ":"),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "".concat(_Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValuesPanel, " ").concat(isIVolunteer ? _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValuesPanelIVol : _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValuesPanelDt) },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeFilterLine },
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueLabel }, "From:"),
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { className: isIVolunteer ? _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputIVol : _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputDt, type: isIVolunteer ? 'date' : 'number', id: 'rangeFrom', min: isIVolunteer ? '1970-01-01' : dtMin, max: isIVolunteer ? '2099-12-31' : dtMax, step: isIVolunteer ? iVolStep : dtStep, defaultValue: isIVolunteer ? iVolDefaultFrom : dtDefaultFrom, onChange: function () { return onChangeRange(); } })),
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeFilterLine },
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueLabel }, "To:"),
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { className: isIVolunteer ? _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputIVol : _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputDt, type: isIVolunteer ? 'date' : 'number', id: 'rangeTo', min: isIVolunteer ? '1970-01-01' : dtMin, max: isIVolunteer ? '2099-12-31' : dtMax, step: isIVolunteer ? iVolStep : dtStep, defaultValue: isIVolunteer ? iVolDefaultTo : dtDefaultTo, onChange: function () { return onChangeRange(); } })),
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeBtn, id: 'rangeFilterConfirm', onClick: function () { return confirmRangeFilter(setNewFilterValue, filterKey, setShowSuggestions); } }, "Confirm")))));
+        // range filter    
+        : filterType === _utils__WEBPACK_IMPORTED_MODULE_1__.FilterType.RANGE
+            ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionsRangePanel },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionFiltername },
+                    filterKey,
+                    ":"),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "".concat(_Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValuesPanel, " ").concat(isIVolunteer ? _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValuesPanelIVol : _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValuesPanelDt) },
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeFilterLine },
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueLabel }, "From:"),
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputDt, type: 'number', id: 'rangeFrom', min: isIVolunteer ? iVolDefaultRangeFrom : dtMin, max: isIVolunteer ? iVolDefaultRangeTo : dtMax, step: isIVolunteer ? iVolDateStep : dtStep, defaultValue: isIVolunteer ? iVolDefaultRangeFrom : dtDefaultFrom, onChange: function () { return onChangeRange(filterType === _utils__WEBPACK_IMPORTED_MODULE_1__.FilterType.RANGE); } })),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeFilterLine },
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueLabel }, "To:"),
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputDt, type: 'number', id: 'rangeTo', min: isIVolunteer ? iVolDefaultRangeFrom : dtMin, max: isIVolunteer ? iVolDefaultRangeTo : dtMax, step: isIVolunteer ? iVolDateStep : dtStep, defaultValue: isIVolunteer ? iVolDefaultRangeTo : dtDefaultTo, onChange: function () { return onChangeRange(filterType === _utils__WEBPACK_IMPORTED_MODULE_1__.FilterType.RANGE); } })),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeBtn, id: 'rangeFilterConfirm', onClick: function () { return confirmRangeFilter(setNewFilterValue, filterKey, setShowSuggestions, filterType === _utils__WEBPACK_IMPORTED_MODULE_1__.FilterType.RANGE); } }, "Confirm")))
+            // date filter    
+            : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionsRangePanel },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionFiltername },
+                    filterKey,
+                    ":"),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "".concat(_Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValuesPanel, " ").concat(isIVolunteer ? _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValuesPanelIVol : _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValuesPanelDt) },
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeFilterLine },
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueLabel }, "From:"),
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { className: isIVolunteer ? _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputIVol : _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputDt, type: 'date', id: 'dateFrom', min: '1970-01-01', max: '2099-12-31', step: iVolDateStep, defaultValue: iVolDefaultDateFrom, onChange: function () { return onChangeRange(filterType === _utils__WEBPACK_IMPORTED_MODULE_1__.FilterType.RANGE); } })),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeFilterLine },
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueLabel }, "To:"),
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeValueInputIVol, type: 'date', id: 'dateTo', min: '1970-01-01', max: '2099-12-31', step: iVolDateStep, defaultValue: iVolDefaultDateTo, onChange: function () { return onChangeRange(filterType === _utils__WEBPACK_IMPORTED_MODULE_1__.FilterType.RANGE); } })),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { className: _Filterbar_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].suggestionRangeBtn, id: 'rangeFilterConfirm', onClick: function () { return confirmRangeFilter(setNewFilterValue, filterKey, setShowSuggestions, filterType === _utils__WEBPACK_IMPORTED_MODULE_1__.FilterType.RANGE); } }, "Confirm")))));
 };
 var displayFilters = function (showFilters, setShowFilters) {
     setShowFilters(showFilters);
@@ -35700,20 +35731,40 @@ var getFilterSuggestions = function (isIVolunteer, suggestions, filterKey) {
     }
     return values;
 };
-var onChangeRange = function () {
-    $('#rangeFilterConfirm').prop('disabled', true);
-    var from = $('#rangeFrom').val();
-    var to = $('#rangeTo').val();
+var onChangeRange = function (isRangeFilter) {
+    var btnId, fromId, toId;
+    if (isRangeFilter) {
+        btnId = '#rangeFilterConfirm';
+        fromId = '#rangeFrom';
+        toId = '#rangeTo';
+    }
+    else {
+        btnId = '#dateFilterConfirm';
+        fromId = '#dateFrom';
+        toId = '#dateTo';
+    }
+    $(btnId).prop('disabled', true);
+    var from = $(fromId).val();
+    var to = $(toId).val();
     // enable button when both fields are filled and from < to
     if (from !== '' && to !== '') {
         if (from < to || from === to) {
-            $('#rangeFilterConfirm').prop('disabled', false);
+            $(btnId).prop('disabled', false);
         }
     }
 };
-var confirmRangeFilter = function (setNewFilterValue, filterKey, setShowSuggestions) {
-    var from = $('#rangeFrom').val();
-    var to = $('#rangeTo').val();
+var confirmRangeFilter = function (setNewFilterValue, filterKey, setShowSuggestions, isRangeFilter) {
+    var fromId, toId;
+    if (isRangeFilter) {
+        fromId = '#rangeFrom';
+        toId = '#rangeTo';
+    }
+    else {
+        fromId = '#dateFrom';
+        toId = '#dateTo';
+    }
+    var from = $(fromId).val();
+    var to = $(toId).val();
     // confirm only works when both fields are filled and from < to
     if (from !== '' && to !== '') {
         if (from < to || from === to) {
@@ -36001,6 +36052,7 @@ var previouslyHoveredLocation;
 var apdexMetric = 'apdex';
 var InteractiveMap = function (_a) {
     var selectedMetric = _a.selectedMetric, filters = _a.filters, onSetZoom = _a.onSetZoom, onChangeFilters = _a.onChangeFilters, isIVolunteer = _a.isIVolunteer;
+    var defaultZoom = isIVolunteer ? _utils__WEBPACK_IMPORTED_MODULE_3__.ZoomLevel.COUNTRY : _utils__WEBPACK_IMPORTED_MODULE_3__.ZoomLevel.WORLD;
     // ------------ initialization 
     var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), map = _b[0], setMap = _b[1];
     var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), selectedLocation = _c[0], setSelectedLocation = _c[1];
@@ -36041,7 +36093,7 @@ var InteractiveMap = function (_a) {
             source: overlaySource
         });
         // create map
-        var initialMap = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.createMap)(mapElement.current, 6, _MapUtils__WEBPACK_IMPORTED_MODULE_5__.defaultLongitude, _MapUtils__WEBPACK_IMPORTED_MODULE_5__.defaultLatitude, isIVolunteer, overlayLayer);
+        var initialMap = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.createMap)(mapElement.current, defaultZoom, _MapUtils__WEBPACK_IMPORTED_MODULE_5__.defaultLongitude, _MapUtils__WEBPACK_IMPORTED_MODULE_5__.defaultLatitude, isIVolunteer, overlayLayer);
         // set event handlers except click handler (will be set later)
         initialMap.on('pointermove', handleHover);
         initialMap.on('moveend', handleZoom);
@@ -36347,7 +36399,7 @@ var clickOnMapMarkerIVol = function (feature, map) {
                 // add data to tooltip
                 $('#tooltip-title').text(data_1.taskname);
                 $('#tooltip-taskid').text(data_1.taskid);
-                $('#tooltip-responsible').text(data_1.responsible);
+                $('#tooltip-responsible').text(data_1.coordinator);
                 $('#tooltip-city').text(data_1.address.zip + ' ' + data_1.address.city);
                 // calculate priority based on date
                 var dateFrom = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.getDateString)(data_1.date).dateFrom;
@@ -36435,6 +36487,11 @@ var StaticMap = function (_a) {
         }
         else {
             (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.addIconOverlay)(true, dataRow, initialMap, 'detail');
+            // initially collapse map
+            var element = document.getElementById('map_taskdetails');
+            var collapseBtn = document.getElementById('collapseMap');
+            element.classList.add(_Map_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].hideMap);
+            collapseBtn.classList.add(_Map_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].collapsedMapBtn);
         }
         // save map for later use
         setMap(initialMap);
@@ -36602,19 +36659,27 @@ var columnHeaderNamesMap = new Map([
     ['errors', 'Errors'],
 ]);
 var Table = function (_a) {
-    var data = _a.data, selectedMetric = _a.selectedMetric, isIVolunteer = _a.isIVolunteer;
+    var data = _a.data, selectedMetric = _a.selectedMetric, filters = _a.filters, onSetFilter = _a.onSetFilter, isIVolunteer = _a.isIVolunteer;
     rowsPerPage = isIVolunteer ? 4 : 5;
     var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1), page = _b[0], setPage = _b[1];
     var _c = useTable(data, page), dataOnPage = _c.dataOnPage, tableRange = _c.tableRange;
+    var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(filters), selectedFilters = _d[0], setSelectedFilters = _d[1];
+    if (selectedFilters !== undefined && filters !== selectedFilters) {
+        setSelectedFilters(filters);
+    }
+    var filterCallback = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+        setSelectedFilters(value);
+        onSetFilter(value);
+    }, [selectedFilters, onSetFilter]);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, data.length > 0
         ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(TableContent, { dataOnPage: dataOnPage, selectedMetric: selectedMetric, isIVolunteer: isIVolunteer }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(TableContent, { dataOnPage: dataOnPage, selectedMetric: selectedMetric, isIVolunteer: isIVolunteer, selectedFilters: selectedFilters, setFilter: filterCallback }),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(TablePagination, { pageRange: tableRange, dataOnPage: dataOnPage, setPage: setPage, page: page }))
         : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].noData },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "No data available for this filter"))));
 };
 var TableContent = function (_a) {
-    var dataOnPage = _a.dataOnPage, selectedMetric = _a.selectedMetric, isIVolunteer = _a.isIVolunteer;
+    var dataOnPage = _a.dataOnPage, selectedMetric = _a.selectedMetric, selectedFilters = _a.selectedFilters, setFilter = _a.setFilter, isIVolunteer = _a.isIVolunteer;
     var columnHeaders;
     if (isIVolunteer) {
         columnHeaders = ['Task Name', 'Task ID'];
@@ -36637,9 +36702,9 @@ var TableContent = function (_a) {
                     columnHeaders.map(function (header) { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", { key: header, className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableHeader }, header)); }),
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableHeader }, "Details"))),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tbody", null, dataOnPage.map(function (dataRow) { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableRowItems, key: isIVolunteer ? dataRow.taskid : dataRow.location },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: "".concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell, " ").concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableLink) }, isIVolunteer
-                    ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", { href: "ivolunteer_-_taskdetails.html?taskId=".concat(dataRow.taskid) }, dataRow.taskname)
-                    : dataRow.location),
+                isIVolunteer
+                    ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: "".concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell, " ").concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableLink), onClick: function () { return clickOnTableRow(setFilter, dataRow, selectedFilters, isIVolunteer); } }, dataRow.taskname)
+                    : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: "".concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell, " ").concat(_Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableLink), onClick: function () { return clickOnTableRow(setFilter, dataRow, selectedFilters, isIVolunteer); } }, dataRow.location),
                 !isIVolunteer
                     ? selectedMetric === 'useractions'
                         ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell },
@@ -36717,6 +36782,39 @@ var calculatePageRange = function (data, page) {
         }
     }
     return pageRange;
+};
+var clickOnTableRow = function (setFilter, filterElement, filters, isIVolunteer) {
+    var newFilter;
+    if (isIVolunteer) {
+        newFilter = {
+            "key": "taskid",
+            "value": {
+                "from": filterElement.taskid,
+                "to": ""
+            }
+        };
+    }
+    else {
+        var key = void 0;
+        var elementParent = $('#table_tab1_title').parent();
+        if (elementParent.hasClass('selected')) {
+            key = $('#table_tab1_title').text().toLowerCase();
+        }
+        else {
+            key = $('#table_tab2_title').text().toLowerCase();
+        }
+        newFilter = {
+            "key": key,
+            "value": filterElement.location
+        };
+    }
+    for (var i = 0; i < filters.length; i++) {
+        if (filters[i].key === newFilter.key) {
+            filters.splice(i, 1);
+        }
+    }
+    filters.push(newFilter);
+    setFilter(filters);
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Table);
 
@@ -36916,23 +37014,23 @@ var IVolunteerWorldmapApp = /** @class */ (function (_super) {
         var selectedFiltersCallback = function (value) {
             _this.selectedFilters = value;
             _this.tableData = (0,_utils__WEBPACK_IMPORTED_MODULE_7__.getFilteredIVolData)(_data_ivol_database__WEBPACK_IMPORTED_MODULE_6__["default"], _this.selectedFilters);
-            table.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_table_Table__WEBPACK_IMPORTED_MODULE_5__["default"], { data: _this.tableData, selectedMetric: _this.selectedMetric, isIVolunteer: true }));
+            table.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_table_Table__WEBPACK_IMPORTED_MODULE_5__["default"], { data: _this.tableData, selectedMetric: _this.selectedMetric, filters: _this.selectedFilters, onSetFilter: selectedFiltersCallback, isIVolunteer: true }));
             map.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_map_Map__WEBPACK_IMPORTED_MODULE_3__["default"], { selectedMetric: _this.selectedMetric, filters: _this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, isIVolunteer: true }));
             filterbar.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_filterbar_Filterbar__WEBPACK_IMPORTED_MODULE_2__["default"], { isIVolunteer: true, filters: _this.selectedFilters, onSelectedFilters: selectedFiltersCallback }));
         };
         var selectedMetricCallback = function (value) {
             _this.selectedMetric = value;
             map.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_map_Map__WEBPACK_IMPORTED_MODULE_3__["default"], { selectedMetric: _this.selectedMetric, filters: _this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, isIVolunteer: true }));
-            table.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_table_Table__WEBPACK_IMPORTED_MODULE_5__["default"], { data: _this.tableData, selectedMetric: _this.selectedMetric, isIVolunteer: true }));
+            table.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_table_Table__WEBPACK_IMPORTED_MODULE_5__["default"], { data: _this.tableData, selectedMetric: _this.selectedMetric, filters: _this.selectedFilters, onSetFilter: selectedFiltersCallback, isIVolunteer: true }));
         };
         var zoomLevelCallback = function (value) {
             _this.currentZoomLevel = value;
-            table.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_table_Table__WEBPACK_IMPORTED_MODULE_5__["default"], { data: _this.tableData, selectedMetric: _this.selectedMetric, isIVolunteer: true }));
+            table.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_table_Table__WEBPACK_IMPORTED_MODULE_5__["default"], { data: _this.tableData, selectedMetric: _this.selectedMetric, filters: _this.selectedFilters, onSetFilter: selectedFiltersCallback, isIVolunteer: true }));
         };
         filterbar.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_filterbar_Filterbar__WEBPACK_IMPORTED_MODULE_2__["default"], { isIVolunteer: true, filters: _this.selectedFilters, onSelectedFilters: selectedFiltersCallback }));
         metricSwitcher.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_metricswitcher_MetricSwitcher__WEBPACK_IMPORTED_MODULE_4__["default"], { isIVolunteer: true, onSetMetric: selectedMetricCallback }));
         map.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_map_Map__WEBPACK_IMPORTED_MODULE_3__["default"], { selectedMetric: _this.selectedMetric, filters: _this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, isIVolunteer: true }));
-        table.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_table_Table__WEBPACK_IMPORTED_MODULE_5__["default"], { data: _this.tableData, selectedMetric: _this.selectedMetric, isIVolunteer: true }));
+        table.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_table_Table__WEBPACK_IMPORTED_MODULE_5__["default"], { data: _this.tableData, selectedMetric: _this.selectedMetric, filters: _this.selectedFilters, onSetFilter: selectedFiltersCallback, isIVolunteer: true }));
         return _this;
     }
     IVolunteerWorldmapApp.prototype.render = function () {
@@ -37006,7 +37104,6 @@ var DurationLength;
     DurationLength[DurationLength["MEDIUM"] = 3] = "MEDIUM";
     DurationLength[DurationLength["LONG"] = 5] = "LONG";
 })(DurationLength || (DurationLength = {}));
-// scale for Apdex and also other DT metrics
 var Apdex;
 (function (Apdex) {
     Apdex[Apdex["EXCELLENT"] = 1] = "EXCELLENT";
@@ -37023,13 +37120,17 @@ var FilterType;
 })(FilterType || (FilterType = {}));
 var getFilterType = function (filterName) {
     // check iVolunteer filter database
-    for (var filter in _data_ivol_filters__WEBPACK_IMPORTED_MODULE_4__["default"][0]) {
+    var iVolKeys = Object.keys(_data_ivol_filters__WEBPACK_IMPORTED_MODULE_4__["default"][0]);
+    for (var i = 0; i < iVolKeys.length; i++) {
+        var filter = iVolKeys[i];
         if (filter === filterName) {
             return _data_ivol_filters__WEBPACK_IMPORTED_MODULE_4__["default"][0][filter].filterType;
         }
     }
     // check Dynatrace filter database
-    for (var filter in _data_dt_filters__WEBPACK_IMPORTED_MODULE_2__["default"][0]) {
+    var dtKeys = Object.keys(_data_dt_filters__WEBPACK_IMPORTED_MODULE_2__["default"][0]);
+    for (var i = 0; i < dtKeys.length; i++) {
+        var filter = dtKeys[i];
         if (filter === filterName) {
             return _data_dt_filters__WEBPACK_IMPORTED_MODULE_2__["default"][0][filter].filterType;
         }
@@ -37147,12 +37248,24 @@ function getFilteredIVolData(dataset, selectedFilters) {
             }
         }
         else if (curFilterType === FilterType.RANGE) {
-            for (var j = 0; j < dataSet.length; j++) {
-                var dataElement = dataSet[j][curFilterKey];
-                var filterFrom = curFilterValue[0];
-                var filterTo = curFilterValue[1];
-                if (filterFrom <= dataElement && dataElement <= filterTo) {
-                    filteredDataPerCycle.push(dataSet[j]);
+            // click on table should filter for the task ID alone, not for a range
+            if (curFilterKey === 'taskid' && curFilterValue.to === '') {
+                for (var j = 0; j < dataSet.length; j++) {
+                    var dataElement = dataSet[j][curFilterKey];
+                    if (curFilterValue.from === dataElement) {
+                        filteredDataPerCycle.push(dataSet[j]);
+                    }
+                }
+            }
+            else {
+                // actual range filter implementation
+                for (var j = 0; j < dataSet.length; j++) {
+                    var dataElement = dataSet[j][curFilterKey];
+                    var filterFrom = curFilterValue[0];
+                    var filterTo = curFilterValue[1];
+                    if (filterFrom <= dataElement && dataElement <= filterTo) {
+                        filteredDataPerCycle.push(dataSet[j]);
+                    }
                 }
             }
         }
