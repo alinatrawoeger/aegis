@@ -33,6 +33,12 @@ const StaticMap: React.FC<StaticMapProps> = ({ dataRow, addTask }) => {
             initialMap.on('click', selectLocation);
         } else {
             addIconOverlay(true, dataRow, initialMap, 'detail');
+            
+            // initially collapse map
+            let element = document.getElementById('map_taskdetails');
+            let collapseBtn = document.getElementById('collapseMap');
+            element.classList.add(styles.hideMap);
+            collapseBtn.classList.add(styles.collapsedMapBtn);
         }
 
         // save map for later use

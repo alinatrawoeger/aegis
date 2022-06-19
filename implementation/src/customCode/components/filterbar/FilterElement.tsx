@@ -4,7 +4,13 @@ import styles from "./Filterbar.module.css";
 import removeIcon from "./img/remove-icon.png";
 
 const FilterElement = ( { filterKey, filterValue, removeFilter, isIVolunteer } ) => {
-    const filterType = getFilterType(filterKey);
+    let filterType;
+    if (filterKey === 'taskid' && filterValue.to === '') {
+        filterType = FilterType.TEXT;
+        filterValue = filterValue.from;
+    } else {
+        filterType = getFilterType(filterKey);
+    }
     return (
         <>
             <div className={`${styles.filterElement} ${isIVolunteer ? styles.filterElementIVol : styles.filterElementDt}`} key={filterKey} id={filterKey}>

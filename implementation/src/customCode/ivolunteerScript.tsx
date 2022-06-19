@@ -44,7 +44,7 @@ class IVolunteerWorldmapApp extends Component {
       this.selectedFilters = value;
       this.tableData = getFilteredIVolData(data, this.selectedFilters);
 
-      table.render(React.createElement(Table, {data: this.tableData, selectedMetric: this.selectedMetric, isIVolunteer: true }));
+      table.render(React.createElement(Table, {data: this.tableData, selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetFilter: selectedFiltersCallback, isIVolunteer: true }));
       map.render(React.createElement(InteractiveMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, isIVolunteer: true }));
       filterbar.render(React.createElement(Filterbar, {isIVolunteer: true, filters: this.selectedFilters, onSelectedFilters: selectedFiltersCallback}));
     };
@@ -53,19 +53,19 @@ class IVolunteerWorldmapApp extends Component {
       this.selectedMetric = value;
       
       map.render(React.createElement(InteractiveMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, isIVolunteer: true }));
-      table.render(React.createElement(Table, {data: this.tableData, selectedMetric: this.selectedMetric, isIVolunteer: true }));
+      table.render(React.createElement(Table, {data: this.tableData, selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetFilter: selectedFiltersCallback, isIVolunteer: true }));
     };
 
     const zoomLevelCallback = (value) => {
       this.currentZoomLevel = value;
 
-      table.render(React.createElement(Table, {data: this.tableData, selectedMetric: this.selectedMetric, isIVolunteer: true }));
+      table.render(React.createElement(Table, {data: this.tableData, selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetFilter: selectedFiltersCallback, isIVolunteer: true }));
     }
 
     filterbar.render(React.createElement(Filterbar, {isIVolunteer: true, filters: this.selectedFilters, onSelectedFilters: selectedFiltersCallback}));
     metricSwitcher.render(React.createElement(MetricSwitcher, { isIVolunteer: true, onSetMetric: selectedMetricCallback }));
     map.render(React.createElement(InteractiveMap, {selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, isIVolunteer: true }));
-    table.render(React.createElement(Table, {data: this.tableData, selectedMetric: this.selectedMetric, isIVolunteer: true}));
+    table.render(React.createElement(Table, {data: this.tableData, selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetFilter: selectedFiltersCallback, isIVolunteer: true}));
 
   }
 

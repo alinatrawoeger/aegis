@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import analyzeIcon from "./img/analyze.svg";
 import arrowLeft from "./img/arrow_left.png";
 import arrowLeftInactive from "./img/arrow_left_disabled.png";
@@ -21,21 +21,36 @@ const columnHeaderNamesMap: Map<string, string> = new Map([
 type TableProps = {
   data: any[];
   selectedMetric: string;
+  filters: any[],
+  onSetFilter: (value) => void;
   isIVolunteer: boolean; // distinguishes between DT and iVol table
 }
 
-const Table: React.FC<TableProps> = ( { data, selectedMetric, isIVolunteer } ) => {
+const Table: React.FC<TableProps> = ( { data, selectedMetric, filters, onSetFilter, isIVolunteer } ) => {
   rowsPerPage = isIVolunteer ? 4 : 5;
 
   const [page, setPage] = useState(1);
   const { dataOnPage, tableRange } = useTable(data, page);
+  const [ selectedFilters, setSelectedFilters ] = useState(filters);
+
+  if (selectedFilters !== undefined && filters !== selectedFilters) {
+    setSelectedFilters(filters);
+  }
+
+  const filterCallback = useCallback(
+      (value) => {
+          setSelectedFilters(value);
+          onSetFilter(value);
+      },
+      [selectedFilters, onSetFilter],
+  );
   
   return (
     <>
       {
         data.length > 0 
         ? <div>
-            <TableContent dataOnPage={dataOnPage} selectedMetric={selectedMetric} isIVolunteer={isIVolunteer} />
+            <TableContent dataOnPage={dataOnPage} selectedMetric={selectedMetric} isIVolunteer={isIVolunteer} selectedFilters={selectedFilters} setFilter={filterCallback} />
             <TablePagination pageRange={tableRange} dataOnPage={dataOnPage} setPage={setPage} page={page} /> 
         </div> 
         : <div className={styles.noData}>
@@ -46,7 +61,7 @@ const Table: React.FC<TableProps> = ( { data, selectedMetric, isIVolunteer } ) =
   );
 }
 
-const TableContent = ({ dataOnPage, selectedMetric, isIVolunteer }) => {
+const TableContent = ({ dataOnPage, selectedMetric, selectedFilters, setFilter, isIVolunteer }) => {
   let columnHeaders: string[];
   if (isIVolunteer) {
     columnHeaders = ['Task Name', 'Task ID'];
@@ -74,12 +89,10 @@ const TableContent = ({ dataOnPage, selectedMetric, isIVolunteer }) => {
         <tbody>
           {dataOnPage.map((dataRow) => (
             <tr className={styles.tableRowItems} key={isIVolunteer ? dataRow.taskid : dataRow.location}>
-              <td className={`${styles.tableCell} ${styles.tableLink}`}>
-                {isIVolunteer 
-                  ? <a href={`ivolunteer_-_taskdetails.html?taskId=${dataRow.taskid}`}>{dataRow.taskname}</a>
-                  : dataRow.location
-                }
-              </td>
+              {isIVolunteer 
+                ? <td className={`${styles.tableCell} ${styles.tableLink}`} onClick={() => clickOnTableRow(setFilter, dataRow, selectedFilters, isIVolunteer)}>{dataRow.taskname}</td>
+                : <td className={`${styles.tableCell} ${styles.tableLink}`} onClick={() => clickOnTableRow(setFilter, dataRow, selectedFilters, isIVolunteer)}>{dataRow.location}</td> 
+              }
               
               {!isIVolunteer 
                 ? selectedMetric === 'useractions'
@@ -191,6 +204,39 @@ const calculatePageRange = (data: any, page: number): number[] => {
       }
   }
   return pageRange;
+}
+
+const clickOnTableRow = (setFilter, filterElement, filters, isIVolunteer) => {
+    let newFilter;
+    if (isIVolunteer) {
+        newFilter = {
+            "key": "taskid",
+            "value": {
+              "from": filterElement.taskid,
+              "to": ""
+            }
+        }
+    } else {
+        let key;
+        let elementParent = $('#table_tab1_title').parent();
+        if (elementParent.hasClass('selected')) {
+           key = $('#table_tab1_title').text().toLowerCase();
+        } else {
+            key = $('#table_tab2_title').text().toLowerCase();
+        }
+        newFilter = {
+            "key": key,
+            "value": filterElement.location
+        }
+    }
+
+    for (let i = 0; i < filters.length; i++) {
+        if (filters[i].key === newFilter.key) {
+            filters.splice(i, 1);
+        }
+    }
+    filters.push(newFilter);
+    setFilter(filters);
 }
 
 export default Table;

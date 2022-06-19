@@ -1,28 +1,28 @@
 export default [ 
     {
-        "friend": {
-            "filterType": "text",
-            "properties": {
-                "SR": "Steve Rogers",
-                "TS": "Tony Stark",
-                "PP": "Peter Parker",
-                "NR": "Natasha Romanov",
-                "BB": "Bruce Banner",
-                "JB": "James Bucky Barnes"
-            }
-        },
         "coordinator": {
             "filterType": "text",
             "properties": {
+                "AP": "Altenpflegeverein Kärnten",
+                "PF": "Pfadfinderclub Linz",
                 "RK": "Rotes Kreuz",
                 "SB": "Samariterbund",
                 "TI": "Tiergarten-Verein Österreich",
-                "PF": "Pfadfinderclub Linz",
-                "AP": "Altenpflegeverein Kärnten"
             }
         },
         "date": {
             "filterType": "date"
+        },
+        "friend": {
+            "filterType": "text",
+            "properties": {
+                "BB": "Bruce Banner",
+                "JB": "James Bucky Barnes",
+                "NR": "Natasha Romanov",
+                "PP": "Peter Parker",
+                "SR": "Steve Rogers",
+                "TS": "Tony Stark",
+            }
         },
         "location": {
             "filterType": "text",
@@ -45,6 +45,9 @@ export default [
                 "2": "2 - Medium",
                 "3": "3 - Low"
             }
+        },
+        "taskid": {
+            "filterType": "range"
         }
     }
 ]

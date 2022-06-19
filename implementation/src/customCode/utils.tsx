@@ -34,7 +34,6 @@ export enum DurationLength {
     LONG = 5
 }
 
-// scale for Apdex and also other DT metrics
 export enum Apdex {
     EXCELLENT = 1.00,
     GOOD = 0.94,
@@ -51,14 +50,18 @@ export enum FilterType {
 
 export const getFilterType = (filterName: any) => {
     // check iVolunteer filter database
-    for (let filter in iVolFilters[0]) {
+    const iVolKeys = Object.keys(iVolFilters[0]);
+    for (let i = 0; i < iVolKeys.length; i++) {
+        let filter = iVolKeys[i];
         if (filter === filterName) {
             return iVolFilters[0][filter].filterType;
         }
     }
 
     // check Dynatrace filter database
-    for (let filter in dtFilters[0]) {
+    const dtKeys = Object.keys(dtFilters[0]);
+    for (let i = 0; i < dtKeys.length; i++) {
+        let filter = dtKeys[i];
         if (filter === filterName) {
             return dtFilters[0][filter].filterType;
         }
@@ -186,13 +189,24 @@ export function getFilteredIVolData(dataset, selectedFilters) {
                 }
             }
         } else if (curFilterType === FilterType.RANGE) {
-            for (let j = 0; j < dataSet.length; j++) {
-                let dataElement = dataSet[j][curFilterKey];
-
-                let filterFrom = curFilterValue[0];
-                let filterTo = curFilterValue[1];
-                if (filterFrom <= dataElement && dataElement <= filterTo) {
-                    filteredDataPerCycle.push(dataSet[j]);
+            // click on table should filter for the task ID alone, not for a range
+            if (curFilterKey === 'taskid' && curFilterValue.to === '') {
+                for (let j = 0; j < dataSet.length; j++) {
+                    let dataElement = dataSet[j][curFilterKey];
+                    if (curFilterValue.from === dataElement) {
+                        filteredDataPerCycle.push(dataSet[j]);
+                    }
+                }
+            } else {
+                // actual range filter implementation
+                for (let j = 0; j < dataSet.length; j++) {
+                    let dataElement = dataSet[j][curFilterKey];
+    
+                    let filterFrom = curFilterValue[0];
+                    let filterTo = curFilterValue[1];
+                    if (filterFrom <= dataElement && dataElement <= filterTo) {
+                        filteredDataPerCycle.push(dataSet[j]);
+                    }
                 }
             }
         } else if (curFilterType === FilterType.DATE) {

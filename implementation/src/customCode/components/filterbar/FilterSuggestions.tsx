@@ -90,13 +90,19 @@ const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setSho
     const dtMax = 1;
     const dtStep = 0.05;
 
-    const iVolDefaultFrom = '2022-07-01';
-    const iVolDefaultTo = '2022-08-31';
-    const iVolStep = 1;
+    const iVolDefaultRangeFrom = 1; // also min value
+    const iVolDefaultRangeTo = 99999; // also max value
+
+    const currentDate = new Date();
+    const dateInTwoMonths = new Date(new Date().setMonth(currentDate.getMonth()+2));
+    const iVolDefaultDateFrom = currentDate.toISOString().split('T')[0];
+    const iVolDefaultDateTo = dateInTwoMonths.toISOString().split('T')[0];
+    const iVolDateStep = 1;
 
     return (
         <>
                 {
+                    // text filter
                     filterType === FilterType.TEXT
                     ?   <div className={styles.suggestionsTextPanel} onClick={() => hideSuggestionPanel(setShowSuggestions)}>
                             <div className={styles.suggestionFiltername}>{filterKey}:</div>  
@@ -108,32 +114,64 @@ const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setSho
                                 }
                             </div>
                         </div>
-                    :   <div className={styles.suggestionsRangePanel}>
+
+                    // range filter    
+                    :   filterType === FilterType.RANGE
+                        ?   <div className={styles.suggestionsRangePanel}>
+                                <div className={styles.suggestionFiltername}>{filterKey}:</div> 
+                                <div className={`${styles.suggestionRangeValuesPanel} ${isIVolunteer ? styles.suggestionRangeValuesPanelIVol : styles.suggestionRangeValuesPanelDt}`}>
+                                    <div className={styles.suggestionRangeFilterLine}>
+                                        <div className={styles.suggestionRangeValueLabel}>From:</div>
+                                        <input className={styles.suggestionRangeValueInputDt} 
+                                                type='number' id='rangeFrom'
+                                                min={isIVolunteer ? iVolDefaultRangeFrom : dtMin} 
+                                                max={isIVolunteer ? iVolDefaultRangeTo : dtMax} 
+                                                step={isIVolunteer ? iVolDateStep : dtStep} 
+                                                defaultValue={isIVolunteer ? iVolDefaultRangeFrom : dtDefaultFrom}
+                                                onChange={() => onChangeRange(filterType === FilterType.RANGE)}>
+                                        </input>
+                                    </div>
+                                    <div className={styles.suggestionRangeFilterLine}>
+                                        <div className={styles.suggestionRangeValueLabel}>To:</div>
+                                        <input className={styles.suggestionRangeValueInputDt} 
+                                                type='number' id='rangeTo' 
+                                                min={isIVolunteer ? iVolDefaultRangeFrom : dtMin}
+                                                max={isIVolunteer ? iVolDefaultRangeTo : dtMax}
+                                                step={isIVolunteer ? iVolDateStep : dtStep}
+                                                defaultValue={isIVolunteer ? iVolDefaultRangeTo : dtDefaultTo}
+                                                onChange={() => onChangeRange(filterType === FilterType.RANGE)}>
+                                        </input>
+                                    </div>
+                                    <button className={styles.suggestionRangeBtn} id='rangeFilterConfirm' onClick={() => confirmRangeFilter(setNewFilterValue, filterKey, setShowSuggestions, filterType === FilterType.RANGE)}>Confirm</button>
+                                </div>
+                            </div>
+                        // date filter    
+                        : <div className={styles.suggestionsRangePanel}>
                             <div className={styles.suggestionFiltername}>{filterKey}:</div> 
                             <div className={`${styles.suggestionRangeValuesPanel} ${isIVolunteer ? styles.suggestionRangeValuesPanelIVol : styles.suggestionRangeValuesPanelDt}`}>
                                 <div className={styles.suggestionRangeFilterLine}>
                                     <div className={styles.suggestionRangeValueLabel}>From:</div>
                                     <input className={isIVolunteer ? styles.suggestionRangeValueInputIVol : styles.suggestionRangeValueInputDt} 
-                                            type={isIVolunteer ? 'date' : 'number'} id='rangeFrom' 
-                                            min={isIVolunteer ? '1970-01-01' : dtMin} 
-                                            max={isIVolunteer ? '2099-12-31' : dtMax} 
-                                            step={isIVolunteer ? iVolStep : dtStep} 
-                                            defaultValue={isIVolunteer ? iVolDefaultFrom : dtDefaultFrom}
-                                            onChange={() => onChangeRange()}>
+                                            type='date' id='dateFrom' 
+                                            min='1970-01-01' 
+                                            max='2099-12-31' 
+                                            step={iVolDateStep}
+                                            defaultValue={iVolDefaultDateFrom}
+                                            onChange={() => onChangeRange(filterType === FilterType.RANGE)}>
                                     </input>
                                 </div>
                                 <div className={styles.suggestionRangeFilterLine}>
                                     <div className={styles.suggestionRangeValueLabel}>To:</div>
-                                    <input className={isIVolunteer ? styles.suggestionRangeValueInputIVol : styles.suggestionRangeValueInputDt} 
-                                            type={isIVolunteer ? 'date' : 'number'} id='rangeTo' 
-                                            min={isIVolunteer ? '1970-01-01' : dtMin} 
-                                            max={isIVolunteer ? '2099-12-31' : dtMax}  
-                                            step={isIVolunteer ? iVolStep : dtStep} 
-                                            defaultValue={isIVolunteer ? iVolDefaultTo : dtDefaultTo}
-                                            onChange={() => onChangeRange()}>
+                                    <input className={styles.suggestionRangeValueInputIVol} 
+                                            type='date' id='dateTo' 
+                                            min='1970-01-01'
+                                            max='2099-12-31' 
+                                            step={iVolDateStep} 
+                                            defaultValue={iVolDefaultDateTo}
+                                            onChange={() => onChangeRange(filterType === FilterType.RANGE)}>
                                     </input>
                                 </div>
-                                <button className={styles.suggestionRangeBtn} id='rangeFilterConfirm' onClick={() => confirmRangeFilter(setNewFilterValue, filterKey, setShowSuggestions)}>Confirm</button>
+                                <button className={styles.suggestionRangeBtn} id='rangeFilterConfirm' onClick={() => confirmRangeFilter(setNewFilterValue, filterKey, setShowSuggestions, filterType === FilterType.RANGE)}>Confirm</button>
                             </div>
                         </div>
                 }
@@ -219,23 +257,43 @@ const getFilterSuggestions = (isIVolunteer: boolean, suggestions: any, filterKey
     return values;
 }
 
-const onChangeRange = () => {
-    $('#rangeFilterConfirm').prop('disabled', true);
+const onChangeRange = (isRangeFilter: boolean) => {
+    let btnId, fromId, toId;
+    if (isRangeFilter) {
+        btnId = '#rangeFilterConfirm';
+        fromId = '#rangeFrom';
+        toId = '#rangeTo';
+    } else {
+        btnId = '#dateFilterConfirm';
+        fromId = '#dateFrom';
+        toId = '#dateTo';
+    }
 
-    let from = $('#rangeFrom').val();
-    let to = $('#rangeTo').val();
+    $(btnId).prop('disabled', true);
+
+    let from = $(fromId).val();
+    let to = $(toId).val();
 
     // enable button when both fields are filled and from < to
     if (from !== '' && to !== '') {
         if (from < to || from === to) {
-            $('#rangeFilterConfirm').prop('disabled', false);
+            $(btnId).prop('disabled', false);
         }
     }
 }
 
-const confirmRangeFilter = (setNewFilterValue: any, filterKey: string, setShowSuggestions: any) => {
-    let from = $('#rangeFrom').val();
-    let to = $('#rangeTo').val();
+const confirmRangeFilter = (setNewFilterValue: any, filterKey: string, setShowSuggestions: any, isRangeFilter: boolean) => {
+    let fromId, toId;
+    if (isRangeFilter) {
+        fromId = '#rangeFrom';
+        toId = '#rangeTo';
+    } else {
+        fromId = '#dateFrom';
+        toId = '#dateTo';
+    }
+
+    let from = $(fromId).val();
+    let to = $(toId).val();
 
     // confirm only works when both fields are filled and from < to
     if (from !== '' && to !== '') {
