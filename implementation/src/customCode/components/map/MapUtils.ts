@@ -183,9 +183,13 @@ const getCoordinatesForCityDt = (cityName: string) => {
 
 export const getDateString = (date) => {
     let dateFrom = new Date(date.from);
+    let timeOffset = dateFrom.getTimezoneOffset();
+    dateFrom.setHours(dateFrom.getHours() + (timeOffset/60)); //timeOffset is a negative number, therefore we need to add it 
+    
     let dateTo;
     if (date.to !== '') {
         dateTo = new Date(date.to);
+        dateTo.setHours(dateTo.getHours() + (timeOffset/60));
     }
 
     let dateString = dateFrom.toLocaleDateString() + ', ' + dateFrom.toLocaleTimeString();

@@ -17,11 +17,21 @@ class TaskDetailsApp extends Component {
             if (data !== undefined) {
                 // set data into fields
                 let { dateString } = getDateString(data.date);
+                let addressString = data.address.zip;
+                
+                if (data.address.city !== '') {
+                    addressString += ' ' + data.address.city;
+                } else {
+                    addressString += ' (PLZ)';
+                }
+                if (data.address.street !== '') {
+                    addressString += ', ' + data.address.street;
+                }
 
                 $('#taskdetails-title').text(data.taskname);
                 $('#taskdetails-description').text(data.description);
                 $('#taskdetails-date').text(dateString);
-                $('#taskdetails-address').text(data.address.zip + ' ' + data.address.city + ', ' + data.address.street);
+                $('#taskdetails-address').text(addressString);
             }
 
             const map = ReactDOM.createRoot(document.getElementById('map_taskdetails')!);

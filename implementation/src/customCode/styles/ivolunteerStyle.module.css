@@ -1,0 +1,222 @@
+#map_overlay_ivol {
+    width: 60px;
+    height: 60px;
+    border-color: rgba(0,0,0,0.25);
+    border: 1px solid;
+    border-radius: 30px;
+    background-color: rgb(255, 0, 0);
+    opacity: 0.5;
+}
+
+#addTaskBtn {
+  position: absolute;
+  left: 106px;
+  top: 467px;
+  width: 52px;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(2, 167, 240);
+}
+
+#requiredInfo {
+  font-family:'Arial Standard', 'Arial', sans-serif;
+  font-weight:400;
+  font-style:normal;
+  font-size:13px;
+  position: absolute;
+  top: 153px;
+  left: 0;
+  display: flex;
+}
+
+.requiredStar {
+  color: red;
+  margin-right: 4px;
+}
+
+#endDateLabel {
+  position:absolute;
+  left:408px;
+  top:222px;
+}
+
+#endDateInput {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:120px;
+  height:25px;
+  padding:2px 2px 2px 2px;
+  font-family:'Arial Standard', 'Arial', sans-serif;
+  font-weight:400;
+  font-style:normal;
+  font-size:13px;
+  letter-spacing:normal;
+  color:#797979;
+  vertical-align:none;
+  text-align:left;
+  text-transform:none;
+  background-color:transparent;
+  border-color:transparent;
+}
+
+#endDateDiv {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:120px;
+  height:25px;
+  background:inherit;
+  background-color:rgba(255, 255, 255, 1);
+  box-sizing:border-box;
+  border-width:1px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  color:#797979;
+}
+
+#dateEnd {
+  border-width:0px;
+  position:absolute;
+  left:476px;
+  top:217px;
+  width:120px;
+  height:25px;
+  display:flex;
+  color:#797979;
+}
+
+#endTimeLabel {
+  position:absolute;
+  left:408px;
+  top:258px;
+}
+
+#endTimeInput {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:120px;
+  height:25px;
+  padding:2px 2px 2px 2px;
+  font-family:'Arial Standard', 'Arial', sans-serif;
+  font-weight:400;
+  font-style:normal;
+  font-size:13px;
+  letter-spacing:normal;
+  color:#797979;
+  vertical-align:none;
+  text-align:left;
+  text-transform:none;
+  background-color:transparent;
+  border-color:transparent;
+}
+
+#endTimeDiv {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:120px;
+  height:25px;
+  background:inherit;
+  background-color:rgba(255, 255, 255, 1);
+  box-sizing:border-box;
+  border-width:1px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  color:#797979;
+}
+
+#timeEnd {
+  border-width:0px;
+  position:absolute;
+  left:476px;
+  top:252px;
+  width:120px;
+  height:25px;
+  display:flex;
+  color:#797979;
+}
+
+#priority_input {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:120px;
+  height:25px;
+  padding:2px 2px 2px 2px;
+  font-family:'Arial Standard', 'Arial', sans-serif;
+  font-weight:400;
+  font-style:normal;
+  font-size:13px;
+  letter-spacing:normal;
+  color:#797979;
+  vertical-align:none;
+  text-align:left;
+  text-transform:none;
+  background-color:transparent;
+  border-color:transparent;
+}
+
+#priority_div {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:120px;
+  height:25px;
+  background:inherit;
+  background-color:rgba(255, 255, 255, 1);
+  box-sizing:border-box;
+  border-width:1px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  color:#797979;
+}
+
+#priority {
+  border-width:0px;
+  position:absolute;
+  left:272px;
+  top:288px;
+  width:120px;
+  height:25px;
+  display:flex;
+  color:#797979;
+}
+
+#addTaskMap {
+  border-width:0px;
+  position:absolute;
+  left:1px;
+  top:20px;
+  width:473px;
+  height:274px;
+}
+
+.saveBtn {
+  cursor: pointer;
+  background-color:rgba(30, 152, 215, 1);
+}
+
+.saveBtnDisabled {
+  cursor: not-allowed;
+  background-color:rgb(195, 195, 195);
+  border-radius: 5px;
+}

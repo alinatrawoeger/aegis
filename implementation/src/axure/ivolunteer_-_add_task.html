@@ -45,7 +45,7 @@
       $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
     </script>
 
-    <link   type="text/css"  href="../styles/ivolunteerStyle.css" rel="stylesheet">
+    <link   type="text/css"  href="../styles/ivolunteerStyle.module.css" rel="stylesheet">
   </head>
   <body>
     <div id="addtask"></div>
@@ -222,10 +222,10 @@
           </div>
 
           <!-- save-btn (Rectangle) -->
-          <div id="u416" class="ax_default primary_button" data-label="save-btn">
-            <div id="u416_div" class=""></div>
-            <div id="u416_text" class="text ">
-              <p><span>Speichern</span></p>
+          <div id="saveBtn" class="ax_default primary_button saveBtnDisabled" data-label="save-btn">
+            <div id="saveBtn_div" class=""></div>
+            <div id="saveBtn_text" class="text ">
+              <p><span>Speichern</span></p> 
             </div>
           </div>
         </div>
@@ -258,20 +258,20 @@
         <div id="u421" class="ax_default label" data-label="general-labels">
           <div id="u421_div" class=""></div>
           <div id="u421_text" class="text ">
-            <p><span style="font-family:'Arial Standard', 'Arial', sans-serif;font-weight:400;">Taskname:</span><span style="font-family:'Arial Fett', 'Arial Standard', 'Arial', sans-serif;font-weight:700;color:#D9001B;">*</span></p><p><span style="font-family:'Arial Standard', 'Arial', sans-serif;font-weight:400;">Datum:</span><span style="font-family:'Arial Fett', 'Arial Standard', 'Arial', sans-serif;font-weight:700;color:#D9001B;">*</span></p><p><span style="font-family:'Arial Standard', 'Arial', sans-serif;font-weight:400;">Zeit:</span><span style="font-family:'Arial Fett', 'Arial Standard', 'Arial', sans-serif;font-weight:700;color:#D9001B;">*</span></p><p><span style="font-family:'Arial Standard', 'Arial', sans-serif;font-weight:400;">Beschreibung:</span></p>
+            <p><span style="font-family:'Arial Standard', 'Arial', sans-serif;font-weight:400;">Taskname:</span><span style="font-family:'Arial Fett', 'Arial Standard', 'Arial', sans-serif;font-weight:700;color:#D9001B;">*</span></p><p><span style="font-family:'Arial Standard', 'Arial', sans-serif;font-weight:400;">Startdatum:</span><span style="font-family:'Arial Fett', 'Arial Standard', 'Arial', sans-serif;font-weight:700;color:#D9001B;">*</span></p><p><span style="font-family:'Arial Standard', 'Arial', sans-serif;font-weight:400;">Startzeit:</span><span style="font-family:'Arial Fett', 'Arial Standard', 'Arial', sans-serif;font-weight:700;color:#D9001B;">*</span></p><p><span style="font-family:'Arial Standard', 'Arial', sans-serif;font-weight:400;">Priorität:<span style="color:#D9001B;">*</span></span></p><p><span style="font-family:'Arial Standard', 'Arial', sans-serif;font-weight:400;">Beschreibung:</span></p>
           </div>
         </div>
 
         <!-- taskname-txt (Text Field) -->
-        <div id="u422" class="ax_default text_field" data-label="taskname-txt">
-          <div id="u422_div" class=""></div>
-          <input id="u422_input" type="text" class="u422_input"/>
+        <div id="taskName" class="ax_default text_field" data-label="taskname-txt">
+          <div id="taskName_div" class=""></div>
+          <input id="taskName_input" type="text" class="taskName_input"/>
         </div>
 
         <!-- date-txt (Text Field) -->
-        <div id="u423" class="ax_default text_field" data-label="date-txt">
-          <div id="u423_div" class=""></div>
-          <input id="u423_input" type="date" class="u423_input"/>
+        <div id="beginDate" class="ax_default text_field" data-label="date-txt">
+          <div id="beginDate_div" class=""></div>
+          <input id="beginDate_input" type="date" class="beginDate_input"/>
         </div>
 
         <div id="endDateLabel">
@@ -284,15 +284,29 @@
         </div>
 
         <!-- time-txt (Text Field) -->
-        <div id="u424" class="ax_default text_field" data-label="time-txt">
-          <div id="u424_div" class=""></div>
-          <input id="u424_input" type="time" class="u424_input"/>
+        <div id="startTime" class="ax_default text_field" data-label="time-txt">
+          <div id="startTime_div" class=""></div>
+          <input id="startTime_input" type="time" class="startTime_input"/>
+        </div>
+
+        <div id="endTimeLabel">
+          <span>Endzeit:<span style="color:#D9001B;">*</span>
+        </div>
+        <div id="timeEnd" class="ax_default text_field" data-label="date-txt">
+          <div id="endTimeDiv"></div>
+          <input id="endTimeInput" type="time" />
+        </div>
+
+        <!-- time-txt (Text Field) -->
+        <div id="priority" class="ax_default text_field" data-label="time-txt">
+          <div id="priority_div" class=""></div>
+          <input id="priority_input" type="number" min="1" max="3" value="2" class="priority_input"/>
         </div>
 
         <!-- description-txt (Text Area) -->
-        <div id="u425" class="ax_default text_area" data-label="description-txt">
-          <div id="u425_div" class=""></div>
-          <textarea id="u425_input" class="u425_input"></textarea>
+        <div id="description" class="ax_default text_area" data-label="description-txt">
+          <div id="description_div" class=""></div>
+          <textarea id="description_input" class="description_input"></textarea>
         </div>
 
         <!-- general-title (Rectangle) -->

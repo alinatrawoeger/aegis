@@ -1,7 +1,6 @@
 import 'ol/ol.css';
 import dataDt from './data/dt_database';
 import dtFilters from './data/dt_filters';
-import dataIVol from './data/ivol_database';
 import iVolFilters from './data/ivol_filters';
 
 // ---------------------------------------------------------------------
@@ -48,6 +47,12 @@ export enum FilterType {
     DATE = 'date'
 }
 
+// ---------------------------------------------------------------------
+
+export const getIVolData = () => {
+    return JSON.parse(sessionStorage.getItem('iVolData'));
+}
+
 export const getFilterType = (filterName: any) => {
     // check iVolunteer filter database
     const iVolKeys = Object.keys(iVolFilters[0]);
@@ -68,9 +73,6 @@ export const getFilterType = (filterName: any) => {
     }
 }
 
-// ---------------------------------------------------------------------
-
-// table functions
 export function groupValuesPerLocation(data: any, locationKey: string) {
     let groupedValuesMap: any[] = [];
     for (let i = 0; i < data.length; i++) {
@@ -120,9 +122,10 @@ export function groupValuesPerLocation(data: any, locationKey: string) {
 
 export function getDataFromTaskId(taskId: any) {
     let taskIdNumber = Number(taskId);
-    for (let i = 0; i < dataIVol.length; i++) {
-        if (dataIVol[i].taskid === taskIdNumber) {
-            return dataIVol[i];
+    const iVolData = getIVolData();
+    for (let i = 0; i < iVolData.length; i++) {
+        if (iVolData[i].taskid === taskIdNumber) {
+            return iVolData[i];
         }
     }
     return;

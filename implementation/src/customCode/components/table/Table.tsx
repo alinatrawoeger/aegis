@@ -64,7 +64,7 @@ const Table: React.FC<TableProps> = ( { data, selectedMetric, filters, onSetFilt
 const TableContent = ({ dataOnPage, selectedMetric, selectedFilters, setFilter, isIVolunteer }) => {
   let columnHeaders: string[];
   if (isIVolunteer) {
-    columnHeaders = ['Task Name', 'Task ID'];
+    columnHeaders = ['Task Name', 'Bundesland'];
   } else {
     if (selectedMetric === 'apdex') {
       columnHeaders = ['Location', columnHeaderNamesMap.get(selectedMetric), 'User actions'];
@@ -100,7 +100,7 @@ const TableContent = ({ dataOnPage, selectedMetric, selectedFilters, setFilter, 
                   : selectedMetric === 'errors' 
                     ? <td className={styles.tableCell}>{dataRow[selectedMetric]} / min</td>
                     : <td className={styles.tableCell}>{dataRow[selectedMetric]}</td>
-                : <td className={styles.tableCell}>{dataRow.taskid}</td>
+                : <td className={styles.tableCell}>{dataRow.address.region !== '' ? dataRow.address.region : '<n/a>'}</td>
               }
              
               {!isIVolunteer 

@@ -6,8 +6,7 @@ import VectorSrc from 'ol/source/Vector';
 import { Fill, Stroke, Style } from "ol/style";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import dataDt from "../../data/dt_database";
-import dataIVol from "../../data/ivol_database";
-import { Apdex, filterDtData, getDataFromTaskId, getFilteredIVolData, groupValuesPerLocation, UrgencyDays, ZoomLevel } from "../../utils";
+import { Apdex, filterDtData, getDataFromTaskId, getFilteredIVolData, getIVolData, groupValuesPerLocation, UrgencyDays, ZoomLevel } from "../../utils";
 import styles from "./Map.module.css";
 import { addIconOverlay, createMap, defaultLatitude, defaultLongitude, getDateString, getTaskUrgencyDays } from './MapUtils';
 
@@ -92,7 +91,7 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
     const [ zoom, setZoom ] = useState<ZoomLevel>();
     
     if (isIVolunteer) {
-        data = dataIVol;
+        data = getIVolData();
     } else {
         let filteredData = filterDtData(selectedFilters);
         data = groupValuesPerLocation(filteredData, 'country');
@@ -434,7 +433,7 @@ const setIconMarkers = (isIVolunteer: boolean, map: Map, zoom: number, selectedM
 
 const getDataSetForMarkers = (isIVolunteer: boolean, selectedFilters?: any[]) => {
     if (isIVolunteer) {
-       return getFilteredIVolData(dataIVol, selectedFilters);
+        return getFilteredIVolData(getIVolData(), selectedFilters);
     } else {
         let citiesDataset = [];
         for (let i = 0; i < dataDt.length; i++) {

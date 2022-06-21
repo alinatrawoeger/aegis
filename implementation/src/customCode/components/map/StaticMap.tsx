@@ -1,6 +1,6 @@
 import { Map as OLMap } from 'ol';
 import { toLonLat } from 'ol/proj';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ZoomLevel } from '../../utils';
 import markerBlue from "./img/pinpoint-location-blue_600.svg";
 import styles from "./Map.module.css";
@@ -9,11 +9,13 @@ import { addIconOverlay, createMap, defaultLatitude, defaultLongitude, setIconMa
 type StaticMapProps= {
     dataRow?: any;
     addTask?: boolean;
+    onSelectedLocation?: (value, lon, lat) => void
 }
 
-const StaticMap: React.FC<StaticMapProps> = ({ dataRow, addTask }) => {
+const StaticMap: React.FC<StaticMapProps> = ({ dataRow, addTask, onSelectedLocation }) => {
 
     const [ map, setMap ] = useState<OLMap>()
+    const [ selectedLocation, setSelectedLocation ] = useState<any>();
 
     const mapElement = useRef();
     const mapRef = useRef<OLMap>(); // map object for later use
@@ -44,6 +46,15 @@ const StaticMap: React.FC<StaticMapProps> = ({ dataRow, addTask }) => {
         // save map for later use
         setMap(initialMap)
     }, [])
+
+    // pass selected location outside for saving address data
+    const updateSelectedLocation = useCallback(
+        (value, lon, lat) => {
+            setSelectedLocation(value);
+            onSelectedLocation(value, lon, lat);
+        },
+        [selectedLocation, onSelectedLocation],
+    );
 
     if (!addTask) {
         if (mapRef.current !== undefined) {
@@ -105,6 +116,8 @@ const StaticMap: React.FC<StaticMapProps> = ({ dataRow, addTask }) => {
                 .filter(layer => layer.get('name') === 'LocationMarker')
                 .forEach(layer => map.removeLayer(layer));
             setIconMarker(lon, lat, map, undefined, markerBlue);
+
+            updateSelectedLocation(addressData, lon, lat);
         });
     }
 

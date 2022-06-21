@@ -4,8 +4,8 @@ import Filterbar from './components/filterbar/Filterbar';
 import InteractiveMap from './components/map/Map';
 import MetricSwitcher from './components/metricswitcher/MetricSwitcher';
 import Table from './components/table/Table';
-import data from './data/ivol_database';
-import { getFilteredIVolData } from './utils';
+import iVolData from './data/ivol_database';
+import { getFilteredIVolData, getIVolData } from './utils';
 
 
 // TODO
@@ -33,7 +33,12 @@ class IVolunteerWorldmapApp extends Component {
   constructor(props) {
     super(props);
 
-    this.tableData = data;
+    // save data from file to sessionStorage at the very first call
+    if (sessionStorage.getItem('iVolData') === null) {
+      sessionStorage.setItem('iVolData', JSON.stringify(iVolData));
+    }
+
+    this.tableData = getIVolData();
 
     const filterbar = ReactDOM.createRoot(document.getElementById(this.filterbarPanel)!);
     const metricSwitcher = ReactDOM.createRoot(document.getElementById(this.metricSwitcherPanel)!);
@@ -42,6 +47,7 @@ class IVolunteerWorldmapApp extends Component {
     
     const selectedFiltersCallback = (value) => {
       this.selectedFilters = value;
+      let data = getIVolData();
       this.tableData = getFilteredIVolData(data, this.selectedFilters);
 
       table.render(React.createElement(Table, {data: this.tableData, selectedMetric: this.selectedMetric, filters: this.selectedFilters, onSetFilter: selectedFiltersCallback, isIVolunteer: true }));
