@@ -22,7 +22,7 @@ const MetricSwitcher: React.FC<MetricSwitcherProps> = ( { isIVolunteer, onSetMet
         <div className={`${styles.metricSwitcherPanel} ${isIVolunteer ? styles.metricSwitcherPanelIVol : styles.metricSwitcherPanelDt}`}>
             {isIVolunteer ? 
                 <>
-                    <MetricElement caption="Dringlichkeit" id="urgency" selected={selectedMetric === 'urgency'} setMetric={metricCallback} isIVolunteer={isIVolunteer} />
+                    <MetricElement caption="Deadline" id="urgency" selected={selectedMetric === 'urgency'} setMetric={metricCallback} isIVolunteer={isIVolunteer} />
                     <MetricElement caption="Priorität" id="priority" selected={selectedMetric === 'priority'} setMetric={metricCallback} isIVolunteer={isIVolunteer} />
                     <MetricElement caption="Dauer" id="duration" selected={selectedMetric === 'duration'} setMetric={metricCallback} isIVolunteer={isIVolunteer} />
                 </>

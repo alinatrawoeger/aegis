@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom/client";
 import { getDateString } from "./components/map/MapUtils";
 import StaticMap from "./components/map/StaticMap";
-import { getDataFromTaskId, getUrlParameter } from './utils';
+import { getDataFromTaskId, getPriorityLevelText, getUrlParameter } from './utils';
 
 class TaskDetailsApp extends Component {
     mapSelector = 'map_taskdetails'
@@ -30,6 +30,8 @@ class TaskDetailsApp extends Component {
 
                 $('#taskdetails-title').text(data.taskname);
                 $('#taskdetails-description').text(data.description);
+                $('#taskdetails-coordinator').text(data.coordinator);
+                $('#taskdetails-priority').text(getPriorityLevelText(data.priority));
                 $('#taskdetails-date').text(dateString);
                 $('#taskdetails-address').text(addressString);
             }

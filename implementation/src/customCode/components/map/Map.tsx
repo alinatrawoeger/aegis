@@ -240,33 +240,7 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
             if (tooltipTitle) {
                 if (selectedLocation && !isIVolunteer) {
                     tooltipTitle.innerHTML = selectedLocation.get('name');
-
-                    // Show Dynatrace-related information
-                    let values = groupValuesPerLocation(data, 'iso');
-                    let valueFound = false;
-                    for (var i = 0; i < values.length; i++) {
-                        let curElement = values[i];
-                        if (curElement['iso'] == selectedLocation.getId()) {
-                            $('#tooltip_apdex').text(curElement['apdex']);
-                            $('#tooltip_useractions').text(curElement['useractions'] + '/min');
-                            $('#tooltip_errors').text(curElement['errors'] + '/min');
-                            $('#tooltip_loadactions').text(curElement['loadactions']);
-                            $('#tooltip_totaluseractions').text(curElement['totaluseractions']);
-                            $('#tooltip_affecteduseractions').text(curElement['affecteduseractions'] + ' %');
-                            valueFound = true;
-                            break;
-                        }
-                    }
-                    if (!valueFound) {
-                        $('#tooltip_apdex').text('?');
-                        $('#tooltip_useractions').text('?');
-                        $('#tooltip_errors').text('?');
-                        $('#tooltip_loadactions').text('?');
-                        $('#tooltip_totaluseractions').text('?');
-                        $('#tooltip_affecteduseractions').text('?');
-                    }
-
-                    showTooltip(selectedFilters);
+                    setTooltipData(selectedLocation, selectedFilters);
                 } else {
                     tooltipTitle.innerHTML = '&nbsp;';
                 }
@@ -290,6 +264,17 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
             if (selectedLocation !== undefined) {
                 selectStyle.getFill().setColor(selectedColor);
                 selectedLocation.setStyle(selectStyle);
+            } else {
+                // add tooltip information on hover, but only if no location is selected
+                const tooltipTitle = document.getElementById('tooltipTitle');
+                if (tooltipTitle) {
+                    tooltipTitle.innerHTML = hoveredLocation.get('name');
+                    setTooltipData(hoveredLocation, selectedFilters);
+                    // if (selectedLocation && !isIVolunteer) {
+                    // } else {
+                    //     tooltipTitle.innerHTML = '&nbsp;';
+                    // }
+                }
             }
         }
     }, [hoveredLocation, selectedLocation, selectedFilters, onChangeFilters]);
@@ -465,22 +450,24 @@ const clickOnMapMarkerIVol = (feature: any, map: Map) => {
                 $('#tooltip-responsible').text(data.coordinator);
                 $('#tooltip-city').text(data.address.zip + ' ' + data.address.city);
                 
-                // calculate priority based on date
+                // calculate urgency based on date
                 let { dateFrom } = getDateString(data.date);
                 $('#tooltip-date').text(dateFrom.toLocaleString());
                 
                 let diffDays = getTaskUrgencyDays(dateFrom);
-                let priority;
-                if (diffDays <= UrgencyDays.SEVERE) {
-                    priority = 'very high';
-                } else if (diffDays <= UrgencyDays.HIGH) {
-                    priority = 'high';
-                } else if (diffDays <= UrgencyDays.MEDIUM) {
-                    priority = 'medium'
+                let urgencyString;
+                if (diffDays === 1) {
+                    urgencyString = 'morgen';
                 } else {
-                    priority = 'low';
+                    urgencyString = 'in ' + diffDays + ' Tagen'
                 }
-                $('#tooltip-urgency').text(priority);
+
+                if (diffDays <= UrgencyDays.SEVERE) {
+                    urgencyString += ' - sehr dringend!!';
+                } else if (diffDays <= UrgencyDays.HIGH) {
+                    urgencyString += ' - dringend!';
+                } 
+                $('#tooltip-urgency').text(urgencyString);
                 
                 // add clickhandlers
                 $('#close-tooltip').on('click', function() {
@@ -492,14 +479,41 @@ const clickOnMapMarkerIVol = (feature: any, map: Map) => {
     }
 }
 
-const showTooltip = (selectedFilters: any) => {
-    for (let i = 0; i < selectedFilters.length; i++) {
-        if (selectedFilters[i].key === 'country') {
-            $('#tooltip-panel').show();
-            return;
+const showTooltip = (show: boolean) => {
+    if (show) {
+        $('#tooltip-panel').show();
+    } else {
+        $('#tooltip-panel').hide();
+    }
+}
+
+const setTooltipData = (location, selectedFilters) => {
+    // Show Dynatrace-related information
+    let values = groupValuesPerLocation(data, 'iso');
+    let valueFound = false;
+    for (var i = 0; i < values.length; i++) {
+        let curElement = values[i];
+        if (curElement['iso'] == location.getId()) {
+            $('#tooltip_apdex').text(curElement['apdex']);
+            $('#tooltip_useractions').text(curElement['useractions'] + '/min');
+            $('#tooltip_errors').text(curElement['errors'] + '/min');
+            $('#tooltip_loadactions').text(curElement['loadactions']);
+            $('#tooltip_totaluseractions').text(curElement['totaluseractions']);
+            $('#tooltip_affecteduseractions').text(curElement['affecteduseractions'] + ' %');
+            valueFound = true;
+            break;
         }
     }
-    $('#tooltip-panel').hide();
+    if (!valueFound) {
+        $('#tooltip_apdex').text('?');
+        $('#tooltip_useractions').text('?');
+        $('#tooltip_errors').text('?');
+        $('#tooltip_loadactions').text('?');
+        $('#tooltip_totaluseractions').text('?');
+        $('#tooltip_affecteduseractions').text('?');
+    }
+
+    showTooltip(true);
 }
 
 export default InteractiveMap;

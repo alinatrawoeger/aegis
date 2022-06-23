@@ -27,6 +27,7 @@ module.exports = [
             }),
             new CopyPlugin({
                 patterns: [
+                  { from: "./src/logo.svg", to: "img" },
                   { from: "./src/axure", to: "axure" },
                   { from: "./src/customCode/data/geodata", to: "data/geodata" },
                   { from: "./src/customCode/styles", to: "styles" },

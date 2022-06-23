@@ -50,7 +50,18 @@ export enum FilterType {
 // ---------------------------------------------------------------------
 
 export const getIVolData = () => {
-    return JSON.parse(sessionStorage.getItem('iVolData'));
+    const data = JSON.parse(sessionStorage.getItem('iVolData'));
+    let dataInTheFuture = [];
+
+    const today = new Date();
+    for (let i = 0; i < data.length; i++) {
+        const dataDate = new Date(data[i].date.from);
+        if (today <= dataDate) {
+            dataInTheFuture.push(data[i]);
+        }
+    }
+
+    return dataInTheFuture;
 }
 
 export const getFilterType = (filterName: any) => {
@@ -273,4 +284,17 @@ export function filterDtData(selectedFilters ) {
     }
     
     return selectedFilters.length > 0 ? filteredData : dataDt;
-} 
+}
+
+export const getPriorityLevelText = (level: number) => {
+    switch(level) {
+        case PriorityLevels.HIGH:
+            return 'hoch';
+        case PriorityLevels.MEDIUM:
+            return 'mittel';
+        case PriorityLevels.LOW:
+            return 'niedrig';
+        default:
+            return '<n/a>';
+    }
+}
