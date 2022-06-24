@@ -81,7 +81,7 @@ const StaticMap: React.FC<StaticMapProps> = ({ dataRow, addTask, onSelectedLocat
     }
     
     const findAddressByCoordinates = (lon, lat, map) => {
-        fetch('http://nominatim.openstreetmap.org/reverse?format=json&lon=' + lon + '&lat=' + lat).then(function(response) {
+        fetch('https://nominatim.openstreetmap.org/reverse?format=json&lon=' + lon + '&lat=' + lat).then(function(response) {
             return response.json();
         }).then(function(json) {
             let addressData = json.address;

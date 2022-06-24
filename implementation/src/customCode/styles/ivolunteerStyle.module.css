@@ -11,13 +11,84 @@
 #addTaskBtn {
   position: absolute;
   left: 106px;
-  top: 467px;
-  width: 52px;
+  top: 452px;
+  width: 70px;
   padding: 8px;
   text-decoration: none;
   border-radius: 5px;
   color: white;
   background-color: rgb(2, 167, 240);
+}
+
+#legendPanel {
+  position: absolute;
+  left: 532px;
+  top: 228px;
+  width: 53px;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 8px;
+  height: 180px;
+}
+
+#legendPanel > span {
+  font-weight: 700;
+}
+
+.legendLeftText {
+  margin-bottom: 8px;
+  height: 30px;
+}
+
+.legendRightText {
+ margin-top: 8px;
+}
+
+.legendSubPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.legendLine {
+  height: 30px;
+  width: 8px;
+}
+
+#urgencyLineLow {
+  background-color:#FF717F;
+}
+
+#urgencyLineMedium {
+  background-color: #EB0029;
+}
+
+#urgencyLineHigh {
+  background-color: #950014;
+}
+
+#priorityLineLow {
+  background-color:#FFE87E;
+}
+
+#priorityLineMedium {
+  background-color: #FFC83A;
+}
+
+#priorityLineHigh {
+  background-color: #CC9229;
+}
+
+#durationLineLow {
+  background-color:#005B1E;
+}
+
+#durationLineMedium {
+  background-color: #43A33D;
+}
+
+#durationLineHigh {
+  background-color: #88CF73;
 }
 
 #requiredInfo {

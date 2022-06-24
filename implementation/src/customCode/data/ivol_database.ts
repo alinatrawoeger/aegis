@@ -82,7 +82,7 @@ export default [
         "taskid": 12348,
         "coordinator": "Rotes Kreuz",
         "date": {
-            "from": "2022-06-29T14:30:00Z",
+            "from": "2022-07-20T14:30:00Z",
             "to": ""
         },
         "priority": 2,
@@ -129,7 +129,7 @@ export default [
         "coordinator": "Samariterbund",
         "priority": 1,
         "date": {
-            "from": "2022-07-01T07:00:00Z",
+            "from": "2022-08-15T07:00:00Z",
             "to": ""
         },
         "friend": [

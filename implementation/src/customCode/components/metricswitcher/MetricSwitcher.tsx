@@ -13,6 +13,27 @@ const MetricSwitcher: React.FC<MetricSwitcherProps> = ( { isIVolunteer, onSetMet
         (value) => {
           setMetric(value);
           onSetMetric(value);
+
+          if (isIVolunteer) {
+            // change visibility of legend panel
+            if (value === 'urgency') {
+                $('#legendUrgencyPanel').show();
+                $('#legendPriorityPanel').hide();
+                $('#legendDurationPanel').hide();
+            } else if (value === 'priority') {
+                $('#legendUrgencyPanel').hide();
+                $('#legendPriorityPanel').show();
+                $('#legendDurationPanel').hide();
+            } else if (value === 'duration') {
+                $('#legendUrgencyPanel').hide();
+                $('#legendPriorityPanel').hide();
+                $('#legendDurationPanel').show();
+            } else {
+                $('#legendUrgencyPanel').hide();
+                $('#legendPriorityPanel').hide();
+                $('#legendDurationPanel').hide();
+            }
+          }
         },
         [selectedMetric, onSetMetric],
       );
