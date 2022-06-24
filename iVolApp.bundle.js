@@ -205,6 +205,67 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/customCode/styles/ivolunteerStyle.module.css":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/customCode/styles/ivolunteerStyle.module.css ***!
+  \************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "#rgoaBnwir02bIHV5PBLf {\n    width: 60px;\n    height: 60px;\n    border-color: rgba(0,0,0,0.25);\n    border: 1px solid;\n    border-radius: 30px;\n    background-color: rgb(255, 0, 0);\n    opacity: 0.5;\n}\n\n#mYNs6UO1z1yRa3SaFvoZ {\n  position: absolute;\n  left: 106px;\n  top: 452px;\n  width: 70px;\n  padding: 8px;\n  text-decoration: none;\n  border-radius: 5px;\n  color: white;\n  background-color: rgb(2, 167, 240);\n}\n\n#KoXppHEOVeNuKEYlR0U8 {\n  position: absolute;\n  left: 532px;\n  top: 228px;\n  width: 53px;\n  background-color: rgba(255, 255, 255, 0.85);\n  padding: 8px;\n  height: 180px;\n}\n\n#KoXppHEOVeNuKEYlR0U8 > span {\n  font-weight: 700;\n}\n\n.TCLOn9AVfOk_6mcB_2dn {\n  margin-bottom: 8px;\n  height: 30px;\n}\n\n.OkFsUMECgUQ7jHNRXKnz {\n margin-top: 8px;\n}\n\n.BzsFTosiwKPtRbK2TRvJ {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 8px;\n}\n\n.PpbVTCTbFv8TKozdamla {\n  height: 30px;\n  width: 8px;\n}\n\n#exOTXq07UR3qEmt0V0aB {\n  background-color:#FF717F;\n}\n\n#QM_eHJhRFK52ggqzd1H6 {\n  background-color: #EB0029;\n}\n\n#glx9C6CceZEwJG_zOmww {\n  background-color: #950014;\n}\n\n#AgYvyHMkJsz3p_W9enSC {\n  background-color:#FFE87E;\n}\n\n#ijeM6K2WbxG2b6if3J48 {\n  background-color: #FFC83A;\n}\n\n#ve5WSQnVxaSD5tJPuHsz {\n  background-color: #CC9229;\n}\n\n#zYhHj5CmNJ6cjR_Wn8uh {\n  background-color:#005B1E;\n}\n\n#xG6gJgSjtS1ejUR7PTn6 {\n  background-color: #43A33D;\n}\n\n#TMQUtUe01gWz9W890tx4 {\n  background-color: #88CF73;\n}\n\n#DSUe7UN_914YhA9pyeHv {\n  font-family:'Arial Standard', 'Arial', sans-serif;\n  font-weight:400;\n  font-style:normal;\n  font-size:13px;\n  position: absolute;\n  top: 153px;\n  left: 0;\n  display: flex;\n}\n\n.dIKwDrYXMRtBZU_ttXTg {\n  color: red;\n  margin-right: 4px;\n}\n\n#PbKpoTsglNcGrQMKKrrW {\n  position:absolute;\n  left:408px;\n  top:222px;\n}\n\n#yaJ7Ffdcnrd1BlEJkr93 {\n  position:absolute;\n  left:0px;\n  top:0px;\n  width:120px;\n  height:25px;\n  padding:2px 2px 2px 2px;\n  font-family:'Arial Standard', 'Arial', sans-serif;\n  font-weight:400;\n  font-style:normal;\n  font-size:13px;\n  letter-spacing:normal;\n  color:#797979;\n  vertical-align:none;\n  text-align:left;\n  text-transform:none;\n  background-color:transparent;\n  border-color:transparent;\n}\n\n#qdkjfDYQyY2vsHNYutDx {\n  border-width:0px;\n  position:absolute;\n  left:0px;\n  top:0px;\n  width:120px;\n  height:25px;\n  background:inherit;\n  background-color:rgba(255, 255, 255, 1);\n  box-sizing:border-box;\n  border-width:1px;\n  border-style:solid;\n  border-color:rgba(121, 121, 121, 1);\n  border-radius:0px;\n  -moz-box-shadow:none;\n  -webkit-box-shadow:none;\n  box-shadow:none;\n  color:#797979;\n}\n\n#dEp6KQZAkKEvWhla8NiN {\n  border-width:0px;\n  position:absolute;\n  left:476px;\n  top:217px;\n  width:120px;\n  height:25px;\n  display:flex;\n  color:#797979;\n}\n\n#Ih3_NQzG7ZKnu8xzWZag {\n  position:absolute;\n  left:408px;\n  top:258px;\n}\n\n#CxHrB6K5V0Gu7R7pjjg6 {\n  position:absolute;\n  left:0px;\n  top:0px;\n  width:120px;\n  height:25px;\n  padding:2px 2px 2px 2px;\n  font-family:'Arial Standard', 'Arial', sans-serif;\n  font-weight:400;\n  font-style:normal;\n  font-size:13px;\n  letter-spacing:normal;\n  color:#797979;\n  vertical-align:none;\n  text-align:left;\n  text-transform:none;\n  background-color:transparent;\n  border-color:transparent;\n}\n\n#w89Mkl0Ow4tm2pthhGuT {\n  border-width:0px;\n  position:absolute;\n  left:0px;\n  top:0px;\n  width:120px;\n  height:25px;\n  background:inherit;\n  background-color:rgba(255, 255, 255, 1);\n  box-sizing:border-box;\n  border-width:1px;\n  border-style:solid;\n  border-color:rgba(121, 121, 121, 1);\n  border-radius:0px;\n  -moz-box-shadow:none;\n  -webkit-box-shadow:none;\n  box-shadow:none;\n  color:#797979;\n}\n\n#_wTPn2KBTwU5UAanFU4e {\n  border-width:0px;\n  position:absolute;\n  left:476px;\n  top:252px;\n  width:120px;\n  height:25px;\n  display:flex;\n  color:#797979;\n}\n\n#hcPNHGRCJNlP29LDZDWX {\n  position:absolute;\n  left:0px;\n  top:0px;\n  width:120px;\n  height:25px;\n  padding:2px 2px 2px 2px;\n  font-family:'Arial Standard', 'Arial', sans-serif;\n  font-weight:400;\n  font-style:normal;\n  font-size:13px;\n  letter-spacing:normal;\n  color:#797979;\n  vertical-align:none;\n  text-align:left;\n  text-transform:none;\n  background-color:transparent;\n  border-color:transparent;\n}\n\n#UwUl8Yhd9j8HoQqJ5PaC {\n  border-width:0px;\n  position:absolute;\n  left:0px;\n  top:0px;\n  width:120px;\n  height:25px;\n  background:inherit;\n  background-color:rgba(255, 255, 255, 1);\n  box-sizing:border-box;\n  border-width:1px;\n  border-style:solid;\n  border-color:rgba(121, 121, 121, 1);\n  border-radius:0px;\n  -moz-box-shadow:none;\n  -webkit-box-shadow:none;\n  box-shadow:none;\n  color:#797979;\n}\n\n#j2P9C9lKeYlGdRm7_j9Q {\n  border-width:0px;\n  position:absolute;\n  left:272px;\n  top:288px;\n  width:120px;\n  height:25px;\n  display:flex;\n  color:#797979;\n}\n\n#RIlJOMddZnnBsDfuOIxk {\n  border-width:0px;\n  position:absolute;\n  left:1px;\n  top:20px;\n  width:473px;\n  height:274px;\n}\n\n.jUEg4ThH1ZHzC084XyVQ {\n  cursor: pointer;\n  background-color:rgba(30, 152, 215, 1);\n}\n\n.y7KmNWbpBzrpnWTgDakt {\n  cursor: not-allowed;\n  background-color:rgb(195, 195, 195);\n  border-radius: 5px;\n}", "",{"version":3,"sources":["webpack://./src/customCode/styles/ivolunteerStyle.module.css"],"names":[],"mappings":"AAAA;IACI,WAAW;IACX,YAAY;IACZ,8BAA8B;IAC9B,iBAAiB;IACjB,mBAAmB;IACnB,gCAAgC;IAChC,YAAY;AAChB;;AAEA;EACE,kBAAkB;EAClB,WAAW;EACX,UAAU;EACV,WAAW;EACX,YAAY;EACZ,qBAAqB;EACrB,kBAAkB;EAClB,YAAY;EACZ,kCAAkC;AACpC;;AAEA;EACE,kBAAkB;EAClB,WAAW;EACX,UAAU;EACV,WAAW;EACX,2CAA2C;EAC3C,YAAY;EACZ,aAAa;AACf;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,kBAAkB;EAClB,YAAY;AACd;;AAEA;CACC,eAAe;AAChB;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,mBAAmB;EACnB,eAAe;AACjB;;AAEA;EACE,YAAY;EACZ,UAAU;AACZ;;AAEA;EACE,wBAAwB;AAC1B;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,wBAAwB;AAC1B;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,wBAAwB;AAC1B;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,iDAAiD;EACjD,eAAe;EACf,iBAAiB;EACjB,cAAc;EACd,kBAAkB;EAClB,UAAU;EACV,OAAO;EACP,aAAa;AACf;;AAEA;EACE,UAAU;EACV,iBAAiB;AACnB;;AAEA;EACE,iBAAiB;EACjB,UAAU;EACV,SAAS;AACX;;AAEA;EACE,iBAAiB;EACjB,QAAQ;EACR,OAAO;EACP,WAAW;EACX,WAAW;EACX,uBAAuB;EACvB,iDAAiD;EACjD,eAAe;EACf,iBAAiB;EACjB,cAAc;EACd,qBAAqB;EACrB,aAAa;EACb,mBAAmB;EACnB,eAAe;EACf,mBAAmB;EACnB,4BAA4B;EAC5B,wBAAwB;AAC1B;;AAEA;EACE,gBAAgB;EAChB,iBAAiB;EACjB,QAAQ;EACR,OAAO;EACP,WAAW;EACX,WAAW;EACX,kBAAkB;EAClB,uCAAuC;EACvC,qBAAqB;EACrB,gBAAgB;EAChB,kBAAkB;EAClB,mCAAmC;EACnC,iBAAiB;EACjB,oBAAoB;EACpB,uBAAuB;EACvB,eAAe;EACf,aAAa;AACf;;AAEA;EACE,gBAAgB;EAChB,iBAAiB;EACjB,UAAU;EACV,SAAS;EACT,WAAW;EACX,WAAW;EACX,YAAY;EACZ,aAAa;AACf;;AAEA;EACE,iBAAiB;EACjB,UAAU;EACV,SAAS;AACX;;AAEA;EACE,iBAAiB;EACjB,QAAQ;EACR,OAAO;EACP,WAAW;EACX,WAAW;EACX,uBAAuB;EACvB,iDAAiD;EACjD,eAAe;EACf,iBAAiB;EACjB,cAAc;EACd,qBAAqB;EACrB,aAAa;EACb,mBAAmB;EACnB,eAAe;EACf,mBAAmB;EACnB,4BAA4B;EAC5B,wBAAwB;AAC1B;;AAEA;EACE,gBAAgB;EAChB,iBAAiB;EACjB,QAAQ;EACR,OAAO;EACP,WAAW;EACX,WAAW;EACX,kBAAkB;EAClB,uCAAuC;EACvC,qBAAqB;EACrB,gBAAgB;EAChB,kBAAkB;EAClB,mCAAmC;EACnC,iBAAiB;EACjB,oBAAoB;EACpB,uBAAuB;EACvB,eAAe;EACf,aAAa;AACf;;AAEA;EACE,gBAAgB;EAChB,iBAAiB;EACjB,UAAU;EACV,SAAS;EACT,WAAW;EACX,WAAW;EACX,YAAY;EACZ,aAAa;AACf;;AAEA;EACE,iBAAiB;EACjB,QAAQ;EACR,OAAO;EACP,WAAW;EACX,WAAW;EACX,uBAAuB;EACvB,iDAAiD;EACjD,eAAe;EACf,iBAAiB;EACjB,cAAc;EACd,qBAAqB;EACrB,aAAa;EACb,mBAAmB;EACnB,eAAe;EACf,mBAAmB;EACnB,4BAA4B;EAC5B,wBAAwB;AAC1B;;AAEA;EACE,gBAAgB;EAChB,iBAAiB;EACjB,QAAQ;EACR,OAAO;EACP,WAAW;EACX,WAAW;EACX,kBAAkB;EAClB,uCAAuC;EACvC,qBAAqB;EACrB,gBAAgB;EAChB,kBAAkB;EAClB,mCAAmC;EACnC,iBAAiB;EACjB,oBAAoB;EACpB,uBAAuB;EACvB,eAAe;EACf,aAAa;AACf;;AAEA;EACE,gBAAgB;EAChB,iBAAiB;EACjB,UAAU;EACV,SAAS;EACT,WAAW;EACX,WAAW;EACX,YAAY;EACZ,aAAa;AACf;;AAEA;EACE,gBAAgB;EAChB,iBAAiB;EACjB,QAAQ;EACR,QAAQ;EACR,WAAW;EACX,YAAY;AACd;;AAEA;EACE,eAAe;EACf,sCAAsC;AACxC;;AAEA;EACE,mBAAmB;EACnB,mCAAmC;EACnC,kBAAkB;AACpB","sourcesContent":["#map_overlay_ivol {\n    width: 60px;\n    height: 60px;\n    border-color: rgba(0,0,0,0.25);\n    border: 1px solid;\n    border-radius: 30px;\n    background-color: rgb(255, 0, 0);\n    opacity: 0.5;\n}\n\n#addTaskBtn {\n  position: absolute;\n  left: 106px;\n  top: 452px;\n  width: 70px;\n  padding: 8px;\n  text-decoration: none;\n  border-radius: 5px;\n  color: white;\n  background-color: rgb(2, 167, 240);\n}\n\n#legendPanel {\n  position: absolute;\n  left: 532px;\n  top: 228px;\n  width: 53px;\n  background-color: rgba(255, 255, 255, 0.85);\n  padding: 8px;\n  height: 180px;\n}\n\n#legendPanel > span {\n  font-weight: 700;\n}\n\n.legendLeftText {\n  margin-bottom: 8px;\n  height: 30px;\n}\n\n.legendRightText {\n margin-top: 8px;\n}\n\n.legendSubPanel {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 8px;\n}\n\n.legendLine {\n  height: 30px;\n  width: 8px;\n}\n\n#urgencyLineLow {\n  background-color:#FF717F;\n}\n\n#urgencyLineMedium {\n  background-color: #EB0029;\n}\n\n#urgencyLineHigh {\n  background-color: #950014;\n}\n\n#priorityLineLow {\n  background-color:#FFE87E;\n}\n\n#priorityLineMedium {\n  background-color: #FFC83A;\n}\n\n#priorityLineHigh {\n  background-color: #CC9229;\n}\n\n#durationLineLow {\n  background-color:#005B1E;\n}\n\n#durationLineMedium {\n  background-color: #43A33D;\n}\n\n#durationLineHigh {\n  background-color: #88CF73;\n}\n\n#requiredInfo {\n  font-family:'Arial Standard', 'Arial', sans-serif;\n  font-weight:400;\n  font-style:normal;\n  font-size:13px;\n  position: absolute;\n  top: 153px;\n  left: 0;\n  display: flex;\n}\n\n.requiredStar {\n  color: red;\n  margin-right: 4px;\n}\n\n#endDateLabel {\n  position:absolute;\n  left:408px;\n  top:222px;\n}\n\n#endDateInput {\n  position:absolute;\n  left:0px;\n  top:0px;\n  width:120px;\n  height:25px;\n  padding:2px 2px 2px 2px;\n  font-family:'Arial Standard', 'Arial', sans-serif;\n  font-weight:400;\n  font-style:normal;\n  font-size:13px;\n  letter-spacing:normal;\n  color:#797979;\n  vertical-align:none;\n  text-align:left;\n  text-transform:none;\n  background-color:transparent;\n  border-color:transparent;\n}\n\n#endDateDiv {\n  border-width:0px;\n  position:absolute;\n  left:0px;\n  top:0px;\n  width:120px;\n  height:25px;\n  background:inherit;\n  background-color:rgba(255, 255, 255, 1);\n  box-sizing:border-box;\n  border-width:1px;\n  border-style:solid;\n  border-color:rgba(121, 121, 121, 1);\n  border-radius:0px;\n  -moz-box-shadow:none;\n  -webkit-box-shadow:none;\n  box-shadow:none;\n  color:#797979;\n}\n\n#dateEnd {\n  border-width:0px;\n  position:absolute;\n  left:476px;\n  top:217px;\n  width:120px;\n  height:25px;\n  display:flex;\n  color:#797979;\n}\n\n#endTimeLabel {\n  position:absolute;\n  left:408px;\n  top:258px;\n}\n\n#endTimeInput {\n  position:absolute;\n  left:0px;\n  top:0px;\n  width:120px;\n  height:25px;\n  padding:2px 2px 2px 2px;\n  font-family:'Arial Standard', 'Arial', sans-serif;\n  font-weight:400;\n  font-style:normal;\n  font-size:13px;\n  letter-spacing:normal;\n  color:#797979;\n  vertical-align:none;\n  text-align:left;\n  text-transform:none;\n  background-color:transparent;\n  border-color:transparent;\n}\n\n#endTimeDiv {\n  border-width:0px;\n  position:absolute;\n  left:0px;\n  top:0px;\n  width:120px;\n  height:25px;\n  background:inherit;\n  background-color:rgba(255, 255, 255, 1);\n  box-sizing:border-box;\n  border-width:1px;\n  border-style:solid;\n  border-color:rgba(121, 121, 121, 1);\n  border-radius:0px;\n  -moz-box-shadow:none;\n  -webkit-box-shadow:none;\n  box-shadow:none;\n  color:#797979;\n}\n\n#timeEnd {\n  border-width:0px;\n  position:absolute;\n  left:476px;\n  top:252px;\n  width:120px;\n  height:25px;\n  display:flex;\n  color:#797979;\n}\n\n#priority_input {\n  position:absolute;\n  left:0px;\n  top:0px;\n  width:120px;\n  height:25px;\n  padding:2px 2px 2px 2px;\n  font-family:'Arial Standard', 'Arial', sans-serif;\n  font-weight:400;\n  font-style:normal;\n  font-size:13px;\n  letter-spacing:normal;\n  color:#797979;\n  vertical-align:none;\n  text-align:left;\n  text-transform:none;\n  background-color:transparent;\n  border-color:transparent;\n}\n\n#priority_div {\n  border-width:0px;\n  position:absolute;\n  left:0px;\n  top:0px;\n  width:120px;\n  height:25px;\n  background:inherit;\n  background-color:rgba(255, 255, 255, 1);\n  box-sizing:border-box;\n  border-width:1px;\n  border-style:solid;\n  border-color:rgba(121, 121, 121, 1);\n  border-radius:0px;\n  -moz-box-shadow:none;\n  -webkit-box-shadow:none;\n  box-shadow:none;\n  color:#797979;\n}\n\n#priority {\n  border-width:0px;\n  position:absolute;\n  left:272px;\n  top:288px;\n  width:120px;\n  height:25px;\n  display:flex;\n  color:#797979;\n}\n\n#addTaskMap {\n  border-width:0px;\n  position:absolute;\n  left:1px;\n  top:20px;\n  width:473px;\n  height:274px;\n}\n\n.saveBtn {\n  cursor: pointer;\n  background-color:rgba(30, 152, 215, 1);\n}\n\n.saveBtnDisabled {\n  cursor: not-allowed;\n  background-color:rgb(195, 195, 195);\n  border-radius: 5px;\n}"],"sourceRoot":""}]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"map_overlay_ivol": "rgoaBnwir02bIHV5PBLf",
+	"addTaskBtn": "mYNs6UO1z1yRa3SaFvoZ",
+	"legendPanel": "KoXppHEOVeNuKEYlR0U8",
+	"legendLeftText": "TCLOn9AVfOk_6mcB_2dn",
+	"legendRightText": "OkFsUMECgUQ7jHNRXKnz",
+	"legendSubPanel": "BzsFTosiwKPtRbK2TRvJ",
+	"legendLine": "PpbVTCTbFv8TKozdamla",
+	"urgencyLineLow": "exOTXq07UR3qEmt0V0aB",
+	"urgencyLineMedium": "QM_eHJhRFK52ggqzd1H6",
+	"urgencyLineHigh": "glx9C6CceZEwJG_zOmww",
+	"priorityLineLow": "AgYvyHMkJsz3p_W9enSC",
+	"priorityLineMedium": "ijeM6K2WbxG2b6if3J48",
+	"priorityLineHigh": "ve5WSQnVxaSD5tJPuHsz",
+	"durationLineLow": "zYhHj5CmNJ6cjR_Wn8uh",
+	"durationLineMedium": "xG6gJgSjtS1ejUR7PTn6",
+	"durationLineHigh": "TMQUtUe01gWz9W890tx4",
+	"requiredInfo": "DSUe7UN_914YhA9pyeHv",
+	"requiredStar": "dIKwDrYXMRtBZU_ttXTg",
+	"endDateLabel": "PbKpoTsglNcGrQMKKrrW",
+	"endDateInput": "yaJ7Ffdcnrd1BlEJkr93",
+	"endDateDiv": "qdkjfDYQyY2vsHNYutDx",
+	"dateEnd": "dEp6KQZAkKEvWhla8NiN",
+	"endTimeLabel": "Ih3_NQzG7ZKnu8xzWZag",
+	"endTimeInput": "CxHrB6K5V0Gu7R7pjjg6",
+	"endTimeDiv": "w89Mkl0Ow4tm2pthhGuT",
+	"timeEnd": "_wTPn2KBTwU5UAanFU4e",
+	"priority_input": "hcPNHGRCJNlP29LDZDWX",
+	"priority_div": "UwUl8Yhd9j8HoQqJ5PaC",
+	"priority": "j2P9C9lKeYlGdRm7_j9Q",
+	"addTaskMap": "RIlJOMddZnnBsDfuOIxk",
+	"saveBtn": "jUEg4ThH1ZHzC084XyVQ",
+	"saveBtnDisabled": "y7KmNWbpBzrpnWTgDakt"
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/runtime/api.js":
 /*!*****************************************************!*\
   !*** ./node_modules/css-loader/dist/runtime/api.js ***!
@@ -33998,6 +34059,61 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./src/customCode/styles/ivolunteerStyle.module.css":
+/*!**********************************************************!*\
+  !*** ./src/customCode/styles/ivolunteerStyle.module.css ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ivolunteerStyle_module_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!./ivolunteerStyle.module.css */ "./node_modules/css-loader/dist/cjs.js!./src/customCode/styles/ivolunteerStyle.module.css");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ivolunteerStyle_module_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ivolunteerStyle_module_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_ivolunteerStyle_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_ivolunteerStyle_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
 /*!****************************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
@@ -34535,9 +34651,12 @@ var getCoordinatesForCityDt = function (cityName) {
 };
 var getDateString = function (date) {
     var dateFrom = new Date(date.from);
+    var timeOffset = dateFrom.getTimezoneOffset();
+    dateFrom.setHours(dateFrom.getHours() + (timeOffset / 60)); //timeOffset is a negative number, therefore we need to add it 
     var dateTo;
     if (date.to !== '') {
         dateTo = new Date(date.to);
+        dateTo.setHours(dateTo.getHours() + (timeOffset / 60));
     }
     var dateString = dateFrom.toLocaleDateString() + ', ' + dateFrom.toLocaleTimeString();
     dateString += dateTo !== undefined ? ' bis ' + dateTo.toLocaleDateString() + ', ' + dateTo.toLocaleTimeString() : "";
@@ -35370,7 +35489,7 @@ __webpack_require__.r(__webpack_exports__);
         "taskid": 12348,
         "coordinator": "Rotes Kreuz",
         "date": {
-            "from": "2022-06-29T14:30:00Z",
+            "from": "2022-07-20T14:30:00Z",
             "to": ""
         },
         "priority": 2,
@@ -35417,7 +35536,7 @@ __webpack_require__.r(__webpack_exports__);
         "coordinator": "Samariterbund",
         "priority": 1,
         "date": {
-            "from": "2022-07-01T07:00:00Z",
+            "from": "2022-08-15T07:00:00Z",
             "to": ""
         },
         "friend": [
@@ -35971,20 +36090,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var ol_format_GeoJSON__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ol/format/GeoJSON */ "./node_modules/ol/format/GeoJSON.js");
-/* harmony import */ var ol_layer_Vector__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ol/layer/Vector */ "./node_modules/ol/layer/Vector.js");
-/* harmony import */ var ol_source_Vector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ol/source/Vector */ "./node_modules/ol/source/Vector.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Style.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Fill.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Stroke.js");
+/* harmony import */ var ol_format_GeoJSON__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ol/format/GeoJSON */ "./node_modules/ol/format/GeoJSON.js");
+/* harmony import */ var ol_layer_Vector__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ol/layer/Vector */ "./node_modules/ol/layer/Vector.js");
+/* harmony import */ var ol_source_Vector__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ol/source/Vector */ "./node_modules/ol/source/Vector.js");
+/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Style.js");
+/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Fill.js");
+/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Stroke.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _data_dt_database__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../data/dt_database */ "./src/customCode/data/dt_database.ts");
-/* harmony import */ var _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data/ivol_database */ "./src/customCode/data/ivol_database.ts");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils */ "./src/customCode/utils.tsx");
-/* harmony import */ var _Map_module_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Map.module.css */ "./src/customCode/components/map/Map.module.css");
-/* harmony import */ var _MapUtils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./MapUtils */ "./src/customCode/components/map/MapUtils.ts");
-
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils */ "./src/customCode/utils.tsx");
+/* harmony import */ var _Map_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Map.module.css */ "./src/customCode/components/map/Map.module.css");
+/* harmony import */ var _MapUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./MapUtils */ "./src/customCode/components/map/MapUtils.ts");
 
 
 
@@ -36052,7 +36169,7 @@ var previouslyHoveredLocation;
 var apdexMetric = 'apdex';
 var InteractiveMap = function (_a) {
     var selectedMetric = _a.selectedMetric, filters = _a.filters, onSetZoom = _a.onSetZoom, onChangeFilters = _a.onChangeFilters, isIVolunteer = _a.isIVolunteer;
-    var defaultZoom = isIVolunteer ? _utils__WEBPACK_IMPORTED_MODULE_3__.ZoomLevel.COUNTRY : _utils__WEBPACK_IMPORTED_MODULE_3__.ZoomLevel.WORLD;
+    var defaultZoom = isIVolunteer ? _utils__WEBPACK_IMPORTED_MODULE_2__.ZoomLevel.COUNTRY : _utils__WEBPACK_IMPORTED_MODULE_2__.ZoomLevel.WORLD;
     // ------------ initialization 
     var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), map = _b[0], setMap = _b[1];
     var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), selectedLocation = _c[0], setSelectedLocation = _c[1];
@@ -36060,11 +36177,11 @@ var InteractiveMap = function (_a) {
     var _e = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(filters), selectedFilters = _e[0], setSelectedFilters = _e[1];
     var _f = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), zoom = _f[0], setZoom = _f[1];
     if (isIVolunteer) {
-        data = _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"];
+        data = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.getIVolData)();
     }
     else {
-        var filteredData = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.filterDtData)(selectedFilters);
-        data = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.groupValuesPerLocation)(filteredData, 'country');
+        var filteredData = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.filterDtData)(selectedFilters);
+        data = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.groupValuesPerLocation)(filteredData, 'country');
     }
     if (!isIVolunteer) {
         if (selectedMetric === apdexMetric) {
@@ -36082,18 +36199,18 @@ var InteractiveMap = function (_a) {
     var filterRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
     filterRef.current = selectedFilters;
     var currZoom = undefined;
-    var overlaySource = new ol_source_Vector__WEBPACK_IMPORTED_MODULE_6__["default"]({
+    var overlaySource = new ol_source_Vector__WEBPACK_IMPORTED_MODULE_5__["default"]({
         url: "../data/geodata/countries.geojson",
-        format: new ol_format_GeoJSON__WEBPACK_IMPORTED_MODULE_7__["default"](),
+        format: new ol_format_GeoJSON__WEBPACK_IMPORTED_MODULE_6__["default"](),
     });
     // initialize map and overlays (only called once)
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         // create and add vector source layer
-        var overlayLayer = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_8__["default"]({
+        var overlayLayer = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_7__["default"]({
             source: overlaySource
         });
         // create map
-        var initialMap = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.createMap)(mapElement.current, defaultZoom, _MapUtils__WEBPACK_IMPORTED_MODULE_5__.defaultLongitude, _MapUtils__WEBPACK_IMPORTED_MODULE_5__.defaultLatitude, isIVolunteer, overlayLayer);
+        var initialMap = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_4__.createMap)(mapElement.current, defaultZoom, _MapUtils__WEBPACK_IMPORTED_MODULE_4__.defaultLongitude, _MapUtils__WEBPACK_IMPORTED_MODULE_4__.defaultLatitude, isIVolunteer, overlayLayer);
         // set event handlers except click handler (will be set later)
         initialMap.on('pointermove', handleHover);
         initialMap.on('moveend', handleZoom);
@@ -36114,20 +36231,20 @@ var InteractiveMap = function (_a) {
     }
     // -------------- Overlay functions
     // click & hover functions on overlay
-    var selectStyle = new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
-        fill: new ol_style__WEBPACK_IMPORTED_MODULE_10__["default"]({
+    var selectStyle = new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
+        fill: new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
             color: 'rgba(0, 0, 0, 0)',
         }),
-        stroke: new ol_style__WEBPACK_IMPORTED_MODULE_11__["default"]({
+        stroke: new ol_style__WEBPACK_IMPORTED_MODULE_10__["default"]({
             color: 'rgba(2, 167, 240, 1)',
             width: 2,
         }),
     });
-    var hoverStyle = new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
-        fill: new ol_style__WEBPACK_IMPORTED_MODULE_10__["default"]({
+    var hoverStyle = new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
+        fill: new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
             color: 'rgba(0, 0, 0, 0)',
         }),
-        stroke: new ol_style__WEBPACK_IMPORTED_MODULE_11__["default"]({
+        stroke: new ol_style__WEBPACK_IMPORTED_MODULE_10__["default"]({
             color: 'rgba(2, 167, 240, 1)',
             width: 2,
         }),
@@ -36172,9 +36289,9 @@ var InteractiveMap = function (_a) {
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         if (selectedLocation !== undefined) { // at the beginning no location is selected
             var value = void 0;
-            for (var i_1 = 0; i_1 < data.length; i_1++) {
-                if (data[i_1].iso === selectedLocation.getId()) {
-                    value = data[i_1][selectedMetric];
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].iso === selectedLocation.getId()) {
+                    value = data[i][selectedMetric];
                     break;
                 }
             }
@@ -36187,31 +36304,7 @@ var InteractiveMap = function (_a) {
             if (tooltipTitle) {
                 if (selectedLocation && !isIVolunteer) {
                     tooltipTitle.innerHTML = selectedLocation.get('name');
-                    // Show Dynatrace-related information
-                    var values = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.groupValuesPerLocation)(data, 'iso');
-                    var valueFound = false;
-                    for (var i = 0; i < values.length; i++) {
-                        var curElement = values[i];
-                        if (curElement['iso'] == selectedLocation.getId()) {
-                            $('#tooltip_apdex').text(curElement['apdex']);
-                            $('#tooltip_useractions').text(curElement['useractions'] + '/min');
-                            $('#tooltip_errors').text(curElement['errors'] + '/min');
-                            $('#tooltip_loadactions').text(curElement['loadactions']);
-                            $('#tooltip_totaluseractions').text(curElement['totaluseractions']);
-                            $('#tooltip_affecteduseractions').text(curElement['affecteduseractions'] + ' %');
-                            valueFound = true;
-                            break;
-                        }
-                    }
-                    if (!valueFound) {
-                        $('#tooltip_apdex').text('?');
-                        $('#tooltip_useractions').text('?');
-                        $('#tooltip_errors').text('?');
-                        $('#tooltip_loadactions').text('?');
-                        $('#tooltip_totaluseractions').text('?');
-                        $('#tooltip_affecteduseractions').text('?');
-                    }
-                    showTooltip(selectedFilters);
+                    setTooltipData(selectedLocation, selectedFilters);
                 }
                 else {
                     tooltipTitle.innerHTML = '&nbsp;';
@@ -36220,9 +36313,9 @@ var InteractiveMap = function (_a) {
         }
         if (hoveredLocation !== undefined) { // at the beginning no location is hovered over
             var value = void 0;
-            for (var i_2 = 0; i_2 < data.length; i_2++) {
-                if (data[i_2].iso === hoveredLocation.getId()) {
-                    value = data[i_2][selectedMetric];
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].iso === hoveredLocation.getId()) {
+                    value = data[i][selectedMetric];
                     break;
                 }
             }
@@ -36233,6 +36326,18 @@ var InteractiveMap = function (_a) {
             if (selectedLocation !== undefined) {
                 selectStyle.getFill().setColor(selectedColor);
                 selectedLocation.setStyle(selectStyle);
+            }
+            else {
+                // add tooltip information on hover, but only if no location is selected
+                var tooltipTitle = document.getElementById('tooltipTitle');
+                if (tooltipTitle) {
+                    tooltipTitle.innerHTML = hoveredLocation.get('name');
+                    setTooltipData(hoveredLocation, selectedFilters);
+                    // if (selectedLocation && !isIVolunteer) {
+                    // } else {
+                    //     tooltipTitle.innerHTML = '&nbsp;';
+                    // }
+                }
             }
         }
     }, [hoveredLocation, selectedLocation, selectedFilters, onChangeFilters]);
@@ -36292,24 +36397,24 @@ var InteractiveMap = function (_a) {
         });
     }, [selectedFilters, onChangeFilters]);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { ref: mapElement, className: !isIVolunteer ? _Map_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].container_dt : _Map_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].container_ivol })));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { ref: mapElement, className: !isIVolunteer ? _Map_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].container_dt : _Map_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].container_ivol })));
 };
 var getDtOverlayColor = function (selectedMetric, value, selectMode) {
     var metricMapping = selectedMetric === 'apdex' ? selectedMetric : 'other';
     if (selectMode) {
-        if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.UNACCEPTABLE) {
+        if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.UNACCEPTABLE) {
             return overlayColorMap[metricMapping].Unacceptable.selectedColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.POOR) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.POOR) {
             return overlayColorMap[metricMapping].Poor.selectedColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.FAIR) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.FAIR) {
             return overlayColorMap[metricMapping].Fair.selectedColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.GOOD) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.GOOD) {
             return overlayColorMap[metricMapping].Good.selectedColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.EXCELLENT) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.EXCELLENT) {
             return overlayColorMap[metricMapping].Excellent.selectedColor;
         }
         else {
@@ -36317,19 +36422,19 @@ var getDtOverlayColor = function (selectedMetric, value, selectMode) {
         }
     }
     else {
-        if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.UNACCEPTABLE) {
+        if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.UNACCEPTABLE) {
             return overlayColorMap[metricMapping].Unacceptable.hoverColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.POOR) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.POOR) {
             return overlayColorMap[metricMapping].Poor.hoverColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.FAIR) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.FAIR) {
             return overlayColorMap[metricMapping].Fair.hoverColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.GOOD) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.GOOD) {
             return overlayColorMap[metricMapping].Good.hoverColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.EXCELLENT) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.EXCELLENT) {
             return overlayColorMap[metricMapping].Excellent.hoverColor;
         }
         else {
@@ -36355,24 +36460,24 @@ var setIconMarkers = function (isIVolunteer, map, zoom, selectedMetric, selected
             .forEach(function (layer) { return map.removeLayer(layer); });
         markerDataset = getDataSetForMarkers(isIVolunteer, selectedFilters);
         for (var i = 0; i < markerDataset.length; i++) {
-            (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.addIconOverlay)(isIVolunteer, markerDataset[i], map, selectedMetric);
+            (0,_MapUtils__WEBPACK_IMPORTED_MODULE_4__.addIconOverlay)(isIVolunteer, markerDataset[i], map, selectedMetric);
         }
     }
     else {
         map.getLayers().getArray()
             .filter(function (layer) { return layer.get('name') === 'LocationMarker'; })
             .forEach(function (layer) { return map.removeLayer(layer); });
-        if (zoom >= _utils__WEBPACK_IMPORTED_MODULE_3__.ZoomLevel.COUNTRY) {
+        if (zoom >= _utils__WEBPACK_IMPORTED_MODULE_2__.ZoomLevel.COUNTRY) {
             markerDataset = getDataSetForMarkers(isIVolunteer, selectedFilters);
             for (var i = 0; i < markerDataset.length; i++) {
-                (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.addIconOverlay)(isIVolunteer, markerDataset[i], map, selectedMetric);
+                (0,_MapUtils__WEBPACK_IMPORTED_MODULE_4__.addIconOverlay)(isIVolunteer, markerDataset[i], map, selectedMetric);
             }
         }
     }
 };
 var getDataSetForMarkers = function (isIVolunteer, selectedFilters) {
     if (isIVolunteer) {
-        return (0,_utils__WEBPACK_IMPORTED_MODULE_3__.getFilteredIVolData)(_data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"], selectedFilters);
+        return (0,_utils__WEBPACK_IMPORTED_MODULE_2__.getFilteredIVolData)((0,_utils__WEBPACK_IMPORTED_MODULE_2__.getIVolData)(), selectedFilters);
     }
     else {
         var citiesDataset = [];
@@ -36391,37 +36496,37 @@ var clickOnMapMarkerIVol = function (feature, map) {
         var markerTaskId = marker.get('source').getFeatures()[0].get('taskid');
         if (markerTaskId = feature.get('taskid')) {
             // get data for taskid
-            var data_1 = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.getDataFromTaskId)(markerTaskId);
+            var data_1 = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.getDataFromTaskId)(markerTaskId);
             if (data_1 !== undefined) {
                 // show tooltip panel
                 var tooltipPanel_1 = document.getElementById('tooltip-panel');
-                tooltipPanel_1.classList.add(_Map_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].iVolTooltipPanel);
+                tooltipPanel_1.classList.add(_Map_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].iVolTooltipPanel);
                 // add data to tooltip
                 $('#tooltip-title').text(data_1.taskname);
                 $('#tooltip-taskid').text(data_1.taskid);
                 $('#tooltip-responsible').text(data_1.coordinator);
                 $('#tooltip-city').text(data_1.address.zip + ' ' + data_1.address.city);
-                // calculate priority based on date
-                var dateFrom = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.getDateString)(data_1.date).dateFrom;
+                // calculate urgency based on date
+                var dateFrom = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_4__.getDateString)(data_1.date).dateFrom;
                 $('#tooltip-date').text(dateFrom.toLocaleString());
-                var diffDays = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.getTaskUrgencyDays)(dateFrom);
-                var priority = void 0;
-                if (diffDays <= _utils__WEBPACK_IMPORTED_MODULE_3__.UrgencyDays.SEVERE) {
-                    priority = 'very high';
-                }
-                else if (diffDays <= _utils__WEBPACK_IMPORTED_MODULE_3__.UrgencyDays.HIGH) {
-                    priority = 'high';
-                }
-                else if (diffDays <= _utils__WEBPACK_IMPORTED_MODULE_3__.UrgencyDays.MEDIUM) {
-                    priority = 'medium';
+                var diffDays = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_4__.getTaskUrgencyDays)(dateFrom);
+                var urgencyString = void 0;
+                if (diffDays === 1) {
+                    urgencyString = 'morgen';
                 }
                 else {
-                    priority = 'low';
+                    urgencyString = 'in ' + diffDays + ' Tagen';
                 }
-                $('#tooltip-urgency').text(priority);
+                if (diffDays <= _utils__WEBPACK_IMPORTED_MODULE_2__.UrgencyDays.SEVERE) {
+                    urgencyString += ' - sehr dringend!!';
+                }
+                else if (diffDays <= _utils__WEBPACK_IMPORTED_MODULE_2__.UrgencyDays.HIGH) {
+                    urgencyString += ' - dringend!';
+                }
+                $('#tooltip-urgency').text(urgencyString);
                 // add clickhandlers
                 $('#close-tooltip').on('click', function () {
-                    tooltipPanel_1.classList.remove(_Map_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].iVolTooltipPanel);
+                    tooltipPanel_1.classList.remove(_Map_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].iVolTooltipPanel);
                 });
                 $('#tooltip-details-link').attr('href', 'ivolunteer_-_taskdetails.html?taskid=' + markerTaskId);
             }
@@ -36431,14 +36536,40 @@ var clickOnMapMarkerIVol = function (feature, map) {
         _loop_2(i);
     }
 };
-var showTooltip = function (selectedFilters) {
-    for (var i = 0; i < selectedFilters.length; i++) {
-        if (selectedFilters[i].key === 'country') {
-            $('#tooltip-panel').show();
-            return;
+var showTooltip = function (show) {
+    if (show) {
+        $('#tooltip-panel').show();
+    }
+    else {
+        $('#tooltip-panel').hide();
+    }
+};
+var setTooltipData = function (location, selectedFilters) {
+    // Show Dynatrace-related information
+    var values = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.groupValuesPerLocation)(data, 'iso');
+    var valueFound = false;
+    for (var i = 0; i < values.length; i++) {
+        var curElement = values[i];
+        if (curElement['iso'] == location.getId()) {
+            $('#tooltip_apdex').text(curElement['apdex']);
+            $('#tooltip_useractions').text(curElement['useractions'] + '/min');
+            $('#tooltip_errors').text(curElement['errors'] + '/min');
+            $('#tooltip_loadactions').text(curElement['loadactions']);
+            $('#tooltip_totaluseractions').text(curElement['totaluseractions']);
+            $('#tooltip_affecteduseractions').text(curElement['affecteduseractions'] + ' %');
+            valueFound = true;
+            break;
         }
     }
-    $('#tooltip-panel').hide();
+    if (!valueFound) {
+        $('#tooltip_apdex').text('?');
+        $('#tooltip_useractions').text('?');
+        $('#tooltip_errors').text('?');
+        $('#tooltip_loadactions').text('?');
+        $('#tooltip_totaluseractions').text('?');
+        $('#tooltip_affecteduseractions').text('?');
+    }
+    showTooltip(true);
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InteractiveMap);
 
@@ -36470,8 +36601,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var StaticMap = function (_a) {
-    var dataRow = _a.dataRow, addTask = _a.addTask;
+    var dataRow = _a.dataRow, addTask = _a.addTask, onSelectedLocation = _a.onSelectedLocation;
     var _b = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(), map = _b[0], setMap = _b[1];
+    var _c = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(), selectedLocation = _c[0], setSelectedLocation = _c[1];
     var mapElement = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)();
     var mapRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(); // map object for later use
     mapRef.current = map;
@@ -36496,6 +36628,11 @@ var StaticMap = function (_a) {
         // save map for later use
         setMap(initialMap);
     }, []);
+    // pass selected location outside for saving address data
+    var updateSelectedLocation = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (value, lon, lat) {
+        setSelectedLocation(value);
+        onSelectedLocation(value, lon, lat);
+    }, [selectedLocation, onSelectedLocation]);
     if (!addTask) {
         if (mapRef.current !== undefined) {
             $('#collapseMap').on('click', function () {
@@ -36550,6 +36687,7 @@ var StaticMap = function (_a) {
                 .filter(function (layer) { return layer.get('name') === 'LocationMarker'; })
                 .forEach(function (layer) { return map.removeLayer(layer); });
             (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.setIconMarker)(lon, lat, map, undefined, _img_pinpoint_location_blue_600_svg__WEBPACK_IMPORTED_MODULE_3__["default"]);
+            updateSelectedLocation(addressData, lon, lat);
         });
     };
     return (react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react__WEBPACK_IMPORTED_MODULE_1___default().Fragment), null,
@@ -36582,11 +36720,34 @@ var MetricSwitcher = function (_a) {
     var metricCallback = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
         setMetric(value);
         onSetMetric(value);
+        if (isIVolunteer) {
+            // change visibility of legend panel
+            if (value === 'urgency') {
+                $('#legendUrgencyPanel').show();
+                $('#legendPriorityPanel').hide();
+                $('#legendDurationPanel').hide();
+            }
+            else if (value === 'priority') {
+                $('#legendUrgencyPanel').hide();
+                $('#legendPriorityPanel').show();
+                $('#legendDurationPanel').hide();
+            }
+            else if (value === 'duration') {
+                $('#legendUrgencyPanel').hide();
+                $('#legendPriorityPanel').hide();
+                $('#legendDurationPanel').show();
+            }
+            else {
+                $('#legendUrgencyPanel').hide();
+                $('#legendPriorityPanel').hide();
+                $('#legendDurationPanel').hide();
+            }
+        }
     }, [selectedMetric, onSetMetric]);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "".concat(_MetricSwitcher_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].metricSwitcherPanel, " ").concat(isIVolunteer ? _MetricSwitcher_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].metricSwitcherPanelIVol : _MetricSwitcher_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].metricSwitcherPanelDt) }, isIVolunteer ?
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(MetricElement, { caption: "Dringlichkeit", id: "urgency", selected: selectedMetric === 'urgency', setMetric: metricCallback, isIVolunteer: isIVolunteer }),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(MetricElement, { caption: "Deadline", id: "urgency", selected: selectedMetric === 'urgency', setMetric: metricCallback, isIVolunteer: isIVolunteer }),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(MetricElement, { caption: "Priorit\u00E4t", id: "priority", selected: selectedMetric === 'priority', setMetric: metricCallback, isIVolunteer: isIVolunteer }),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(MetricElement, { caption: "Dauer", id: "duration", selected: selectedMetric === 'duration', setMetric: metricCallback, isIVolunteer: isIVolunteer }))
             :
@@ -36682,7 +36843,7 @@ var TableContent = function (_a) {
     var dataOnPage = _a.dataOnPage, selectedMetric = _a.selectedMetric, selectedFilters = _a.selectedFilters, setFilter = _a.setFilter, isIVolunteer = _a.isIVolunteer;
     var columnHeaders;
     if (isIVolunteer) {
-        columnHeaders = ['Task Name', 'Task ID'];
+        columnHeaders = ['Task Name', 'Bundesland'];
     }
     else {
         if (selectedMetric === 'apdex') {
@@ -36715,7 +36876,7 @@ var TableContent = function (_a) {
                                 dataRow[selectedMetric],
                                 " / min")
                             : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell }, dataRow[selectedMetric])
-                    : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell }, dataRow.taskid),
+                    : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell }, dataRow.address.region !== '' ? dataRow.address.region : '<n/a>'),
                 !isIVolunteer
                     ? selectedMetric === 'apdex'
                         ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell },
@@ -36835,7 +36996,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var _components_map_StaticMap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/map/StaticMap */ "./src/customCode/components/map/StaticMap.tsx");
+/* harmony import */ var _customCode_styles_ivolunteerStyle_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../customCode/styles/ivolunteerStyle.module.css */ "./src/customCode/styles/ivolunteerStyle.module.css");
+/* harmony import */ var _components_map_StaticMap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/map/StaticMap */ "./src/customCode/components/map/StaticMap.tsx");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils */ "./src/customCode/utils.tsx");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -36854,15 +37017,46 @@ var __extends = (undefined && undefined.__extends) || (function () {
 
 
 
+
+
 var AddTaskApp = /** @class */ (function (_super) {
     __extends(AddTaskApp, _super);
     function AddTaskApp(props) {
         var _this = _super.call(this, props) || this;
         _this.mapSelector = 'map_addtask';
+        _this.locationRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.createRef)();
+        var selectedGeoDataCallback = function (value, lon, lat) {
+            var location = {
+                "address": value,
+                "longitude": lon,
+                "latitude": lat
+            };
+            _this.locationRef.current = location;
+        };
         var map = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById(_this.mapSelector));
-        map.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_map_StaticMap__WEBPACK_IMPORTED_MODULE_2__["default"], { addTask: true }));
-        $('').on('click', function () {
-        });
+        map.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_map_StaticMap__WEBPACK_IMPORTED_MODULE_3__["default"], { addTask: true, onSelectedLocation: selectedGeoDataCallback }));
+        var onChangeInput = function () {
+            if (isInputValid()) {
+                $('#saveBtn').removeClass(_customCode_styles_ivolunteerStyle_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].saveBtnDisabled);
+                $('#saveBtn').addClass(_customCode_styles_ivolunteerStyle_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].saveBtn);
+                $('#saveBtn').on('click', saveClickHandler);
+            }
+            else {
+                $('#saveBtn').removeClass(_customCode_styles_ivolunteerStyle_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].saveBtn);
+                $('#saveBtn').addClass(_customCode_styles_ivolunteerStyle_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].saveBtnDisabled);
+                $('#saveBtn').off('click', saveClickHandler);
+            }
+        };
+        $('#taskName_input').on('change', onChangeInput);
+        $('#beginDate_input').on('change', onChangeInput);
+        $('#startTime_input').on('change', onChangeInput);
+        $('#endDateInput').on('change', onChangeInput);
+        $('#endTimeInput').on('change', onChangeInput);
+        $('#zipcode_input').on('change', onChangeInput);
+        $('#priority_input').on('change', onChangeInput);
+        var saveClickHandler = function () {
+            saveNewTask(_this.locationRef.current);
+        };
         return _this;
     }
     AddTaskApp.prototype.render = function () {
@@ -36870,6 +37064,95 @@ var AddTaskApp = /** @class */ (function (_super) {
     };
     return AddTaskApp;
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component));
+var saveNewTask = function (mapData) {
+    var data = (0,_utils__WEBPACK_IMPORTED_MODULE_4__.getIVolData)();
+    var newDataElement;
+    var taskName = $('#taskName_input').val();
+    var beginDate = $('#beginDate_input').val();
+    var startTime = $('#startTime_input').val();
+    var endDate = $('#endDateInput').val();
+    var endTime = $('#endTimeInput').val();
+    var description = $('#description_input').val();
+    var street = $('#street_input').val();
+    var zipCode = $('#zipcode_input').val();
+    var city = $('#city_input').val();
+    var priority = +$('#priority_input').val();
+    var fullStartDate = new Date(beginDate + 'T' + startTime + 'Z');
+    var fullEndDate = endDate !== undefined ? new Date(endDate + 'T' + endTime + 'Z') : new Date(beginDate + 'T' + endTime + 'Z');
+    var lastTaskID = data[data.length - 1].taskid;
+    var newTaskID = lastTaskID + 1;
+    var region = mapData !== null ? mapData.address.state : '';
+    var country = mapData !== null ? mapData.address.country : '';
+    var countryCode = mapData !== null ? mapData.address.country_code : '';
+    var lon = mapData !== null ? mapData.longitude : '';
+    var lat = mapData !== null ? mapData.latitude : '';
+    newDataElement = {
+        "address": {
+            "street": street,
+            "zip": zipCode,
+            "city": city,
+            "region": region,
+            "country": country,
+            "country-iso": countryCode,
+            "coordinates": [lat, lon]
+        },
+        "taskname": taskName,
+        "taskid": newTaskID,
+        "coordinator": "TestUser Coordinator",
+        "priority": priority,
+        "date": {
+            "from": fullStartDate,
+            "to": fullEndDate
+        },
+        "friend": [],
+        "description": description,
+    };
+    var dataExistsAlready = false;
+    for (var i = 0; i < data.length; i++) {
+        if (compareTaskDataElement(newDataElement, data[i])) {
+            dataExistsAlready = true;
+        }
+    }
+    if (!dataExistsAlready) {
+        data.push(newDataElement);
+        sessionStorage.removeItem('iVolData');
+        sessionStorage.setItem('iVolData', JSON.stringify(data));
+    }
+    location.href = 'ivolunteer_-_map.html';
+};
+var isInputValid = function () {
+    var taskName = $('#taskName_input').val();
+    var beginDate = $('#beginDate_input').val();
+    var startTime = $('#startTime_input').val();
+    var endTime = $('#endTimeInput').val();
+    var zipCode = $('#zipcode_input').val();
+    var priority = +$('#priority_input').val();
+    var isValid = taskName !== '' && zipCode !== '' && beginDate !== undefined && startTime !== '' && endTime !== '' && priority !== undefined && priority >= 1 && priority <= 3;
+    if (isValid) {
+        var fullStartDate = new Date(beginDate + 'T' + startTime + 'Z');
+        var endDate = $('#endDateInput').val();
+        var fullEndDate = void 0;
+        if (endDate !== undefined) {
+            fullEndDate = new Date(endDate + 'T' + endTime + 'Z');
+        }
+        else {
+            fullEndDate = new Date(beginDate + 'T' + endTime + 'Z');
+        }
+        isValid = isValid && fullStartDate <= fullEndDate;
+    }
+    return isValid;
+};
+var compareTaskDataElement = function (obj1, obj2) {
+    // deep-compare full data element except taskid
+    var isEqual = obj1.taskname === obj2.taskname
+        && obj1.coordinator === obj2.coordinator
+        && obj1.priority === obj2.priority
+        && obj1.description === obj2.description
+        && JSON.stringify(obj1.date) === JSON.stringify(obj2.date)
+        && JSON.stringify(obj1.friend.sort()) === JSON.stringify(obj2.friend.sort())
+        && JSON.stringify(obj1.address) === JSON.stringify(obj2.address);
+    return isEqual;
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AddTaskApp);
 
 
@@ -36923,10 +37206,22 @@ var TaskDetailsApp = /** @class */ (function (_super) {
             if (data !== undefined) {
                 // set data into fields
                 var dateString = (0,_components_map_MapUtils__WEBPACK_IMPORTED_MODULE_2__.getDateString)(data.date).dateString;
+                var addressString = data.address.zip;
+                if (data.address.city !== '') {
+                    addressString += ' ' + data.address.city;
+                }
+                else {
+                    addressString += ' (PLZ)';
+                }
+                if (data.address.street !== '') {
+                    addressString += ', ' + data.address.street;
+                }
                 $('#taskdetails-title').text(data.taskname);
                 $('#taskdetails-description').text(data.description);
+                $('#taskdetails-coordinator').text(data.coordinator);
+                $('#taskdetails-priority').text((0,_utils__WEBPACK_IMPORTED_MODULE_4__.getPriorityLevelText)(data.priority));
                 $('#taskdetails-date').text(dateString);
-                $('#taskdetails-address').text(data.address.zip + ' ' + data.address.city + ', ' + data.address.street);
+                $('#taskdetails-address').text(addressString);
             }
             var map = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById('map_taskdetails'));
             map.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_map_StaticMap__WEBPACK_IMPORTED_MODULE_3__["default"], { dataRow: data }));
@@ -37006,14 +37301,19 @@ var IVolunteerWorldmapApp = /** @class */ (function (_super) {
         _this.tableSelector = 'tasktable';
         _this.metricSwitcherPanel = 'metricswitcher-panel';
         _this.filterbarPanel = 'filter-panel';
-        _this.tableData = _data_ivol_database__WEBPACK_IMPORTED_MODULE_6__["default"];
+        // save data from file to sessionStorage at the very first call
+        if (sessionStorage.getItem('iVolData') === null) {
+            sessionStorage.setItem('iVolData', JSON.stringify(_data_ivol_database__WEBPACK_IMPORTED_MODULE_6__["default"]));
+        }
+        _this.tableData = (0,_utils__WEBPACK_IMPORTED_MODULE_7__.getIVolData)();
         var filterbar = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById(_this.filterbarPanel));
         var metricSwitcher = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById(_this.metricSwitcherPanel));
         var map = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById(_this.mapSelector));
         var table = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById(_this.tableSelector));
         var selectedFiltersCallback = function (value) {
             _this.selectedFilters = value;
-            _this.tableData = (0,_utils__WEBPACK_IMPORTED_MODULE_7__.getFilteredIVolData)(_data_ivol_database__WEBPACK_IMPORTED_MODULE_6__["default"], _this.selectedFilters);
+            var data = (0,_utils__WEBPACK_IMPORTED_MODULE_7__.getIVolData)();
+            _this.tableData = (0,_utils__WEBPACK_IMPORTED_MODULE_7__.getFilteredIVolData)(data, _this.selectedFilters);
             table.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_table_Table__WEBPACK_IMPORTED_MODULE_5__["default"], { data: _this.tableData, selectedMetric: _this.selectedMetric, filters: _this.selectedFilters, onSetFilter: selectedFiltersCallback, isIVolunteer: true }));
             map.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_map_Map__WEBPACK_IMPORTED_MODULE_3__["default"], { selectedMetric: _this.selectedMetric, filters: _this.selectedFilters, onSetZoom: zoomLevelCallback, onChangeFilters: selectedFiltersCallback, isIVolunteer: true }));
             filterbar.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_filterbar_Filterbar__WEBPACK_IMPORTED_MODULE_2__["default"], { isIVolunteer: true, filters: _this.selectedFilters, onSelectedFilters: selectedFiltersCallback }));
@@ -37058,19 +37358,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "DurationLength": () => (/* binding */ DurationLength),
 /* harmony export */   "Apdex": () => (/* binding */ Apdex),
 /* harmony export */   "FilterType": () => (/* binding */ FilterType),
+/* harmony export */   "getIVolData": () => (/* binding */ getIVolData),
 /* harmony export */   "getFilterType": () => (/* binding */ getFilterType),
 /* harmony export */   "groupValuesPerLocation": () => (/* binding */ groupValuesPerLocation),
 /* harmony export */   "getDataFromTaskId": () => (/* binding */ getDataFromTaskId),
 /* harmony export */   "getUrlParameter": () => (/* binding */ getUrlParameter),
 /* harmony export */   "getFilteredIVolData": () => (/* binding */ getFilteredIVolData),
-/* harmony export */   "filterDtData": () => (/* binding */ filterDtData)
+/* harmony export */   "filterDtData": () => (/* binding */ filterDtData),
+/* harmony export */   "getPriorityLevelText": () => (/* binding */ getPriorityLevelText)
 /* harmony export */ });
 /* harmony import */ var ol_ol_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/ol.css */ "./node_modules/ol/ol.css");
 /* harmony import */ var _data_dt_database__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data/dt_database */ "./src/customCode/data/dt_database.ts");
 /* harmony import */ var _data_dt_filters__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data/dt_filters */ "./src/customCode/data/dt_filters.ts");
-/* harmony import */ var _data_ivol_database__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./data/ivol_database */ "./src/customCode/data/ivol_database.ts");
-/* harmony import */ var _data_ivol_filters__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./data/ivol_filters */ "./src/customCode/data/ivol_filters.ts");
-
+/* harmony import */ var _data_ivol_filters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./data/ivol_filters */ "./src/customCode/data/ivol_filters.ts");
 
 
 
@@ -37118,13 +37418,26 @@ var FilterType;
     FilterType["RANGE"] = "range";
     FilterType["DATE"] = "date";
 })(FilterType || (FilterType = {}));
+// ---------------------------------------------------------------------
+var getIVolData = function () {
+    var data = JSON.parse(sessionStorage.getItem('iVolData'));
+    var dataInTheFuture = [];
+    var today = new Date();
+    for (var i = 0; i < data.length; i++) {
+        var dataDate = new Date(data[i].date.from);
+        if (today <= dataDate) {
+            dataInTheFuture.push(data[i]);
+        }
+    }
+    return dataInTheFuture;
+};
 var getFilterType = function (filterName) {
     // check iVolunteer filter database
-    var iVolKeys = Object.keys(_data_ivol_filters__WEBPACK_IMPORTED_MODULE_4__["default"][0]);
+    var iVolKeys = Object.keys(_data_ivol_filters__WEBPACK_IMPORTED_MODULE_3__["default"][0]);
     for (var i = 0; i < iVolKeys.length; i++) {
         var filter = iVolKeys[i];
         if (filter === filterName) {
-            return _data_ivol_filters__WEBPACK_IMPORTED_MODULE_4__["default"][0][filter].filterType;
+            return _data_ivol_filters__WEBPACK_IMPORTED_MODULE_3__["default"][0][filter].filterType;
         }
     }
     // check Dynatrace filter database
@@ -37136,8 +37449,6 @@ var getFilterType = function (filterName) {
         }
     }
 };
-// ---------------------------------------------------------------------
-// table functions
 function groupValuesPerLocation(data, locationKey) {
     var groupedValuesMap = [];
     for (var i = 0; i < data.length; i++) {
@@ -37181,9 +37492,10 @@ function groupValuesPerLocation(data, locationKey) {
 }
 function getDataFromTaskId(taskId) {
     var taskIdNumber = Number(taskId);
-    for (var i = 0; i < _data_ivol_database__WEBPACK_IMPORTED_MODULE_3__["default"].length; i++) {
-        if (_data_ivol_database__WEBPACK_IMPORTED_MODULE_3__["default"][i].taskid === taskIdNumber) {
-            return _data_ivol_database__WEBPACK_IMPORTED_MODULE_3__["default"][i];
+    var iVolData = getIVolData();
+    for (var i = 0; i < iVolData.length; i++) {
+        if (iVolData[i].taskid === taskIdNumber) {
+            return iVolData[i];
         }
     }
     return;
@@ -37325,6 +37637,18 @@ function filterDtData(selectedFilters) {
     }
     return selectedFilters.length > 0 ? filteredData : _data_dt_database__WEBPACK_IMPORTED_MODULE_1__["default"];
 }
+var getPriorityLevelText = function (level) {
+    switch (level) {
+        case PriorityLevels.HIGH:
+            return 'hoch';
+        case PriorityLevels.MEDIUM:
+            return 'mittel';
+        case PriorityLevels.LOW:
+            return 'niedrig';
+        default:
+            return '<n/a>';
+    }
+};
 
 
 /***/ }),

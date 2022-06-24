@@ -12,17 +12,25 @@
             font-family:'Arial Standard', 'Arial', sans-serif;
             text-align: center;
             background-color: skyblue;
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+         
+         .content {
+            width: fit-content;
+            align-items: center;
+         }
+
+         .logo {
+            margin-bottom: 8px;
          }
 
          .links {
-            margin: 20px;
+            padding: 4px;
             border-radius: 20px;
             background-color: white;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
          }
 
          .links h1 {
@@ -31,9 +39,12 @@
       </style>
    </head>
    <body>
-      <div id="links" class="links">
-         <h1><a href="./axure/ivolunteer_-_map.html">iVolunteer App</a></h1>
-         <h1><a href="./axure/dt_worldmap.html">Dynatrace App</a></h1>
-      </div>     
+      <div class="content">
+         <img src="img/logo.svg" class="logo"></img>
+         <div id="links" class="links">
+            <h1><a href="./axure/ivolunteer_-_map.html">iVolunteer App</a></h1>
+            <h1><a href="./axure/dt_worldmap.html">Dynatrace App</a></h1>
+         </div>     
+      </div>
    <script type="module" src="dtApp.bundle.js"></script><script type="module" src="iVolApp.bundle.js"></script></body>
 </html>

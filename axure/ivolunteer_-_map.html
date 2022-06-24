@@ -49,7 +49,7 @@
     <link rel="shortcut icon" href="#">
 
     <!-- custom script & CSS code (contd. at the bottom of the document)-->
-    <link   type="text/css"  href="../styles/ivolunteerStyle.css" rel="stylesheet">
+    <link   type="text/css"  href="../styles/ivolunteerStyle.module.css" rel="stylesheet">
   </head>
   <body>
     <div id="app"></div>
@@ -187,8 +187,32 @@
         <!-- map (Inline Frame) -->
         <div id="geomap_ivol" class="ax_default" data-label="map"></div>
         <a id="addTaskBtn" href="ivolunteer_-_add_task.html">
-          Add task
+          Task hinzufügen
         </a>
+        <div id="legendPanel">
+          <span>Legende:</span>
+          <div class="legendSubPanel" id="legendUrgencyPanel">
+            <span class="legendLeftText">auf-schiebbar</span>
+            <div class="legendLine" id="urgencyLineLow"></div>
+            <div class="legendLine" id="urgencyLineMedium"></div>
+            <div class="legendLine" id="urgencyLineHigh"></div>
+            <span class="legendRightText">dringend</span>
+          </div>
+          <div class="legendSubPanel" id="legendPriorityPanel" style="display:none">
+            <span class="legendLeftText"><br>niedrig</span>
+            <div class="legendLine" id="priorityLineLow"></div>
+            <div class="legendLine" id="priorityLineMedium"></div>
+            <div class="legendLine" id="priorityLineHigh"></div>
+            <span class="legendRightText">hoch</span>
+          </div>
+          <div class="legendSubPanel" id="legendDurationPanel" style="display:none">
+            <span class="legendLeftText"><br>kurz</span>
+            <div class="legendLine" id="durationLineLow"></div>
+            <div class="legendLine" id="durationLineMedium"></div>
+            <div class="legendLine" id="durationLineHigh"></div>
+            <span class="legendRightText">lang</span>
+          </div>
+        </div>
       </div>
 
       <!-- metricbar-panel (Group) -->
@@ -223,7 +247,7 @@
             <p><span>Verantwortlicher</span></p>
             <p><span>Ort</span></p>
             <p><span>Datum</span></p>
-            <p><span>Dringlichkeit</span></p>
+            <p><span>Deadline</span></p>
             <p><span><br></span></p>
           </div>
         </div>

@@ -34535,9 +34535,12 @@ var getCoordinatesForCityDt = function (cityName) {
 };
 var getDateString = function (date) {
     var dateFrom = new Date(date.from);
+    var timeOffset = dateFrom.getTimezoneOffset();
+    dateFrom.setHours(dateFrom.getHours() + (timeOffset / 60)); //timeOffset is a negative number, therefore we need to add it 
     var dateTo;
     if (date.to !== '') {
         dateTo = new Date(date.to);
+        dateTo.setHours(dateTo.getHours() + (timeOffset / 60));
     }
     var dateString = dateFrom.toLocaleDateString() + ', ' + dateFrom.toLocaleTimeString();
     dateString += dateTo !== undefined ? ' bis ' + dateTo.toLocaleDateString() + ', ' + dateTo.toLocaleTimeString() : "";
@@ -35275,161 +35278,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/customCode/data/ivol_database.ts":
-/*!**********************************************!*\
-  !*** ./src/customCode/data/ivol_database.ts ***!
-  \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([
-    {
-        "address": {
-            "street": "Mönchsberg 34",
-            "zip": "5020",
-            "city": "Salzburg",
-            "region": "Salzburg",
-            "country": "Austria",
-            "country-iso": "AT",
-            "coordinates": [47.79517891806973, 13.047540281203213]
-        },
-        "taskname": "Adventbazar",
-        "taskid": 12345,
-        "coordinator": "Rotes Kreuz",
-        "priority": 2,
-        "date": {
-            "from": "2022-12-10T15:00:00Z",
-            "to": "2022-12-12T20:00:00Z"
-        },
-        "friend": [
-            "Tony Stark", "Bruce Banner", "Steve Rogers"
-        ],
-        "description": "Für unseren jährlichen Adventbazar auf der Festung Hohensalzburg suchen wir noch motivierte Leute, die uns einen Nachmittag lang aushelfen können. Wir suchen helfende Hände an allen Ecken, also am Besten du meldest dich einfach bei uns und erzählst uns, was du gerne machen möchtest. Wir finden bestimmt eine tolle Aufgabe für dich! Wir freuen uns auf deine Nachricht. :)",
-    },
-    {
-        "address": {
-            "street": "Altenbergerstraße 69",
-            "zip": "4040",
-            "city": "Linz",
-            "region": "Oberösterreich",
-            "country": "Austria",
-            "country-iso": "AT",
-            "coordinates": [48.337677902412565, 14.32281236957337]
-        },
-        "taskname": "Pfadfinder Meetup",
-        "taskid": 12346,
-        "coordinator": "Pfadfinderclub Linz",
-        "priority": 1,
-        "date": {
-            "from": "2022-08-29T07:30:00Z",
-            "to": ""
-        },
-        "friend": [
-            "Natasha Romanov", "James Bucky Barnes"
-        ],
-        "description": "Auch dieses Monat treffen sich unsere kleinsten Pfadfinder wieder zu ihrem Pfadfinder Meetup. Um dieses Treffen angemessen beaufsichtigen zu können, benötigen wir deine Hilfe. Zu deinen Aufgaben zählen, den Kindern bei ihren Aufgaben (z.B. Tierspuren lesen, Blätter identifizieren) zu unterstützen. Ebenso zählt es zu deinen Aufgaben, die Kinder zu betreuen und zu beaufsichtigen, sollten sie in die Nähe des Straßenverkehrs geraten.",
-    },
-    {
-        "address": {
-            "street": "Maxingstraße 13b",
-            "zip": "1130",
-            "city": "Wien",
-            "region": "Wien",
-            "country": "Austria",
-            "country-iso": "AT",
-            "coordinates": [48.18224988326545, 16.299806284912314]
-        },
-        "taskname": "Zoo Tierhelfer",
-        "taskid": 12347,
-        "coordinator": "Tiergarten-Verein Österreich",
-        "priority": 3,
-        "date": {
-            "from": "2022-07-27T13:15:00Z",
-            "to": ""
-        },
-        "friend": [
-            "Peter Parker"
-        ],
-        "description": "Im Zoo Schönbrunn haben wir viele Tiere, die viel Aufmerksamkeit benötigen. Durch die Urlaubszeit sind uns leider viele Tierpfleger ausgefallen und wir könnten Unterstützung gebrauchen. Zu deinen Aufgaben zählt das Ausmisten der Käfige von Kleinnagern, im Affenhaus das Futter auszuteilen und die Pflanzen im Tropenhaus auf Ungeziefer zu untersuchen. Je nach eigenem Wohlbefinden suchen wir auch jemanden, der sich mit Spinnen wohlfühlt und in ihren Terrarien die Dekorationen umgestalten kann.",
-    },
-    {
-        "address": {
-            "street": "Pembaurstraße 20",
-            "zip": "6020",
-            "city": "Innsbruck",
-            "region": "Tirol",
-            "country": "Austria",
-            "country-iso": "AT",
-            "coordinates": [47.26886080215773, 11.411443471397346]
-        },
-        "taskname": "Kindergarten Helfer",
-        "taskid": 12348,
-        "coordinator": "Rotes Kreuz",
-        "date": {
-            "from": "2022-06-29T14:30:00Z",
-            "to": ""
-        },
-        "priority": 2,
-        "friend": [
-            "Tony Stark", "Peter Parker", "Steve Rogers"
-        ],
-        "description": "Durch die Urlaubszeit sind wir derzeit etwas schwach besetzt in unserem Kindergarten. Aufgrund des benötigten Zertifikats zur Kinderbetreuung, geht es bei diesem Job eher um das Aufräumen und desinfizieren des Spielbereichs in den Pausen, wo die Kinder im Hof draußen spielen. Solltest du vielleicht ein:e Kindergärtner:in in Ausbildung sein, melde dich doch einfach und wir können es bestimmt als Praktikum werten :)",
-    },
-    {
-        "address": {
-            "street": "B11, Lakeside",
-            "zip": "9020",
-            "city": "Klagenfurt am Wörthersee",
-            "region": "Kärnten",
-            "country": "Austria",
-            "country-iso": "AT",
-            "coordinates": [46.6145822029484, 14.266635873231703]
-        },
-        "taskname": "Altenpflege Volunteering",
-        "taskid": 12349,
-        "coordinator": "Altenpflegeverein Kärnten",
-        "priority": 2,
-        "date": {
-            "from": "2022-09-21T08:00:00Z",
-            "to": "2022-09-30T15:00:00"
-        },
-        "friend": [
-            "Steve Rogers", "James Bucky Barnes"
-        ],
-        "description": "Unsere Bewohner des Altenpflegeheims in Klagenfurt freuen sich schon sehr auf ihren Ausflug zum Wörthersee! Wir könnten dafür Unterstützung gebrauchen - wenn du gerne unseren Senioren bei ihrem Ausflug beiwohnen und ihnen beim Herumkommen am Platz helfen möchtest, melde dich doch! Dieser Job beinhaltet ausschließlich überwachende Tätigkeiten, es ist keine Kenntnis von fachspezifischen Knowledge nötig.",
-    },
-    {
-        "address": {
-            "street": "Puchstraße 164",
-            "zip": "8055",
-            "city": "Graz",
-            "region": "Steiermark",
-            "country": "Austria",
-            "country-iso": "AT",
-            "coordinates": [47.03810761369751, 15.439317416354617]
-        },
-        "taskname": "Mülleinsammeln",
-        "taskid": 12350,
-        "coordinator": "Samariterbund",
-        "priority": 1,
-        "date": {
-            "from": "2022-07-01T07:00:00Z",
-            "to": ""
-        },
-        "friend": [
-            "James Bucky Barnes", "Natasha Romanov", "Peter Parker"
-        ],
-        "description": "Leider lässt sich immer wieder eine Menge Müll am Parkplatz vorm Spar finden. Dieser Müll muss entfernt werden bevor der Großteil der Einkäufer kommt, weswegen wir um Unterstützung zur Mülleinsammlung bitten. Es geht dabei um Papiermüll, sowie Plastikverpackungen und potentiell auch zerbrochene Flaschen.",
-    }
-]);
-
-
-/***/ }),
-
 /***/ "./src/customCode/data/ivol_filters.ts":
 /*!*********************************************!*\
   !*** ./src/customCode/data/ivol_filters.ts ***!
@@ -35971,20 +35819,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var ol_format_GeoJSON__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ol/format/GeoJSON */ "./node_modules/ol/format/GeoJSON.js");
-/* harmony import */ var ol_layer_Vector__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ol/layer/Vector */ "./node_modules/ol/layer/Vector.js");
-/* harmony import */ var ol_source_Vector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ol/source/Vector */ "./node_modules/ol/source/Vector.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Style.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Fill.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Stroke.js");
+/* harmony import */ var ol_format_GeoJSON__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ol/format/GeoJSON */ "./node_modules/ol/format/GeoJSON.js");
+/* harmony import */ var ol_layer_Vector__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ol/layer/Vector */ "./node_modules/ol/layer/Vector.js");
+/* harmony import */ var ol_source_Vector__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ol/source/Vector */ "./node_modules/ol/source/Vector.js");
+/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Style.js");
+/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Fill.js");
+/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Stroke.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _data_dt_database__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../data/dt_database */ "./src/customCode/data/dt_database.ts");
-/* harmony import */ var _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data/ivol_database */ "./src/customCode/data/ivol_database.ts");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils */ "./src/customCode/utils.tsx");
-/* harmony import */ var _Map_module_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Map.module.css */ "./src/customCode/components/map/Map.module.css");
-/* harmony import */ var _MapUtils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./MapUtils */ "./src/customCode/components/map/MapUtils.ts");
-
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils */ "./src/customCode/utils.tsx");
+/* harmony import */ var _Map_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Map.module.css */ "./src/customCode/components/map/Map.module.css");
+/* harmony import */ var _MapUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./MapUtils */ "./src/customCode/components/map/MapUtils.ts");
 
 
 
@@ -36052,7 +35898,7 @@ var previouslyHoveredLocation;
 var apdexMetric = 'apdex';
 var InteractiveMap = function (_a) {
     var selectedMetric = _a.selectedMetric, filters = _a.filters, onSetZoom = _a.onSetZoom, onChangeFilters = _a.onChangeFilters, isIVolunteer = _a.isIVolunteer;
-    var defaultZoom = isIVolunteer ? _utils__WEBPACK_IMPORTED_MODULE_3__.ZoomLevel.COUNTRY : _utils__WEBPACK_IMPORTED_MODULE_3__.ZoomLevel.WORLD;
+    var defaultZoom = isIVolunteer ? _utils__WEBPACK_IMPORTED_MODULE_2__.ZoomLevel.COUNTRY : _utils__WEBPACK_IMPORTED_MODULE_2__.ZoomLevel.WORLD;
     // ------------ initialization 
     var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), map = _b[0], setMap = _b[1];
     var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), selectedLocation = _c[0], setSelectedLocation = _c[1];
@@ -36060,11 +35906,11 @@ var InteractiveMap = function (_a) {
     var _e = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(filters), selectedFilters = _e[0], setSelectedFilters = _e[1];
     var _f = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), zoom = _f[0], setZoom = _f[1];
     if (isIVolunteer) {
-        data = _data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"];
+        data = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.getIVolData)();
     }
     else {
-        var filteredData = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.filterDtData)(selectedFilters);
-        data = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.groupValuesPerLocation)(filteredData, 'country');
+        var filteredData = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.filterDtData)(selectedFilters);
+        data = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.groupValuesPerLocation)(filteredData, 'country');
     }
     if (!isIVolunteer) {
         if (selectedMetric === apdexMetric) {
@@ -36082,18 +35928,18 @@ var InteractiveMap = function (_a) {
     var filterRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
     filterRef.current = selectedFilters;
     var currZoom = undefined;
-    var overlaySource = new ol_source_Vector__WEBPACK_IMPORTED_MODULE_6__["default"]({
+    var overlaySource = new ol_source_Vector__WEBPACK_IMPORTED_MODULE_5__["default"]({
         url: "../data/geodata/countries.geojson",
-        format: new ol_format_GeoJSON__WEBPACK_IMPORTED_MODULE_7__["default"](),
+        format: new ol_format_GeoJSON__WEBPACK_IMPORTED_MODULE_6__["default"](),
     });
     // initialize map and overlays (only called once)
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         // create and add vector source layer
-        var overlayLayer = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_8__["default"]({
+        var overlayLayer = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_7__["default"]({
             source: overlaySource
         });
         // create map
-        var initialMap = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.createMap)(mapElement.current, defaultZoom, _MapUtils__WEBPACK_IMPORTED_MODULE_5__.defaultLongitude, _MapUtils__WEBPACK_IMPORTED_MODULE_5__.defaultLatitude, isIVolunteer, overlayLayer);
+        var initialMap = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_4__.createMap)(mapElement.current, defaultZoom, _MapUtils__WEBPACK_IMPORTED_MODULE_4__.defaultLongitude, _MapUtils__WEBPACK_IMPORTED_MODULE_4__.defaultLatitude, isIVolunteer, overlayLayer);
         // set event handlers except click handler (will be set later)
         initialMap.on('pointermove', handleHover);
         initialMap.on('moveend', handleZoom);
@@ -36114,20 +35960,20 @@ var InteractiveMap = function (_a) {
     }
     // -------------- Overlay functions
     // click & hover functions on overlay
-    var selectStyle = new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
-        fill: new ol_style__WEBPACK_IMPORTED_MODULE_10__["default"]({
+    var selectStyle = new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
+        fill: new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
             color: 'rgba(0, 0, 0, 0)',
         }),
-        stroke: new ol_style__WEBPACK_IMPORTED_MODULE_11__["default"]({
+        stroke: new ol_style__WEBPACK_IMPORTED_MODULE_10__["default"]({
             color: 'rgba(2, 167, 240, 1)',
             width: 2,
         }),
     });
-    var hoverStyle = new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
-        fill: new ol_style__WEBPACK_IMPORTED_MODULE_10__["default"]({
+    var hoverStyle = new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
+        fill: new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
             color: 'rgba(0, 0, 0, 0)',
         }),
-        stroke: new ol_style__WEBPACK_IMPORTED_MODULE_11__["default"]({
+        stroke: new ol_style__WEBPACK_IMPORTED_MODULE_10__["default"]({
             color: 'rgba(2, 167, 240, 1)',
             width: 2,
         }),
@@ -36172,9 +36018,9 @@ var InteractiveMap = function (_a) {
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         if (selectedLocation !== undefined) { // at the beginning no location is selected
             var value = void 0;
-            for (var i_1 = 0; i_1 < data.length; i_1++) {
-                if (data[i_1].iso === selectedLocation.getId()) {
-                    value = data[i_1][selectedMetric];
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].iso === selectedLocation.getId()) {
+                    value = data[i][selectedMetric];
                     break;
                 }
             }
@@ -36187,31 +36033,7 @@ var InteractiveMap = function (_a) {
             if (tooltipTitle) {
                 if (selectedLocation && !isIVolunteer) {
                     tooltipTitle.innerHTML = selectedLocation.get('name');
-                    // Show Dynatrace-related information
-                    var values = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.groupValuesPerLocation)(data, 'iso');
-                    var valueFound = false;
-                    for (var i = 0; i < values.length; i++) {
-                        var curElement = values[i];
-                        if (curElement['iso'] == selectedLocation.getId()) {
-                            $('#tooltip_apdex').text(curElement['apdex']);
-                            $('#tooltip_useractions').text(curElement['useractions'] + '/min');
-                            $('#tooltip_errors').text(curElement['errors'] + '/min');
-                            $('#tooltip_loadactions').text(curElement['loadactions']);
-                            $('#tooltip_totaluseractions').text(curElement['totaluseractions']);
-                            $('#tooltip_affecteduseractions').text(curElement['affecteduseractions'] + ' %');
-                            valueFound = true;
-                            break;
-                        }
-                    }
-                    if (!valueFound) {
-                        $('#tooltip_apdex').text('?');
-                        $('#tooltip_useractions').text('?');
-                        $('#tooltip_errors').text('?');
-                        $('#tooltip_loadactions').text('?');
-                        $('#tooltip_totaluseractions').text('?');
-                        $('#tooltip_affecteduseractions').text('?');
-                    }
-                    showTooltip(selectedFilters);
+                    setTooltipData(selectedLocation, selectedFilters);
                 }
                 else {
                     tooltipTitle.innerHTML = '&nbsp;';
@@ -36220,9 +36042,9 @@ var InteractiveMap = function (_a) {
         }
         if (hoveredLocation !== undefined) { // at the beginning no location is hovered over
             var value = void 0;
-            for (var i_2 = 0; i_2 < data.length; i_2++) {
-                if (data[i_2].iso === hoveredLocation.getId()) {
-                    value = data[i_2][selectedMetric];
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].iso === hoveredLocation.getId()) {
+                    value = data[i][selectedMetric];
                     break;
                 }
             }
@@ -36233,6 +36055,18 @@ var InteractiveMap = function (_a) {
             if (selectedLocation !== undefined) {
                 selectStyle.getFill().setColor(selectedColor);
                 selectedLocation.setStyle(selectStyle);
+            }
+            else {
+                // add tooltip information on hover, but only if no location is selected
+                var tooltipTitle = document.getElementById('tooltipTitle');
+                if (tooltipTitle) {
+                    tooltipTitle.innerHTML = hoveredLocation.get('name');
+                    setTooltipData(hoveredLocation, selectedFilters);
+                    // if (selectedLocation && !isIVolunteer) {
+                    // } else {
+                    //     tooltipTitle.innerHTML = '&nbsp;';
+                    // }
+                }
             }
         }
     }, [hoveredLocation, selectedLocation, selectedFilters, onChangeFilters]);
@@ -36292,24 +36126,24 @@ var InteractiveMap = function (_a) {
         });
     }, [selectedFilters, onChangeFilters]);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { ref: mapElement, className: !isIVolunteer ? _Map_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].container_dt : _Map_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].container_ivol })));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { ref: mapElement, className: !isIVolunteer ? _Map_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].container_dt : _Map_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].container_ivol })));
 };
 var getDtOverlayColor = function (selectedMetric, value, selectMode) {
     var metricMapping = selectedMetric === 'apdex' ? selectedMetric : 'other';
     if (selectMode) {
-        if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.UNACCEPTABLE) {
+        if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.UNACCEPTABLE) {
             return overlayColorMap[metricMapping].Unacceptable.selectedColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.POOR) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.POOR) {
             return overlayColorMap[metricMapping].Poor.selectedColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.FAIR) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.FAIR) {
             return overlayColorMap[metricMapping].Fair.selectedColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.GOOD) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.GOOD) {
             return overlayColorMap[metricMapping].Good.selectedColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.EXCELLENT) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.EXCELLENT) {
             return overlayColorMap[metricMapping].Excellent.selectedColor;
         }
         else {
@@ -36317,19 +36151,19 @@ var getDtOverlayColor = function (selectedMetric, value, selectMode) {
         }
     }
     else {
-        if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.UNACCEPTABLE) {
+        if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.UNACCEPTABLE) {
             return overlayColorMap[metricMapping].Unacceptable.hoverColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.POOR) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.POOR) {
             return overlayColorMap[metricMapping].Poor.hoverColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.FAIR) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.FAIR) {
             return overlayColorMap[metricMapping].Fair.hoverColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.GOOD) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.GOOD) {
             return overlayColorMap[metricMapping].Good.hoverColor;
         }
-        else if (value < _utils__WEBPACK_IMPORTED_MODULE_3__.Apdex.EXCELLENT) {
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.EXCELLENT) {
             return overlayColorMap[metricMapping].Excellent.hoverColor;
         }
         else {
@@ -36355,24 +36189,24 @@ var setIconMarkers = function (isIVolunteer, map, zoom, selectedMetric, selected
             .forEach(function (layer) { return map.removeLayer(layer); });
         markerDataset = getDataSetForMarkers(isIVolunteer, selectedFilters);
         for (var i = 0; i < markerDataset.length; i++) {
-            (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.addIconOverlay)(isIVolunteer, markerDataset[i], map, selectedMetric);
+            (0,_MapUtils__WEBPACK_IMPORTED_MODULE_4__.addIconOverlay)(isIVolunteer, markerDataset[i], map, selectedMetric);
         }
     }
     else {
         map.getLayers().getArray()
             .filter(function (layer) { return layer.get('name') === 'LocationMarker'; })
             .forEach(function (layer) { return map.removeLayer(layer); });
-        if (zoom >= _utils__WEBPACK_IMPORTED_MODULE_3__.ZoomLevel.COUNTRY) {
+        if (zoom >= _utils__WEBPACK_IMPORTED_MODULE_2__.ZoomLevel.COUNTRY) {
             markerDataset = getDataSetForMarkers(isIVolunteer, selectedFilters);
             for (var i = 0; i < markerDataset.length; i++) {
-                (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.addIconOverlay)(isIVolunteer, markerDataset[i], map, selectedMetric);
+                (0,_MapUtils__WEBPACK_IMPORTED_MODULE_4__.addIconOverlay)(isIVolunteer, markerDataset[i], map, selectedMetric);
             }
         }
     }
 };
 var getDataSetForMarkers = function (isIVolunteer, selectedFilters) {
     if (isIVolunteer) {
-        return (0,_utils__WEBPACK_IMPORTED_MODULE_3__.getFilteredIVolData)(_data_ivol_database__WEBPACK_IMPORTED_MODULE_2__["default"], selectedFilters);
+        return (0,_utils__WEBPACK_IMPORTED_MODULE_2__.getFilteredIVolData)((0,_utils__WEBPACK_IMPORTED_MODULE_2__.getIVolData)(), selectedFilters);
     }
     else {
         var citiesDataset = [];
@@ -36391,37 +36225,37 @@ var clickOnMapMarkerIVol = function (feature, map) {
         var markerTaskId = marker.get('source').getFeatures()[0].get('taskid');
         if (markerTaskId = feature.get('taskid')) {
             // get data for taskid
-            var data_1 = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.getDataFromTaskId)(markerTaskId);
+            var data_1 = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.getDataFromTaskId)(markerTaskId);
             if (data_1 !== undefined) {
                 // show tooltip panel
                 var tooltipPanel_1 = document.getElementById('tooltip-panel');
-                tooltipPanel_1.classList.add(_Map_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].iVolTooltipPanel);
+                tooltipPanel_1.classList.add(_Map_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].iVolTooltipPanel);
                 // add data to tooltip
                 $('#tooltip-title').text(data_1.taskname);
                 $('#tooltip-taskid').text(data_1.taskid);
                 $('#tooltip-responsible').text(data_1.coordinator);
                 $('#tooltip-city').text(data_1.address.zip + ' ' + data_1.address.city);
-                // calculate priority based on date
-                var dateFrom = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.getDateString)(data_1.date).dateFrom;
+                // calculate urgency based on date
+                var dateFrom = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_4__.getDateString)(data_1.date).dateFrom;
                 $('#tooltip-date').text(dateFrom.toLocaleString());
-                var diffDays = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_5__.getTaskUrgencyDays)(dateFrom);
-                var priority = void 0;
-                if (diffDays <= _utils__WEBPACK_IMPORTED_MODULE_3__.UrgencyDays.SEVERE) {
-                    priority = 'very high';
-                }
-                else if (diffDays <= _utils__WEBPACK_IMPORTED_MODULE_3__.UrgencyDays.HIGH) {
-                    priority = 'high';
-                }
-                else if (diffDays <= _utils__WEBPACK_IMPORTED_MODULE_3__.UrgencyDays.MEDIUM) {
-                    priority = 'medium';
+                var diffDays = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_4__.getTaskUrgencyDays)(dateFrom);
+                var urgencyString = void 0;
+                if (diffDays === 1) {
+                    urgencyString = 'morgen';
                 }
                 else {
-                    priority = 'low';
+                    urgencyString = 'in ' + diffDays + ' Tagen';
                 }
-                $('#tooltip-urgency').text(priority);
+                if (diffDays <= _utils__WEBPACK_IMPORTED_MODULE_2__.UrgencyDays.SEVERE) {
+                    urgencyString += ' - sehr dringend!!';
+                }
+                else if (diffDays <= _utils__WEBPACK_IMPORTED_MODULE_2__.UrgencyDays.HIGH) {
+                    urgencyString += ' - dringend!';
+                }
+                $('#tooltip-urgency').text(urgencyString);
                 // add clickhandlers
                 $('#close-tooltip').on('click', function () {
-                    tooltipPanel_1.classList.remove(_Map_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].iVolTooltipPanel);
+                    tooltipPanel_1.classList.remove(_Map_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].iVolTooltipPanel);
                 });
                 $('#tooltip-details-link').attr('href', 'ivolunteer_-_taskdetails.html?taskid=' + markerTaskId);
             }
@@ -36431,14 +36265,40 @@ var clickOnMapMarkerIVol = function (feature, map) {
         _loop_2(i);
     }
 };
-var showTooltip = function (selectedFilters) {
-    for (var i = 0; i < selectedFilters.length; i++) {
-        if (selectedFilters[i].key === 'country') {
-            $('#tooltip-panel').show();
-            return;
+var showTooltip = function (show) {
+    if (show) {
+        $('#tooltip-panel').show();
+    }
+    else {
+        $('#tooltip-panel').hide();
+    }
+};
+var setTooltipData = function (location, selectedFilters) {
+    // Show Dynatrace-related information
+    var values = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.groupValuesPerLocation)(data, 'iso');
+    var valueFound = false;
+    for (var i = 0; i < values.length; i++) {
+        var curElement = values[i];
+        if (curElement['iso'] == location.getId()) {
+            $('#tooltip_apdex').text(curElement['apdex']);
+            $('#tooltip_useractions').text(curElement['useractions'] + '/min');
+            $('#tooltip_errors').text(curElement['errors'] + '/min');
+            $('#tooltip_loadactions').text(curElement['loadactions']);
+            $('#tooltip_totaluseractions').text(curElement['totaluseractions']);
+            $('#tooltip_affecteduseractions').text(curElement['affecteduseractions'] + ' %');
+            valueFound = true;
+            break;
         }
     }
-    $('#tooltip-panel').hide();
+    if (!valueFound) {
+        $('#tooltip_apdex').text('?');
+        $('#tooltip_useractions').text('?');
+        $('#tooltip_errors').text('?');
+        $('#tooltip_loadactions').text('?');
+        $('#tooltip_totaluseractions').text('?');
+        $('#tooltip_affecteduseractions').text('?');
+    }
+    showTooltip(true);
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InteractiveMap);
 
@@ -36467,11 +36327,34 @@ var MetricSwitcher = function (_a) {
     var metricCallback = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
         setMetric(value);
         onSetMetric(value);
+        if (isIVolunteer) {
+            // change visibility of legend panel
+            if (value === 'urgency') {
+                $('#legendUrgencyPanel').show();
+                $('#legendPriorityPanel').hide();
+                $('#legendDurationPanel').hide();
+            }
+            else if (value === 'priority') {
+                $('#legendUrgencyPanel').hide();
+                $('#legendPriorityPanel').show();
+                $('#legendDurationPanel').hide();
+            }
+            else if (value === 'duration') {
+                $('#legendUrgencyPanel').hide();
+                $('#legendPriorityPanel').hide();
+                $('#legendDurationPanel').show();
+            }
+            else {
+                $('#legendUrgencyPanel').hide();
+                $('#legendPriorityPanel').hide();
+                $('#legendDurationPanel').hide();
+            }
+        }
     }, [selectedMetric, onSetMetric]);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "".concat(_MetricSwitcher_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].metricSwitcherPanel, " ").concat(isIVolunteer ? _MetricSwitcher_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].metricSwitcherPanelIVol : _MetricSwitcher_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].metricSwitcherPanelDt) }, isIVolunteer ?
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(MetricElement, { caption: "Dringlichkeit", id: "urgency", selected: selectedMetric === 'urgency', setMetric: metricCallback, isIVolunteer: isIVolunteer }),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(MetricElement, { caption: "Deadline", id: "urgency", selected: selectedMetric === 'urgency', setMetric: metricCallback, isIVolunteer: isIVolunteer }),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(MetricElement, { caption: "Priorit\u00E4t", id: "priority", selected: selectedMetric === 'priority', setMetric: metricCallback, isIVolunteer: isIVolunteer }),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(MetricElement, { caption: "Dauer", id: "duration", selected: selectedMetric === 'duration', setMetric: metricCallback, isIVolunteer: isIVolunteer }))
             :
@@ -36567,7 +36450,7 @@ var TableContent = function (_a) {
     var dataOnPage = _a.dataOnPage, selectedMetric = _a.selectedMetric, selectedFilters = _a.selectedFilters, setFilter = _a.setFilter, isIVolunteer = _a.isIVolunteer;
     var columnHeaders;
     if (isIVolunteer) {
-        columnHeaders = ['Task Name', 'Task ID'];
+        columnHeaders = ['Task Name', 'Bundesland'];
     }
     else {
         if (selectedMetric === 'apdex') {
@@ -36600,7 +36483,7 @@ var TableContent = function (_a) {
                                 dataRow[selectedMetric],
                                 " / min")
                             : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell }, dataRow[selectedMetric])
-                    : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell }, dataRow.taskid),
+                    : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell }, dataRow.address.region !== '' ? dataRow.address.region : '<n/a>'),
                 !isIVolunteer
                     ? selectedMetric === 'apdex'
                         ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell },
@@ -36853,19 +36736,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "DurationLength": () => (/* binding */ DurationLength),
 /* harmony export */   "Apdex": () => (/* binding */ Apdex),
 /* harmony export */   "FilterType": () => (/* binding */ FilterType),
+/* harmony export */   "getIVolData": () => (/* binding */ getIVolData),
 /* harmony export */   "getFilterType": () => (/* binding */ getFilterType),
 /* harmony export */   "groupValuesPerLocation": () => (/* binding */ groupValuesPerLocation),
 /* harmony export */   "getDataFromTaskId": () => (/* binding */ getDataFromTaskId),
 /* harmony export */   "getUrlParameter": () => (/* binding */ getUrlParameter),
 /* harmony export */   "getFilteredIVolData": () => (/* binding */ getFilteredIVolData),
-/* harmony export */   "filterDtData": () => (/* binding */ filterDtData)
+/* harmony export */   "filterDtData": () => (/* binding */ filterDtData),
+/* harmony export */   "getPriorityLevelText": () => (/* binding */ getPriorityLevelText)
 /* harmony export */ });
 /* harmony import */ var ol_ol_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/ol.css */ "./node_modules/ol/ol.css");
 /* harmony import */ var _data_dt_database__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data/dt_database */ "./src/customCode/data/dt_database.ts");
 /* harmony import */ var _data_dt_filters__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data/dt_filters */ "./src/customCode/data/dt_filters.ts");
-/* harmony import */ var _data_ivol_database__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./data/ivol_database */ "./src/customCode/data/ivol_database.ts");
-/* harmony import */ var _data_ivol_filters__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./data/ivol_filters */ "./src/customCode/data/ivol_filters.ts");
-
+/* harmony import */ var _data_ivol_filters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./data/ivol_filters */ "./src/customCode/data/ivol_filters.ts");
 
 
 
@@ -36913,13 +36796,26 @@ var FilterType;
     FilterType["RANGE"] = "range";
     FilterType["DATE"] = "date";
 })(FilterType || (FilterType = {}));
+// ---------------------------------------------------------------------
+var getIVolData = function () {
+    var data = JSON.parse(sessionStorage.getItem('iVolData'));
+    var dataInTheFuture = [];
+    var today = new Date();
+    for (var i = 0; i < data.length; i++) {
+        var dataDate = new Date(data[i].date.from);
+        if (today <= dataDate) {
+            dataInTheFuture.push(data[i]);
+        }
+    }
+    return dataInTheFuture;
+};
 var getFilterType = function (filterName) {
     // check iVolunteer filter database
-    var iVolKeys = Object.keys(_data_ivol_filters__WEBPACK_IMPORTED_MODULE_4__["default"][0]);
+    var iVolKeys = Object.keys(_data_ivol_filters__WEBPACK_IMPORTED_MODULE_3__["default"][0]);
     for (var i = 0; i < iVolKeys.length; i++) {
         var filter = iVolKeys[i];
         if (filter === filterName) {
-            return _data_ivol_filters__WEBPACK_IMPORTED_MODULE_4__["default"][0][filter].filterType;
+            return _data_ivol_filters__WEBPACK_IMPORTED_MODULE_3__["default"][0][filter].filterType;
         }
     }
     // check Dynatrace filter database
@@ -36931,8 +36827,6 @@ var getFilterType = function (filterName) {
         }
     }
 };
-// ---------------------------------------------------------------------
-// table functions
 function groupValuesPerLocation(data, locationKey) {
     var groupedValuesMap = [];
     for (var i = 0; i < data.length; i++) {
@@ -36976,9 +36870,10 @@ function groupValuesPerLocation(data, locationKey) {
 }
 function getDataFromTaskId(taskId) {
     var taskIdNumber = Number(taskId);
-    for (var i = 0; i < _data_ivol_database__WEBPACK_IMPORTED_MODULE_3__["default"].length; i++) {
-        if (_data_ivol_database__WEBPACK_IMPORTED_MODULE_3__["default"][i].taskid === taskIdNumber) {
-            return _data_ivol_database__WEBPACK_IMPORTED_MODULE_3__["default"][i];
+    var iVolData = getIVolData();
+    for (var i = 0; i < iVolData.length; i++) {
+        if (iVolData[i].taskid === taskIdNumber) {
+            return iVolData[i];
         }
     }
     return;
@@ -37120,6 +37015,18 @@ function filterDtData(selectedFilters) {
     }
     return selectedFilters.length > 0 ? filteredData : _data_dt_database__WEBPACK_IMPORTED_MODULE_1__["default"];
 }
+var getPriorityLevelText = function (level) {
+    switch (level) {
+        case PriorityLevels.HIGH:
+            return 'hoch';
+        case PriorityLevels.MEDIUM:
+            return 'mittel';
+        case PriorityLevels.LOW:
+            return 'niedrig';
+        default:
+            return '<n/a>';
+    }
+};
 
 
 /***/ }),
