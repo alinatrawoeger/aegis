@@ -15,49 +15,60 @@ let overlayColorMap = {
         'Excellent': {
             selectedColor: 'rgba(61, 199, 29, 0.9)',
             hoverColor: 'rgba(61, 199, 29, 0.5)',
+            staticColor: 'rgba(61, 199, 29, 0.25)',
         },
         'Good': {
             selectedColor: 'rgba(122, 254, 92, 0.9)',
             hoverColor: 'rgba(122, 254, 92, 0.5)',
+            staticColor: 'rgba(122, 254, 92, 0.25)',
         },
         'Fair': {
             selectedColor: 'rgba(255, 225, 0, 0.9)',
             hoverColor: 'rgba(255, 225, 0, 0.5)',
+            staticColor: 'rgba(255, 225, 0, 0.25)',
         },
         'Poor': {
             selectedColor: 'rgba(255, 106, 0, 0.9)',
             hoverColor: 'rgba(255, 106, 0, 0.5)',
+            staticColor: 'rgba(255, 106, 0, 0.25)',
         },
         'Unacceptable': {
             selectedColor: 'rgba(238, 16, 12, 0.9)',
             hoverColor: 'rgba(238, 16, 12, 0.5)',
+            staticColor: 'rgba(238, 16, 12, 0.25)',
         }
     },
     'other': {
         'Excellent': {
             selectedColor: 'rgba(98, 36, 128, 0.9)',
             hoverColor: 'rgba(98, 36, 128, 0.5)',
+            staticColor: 'rgba(98, 36, 128, 0.25)',
         },
         'Good': {
             selectedColor: 'rgba(135, 56, 175, 0.9)',
             hoverColor: 'rgba(135, 56, 175, 0.5)',
+            staticColor: 'rgba(135, 56, 175, 0.25)',
         },
         'Fair': {
             selectedColor: 'rgba(170, 86, 212, 0.9)',
             hoverColor: 'rgba(170, 86, 212, 0.5)',
+            staticColor: 'rgba(170, 86, 212, 0.25)',
         },
         'Poor': {
             selectedColor: 'rgba(188, 111, 227, 0.9)',
             hoverColor: 'rgba(188, 111, 227, 0.5)',
+            staticColor: 'rgba(188, 111, 227, 0.25)',
         },
         'Unacceptable': {
             selectedColor: 'rgba(210, 150, 239, 0.9)',
             hoverColor: 'rgba(210, 150, 239, 0.5)',
+            staticColor: 'rgba(210, 150, 239, 0.25)',
         }
     },
     'empty': {
         selectedColor: 'rgba(177, 177, 177, 0.5)',
         hoverColor: 'rgba(177, 177, 177, 0.25)',
+        staticColor: 'rgba(255, 255, 255, 0.5)',
     }
 };
 
@@ -110,6 +121,9 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
     const mapRef = useRef<OLMap>(); // map object for later use
     mapRef.current = map;
 
+    const metricRef = useRef<string>();
+    metricRef.current = selectedMetric;
+
     const filterRef = useRef();
     filterRef.current = selectedFilters;
 
@@ -119,13 +133,25 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
         url: "../data/geodata/countries.geojson",
         format: new GeoJSON(),
     });
-
+    
     // initialize map and overlays (only called once)
     useEffect( () => {
         // create and add vector source layer
         const overlayLayer = new VectorLayer({
-            source: overlaySource
+            source: overlaySource,
+            style: function (feature) {
+                const color = getDtOverlayColor(metricRef.current, feature, undefined);
+                return new Style({
+                  fill: new Fill({
+                    color: color,
+                  }),
+                  stroke: new Stroke({
+                    color: 'rgba(2, 167, 240, 1)',
+                  }),
+                });
+              },
         });
+
         // create map
         const initialMap: OLMap = createMap(mapElement.current, defaultZoom, defaultLongitude, defaultLatitude, isIVolunteer, overlayLayer);
 
@@ -222,14 +248,7 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
 
     useEffect( () => {
         if (selectedLocation !== undefined) { // at the beginning no location is selected
-            let value;
-            for (let i = 0; i < data.length; i++) {
-                if (data[i].iso === selectedLocation.getId()) {
-                    value = data[i][selectedMetric];
-                    break;
-                }
-            }
-            selectedColor = getDtOverlayColor(selectedMetric, value, true);
+            selectedColor = getDtOverlayColor(selectedMetric, selectedLocation, true);
 
             selectStyle.getFill().setColor(selectedColor);
             selectedLocation.setStyle(selectStyle);
@@ -248,14 +267,7 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
         }
 
         if (hoveredLocation !== undefined) { // at the beginning no location is hovered over
-            let value;
-            for (let i = 0; i < data.length; i++) {
-                if (data[i].iso === hoveredLocation.getId()) {
-                    value = data[i][selectedMetric];
-                    break;
-                }
-            }
-            hoverColor = getDtOverlayColor(selectedMetric, value, false);
+            hoverColor = getDtOverlayColor(selectedMetric, hoveredLocation, false);
 
             hoverStyle.getFill().setColor(hoverColor)
             hoveredLocation.setStyle(hoverStyle);
@@ -270,10 +282,6 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
                 if (tooltipTitle) {
                     tooltipTitle.innerHTML = hoveredLocation.get('name');
                     setTooltipData(hoveredLocation, selectedFilters);
-                    // if (selectedLocation && !isIVolunteer) {
-                    // } else {
-                    //     tooltipTitle.innerHTML = '&nbsp;';
-                    // }
                 }
             }
         }
@@ -345,10 +353,32 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
       )
 }
 
-const getDtOverlayColor = (selectedMetric: string, value: number, selectMode: boolean) => {
+const getDtOverlayColor = (selectedMetric: string, countryFeature: any, selectMode: boolean) => {
     let metricMapping = selectedMetric === 'apdex' ? selectedMetric : 'other';
     
-    if (selectMode) {
+    let value;
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].iso === countryFeature.getId()) {
+            value = data[i][selectedMetric];
+            break;
+        }
+    }
+    
+    if (selectMode === undefined) {
+        if (value < Apdex.UNACCEPTABLE) {
+            return overlayColorMap[metricMapping].Unacceptable.staticColor;
+        } else if (value < Apdex.POOR) {
+            return overlayColorMap[metricMapping].Poor.staticColor;
+        } else if (value < Apdex.FAIR) {
+            return overlayColorMap[metricMapping].Fair.staticColor;
+        } else if (value < Apdex.GOOD) {
+            return overlayColorMap[metricMapping].Good.staticColor;
+        } else if (value < Apdex.EXCELLENT) {
+            return overlayColorMap[metricMapping].Excellent.staticColor;
+        } else {
+            return overlayColorMap.empty.staticColor;
+        }
+    } else if (selectMode) {
         if (value < Apdex.UNACCEPTABLE) {
             return overlayColorMap[metricMapping].Unacceptable.selectedColor;
         } else if (value < Apdex.POOR) {
@@ -376,7 +406,7 @@ const getDtOverlayColor = (selectedMetric: string, value: number, selectMode: bo
         } else {
             return overlayColorMap.empty.hoverColor;
         }
-    }    
+    } 
 }
 
 const checkForExistingCountryFilter = (filters) => {
