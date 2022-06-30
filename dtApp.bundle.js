@@ -35845,49 +35845,60 @@ var overlayColorMap = {
         'Excellent': {
             selectedColor: 'rgba(61, 199, 29, 0.9)',
             hoverColor: 'rgba(61, 199, 29, 0.5)',
+            staticColor: 'rgba(61, 199, 29, 0.25)',
         },
         'Good': {
             selectedColor: 'rgba(122, 254, 92, 0.9)',
             hoverColor: 'rgba(122, 254, 92, 0.5)',
+            staticColor: 'rgba(122, 254, 92, 0.25)',
         },
         'Fair': {
             selectedColor: 'rgba(255, 225, 0, 0.9)',
             hoverColor: 'rgba(255, 225, 0, 0.5)',
+            staticColor: 'rgba(255, 225, 0, 0.25)',
         },
         'Poor': {
             selectedColor: 'rgba(255, 106, 0, 0.9)',
             hoverColor: 'rgba(255, 106, 0, 0.5)',
+            staticColor: 'rgba(255, 106, 0, 0.25)',
         },
         'Unacceptable': {
             selectedColor: 'rgba(238, 16, 12, 0.9)',
             hoverColor: 'rgba(238, 16, 12, 0.5)',
+            staticColor: 'rgba(238, 16, 12, 0.25)',
         }
     },
     'other': {
         'Excellent': {
             selectedColor: 'rgba(98, 36, 128, 0.9)',
             hoverColor: 'rgba(98, 36, 128, 0.5)',
+            staticColor: 'rgba(98, 36, 128, 0.25)',
         },
         'Good': {
             selectedColor: 'rgba(135, 56, 175, 0.9)',
             hoverColor: 'rgba(135, 56, 175, 0.5)',
+            staticColor: 'rgba(135, 56, 175, 0.25)',
         },
         'Fair': {
             selectedColor: 'rgba(170, 86, 212, 0.9)',
             hoverColor: 'rgba(170, 86, 212, 0.5)',
+            staticColor: 'rgba(170, 86, 212, 0.25)',
         },
         'Poor': {
             selectedColor: 'rgba(188, 111, 227, 0.9)',
             hoverColor: 'rgba(188, 111, 227, 0.5)',
+            staticColor: 'rgba(188, 111, 227, 0.25)',
         },
         'Unacceptable': {
             selectedColor: 'rgba(210, 150, 239, 0.9)',
             hoverColor: 'rgba(210, 150, 239, 0.5)',
+            staticColor: 'rgba(210, 150, 239, 0.25)',
         }
     },
     'empty': {
         selectedColor: 'rgba(177, 177, 177, 0.5)',
         hoverColor: 'rgba(177, 177, 177, 0.25)',
+        staticColor: 'rgba(255, 255, 255, 0.5)',
     }
 };
 var data;
@@ -35925,6 +35936,8 @@ var InteractiveMap = function (_a) {
     var mapElement = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
     var mapRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(); // map object for later use
     mapRef.current = map;
+    var metricRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+    metricRef.current = selectedMetric;
     var filterRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
     filterRef.current = selectedFilters;
     var currZoom = undefined;
@@ -35936,7 +35949,18 @@ var InteractiveMap = function (_a) {
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         // create and add vector source layer
         var overlayLayer = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_7__["default"]({
-            source: overlaySource
+            source: overlaySource,
+            style: function (feature) {
+                var color = getDtOverlayColor(metricRef.current, feature, undefined);
+                return new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
+                    fill: new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
+                        color: color,
+                    }),
+                    stroke: new ol_style__WEBPACK_IMPORTED_MODULE_10__["default"]({
+                        color: 'rgba(2, 167, 240, 1)',
+                    }),
+                });
+            },
         });
         // create map
         var initialMap = (0,_MapUtils__WEBPACK_IMPORTED_MODULE_4__.createMap)(mapElement.current, defaultZoom, _MapUtils__WEBPACK_IMPORTED_MODULE_4__.defaultLongitude, _MapUtils__WEBPACK_IMPORTED_MODULE_4__.defaultLatitude, isIVolunteer, overlayLayer);
@@ -36017,14 +36041,7 @@ var InteractiveMap = function (_a) {
     };
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         if (selectedLocation !== undefined) { // at the beginning no location is selected
-            var value = void 0;
-            for (var i = 0; i < data.length; i++) {
-                if (data[i].iso === selectedLocation.getId()) {
-                    value = data[i][selectedMetric];
-                    break;
-                }
-            }
-            selectedColor = getDtOverlayColor(selectedMetric, value, true);
+            selectedColor = getDtOverlayColor(selectedMetric, selectedLocation, true);
             selectStyle.getFill().setColor(selectedColor);
             selectedLocation.setStyle(selectStyle);
             previouslySelectedLocation = selectedLocation;
@@ -36041,14 +36058,7 @@ var InteractiveMap = function (_a) {
             }
         }
         if (hoveredLocation !== undefined) { // at the beginning no location is hovered over
-            var value = void 0;
-            for (var i = 0; i < data.length; i++) {
-                if (data[i].iso === hoveredLocation.getId()) {
-                    value = data[i][selectedMetric];
-                    break;
-                }
-            }
-            hoverColor = getDtOverlayColor(selectedMetric, value, false);
+            hoverColor = getDtOverlayColor(selectedMetric, hoveredLocation, false);
             hoverStyle.getFill().setColor(hoverColor);
             hoveredLocation.setStyle(hoverStyle);
             previouslyHoveredLocation = hoveredLocation;
@@ -36062,10 +36072,6 @@ var InteractiveMap = function (_a) {
                 if (tooltipTitle) {
                     tooltipTitle.innerHTML = hoveredLocation.get('name');
                     setTooltipData(hoveredLocation, selectedFilters);
-                    // if (selectedLocation && !isIVolunteer) {
-                    // } else {
-                    //     tooltipTitle.innerHTML = '&nbsp;';
-                    // }
                 }
             }
         }
@@ -36128,9 +36134,36 @@ var InteractiveMap = function (_a) {
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { ref: mapElement, className: !isIVolunteer ? _Map_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].container_dt : _Map_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].container_ivol })));
 };
-var getDtOverlayColor = function (selectedMetric, value, selectMode) {
+var getDtOverlayColor = function (selectedMetric, countryFeature, selectMode) {
     var metricMapping = selectedMetric === 'apdex' ? selectedMetric : 'other';
-    if (selectMode) {
+    var value;
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].iso === countryFeature.getId()) {
+            value = data[i][selectedMetric];
+            break;
+        }
+    }
+    if (selectMode === undefined) {
+        if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.UNACCEPTABLE) {
+            return overlayColorMap[metricMapping].Unacceptable.staticColor;
+        }
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.POOR) {
+            return overlayColorMap[metricMapping].Poor.staticColor;
+        }
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.FAIR) {
+            return overlayColorMap[metricMapping].Fair.staticColor;
+        }
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.GOOD) {
+            return overlayColorMap[metricMapping].Good.staticColor;
+        }
+        else if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.EXCELLENT) {
+            return overlayColorMap[metricMapping].Excellent.staticColor;
+        }
+        else {
+            return overlayColorMap.empty.staticColor;
+        }
+    }
+    else if (selectMode) {
         if (value < _utils__WEBPACK_IMPORTED_MODULE_2__.Apdex.UNACCEPTABLE) {
             return overlayColorMap[metricMapping].Unacceptable.selectedColor;
         }
