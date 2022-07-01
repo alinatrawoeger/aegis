@@ -64,7 +64,7 @@ const Table: React.FC<TableProps> = ( { data, selectedMetric, filters, onSetFilt
 const TableContent = ({ dataOnPage, selectedMetric, selectedFilters, setFilter, isIVolunteer }) => {
   let columnHeaders: string[];
   if (isIVolunteer) {
-    columnHeaders = ['Task Name', 'Bundesland'];
+    columnHeaders = ['Taskname', 'Bundesland'];
   } else {
     if (selectedMetric === 'apdex') {
       columnHeaders = ['Location', columnHeaderNamesMap.get(selectedMetric), 'User actions'];

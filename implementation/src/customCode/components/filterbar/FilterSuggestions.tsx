@@ -56,7 +56,7 @@ const FilterSuggestionPanel = ( { suggestions, isIVolunteer, onSetNewFilterValue
                 !showFilters && !showSuggestions && filterList.length > 0
                 ?   <div className={`${styles.filterElement} ${styles.addFilterBtn} ${isIVolunteer ? styles.filterElementIVol : styles.filterElementDt}`} 
                             onClick={() => displayFilters(true, setShowFilters)}>
-                        <span>Add filter</span>
+                        <span>{isIVolunteer ? 'Filter hinzufügen' : 'Add filter'}</span>
                     </div>
                 :   ''
             }
