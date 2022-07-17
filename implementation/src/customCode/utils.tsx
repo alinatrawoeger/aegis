@@ -82,6 +82,8 @@ export const getFilterType = (filterName: any) => {
             return dtFilters[0][filter].filterType;
         }
     }
+
+    return FilterType.TEXT;
 }
 
 export function groupValuesPerLocation(data: any, locationKey: string) {
@@ -243,6 +245,13 @@ export function getFilteredIVolData(dataset, selectedFilters) {
                 }
             }
           }
+        } else {
+            for (let j = 0; j < dataSet.length; j++) {
+                let dataElement = dataSet[j][curFilterKey];
+                if (curFilterValue === dataElement) {
+                    filteredDataPerCycle.push(dataSet[j]);
+                }
+            }
         }
 
         filteredData = filteredDataPerCycle;

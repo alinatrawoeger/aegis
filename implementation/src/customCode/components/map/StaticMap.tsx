@@ -95,6 +95,7 @@ const StaticMap: React.FC<StaticMapProps> = ({ dataRow, addTask, onSelectedLocat
             }
     
             $('#zipcode_input').val(addressData.postcode);
+            $('#zipcode_input').trigger('change');
 
             // city can be saved either under city, county or state
             let city = addressData.city;

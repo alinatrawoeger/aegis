@@ -166,6 +166,7 @@
   font-style:normal;
   font-size:18px;
   color:#7F7F7F;
+  cursor: pointer;
 }
 #u3 .text {
   position:absolute;

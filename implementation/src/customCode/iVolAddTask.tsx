@@ -129,6 +129,7 @@ const saveNewTask = function(mapData) {
 const isInputValid = () => {
   let taskName = $('#taskName_input').val();
   let beginDate = $('#beginDate_input').val();
+  let endDate = $('#endDateInput').val();
   let startTime = $('#startTime_input').val();
   let endTime = $('#endTimeInput').val();
   let zipCode = $('#zipcode_input').val();
@@ -139,7 +140,6 @@ const isInputValid = () => {
   if (isValid) {
       let fullStartDate = new Date(beginDate + 'T' + startTime + 'Z');
 
-      let endDate = $('#endDateInput').val();
       let fullEndDate;
       if (endDate !== undefined) {
         fullEndDate = new Date(endDate + 'T' + endTime + 'Z');

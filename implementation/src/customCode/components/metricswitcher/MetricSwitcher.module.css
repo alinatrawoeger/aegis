@@ -46,17 +46,14 @@
 .selectedElementIVolUrgency {
     background-color: rgb(174, 37, 12);
     color: white;
-    font-weight: 700;
 }
 
 .selectedElementIVolPriority {
     background-color: rgb(255, 179, 0);
     color: white;
-    font-weight: 700;
 }
 
 .selectedElementIVolDuration {
     background-color: rgb(3, 102, 7);
     color: white;
-    font-weight: 700;
 }

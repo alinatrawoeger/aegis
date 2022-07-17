@@ -210,11 +210,8 @@ const clickOnTableRow = (setFilter, filterElement, filters, isIVolunteer) => {
     let newFilter;
     if (isIVolunteer) {
         newFilter = {
-            "key": "taskid",
-            "value": {
-              "from": filterElement.taskid,
-              "to": ""
-            }
+            "key": "taskname",
+            "value": filterElement.taskname,
         }
     } else {
         let key;

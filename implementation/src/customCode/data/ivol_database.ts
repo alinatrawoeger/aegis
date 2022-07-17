@@ -60,7 +60,7 @@ export default [
         "coordinator": "Tiergarten-Verein Österreich",
         "priority": 3,
         "date": {
-            "from": "2022-07-27T13:15:00Z",
+            "from": "2022-08-03T13:15:00Z",
             "to": ""
         },
         "friend": [
@@ -82,7 +82,7 @@ export default [
         "taskid": 12348,
         "coordinator": "Rotes Kreuz",
         "date": {
-            "from": "2022-07-20T14:30:00Z",
+            "from": "2022-07-25T14:30:00Z",
             "to": ""
         },
         "priority": 2,
