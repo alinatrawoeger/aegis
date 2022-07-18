@@ -13,7 +13,7 @@ const FilterElement = ( { filterKey, filterValue, removeFilter, isIVolunteer } )
     }
     return (
         <>
-            <div className={`${styles.filterElement} ${isIVolunteer ? styles.filterElementIVol : styles.filterElementDt}`} key={filterKey} id={filterKey}>
+            <div className={`${styles.filterElement} ${isIVolunteer ? styles.filterElementIVol : styles.filterElementDt}`} key={filterKey} id={`${filterKey}Filter`}>
                 <div className={styles.filterTextPanel}>
                     <span className={styles.filterKey}>{filterKey}: </span>
                     {
