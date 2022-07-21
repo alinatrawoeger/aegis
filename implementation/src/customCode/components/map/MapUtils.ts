@@ -34,7 +34,8 @@ export const createMap = (target: string, zoom: ZoomLevel, lon: number, lat: num
     });
     var view = new View({
         center: fromLonLat([lon, lat]),
-        zoom: zoom
+        zoom: zoom,
+        enableRotation: false
     });
 
     if (!isIVolunteer) {
@@ -52,7 +53,6 @@ export const createMap = (target: string, zoom: ZoomLevel, lon: number, lat: num
 
         return new Map({
             controls: defaultControls().extend([minimapControl]),
-            interactions: defaults().extend([new DragRotateAndZoom()]),
             target: target,
             layers: [ mapLayer, overlayLayer ],
             view: view
