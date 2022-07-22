@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = [
@@ -20,14 +19,10 @@ module.exports = [
             hot: true,
         },
         plugins: [
-            new HtmlWebpackPlugin({
-                template: './src/index.html',
-                inject: 'body',
-                scriptLoading: 'module'
-            }),
             new CopyPlugin({
                 patterns: [
                   { from: "./src/logo.svg", to: "img" },
+                  { from: "./src/index.html", to: "" },
                   { from: "./src/axure", to: "axure" },
                   { from: "./src/customCode/data/geodata", to: "data/geodata" },
                   { from: "./src/customCode/styles", to: "styles" },
