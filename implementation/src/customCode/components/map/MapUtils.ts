@@ -142,6 +142,7 @@ export const setIconMarker = (lon: number, lat: number, map: Map, markerId?: str
       
       const vectorSource = new VectorSource({
         features: [iconFeature],
+        wrapX: false,
       });
       
       
