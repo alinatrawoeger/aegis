@@ -34446,19 +34446,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ol */ "./node_modules/ol/View.js");
 /* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ol */ "./node_modules/ol/Map.js");
-/* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ol */ "./node_modules/ol/Feature.js");
+/* harmony import */ var ol__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ol */ "./node_modules/ol/Feature.js");
 /* harmony import */ var ol_control__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ol/control */ "./node_modules/ol/control.js");
 /* harmony import */ var ol_control_OverviewMap__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ol/control/OverviewMap */ "./node_modules/ol/control/OverviewMap.js");
-/* harmony import */ var ol_geom_Point__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ol/geom/Point */ "./node_modules/ol/geom/Point.js");
-/* harmony import */ var ol_interaction__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ol/interaction */ "./node_modules/ol/interaction.js");
-/* harmony import */ var ol_interaction__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ol/interaction */ "./node_modules/ol/interaction/DragRotateAndZoom.js");
+/* harmony import */ var ol_geom_Point__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ol/geom/Point */ "./node_modules/ol/geom/Point.js");
 /* harmony import */ var ol_layer_Tile__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ol/layer/Tile */ "./node_modules/ol/layer/Tile.js");
-/* harmony import */ var ol_layer_Vector__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ol/layer/Vector */ "./node_modules/ol/layer/Vector.js");
+/* harmony import */ var ol_layer_Vector__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ol/layer/Vector */ "./node_modules/ol/layer/Vector.js");
 /* harmony import */ var ol_proj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/proj */ "./node_modules/ol/proj.js");
 /* harmony import */ var ol_source_OSM__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ol/source/OSM */ "./node_modules/ol/source/OSM.js");
-/* harmony import */ var ol_source_Vector__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ol/source/Vector */ "./node_modules/ol/source/Vector.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Style.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Icon.js");
+/* harmony import */ var ol_source_Vector__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ol/source/Vector */ "./node_modules/ol/source/Vector.js");
+/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Style.js");
+/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Icon.js");
 /* harmony import */ var _data_dt_filters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../data/dt_filters */ "./src/customCode/data/dt_filters.ts");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils */ "./src/customCode/utils.tsx");
 /* harmony import */ var _img_criticalevent_red_800_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./img/criticalevent-red_800.svg */ "./src/customCode/components/map/img/criticalevent-red_800.svg");
@@ -34495,7 +34493,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 // test data (coordinates of the center of Austria)
 var defaultLongitude = 14.12456;
 var defaultLatitude = 47.59397;
@@ -34505,7 +34502,8 @@ var createMap = function (target, zoom, lon, lat, isIVolunteer, overlayLayer) {
     });
     var view = new ol__WEBPACK_IMPORTED_MODULE_16__["default"]({
         center: (0,ol_proj__WEBPACK_IMPORTED_MODULE_0__.fromLonLat)([lon, lat]),
-        zoom: zoom
+        zoom: zoom,
+        enableRotation: false
     });
     if (!isIVolunteer) {
         var minimapControl = new ol_control_OverviewMap__WEBPACK_IMPORTED_MODULE_17__["default"]({
@@ -34520,7 +34518,6 @@ var createMap = function (target, zoom, lon, lat, isIVolunteer, overlayLayer) {
         view.setMaxZoom(_utils__WEBPACK_IMPORTED_MODULE_2__.ZoomLevel.REGION);
         return new ol__WEBPACK_IMPORTED_MODULE_18__["default"]({
             controls: (0,ol_control__WEBPACK_IMPORTED_MODULE_19__.defaults)().extend([minimapControl]),
-            interactions: (0,ol_interaction__WEBPACK_IMPORTED_MODULE_20__.defaults)().extend([new ol_interaction__WEBPACK_IMPORTED_MODULE_21__["default"]()]),
             target: target,
             layers: [mapLayer, overlayLayer],
             view: view
@@ -34592,8 +34589,8 @@ var addIconOverlay = function (isIVolunteer, markerData, map, selectedMetric) {
     }
 };
 var setIconMarker = function (lon, lat, map, markerId, iconSource) {
-    var iconFeature = new ol__WEBPACK_IMPORTED_MODULE_22__["default"]({
-        geometry: new ol_geom_Point__WEBPACK_IMPORTED_MODULE_23__["default"]((0,ol_proj__WEBPACK_IMPORTED_MODULE_0__.transform)([lon, lat], 'EPSG:4326', 'EPSG:3857')),
+    var iconFeature = new ol__WEBPACK_IMPORTED_MODULE_20__["default"]({
+        geometry: new ol_geom_Point__WEBPACK_IMPORTED_MODULE_21__["default"]((0,ol_proj__WEBPACK_IMPORTED_MODULE_0__.transform)([lon, lat], 'EPSG:4326', 'EPSG:3857')),
         name: 'LocationMarkerFeature',
         population: 4000,
         rainfall: 500,
@@ -34604,8 +34601,8 @@ var setIconMarker = function (lon, lat, map, markerId, iconSource) {
     if (iconSource === undefined) {
         iconSource = _img_pinpoint_location_red_800_svg__WEBPACK_IMPORTED_MODULE_10__["default"];
     }
-    var iconStyle = new ol_style__WEBPACK_IMPORTED_MODULE_24__["default"]({
-        image: new ol_style__WEBPACK_IMPORTED_MODULE_25__["default"]({
+    var iconStyle = new ol_style__WEBPACK_IMPORTED_MODULE_22__["default"]({
+        image: new ol_style__WEBPACK_IMPORTED_MODULE_23__["default"]({
             anchor: [0.5, 1],
             anchorXUnits: 'fraction',
             anchorYUnits: 'fraction',
@@ -34614,10 +34611,10 @@ var setIconMarker = function (lon, lat, map, markerId, iconSource) {
         }),
     });
     iconFeature.setStyle(iconStyle);
-    var vectorSource = new ol_source_Vector__WEBPACK_IMPORTED_MODULE_26__["default"]({
+    var vectorSource = new ol_source_Vector__WEBPACK_IMPORTED_MODULE_24__["default"]({
         features: [iconFeature],
     });
-    var iconVectorLayer = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_27__["default"]({
+    var iconVectorLayer = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_25__["default"]({
         source: vectorSource,
         properties: {
             name: 'LocationMarker'
