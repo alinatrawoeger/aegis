@@ -34497,6 +34497,7 @@ var setIconMarker = function (lon, lat, map, markerId, iconSource) {
     iconFeature.setStyle(iconStyle);
     var vectorSource = new ol_source_Vector__WEBPACK_IMPORTED_MODULE_24__["default"]({
         features: [iconFeature],
+        wrapX: false,
     });
     var iconVectorLayer = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_25__["default"]({
         source: vectorSource,
@@ -35986,7 +35987,7 @@ var setTooltipData = function (location, selectedFilters) {
             $('#tooltip_apdex').text(curElement['apdex']);
             $('#tooltip_useractions').text(curElement['useractions'] + '/min');
             $('#tooltip_errors').text(curElement['errors'] + '/min');
-            $('#tooltip_loadactions').text(curElement['loadactions']);
+            $('#tooltip_loadactions').text(curElement['loadactions'] + 's');
             $('#tooltip_totaluseractions').text(curElement['totaluseractions']);
             $('#tooltip_affecteduseractions').text(curElement['affecteduseractions'] + ' %');
             valueFound = true;
@@ -36185,7 +36186,11 @@ var TableContent = function (_a) {
                             ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell },
                                 dataRow[selectedMetric],
                                 " / min")
-                            : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell }, dataRow[selectedMetric])
+                            : selectedMetric === 'loadactions' || selectedMetric === 'xhractions' || selectedMetric === 'customactions'
+                                ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell },
+                                    dataRow[selectedMetric],
+                                    " s")
+                                : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell }, dataRow[selectedMetric])
                     : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell }, dataRow.address.region !== '' ? dataRow.address.region : '<n/a>'),
                 !isIVolunteer
                     ? selectedMetric === 'apdex'

@@ -34613,6 +34613,7 @@ var setIconMarker = function (lon, lat, map, markerId, iconSource) {
     iconFeature.setStyle(iconStyle);
     var vectorSource = new ol_source_Vector__WEBPACK_IMPORTED_MODULE_24__["default"]({
         features: [iconFeature],
+        wrapX: false,
     });
     var iconVectorLayer = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_25__["default"]({
         source: vectorSource,
@@ -35114,7 +35115,7 @@ __webpack_require__.r(__webpack_exports__);
         "coordinator": "Pfadfinderclub Linz",
         "priority": 1,
         "date": {
-            "from": "2022-08-29T07:30:00Z",
+            "from": "2022-09-29T07:30:00Z",
             "to": ""
         },
         "friend": [
@@ -35137,7 +35138,7 @@ __webpack_require__.r(__webpack_exports__);
         "coordinator": "Tiergarten-Verein Österreich",
         "priority": 3,
         "date": {
-            "from": "2022-08-03T13:15:00Z",
+            "from": "2022-08-09T13:15:00Z",
             "to": ""
         },
         "friend": [
@@ -35159,7 +35160,7 @@ __webpack_require__.r(__webpack_exports__);
         "taskid": 12348,
         "coordinator": "Rotes Kreuz",
         "date": {
-            "from": "2022-07-25T14:30:00Z",
+            "from": "2022-08-15T14:30:00Z",
             "to": ""
         },
         "priority": 2,
@@ -35183,8 +35184,8 @@ __webpack_require__.r(__webpack_exports__);
         "coordinator": "Altenpflegeverein Kärnten",
         "priority": 2,
         "date": {
-            "from": "2022-09-21T08:00:00Z",
-            "to": "2022-09-30T15:00:00"
+            "from": "2022-10-21T08:00:00Z",
+            "to": "2022-10-30T15:00:00"
         },
         "friend": [
             "Steve Rogers", "James Bucky Barnes"
@@ -35206,7 +35207,7 @@ __webpack_require__.r(__webpack_exports__);
         "coordinator": "Samariterbund",
         "priority": 1,
         "date": {
-            "from": "2022-08-15T07:00:00Z",
+            "from": "2022-09-15T07:00:00Z",
             "to": ""
         },
         "friend": [
@@ -36257,7 +36258,7 @@ var setTooltipData = function (location, selectedFilters) {
             $('#tooltip_apdex').text(curElement['apdex']);
             $('#tooltip_useractions').text(curElement['useractions'] + '/min');
             $('#tooltip_errors').text(curElement['errors'] + '/min');
-            $('#tooltip_loadactions').text(curElement['loadactions']);
+            $('#tooltip_loadactions').text(curElement['loadactions'] + 's');
             $('#tooltip_totaluseractions').text(curElement['totaluseractions']);
             $('#tooltip_affecteduseractions').text(curElement['affecteduseractions'] + ' %');
             valueFound = true;
@@ -36579,7 +36580,11 @@ var TableContent = function (_a) {
                             ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell },
                                 dataRow[selectedMetric],
                                 " / min")
-                            : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell }, dataRow[selectedMetric])
+                            : selectedMetric === 'loadactions' || selectedMetric === 'xhractions' || selectedMetric === 'customactions'
+                                ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell },
+                                    dataRow[selectedMetric],
+                                    " s")
+                                : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell }, dataRow[selectedMetric])
                     : react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { className: _Table_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].tableCell }, dataRow.address.region !== '' ? dataRow.address.region : '<n/a>'),
                 !isIVolunteer
                     ? selectedMetric === 'apdex'

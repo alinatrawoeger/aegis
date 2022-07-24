@@ -2406,7 +2406,7 @@
 }
 #table_tab1 th:first-child, #table_tab1 td:first-child,
 #table_tab2 th:first-child, #table_tab2 td:first-child {
-  flex: 0 0 50%;
+  flex: 0 0 45% !important;
 }
 #table_tab1 th:last-child, #table_tab1 td:last-child,
 #table_tab2 th:last-child, #table_tab2 td:last-child {
