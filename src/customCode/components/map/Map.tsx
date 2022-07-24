@@ -527,7 +527,7 @@ const setTooltipData = (location, selectedFilters) => {
             $('#tooltip_apdex').text(curElement['apdex']);
             $('#tooltip_useractions').text(curElement['useractions'] + '/min');
             $('#tooltip_errors').text(curElement['errors'] + '/min');
-            $('#tooltip_loadactions').text(curElement['loadactions']);
+            $('#tooltip_loadactions').text(curElement['loadactions'] + 's');
             $('#tooltip_totaluseractions').text(curElement['totaluseractions']);
             $('#tooltip_affecteduseractions').text(curElement['affecteduseractions'] + ' %');
             valueFound = true;

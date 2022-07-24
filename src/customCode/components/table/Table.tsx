@@ -99,7 +99,9 @@ const TableContent = ({ dataOnPage, selectedMetric, selectedFilters, setFilter, 
                   ? <td className={styles.tableCell}>{dataRow[selectedMetric]} / min</td> 
                   : selectedMetric === 'errors' 
                     ? <td className={styles.tableCell}>{dataRow[selectedMetric]} / min</td>
-                    : <td className={styles.tableCell}>{dataRow[selectedMetric]}</td>
+                    : selectedMetric === 'loadactions' || selectedMetric === 'xhractions' || selectedMetric === 'customactions'
+                      ? <td className={styles.tableCell}>{dataRow[selectedMetric]} s</td>
+                      : <td className={styles.tableCell}>{dataRow[selectedMetric]}</td>
                 : <td className={styles.tableCell}>{dataRow.address.region !== '' ? dataRow.address.region : '<n/a>'}</td>
               }
              
