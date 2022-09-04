@@ -35138,7 +35138,7 @@ __webpack_require__.r(__webpack_exports__);
         "coordinator": "Tiergarten-Verein Österreich",
         "priority": 3,
         "date": {
-            "from": "2022-08-09T13:15:00Z",
+            "from": "2022-09-09T13:15:00Z",
             "to": ""
         },
         "friend": [
@@ -35160,7 +35160,7 @@ __webpack_require__.r(__webpack_exports__);
         "taskid": 12348,
         "coordinator": "Rotes Kreuz",
         "date": {
-            "from": "2022-08-15T14:30:00Z",
+            "from": "2022-09-15T14:30:00Z",
             "to": ""
         },
         "priority": 2,
@@ -35184,8 +35184,8 @@ __webpack_require__.r(__webpack_exports__);
         "coordinator": "Altenpflegeverein Kärnten",
         "priority": 2,
         "date": {
-            "from": "2022-10-21T08:00:00Z",
-            "to": "2022-10-30T15:00:00"
+            "from": "2022-11-21T08:00:00Z",
+            "to": "2022-11-30T15:00:00"
         },
         "friend": [
             "Steve Rogers", "James Bucky Barnes"
@@ -35207,7 +35207,7 @@ __webpack_require__.r(__webpack_exports__);
         "coordinator": "Samariterbund",
         "priority": 1,
         "date": {
-            "from": "2022-09-15T07:00:00Z",
+            "from": "2022-10-15T07:00:00Z",
             "to": ""
         },
         "friend": [
