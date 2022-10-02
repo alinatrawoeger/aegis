@@ -37,7 +37,7 @@ export default [
         "coordinator": "Pfadfinderclub Linz",
         "priority": 1,
         "date": {
-            "from": "2022-09-29T07:30:00Z",
+            "from": "2022-12-29T07:30:00Z",
             "to": ""
         },
         "friend": [
@@ -60,7 +60,7 @@ export default [
         "coordinator": "Tiergarten-Verein Österreich",
         "priority": 3,
         "date": {
-            "from": "2022-09-09T13:15:00Z",
+            "from": "2023-01-09T13:15:00Z",
             "to": ""
         },
         "friend": [
@@ -82,7 +82,7 @@ export default [
         "taskid": 12348,
         "coordinator": "Rotes Kreuz",
         "date": {
-            "from": "2022-09-15T14:30:00Z",
+            "from": "2023-01-15T14:30:00Z",
             "to": ""
         },
         "priority": 2,
@@ -129,7 +129,7 @@ export default [
         "coordinator": "Samariterbund",
         "priority": 1,
         "date": {
-            "from": "2022-10-15T07:00:00Z",
+            "from": "2022-11-15T07:00:00Z",
             "to": ""
         },
         "friend": [
