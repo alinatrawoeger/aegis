@@ -1,4 +1,4 @@
-import React, { Component, createRef, useRef, useState } from "react";
+import React, { Component, createRef } from "react";
 import ReactDOM from "react-dom/client";
 import styles from "../customCode/styles/ivolunteerStyle.module.css";
 import StaticMap from "./components/map/StaticMap";
@@ -27,26 +27,29 @@ class AddTaskApp extends Component {
         const map = ReactDOM.createRoot(document.getElementById(this.mapSelector)!);        
         map.render(React.createElement(StaticMap, {addTask: true, onSelectedLocation: selectedGeoDataCallback}));
 
-        
+        var timeout;
         const onChangeInput = () => {
-          if (isInputValid()) {
-            $('#saveBtn').removeClass(styles.saveBtnDisabled);
-            $('#saveBtn').addClass(styles.saveBtn);
-            $('#saveBtn').on('click', saveClickHandler);
-          } else {
-            $('#saveBtn').removeClass(styles.saveBtn);
-            $('#saveBtn').addClass(styles.saveBtnDisabled);
-            $('#saveBtn').off('click', saveClickHandler);
-          }
+          clearTimeout(timeout);
+          timeout = setTimeout(function () {
+            if (isInputValid()) {
+              $('#saveBtn').removeClass(styles.saveBtnDisabled);
+              $('#saveBtn').addClass(styles.saveBtn);
+              $('#saveBtn').on('click', saveClickHandler);
+            } else {
+              $('#saveBtn').removeClass(styles.saveBtn);
+              $('#saveBtn').addClass(styles.saveBtnDisabled);
+              $('#saveBtn').off('click', saveClickHandler);
+            }
+          }, 1500);  
         }
 
-        $('#taskName_input').on('change', onChangeInput);
-        $('#beginDate_input').on('change', onChangeInput);
-        $('#startTime_input').on('change', onChangeInput);
-        $('#endDateInput').on('change', onChangeInput);
-        $('#endTimeInput').on('change', onChangeInput);
-        $('#zipcode_input').on('change', onChangeInput);
-        $('#priority_input').on('change', onChangeInput);
+        $('#taskName_input').on('keyup', onChangeInput);
+        $('#beginDate_input').on('keyup', onChangeInput);
+        $('#startTime_input').on('keyup', onChangeInput);
+        $('#endDateInput').on('keyup', onChangeInput);
+        $('#endTimeInput').on('keyup', onChangeInput);
+        $('#zipcode_input').on('keyup', onChangeInput);
+        $('#priority_input').on('keyup', onChangeInput);
 
         const saveClickHandler = () => {
           saveNewTask(this.locationRef.current);
@@ -76,7 +79,9 @@ const saveNewTask = function(mapData) {
   let priority = +$('#priority_input').val();
 
   let fullStartDate = new Date(beginDate + 'T' + startTime + 'Z');
-  let fullEndDate = endDate !== undefined ? new Date(endDate + 'T' + endTime + 'Z') : new Date(beginDate + 'T' + endTime + 'Z');
+  let fullEndDate = (endDate !== undefined) || (endDate === '') 
+                      ? new Date(endDate + 'T' + endTime + 'Z') 
+                      : new Date(beginDate + 'T' + endTime + 'Z');
 
   let lastTaskID = data[data.length-1].taskid;
   let newTaskID = lastTaskID + 1;
@@ -141,7 +146,7 @@ const isInputValid = () => {
       let fullStartDate = new Date(beginDate + 'T' + startTime + 'Z');
 
       let fullEndDate;
-      if (endDate !== undefined) {
+      if (endDate !== undefined && endDate !== '') {
         fullEndDate = new Date(endDate + 'T' + endTime + 'Z');
       } else {
         fullEndDate = new Date(beginDate + 'T' + endTime + 'Z');
