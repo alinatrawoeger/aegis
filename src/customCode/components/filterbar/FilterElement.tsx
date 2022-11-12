@@ -1,5 +1,5 @@
 import React from "react";
-import { FilterType, getFilterType } from "../../utils";
+import { FilterType, getFilterType, getIVolFilterName } from "../../utils";
 import styles from "./Filterbar.module.css";
 import removeIcon from "./img/remove-icon.png";
 
@@ -15,7 +15,7 @@ const FilterElement = ( { filterKey, filterValue, removeFilter, isIVolunteer } )
         <>
             <div className={`${styles.filterElement} ${isIVolunteer ? styles.filterElementIVol : styles.filterElementDt}`} key={filterKey} id={`${filterKey}Filter`}>
                 <div className={styles.filterTextPanel}>
-                    <span className={styles.filterKey}>{filterKey}: </span>
+                    <span className={styles.filterKey}>{isIVolunteer ? getIVolFilterName(filterKey) : filterKey}: </span>
                     {
                         filterType === FilterType.TEXT 
                         ?   <span className={styles.filterValue}>{filterValue}</span>

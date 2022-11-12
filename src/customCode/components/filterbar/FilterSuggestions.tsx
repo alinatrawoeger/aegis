@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { FilterType, getFilterType } from '../../utils';
+import { FilterType, getFilterType, getIVolFilterName } from '../../utils';
 import styles from "./Filterbar.module.css";
 
 const FilterSuggestionPanel = ( { suggestions, isIVolunteer, onSetNewFilterValue } ) => {  
@@ -31,7 +31,8 @@ const FilterSuggestionPanel = ( { suggestions, isIVolunteer, onSetNewFilterValue
                       return <FilterListElement key={index} filterName={filter} 
                                 setShowFilters={setShowFilters} 
                                 setSelectedFilter={setSelectedFilter}
-                                setShowSuggestions={setShowSuggestions} />
+                                setShowSuggestions={setShowSuggestions}
+                                isIVolunteer={isIVolunteer} />
                  })}
             </div>
         )
@@ -70,11 +71,11 @@ const FilterSuggestionPanel = ( { suggestions, isIVolunteer, onSetNewFilterValue
     );
 }
 
-const FilterListElement = ( { filterName, setShowFilters, setSelectedFilter, setShowSuggestions } ) => {
+const FilterListElement = ( { filterName, setShowFilters, setSelectedFilter, setShowSuggestions, isIVolunteer } ) => {
     return (
         <>
             <div className={styles.suggestionValueElement} onClick={() => selectFilterName(filterName, setShowFilters, setSelectedFilter, setShowSuggestions)}>
-                {filterName}
+                {isIVolunteer ? getIVolFilterName(filterName) : filterName}
             </div>
         </>
     );

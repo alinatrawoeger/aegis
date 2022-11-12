@@ -86,6 +86,18 @@ export const getFilterType = (filterName: any) => {
     return FilterType.TEXT;
 }
 
+export const getIVolFilterName = (filterKey: string) => {
+    switch(filterKey) {
+        case 'coordinator': return 'Koordinator';
+        case 'date': return 'Datum';
+        case 'friend': return 'Freund';
+        case 'location': return 'Bundesland';
+        case 'priority': return 'Priorität';
+        case 'taskid': return 'Task ID';
+        default: filterKey;
+    }
+}
+
 export function groupValuesPerLocation(data: any, locationKey: string) {
     let groupedValuesMap: any[] = [];
     for (let i = 0; i < data.length; i++) {

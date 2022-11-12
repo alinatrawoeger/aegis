@@ -47,7 +47,7 @@ const Filterbar: React.FC<FilterbarProps> = ( { isIVolunteer, filters, onSelecte
     return (
       <>
         <div className={`${styles.filterbar} ${isIVolunteer? styles.filterbarIVol : styles.filterbarDt}`}>
-            <div className={styles.filterStaticText}>Filters:</div>
+            <div className={styles.filterStaticText}>{isIVolunteer ? 'Filter' : 'Filters'}:</div>
                 {filterList}
                 <FilterSuggestionPanel suggestions={filterSuggestions} isIVolunteer={isIVolunteer} onSetNewFilterValue={updateSelectedFilters}></FilterSuggestionPanel>
             </div>
