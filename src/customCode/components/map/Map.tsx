@@ -1,12 +1,13 @@
 import { Feature, Map, Map as OLMap } from 'ol';
 import GeoJSON from 'ol/format/GeoJSON';
 import Geometry from "ol/geom/Geometry";
+import Draw from 'ol/interaction/Draw';
 import VectorLayer from "ol/layer/Vector";
-import VectorSrc from 'ol/source/Vector';
+import { default as VectorSource, default as VectorSrc } from 'ol/source/Vector';
 import { Fill, Stroke, Style } from "ol/style";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import dataDt from "../../data/dt_database";
-import { Apdex, filterDtData, getDataFromTaskId, getFilteredIVolData, getIVolData, groupValuesPerLocation, UrgencyDays, ZoomLevel } from "../../utils";
+import { Apdex, checkForExistingFilter, filterDtData, getDataFromTaskId, getFilteredIVolData, getIVolData, groupValuesPerLocation, UrgencyDays, ZoomLevel } from "../../utils";
 import styles from "./Map.module.css";
 import { addIconOverlay, createMap, defaultLatitude, defaultLongitude, getDateString, getTaskUrgencyDays } from './MapUtils';
 
@@ -89,9 +90,10 @@ type CustomMapProps = {
     isIVolunteer: boolean,
     onSetZoom?: (value) => void,
     onChangeFilters?: (value) => void
+    onChangeRadiusFilter?: (value) => void
 }
 
-const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoom, onChangeFilters, isIVolunteer }) => {
+const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onSetZoom, onChangeFilters, onChangeRadiusFilter, isIVolunteer }) => {
     const defaultZoom = isIVolunteer ? ZoomLevel.COUNTRY : ZoomLevel.WORLD;
 
     // ------------ initialization 
@@ -100,6 +102,7 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
     let [ hoveredLocation, setHoveredLocation ] = useState<Feature<Geometry> | undefined>();
     let [ selectedFilters, setSelectedFilters ] = useState(filters);
     const [ zoom, setZoom ] = useState<ZoomLevel>();
+    let [ radiusFilter, setRadiusFilter ] = useState<Geometry | undefined>();
     
     if (isIVolunteer) {
         data = getIVolData();
@@ -128,11 +131,23 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
     filterRef.current = selectedFilters;
 
     let currZoom = undefined;
+    let radiusFilterCircle;
+    let canDrawRadiusFilterCircle = isIVolunteer && $('#radiusFilterPanel').length > 0;
 
+    // layer for the countries overlay in DT
     const overlaySource = new VectorSrc({
         url: "../data/geodata/countries.geojson",
         format: new GeoJSON(),
     });
+
+    // layer for the radius filter in iVol
+    const radiusFilterVectorLayer = useMemo(()=> {
+        let vectorSource = new VectorSource({wrapX: true});
+        let vectorLayer = new VectorLayer({
+            source: vectorSource,
+        });
+        return vectorLayer
+    },  []);
     
     // initialize map and overlays (only called once)
     useEffect( () => {
@@ -151,36 +166,69 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
                 });
               },
         });
-
+        
         // create map
-        const initialMap: OLMap = createMap(mapElement.current, defaultZoom, defaultLongitude, defaultLatitude, isIVolunteer, overlayLayer);
-
+        const initialMap: OLMap = createMap(mapElement.current, defaultZoom, defaultLongitude, defaultLatitude, isIVolunteer, overlayLayer, radiusFilterVectorLayer);
+        
         // set event handlers except click handler (will be set later)
         initialMap.on('pointermove', handleHover);
         initialMap.on('moveend', handleZoom);    
-
+        addRadiusFilterCircleInteraction(initialMap);
+        
         // save map for later use
         setMap(initialMap)
     }, [])
 
-// ---------------- handle filters
+    
+    // ---------------- handle filters
     const updateFilterCallback = useCallback(
         (value) => {
-            if (!checkForExistingCountryFilter(value)) {
+            if (!checkForExistingFilter('country', value)) {
                 selectedLocation = undefined;
             }
-        
+            
             setSelectedFilters(value);
             onChangeFilters(value);
-
+            
             setIconMarkers(isIVolunteer, mapRef.current, zoom, selectedMetric, value);                
-        },
-        [selectedFilters, onChangeFilters]
+        }, [selectedFilters, onChangeFilters]
     );
+
+    const updateRadiusFilterCircleCallback = useCallback(
+        (value) => {
+            setRadiusFilter(value);
+            onChangeRadiusFilter(value);
+        }, [radiusFilter, onChangeRadiusFilter]
+    );
+           
+    const addRadiusFilterCircleInteraction = (map: OLMap) => {
+        radiusFilterCircle = new Draw({
+            source: radiusFilterVectorLayer.getSource(),
+            type: 'Circle',
+        });
         
-    if (selectedFilters !== undefined && filters !== selectedFilters) {
-        setSelectedFilters(filters);
+        radiusFilterCircle.on('drawend',  function(e) {
+            if (!checkForExistingFilter('radius', selectedFilters)) {
+                setRadiusFilter(e.feature.getGeometry());
+                updateRadiusFilterCircleCallback(e.feature.getGeometry())
+            }
+        })
+        // remove old circle when starting to draw a new one
+        radiusFilterCircle.on('drawstart', function (e) {
+            radiusFilterVectorLayer.getSource().clear();
+        })
+        
+        map.addInteraction(radiusFilterCircle);
     }
+
+    if (selectedFilters !== undefined) {
+        if (filters !== selectedFilters) {
+            setSelectedFilters(filters);
+        }
+        if (!checkForExistingFilter('radius', filters) && !$('#radiusFilterPanel').length) {
+            radiusFilterVectorLayer.getSource().clear();
+        }
+}
         
 // -------------- Overlay functions
     // click & hover functions on overlay
@@ -212,6 +260,7 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
                 }
                 setHoveredLocation(feature as Feature<Geometry>);
             }
+
         });
     }
 
@@ -308,7 +357,14 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
 // because it thinks the filter array is still empty (as it was during initialization)
     if (mapRef.current !== undefined) {
         mapRef.current.on('click', handleMapClick);
-        setIconMarkers(isIVolunteer, mapRef.current, zoom, selectedMetric, selectedFilters); 
+        setIconMarkers(isIVolunteer, mapRef.current, zoom, selectedMetric, selectedFilters);
+                
+        // enable / disable radius filter drawing interaction
+        mapRef.current.getInteractions().forEach((interaction) => {
+            if (interaction instanceof Draw) {
+                interaction.setActive(canDrawRadiusFilterCircle);
+            }
+        });
     }    
 
     useEffect( () => {
@@ -407,17 +463,6 @@ const getDtOverlayColor = (selectedMetric: string, countryFeature: any, selectMo
             return overlayColorMap.empty.hoverColor;
         }
     } 
-}
-
-const checkForExistingCountryFilter = (filters) => {
-    let filterExists = false;
-    for (let i = 0; i < filters.length; i++) {
-        if (filters[i].key === 'country') {
-            filterExists = true;
-            break;
-        }
-    }
-    return filterExists;
 }
 
 const setIconMarkers = (isIVolunteer: boolean, map: Map, zoom: number, selectedMetric: string, selectedFilters: any[]) => {

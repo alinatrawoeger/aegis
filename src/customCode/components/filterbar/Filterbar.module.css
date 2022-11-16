@@ -102,6 +102,23 @@
     background-color: rgba(2, 167, 240, 0.5);
 }
 
+.suggestionsRadiusPanel {
+    position: relative;
+    top: 27px;
+    display: flex;
+}
+
+.suggestionRadiusValuesPanel {
+    padding-top: 8px;
+    width: 180px;
+    height: 58px;
+    padding: 12px;
+    border: 1px solid black;
+    background-color: white;
+    text-align: right;
+    z-index: 5;
+}
+
 .suggestionsRangePanel {
     position: relative;
     top: 45px;

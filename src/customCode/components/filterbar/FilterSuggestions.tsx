@@ -1,8 +1,9 @@
+import Geometry from 'ol/geom/Geometry';
 import React, { useCallback, useEffect, useState } from 'react';
-import { FilterType, getFilterType, getIVolFilterName } from '../../utils';
+import { checkForExistingFilter, FilterType, getFilterType, getIVolFilterName } from '../../utils';
 import styles from "./Filterbar.module.css";
 
-const FilterSuggestionPanel = ( { suggestions, isIVolunteer, onSetNewFilterValue } ) => {  
+const FilterSuggestionPanel = ( { suggestions, isIVolunteer, changedRadiusFilter, onSetNewFilterValue } ) => {  
     const [filterList, setFilterList] = useState([])
     const [showFilters, setShowFilters] = useState(false);
     const [selectedFilter, setSelectedFilter] = useState();
@@ -17,6 +18,7 @@ const FilterSuggestionPanel = ( { suggestions, isIVolunteer, onSetNewFilterValue
     // add new filter and give it back outside
     const newFilterCallback = useCallback(
         (value) => {
+            // TODO schaun ob value === radius ist und ob radius schon vorhanden -> if yes, mit neuem value ersetzen, sonst einfach pushen!
           setNewFilterValue(value);
           onSetNewFilterValue([value, true]);
         }, [newFilterValue, onSetNewFilterValue],
@@ -43,10 +45,12 @@ const FilterSuggestionPanel = ( { suggestions, isIVolunteer, onSetNewFilterValue
     if (showSuggestions) {
         let filterSuggestions = getFilterSuggestions(isIVolunteer, suggestions, selectedFilter);
         renderedSuggestionList = (
-            <FilterSuggestions  filterKey={selectedFilter} 
+            <FilterSuggestions  selectedFilters={filterList}
+                                filterKey={selectedFilter} 
                                 filterValues={filterSuggestions} 
                                 setNewFilterValue={newFilterCallback} 
                                 setShowSuggestions={setShowSuggestions}
+                                changedRadiusFilter={changedRadiusFilter}
                                 isIVolunteer={isIVolunteer}></FilterSuggestions>
         )
     }
@@ -81,9 +85,11 @@ const FilterListElement = ( { filterName, setShowFilters, setSelectedFilter, set
     );
 } 
 
-const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setShowSuggestions, isIVolunteer} ) => {
+const FilterSuggestions = ( { selectedFilters, filterKey, filterValues, setNewFilterValue, setShowSuggestions, changedRadiusFilter, isIVolunteer} ) => {
     const keys = Object.keys(filterValues);
     const filterType = getFilterType(filterKey);
+
+    const filterKeyDisplayName = getIVolFilterName(filterKey);
 
     const dtDefaultFrom = 0.5;
     const dtDefaultTo = 1.0;
@@ -106,7 +112,7 @@ const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setSho
                     // text filter
                     filterType === FilterType.TEXT
                     ?   <div className={styles.suggestionsTextPanel} onClick={() => hideSuggestionPanel(setShowSuggestions)}>
-                            <div className={styles.suggestionFiltername}>{filterKey}:</div>  
+                            <div className={styles.suggestionFiltername}>{filterKeyDisplayName}:</div>  
                             <div className={styles.suggestionTextValuesPanel}>
                                 {
                                     keys.map((valueKey: string) => (
@@ -119,7 +125,7 @@ const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setSho
                     // range filter    
                     :   filterType === FilterType.RANGE
                         ?   <div className={styles.suggestionsRangePanel}>
-                                <div className={styles.suggestionFiltername}>{filterKey}:</div> 
+                                <div className={styles.suggestionFiltername}>{filterKeyDisplayName}:</div> 
                                 <div className={`${styles.suggestionRangeValuesPanel} ${isIVolunteer ? styles.suggestionRangeValuesPanelIVol : styles.suggestionRangeValuesPanelDt}`}>
                                     <div className={styles.suggestionRangeFilterLine}>
                                         <div className={styles.suggestionRangeValueLabel}>From:</div>
@@ -147,34 +153,44 @@ const FilterSuggestions = ( { filterKey, filterValues, setNewFilterValue, setSho
                                 </div>
                             </div>
                         // date filter    
-                        : <div className={styles.suggestionsRangePanel}>
-                            <div className={styles.suggestionFiltername}>{filterKey}:</div> 
-                            <div className={`${styles.suggestionRangeValuesPanel} ${isIVolunteer ? styles.suggestionRangeValuesPanelIVol : styles.suggestionRangeValuesPanelDt}`}>
-                                <div className={styles.suggestionRangeFilterLine}>
-                                    <div className={styles.suggestionRangeValueLabel}>From:</div>
-                                    <input className={isIVolunteer ? styles.suggestionRangeValueInputIVol : styles.suggestionRangeValueInputDt} 
-                                            type='date' id='dateFrom' 
-                                            min='1970-01-01' 
-                                            max='2099-12-31' 
-                                            step={iVolDateStep}
-                                            defaultValue={iVolDefaultDateFrom}
-                                            onChange={() => onChangeRange(filterType === FilterType.RANGE)}>
-                                    </input>
+                        : filterType === FilterType.RADIUS 
+                            ?   <div className={styles.suggestionsRadiusPanel} id ='radiusFilterPanel'> 
+                                    <div className={styles.suggestionFiltername}>{filterKeyDisplayName}:</div>
+                                    <div className={styles.suggestionRadiusValuesPanel}>
+                                        <div className={styles.suggestionRangeFilterLine}>
+                                            Ziehe einen Kreis auf der Karte
+                                        </div>
+                                        <button className={styles.suggestionRangeBtn} id='radiusFilterConfirm' onClick={() => confirmRadiusFilter(setNewFilterValue, setShowSuggestions, changedRadiusFilter)}>OK</button>
+                                    </div>
                                 </div>
-                                <div className={styles.suggestionRangeFilterLine}>
-                                    <div className={styles.suggestionRangeValueLabel}>To:</div>
-                                    <input className={styles.suggestionRangeValueInputIVol} 
-                                            type='date' id='dateTo' 
-                                            min='1970-01-01'
-                                            max='2099-12-31' 
-                                            step={iVolDateStep} 
-                                            defaultValue={iVolDefaultDateTo}
-                                            onChange={() => onChangeRange(filterType === FilterType.RANGE)}>
-                                    </input>
+                            :   <div className={styles.suggestionsRangePanel}>
+                                    <div className={styles.suggestionFiltername}>{filterKeyDisplayName}:</div> 
+                                    <div className={`${styles.suggestionRangeValuesPanel} ${isIVolunteer ? styles.suggestionRangeValuesPanelIVol : styles.suggestionRangeValuesPanelDt}`}>
+                                        <div className={styles.suggestionRangeFilterLine}>
+                                            <div className={styles.suggestionRangeValueLabel}>From:</div>
+                                            <input className={isIVolunteer ? styles.suggestionRangeValueInputIVol : styles.suggestionRangeValueInputDt} 
+                                                    type='date' id='dateFrom' 
+                                                    min='1970-01-01' 
+                                                    max='2099-12-31' 
+                                                    step={iVolDateStep}
+                                                    defaultValue={iVolDefaultDateFrom}
+                                                    onChange={() => onChangeRange(filterType === FilterType.RANGE)}>
+                                            </input>
+                                        </div>
+                                        <div className={styles.suggestionRangeFilterLine}>
+                                            <div className={styles.suggestionRangeValueLabel}>To:</div>
+                                            <input className={styles.suggestionRangeValueInputIVol} 
+                                                    type='date' id='dateTo' 
+                                                    min='1970-01-01'
+                                                    max='2099-12-31' 
+                                                    step={iVolDateStep} 
+                                                    defaultValue={iVolDefaultDateTo}
+                                                    onChange={() => onChangeRange(filterType === FilterType.RANGE)}>
+                                            </input>
+                                        </div>
+                                        <button className={styles.suggestionRangeBtn} id='rangeFilterConfirm' onClick={() => confirmRangeFilter(setNewFilterValue, filterKey, setShowSuggestions, filterType === FilterType.RANGE)}>OK</button>
+                                    </div>
                                 </div>
-                                <button className={styles.suggestionRangeBtn} id='rangeFilterConfirm' onClick={() => confirmRangeFilter(setNewFilterValue, filterKey, setShowSuggestions, filterType === FilterType.RANGE)}>Confirm</button>
-                            </div>
-                        </div>
                 }
         </>
     );  
@@ -306,6 +322,16 @@ const confirmRangeFilter = (setNewFilterValue: any, filterKey: string, setShowSu
             setShowSuggestions(false);
         }
     }
+}
+
+const confirmRadiusFilter = (setNewFilterValue: any, setShowSuggestions: any, changedRadiusFilter) => { 
+    if (changedRadiusFilter !== undefined) {
+        setNewFilterValue({
+            "key": 'radius',
+            "value": changedRadiusFilter,
+        });
+    }
+    setShowSuggestions(false);
 }
 
 export default FilterSuggestionPanel;

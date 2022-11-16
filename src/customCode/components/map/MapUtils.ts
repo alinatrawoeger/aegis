@@ -3,7 +3,6 @@ import { defaults as defaultControls } from 'ol/control';
 import OverviewMap from 'ol/control/OverviewMap';
 import Geometry from 'ol/geom/Geometry';
 import Point from 'ol/geom/Point';
-import { defaults, DragRotateAndZoom } from 'ol/interaction';
 import TileLayer from 'ol/layer/Tile';
 import VectorLayer from 'ol/layer/Vector';
 import { fromLonLat, transform } from 'ol/proj';
@@ -28,9 +27,9 @@ import markerYellow_high from "./img/pinpoint-location-yellow_700.svg";
 export const defaultLongitude = 14.12456;
 export const defaultLatitude = 47.59397;
 
-export const createMap = (target: string, zoom: ZoomLevel, lon: number, lat: number, isIVolunteer: boolean, overlayLayer?: VectorLayer<VectorSource<Geometry>>) => {
+export const createMap = (target: string, zoom: ZoomLevel, lon: number, lat: number, isIVolunteer: boolean, overlayLayer?: VectorLayer<VectorSource<Geometry>>, radiusFilterLayer?: VectorLayer<VectorSource<Geometry>>) => {
     var mapLayer = new TileLayer({
-        source: new OSM()
+        source: new OSM(),
     });
     var view = new View({
         center: fromLonLat([lon, lat]),
@@ -60,11 +59,17 @@ export const createMap = (target: string, zoom: ZoomLevel, lon: number, lat: num
     } else {
         view.setMinZoom(ZoomLevel.COUNTRY);
 
-        return new Map({
+        let map = new Map({
             target: target,
             layers: [ mapLayer ],
             view: view
         });     
+
+        if (radiusFilterLayer !== undefined) {
+            map.addLayer(radiusFilterLayer);
+        }
+
+        return map;
     }
 }
 

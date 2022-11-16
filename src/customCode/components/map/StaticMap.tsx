@@ -29,7 +29,7 @@ const StaticMap: React.FC<StaticMapProps> = ({ dataRow, addTask, onSelectedLocat
 
         let zoom = addTask ? ZoomLevel.COUNTRY : ZoomLevel.DETAIL
 
-        const initialMap = createMap(mapElement.current, zoom, lon, lat, true, undefined);
+        const initialMap = createMap(mapElement.current, zoom, lon, lat, true, undefined, undefined);
 
         if (addTask) {
             initialMap.on('click', selectLocation);

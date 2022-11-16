@@ -1,4 +1,6 @@
+import Geometry from 'ol/geom/Geometry';
 import 'ol/ol.css';
+import { fromLonLat } from 'ol/proj';
 import dataDt from './data/dt_database';
 import dtFilters from './data/dt_filters';
 import iVolFilters from './data/ivol_filters';
@@ -44,7 +46,8 @@ export enum Apdex {
 export enum FilterType {
     TEXT = 'text',
     RANGE = 'range',
-    DATE = 'date'
+    DATE = 'date',
+    RADIUS = 'radius'
 }
 
 // ---------------------------------------------------------------------
@@ -94,6 +97,7 @@ export const getIVolFilterName = (filterKey: string) => {
         case 'location': return 'Bundesland';
         case 'priority': return 'Priorität';
         case 'taskid': return 'Task ID';
+        case 'radius': return 'Standort Radius';
         default: filterKey;
     }
 }
@@ -143,6 +147,17 @@ export function groupValuesPerLocation(data: any, locationKey: string) {
     });
     
     return newValues;
+}
+
+export const checkForExistingFilter = (filterKey, filters) => {
+    let filterExists = false;
+    for (let i = 0; i < filters.length; i++) {
+        if (filters[i].key === filterKey) {
+            filterExists = true;
+            break;
+        }
+    }
+    return filterExists;
 }
 
 export function getDataFromTaskId(taskId: any) {
@@ -257,6 +272,15 @@ export function getFilteredIVolData(dataset, selectedFilters) {
                 }
             }
           }
+        } else if (curFilterType === FilterType.RADIUS) {
+            let radiusFilter = curFilterValue as Geometry;
+            for (let j = 0; j < dataSet.length; j++) {
+                const dataElementCoordinates = dataSet[j]['address']['coordinates'];
+                const coordinatesSanitized = fromLonLat([ dataElementCoordinates[1], dataElementCoordinates[0]]); // intersectsCoordinate needs LonLat in reverse order
+                if (radiusFilter.intersectsCoordinate(coordinatesSanitized)) {
+                    filteredDataPerCycle.push(dataSet[j]);
+                }
+            }
         } else {
             for (let j = 0; j < dataSet.length; j++) {
                 let dataElement = dataSet[j][curFilterKey];

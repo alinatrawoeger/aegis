@@ -11,7 +11,10 @@ export default [
             }
         },
         "date": {
-            "filterType": "date"
+            "filterType": "date",
+        },
+        "radius": {
+            "filterType": "radius",
         },
         "friend": {
             "filterType": "text",
@@ -47,7 +50,7 @@ export default [
             }
         },
         "taskid": {
-            "filterType": "range"
+            "filterType": "range",
         }
     }
 ]

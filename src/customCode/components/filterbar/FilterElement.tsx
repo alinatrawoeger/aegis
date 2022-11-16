@@ -15,11 +15,13 @@ const FilterElement = ( { filterKey, filterValue, removeFilter, isIVolunteer } )
         <>
             <div className={`${styles.filterElement} ${isIVolunteer ? styles.filterElementIVol : styles.filterElementDt}`} key={filterKey} id={`${filterKey}Filter`}>
                 <div className={styles.filterTextPanel}>
-                    <span className={styles.filterKey}>{isIVolunteer ? getIVolFilterName(filterKey) : filterKey}: </span>
+                    <span className={styles.filterKey}>{isIVolunteer ? getIVolFilterName(filterKey) : filterKey}{filterKey !== 'radius' ? ': ' : ' '}</span>
                     {
                         filterType === FilterType.TEXT 
                         ?   <span className={styles.filterValue}>{filterValue}</span>
-                        :   <span className={styles.filterValue}>{`${filterValue[0]} - ${filterValue[1]}`}</span>
+                        :   filterType === FilterType.RADIUS 
+                            ? <span className={styles.filterValue}></span>
+                            : <span className={styles.filterValue}>{`${filterValue[0]} - ${filterValue[1]}`}</span>
                     }
                 </div>
                 <div className={styles.removeFilterBtn} onClick={() => removeFilter([filterKey, false])}>

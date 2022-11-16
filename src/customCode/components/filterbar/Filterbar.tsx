@@ -1,3 +1,4 @@
+import Geometry from "ol/geom/Geometry";
 import React, { useCallback, useEffect, useState } from "react";
 import dtFilters from '../../data/dt_filters';
 import iVolFilters from '../../data/ivol_filters';
@@ -9,9 +10,10 @@ type FilterbarProps = {
     isIVolunteer: boolean;
     filters: any[];
     onSelectedFilters: (value) => void;
+    onChangedRadiusFilter?: Geometry;
 }
 
-const Filterbar: React.FC<FilterbarProps> = ( { isIVolunteer, filters, onSelectedFilters} ) => {
+const Filterbar: React.FC<FilterbarProps> = ( { isIVolunteer, filters, onSelectedFilters, onChangedRadiusFilter: changedRadiusFilter} ) => {
     const [selectedFilters, setSelectedFilters] = useState(filters);
     const filterSuggestions = useFilterSuggestions(isIVolunteer, selectedFilters, setSelectedFilters);
 
@@ -49,7 +51,7 @@ const Filterbar: React.FC<FilterbarProps> = ( { isIVolunteer, filters, onSelecte
         <div className={`${styles.filterbar} ${isIVolunteer? styles.filterbarIVol : styles.filterbarDt}`}>
             <div className={styles.filterStaticText}>{isIVolunteer ? 'Filter' : 'Filters'}:</div>
                 {filterList}
-                <FilterSuggestionPanel suggestions={filterSuggestions} isIVolunteer={isIVolunteer} onSetNewFilterValue={updateSelectedFilters}></FilterSuggestionPanel>
+                <FilterSuggestionPanel suggestions={filterSuggestions} isIVolunteer={isIVolunteer} changedRadiusFilter={changedRadiusFilter} onSetNewFilterValue={updateSelectedFilters}></FilterSuggestionPanel>
             </div>
         </>
     );
