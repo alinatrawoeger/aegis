@@ -83,7 +83,7 @@ const StaticMap: React.FC<StaticMapProps> = ({ dataRow, addTask, onSelectedLocat
         findAddressByCoordinates(coordinate[0], coordinate[1], mapRef.current);
     }
 
-    var timeout;
+    let timeout;
     const onChangeZipCode = () => {
         clearTimeout(timeout);
         timeout = setTimeout(function () {

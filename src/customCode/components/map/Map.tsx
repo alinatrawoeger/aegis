@@ -174,7 +174,7 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
         initialMap.on('pointermove', handleHover);
         initialMap.on('moveend', handleZoom);    
         addRadiusFilterCircleInteraction(initialMap);
-        
+
         // save map for later use
         setMap(initialMap)
     }, [])
@@ -252,6 +252,7 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
         }),
     });  
 
+    let timeout;
     const handleHover = (event) => {        
         mapRef.current.forEachFeatureAtPixel(event.pixel, function (feature) {
             if (selectedLocation !== feature) {
@@ -260,8 +261,14 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
                 }
                 setHoveredLocation(feature as Feature<Geometry>);
             }
-
         });
+
+        if (isIVolunteer) {
+            // trigger component on hover to be able to set the radius filter
+            timeout = setTimeout(function () {
+                setSelectedFilters(selectedFilters);
+            }, 250);
+        }
     }
 
     const handleMapClick = (event) => {
@@ -357,14 +364,15 @@ const InteractiveMap: React.FC<CustomMapProps> = ({ selectedMetric, filters, onS
 // because it thinks the filter array is still empty (as it was during initialization)
     if (mapRef.current !== undefined) {
         mapRef.current.on('click', handleMapClick);
-        setIconMarkers(isIVolunteer, mapRef.current, zoom, selectedMetric, selectedFilters);
-                
+        
         // enable / disable radius filter drawing interaction
         mapRef.current.getInteractions().forEach((interaction) => {
             if (interaction instanceof Draw) {
                 interaction.setActive(canDrawRadiusFilterCircle);
             }
         });
+
+        setIconMarkers(isIVolunteer, mapRef.current, zoom, selectedMetric, selectedFilters);
     }    
 
     useEffect( () => {
