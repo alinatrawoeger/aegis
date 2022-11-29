@@ -36623,7 +36623,7 @@ var getIVolFilterName = function (filterKey) {
         case 'priority': return 'Priorität';
         case 'taskid': return 'Task ID';
         case 'radius': return 'Standort Radius';
-        default: filterKey;
+        default: return filterKey;
     }
 };
 function groupValuesPerLocation(data, locationKey) {

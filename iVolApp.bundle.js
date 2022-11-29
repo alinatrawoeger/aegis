@@ -35098,8 +35098,8 @@ __webpack_require__.r(__webpack_exports__);
         "coordinator": "Rotes Kreuz",
         "priority": 2,
         "date": {
-            "from": "2022-12-10T15:00:00Z",
-            "to": "2022-12-12T20:00:00Z"
+            "from": "2023-12-10T15:00:00Z",
+            "to": "2023-12-12T20:00:00Z"
         },
         "friend": [
             "Tony Stark", "Bruce Banner", "Steve Rogers"
@@ -35121,7 +35121,7 @@ __webpack_require__.r(__webpack_exports__);
         "coordinator": "Pfadfinderclub Linz",
         "priority": 1,
         "date": {
-            "from": "2022-12-29T07:30:00Z",
+            "from": "2023-03-29T07:30:00Z",
             "to": ""
         },
         "friend": [
@@ -35144,7 +35144,7 @@ __webpack_require__.r(__webpack_exports__);
         "coordinator": "Tiergarten-Verein Österreich",
         "priority": 3,
         "date": {
-            "from": "2023-01-09T13:15:00Z",
+            "from": "2023-05-09T13:15:00Z",
             "to": ""
         },
         "friend": [
@@ -35166,7 +35166,7 @@ __webpack_require__.r(__webpack_exports__);
         "taskid": 12348,
         "coordinator": "Rotes Kreuz",
         "date": {
-            "from": "2023-01-15T14:30:00Z",
+            "from": "2023-02-15T14:30:00Z",
             "to": ""
         },
         "priority": 2,
@@ -35190,8 +35190,8 @@ __webpack_require__.r(__webpack_exports__);
         "coordinator": "Altenpflegeverein Kärnten",
         "priority": 2,
         "date": {
-            "from": "2022-11-21T08:00:00Z",
-            "to": "2022-11-30T15:00:00"
+            "from": "2023-03-21T08:00:00Z",
+            "to": "2023-03-30T15:00:00"
         },
         "friend": [
             "Steve Rogers", "James Bucky Barnes"
@@ -35213,7 +35213,7 @@ __webpack_require__.r(__webpack_exports__);
         "coordinator": "Samariterbund",
         "priority": 1,
         "date": {
-            "from": "2022-11-15T07:00:00Z",
+            "from": "2023-04-15T07:00:00Z",
             "to": ""
         },
         "friend": [
@@ -37288,7 +37288,7 @@ var getIVolFilterName = function (filterKey) {
         case 'priority': return 'Priorität';
         case 'taskid': return 'Task ID';
         case 'radius': return 'Standort Radius';
-        default: filterKey;
+        default: return filterKey;
     }
 };
 function groupValuesPerLocation(data, locationKey) {
