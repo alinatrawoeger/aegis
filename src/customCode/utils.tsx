@@ -98,7 +98,7 @@ export const getIVolFilterName = (filterKey: string) => {
         case 'priority': return 'Priorität';
         case 'taskid': return 'Task ID';
         case 'radius': return 'Standort Radius';
-        default: filterKey;
+        default: return filterKey;
     }
 }
 
